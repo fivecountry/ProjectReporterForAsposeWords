@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12489BD8-476B-4826-93BC-E4AF05409C24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectReporter</RootNamespace>
+    <AssemblyName>ProjectReporter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.3.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking, Version=4.3.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.3.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon, Version=4.3.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.3.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace, Version=4.3.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="FontInstall">
+      <HintPath>..\..\Lib\FontInstall.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Noear.Weed3">
+      <HintPath>..\..\Lib\Noear.Weed3.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Lib\office.DLL</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Lib\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BaseEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseEditor.designer.cs">
+      <DependentUpon>BaseEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaoMiZiZhiFuYinJianEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaoMiZiZhiFuYinJianEditor.designer.cs">
+      <DependentUpon>BaoMiZiZhiFuYinJianEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FuZeRenEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FuZeRenEditor.designer.cs">
+      <DependentUpon>FuZeRenEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\JieDuanHuaFenEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\JieDuanHuaFenEditor.designer.cs">
+      <DependentUpon>JieDuanHuaFenEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\JingFeiYuSuanEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KeTiJieDuanHuaFenEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KeTiJieDuanHuaFenEditor.designer.cs">
+      <DependentUpon>KeTiJieDuanHuaFenEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KeTiLianXiEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KeTiLianXiEditor.designer.cs">
+      <DependentUpon>KeTiLianXiEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KeTiTianBaoEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KeTiTianBaoEditor.designer.cs">
+      <DependentUpon>KeTiTianBaoEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HSkinTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RichTextBoxTableClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WaterTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DB\ConnectionManager.cs" />
+    <Compile Include="DB\Entitys\IEntity.cs" />
+    <Compile Include="DB\Entitys\MoneyAndType.cs" />
+    <Compile Include="DB\Entitys\MoneyAndYear.cs" />
+    <Compile Include="DB\Entitys\Person.cs" />
+    <Compile Include="DB\Entitys\Project.cs" />
+    <Compile Include="DB\Entitys\ProjectAndStep.cs" />
+    <Compile Include="DB\Entitys\ProjectBudgetInfo.cs" />
+    <Compile Include="DB\Entitys\Step.cs" />
+    <Compile Include="DB\Entitys\Task.cs" />
+    <Compile Include="DB\Entitys\Unit.cs" />
+    <Compile Include="DB\Entitys\WhiteList.cs" />
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeTiXiangXiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeTiXiangXiForm.designer.cs">
+      <DependentUpon>KeTiXiangXiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NewProjectEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NewProjectEditor.designer.cs">
+      <DependentUpon>NewProjectEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QianTouDanWeiEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\QianTouDanWeiEditor.designer.cs">
+      <DependentUpon>QianTouDanWeiEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RTFTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RTFTextEditor.designer.cs">
+      <DependentUpon>RTFTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XiangMuJieDuanHuaFenEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XiangMuJieDuanHuaFenEditor.designer.cs">
+      <DependentUpon>XiangMuJieDuanHuaFenEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\XiangMuJingFeiGaiSuanShuoMingEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\XiangMuJingFeiGaiSuanShuoMingEditor.designer.cs">
+      <DependentUpon>XiangMuJingFeiGaiSuanShuoMingEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\YanJiuGuGanEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\YanJiuGuGanEditor.designer.cs">
+      <DependentUpon>YanJiuGuGanEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersonManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonManagerForm.Designer.cs">
+      <DependentUpon>PersonManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UnitManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UnitManagerForm.Designer.cs">
+      <DependentUpon>UnitManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WordExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WordExportForm.Designer.cs">
+      <DependentUpon>WordExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZipExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZipExportForm.Designer.cs">
+      <DependentUpon>ZipExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZipImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZipImportForm.Designer.cs">
+      <DependentUpon>ZipImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\FormatCheckTool.cs" />
+    <Compile Include="Utility\FileOp.cs" />
+    <Compile Include="Utility\WatermarkUtility.cs" />
+    <Compile Include="Utility\WordUtility.cs" />
+    <Compile Include="Utility\ZipUtil.cs" />
+    <EmbeddedResource Include="Controls\BaseEditor.resx">
+      <DependentUpon>BaseEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaoMiZiZhiFuYinJianEditor.resx">
+      <DependentUpon>BaoMiZiZhiFuYinJianEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FuZeRenEditor.resx">
+      <DependentUpon>FuZeRenEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\JieDuanHuaFenEditor.resx">
+      <DependentUpon>JieDuanHuaFenEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\JingFeiYuSuanEditor.resx">
+      <DependentUpon>JingFeiYuSuanEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\KeTiJieDuanHuaFenEditor.resx">
+      <DependentUpon>KeTiJieDuanHuaFenEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\KeTiLianXiEditor.resx">
+      <DependentUpon>KeTiLianXiEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\KeTiTianBaoEditor.resx">
+      <DependentUpon>KeTiTianBaoEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClearForm.resx">
+      <DependentUpon>ClearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeTiXiangXiForm.resx">
+      <DependentUpon>KeTiXiangXiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewProjectEditor.resx">
+      <DependentUpon>NewProjectEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\QianTouDanWeiEditor.resx">
+      <DependentUpon>QianTouDanWeiEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RTFTextEditor.resx">
+      <DependentUpon>RTFTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XiangMuJieDuanHuaFenEditor.resx">
+      <DependentUpon>XiangMuJieDuanHuaFenEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\XiangMuJingFeiGaiSuanShuoMingEditor.resx">
+      <DependentUpon>XiangMuJingFeiGaiSuanShuoMingEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\YanJiuGuGanEditor.resx">
+      <DependentUpon>YanJiuGuGanEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonManagerForm.resx">
+      <DependentUpon>PersonManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UnitManagerForm.resx">
+      <DependentUpon>UnitManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WordExportForm.resx">
+      <DependentUpon>WordExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZipExportForm.resx">
+      <DependentUpon>ZipExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZipImportForm.resx">
+      <DependentUpon>ZipImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Fonts\simfang_0.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Fonts\simhei_0.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Fonts\simkai_0.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Helper\help.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Helper\introduction.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Helper\jianyishu.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Helper\xitixiangxi.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="static.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\First5002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\II-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Helper\readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
