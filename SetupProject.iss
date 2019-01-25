@@ -33,7 +33,7 @@ Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\wcss\Desktop\Reporters\dotNetFx45_Full_x86_x64.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\dotNetFx45_Full_x86_x64.exe"; DestDir: "{tmp}"; CopyMode:onlyifdoesntexist;Flags: ignoreversion deleteafterinstall
 Source: "C:\Users\wcss\Desktop\Reporters\Fonts\*"; DestDir: "{app}\Fonts"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\Helper\*"; DestDir: "{app}\Helper"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\ComponentFactory.Krypton.Docking.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -75,21 +75,21 @@ var
 ResultCode: Integer;
 Path, dotNetV4RegPath, dotNetV4PackFile: string;
 begin
-    dotNetV4RegPath:='SOFTWARE\Microsoft\.NETFramework\policy\v4.0';
-    dotNetV4PackFile:='{pf}\ProjectReporter\dotNetFx45_Full_x86_x64.exe';
+    dotNetV4RegPath:='SOFTWARE\Microsoft\.NETFramework\policy\v4.5';
+    dotNetV4PackFile:='{tmp}\dotNetFx45_Full_x86_x64.exe';
     if RegKeyExists(HKLM, dotNetV4RegPath) then begin 
         Result := true; 
     end 
     else begin 
         // Exec(ExpandConstant(wic), '/q /norestart', '', SW_SHOWNORMAL, ewWaitUntilTerminated, ResultCode);  // 安装wic,windows xp系统会需要安装wic
-        if MsgBox('正在安装客户端必备组件.Net Framework 4.0，可能会花费几分钟，请稍后……', mbConfirmation, MB_YESNO) = idYes then begin
+        if MsgBox('正在安装客户端必备组件.Net Framework 4.5，可能会花费几分钟，请稍后……', mbConfirmation, MB_YESNO) = idYes then begin
             Path := ExpandConstant(dotNetV4PackFile);
             if(FileOrDirExists(Path)) then begin
                 Exec(Path, '/norestart', '', SW_SHOWNORMAL, ewWaitUntilTerminated, ResultCode);
                 Result := true;
             end
             else begin
-                if MsgBox('软件安装目录中没有.Net Framework的安装程序，' #13#13 '单击【是】跳过.Net Framework 4.0安装，【否】将退出安装！', mbConfirmation, MB_YESNO) = idYes then begin
+                if MsgBox('软件安装目录中没有.Net Framework的安装程序，' #13#13 '单击【是】跳过.Net Framework 4.5安装，【否】将退出安装！', mbConfirmation, MB_YESNO) = idYes then begin
                     Result := true;
                 end
                 else begin
