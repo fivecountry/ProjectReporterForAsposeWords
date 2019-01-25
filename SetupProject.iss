@@ -33,7 +33,7 @@ Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\wcss\Desktop\Reporters\dotNetFx45_Full_x86_x64.exe"; DestDir: "{tmp}"; CopyMode:onlyifdoesntexist;Flags: ignoreversion deleteafterinstall
+Source: "C:\Users\wcss\Desktop\Reporters\dotNetFx45_Full_x86_x64.exe"; DestDir: "{tmp}"; CopyMode:onlyifdoesntexist;Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\Fonts\*"; DestDir: "{app}\Fonts"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\Helper\*"; DestDir: "{app}\Helper"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\ComponentFactory.Krypton.Docking.dll"; DestDir: "{app}"; Flags: ignoreversion
