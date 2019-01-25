@@ -76,7 +76,7 @@ ResultCode: Integer;
 Path, dotNetV4RegPath, dotNetV4PackFile: string;
 begin
     dotNetV4RegPath:='SOFTWARE\Microsoft\.NETFramework\policy\v4.5';
-    dotNetV4PackFile:='{tmp}\dotNetFx45_Full_x86_x64.exe';
+    dotNetV4PackFile:='dotNetFx45_Full_x86_x64.exe';
     if RegKeyExists(HKLM, dotNetV4RegPath) then begin 
         Result := true; 
     end 
