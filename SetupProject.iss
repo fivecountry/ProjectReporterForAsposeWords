@@ -33,7 +33,7 @@ Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\wcss\Desktop\Reporters\dotNetFx40_Full_x86_x64.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\dotNetFx45_Full_x86_x64.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\Fonts\*"; DestDir: "{app}\Fonts"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\Helper\*"; DestDir: "{app}\Helper"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\ComponentFactory.Krypton.Docking.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -76,7 +76,7 @@ ResultCode: Integer;
 Path, dotNetV4RegPath, dotNetV4PackFile: string;
 begin
     dotNetV4RegPath:='SOFTWARE\Microsoft\.NETFramework\policy\v4.0';
-    dotNetV4PackFile:='{pf}\ProjectReporter\dotNetFx40_Full_x86_x64.exe';
+    dotNetV4PackFile:='{pf}\ProjectReporter\dotNetFx45_Full_x86_x64.exe';
     if RegKeyExists(HKLM, dotNetV4RegPath) then begin 
         Result := true; 
     end 
