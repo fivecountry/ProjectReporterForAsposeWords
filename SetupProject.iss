@@ -58,6 +58,9 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
+[Registry]  
+Root: HKLM ;SubKey:"Software\{#MyAppName}";ValueType:dword;ValueName:config;ValueData:10 ;Flags:uninsdeletevalue 
+
 ;在执行脚本  
 [code]  
 
@@ -101,4 +104,11 @@ begin
             Result := false;
         end;
     end; 
+end;
+
+//判断程序是否存在  
+//初始华程序事件   
+function InitializeSetup() : Boolean;
+begin
+    Result := CheckDotNetFrameWork(); //安装程序继续
 end;
