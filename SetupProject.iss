@@ -33,6 +33,7 @@ Name: "chinesesimp"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
+Source: "C:\Users\wcss\Desktop\Reporters\vcredist_x86.exe"; DestDir: "{tmp}"; CopyMode:onlyifdoesntexist;Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\dotNetFx45_Full_x86_x64.exe"; DestDir: "{tmp}"; CopyMode:onlyifdoesntexist;Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\Fonts\*"; DestDir: "{app}\Fonts"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\Helper\*"; DestDir: "{app}\Helper"; Flags: ignoreversion recursesubdirs createallsubdirs
@@ -77,7 +78,12 @@ Path, dotNetV4RegPath, dotNetV4PackFile: string;
 begin
     dotNetV4RegPath:='SOFTWARE\Microsoft\.NETFramework\policy\v4.0';
     dotNetV4PackFile:='{tmp}\dotNetFx45_Full_x86_x64.exe';
-    ExtractTemporaryFile('dotNetFx45_Full_x86_x64.exe');
+    
+    //安装VC2005++运行库
+    ExtractTemporaryFile('vcredist_x86.exe');
+    Path := ExpandConstant('{tmp}\vcredist_x86.exe');
+    Exec(Path,'','',SW_SHOWNORMAL,ewWaitUntilTerminated, ResultCode);
+
     if RegKeyExists(HKLM, dotNetV4RegPath) then begin 
         Result := true; 
     end 
@@ -85,6 +91,7 @@ begin
         // Exec(ExpandConstant(wic), '/q /norestart', '', SW_SHOWNORMAL, ewWaitUntilTerminated, ResultCode);  // 安装wic,windows xp系统会需要安装wic
         if MsgBox('正在安装客户端必备组件.Net Framework 4.5，可能会花费几分钟，请稍后……', mbConfirmation, MB_YESNO) = idYes then begin
             Path := ExpandConstant(dotNetV4PackFile);
+            ExtractTemporaryFile('dotNetFx45_Full_x86_x64.exe');
             if(FileOrDirExists(Path)) then begin
                 Exec(Path, '/norestart', '', SW_SHOWNORMAL, ewWaitUntilTerminated, ResultCode);
                 Result := true;
