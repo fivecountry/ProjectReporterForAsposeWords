@@ -53,7 +53,7 @@ namespace ProjectReporter.Forms
                     return;
                 }
 
-                int existCount = ConnectionManager.Context.table("UnitExt").where("ID='" + txtUnitBankNo.Text + "'").select("count(*)").getValue<int>(0);
+                long existCount = ConnectionManager.Context.table("UnitExt").where("ID='" + txtUnitBankNo.Text + "'").select("count(*)").getValue<long>(0);
                 if (existCount >= 1)
                 {
                     MessageBox.Show("账号已存在,请重新输入！");

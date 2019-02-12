@@ -24,7 +24,7 @@ namespace ProjectReporter.DB.Entitys
             UnitBankUser = source("UnitBankUser").value<string>(Guid.NewGuid().ToString());
             UnitBankName = source("UnitBankName").value<string>(Guid.NewGuid().ToString());
             UnitBankNo = source("UnitBankNo").value<string>(Guid.NewGuid().ToString());
-            IsUserAdded = source("IsUserAdded").value<int>(-1);
+            IsUserAdded = source("IsUserAdded").value<long>(-1);
         }
 
         #region Model
@@ -35,7 +35,7 @@ namespace ProjectReporter.DB.Entitys
         private string _unitBankUser = string.Empty;
         private string _unitBankName = string.Empty;
         private string _unitBankNo = string.Empty;
-        private int _isUserAdded = -1;
+        private long _isUserAdded = -1;
 
         public string ID
         {
@@ -115,7 +115,7 @@ namespace ProjectReporter.DB.Entitys
             }
         }
 
-        public int IsUserAdded
+        public long IsUserAdded
         {
             get
             {
