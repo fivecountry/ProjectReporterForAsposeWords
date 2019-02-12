@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnNewUnit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnLast, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNewUnit, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -94,14 +94,14 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1240, 34);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // btnLast
+            // btnNewUnit
             // 
-            this.btnLast.Location = new System.Drawing.Point(1043, 3);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(90, 25);
-            this.btnLast.TabIndex = 1;
-            this.btnLast.Values.Text = "返回";
-            this.btnLast.Visible = false;
+            this.btnNewUnit.Location = new System.Drawing.Point(1043, 3);
+            this.btnNewUnit.Name = "btnNewUnit";
+            this.btnNewUnit.Size = new System.Drawing.Size(90, 25);
+            this.btnNewUnit.TabIndex = 1;
+            this.btnNewUnit.Values.Text = "添加单位";
+            this.btnNewUnit.Click += new System.EventHandler(this.btnNewUnit_Click);
             // 
             // btnSave
             // 
@@ -170,9 +170,9 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetail.RowTemplate.Height = 28;
             this.dgvDetail.Size = new System.Drawing.Size(1240, 573);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -236,7 +236,7 @@
             this.BaoMiZiZhi.Name = "BaoMiZiZhi";
             this.BaoMiZiZhi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.BaoMiZiZhi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.BaoMiZiZhi.Width = 142;
+            this.BaoMiZiZhi.Width = 144;
             // 
             // delete
             // 
@@ -275,7 +275,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnLast;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnNewUnit;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnNext;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;

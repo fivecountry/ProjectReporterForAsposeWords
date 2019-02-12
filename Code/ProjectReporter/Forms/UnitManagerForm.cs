@@ -235,5 +235,11 @@ namespace ProjectReporter.Forms
         {
 
         }
+
+        private void btnNewUnit_Click(object sender, EventArgs e)
+        {
+            NewUnitForm nuf = new NewUnitForm();
+            nuf.ShowDialog();
+        }
     }
 }
