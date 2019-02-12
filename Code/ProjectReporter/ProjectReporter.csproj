@@ -159,6 +159,7 @@
     <Compile Include="DB\Entitys\Step.cs" />
     <Compile Include="DB\Entitys\Task.cs" />
     <Compile Include="DB\Entitys\Unit.cs" />
+    <Compile Include="DB\Entitys\UnitExt.cs" />
     <Compile Include="DB\Entitys\WhiteList.cs" />
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
