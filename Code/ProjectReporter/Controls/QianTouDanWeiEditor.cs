@@ -102,7 +102,7 @@ namespace ProjectReporter.Controls
                     wlObj = (WhiteList)dgvRow.Tag;
                 }
 
-                if (dgvRow.Cells[1].Value == null || string.IsNullOrEmpty(dgvRow.Cells[1].Value.ToString()))
+                if (dgvRow.Cells[1].Value == null || dgvRow.Cells[2].Value == null || dgvRow.Cells[3].Value == null || dgvRow.Cells[4].Value == null)
                 {
                     continue;
                 }
@@ -110,6 +110,20 @@ namespace ProjectReporter.Controls
                 if (UnitDict.ContainsKey(dgvRow.Cells[1].Value.ToString()))
                 {
                     wlObj.UnitID = UnitDict[dgvRow.Cells[1].Value.ToString()].ID;
+
+                    //创建单位信息
+                    ConnectionManager.Context.table("Unit").where("ID='" + wlObj.UnitID + "'").delete();
+                    Unit newUnit = new Unit();
+                    newUnit.ID = wlObj.UnitID;
+                    newUnit.UnitName = dgvRow.Cells[1].Value.ToString();
+                    newUnit.FlagName = dgvRow.Cells[1].Value.ToString();
+                    newUnit.NormalName = dgvRow.Cells[1].Value.ToString();
+                    newUnit.ContactName = dgvRow.Cells[3].Value.ToString();
+                    newUnit.Telephone = dgvRow.Cells[4].Value.ToString();
+                    newUnit.Address = dgvRow.Cells[2].Value.ToString();
+                    newUnit.UnitType = "候选单位";
+                    newUnit.SecretQualification = "未知";
+                    newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
 
                     if (string.IsNullOrEmpty(wlObj.ID))
                     {
@@ -130,12 +144,12 @@ namespace ProjectReporter.Controls
 
         private void UpdateUnitList()
         {
-            List<Unit> unitList = ConnectionManager.Context.table("Unit").select("*").getList<Unit>(new Unit());
+            List<UnitExt> unitList = ConnectionManager.Context.table("UnitExt").select("*").getList<UnitExt>(new UnitExt());
             if (unitList != null)
             {
                 //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Clear();
                 UnitDict.Clear();
-                foreach (Unit u in unitList)
+                foreach (UnitExt u in unitList)
                 {
                     //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Add(u.UnitName);
                     UnitDict.Add(u.UnitName, u);
@@ -143,7 +157,7 @@ namespace ProjectReporter.Controls
             }
         }
 
-        public Dictionary<string, Unit> UnitDict = new Dictionary<string, Unit>();
+        public Dictionary<string, UnitExt> UnitDict = new Dictionary<string, UnitExt>();
 
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -162,12 +176,12 @@ namespace ProjectReporter.Controls
                     }
                     else if (e.ColumnIndex == 1)
                     {
-                        UnitAndUnitExtSelectForm usf = new UnitAndUnitExtSelectForm(wlObj.UnitID);
+                        UnitExtSelectForm usf = new UnitExtSelectForm(wlObj.UnitID);
                         if (usf.ShowDialog() == DialogResult.OK)
                         {
-                            if (usf.SelectedUnit != null)
+                            if (usf.SelectedUnitExt != null)
                             {
-                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnit.UnitName;
+                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitName;
                             }
                         }
                     }
@@ -190,12 +204,12 @@ namespace ProjectReporter.Controls
                     }
                     else if (e.ColumnIndex == 1)
                     {
-                        UnitAndUnitExtSelectForm usf = new UnitAndUnitExtSelectForm(string.Empty);
+                        UnitExtSelectForm usf = new UnitExtSelectForm(string.Empty);
                         if (usf.ShowDialog() == DialogResult.OK)
                         {
-                            if (usf.SelectedUnit != null)
+                            if (usf.SelectedUnitExt != null)
                             {
-                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnit.UnitName;
+                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitName;
                             }
                         }
                     }
@@ -205,25 +219,25 @@ namespace ProjectReporter.Controls
 
         private void dgvDetail_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
         {
-            if (e.ColumnIndex == 1)
-            {
-                KryptonDataGridViewComboBoxCell comboboxCell = (KryptonDataGridViewComboBoxCell)dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                if (comboboxCell.EditedFormattedValue != null)
-                {
-                    string key = comboboxCell.EditedFormattedValue.ToString();
+            //if (e.ColumnIndex == 1)
+            //{
+            //    KryptonDataGridViewComboBoxCell comboboxCell = (KryptonDataGridViewComboBoxCell)dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            //    if (comboboxCell.EditedFormattedValue != null)
+            //    {
+            //        string key = comboboxCell.EditedFormattedValue.ToString();
 
-                    if (UnitDict.ContainsKey(key))
-                    {
-                        Unit unitObj = UnitDict[key];
-                        if (unitObj != null)
-                        {
-                            dgvDetail[2, e.RowIndex].Value = unitObj.Address;
-                            dgvDetail[3, e.RowIndex].Value = unitObj.ContactName;
-                            dgvDetail[4, e.RowIndex].Value = unitObj.Telephone;
-                        }
-                    }
-                }
-            }
+            //        if (UnitDict.ContainsKey(key))
+            //        {
+            //            Unit unitObj = UnitDict[key];
+            //            if (unitObj != null)
+            //            {
+            //                dgvDetail[2, e.RowIndex].Value = unitObj.Address;
+            //                dgvDetail[3, e.RowIndex].Value = unitObj.ContactName;
+            //                dgvDetail[4, e.RowIndex].Value = unitObj.Telephone;
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         public List<WhiteList> WhiteDataList { get; set; }

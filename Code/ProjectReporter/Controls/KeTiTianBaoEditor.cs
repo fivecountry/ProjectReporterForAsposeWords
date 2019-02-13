@@ -138,12 +138,12 @@ namespace ProjectReporter.Controls
                     }
                     else if (e.ColumnIndex == 4)
                     {
-                        UnitAndUnitExtSelectForm usf = new UnitAndUnitExtSelectForm(kett.UnitID);
+                        UnitExtSelectForm usf = new UnitExtSelectForm(kett.UnitID);
                         if (usf.ShowDialog() == DialogResult.OK)
                         {
-                            if (usf.SelectedUnit != null)
+                            if (usf.SelectedUnitExt != null)
                             {
-                                dgvDetail.Rows[e.RowIndex].Cells[4].Value = usf.SelectedUnit.UnitName;
+                                dgvDetail.Rows[e.RowIndex].Cells[4].Value = usf.SelectedUnitExt.UnitName;
                             }
                         }
                     }
@@ -164,12 +164,12 @@ namespace ProjectReporter.Controls
                 }
                 else if (e.ColumnIndex == 4)
                 {
-                    UnitAndUnitExtSelectForm usf = new UnitAndUnitExtSelectForm(string.Empty);
+                    UnitExtSelectForm usf = new UnitExtSelectForm(string.Empty);
                     if (usf.ShowDialog() == DialogResult.OK)
                     {
-                        if (usf.SelectedUnit != null)
+                        if (usf.SelectedUnitExt != null)
                         {
-                            dgvDetail.Rows[e.RowIndex].Cells[4].Value = usf.SelectedUnit.UnitName;
+                            dgvDetail.Rows[e.RowIndex].Cells[4].Value = usf.SelectedUnitExt.UnitName;
                         }
                     }
                 }

@@ -268,7 +268,7 @@ namespace ProjectReporter.Controls
             newUnit.ContactName = txtContactName.Text;
             newUnit.Telephone = txtTelphone.Text;
             newUnit.Address = txtAddress.Text;
-            newUnit.UnitType = "一般单位";
+            newUnit.UnitType = "申报单位";
             newUnit.SecretQualification = "未知";
             newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
 
