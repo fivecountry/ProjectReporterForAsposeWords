@@ -270,6 +270,12 @@
     <Compile Include="Forms\UnitManagerForm.Designer.cs">
       <DependentUpon>UnitManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UnitSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UnitSelectForm.Designer.cs">
+      <DependentUpon>UnitSelectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnitManagerForm.resx">
       <DependentUpon>UnitManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UnitSelectForm.resx">
+      <DependentUpon>UnitSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
