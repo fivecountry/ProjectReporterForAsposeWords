@@ -23,6 +23,9 @@ namespace ProjectReporter.Forms
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Items.Add("一级");
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Items.Add("二级");
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Items.Add("三级");
+
+            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("航天科技");
+            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("航空科技");
         }
 
         private void UnitManagerForm_Load(object sender, EventArgs e)
@@ -105,24 +108,28 @@ namespace ProjectReporter.Forms
                 }
 
                 uu.UnitName = dgvRow.Cells[1].Value.ToString();
-                uu.FlagName = dgvRow.Cells[2].Value.ToString();
-                uu.NormalName = dgvRow.Cells[3].Value.ToString();
-                uu.Address = dgvRow.Cells[4].Value.ToString();
-                uu.ContactName = dgvRow.Cells[5].Value.ToString();
-                uu.Telephone = dgvRow.Cells[6].Value.ToString();
-                uu.SecretQualification = dgvRow.Cells[7].Value.ToString();
+                uu.FlagName = dgvRow.Cells[6].Value.ToString();
+                uu.NormalName = dgvRow.Cells[7].Value.ToString();
+                uu.Address = dgvRow.Cells[8].Value.ToString();
+                uu.ContactName = dgvRow.Cells[9].Value.ToString();
+                uu.Telephone = dgvRow.Cells[10].Value.ToString();
+                uu.SecretQualification = dgvRow.Cells[12].Value.ToString();
+                uu.copyTo(ConnectionManager.Context.table("Unit")).where("ID='" + uu.ID + "'").update();                
+                
+                UnitExt unitExt= ConnectionManager.Context.table("UnitExt").where("ID='" + uu.ID + "'").select("*").getItem<UnitExt>(new UnitExt());
+                if (unitExt == null)
+                {
+                    continue;
+                }
 
-                if (string.IsNullOrEmpty(uu.ID))
-                {
-                    uu.ID = Guid.NewGuid().ToString();
-                    uu.copyTo(ConnectionManager.Context.table("Unit")).insert();
-                }
-                else
-                {
-                    uu.copyTo(ConnectionManager.Context.table("Unit")).where("ID='" + uu.ID + "'").update();
-                }
+                unitExt.UnitName = uu.UnitName;
+                unitExt.UnitType = dgvRow.Cells[2].Value.ToString();
+                unitExt.UnitBankUser = dgvRow.Cells[3].Value.ToString();
+                unitExt.UnitBankName = dgvRow.Cells[4].Value.ToString();
+                unitExt.UnitBankNo = dgvRow.Cells[5].Value.ToString();
+                unitExt.copyTo(ConnectionManager.Context.table("UnitExt").where("ID='" + uu.ID + "'")).update();
             }
-
+            
             UpdateList();
             MessageBox.Show("保存完成");
             Close();
@@ -137,35 +144,55 @@ namespace ProjectReporter.Forms
             }
             if (dgvRow.Cells[2].Value == null)
             {
-                MessageBox.Show("对不起,请输入公章名称!");
+                MessageBox.Show("对不起,请选择单位类型!");
                 return true;
             }
             if (dgvRow.Cells[3].Value == null)
             {
-                MessageBox.Show("对不起,请输入常用名称!");
+                MessageBox.Show("对不起,请输入开户名称!");
                 return true;
             }
             if (dgvRow.Cells[4].Value == null)
             {
-                MessageBox.Show("对不起,请输入通信地址!");
+                MessageBox.Show("对不起,请输入开户行!");
                 return true;
             }
             if (dgvRow.Cells[5].Value == null)
             {
-                MessageBox.Show("对不起,请输入联系人!");
+                MessageBox.Show("对不起,请输入帐号!");
                 return true;
             }
             if (dgvRow.Cells[6].Value == null)
             {
-                MessageBox.Show("对不起,请输入联系电话!");
+                MessageBox.Show("对不起,请输入公章名称!");
                 return true;
             }
             if (dgvRow.Cells[7].Value == null)
             {
+                MessageBox.Show("对不起,请输入常用名称!");
+                return true;
+            }
+            if (dgvRow.Cells[8].Value == null)
+            {
+                MessageBox.Show("对不起,请输入通信地址!");
+                return true;
+            }
+            if (dgvRow.Cells[9].Value == null)
+            {
+                MessageBox.Show("对不起,请输入联系人!");
+                return true;
+            }
+            if (dgvRow.Cells[10].Value == null)
+            {
+                MessageBox.Show("对不起,请输入联系电话!");
+                return true;
+            }
+            if (dgvRow.Cells[12].Value == null)
+            {
                 MessageBox.Show("对不起,请输入保密资质!");
                 return true;
             }
-            if (!FormatCheckTool.IsTelephone(dgvRow.Cells[6].Value.ToString()))
+            if (!FormatCheckTool.IsTelephone(dgvRow.Cells[10].Value.ToString()))
             {
                 MessageBox.Show("对不起,请输入正确的联系电话!");
                 return true;
@@ -201,8 +228,32 @@ namespace ProjectReporter.Forms
             {
                 emptyCount++;
             }
+            if (dgvRow.Cells[7].Value == null)
+            {
+                emptyCount++;
+            }
+            if (dgvRow.Cells[8].Value == null)
+            {
+                emptyCount++;
+            }
+            if (dgvRow.Cells[9].Value == null)
+            {
+                emptyCount++;
+            }
+            if (dgvRow.Cells[10].Value == null)
+            {
+                emptyCount++;
+            }
+            if (dgvRow.Cells[11].Value == null)
+            {
+                emptyCount++;
+            }
+            if (dgvRow.Cells[12].Value == null)
+            {
+                emptyCount++;
+            }
 
-            return emptyCount >= 6;
+            return emptyCount >= 10;
         }
 
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
