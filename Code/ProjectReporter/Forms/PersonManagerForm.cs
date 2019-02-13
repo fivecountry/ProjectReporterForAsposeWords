@@ -344,7 +344,10 @@ namespace ProjectReporter.Forms
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             NewPersonForm npf = new NewPersonForm(null);
-            npf.ShowDialog();
+            if (npf.ShowDialog() == DialogResult.OK)
+            {
+                UpdateList();
+            }
         }
 
         private void btnEditOld_Click(object sender, EventArgs e)
@@ -353,7 +356,10 @@ namespace ProjectReporter.Forms
             {
                 Person pp = (Person)dgvDetail.SelectedRows[0].Tag;
                 NewPersonForm npf = new NewPersonForm(pp);
-                npf.ShowDialog();
+                if (npf.ShowDialog() == DialogResult.OK)
+                {
+                    UpdateList();
+                }
             }
         }
     }

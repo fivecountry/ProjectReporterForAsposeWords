@@ -18,6 +18,9 @@ namespace ProjectReporter.Forms
         public NewPersonForm(Person personObj)
         {
             InitializeComponent();
+
+            UpdateUnitList();
+
             this.PersonObj = personObj;
             if (this.PersonObj != null)
             {
@@ -26,13 +29,13 @@ namespace ProjectReporter.Forms
                 txtIDCard.Text = PersonObj.IDCard;
                 txtJob.Text = PersonObj.Job;
                 txtSpecialty.Text = PersonObj.Specialty;
-                cbxSex.SelectedText = PersonObj.Sex;
+                cbxSex.Text = PersonObj.Sex;
                 deBirthday.DateTime = PersonObj.Birthday != null ? PersonObj.Birthday.Value : DateTime.Now;
                 txtTelphone.Text = PersonObj.Telephone;
                 txtMobilePhone.Text = PersonObj.MobilePhone;
                 txtAddress.Text = PersonObj.Address;
             }
-            UpdateUnitList();
+
         }
 
         private void UpdateUnitList()
@@ -131,7 +134,7 @@ namespace ProjectReporter.Forms
                 MessageBox.Show("请输入性别！");
                 return;
             }
-            if (string.IsNullOrEmpty(deBirthday.Text))
+            if (deBirthday.DateTime == null)
             {
                 MessageBox.Show("请输入生日！");
                 return;
@@ -161,7 +164,7 @@ namespace ProjectReporter.Forms
             PersonObj.IDCard = txtIDCard.Text;
             PersonObj.Job = txtJob.Text;
             PersonObj.Specialty = txtSpecialty.Text;
-            PersonObj.Sex = cbxSex.SelectedText;
+            PersonObj.Sex = cbxSex.Text;
             PersonObj.Birthday = deBirthday.DateTime;
             PersonObj.Telephone = txtTelphone.Text;
             PersonObj.MobilePhone = txtMobilePhone.Text;

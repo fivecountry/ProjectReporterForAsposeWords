@@ -46,13 +46,10 @@
             this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plContent = new DevExpress.XtraEditors.PanelControl();
-            this.plButtons = new DevExpress.XtraEditors.PanelControl();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.deBirthday = new DevExpress.XtraEditors.DateEdit();
+            this.cbxSex = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.lueUnitList = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cbxSex = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
-            this.deBirthday = new DevExpress.XtraEditors.DateEdit();
             this.gcID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcUnitName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcUnitType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,15 +63,18 @@
             this.gcTelphone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcIsUserAdded = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcSecret = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.plButtons = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).BeginInit();
             this.plContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.plButtons)).BeginInit();
-            this.plButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lueUnitList.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxSex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deBirthday.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deBirthday.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxSex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueUnitList.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plButtons)).BeginInit();
+            this.plButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMobilePhone
@@ -249,30 +249,29 @@
             this.plContent.Size = new System.Drawing.Size(402, 334);
             this.plContent.TabIndex = 9;
             // 
-            // plButtons
+            // deBirthday
             // 
-            this.plButtons.Controls.Add(this.btnOK);
-            this.plButtons.Controls.Add(this.btnCancel);
-            this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plButtons.Location = new System.Drawing.Point(2, 296);
-            this.plButtons.Name = "plButtons";
-            this.plButtons.Size = new System.Drawing.Size(398, 36);
-            this.plButtons.TabIndex = 7;
+            this.deBirthday.EditValue = null;
+            this.deBirthday.Location = new System.Drawing.Point(84, 181);
+            this.deBirthday.Name = "deBirthday";
+            this.deBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deBirthday.Size = new System.Drawing.Size(300, 20);
+            this.deBirthday.TabIndex = 14;
             // 
-            // txtAddress
+            // cbxSex
             // 
-            this.txtAddress.Location = new System.Drawing.Point(84, 264);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(300, 22);
-            this.txtAddress.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(12, 267);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 14);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "  通信地址：";
+            this.cbxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSex.DropDownWidth = 300;
+            this.cbxSex.Items.AddRange(new object[] {
+            "男",
+            "女"});
+            this.cbxSex.Location = new System.Drawing.Point(84, 152);
+            this.cbxSex.Name = "cbxSex";
+            this.cbxSex.Size = new System.Drawing.Size(300, 22);
+            this.cbxSex.TabIndex = 13;
             // 
             // lueUnitList
             // 
@@ -305,29 +304,6 @@
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // cbxSex
-            // 
-            this.cbxSex.DropDownWidth = 300;
-            this.cbxSex.Items.AddRange(new object[] {
-            "男",
-            "女"});
-            this.cbxSex.Location = new System.Drawing.Point(84, 152);
-            this.cbxSex.Name = "cbxSex";
-            this.cbxSex.Size = new System.Drawing.Size(300, 22);
-            this.cbxSex.TabIndex = 13;
-            // 
-            // deBirthday
-            // 
-            this.deBirthday.EditValue = null;
-            this.deBirthday.Location = new System.Drawing.Point(84, 181);
-            this.deBirthday.Name = "deBirthday";
-            this.deBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deBirthday.Size = new System.Drawing.Size(300, 20);
-            this.deBirthday.TabIndex = 14;
             // 
             // gcID
             // 
@@ -433,6 +409,31 @@
             this.gcSecret.Visible = true;
             this.gcSecret.VisibleIndex = 12;
             // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(84, 264);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(300, 22);
+            this.txtAddress.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(12, 267);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 14);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "  通信地址：";
+            // 
+            // plButtons
+            // 
+            this.plButtons.Controls.Add(this.btnOK);
+            this.plButtons.Controls.Add(this.btnCancel);
+            this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.plButtons.Location = new System.Drawing.Point(2, 296);
+            this.plButtons.Name = "plButtons";
+            this.plButtons.Size = new System.Drawing.Size(398, 36);
+            this.plButtons.TabIndex = 7;
+            // 
             // NewPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -447,13 +448,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).EndInit();
             this.plContent.ResumeLayout(false);
             this.plContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.plButtons)).EndInit();
-            this.plButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lueUnitList.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxSex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deBirthday.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deBirthday.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxSex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueUnitList.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plButtons)).EndInit();
+            this.plButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
