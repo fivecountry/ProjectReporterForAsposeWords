@@ -33,6 +33,9 @@ namespace ProjectReporter.Controls
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plMain = new System.Windows.Forms.Panel();
             this.hSkinTableLayoutPanel1 = new ProjectReporter.Controls.HSkinTableLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtContactName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.txtTotalMoney = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -47,16 +50,20 @@ namespace ProjectReporter.Controls
             this.txtAddress = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtNormalName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.cbxPersonList = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cbxUnitA = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.leSearchList = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.leSearchListView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankUser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label17 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -66,16 +73,17 @@ namespace ProjectReporter.Controls
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtKeyWords = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cbxPersonList = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.plTitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.plTop = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtContactName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.plMain.SuspendLayout();
             this.hSkinTableLayoutPanel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -83,18 +91,18 @@ namespace ProjectReporter.Controls
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxPersonList)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxUnitA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSecret)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxPersonList)).BeginInit();
             this.plTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
             this.plTop.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReport
@@ -176,6 +184,35 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.Size = new System.Drawing.Size(1142, 308);
             this.hSkinTableLayoutPanel1.TabIndex = 1;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel4, 2);
+            this.panel4.Controls.Add(this.txtContactName);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(120, 153);
+            this.panel4.Margin = new System.Windows.Forms.Padding(1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(566, 36);
+            this.panel4.TabIndex = 10;
+            // 
+            // txtContactName
+            // 
+            this.txtContactName.AlwaysActive = false;
+            this.txtContactName.Location = new System.Drawing.Point(10, 10);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(545, 21);
+            this.txtContactName.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(3, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 38);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "联系人：";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.White;
@@ -209,10 +246,8 @@ namespace ProjectReporter.Controls
             // txtTelphone
             // 
             this.txtTelphone.AlwaysActive = false;
-            this.txtTelphone.Enabled = false;
             this.txtTelphone.Location = new System.Drawing.Point(4, 10);
             this.txtTelphone.Name = "txtTelphone";
-            this.txtTelphone.ReadOnly = true;
             this.txtTelphone.Size = new System.Drawing.Size(270, 21);
             this.txtTelphone.TabIndex = 15;
             // 
@@ -271,10 +306,8 @@ namespace ProjectReporter.Controls
             // txtFlagName
             // 
             this.txtFlagName.AlwaysActive = false;
-            this.txtFlagName.Enabled = false;
             this.txtFlagName.Location = new System.Drawing.Point(8, 10);
             this.txtFlagName.Name = "txtFlagName";
-            this.txtFlagName.ReadOnly = true;
             this.txtFlagName.Size = new System.Drawing.Size(1004, 21);
             this.txtFlagName.TabIndex = 15;
             // 
@@ -293,10 +326,8 @@ namespace ProjectReporter.Controls
             // txtAddress
             // 
             this.txtAddress.AlwaysActive = false;
-            this.txtAddress.Enabled = false;
             this.txtAddress.Location = new System.Drawing.Point(9, 10);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(1002, 21);
             this.txtAddress.TabIndex = 15;
             // 
@@ -315,41 +346,16 @@ namespace ProjectReporter.Controls
             // txtNormalName
             // 
             this.txtNormalName.AlwaysActive = false;
-            this.txtNormalName.Enabled = false;
             this.txtNormalName.Location = new System.Drawing.Point(8, 10);
             this.txtNormalName.Name = "txtNormalName";
-            this.txtNormalName.ReadOnly = true;
             this.txtNormalName.Size = new System.Drawing.Size(1004, 21);
             this.txtNormalName.TabIndex = 15;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel6, 2);
-            this.panel6.Controls.Add(this.cbxPersonList);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(120, 229);
-            this.panel6.Margin = new System.Windows.Forms.Padding(1);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(566, 36);
-            this.panel6.TabIndex = 6;
-            // 
-            // cbxPersonList
-            // 
-            this.cbxPersonList.AlwaysActive = false;
-            this.cbxPersonList.DropDownWidth = 121;
-            this.cbxPersonList.FormattingEnabled = true;
-            this.cbxPersonList.Location = new System.Drawing.Point(9, 10);
-            this.cbxPersonList.Name = "cbxPersonList";
-            this.cbxPersonList.Size = new System.Drawing.Size(549, 22);
-            this.cbxPersonList.TabIndex = 21;
-            this.cbxPersonList.SelectedIndexChanged += new System.EventHandler(this.cbxPersonList_SelectedIndexChanged);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel2, 2);
-            this.panel2.Controls.Add(this.cbxUnitA);
+            this.panel2.Controls.Add(this.leSearchList);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(120, 39);
             this.panel2.Margin = new System.Windows.Forms.Padding(1);
@@ -357,16 +363,75 @@ namespace ProjectReporter.Controls
             this.panel2.Size = new System.Drawing.Size(566, 36);
             this.panel2.TabIndex = 18;
             // 
-            // cbxUnitA
+            // leSearchList
             // 
-            this.cbxUnitA.AlwaysActive = false;
-            this.cbxUnitA.DropDownWidth = 121;
-            this.cbxUnitA.FormattingEnabled = true;
-            this.cbxUnitA.Location = new System.Drawing.Point(8, 8);
-            this.cbxUnitA.Name = "cbxUnitA";
-            this.cbxUnitA.Size = new System.Drawing.Size(552, 22);
-            this.cbxUnitA.TabIndex = 20;
-            this.cbxUnitA.SelectedIndexChanged += new System.EventHandler(this.cbxUnitA_SelectedIndexChanged);
+            this.leSearchList.EditValue = "";
+            this.leSearchList.Location = new System.Drawing.Point(7, 8);
+            this.leSearchList.Name = "leSearchList";
+            this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.leSearchList.Properties.View = this.leSearchListView;
+            this.leSearchList.Size = new System.Drawing.Size(551, 20);
+            this.leSearchList.TabIndex = 30;
+            // 
+            // leSearchListView
+            // 
+            this.leSearchListView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gcID,
+            this.gcUnitName,
+            this.gcUnitType,
+            this.gcUnitBankUser,
+            this.gcUnitBankName,
+            this.gcUnitBankNo});
+            this.leSearchListView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.leSearchListView.Name = "leSearchListView";
+            this.leSearchListView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.leSearchListView.OptionsView.ShowGroupPanel = false;
+            // 
+            // gcID
+            // 
+            this.gcID.FieldName = "ID";
+            this.gcID.Name = "gcID";
+            // 
+            // gcUnitName
+            // 
+            this.gcUnitName.Caption = "单位名称";
+            this.gcUnitName.FieldName = "UnitName";
+            this.gcUnitName.Name = "gcUnitName";
+            this.gcUnitName.Visible = true;
+            this.gcUnitName.VisibleIndex = 0;
+            // 
+            // gcUnitType
+            // 
+            this.gcUnitType.Caption = "单位类型";
+            this.gcUnitType.FieldName = "UnitType";
+            this.gcUnitType.Name = "gcUnitType";
+            this.gcUnitType.Visible = true;
+            this.gcUnitType.VisibleIndex = 1;
+            // 
+            // gcUnitBankUser
+            // 
+            this.gcUnitBankUser.Caption = "开户名称";
+            this.gcUnitBankUser.FieldName = "UnitBankUser";
+            this.gcUnitBankUser.Name = "gcUnitBankUser";
+            this.gcUnitBankUser.Visible = true;
+            this.gcUnitBankUser.VisibleIndex = 2;
+            // 
+            // gcUnitBankName
+            // 
+            this.gcUnitBankName.Caption = "开户行名称";
+            this.gcUnitBankName.FieldName = "UnitBankName";
+            this.gcUnitBankName.Name = "gcUnitBankName";
+            this.gcUnitBankName.Visible = true;
+            this.gcUnitBankName.VisibleIndex = 3;
+            // 
+            // gcUnitBankNo
+            // 
+            this.gcUnitBankNo.Caption = "账号";
+            this.gcUnitBankNo.FieldName = "UnitBankNo";
+            this.gcUnitBankNo.Name = "gcUnitBankNo";
+            this.gcUnitBankNo.Visible = true;
+            this.gcUnitBankNo.VisibleIndex = 4;
             // 
             // label17
             // 
@@ -417,16 +482,6 @@ namespace ProjectReporter.Controls
             this.label14.TabIndex = 7;
             this.label14.Text = "常用名：";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label15
-            // 
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Location = new System.Drawing.Point(3, 228);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(113, 38);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "项目负责人：";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label16
             // 
@@ -522,6 +577,39 @@ namespace ProjectReporter.Controls
             this.txtKeyWords.Size = new System.Drawing.Size(273, 21);
             this.txtKeyWords.TabIndex = 15;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel6, 2);
+            this.panel6.Controls.Add(this.cbxPersonList);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(120, 229);
+            this.panel6.Margin = new System.Windows.Forms.Padding(1);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(566, 36);
+            this.panel6.TabIndex = 6;
+            // 
+            // cbxPersonList
+            // 
+            this.cbxPersonList.AlwaysActive = false;
+            this.cbxPersonList.DropDownWidth = 121;
+            this.cbxPersonList.FormattingEnabled = true;
+            this.cbxPersonList.Location = new System.Drawing.Point(9, 10);
+            this.cbxPersonList.Name = "cbxPersonList";
+            this.cbxPersonList.Size = new System.Drawing.Size(549, 22);
+            this.cbxPersonList.TabIndex = 21;
+            this.cbxPersonList.SelectedIndexChanged += new System.EventHandler(this.cbxPersonList_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Location = new System.Drawing.Point(3, 228);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(113, 38);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "项目负责人：";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // plTitle
             // 
             this.plTitle.BackColor = System.Drawing.Color.White;
@@ -575,35 +663,6 @@ namespace ProjectReporter.Controls
             this.plTop.Size = new System.Drawing.Size(1226, 422);
             this.plTop.TabIndex = 4;
             // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(3, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 38);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "联系人：";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel4, 2);
-            this.panel4.Controls.Add(this.txtContactName);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(120, 153);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(566, 36);
-            this.panel4.TabIndex = 10;
-            // 
-            // txtContactName
-            // 
-            this.txtContactName.AlwaysActive = false;
-            this.txtContactName.Location = new System.Drawing.Point(10, 10);
-            this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(545, 21);
-            this.txtContactName.TabIndex = 15;
-            // 
             // NewProjectEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -613,6 +672,8 @@ namespace ProjectReporter.Controls
             this.Size = new System.Drawing.Size(1422, 669);
             this.plMain.ResumeLayout(false);
             this.hSkinTableLayoutPanel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -627,20 +688,19 @@ namespace ProjectReporter.Controls
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbxPersonList)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbxUnitA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbxSecret)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbxPersonList)).EndInit();
             this.plTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
             this.kryptonPanel2.ResumeLayout(false);
             this.plTop.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -665,7 +725,6 @@ namespace ProjectReporter.Controls
         private KryptonTextBox txtFlagName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private KryptonComboBox cbxUnitA;
         private KryptonComboBox cbxSecret;
         private KryptonPanel kryptonPanel2;
         private KryptonLabel kryptonLabel3;
@@ -692,5 +751,13 @@ namespace ProjectReporter.Controls
         private System.Windows.Forms.Panel panel4;
         private KryptonTextBox txtContactName;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.SearchLookUpEdit leSearchList;
+        private DevExpress.XtraGrid.Views.Grid.GridView leSearchListView;
+        private DevExpress.XtraGrid.Columns.GridColumn gcID;
+        private DevExpress.XtraGrid.Columns.GridColumn gcUnitName;
+        private DevExpress.XtraGrid.Columns.GridColumn gcUnitType;
+        private DevExpress.XtraGrid.Columns.GridColumn gcUnitBankUser;
+        private DevExpress.XtraGrid.Columns.GridColumn gcUnitBankName;
+        private DevExpress.XtraGrid.Columns.GridColumn gcUnitBankNo;
     }
 }

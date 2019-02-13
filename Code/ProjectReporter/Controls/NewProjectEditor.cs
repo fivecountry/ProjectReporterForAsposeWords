@@ -9,11 +9,14 @@ using System.Windows.Forms;
 using ProjectReporter.DB.Entitys;
 using ProjectReporter.DB;
 using ProjectReporter.Forms;
+using ProjectReporter.DB.Services;
 
 namespace ProjectReporter.Controls
 {
     public partial class NewProjectEditor : BaseEditor
     {
+        UnitExtService _unitInforService = new UnitExtService();
+
         public NewProjectEditor()
         {
             InitializeComponent();
@@ -46,6 +49,16 @@ namespace ProjectReporter.Controls
                 txtTotalTime.Text = MainForm.Instance.ProjectObj.TotalTime + "";
                 txtTotalMoney.Text = MainForm.Instance.ProjectObj.TotalMoney + "";
                 txtKeyWords.Text = MainForm.Instance.ProjectObj.Keywords;
+
+                Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + MainForm.Instance.ProjectObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
+                if (unitObj != null)
+                {
+                    txtFlagName.Text = unitObj.FlagName;
+                    txtNormalName.Text = unitObj.NormalName;
+                    txtContactName.Text = unitObj.ContactName;
+                    txtAddress.Text = unitObj.Address;
+                    txtTelphone.Text = unitObj.Telephone;
+                }
             }
 
             UpdateUnitList();
@@ -55,7 +68,8 @@ namespace ProjectReporter.Controls
         public override void ClearView()
         {
             cbxPersonList.Items.Clear();
-            cbxUnitA.Items.Clear();
+            leSearchList.Properties.DataSource = null;
+            //cbxUnitA.Items.Clear();
             //cbxUnitB.Items.Clear();
             //cbxUnitC.Items.Clear();
 
@@ -71,19 +85,15 @@ namespace ProjectReporter.Controls
 
         private void UpdateUnitList()
         {
-            cbxUnitA.Items.Clear();
-            List<Unit> list = ConnectionManager.Context.table("Unit").select("*").getList<Unit>(new Unit());
-            foreach (Unit u in list)
-            {
-                cbxUnitA.Items.Add(new ComboboxItem(u.UnitName, u));
+            var unitList = _unitInforService.GetUnitInforList();
 
-                if (MainForm.Instance.ProjectObj != null)
-                {
-                    if (MainForm.Instance.ProjectObj.UnitID == u.ID)
-                    {
-                        cbxUnitA.SelectedIndex = cbxUnitA.Items.Count - 1;
-                    }
-                }
+            leSearchList.Properties.DataSource = unitList;
+            leSearchList.Properties.DisplayMember = "UnitName";
+            leSearchList.Properties.ValueMember = "ID";
+
+            if (MainForm.Instance.ProjectObj != null)
+            {
+                leSearchList.EditValue = MainForm.Instance.ProjectObj.UnitID;
             }
         }
 
@@ -170,9 +180,39 @@ namespace ProjectReporter.Controls
                 return -1;
             }
 
-            if (cbxUnitA.SelectedIndex < 0)
+            if (leSearchList.EditValue == null)
             {
                 MessageBox.Show("对不起，请选择申报单位");
+                return -1;
+            }
+
+            if (string.IsNullOrEmpty(txtContactName.Text))
+            {
+                MessageBox.Show("对不起，请输入联系人");
+                return -1;
+            }
+
+            if (string.IsNullOrEmpty(txtTelphone.Text))
+            {
+                MessageBox.Show("对不起，请输入联系电话");
+                return -1;
+            }
+
+            if (string.IsNullOrEmpty(txtAddress.Text))
+            {
+                MessageBox.Show("对不起，请输入通信地址");
+                return -1;
+            }
+
+            if (string.IsNullOrEmpty(txtFlagName.Text))
+            {
+                MessageBox.Show("对不起，请输入公章名称");
+                return -1;
+            }
+
+            if (string.IsNullOrEmpty(txtNormalName.Text))
+            {
+                MessageBox.Show("对不起，请输入常用名");
                 return -1;
             }
 
@@ -193,7 +233,7 @@ namespace ProjectReporter.Controls
             }
 
             ComboboxItem personSelectedItem = (ComboboxItem)cbxPersonList.Items[cbxPersonList.SelectedIndex];
-            ComboboxItem unitSelectedItem = ((ComboboxItem)cbxUnitA.Items[cbxUnitA.SelectedIndex]);
+            //ComboboxItem unitSelectedItem = ((ComboboxItem)cbxUnitA.Items[cbxUnitA.SelectedIndex]);
             Task projectPerson = new Task();
             projectPerson.ID = Guid.NewGuid().ToString();
             projectPerson.PersonID = ((Person)personSelectedItem.Value).ID;
@@ -210,7 +250,7 @@ namespace ProjectReporter.Controls
             }
 
             MainForm.Instance.ProjectObj.ParentID = string.Empty;
-            MainForm.Instance.ProjectObj.UnitID = ((Unit)unitSelectedItem.Value).ID;
+            MainForm.Instance.ProjectObj.UnitID = leSearchList.EditValue.ToString();
             MainForm.Instance.ProjectObj.Type = "项目";
             MainForm.Instance.ProjectObj.SecretLevel = cbxSecret.SelectedItem != null ? cbxSecret.SelectedItem.ToString() : "公开";
             MainForm.Instance.ProjectObj.Name = txtProjectName.Text;
@@ -218,6 +258,21 @@ namespace ProjectReporter.Controls
             MainForm.Instance.ProjectObj.TotalMoney = decimal.Parse(txtTotalMoney.Text);
             MainForm.Instance.ProjectObj.Keywords = txtKeyWords.Text;
 
+            //创建单位信息
+            ConnectionManager.Context.table("Unit").where("ID='" + MainForm.Instance.ProjectObj.UnitID + "'").delete();
+            Unit newUnit = new Unit();
+            newUnit.ID = MainForm.Instance.ProjectObj.UnitID;
+            newUnit.UnitName = leSearchList.Text;
+            newUnit.FlagName = txtFlagName.Text;
+            newUnit.NormalName = txtNormalName.Text;
+            newUnit.ContactName = txtContactName.Text;
+            newUnit.Telephone = txtTelphone.Text;
+            newUnit.Address = txtAddress.Text;
+            newUnit.UnitType = "一般单位";
+            newUnit.SecretQualification = "无";
+            newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
+
+            //添加/修改工程
             if (string.IsNullOrEmpty(MainForm.Instance.ProjectObj.ID))
             {
                 MainForm.Instance.ProjectObj.ID = projectIDs;
@@ -231,13 +286,13 @@ namespace ProjectReporter.Controls
 
         private void cbxPersonList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxPersonList.SelectedItem != null)
-            {
-                ComboboxItem selected = (ComboboxItem)cbxPersonList.SelectedItem;
-                Person pp = (Person)selected.Value;
-                txtTelphone.Text = pp.Telephone;
-                txtAddress.Text = pp.Address;
-            }
+            //if (cbxPersonList.SelectedItem != null)
+            //{
+            //    ComboboxItem selected = (ComboboxItem)cbxPersonList.SelectedItem;
+            //    Person pp = (Person)selected.Value;
+            //    txtTelphone.Text = pp.Telephone;
+            //    txtAddress.Text = pp.Address;
+            //}
         }
 
         private void cbxUnitA_SelectedIndexChanged(object sender, EventArgs e)
