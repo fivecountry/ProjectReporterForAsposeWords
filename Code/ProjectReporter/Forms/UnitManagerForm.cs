@@ -19,10 +19,10 @@ namespace ProjectReporter.Forms
         {
             InitializeComponent();
 
-            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[7]).Items.Add("无");
-            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[7]).Items.Add("一级");
-            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[7]).Items.Add("二级");
-            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[7]).Items.Add("三级");
+            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Items.Add("无");
+            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Items.Add("一级");
+            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Items.Add("二级");
+            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Items.Add("三级");
         }
 
         private void UnitManagerForm_Load(object sender, EventArgs e)
@@ -33,26 +33,44 @@ namespace ProjectReporter.Forms
         private void UpdateList()
         {
             List<Unit> list = ConnectionManager.Context.table("Unit").select("*").getList<Unit>(new Unit());
-            if (list != null)
+            List<UnitExt> extList = ConnectionManager.Context.table("UnitExt").select("*").getList<UnitExt>(new UnitExt());
+            if (list != null && extList != null)
             {
                 int index = 0;
                 dgvDetail.Rows.Clear();
                 dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = ProjectReporter.Properties.Resources.DELETE_28;
-                foreach (Unit u in list)
-                {
-                    index++;
-                    List<string> cells = new List<string>();
-                    cells.Add(index + "");
-                    cells.Add(u.UnitName);
-                    cells.Add(u.FlagName);
-                    cells.Add(u.NormalName);
-                    cells.Add(u.Address);
-                    cells.Add(u.ContactName);
-                    cells.Add(u.Telephone);
-                    cells.Add(u.SecretQualification);
 
-                    int rowindex = dgvDetail.Rows.Add(cells.ToArray());
-                    dgvDetail.Rows[rowindex].Tag = u;
+                foreach (UnitExt uee in extList)
+                {
+                    IEnumerable<Unit> subs = list.Where(d => d.ID == uee.ID);
+                    if (subs != null)
+                    {
+                        List<Unit> unitLi = new List<Unit>(subs);
+                        if (unitLi != null && unitLi.Count >= 1)
+                        {
+                            Unit u = unitLi[0];
+                            index++;
+
+                            List<string> cells = new List<string>();
+                            cells.Add(index + "");                //序号
+                            cells.Add(u.UnitName);                //单位名称
+
+                            cells.Add(uee.UnitType);              //单位类型
+                            cells.Add(uee.UnitBankUser);          //开户名称
+                            cells.Add(uee.UnitBankName);          //开户行
+                            cells.Add(uee.UnitBankNo);            //银行帐号
+
+                            cells.Add(u.FlagName);                //公章名称
+                            cells.Add(u.NormalName);              //单位常用名
+                            cells.Add(u.Address);                 //通信地址
+                            cells.Add(u.ContactName);             //联系人
+                            cells.Add(u.Telephone);               //联系电话
+                            cells.Add(u.SecretQualification);     //保密资质
+
+                            int rowindex = dgvDetail.Rows.Add(cells.ToArray());
+                            dgvDetail.Rows[rowindex].Tag = u;
+                        }
+                    }
                 }
             }
         }
