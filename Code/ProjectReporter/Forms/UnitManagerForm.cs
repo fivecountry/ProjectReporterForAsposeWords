@@ -38,7 +38,7 @@ namespace ProjectReporter.Forms
             {
                 int index = 0;
                 dgvDetail.Rows.Clear();
-                dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = ProjectReporter.Properties.Resources.DELETE_28;
+                //dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = ProjectReporter.Properties.Resources.DELETE_28;
 
                 foreach (UnitExt uee in extList)
                 {
@@ -51,7 +51,7 @@ namespace ProjectReporter.Forms
                             Unit u = unitLi[0];
                             index++;
 
-                            List<string> cells = new List<string>();
+                            List<object> cells = new List<object>();
                             cells.Add(index + "");                //序号
                             cells.Add(u.UnitName);                //单位名称
 
@@ -65,6 +65,9 @@ namespace ProjectReporter.Forms
                             cells.Add(u.Address);                 //通信地址
                             cells.Add(u.ContactName);             //联系人
                             cells.Add(u.Telephone);               //联系电话
+
+                            cells.Add(uee.IsUserAdded == 1 ? true : false);  //用户自定义
+
                             cells.Add(u.SecretQualification);     //保密资质
 
                             int rowindex = dgvDetail.Rows.Add(cells.ToArray());
@@ -222,6 +225,7 @@ namespace ProjectReporter.Forms
                                 try
                                 {
                                     ConnectionManager.Context.table("Unit").where("ID='" + uu.ID + "'").delete();
+                                    ConnectionManager.Context.table("UnitExt").where("ID='" + uu.ID + "'").delete();
                                 }
                                 catch (Exception ex) { }
 
@@ -257,7 +261,10 @@ namespace ProjectReporter.Forms
         private void btnNewUnit_Click(object sender, EventArgs e)
         {
             NewUnitForm nuf = new NewUnitForm();
-            nuf.ShowDialog();
+            if (nuf.ShowDialog() == DialogResult.OK)
+            {
+                UpdateList();
+            }
         }
     }
 }

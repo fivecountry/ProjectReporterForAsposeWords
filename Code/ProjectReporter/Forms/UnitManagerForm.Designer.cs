@@ -38,7 +38,6 @@
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDanWeiMingCheng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDanWeiLeiXing = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +49,10 @@
             this.colTongXinDiZhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLianXiRen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLianXiDianHua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUserAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUserAdded = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BaoMiZiZhi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -68,7 +68,7 @@
             this.plTitle.Location = new System.Drawing.Point(20, 20);
             this.plTitle.Margin = new System.Windows.Forms.Padding(0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(1246, 30);
+            this.plTitle.Size = new System.Drawing.Size(1330, 30);
             this.plTitle.TabIndex = 0;
             // 
             // label1
@@ -78,7 +78,7 @@
             this.label1.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1246, 30);
+            this.label1.Size = new System.Drawing.Size(1330, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "请在此处编辑单位信息";
             // 
@@ -97,12 +97,12 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1240, 34);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1324, 34);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // btnNewUnit
             // 
-            this.btnNewUnit.Location = new System.Drawing.Point(1043, 3);
+            this.btnNewUnit.Location = new System.Drawing.Point(1127, 3);
             this.btnNewUnit.Name = "btnNewUnit";
             this.btnNewUnit.Size = new System.Drawing.Size(90, 25);
             this.btnNewUnit.TabIndex = 1;
@@ -111,7 +111,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(943, 3);
+            this.btnSave.Location = new System.Drawing.Point(1027, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 25);
             this.btnSave.TabIndex = 0;
@@ -120,7 +120,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(1143, 3);
+            this.btnNext.Location = new System.Drawing.Point(1227, 3);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(90, 25);
             this.btnNext.TabIndex = 2;
@@ -145,7 +145,7 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(1286, 689);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(1370, 689);
             this.tableLayoutPanel15.TabIndex = 6;
             // 
             // plContent
@@ -155,11 +155,12 @@
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(23, 53);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1240, 573);
+            this.plContent.Size = new System.Drawing.Size(1324, 573);
             this.plContent.TabIndex = 7;
             // 
             // dgvDetail
             // 
+            this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
             this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -185,7 +186,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 28;
-            this.dgvDetail.Size = new System.Drawing.Size(1240, 573);
+            this.dgvDetail.Size = new System.Drawing.Size(1324, 573);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -194,15 +195,6 @@
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvDetail_DataError);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "删除";
-            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 45;
             // 
             // selpersonid
             // 
@@ -275,10 +267,13 @@
             // 
             // colUserAdded
             // 
-            this.colUserAdded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUserAdded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colUserAdded.HeaderText = "用户自定义";
             this.colUserAdded.Name = "colUserAdded";
-            this.colUserAdded.Visible = false;
+            this.colUserAdded.ReadOnly = true;
+            this.colUserAdded.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colUserAdded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colUserAdded.Width = 117;
             // 
             // BaoMiZiZhi
             // 
@@ -288,7 +283,7 @@
             this.BaoMiZiZhi.Name = "BaoMiZiZhi";
             this.BaoMiZiZhi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.BaoMiZiZhi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.BaoMiZiZhi.Width = 99;
+            this.BaoMiZiZhi.Width = 97;
             // 
             // delete
             // 
@@ -299,12 +294,21 @@
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Width = 45;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "删除";
+            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 45;
+            // 
             // UnitManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1286, 689);
+            this.ClientSize = new System.Drawing.Size(1370, 689);
             this.Controls.Add(this.tableLayoutPanel15);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
@@ -345,7 +349,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTongXinDiZhi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLianXiRen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLianXiDianHua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUserAdded;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colUserAdded;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn BaoMiZiZhi;
         private System.Windows.Forms.DataGridViewImageColumn delete;
     }
