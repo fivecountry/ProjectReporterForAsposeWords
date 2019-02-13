@@ -50,6 +50,22 @@ Source: "C:\Users\wcss\Desktop\Reporters\ProjectReporter.exe"; DestDir: "{app}";
 Source: "C:\Users\wcss\Desktop\Reporters\ProjectReporter.exe.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\static.db"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\System.Data.SQLite.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\es\*"; DestDir: "{app}\es"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wcss\Desktop\Reporters\zh-cn\*"; DestDir: "{app}\zh-cn"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.Data.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.Office.v15.2.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.Pdf.v15.2.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.Pdf.v15.2.Drawing.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.Printing.v15.2.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.RichEdit.v15.2.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.Sparkline.v15.2.Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.Utils.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraBars.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraEditors.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraGrid.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraLayout.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraPrinting.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraTreeList.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; 注意: 不要在任何共享系统文件上使用“Flags: ignoreversion”
 
 [Icons]
