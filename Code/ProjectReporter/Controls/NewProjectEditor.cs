@@ -269,7 +269,7 @@ namespace ProjectReporter.Controls
             newUnit.Telephone = txtTelphone.Text;
             newUnit.Address = txtAddress.Text;
             newUnit.UnitType = "一般单位";
-            newUnit.SecretQualification = "无";
+            newUnit.SecretQualification = "未知";
             newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
 
             //添加/修改工程
