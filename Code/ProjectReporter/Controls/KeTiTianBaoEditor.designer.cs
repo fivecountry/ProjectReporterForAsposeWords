@@ -42,7 +42,7 @@
             this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colFuZeRen = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
-            this.colChengDanDanWei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewLinkColumn();
+            this.colChengDanDanWei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colNeiRong = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colZongTiKeTi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -293,7 +293,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colKeTiMingCheng;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colMiJi;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colFuZeRen;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewLinkColumn colChengDanDanWei;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colChengDanDanWei;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colNeiRong;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colZongTiKeTi;
         private System.Windows.Forms.DataGridViewImageColumn delete;

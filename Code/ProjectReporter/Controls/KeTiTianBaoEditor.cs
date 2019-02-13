@@ -162,6 +162,17 @@ namespace ProjectReporter.Controls
                         }
                     }
                 }
+                else if (e.ColumnIndex == 4)
+                {
+                    UnitSelectForm usf = new UnitSelectForm(string.Empty);
+                    if (usf.ShowDialog() == DialogResult.OK)
+                    {
+                        if (usf.SelectedUnit != null)
+                        {
+                            dgvDetail.Rows[e.RowIndex].Cells[4].Value = usf.SelectedUnit.UnitName;
+                        }
+                    }
+                }
             }
         }
 

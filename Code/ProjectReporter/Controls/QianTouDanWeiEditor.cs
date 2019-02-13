@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using ProjectReporter.DB;
 using ProjectReporter.DB.Entitys;
+using ProjectReporter.Forms;
 
 namespace ProjectReporter.Controls
 {
@@ -132,13 +133,13 @@ namespace ProjectReporter.Controls
             List<Unit> unitList = ConnectionManager.Context.table("Unit").select("*").getList<Unit>(new Unit());
             if (unitList != null)
             {
-                ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Clear();
-                UnitDict.Clear();
-                foreach (Unit u in unitList)
-                {
-                    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Add(u.UnitName);
-                    UnitDict.Add(u.UnitName, u);
-                }
+                //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Clear();
+                //UnitDict.Clear();
+                //foreach (Unit u in unitList)
+                //{
+                //    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Add(u.UnitName);
+                //    UnitDict.Add(u.UnitName, u);
+                //}
             }
         }
 
@@ -159,6 +160,17 @@ namespace ProjectReporter.Controls
                             UpdateQianTouDanWeiList();
                         }
                     }
+                    else if (e.ColumnIndex == 1)
+                    {
+                        UnitSelectForm usf = new UnitSelectForm(wlObj.UnitID);
+                        if (usf.ShowDialog() == DialogResult.OK)
+                        {
+                            if (usf.SelectedUnit != null)
+                            {
+                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnit.UnitName;
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -173,6 +185,17 @@ namespace ProjectReporter.Controls
                             catch (Exception ex)
                             {
                                 UpdateQianTouDanWeiList();
+                            }
+                        }
+                    }
+                    else if (e.ColumnIndex == 1)
+                    {
+                        UnitSelectForm usf = new UnitSelectForm(string.Empty);
+                        if (usf.ShowDialog() == DialogResult.OK)
+                        {
+                            if (usf.SelectedUnit != null)
+                            {
+                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnit.UnitName;
                             }
                         }
                     }
