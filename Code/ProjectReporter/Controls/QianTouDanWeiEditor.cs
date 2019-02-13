@@ -134,12 +134,12 @@ namespace ProjectReporter.Controls
             if (unitList != null)
             {
                 //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Clear();
-                //UnitDict.Clear();
-                //foreach (Unit u in unitList)
-                //{
-                //    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Add(u.UnitName);
-                //    UnitDict.Add(u.UnitName, u);
-                //}
+                UnitDict.Clear();
+                foreach (Unit u in unitList)
+                {
+                    //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Add(u.UnitName);
+                    UnitDict.Add(u.UnitName, u);
+                }
             }
         }
 
