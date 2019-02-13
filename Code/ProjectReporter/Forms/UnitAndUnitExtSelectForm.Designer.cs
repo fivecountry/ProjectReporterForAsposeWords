@@ -1,6 +1,6 @@
 ﻿namespace ProjectReporter.Forms
 {
-    partial class UnitSelectForm
+    partial class UnitAndUnitExtSelectForm
     {
         /// <summary>
         /// Required designer variable.

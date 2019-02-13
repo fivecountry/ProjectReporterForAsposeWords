@@ -11,11 +11,11 @@ using ProjectReporter.DB.Entitys;
 
 namespace ProjectReporter.Forms
 {
-    public partial class UnitSelectForm : Form
+    public partial class UnitAndUnitExtSelectForm : Form
     {
         public Unit SelectedUnit { get; private set; }
 
-        public UnitSelectForm(string unitID)
+        public UnitAndUnitExtSelectForm(string unitID)
         {
             InitializeComponent();
 

@@ -190,6 +190,7 @@
             this.colDanWeiMingCheng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colDanWeiMingCheng.HeaderText = "单位名称";
             this.colDanWeiMingCheng.Name = "colDanWeiMingCheng";
+            this.colDanWeiMingCheng.ReadOnly = true;
             this.colDanWeiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colDanWeiMingCheng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colDanWeiMingCheng.Width = 101;
@@ -199,21 +200,18 @@
             this.colTongXinDiZhi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colTongXinDiZhi.HeaderText = "通信地址";
             this.colTongXinDiZhi.Name = "colTongXinDiZhi";
-            this.colTongXinDiZhi.ReadOnly = true;
             // 
             // colLianXiRen
             // 
             this.colLianXiRen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colLianXiRen.HeaderText = "联系人";
             this.colLianXiRen.Name = "colLianXiRen";
-            this.colLianXiRen.ReadOnly = true;
             // 
             // colLianXiDianHua
             // 
             this.colLianXiDianHua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colLianXiDianHua.HeaderText = "联系电话";
             this.colLianXiDianHua.Name = "colLianXiDianHua";
-            this.colLianXiDianHua.ReadOnly = true;
             // 
             // delete
             // 

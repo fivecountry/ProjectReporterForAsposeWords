@@ -138,7 +138,7 @@ namespace ProjectReporter.Controls
                     }
                     else if (e.ColumnIndex == 4)
                     {
-                        UnitSelectForm usf = new UnitSelectForm(kett.UnitID);
+                        UnitAndUnitExtSelectForm usf = new UnitAndUnitExtSelectForm(kett.UnitID);
                         if (usf.ShowDialog() == DialogResult.OK)
                         {
                             if (usf.SelectedUnit != null)
@@ -164,7 +164,7 @@ namespace ProjectReporter.Controls
                 }
                 else if (e.ColumnIndex == 4)
                 {
-                    UnitSelectForm usf = new UnitSelectForm(string.Empty);
+                    UnitAndUnitExtSelectForm usf = new UnitAndUnitExtSelectForm(string.Empty);
                     if (usf.ShowDialog() == DialogResult.OK)
                     {
                         if (usf.SelectedUnit != null)
