@@ -194,7 +194,7 @@ namespace ProjectReporter.Forms
 
         private string GetUnitID(string unitName)
         {
-            if (string.IsNullOrEmpty(unitName) || UnitList== null)
+            if (string.IsNullOrEmpty(unitName) || UnitList == null)
             {
                 return string.Empty;
             }
@@ -224,7 +224,7 @@ namespace ProjectReporter.Forms
                 MessageBox.Show("对不起,请选择性别!");
                 return true;
             }
-            
+
             if (dgvRow.Cells[2].Value == null)
             {
                 MessageBox.Show("对不起,请输入姓名!");
@@ -339,6 +339,22 @@ namespace ProjectReporter.Forms
         private void PersonManagerForm_Activated(object sender, EventArgs e)
         {
             UpdateListColumnComboboxList();
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            NewPersonForm npf = new NewPersonForm(null);
+            npf.ShowDialog();
+        }
+
+        private void btnEditOld_Click(object sender, EventArgs e)
+        {
+            if (dgvDetail.SelectedRows.Count >= 1)
+            {
+                Person pp = (Person)dgvDetail.SelectedRows[0].Tag;
+                NewPersonForm npf = new NewPersonForm(pp);
+                npf.ShowDialog();
+            }
         }
     }
 

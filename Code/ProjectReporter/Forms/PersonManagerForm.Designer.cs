@@ -36,6 +36,8 @@
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnAddNew = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnEditOld = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,14 +104,18 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Controls.Add(this.btnLast, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAddNew, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnEditOld, 5, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 632);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -120,7 +126,7 @@
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(1043, 3);
+            this.btnLast.Location = new System.Drawing.Point(843, 3);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(90, 25);
             this.btnLast.TabIndex = 1;
@@ -129,21 +135,40 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(943, 3);
+            this.btnSave.Location = new System.Drawing.Point(743, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 25);
             this.btnSave.TabIndex = 0;
             this.btnSave.Values.Text = "保存";
+            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(1143, 3);
+            this.btnNext.Location = new System.Drawing.Point(943, 3);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(90, 25);
             this.btnNext.TabIndex = 2;
             this.btnNext.Values.Text = "下一步";
             this.btnNext.Visible = false;
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Location = new System.Drawing.Point(1043, 3);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(90, 25);
+            this.btnAddNew.TabIndex = 3;
+            this.btnAddNew.Values.Text = "添加";
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
+            // btnEditOld
+            // 
+            this.btnEditOld.Location = new System.Drawing.Point(1143, 3);
+            this.btnEditOld.Name = "btnEditOld";
+            this.btnEditOld.Size = new System.Drawing.Size(90, 25);
+            this.btnEditOld.TabIndex = 4;
+            this.btnEditOld.Values.Text = "编辑";
+            this.btnEditOld.Click += new System.EventHandler(this.btnEditOld_Click);
             // 
             // plContent
             // 
@@ -157,6 +182,7 @@
             // 
             // dgvDetail
             // 
+            this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
             this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -176,6 +202,7 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -204,6 +231,7 @@
             this.colsuoshudanwei.DropDownWidth = 121;
             this.colsuoshudanwei.HeaderText = "所属单位";
             this.colsuoshudanwei.Name = "colsuoshudanwei";
+            this.colsuoshudanwei.ReadOnly = true;
             this.colsuoshudanwei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colsuoshudanwei.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colsuoshudanwei.Width = 105;
@@ -213,24 +241,28 @@
             this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colName.HeaderText = "姓名";
             this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
             // 
             // colIDCard
             // 
             this.colIDCard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colIDCard.HeaderText = "身份证号码";
             this.colIDCard.Name = "colIDCard";
+            this.colIDCard.ReadOnly = true;
             // 
             // colZhiWu
             // 
             this.colZhiWu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colZhiWu.HeaderText = "职务职称";
             this.colZhiWu.Name = "colZhiWu";
+            this.colZhiWu.ReadOnly = true;
             // 
             // colCongShiZhuanYe
             // 
             this.colCongShiZhuanYe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colCongShiZhuanYe.HeaderText = "从事专业";
             this.colCongShiZhuanYe.Name = "colCongShiZhuanYe";
+            this.colCongShiZhuanYe.ReadOnly = true;
             // 
             // colSex
             // 
@@ -238,6 +270,7 @@
             this.colSex.DropDownWidth = 121;
             this.colSex.HeaderText = "性别";
             this.colSex.Name = "colSex";
+            this.colSex.ReadOnly = true;
             this.colSex.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colSex.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colSex.Width = 105;
@@ -248,6 +281,7 @@
             this.colshengri.Checked = false;
             this.colshengri.HeaderText = "出生年月";
             this.colshengri.Name = "colshengri";
+            this.colshengri.ReadOnly = true;
             this.colshengri.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colshengri.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colshengri.Width = 105;
@@ -257,18 +291,21 @@
             this.colzuoji.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colzuoji.HeaderText = "座机";
             this.colzuoji.Name = "colzuoji";
+            this.colzuoji.ReadOnly = true;
             // 
             // colshouji
             // 
             this.colshouji.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colshouji.HeaderText = "手机";
             this.colshouji.Name = "colshouji";
+            this.colshouji.ReadOnly = true;
             // 
             // coltongxindizhi
             // 
             this.coltongxindizhi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.coltongxindizhi.HeaderText = "通信地址";
             this.coltongxindizhi.Name = "coltongxindizhi";
+            this.coltongxindizhi.ReadOnly = true;
             // 
             // delete
             // 
@@ -325,5 +362,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colshouji;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltongxindizhi;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAddNew;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnEditOld;
     }
 }
