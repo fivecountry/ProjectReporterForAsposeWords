@@ -15,11 +15,13 @@ namespace ProjectReporter.Forms
     {
         public Unit SelectedUnit { get; private set; }
 
-        public UnitSelectForm()
+        public UnitSelectForm(string unitID)
         {
             InitializeComponent();
 
             UpdateUnitList();
+
+            lueUnitList.EditValue = unitID;
         }
 
         private void UpdateUnitList()

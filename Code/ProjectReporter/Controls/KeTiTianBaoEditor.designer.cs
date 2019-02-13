@@ -42,7 +42,7 @@
             this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colFuZeRen = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
-            this.colChengDanDanWei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
+            this.colChengDanDanWei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewLinkColumn();
             this.colNeiRong = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colZongTiKeTi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -141,7 +141,7 @@
             this.label1.Size = new System.Drawing.Size(689, 80);
             this.label1.TabIndex = 0;
             this.label1.Text = "围绕如何全面、有效实现项目目标，进行课题分解，明确每个课题的密级，并简述研究内容；项目必须设置一个总体课题，由牵头申报单位承担，课题负责人由项目负责人担任；牵头申" +
-                "报单位承担的课题数不超过课题总数的三分之二";
+    "报单位承担的课题数不超过课题总数的三分之二";
             // 
             // plContent
             // 
@@ -222,12 +222,10 @@
             // colChengDanDanWei
             // 
             this.colChengDanDanWei.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colChengDanDanWei.DropDownWidth = 121;
             this.colChengDanDanWei.HeaderText = "承担单位";
             this.colChengDanDanWei.Name = "colChengDanDanWei";
             this.colChengDanDanWei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colChengDanDanWei.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colChengDanDanWei.Width = 52;
             // 
             // colNeiRong
             // 
@@ -295,7 +293,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colKeTiMingCheng;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colMiJi;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colFuZeRen;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colChengDanDanWei;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewLinkColumn colChengDanDanWei;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colNeiRong;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colZongTiKeTi;
         private System.Windows.Forms.DataGridViewImageColumn delete;

@@ -35,11 +35,11 @@ namespace ProjectReporter.Controls
             UnitList = ConnectionManager.Context.table("Unit").select("*").getList<Unit>(new Unit());
             if (UnitList != null)
             {
-                ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[4]).Items.Clear();
-                foreach (Unit u in UnitList)
-                {
-                    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[4]).Items.Add(u.UnitName);
-                }
+                //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[4]).Items.Clear();
+                //foreach (Unit u in UnitList)
+                //{
+                //    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[4]).Items.Add(u.UnitName);
+                //}
             }
         }
 
@@ -135,6 +135,17 @@ namespace ProjectReporter.Controls
                             MainForm.Instance.RefreshEditor();
                         }
                         #endregion
+                    }
+                    else if (e.ColumnIndex == 4)
+                    {
+                        UnitSelectForm usf = new UnitSelectForm(kett.UnitID);
+                        if (usf.ShowDialog() == DialogResult.OK)
+                        {
+                            if (usf.SelectedUnit != null)
+                            {
+                                dgvDetail.Rows[e.RowIndex].Cells[4].Value = usf.SelectedUnit.UnitName;
+                            }
+                        }
                     }
                 }
                 else if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
