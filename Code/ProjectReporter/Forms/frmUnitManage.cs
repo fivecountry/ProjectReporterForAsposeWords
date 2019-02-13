@@ -128,6 +128,10 @@ namespace ProjectReporter.Forms
                 if (dgvRow.Tag != null)
                 {
                     unitInfor = (UnitExt)dgvRow.Tag;
+                    if (unitInfor.IsUserAdded == 0)
+                    {
+                        continue;
+                    }
                 }
                 else
                 {
@@ -165,18 +169,25 @@ namespace ProjectReporter.Forms
 
         private void leSearchList_EditValueChanged(object sender, EventArgs e)
         {
-            List<string> idList = new List<string>();
-            int[] handleRows = leSearchListView.GetSelectedRows();
-            foreach (int rowHandle in handleRows)
+            if (leSearchList.EditValue != null)
             {
-                object obj = leSearchListView.GetRowCellValue(rowHandle, "ID");
-                if (obj != null)
+                List<string> idList = new List<string>();
+                int[] handleRows = leSearchListView.GetSelectedRows();
+                foreach (int rowHandle in handleRows)
                 {
-                    idList.Add(obj.ToString());
+                    object obj = leSearchListView.GetRowCellValue(rowHandle, "ID");
+                    if (obj != null)
+                    {
+                        idList.Add(obj.ToString());
+                    }
                 }
-            }
 
-            UpdateUnitList(idList.ToArray());
+                UpdateUnitList(idList.ToArray());
+            }
+            else
+            {
+                UpdateUnitList();
+            }
         }
     }
 }
