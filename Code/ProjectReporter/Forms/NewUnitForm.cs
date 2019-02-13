@@ -32,7 +32,7 @@ namespace ProjectReporter.Forms
                     MessageBox.Show("请输入单位名称！");
                     return;
                 }
-                if (string.IsNullOrEmpty(txtUnitType.Text))
+                if (string.IsNullOrEmpty(cbxUnitType.Text))
                 {
                     MessageBox.Show("请输入单位类型！");
                     return;
@@ -60,17 +60,26 @@ namespace ProjectReporter.Forms
                     return;
                 }
 
-                UnitExt unitInfo = new UnitExt();
-                unitInfo.UnitName = txtUnitName.Text;
-                unitInfo.UnitType = txtUnitType.Text;
-                unitInfo.UnitBankUser = txtUnitBankUser.Text;
-                unitInfo.UnitBankName = txtUnitBankName.Text;
-                unitInfo.UnitBankNo = txtUnitBankNo.Text;
-                unitInfo.IsUserAdded = 1;
+                UnitExt unitExt = new UnitExt();
+                unitExt.UnitName = txtUnitName.Text;
+                unitExt.UnitType = cbxUnitType.Text;
+                unitExt.UnitBankUser = txtUnitBankUser.Text;
+                unitExt.UnitBankName = txtUnitBankName.Text;
+                unitExt.UnitBankNo = txtUnitBankNo.Text;
+                unitExt.IsUserAdded = 1;
+                unitExt.ID = unitExt.UnitBankNo;
+                unitExt.copyTo(ConnectionManager.Context.table("UnitExt")).insert();
 
-                unitInfo.ID = unitInfo.UnitBankNo;
-
-                unitInfo.copyTo(ConnectionManager.Context.table("UnitExt")).insert();
+                Unit unitInf = new Unit();
+                unitInf.ID = unitExt.ID;
+                unitInf.UnitName = txtUnitName.Text;
+                unitInf.FlagName = txtFlagName.Text;
+                unitInf.NormalName = txtNormalName.Text;
+                unitInf.Address = txtAddress.Text;
+                unitInf.ContactName = txtContactName.Text;
+                unitInf.Telephone = txtTelephone.Text;
+                unitInf.SecretQualification = cbxSecretQualification.Text;
+                unitInf.copyTo(ConnectionManager.Context.table("Unit")).insert();                 
 
                 DialogResult = DialogResult.OK;
             }

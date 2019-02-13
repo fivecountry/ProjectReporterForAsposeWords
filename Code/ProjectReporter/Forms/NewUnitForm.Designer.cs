@@ -32,7 +32,7 @@
             this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plContent = new DevExpress.XtraEditors.PanelControl();
-            this.txtUnitType = new System.Windows.Forms.ComboBox();
+            this.cbxUnitType = new System.Windows.Forms.ComboBox();
             this.txtUnitBankNo = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,6 +44,18 @@
             this.txtUnitName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtFlagName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNormalName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtContactName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtTelephone = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbxSecretQualification = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.plButtons)).BeginInit();
             this.plButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).BeginInit();
@@ -55,7 +67,7 @@
             this.plButtons.Controls.Add(this.btnOK);
             this.plButtons.Controls.Add(this.btnCancel);
             this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plButtons.Location = new System.Drawing.Point(2, 209);
+            this.plButtons.Location = new System.Drawing.Point(2, 394);
             this.plButtons.Name = "plButtons";
             this.plButtons.Size = new System.Drawing.Size(393, 36);
             this.plButtons.TabIndex = 7;
@@ -86,8 +98,20 @@
             // 
             // plContent
             // 
-            this.plContent.Controls.Add(this.txtUnitType);
+            this.plContent.Controls.Add(this.cbxSecretQualification);
+            this.plContent.Controls.Add(this.txtTelephone);
+            this.plContent.Controls.Add(this.txtContactName);
+            this.plContent.Controls.Add(this.txtAddress);
+            this.plContent.Controls.Add(this.txtNormalName);
+            this.plContent.Controls.Add(this.txtFlagName);
+            this.plContent.Controls.Add(this.cbxUnitType);
+            this.plContent.Controls.Add(this.label12);
+            this.plContent.Controls.Add(this.label11);
+            this.plContent.Controls.Add(this.label10);
+            this.plContent.Controls.Add(this.label9);
+            this.plContent.Controls.Add(this.label8);
             this.plContent.Controls.Add(this.txtUnitBankNo);
+            this.plContent.Controls.Add(this.label7);
             this.plContent.Controls.Add(this.txtPassword);
             this.plContent.Controls.Add(this.label5);
             this.plContent.Controls.Add(this.txtUnitBankName);
@@ -99,22 +123,23 @@
             this.plContent.Controls.Add(this.label6);
             this.plContent.Controls.Add(this.label1);
             this.plContent.Controls.Add(this.plButtons);
+            this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(0, 0);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(397, 247);
+            this.plContent.Size = new System.Drawing.Size(397, 432);
             this.plContent.TabIndex = 8;
             // 
-            // txtUnitType
+            // cbxUnitType
             // 
-            this.txtUnitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtUnitType.FormattingEnabled = true;
-            this.txtUnitType.Items.AddRange(new object[] {
+            this.cbxUnitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxUnitType.FormattingEnabled = true;
+            this.cbxUnitType.Items.AddRange(new object[] {
             "航天科技",
             "航空科技"});
-            this.txtUnitType.Location = new System.Drawing.Point(79, 87);
-            this.txtUnitType.Name = "txtUnitType";
-            this.txtUnitType.Size = new System.Drawing.Size(300, 22);
-            this.txtUnitType.TabIndex = 10;
+            this.cbxUnitType.Location = new System.Drawing.Point(79, 87);
+            this.cbxUnitType.Name = "cbxUnitType";
+            this.cbxUnitType.Size = new System.Drawing.Size(300, 22);
+            this.cbxUnitType.TabIndex = 10;
             // 
             // txtUnitBankNo
             // 
@@ -206,11 +231,109 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "单位名称：";
             // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(7, 202);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 14);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "  公章名称：";
+            // 
+            // txtFlagName
+            // 
+            this.txtFlagName.Location = new System.Drawing.Point(79, 199);
+            this.txtFlagName.Name = "txtFlagName";
+            this.txtFlagName.Size = new System.Drawing.Size(300, 22);
+            this.txtFlagName.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(7, 230);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 14);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "  常用名称：";
+            // 
+            // txtNormalName
+            // 
+            this.txtNormalName.Location = new System.Drawing.Point(79, 227);
+            this.txtNormalName.Name = "txtNormalName";
+            this.txtNormalName.Size = new System.Drawing.Size(300, 22);
+            this.txtNormalName.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(7, 258);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 14);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "  通信地址：";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(79, 255);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(300, 22);
+            this.txtAddress.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(7, 286);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 14);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "     联系人：";
+            // 
+            // txtContactName
+            // 
+            this.txtContactName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtContactName.Location = new System.Drawing.Point(79, 283);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(300, 22);
+            this.txtContactName.TabIndex = 9;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(7, 314);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 14);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "  联系电话：";
+            // 
+            // txtTelephone
+            // 
+            this.txtTelephone.Location = new System.Drawing.Point(79, 311);
+            this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.Size = new System.Drawing.Size(300, 22);
+            this.txtTelephone.TabIndex = 9;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(7, 342);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(77, 14);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "  保密资质：";
+            // 
+            // cbxSecretQualification
+            // 
+            this.cbxSecretQualification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSecretQualification.FormattingEnabled = true;
+            this.cbxSecretQualification.Items.AddRange(new object[] {
+            "无",
+            "一级",
+            "二级",
+            "三级"});
+            this.cbxSecretQualification.Location = new System.Drawing.Point(79, 339);
+            this.cbxSecretQualification.Name = "cbxSecretQualification";
+            this.cbxSecretQualification.Size = new System.Drawing.Size(300, 22);
+            this.cbxSecretQualification.TabIndex = 11;
+            // 
             // NewUnitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 245);
+            this.ClientSize = new System.Drawing.Size(397, 432);
             this.Controls.Add(this.plContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -243,7 +366,19 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.ComboBox txtUnitType;
+        private System.Windows.Forms.ComboBox cbxUnitType;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTelephone;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtContactName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtNormalName;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtFlagName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbxSecretQualification;
     }
 }
