@@ -509,7 +509,7 @@ namespace ProjectReporter.Forms
                             table.Rows.Add(ref defaultValue);
                         }
                         //合并单元格
-                        if (rowCountt >= 3)
+                        if (rowCountt >= 2)
                         {
                             for (int k = 0; k < ketiList.Count; k++)
                             {
