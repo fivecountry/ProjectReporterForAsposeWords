@@ -32,7 +32,7 @@ namespace ProjectReporter.Controls
 
         private void UpdateUnitList()
         {
-            UnitList = ConnectionManager.Context.table("Unit").select("*").getList<Unit>(new Unit());
+            UnitList = ConnectionManager.Context.table("UnitExt").select("*").getList<UnitExt>(new UnitExt());
             if (UnitList != null)
             {
                 //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[4]).Items.Clear();
@@ -206,7 +206,7 @@ namespace ProjectReporter.Controls
                 Project proj = null;
                 foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
                 {
-                    Unit unitObj = null;
+                    UnitExt unitObj = null;
                     Person personObj = null;
 
                     if (dgvRow.Tag == null)
@@ -255,7 +255,7 @@ namespace ProjectReporter.Controls
                     //查找承担单位
                     if (UnitList != null)
                     {
-                        foreach (Unit u in UnitList)
+                        foreach (UnitExt u in UnitList)
                         {
                             if (u.UnitName != null && u.UnitName.Equals(dgvRow.Cells[4].Value))
                             {
@@ -285,6 +285,9 @@ namespace ProjectReporter.Controls
                     proj.UnitID = unitObj.ID;
                     proj.Type2 = dgvRow.Cells[6].Value != null ? (((bool)dgvRow.Cells[6].Value) == true ? "总体课题" : "非总体课题") : "非总体课题";
 
+                    //创建课题单位
+                    BuildUnitRecord(unitObj.ID, unitObj.UnitName, "未知...");
+                    
                     //添加或更新课题数据
                     if (string.IsNullOrEmpty(proj.ID))
                     {
@@ -360,7 +363,7 @@ namespace ProjectReporter.Controls
 
         public List<Person> PersonList { get; set; }
 
-        public List<Unit> UnitList { get; set; }
+        public List<UnitExt> UnitList { get; set; }
 
         public List<Project> KeTiList { get; set; }
 
@@ -407,6 +410,29 @@ namespace ProjectReporter.Controls
                 }
             }
             return result;
+        }
+
+        public void BuildUnitRecord(string unitId, string unitName,string unitAddress)
+        {
+            //创建单位信息
+            long recordCount = ConnectionManager.Context.table("Unit").where("ID='" + unitId + "'").select("count(*)").getValue<long>(0);
+
+            //ConnectionManager.Context.table("Unit").where("ID='" + unitId + "'").delete();
+
+            if (recordCount <= 0)
+            {
+                Unit newUnit = new Unit();
+                newUnit.ID = unitId;
+                newUnit.UnitName = unitName;
+                newUnit.FlagName = unitName;
+                newUnit.NormalName = unitName;
+                newUnit.ContactName = "未知";
+                newUnit.Telephone = "未知";
+                newUnit.Address = unitAddress;
+                newUnit.UnitType = "课题单位";
+                newUnit.SecretQualification = "未知";
+                newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
+            }
         }
     }
 }
