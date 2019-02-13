@@ -17,6 +17,7 @@ namespace ProjectReporter.DB.Entitys
             //设置值
             query.set("ID", ID);
             query.set("UnitName", UnitName);
+            query.set("UnitType", UnitType);
             query.set("FlagName", FlagName);
             query.set("NormalName", NormalName);
             query.set("Address", Address);
@@ -30,6 +31,7 @@ namespace ProjectReporter.DB.Entitys
         #region Model
         private string _id;
         private string _unitname;
+        private string _unitType;
         private string _flagname;
         private string _normalname;
         private string _address;
@@ -100,12 +102,25 @@ namespace ProjectReporter.DB.Entitys
             set { _secretqualification = value; }
             get { return _secretqualification; }
         }
+        public string UnitType
+        {
+            get
+            {
+                return _unitType;
+            }
+
+            set
+            {
+                _unitType = value;
+            }
+        }
         #endregion Model
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
             ID = source("ID").value<string>(Guid.NewGuid().ToString());
             UnitName = source("UnitName").value<string>(string.Empty);
+            UnitType = source("UnitType").value<string>(string.Empty);
             FlagName = source("FlagName").value<string>(string.Empty);
             NormalName = source("NormalName").value<string>(string.Empty);
             Address = source("Address").value<string>(string.Empty);

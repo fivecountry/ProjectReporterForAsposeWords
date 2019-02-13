@@ -242,12 +242,12 @@ namespace ProjectReporter.Controls
 
         private void cbxUnitA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxUnitA.SelectedIndex >= 0)
-            {
-                Unit uu = (Unit)((ComboboxItem)cbxUnitA.Items[cbxUnitA.SelectedIndex]).Value;
-                txtFlagName.Text = uu.FlagName;
-                txtNormalName.Text = uu.NormalName;
-            }
+            //if (cbxUnitA.SelectedIndex >= 0)
+            //{
+            //    Unit uu = (Unit)((ComboboxItem)cbxUnitA.Items[cbxUnitA.SelectedIndex]).Value;
+            //    txtFlagName.Text = uu.FlagName;
+            //    txtNormalName.Text = uu.NormalName;
+            //}
         }
     }
 }

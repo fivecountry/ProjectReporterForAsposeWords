@@ -71,6 +71,9 @@ namespace ProjectReporter.Controls
             this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.plTop = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtContactName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.plMain.SuspendLayout();
             this.hSkinTableLayoutPanel1.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -91,6 +94,7 @@ namespace ProjectReporter.Controls
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
             this.plTop.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReport
@@ -132,43 +136,42 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.87562F));
             this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.92537F));
             this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.87562F));
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel11, 4, 6);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.panel4, 1, 4);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label3, 0, 4);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.panel11, 4, 7);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel12, 4, 4);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel10, 1, 0);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel9, 1, 6);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.panel9, 1, 7);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel5, 1, 2);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel7, 1, 5);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel8, 1, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.panel6, 1, 4);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label17, 0, 6);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label17, 0, 7);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label11, 0, 0);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label12, 0, 1);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label13, 0, 2);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label14, 0, 3);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label15, 0, 4);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label16, 0, 5);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label18, 3, 0);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label19, 3, 4);
-            this.hSkinTableLayoutPanel1.Controls.Add(this.label20, 3, 6);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label20, 3, 7);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel1, 4, 0);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label2, 3, 1);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel3, 4, 1);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.panel6, 1, 6);
+            this.hSkinTableLayoutPanel1.Controls.Add(this.label15, 0, 6);
             this.hSkinTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hSkinTableLayoutPanel1.Location = new System.Drawing.Point(80, 0);
             this.hSkinTableLayoutPanel1.Name = "hSkinTableLayoutPanel1";
-            this.hSkinTableLayoutPanel1.RowCount = 7;
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.hSkinTableLayoutPanel1.RowCount = 8;
+            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49952F));
+            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49953F));
+            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49953F));
+            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49953F));
+            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49953F));
+            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49953F));
+            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50328F));
+            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49953F));
             this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.hSkinTableLayoutPanel1.Size = new System.Drawing.Size(1142, 308);
             this.hSkinTableLayoutPanel1.TabIndex = 1;
@@ -178,10 +181,10 @@ namespace ProjectReporter.Controls
             this.panel11.BackColor = System.Drawing.Color.White;
             this.panel11.Controls.Add(this.txtTotalMoney);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(858, 264);
+            this.panel11.Location = new System.Drawing.Point(858, 267);
             this.panel11.Margin = new System.Windows.Forms.Padding(1);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(283, 43);
+            this.panel11.Size = new System.Drawing.Size(283, 40);
             this.panel11.TabIndex = 7;
             // 
             // txtTotalMoney
@@ -197,10 +200,10 @@ namespace ProjectReporter.Controls
             this.panel12.BackColor = System.Drawing.Color.White;
             this.panel12.Controls.Add(this.txtTelphone);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(858, 176);
+            this.panel12.Location = new System.Drawing.Point(858, 153);
             this.panel12.Margin = new System.Windows.Forms.Padding(1);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(283, 42);
+            this.panel12.Size = new System.Drawing.Size(283, 36);
             this.panel12.TabIndex = 8;
             // 
             // txtTelphone
@@ -222,7 +225,7 @@ namespace ProjectReporter.Controls
             this.panel10.Location = new System.Drawing.Point(120, 1);
             this.panel10.Margin = new System.Windows.Forms.Padding(1);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(566, 41);
+            this.panel10.Size = new System.Drawing.Size(566, 36);
             this.panel10.TabIndex = 6;
             // 
             // txtProjectName
@@ -239,10 +242,10 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel9, 2);
             this.panel9.Controls.Add(this.txtTotalTime);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(120, 264);
+            this.panel9.Location = new System.Drawing.Point(120, 267);
             this.panel9.Margin = new System.Windows.Forms.Padding(1);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(566, 43);
+            this.panel9.Size = new System.Drawing.Size(566, 40);
             this.panel9.TabIndex = 9;
             // 
             // txtTotalTime
@@ -259,10 +262,10 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel5, 4);
             this.panel5.Controls.Add(this.txtFlagName);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(120, 88);
+            this.panel5.Location = new System.Drawing.Point(120, 77);
             this.panel5.Margin = new System.Windows.Forms.Padding(1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1021, 42);
+            this.panel5.Size = new System.Drawing.Size(1021, 36);
             this.panel5.TabIndex = 5;
             // 
             // txtFlagName
@@ -281,10 +284,10 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel7, 4);
             this.panel7.Controls.Add(this.txtAddress);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(120, 220);
+            this.panel7.Location = new System.Drawing.Point(120, 191);
             this.panel7.Margin = new System.Windows.Forms.Padding(1);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1021, 42);
+            this.panel7.Size = new System.Drawing.Size(1021, 36);
             this.panel7.TabIndex = 7;
             // 
             // txtAddress
@@ -303,10 +306,10 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel8, 4);
             this.panel8.Controls.Add(this.txtNormalName);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(120, 132);
+            this.panel8.Location = new System.Drawing.Point(120, 115);
             this.panel8.Margin = new System.Windows.Forms.Padding(1);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1021, 42);
+            this.panel8.Size = new System.Drawing.Size(1021, 36);
             this.panel8.TabIndex = 8;
             // 
             // txtNormalName
@@ -325,10 +328,10 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel6, 2);
             this.panel6.Controls.Add(this.cbxPersonList);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(120, 176);
+            this.panel6.Location = new System.Drawing.Point(120, 229);
             this.panel6.Margin = new System.Windows.Forms.Padding(1);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(566, 42);
+            this.panel6.Size = new System.Drawing.Size(566, 36);
             this.panel6.TabIndex = 6;
             // 
             // cbxPersonList
@@ -348,10 +351,10 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel2, 2);
             this.panel2.Controls.Add(this.cbxUnitA);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(120, 44);
+            this.panel2.Location = new System.Drawing.Point(120, 39);
             this.panel2.Margin = new System.Windows.Forms.Padding(1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(566, 42);
+            this.panel2.Size = new System.Drawing.Size(566, 36);
             this.panel2.TabIndex = 18;
             // 
             // cbxUnitA
@@ -368,9 +371,9 @@ namespace ProjectReporter.Controls
             // label17
             // 
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Location = new System.Drawing.Point(3, 263);
+            this.label17.Location = new System.Drawing.Point(3, 266);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(113, 45);
+            this.label17.Size = new System.Drawing.Size(113, 42);
             this.label17.TabIndex = 10;
             this.label17.Text = "研究周期(年)：";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -380,7 +383,7 @@ namespace ProjectReporter.Controls
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(113, 43);
+            this.label11.Size = new System.Drawing.Size(113, 38);
             this.label11.TabIndex = 1;
             this.label11.Text = "项目名称：";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -388,9 +391,9 @@ namespace ProjectReporter.Controls
             // label12
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Location = new System.Drawing.Point(3, 43);
+            this.label12.Location = new System.Drawing.Point(3, 38);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 44);
+            this.label12.Size = new System.Drawing.Size(113, 38);
             this.label12.TabIndex = 4;
             this.label12.Text = "申报单位：";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -398,9 +401,9 @@ namespace ProjectReporter.Controls
             // label13
             // 
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(3, 87);
+            this.label13.Location = new System.Drawing.Point(3, 76);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 44);
+            this.label13.Size = new System.Drawing.Size(113, 38);
             this.label13.TabIndex = 5;
             this.label13.Text = "公章名称：";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -408,9 +411,9 @@ namespace ProjectReporter.Controls
             // label14
             // 
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(3, 131);
+            this.label14.Location = new System.Drawing.Point(3, 114);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 44);
+            this.label14.Size = new System.Drawing.Size(113, 38);
             this.label14.TabIndex = 7;
             this.label14.Text = "常用名：";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -418,9 +421,9 @@ namespace ProjectReporter.Controls
             // label15
             // 
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Location = new System.Drawing.Point(3, 175);
+            this.label15.Location = new System.Drawing.Point(3, 228);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(113, 44);
+            this.label15.Size = new System.Drawing.Size(113, 38);
             this.label15.TabIndex = 8;
             this.label15.Text = "项目负责人：";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -428,9 +431,9 @@ namespace ProjectReporter.Controls
             // label16
             // 
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Location = new System.Drawing.Point(3, 219);
+            this.label16.Location = new System.Drawing.Point(3, 190);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(113, 44);
+            this.label16.Size = new System.Drawing.Size(113, 38);
             this.label16.TabIndex = 9;
             this.label16.Text = "通信地址：";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -440,7 +443,7 @@ namespace ProjectReporter.Controls
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Location = new System.Drawing.Point(690, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(164, 43);
+            this.label18.Size = new System.Drawing.Size(164, 38);
             this.label18.TabIndex = 11;
             this.label18.Text = "密级：";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -448,9 +451,9 @@ namespace ProjectReporter.Controls
             // label19
             // 
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label19.Location = new System.Drawing.Point(690, 175);
+            this.label19.Location = new System.Drawing.Point(690, 152);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(164, 44);
+            this.label19.Size = new System.Drawing.Size(164, 38);
             this.label19.TabIndex = 12;
             this.label19.Text = "联系电话：";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -458,9 +461,9 @@ namespace ProjectReporter.Controls
             // label20
             // 
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Location = new System.Drawing.Point(690, 263);
+            this.label20.Location = new System.Drawing.Point(690, 266);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(164, 45);
+            this.label20.Size = new System.Drawing.Size(164, 42);
             this.label20.TabIndex = 13;
             this.label20.Text = "研究经费(万)：";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -472,7 +475,7 @@ namespace ProjectReporter.Controls
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(860, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 37);
+            this.panel1.Size = new System.Drawing.Size(279, 32);
             this.panel1.TabIndex = 17;
             // 
             // cbxSecret
@@ -493,9 +496,9 @@ namespace ProjectReporter.Controls
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(690, 43);
+            this.label2.Location = new System.Drawing.Point(690, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 44);
+            this.label2.Size = new System.Drawing.Size(164, 38);
             this.label2.TabIndex = 19;
             this.label2.Text = "关键字：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -505,10 +508,10 @@ namespace ProjectReporter.Controls
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.txtKeyWords);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(858, 44);
+            this.panel3.Location = new System.Drawing.Point(858, 39);
             this.panel3.Margin = new System.Windows.Forms.Padding(1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(283, 42);
+            this.panel3.Size = new System.Drawing.Size(283, 36);
             this.panel3.TabIndex = 20;
             // 
             // txtKeyWords
@@ -572,6 +575,35 @@ namespace ProjectReporter.Controls
             this.plTop.Size = new System.Drawing.Size(1226, 422);
             this.plTop.TabIndex = 4;
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(3, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 38);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "联系人：";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel4, 2);
+            this.panel4.Controls.Add(this.txtContactName);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(120, 153);
+            this.panel4.Margin = new System.Windows.Forms.Padding(1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(566, 36);
+            this.panel4.TabIndex = 10;
+            // 
+            // txtContactName
+            // 
+            this.txtContactName.AlwaysActive = false;
+            this.txtContactName.Location = new System.Drawing.Point(10, 10);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(545, 21);
+            this.txtContactName.TabIndex = 15;
+            // 
             // NewProjectEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -607,6 +639,8 @@ namespace ProjectReporter.Controls
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
             this.kryptonPanel2.ResumeLayout(false);
             this.plTop.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -655,5 +689,8 @@ namespace ProjectReporter.Controls
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private KryptonTextBox txtKeyWords;
+        private System.Windows.Forms.Panel panel4;
+        private KryptonTextBox txtContactName;
+        private System.Windows.Forms.Label label3;
     }
 }
