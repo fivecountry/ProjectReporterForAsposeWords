@@ -57,7 +57,7 @@
             this.lueUnitList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueUnitList.Properties.View = this.searchLookUpEdit1View;
-            this.lueUnitList.Size = new System.Drawing.Size(684, 22);
+            this.lueUnitList.Size = new System.Drawing.Size(432, 22);
             this.lueUnitList.TabIndex = 13;
             // 
             // searchLookUpEdit1View
@@ -187,18 +187,18 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(257, 40);
+            this.btnOK.Location = new System.Drawing.Point(128, 40);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(90, 25);
+            this.btnOK.Size = new System.Drawing.Size(65, 25);
             this.btnOK.TabIndex = 14;
             this.btnOK.Values.Text = "确定";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(353, 40);
+            this.btnCancel.Location = new System.Drawing.Point(224, 40);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 25);
+            this.btnCancel.Size = new System.Drawing.Size(65, 25);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Values.Text = "取消";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -207,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 71);
+            this.ClientSize = new System.Drawing.Size(460, 71);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lueUnitList);

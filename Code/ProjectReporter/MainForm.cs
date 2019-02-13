@@ -567,7 +567,7 @@ namespace ProjectReporter
 
             if (UnitForm == null || UnitForm.IsDisposed)
             {
-                UnitForm = new UnitManagerForm();
+                UnitForm = new frmUnitManage();
             }
             UnitForm.WindowState = FormWindowState.Normal;
             UnitForm.Show();
@@ -576,7 +576,7 @@ namespace ProjectReporter
 
         public PersonManagerForm PersonForm { get; set; }
 
-        public UnitManagerForm UnitForm { get; set; }
+        public frmUnitManage UnitForm { get; set; }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -192,11 +192,24 @@
     <Compile Include="DB\Entitys\Unit.cs" />
     <Compile Include="DB\Entitys\UnitExt.cs" />
     <Compile Include="DB\Entitys\WhiteList.cs" />
+    <Compile Include="DB\Services\UnitExtService.cs" />
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ClearForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddUnit.designer.cs">
+      <DependentUpon>frmAddUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUnitManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUnitManage.designer.cs">
+      <DependentUpon>frmUnitManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\KeTiXiangXiForm.cs">
       <SubType>Form</SubType>
@@ -252,10 +265,10 @@
     <Compile Include="Forms\NewPersonForm.Designer.cs">
       <DependentUpon>NewPersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewUnitForm.cs">
+    <Compile Include="Forms\Old\NewUnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewUnitForm.Designer.cs">
+    <Compile Include="Forms\Old\NewUnitForm.Designer.cs">
       <DependentUpon>NewUnitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PersonManagerForm.cs">
@@ -264,10 +277,10 @@
     <Compile Include="Forms\PersonManagerForm.Designer.cs">
       <DependentUpon>PersonManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UnitManagerForm.cs">
+    <Compile Include="Forms\Old\UnitManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UnitManagerForm.Designer.cs">
+    <Compile Include="Forms\Old\UnitManagerForm.Designer.cs">
       <DependentUpon>UnitManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UnitSelectForm.cs">
@@ -340,6 +353,12 @@
     <EmbeddedResource Include="Forms\ClearForm.resx">
       <DependentUpon>ClearForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddUnit.resx">
+      <DependentUpon>frmAddUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUnitManage.resx">
+      <DependentUpon>frmUnitManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KeTiXiangXiForm.resx">
       <DependentUpon>KeTiXiangXiForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,13 +386,13 @@
     <EmbeddedResource Include="Forms\NewPersonForm.resx">
       <DependentUpon>NewPersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewUnitForm.resx">
+    <EmbeddedResource Include="Forms\Old\NewUnitForm.resx">
       <DependentUpon>NewUnitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonManagerForm.resx">
       <DependentUpon>PersonManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UnitManagerForm.resx">
+    <EmbeddedResource Include="Forms\Old\UnitManagerForm.resx">
       <DependentUpon>UnitManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnitSelectForm.resx">
