@@ -53,11 +53,13 @@
             // 
             this.lueUnitList.Location = new System.Drawing.Point(12, 12);
             this.lueUnitList.Name = "lueUnitList";
-            this.lueUnitList.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.lueUnitList.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.lueUnitList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueUnitList.Properties.ShowClearButton = false;
+            this.lueUnitList.Properties.ShowFooter = false;
             this.lueUnitList.Properties.View = this.searchLookUpEdit1View;
-            this.lueUnitList.Size = new System.Drawing.Size(432, 22);
+            this.lueUnitList.Size = new System.Drawing.Size(432, 18);
             this.lueUnitList.TabIndex = 13;
             // 
             // searchLookUpEdit1View
@@ -203,7 +205,7 @@
             this.btnCancel.Values.Text = "取消";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // UnitSelectForm
+            // UnitAndUnitExtSelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +217,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "UnitSelectForm";
+            this.Name = "UnitAndUnitExtSelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "单位选择";
             ((System.ComponentModel.ISupportInitialize)(this.lueUnitList.Properties)).EndInit();

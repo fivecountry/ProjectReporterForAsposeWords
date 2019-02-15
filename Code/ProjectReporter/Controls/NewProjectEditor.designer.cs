@@ -370,6 +370,8 @@ namespace ProjectReporter.Controls
             this.leSearchList.Name = "leSearchList";
             this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.leSearchList.Properties.ShowClearButton = false;
+            this.leSearchList.Properties.ShowFooter = false;
             this.leSearchList.Properties.View = this.leSearchListView;
             this.leSearchList.Size = new System.Drawing.Size(551, 20);
             this.leSearchList.TabIndex = 30;
@@ -592,6 +594,7 @@ namespace ProjectReporter.Controls
             // cbxPersonList
             // 
             this.cbxPersonList.AlwaysActive = false;
+            this.cbxPersonList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPersonList.DropDownWidth = 121;
             this.cbxPersonList.FormattingEnabled = true;
             this.cbxPersonList.Location = new System.Drawing.Point(9, 10);

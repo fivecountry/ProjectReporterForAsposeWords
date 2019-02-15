@@ -49,6 +49,8 @@
             this.leSearchList.Name = "leSearchList";
             this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.leSearchList.Properties.ShowClearButton = false;
+            this.leSearchList.Properties.ShowFooter = false;
             this.leSearchList.Properties.View = this.leSearchListView;
             this.leSearchList.Size = new System.Drawing.Size(436, 20);
             this.leSearchList.TabIndex = 31;
