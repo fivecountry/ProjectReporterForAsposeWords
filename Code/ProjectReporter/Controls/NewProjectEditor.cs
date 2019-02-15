@@ -20,24 +20,24 @@ namespace ProjectReporter.Controls
         public NewProjectEditor()
         {
             InitializeComponent();
-            toCenter();
+            //toCenter();
             cbxSecret.SelectedIndex = 0;
         }
 
         public void toCenter()
         {
-            if (plMain != null)
-            {
-                plMain.Left = (Width - plMain.Width) / 2;
-                plMain.Top = (Height - plMain.Height) / 2;
-            }
+            //if (plMainddd != null)
+            //{
+            //    plMainddd.Left = (Width - plMainddd.Width) / 2;
+            //    plMainddd.Top = (Height - plMainddd.Height) / 2;
+            //}
         }
 
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
 
-            toCenter();
+            //toCenter();
         }
 
         public void LoadProject()
@@ -121,7 +121,7 @@ namespace ProjectReporter.Controls
             }
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
             if (MainForm.Instance != null)
             {
