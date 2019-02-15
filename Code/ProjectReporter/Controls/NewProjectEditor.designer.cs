@@ -205,7 +205,7 @@ namespace ProjectReporter.Controls
             this.txtContactName.AlwaysActive = false;
             this.txtContactName.Location = new System.Drawing.Point(10, 10);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(500, 29);
+            this.txtContactName.Size = new System.Drawing.Size(496, 29);
             this.txtContactName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtContactName.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtContactName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -238,9 +238,9 @@ namespace ProjectReporter.Controls
             // txtTotalMoney
             // 
             this.txtTotalMoney.AlwaysActive = false;
-            this.txtTotalMoney.Location = new System.Drawing.Point(5, 14);
+            this.txtTotalMoney.Location = new System.Drawing.Point(10, 14);
             this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.Size = new System.Drawing.Size(273, 29);
+            this.txtTotalMoney.Size = new System.Drawing.Size(268, 29);
             this.txtTotalMoney.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTotalMoney.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtTotalMoney.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -262,9 +262,9 @@ namespace ProjectReporter.Controls
             // txtTelphone
             // 
             this.txtTelphone.AlwaysActive = false;
-            this.txtTelphone.Location = new System.Drawing.Point(4, 11);
+            this.txtTelphone.Location = new System.Drawing.Point(10, 11);
             this.txtTelphone.Name = "txtTelphone";
-            this.txtTelphone.Size = new System.Drawing.Size(274, 29);
+            this.txtTelphone.Size = new System.Drawing.Size(268, 29);
             this.txtTelphone.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTelphone.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtTelphone.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -287,9 +287,9 @@ namespace ProjectReporter.Controls
             // txtProjectName
             // 
             this.txtProjectName.AlwaysActive = false;
-            this.txtProjectName.Location = new System.Drawing.Point(3, 11);
+            this.txtProjectName.Location = new System.Drawing.Point(10, 11);
             this.txtProjectName.Name = "txtProjectName";
-            this.txtProjectName.Size = new System.Drawing.Size(503, 29);
+            this.txtProjectName.Size = new System.Drawing.Size(496, 29);
             this.txtProjectName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtProjectName.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtProjectName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -314,7 +314,7 @@ namespace ProjectReporter.Controls
             this.txtTotalTime.AlwaysActive = false;
             this.txtTotalTime.Location = new System.Drawing.Point(10, 14);
             this.txtTotalTime.Name = "txtTotalTime";
-            this.txtTotalTime.Size = new System.Drawing.Size(500, 29);
+            this.txtTotalTime.Size = new System.Drawing.Size(496, 29);
             this.txtTotalTime.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTotalTime.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtTotalTime.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -337,9 +337,9 @@ namespace ProjectReporter.Controls
             // txtFlagName
             // 
             this.txtFlagName.AlwaysActive = false;
-            this.txtFlagName.Location = new System.Drawing.Point(8, 11);
+            this.txtFlagName.Location = new System.Drawing.Point(10, 11);
             this.txtFlagName.Name = "txtFlagName";
-            this.txtFlagName.Size = new System.Drawing.Size(967, 29);
+            this.txtFlagName.Size = new System.Drawing.Size(965, 29);
             this.txtFlagName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtFlagName.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtFlagName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -362,9 +362,9 @@ namespace ProjectReporter.Controls
             // txtAddress
             // 
             this.txtAddress.AlwaysActive = false;
-            this.txtAddress.Location = new System.Drawing.Point(9, 12);
+            this.txtAddress.Location = new System.Drawing.Point(10, 12);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(966, 29);
+            this.txtAddress.Size = new System.Drawing.Size(965, 29);
             this.txtAddress.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtAddress.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtAddress.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -387,9 +387,9 @@ namespace ProjectReporter.Controls
             // txtNormalName
             // 
             this.txtNormalName.AlwaysActive = false;
-            this.txtNormalName.Location = new System.Drawing.Point(8, 11);
+            this.txtNormalName.Location = new System.Drawing.Point(10, 11);
             this.txtNormalName.Name = "txtNormalName";
-            this.txtNormalName.Size = new System.Drawing.Size(967, 29);
+            this.txtNormalName.Size = new System.Drawing.Size(965, 29);
             this.txtNormalName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtNormalName.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtNormalName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -412,7 +412,7 @@ namespace ProjectReporter.Controls
             // leSearchList
             // 
             this.leSearchList.EditValue = "";
-            this.leSearchList.Location = new System.Drawing.Point(2, 10);
+            this.leSearchList.Location = new System.Drawing.Point(10, 10);
             this.leSearchList.Name = "leSearchList";
             this.leSearchList.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 15F);
             this.leSearchList.Properties.Appearance.Options.UseFont = true;
@@ -422,7 +422,7 @@ namespace ProjectReporter.Controls
             this.leSearchList.Properties.ShowClearButton = false;
             this.leSearchList.Properties.ShowFooter = false;
             this.leSearchList.Properties.View = this.leSearchListView;
-            this.leSearchList.Size = new System.Drawing.Size(503, 34);
+            this.leSearchList.Size = new System.Drawing.Size(496, 34);
             this.leSearchList.TabIndex = 30;
             // 
             // leSearchListView
@@ -604,7 +604,7 @@ namespace ProjectReporter.Controls
             "秘密",
             "机密",
             "绝密"});
-            this.cbxSecret.Location = new System.Drawing.Point(5, 8);
+            this.cbxSecret.Location = new System.Drawing.Point(8, 8);
             this.cbxSecret.Name = "cbxSecret";
             this.cbxSecret.Size = new System.Drawing.Size(121, 33);
             this.cbxSecret.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("微软雅黑", 15F);
@@ -639,9 +639,9 @@ namespace ProjectReporter.Controls
             // txtKeyWords
             // 
             this.txtKeyWords.AlwaysActive = false;
-            this.txtKeyWords.Location = new System.Drawing.Point(5, 11);
+            this.txtKeyWords.Location = new System.Drawing.Point(10, 11);
             this.txtKeyWords.Name = "txtKeyWords";
-            this.txtKeyWords.Size = new System.Drawing.Size(273, 29);
+            this.txtKeyWords.Size = new System.Drawing.Size(268, 29);
             this.txtKeyWords.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtKeyWords.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtKeyWords.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -667,9 +667,9 @@ namespace ProjectReporter.Controls
             this.cbxPersonList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPersonList.DropDownWidth = 121;
             this.cbxPersonList.FormattingEnabled = true;
-            this.cbxPersonList.Location = new System.Drawing.Point(9, 10);
+            this.cbxPersonList.Location = new System.Drawing.Point(10, 10);
             this.cbxPersonList.Name = "cbxPersonList";
-            this.cbxPersonList.Size = new System.Drawing.Size(501, 33);
+            this.cbxPersonList.Size = new System.Drawing.Size(496, 33);
             this.cbxPersonList.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("微软雅黑", 15F);
             this.cbxPersonList.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(0);
             this.cbxPersonList.StateCommon.Item.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F);
