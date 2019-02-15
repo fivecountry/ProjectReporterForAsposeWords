@@ -112,7 +112,7 @@ namespace ProjectReporter.Controls
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(90, 40);
             this.btnReport.TabIndex = 2;
-            this.btnReport.Values.Text = "申报";
+            this.btnReport.Values.Text = "下一页";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnSave

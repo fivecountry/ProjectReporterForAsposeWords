@@ -503,6 +503,16 @@ namespace ProjectReporter.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap tianbao {
+            get {
+                object obj = ResourceManager.GetObject("tianbao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap ToWord {
             get {
                 object obj = ResourceManager.GetObject("ToWord", resourceCulture);
@@ -536,6 +546,16 @@ namespace ProjectReporter.Properties {
         internal static System.Drawing.Bitmap UpLoad {
             get {
                 object obj = ResourceManager.GetObject("UpLoad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap xiangmuxinxi {
+            get {
+                object obj = ResourceManager.GetObject("xiangmuxinxi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

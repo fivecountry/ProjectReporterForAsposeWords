@@ -420,28 +420,32 @@ namespace ProjectReporter
             switch (index)
             {
                 case 0:
-                    return ProjectReporter.Properties.Resources.II_1;
+                    return ProjectReporter.Properties.Resources.tianbao;
                 case 1:
-                    return ProjectReporter.Properties.Resources.II_2;
+                    return ProjectReporter.Properties.Resources.xiangmuxinxi;
                 case 2:
-                    return ProjectReporter.Properties.Resources.II_3;
+                    return ProjectReporter.Properties.Resources.II_1;
                 case 3:
-                    return ProjectReporter.Properties.Resources.II_4;
+                    return ProjectReporter.Properties.Resources.II_2;
                 case 4:
-                    return ProjectReporter.Properties.Resources.II_5;
+                    return ProjectReporter.Properties.Resources.II_3;
                 case 5:
-                    return ProjectReporter.Properties.Resources.II_6;
+                    return ProjectReporter.Properties.Resources.II_4;
                 case 6:
-                    return ProjectReporter.Properties.Resources.II_7;
+                    return ProjectReporter.Properties.Resources.II_5;
                 case 7:
-                    return ProjectReporter.Properties.Resources.II_8;
+                    return ProjectReporter.Properties.Resources.II_6;
                 case 8:
-                    return ProjectReporter.Properties.Resources.II_9;
+                    return ProjectReporter.Properties.Resources.II_7;
                 case 9:
-                    return ProjectReporter.Properties.Resources.II_10;
+                    return ProjectReporter.Properties.Resources.II_8;
                 case 10:
-                    return ProjectReporter.Properties.Resources.II_11;
+                    return ProjectReporter.Properties.Resources.II_9;
                 case 11:
+                    return ProjectReporter.Properties.Resources.II_10;
+                case 12:
+                    return ProjectReporter.Properties.Resources.II_11;
+                case 13:
                     return ProjectReporter.Properties.Resources.II_12;
 
                 default:
@@ -458,13 +462,27 @@ namespace ProjectReporter
             RefreshEditor();
 
             //显示编辑控件
-            fnpDefault.Top = 0;
-            edithost2.Top = 0;
-            fnpDefault.Dock = DockStyle.None;
-            edithost2.Dock = DockStyle.None;
-            fnpDefault.Visible = false;
-            edithost2.Visible = true;
-            edithost2.Dock = DockStyle.Fill;
+            //fnpDefault.Top = 0;
+            //edithost2.Top = 0;
+            //fnpDefault.Dock = DockStyle.None;
+            //edithost2.Dock = DockStyle.None;
+            //fnpDefault.Visible = false;
+            //edithost2.Visible = true;
+            //edithost2.Dock = DockStyle.Fill;
+
+            SwitchToReportPage(2);
+        }
+
+        /// <summary>
+        /// 切换到指定标签页
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        private void SwitchToReportPage(int pageIndex)
+        {
+            if (edithost2.Pages.Count > pageIndex)
+            {
+                edithost2.SelectedIndex = pageIndex;
+            }
         }
 
         /// <summary>
@@ -485,13 +503,16 @@ namespace ProjectReporter
 
         public void SwitchToCreateEditor()
         {
-            fnpDefault.Top = 0;
-            edithost2.Top = 0;
-            fnpDefault.Dock = DockStyle.None;
-            edithost2.Dock = DockStyle.None;
-            fnpDefault.Dock = DockStyle.Fill;
-            edithost2.Visible = false;
-            fnpDefault.Visible = true;
+            //显示项目信息编辑控件
+            //fnpDefault.Top = 0;
+            //edithost2.Top = 0;
+            //fnpDefault.Dock = DockStyle.None;
+            //edithost2.Dock = DockStyle.None;
+            //fnpDefault.Dock = DockStyle.Fill;
+            //edithost2.Visible = false;
+            //fnpDefault.Visible = true;
+
+            SwitchToReportPage(1);
 
             fnpDefault.LoadProject();
         }

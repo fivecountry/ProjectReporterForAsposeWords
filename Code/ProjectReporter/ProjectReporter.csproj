@@ -511,6 +511,8 @@
     <Content Include="Helper\readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\tianbao.png" />
+    <None Include="Resources\xiangmuxinxi.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
