@@ -632,5 +632,16 @@ namespace ProjectReporter
             }
             catch (Exception ex) { }
         }
+
+        private void edithost2_SelectedPageChanged(object sender, EventArgs e)
+        {
+            if (ProjectObj == null)
+            {
+                if (edithost2.SelectedIndex >= 2)
+                {
+                    SwitchToReportPage(1);
+                }
+            }
+        }
     }
 }
