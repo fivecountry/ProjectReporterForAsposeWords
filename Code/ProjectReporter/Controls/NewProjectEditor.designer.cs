@@ -31,7 +31,7 @@ namespace ProjectReporter.Controls
 		{
             this.btnReport = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.plMain = new System.Windows.Forms.Panel();
+            this.plContent = new System.Windows.Forms.Panel();
             this.hSkinTableLayoutPanel1 = new ProjectReporter.Controls.HSkinTableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtContactName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -76,12 +76,13 @@ namespace ProjectReporter.Controls
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbxPersonList = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.plTitle = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.kryptonPanel2 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.plTop = new System.Windows.Forms.Panel();
-            this.plMain.SuspendLayout();
+            this.plLeftTitle = new System.Windows.Forms.Panel();
+            this.lblLeftTitle = new System.Windows.Forms.Label();
+            this.plTop = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.lblTopTitle = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.plMain = new System.Windows.Forms.Panel();
+            this.plBottom = new System.Windows.Forms.Panel();
+            this.plContent.SuspendLayout();
             this.hSkinTableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -99,51 +100,55 @@ namespace ProjectReporter.Controls
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbxPersonList)).BeginInit();
-            this.plTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
-            this.kryptonPanel2.SuspendLayout();
+            this.plLeftTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plTop)).BeginInit();
             this.plTop.SuspendLayout();
+            this.plMain.SuspendLayout();
+            this.plBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(1132, 376);
+            this.btnReport.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnReport.Location = new System.Drawing.Point(1136, 0);
             this.btnReport.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(90, 40);
+            this.btnReport.Size = new System.Drawing.Size(90, 44);
             this.btnReport.TabIndex = 2;
             this.btnReport.Values.Text = "下一页";
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(1036, 376);
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSave.Location = new System.Drawing.Point(1046, 0);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(90, 40);
+            this.btnSave.Size = new System.Drawing.Size(90, 44);
             this.btnSave.TabIndex = 2;
             this.btnSave.Values.Text = "保存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // plMain
+            // plContent
             // 
-            this.plMain.BackColor = System.Drawing.Color.Transparent;
-            this.plMain.Controls.Add(this.hSkinTableLayoutPanel1);
-            this.plMain.Controls.Add(this.plTitle);
-            this.plMain.Location = new System.Drawing.Point(1, 57);
-            this.plMain.Name = "plMain";
-            this.plMain.Size = new System.Drawing.Size(1222, 308);
-            this.plMain.TabIndex = 2;
+            this.plContent.BackColor = System.Drawing.Color.Transparent;
+            this.plContent.Controls.Add(this.hSkinTableLayoutPanel1);
+            this.plContent.Controls.Add(this.plLeftTitle);
+            this.plContent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.plContent.Location = new System.Drawing.Point(0, 100);
+            this.plContent.Name = "plContent";
+            this.plContent.Size = new System.Drawing.Size(1226, 436);
+            this.plContent.TabIndex = 2;
             // 
             // hSkinTableLayoutPanel1
             // 
             this.hSkinTableLayoutPanel1.BorderColor = System.Drawing.Color.Black;
             this.hSkinTableLayoutPanel1.ColumnCount = 5;
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.44776F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.87562F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.87562F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.92537F));
-            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.87562F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.04542F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.06813F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.95633F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.97379F));
+            this.hSkinTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.95633F));
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel4, 1, 4);
             this.hSkinTableLayoutPanel1.Controls.Add(this.label3, 0, 4);
             this.hSkinTableLayoutPanel1.Controls.Add(this.panel11, 4, 7);
@@ -180,8 +185,7 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49953F));
             this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50328F));
             this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49953F));
-            this.hSkinTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.hSkinTableLayoutPanel1.Size = new System.Drawing.Size(1142, 308);
+            this.hSkinTableLayoutPanel1.Size = new System.Drawing.Size(1146, 436);
             this.hSkinTableLayoutPanel1.TabIndex = 1;
             // 
             // panel4
@@ -190,10 +194,10 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel4, 2);
             this.panel4.Controls.Add(this.txtContactName);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(120, 153);
+            this.panel4.Location = new System.Drawing.Point(161, 217);
             this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(566, 36);
+            this.panel4.Size = new System.Drawing.Size(524, 52);
             this.panel4.TabIndex = 10;
             // 
             // txtContactName
@@ -201,14 +205,21 @@ namespace ProjectReporter.Controls
             this.txtContactName.AlwaysActive = false;
             this.txtContactName.Location = new System.Drawing.Point(10, 10);
             this.txtContactName.Name = "txtContactName";
-            this.txtContactName.Size = new System.Drawing.Size(545, 21);
+            this.txtContactName.Size = new System.Drawing.Size(500, 29);
+            this.txtContactName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtContactName.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtContactName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtContactName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtContactName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtContactName.TabIndex = 15;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(3, 152);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(3, 216);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 38);
+            this.label3.Size = new System.Drawing.Size(154, 54);
             this.label3.TabIndex = 9;
             this.label3.Text = "联系人：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -218,18 +229,23 @@ namespace ProjectReporter.Controls
             this.panel11.BackColor = System.Drawing.Color.White;
             this.panel11.Controls.Add(this.txtTotalMoney);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(858, 267);
+            this.panel11.Location = new System.Drawing.Point(858, 379);
             this.panel11.Margin = new System.Windows.Forms.Padding(1);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(283, 40);
+            this.panel11.Size = new System.Drawing.Size(287, 56);
             this.panel11.TabIndex = 7;
             // 
             // txtTotalMoney
             // 
             this.txtTotalMoney.AlwaysActive = false;
-            this.txtTotalMoney.Location = new System.Drawing.Point(5, 10);
+            this.txtTotalMoney.Location = new System.Drawing.Point(5, 14);
             this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.Size = new System.Drawing.Size(273, 21);
+            this.txtTotalMoney.Size = new System.Drawing.Size(273, 29);
+            this.txtTotalMoney.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTotalMoney.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtTotalMoney.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTotalMoney.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTotalMoney.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTotalMoney.TabIndex = 15;
             // 
             // panel12
@@ -237,18 +253,23 @@ namespace ProjectReporter.Controls
             this.panel12.BackColor = System.Drawing.Color.White;
             this.panel12.Controls.Add(this.txtTelphone);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(858, 153);
+            this.panel12.Location = new System.Drawing.Point(858, 217);
             this.panel12.Margin = new System.Windows.Forms.Padding(1);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(283, 36);
+            this.panel12.Size = new System.Drawing.Size(287, 52);
             this.panel12.TabIndex = 8;
             // 
             // txtTelphone
             // 
             this.txtTelphone.AlwaysActive = false;
-            this.txtTelphone.Location = new System.Drawing.Point(4, 10);
+            this.txtTelphone.Location = new System.Drawing.Point(4, 11);
             this.txtTelphone.Name = "txtTelphone";
-            this.txtTelphone.Size = new System.Drawing.Size(270, 21);
+            this.txtTelphone.Size = new System.Drawing.Size(274, 29);
+            this.txtTelphone.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTelphone.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtTelphone.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTelphone.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTelphone.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTelphone.TabIndex = 15;
             // 
             // panel10
@@ -257,18 +278,23 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel10, 2);
             this.panel10.Controls.Add(this.txtProjectName);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(120, 1);
+            this.panel10.Location = new System.Drawing.Point(161, 1);
             this.panel10.Margin = new System.Windows.Forms.Padding(1);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(566, 36);
+            this.panel10.Size = new System.Drawing.Size(524, 52);
             this.panel10.TabIndex = 6;
             // 
             // txtProjectName
             // 
             this.txtProjectName.AlwaysActive = false;
-            this.txtProjectName.Location = new System.Drawing.Point(7, 10);
+            this.txtProjectName.Location = new System.Drawing.Point(3, 11);
             this.txtProjectName.Name = "txtProjectName";
-            this.txtProjectName.Size = new System.Drawing.Size(553, 21);
+            this.txtProjectName.Size = new System.Drawing.Size(503, 29);
+            this.txtProjectName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtProjectName.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtProjectName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtProjectName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtProjectName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtProjectName.TabIndex = 15;
             // 
             // panel9
@@ -277,18 +303,23 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel9, 2);
             this.panel9.Controls.Add(this.txtTotalTime);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(120, 267);
+            this.panel9.Location = new System.Drawing.Point(161, 379);
             this.panel9.Margin = new System.Windows.Forms.Padding(1);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(566, 40);
+            this.panel9.Size = new System.Drawing.Size(524, 56);
             this.panel9.TabIndex = 9;
             // 
             // txtTotalTime
             // 
             this.txtTotalTime.AlwaysActive = false;
-            this.txtTotalTime.Location = new System.Drawing.Point(10, 10);
+            this.txtTotalTime.Location = new System.Drawing.Point(10, 14);
             this.txtTotalTime.Name = "txtTotalTime";
-            this.txtTotalTime.Size = new System.Drawing.Size(545, 21);
+            this.txtTotalTime.Size = new System.Drawing.Size(500, 29);
+            this.txtTotalTime.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTotalTime.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtTotalTime.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTotalTime.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTotalTime.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTotalTime.TabIndex = 15;
             // 
             // panel5
@@ -297,18 +328,23 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel5, 4);
             this.panel5.Controls.Add(this.txtFlagName);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(120, 77);
+            this.panel5.Location = new System.Drawing.Point(161, 109);
             this.panel5.Margin = new System.Windows.Forms.Padding(1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1021, 36);
+            this.panel5.Size = new System.Drawing.Size(984, 52);
             this.panel5.TabIndex = 5;
             // 
             // txtFlagName
             // 
             this.txtFlagName.AlwaysActive = false;
-            this.txtFlagName.Location = new System.Drawing.Point(8, 10);
+            this.txtFlagName.Location = new System.Drawing.Point(8, 11);
             this.txtFlagName.Name = "txtFlagName";
-            this.txtFlagName.Size = new System.Drawing.Size(1004, 21);
+            this.txtFlagName.Size = new System.Drawing.Size(967, 29);
+            this.txtFlagName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtFlagName.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtFlagName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtFlagName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtFlagName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtFlagName.TabIndex = 15;
             // 
             // panel7
@@ -317,18 +353,23 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel7, 4);
             this.panel7.Controls.Add(this.txtAddress);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(120, 191);
+            this.panel7.Location = new System.Drawing.Point(161, 271);
             this.panel7.Margin = new System.Windows.Forms.Padding(1);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1021, 36);
+            this.panel7.Size = new System.Drawing.Size(984, 52);
             this.panel7.TabIndex = 7;
             // 
             // txtAddress
             // 
             this.txtAddress.AlwaysActive = false;
-            this.txtAddress.Location = new System.Drawing.Point(9, 10);
+            this.txtAddress.Location = new System.Drawing.Point(9, 12);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(1002, 21);
+            this.txtAddress.Size = new System.Drawing.Size(966, 29);
+            this.txtAddress.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtAddress.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtAddress.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtAddress.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtAddress.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtAddress.TabIndex = 15;
             // 
             // panel8
@@ -337,18 +378,23 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel8, 4);
             this.panel8.Controls.Add(this.txtNormalName);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(120, 115);
+            this.panel8.Location = new System.Drawing.Point(161, 163);
             this.panel8.Margin = new System.Windows.Forms.Padding(1);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1021, 36);
+            this.panel8.Size = new System.Drawing.Size(984, 52);
             this.panel8.TabIndex = 8;
             // 
             // txtNormalName
             // 
             this.txtNormalName.AlwaysActive = false;
-            this.txtNormalName.Location = new System.Drawing.Point(8, 10);
+            this.txtNormalName.Location = new System.Drawing.Point(8, 11);
             this.txtNormalName.Name = "txtNormalName";
-            this.txtNormalName.Size = new System.Drawing.Size(1004, 21);
+            this.txtNormalName.Size = new System.Drawing.Size(967, 29);
+            this.txtNormalName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtNormalName.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtNormalName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtNormalName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtNormalName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtNormalName.TabIndex = 15;
             // 
             // panel2
@@ -357,23 +403,26 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel2, 2);
             this.panel2.Controls.Add(this.leSearchList);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(120, 39);
+            this.panel2.Location = new System.Drawing.Point(161, 55);
             this.panel2.Margin = new System.Windows.Forms.Padding(1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(566, 36);
+            this.panel2.Size = new System.Drawing.Size(524, 52);
             this.panel2.TabIndex = 18;
             // 
             // leSearchList
             // 
             this.leSearchList.EditValue = "";
-            this.leSearchList.Location = new System.Drawing.Point(7, 8);
+            this.leSearchList.Location = new System.Drawing.Point(2, 10);
             this.leSearchList.Name = "leSearchList";
+            this.leSearchList.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.leSearchList.Properties.Appearance.Options.UseFont = true;
             this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.leSearchList.Properties.NullText = "请选择申请单位！";
             this.leSearchList.Properties.ShowClearButton = false;
             this.leSearchList.Properties.ShowFooter = false;
             this.leSearchList.Properties.View = this.leSearchListView;
-            this.leSearchList.Size = new System.Drawing.Size(551, 20);
+            this.leSearchList.Size = new System.Drawing.Size(503, 34);
             this.leSearchList.TabIndex = 30;
             // 
             // leSearchListView
@@ -438,9 +487,10 @@ namespace ProjectReporter.Controls
             // label17
             // 
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Location = new System.Drawing.Point(3, 266);
+            this.label17.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(3, 378);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(113, 42);
+            this.label17.Size = new System.Drawing.Size(154, 58);
             this.label17.TabIndex = 10;
             this.label17.Text = "研究周期(年)：";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -448,9 +498,10 @@ namespace ProjectReporter.Controls
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(113, 38);
+            this.label11.Size = new System.Drawing.Size(154, 54);
             this.label11.TabIndex = 1;
             this.label11.Text = "项目名称：";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -458,9 +509,10 @@ namespace ProjectReporter.Controls
             // label12
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Location = new System.Drawing.Point(3, 38);
+            this.label12.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(3, 54);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 38);
+            this.label12.Size = new System.Drawing.Size(154, 54);
             this.label12.TabIndex = 4;
             this.label12.Text = "申报单位：";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -468,9 +520,10 @@ namespace ProjectReporter.Controls
             // label13
             // 
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(3, 76);
+            this.label13.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(3, 108);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 38);
+            this.label13.Size = new System.Drawing.Size(154, 54);
             this.label13.TabIndex = 5;
             this.label13.Text = "公章名称：";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -478,9 +531,10 @@ namespace ProjectReporter.Controls
             // label14
             // 
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(3, 114);
+            this.label14.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(3, 162);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 38);
+            this.label14.Size = new System.Drawing.Size(154, 54);
             this.label14.TabIndex = 7;
             this.label14.Text = "常用名：";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -488,9 +542,10 @@ namespace ProjectReporter.Controls
             // label16
             // 
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Location = new System.Drawing.Point(3, 190);
+            this.label16.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(3, 270);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(113, 38);
+            this.label16.Size = new System.Drawing.Size(154, 54);
             this.label16.TabIndex = 9;
             this.label16.Text = "通信地址：";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -498,9 +553,10 @@ namespace ProjectReporter.Controls
             // label18
             // 
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Location = new System.Drawing.Point(690, 0);
+            this.label18.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Location = new System.Drawing.Point(689, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(164, 38);
+            this.label18.Size = new System.Drawing.Size(165, 54);
             this.label18.TabIndex = 11;
             this.label18.Text = "密级：";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -508,9 +564,10 @@ namespace ProjectReporter.Controls
             // label19
             // 
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label19.Location = new System.Drawing.Point(690, 152);
+            this.label19.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.Location = new System.Drawing.Point(689, 216);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(164, 38);
+            this.label19.Size = new System.Drawing.Size(165, 54);
             this.label19.TabIndex = 12;
             this.label19.Text = "联系电话：";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -518,9 +575,10 @@ namespace ProjectReporter.Controls
             // label20
             // 
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Location = new System.Drawing.Point(690, 266);
+            this.label20.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label20.Location = new System.Drawing.Point(689, 378);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(164, 42);
+            this.label20.Size = new System.Drawing.Size(165, 58);
             this.label20.TabIndex = 13;
             this.label20.Text = "研究经费(万)：";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -532,12 +590,13 @@ namespace ProjectReporter.Controls
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(860, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 32);
+            this.panel1.Size = new System.Drawing.Size(283, 48);
             this.panel1.TabIndex = 17;
             // 
             // cbxSecret
             // 
             this.cbxSecret.AlwaysActive = false;
+            this.cbxSecret.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSecret.DropDownWidth = 121;
             this.cbxSecret.FormattingEnabled = true;
             this.cbxSecret.Items.AddRange(new object[] {
@@ -545,17 +604,23 @@ namespace ProjectReporter.Controls
             "秘密",
             "机密",
             "绝密"});
-            this.cbxSecret.Location = new System.Drawing.Point(5, 9);
+            this.cbxSecret.Location = new System.Drawing.Point(5, 8);
             this.cbxSecret.Name = "cbxSecret";
-            this.cbxSecret.Size = new System.Drawing.Size(121, 22);
+            this.cbxSecret.Size = new System.Drawing.Size(121, 33);
+            this.cbxSecret.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.cbxSecret.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.cbxSecret.StateCommon.Item.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.cbxSecret.StateCommon.Item.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.cbxSecret.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("微软雅黑", 15F);
             this.cbxSecret.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(690, 38);
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(689, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 38);
+            this.label2.Size = new System.Drawing.Size(165, 54);
             this.label2.TabIndex = 19;
             this.label2.Text = "关键字：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -565,10 +630,10 @@ namespace ProjectReporter.Controls
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.txtKeyWords);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(858, 39);
+            this.panel3.Location = new System.Drawing.Point(858, 55);
             this.panel3.Margin = new System.Windows.Forms.Padding(1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(283, 36);
+            this.panel3.Size = new System.Drawing.Size(287, 52);
             this.panel3.TabIndex = 20;
             // 
             // txtKeyWords
@@ -576,7 +641,12 @@ namespace ProjectReporter.Controls
             this.txtKeyWords.AlwaysActive = false;
             this.txtKeyWords.Location = new System.Drawing.Point(5, 11);
             this.txtKeyWords.Name = "txtKeyWords";
-            this.txtKeyWords.Size = new System.Drawing.Size(273, 21);
+            this.txtKeyWords.Size = new System.Drawing.Size(273, 29);
+            this.txtKeyWords.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtKeyWords.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtKeyWords.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtKeyWords.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtKeyWords.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtKeyWords.TabIndex = 15;
             // 
             // panel6
@@ -585,10 +655,10 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SetColumnSpan(this.panel6, 2);
             this.panel6.Controls.Add(this.cbxPersonList);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(120, 229);
+            this.panel6.Location = new System.Drawing.Point(161, 325);
             this.panel6.Margin = new System.Windows.Forms.Padding(1);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(566, 36);
+            this.panel6.Size = new System.Drawing.Size(524, 52);
             this.panel6.TabIndex = 6;
             // 
             // cbxPersonList
@@ -599,81 +669,98 @@ namespace ProjectReporter.Controls
             this.cbxPersonList.FormattingEnabled = true;
             this.cbxPersonList.Location = new System.Drawing.Point(9, 10);
             this.cbxPersonList.Name = "cbxPersonList";
-            this.cbxPersonList.Size = new System.Drawing.Size(549, 22);
+            this.cbxPersonList.Size = new System.Drawing.Size(501, 33);
+            this.cbxPersonList.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.cbxPersonList.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.cbxPersonList.StateCommon.Item.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.cbxPersonList.StateCommon.Item.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.cbxPersonList.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("微软雅黑", 15F);
             this.cbxPersonList.TabIndex = 21;
             this.cbxPersonList.SelectedIndexChanged += new System.EventHandler(this.cbxPersonList_SelectedIndexChanged);
             // 
             // label15
             // 
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Location = new System.Drawing.Point(3, 228);
+            this.label15.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(3, 324);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(113, 38);
+            this.label15.Size = new System.Drawing.Size(154, 54);
             this.label15.TabIndex = 8;
             this.label15.Text = "项目负责人：";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // plTitle
+            // plLeftTitle
             // 
-            this.plTitle.BackColor = System.Drawing.Color.White;
-            this.plTitle.Controls.Add(this.label1);
-            this.plTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.plTitle.Location = new System.Drawing.Point(0, 0);
-            this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(80, 308);
-            this.plTitle.TabIndex = 0;
+            this.plLeftTitle.BackColor = System.Drawing.Color.White;
+            this.plLeftTitle.Controls.Add(this.lblLeftTitle);
+            this.plLeftTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.plLeftTitle.Location = new System.Drawing.Point(0, 0);
+            this.plLeftTitle.Name = "plLeftTitle";
+            this.plLeftTitle.Size = new System.Drawing.Size(80, 436);
+            this.plLeftTitle.TabIndex = 0;
             // 
-            // label1
+            // lblLeftTitle
             // 
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(20, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 185);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "项目信息";
-            // 
-            // kryptonPanel2
-            // 
-            this.kryptonPanel2.Controls.Add(this.kryptonLabel3);
-            this.kryptonPanel2.Location = new System.Drawing.Point(1, 1);
-            this.kryptonPanel2.Margin = new System.Windows.Forms.Padding(1);
-            this.kryptonPanel2.Name = "kryptonPanel2";
-            this.kryptonPanel2.Size = new System.Drawing.Size(1222, 52);
-            this.kryptonPanel2.StateCommon.Color1 = System.Drawing.Color.White;
-            this.kryptonPanel2.TabIndex = 3;
-            // 
-            // kryptonLabel3
-            // 
-            this.kryptonLabel3.AllowDrop = true;
-            this.kryptonLabel3.AutoSize = false;
-            this.kryptonLabel3.Location = new System.Drawing.Point(80, 3);
-            this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(755, 50);
-            this.kryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
-            this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.kryptonLabel3.TabIndex = 0;
-            this.kryptonLabel3.Values.Text = "本人保证所填写的信息均真实有效，无任何虚假信息。\r\n本人完全清楚本声明的法律后果，如有不实，愿意承担相应的法律责任。";
+            this.lblLeftTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLeftTitle.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblLeftTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblLeftTitle.Name = "lblLeftTitle";
+            this.lblLeftTitle.Size = new System.Drawing.Size(80, 281);
+            this.lblLeftTitle.TabIndex = 0;
+            this.lblLeftTitle.Text = "项目信息";
             // 
             // plTop
             // 
-            this.plTop.BackColor = System.Drawing.Color.Transparent;
-            this.plTop.Controls.Add(this.kryptonPanel2);
-            this.plTop.Controls.Add(this.btnSave);
-            this.plTop.Controls.Add(this.btnReport);
-            this.plTop.Controls.Add(this.plMain);
-            this.plTop.Location = new System.Drawing.Point(25, 20);
+            this.plTop.Controls.Add(this.lblTopTitle);
+            this.plTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.plTop.Location = new System.Drawing.Point(0, 0);
+            this.plTop.Margin = new System.Windows.Forms.Padding(1);
             this.plTop.Name = "plTop";
-            this.plTop.Size = new System.Drawing.Size(1226, 422);
-            this.plTop.TabIndex = 4;
+            this.plTop.Size = new System.Drawing.Size(1226, 100);
+            this.plTop.StateCommon.Color1 = System.Drawing.Color.White;
+            this.plTop.TabIndex = 3;
+            // 
+            // lblTopTitle
+            // 
+            this.lblTopTitle.AllowDrop = true;
+            this.lblTopTitle.AutoSize = false;
+            this.lblTopTitle.Location = new System.Drawing.Point(80, 3);
+            this.lblTopTitle.Name = "lblTopTitle";
+            this.lblTopTitle.Size = new System.Drawing.Size(1143, 94);
+            this.lblTopTitle.StateCommon.ShortText.Color1 = System.Drawing.Color.Black;
+            this.lblTopTitle.StateCommon.ShortText.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTopTitle.TabIndex = 0;
+            this.lblTopTitle.Values.Text = "本人保证所填写的信息均真实有效，无任何虚假信息。\r\n本人完全清楚本声明的法律后果，如有不实，愿意承担相应的法律责任。";
+            // 
+            // plMain
+            // 
+            this.plMain.BackColor = System.Drawing.Color.Transparent;
+            this.plMain.Controls.Add(this.plBottom);
+            this.plMain.Controls.Add(this.plContent);
+            this.plMain.Controls.Add(this.plTop);
+            this.plMain.Location = new System.Drawing.Point(25, 20);
+            this.plMain.Name = "plMain";
+            this.plMain.Size = new System.Drawing.Size(1226, 604);
+            this.plMain.TabIndex = 4;
+            // 
+            // plBottom
+            // 
+            this.plBottom.Controls.Add(this.btnSave);
+            this.plBottom.Controls.Add(this.btnReport);
+            this.plBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.plBottom.Location = new System.Drawing.Point(0, 560);
+            this.plBottom.Name = "plBottom";
+            this.plBottom.Size = new System.Drawing.Size(1226, 44);
+            this.plBottom.TabIndex = 4;
             // 
             // NewProjectEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.plTop);
+            this.Controls.Add(this.plMain);
             this.Name = "NewProjectEditor";
             this.Size = new System.Drawing.Size(1422, 669);
-            this.plMain.ResumeLayout(false);
+            this.plContent.ResumeLayout(false);
             this.hSkinTableLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -700,10 +787,11 @@ namespace ProjectReporter.Controls
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbxPersonList)).EndInit();
-            this.plTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
-            this.kryptonPanel2.ResumeLayout(false);
+            this.plLeftTitle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.plTop)).EndInit();
             this.plTop.ResumeLayout(false);
+            this.plMain.ResumeLayout(false);
+            this.plBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -713,8 +801,8 @@ namespace ProjectReporter.Controls
         private KryptonButton btnSave;
         private KryptonButton btnReport;
         private HSkinTableLayoutPanel hSkinTableLayoutPanel1;
-        private System.Windows.Forms.Panel plMain;
-        private System.Windows.Forms.Panel plTitle;
+        private System.Windows.Forms.Panel plContent;
+        private System.Windows.Forms.Panel plLeftTitle;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -729,10 +817,10 @@ namespace ProjectReporter.Controls
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private KryptonComboBox cbxSecret;
-        private KryptonPanel kryptonPanel2;
-        private KryptonLabel kryptonLabel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel plTop;
+        private KryptonPanel plTop;
+        private KryptonLabel lblTopTitle;
+        private System.Windows.Forms.Label lblLeftTitle;
+        private System.Windows.Forms.Panel plMain;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
@@ -762,5 +850,6 @@ namespace ProjectReporter.Controls
         private DevExpress.XtraGrid.Columns.GridColumn gcUnitBankUser;
         private DevExpress.XtraGrid.Columns.GridColumn gcUnitBankName;
         private DevExpress.XtraGrid.Columns.GridColumn gcUnitBankNo;
+        private System.Windows.Forms.Panel plBottom;
     }
 }

@@ -26,10 +26,10 @@ namespace ProjectReporter.Controls
 
         public void toCenter()
         {
-            if (plTop != null)
+            if (plMain != null)
             {
-                plTop.Left = (Width - plTop.Width) / 2;
-                plTop.Top = (Height - plTop.Height) / 2;
+                plMain.Left = (Width - plMain.Width) / 2;
+                plMain.Top = (Height - plMain.Height) / 2;
             }
         }
 
