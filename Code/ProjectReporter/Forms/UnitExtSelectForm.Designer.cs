@@ -79,24 +79,18 @@
             this.gcUnitName.Caption = "单位名称";
             this.gcUnitName.FieldName = "UnitName";
             this.gcUnitName.Name = "gcUnitName";
-            this.gcUnitName.Visible = true;
-            this.gcUnitName.VisibleIndex = 0;
             // 
             // gcUnitType
             // 
             this.gcUnitType.Caption = "单位类型";
             this.gcUnitType.FieldName = "UnitType";
             this.gcUnitType.Name = "gcUnitType";
-            this.gcUnitType.Visible = true;
-            this.gcUnitType.VisibleIndex = 1;
             // 
             // gcUnitBankUser
             // 
             this.gcUnitBankUser.Caption = "开户名称";
             this.gcUnitBankUser.FieldName = "UnitBankUser";
             this.gcUnitBankUser.Name = "gcUnitBankUser";
-            this.gcUnitBankUser.Visible = true;
-            this.gcUnitBankUser.VisibleIndex = 2;
             // 
             // gcUnitBankName
             // 
@@ -104,7 +98,7 @@
             this.gcUnitBankName.FieldName = "UnitBankName";
             this.gcUnitBankName.Name = "gcUnitBankName";
             this.gcUnitBankName.Visible = true;
-            this.gcUnitBankName.VisibleIndex = 3;
+            this.gcUnitBankName.VisibleIndex = 0;
             // 
             // gcUnitBankNo
             // 
@@ -112,7 +106,7 @@
             this.gcUnitBankNo.FieldName = "UnitBankNo";
             this.gcUnitBankNo.Name = "gcUnitBankNo";
             this.gcUnitBankNo.Visible = true;
-            this.gcUnitBankNo.VisibleIndex = 4;
+            this.gcUnitBankNo.VisibleIndex = 1;
             // 
             // btnCancel
             // 
