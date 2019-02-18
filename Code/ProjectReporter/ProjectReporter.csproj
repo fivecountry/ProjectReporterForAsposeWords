@@ -283,12 +283,6 @@
     <Compile Include="Forms\Old\UnitManagerForm.Designer.cs">
       <DependentUpon>UnitManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UnitAndUnitExtSelectForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UnitAndUnitExtSelectForm.Designer.cs">
-      <DependentUpon>UnitAndUnitExtSelectForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\UnitExtSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,9 +394,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Old\UnitManagerForm.resx">
       <DependentUpon>UnitManagerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UnitAndUnitExtSelectForm.resx">
-      <DependentUpon>UnitAndUnitExtSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnitExtSelectForm.resx">
       <DependentUpon>UnitExtSelectForm.cs</DependentUpon>
