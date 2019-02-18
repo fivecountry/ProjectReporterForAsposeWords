@@ -22,8 +22,6 @@ namespace ProjectReporter.Forms
 
         public Person PersonObj { get; private set; }
 
-        public Project ItemObj { get; private set; }
-
         public NewGuGanLianXiRenForm(Task taskObj)
         {
             InitializeComponent();
@@ -52,10 +50,9 @@ namespace ProjectReporter.Forms
                     txtPersonTelephone.Text = PersonObj.Telephone;
                     txtPersonMobilePhone.Text = PersonObj.MobilePhone;
                 }
-
-                ItemObj = ConnectionManager.Context.table("Project").where("ID='" + TaskObj.ProjectID + "'").select("*").getItem<Project>(new Project());
-                UnitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + ItemObj.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
-                UnitObj = ConnectionManager.Context.table("Unit").where("ID='" + ItemObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
+                
+                UnitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
+                UnitObj = ConnectionManager.Context.table("Unit").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
                 if (UnitObj != null && UnitExtObj != null)
                 {
                     btnUnitSelect.Text = UnitExtObj.UnitBankNo;
