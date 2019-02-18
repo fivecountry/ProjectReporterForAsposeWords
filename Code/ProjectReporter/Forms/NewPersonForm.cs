@@ -26,9 +26,15 @@ namespace ProjectReporter.Forms
                 CurrentUnitExt = ConnectionManager.Context.table("UnitExt").where("ID='" + this.PersonObj.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
                 if (CurrentUnitExt != null)
                 {
-                    btnUnitSelect.Text = CurrentUnitExt.UnitName;
+                    btnUnitSelect.Text = CurrentUnitExt.UnitBankNo;
                 }
-                
+
+                Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + this.PersonObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
+                if (unitObj != null)
+                {
+                    txtUnitName.Text = unitObj.UnitName;
+                }
+
                 txtName.Text = PersonObj.Name;
                 txtIDCard.Text = PersonObj.IDCard;
                 txtJob.Text = PersonObj.Job;
@@ -149,25 +155,19 @@ namespace ProjectReporter.Forms
 
         public void BuildUnitRecord(string unitId, string unitName, string unitAddress)
         {
-            //创建单位信息
-            long recordCount = ConnectionManager.Context.table("Unit").where("ID='" + unitId + "'").select("count(*)").getValue<long>(0);
+            ConnectionManager.Context.table("Unit").where("ID='" + unitId + "'").delete();
 
-            //ConnectionManager.Context.table("Unit").where("ID='" + unitId + "'").delete();
-
-            if (recordCount <= 0)
-            {
-                Unit newUnit = new Unit();
-                newUnit.ID = unitId;
-                newUnit.UnitName = unitName;
-                newUnit.FlagName = unitName;
-                newUnit.NormalName = unitName;
-                newUnit.ContactName = "未知";
-                newUnit.Telephone = "未知";
-                newUnit.Address = unitAddress;
-                newUnit.UnitType = "人员所属单位";
-                newUnit.SecretQualification = "未知";
-                newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
-            }
+            Unit newUnit = new Unit();
+            newUnit.ID = unitId;
+            newUnit.UnitName = unitName;
+            newUnit.FlagName = unitName;
+            newUnit.NormalName = unitName;
+            newUnit.ContactName = "未知";
+            newUnit.Telephone = "未知";
+            newUnit.Address = unitAddress;
+            newUnit.UnitType = "人员所属单位";
+            newUnit.SecretQualification = "未知";
+            newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
         }
     }
 }
