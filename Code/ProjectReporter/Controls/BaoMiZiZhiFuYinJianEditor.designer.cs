@@ -75,7 +75,7 @@
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Controls.Add(this.btnLast, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 1, 0);
@@ -90,9 +90,9 @@
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(713, 3);
+            this.btnLast.Location = new System.Drawing.Point(813, 3);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(90, 25);
+            this.btnLast.Size = new System.Drawing.Size(1, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
             this.btnLast.Visible = false;
@@ -100,7 +100,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(613, 3);
+            this.btnSave.Location = new System.Drawing.Point(713, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 25);
             this.btnSave.TabIndex = 0;

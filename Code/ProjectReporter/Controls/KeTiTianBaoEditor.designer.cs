@@ -37,6 +37,8 @@
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.plContent = new System.Windows.Forms.Panel();
+            this.kvKetiTabs = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
+            this.kpKetiItems = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
@@ -48,12 +50,22 @@
             this.colZongTiKeTi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDetail = new System.Windows.Forms.DataGridViewImageColumn();
+            this.kpKetiDetails = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.knKetiReadmeList = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.plContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kvKetiTabs)).BeginInit();
+            this.kvKetiTabs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kpKetiItems)).BeginInit();
+            this.kpKetiItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kpKetiDetails)).BeginInit();
+            this.kpKetiDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.knKetiReadmeList)).BeginInit();
+            this.knKetiReadmeList.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel15
@@ -82,7 +94,7 @@
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Controls.Add(this.btnLast, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 1, 0);
@@ -97,9 +109,9 @@
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(486, 3);
+            this.btnLast.Location = new System.Drawing.Point(586, 3);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(90, 25);
+            this.btnLast.Size = new System.Drawing.Size(1, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
             this.btnLast.Visible = false;
@@ -107,7 +119,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(386, 3);
+            this.btnSave.Location = new System.Drawing.Point(486, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 25);
             this.btnSave.TabIndex = 0;
@@ -148,12 +160,41 @@
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
-            this.plContent.Controls.Add(this.dgvDetail);
+            this.plContent.Controls.Add(this.kvKetiTabs);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(53, 103);
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(683, 345);
             this.plContent.TabIndex = 7;
+            // 
+            // kvKetiTabs
+            // 
+            this.kvKetiTabs.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
+            this.kvKetiTabs.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
+            this.kvKetiTabs.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.kvKetiTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kvKetiTabs.Location = new System.Drawing.Point(0, 0);
+            this.kvKetiTabs.Name = "kvKetiTabs";
+            this.kvKetiTabs.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
+            this.kpKetiItems,
+            this.kpKetiDetails});
+            this.kvKetiTabs.SelectedIndex = 0;
+            this.kvKetiTabs.Size = new System.Drawing.Size(683, 345);
+            this.kvKetiTabs.TabIndex = 4;
+            this.kvKetiTabs.Text = "kryptonNavigator1";
+            // 
+            // kpKetiItems
+            // 
+            this.kpKetiItems.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kpKetiItems.Controls.Add(this.dgvDetail);
+            this.kpKetiItems.Flags = 65534;
+            this.kpKetiItems.LastVisibleSet = true;
+            this.kpKetiItems.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kpKetiItems.Name = "kpKetiItems";
+            this.kpKetiItems.Size = new System.Drawing.Size(681, 318);
+            this.kpKetiItems.Text = "课题列表";
+            this.kpKetiItems.ToolTipTitle = "Page ToolTip";
+            this.kpKetiItems.UniqueName = "E9C2A15C70F847D472B1468CE3270072";
             // 
             // dgvDetail
             // 
@@ -178,7 +219,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 28;
-            this.dgvDetail.Size = new System.Drawing.Size(683, 345);
+            this.dgvDetail.Size = new System.Drawing.Size(681, 318);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -200,7 +241,7 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 19;
+            this.colKeTiMingCheng.Width = 18;
             // 
             // colMiJi
             // 
@@ -268,6 +309,31 @@
             this.colDetail.Visible = false;
             this.colDetail.Width = 45;
             // 
+            // kpKetiDetails
+            // 
+            this.kpKetiDetails.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kpKetiDetails.Controls.Add(this.knKetiReadmeList);
+            this.kpKetiDetails.Flags = 65534;
+            this.kpKetiDetails.LastVisibleSet = true;
+            this.kpKetiDetails.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kpKetiDetails.Name = "kpKetiDetails";
+            this.kpKetiDetails.Size = new System.Drawing.Size(681, 318);
+            this.kpKetiDetails.Text = "课题详细";
+            this.kpKetiDetails.ToolTipTitle = "Page ToolTip";
+            this.kpKetiDetails.UniqueName = "16BCB81C76C447FBDFAC2A4C5978C3BA";
+            // 
+            // knKetiReadmeList
+            // 
+            this.knKetiReadmeList.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
+            this.knKetiReadmeList.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
+            this.knKetiReadmeList.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.knKetiReadmeList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.knKetiReadmeList.Location = new System.Drawing.Point(0, 0);
+            this.knKetiReadmeList.Name = "knKetiReadmeList";
+            this.knKetiReadmeList.Size = new System.Drawing.Size(681, 318);
+            this.knKetiReadmeList.TabIndex = 0;
+            this.knKetiReadmeList.Text = "kryptonNavigator1";
+            // 
             // KeTiTianBaoEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -280,7 +346,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
             this.plContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kvKetiTabs)).EndInit();
+            this.kvKetiTabs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kpKetiItems)).EndInit();
+            this.kpKetiItems.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kpKetiDetails)).EndInit();
+            this.kpKetiDetails.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.knKetiReadmeList)).EndInit();
+            this.knKetiReadmeList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -306,5 +380,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colZongTiKeTi;
         private System.Windows.Forms.DataGridViewImageColumn delete;
         private System.Windows.Forms.DataGridViewImageColumn colDetail;
+        private ComponentFactory.Krypton.Navigator.KryptonNavigator kvKetiTabs;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kpKetiItems;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kpKetiDetails;
+        private ComponentFactory.Krypton.Navigator.KryptonNavigator knKetiReadmeList;
     }
 }

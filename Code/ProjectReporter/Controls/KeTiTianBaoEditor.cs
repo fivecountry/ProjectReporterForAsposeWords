@@ -10,6 +10,7 @@ using ComponentFactory.Krypton.Toolkit;
 using ProjectReporter.Forms;
 using ProjectReporter.DB;
 using ProjectReporter.DB.Entitys;
+using ComponentFactory.Krypton.Navigator;
 
 namespace ProjectReporter.Controls
 {
@@ -358,6 +359,9 @@ namespace ProjectReporter.Controls
 
             //课题列表
             UpdateKeTiList();
+
+            //显示课题详细
+            BuildKetiReadmPages();
         }
 
         public List<Person> PersonList { get; set; }
@@ -426,6 +430,26 @@ namespace ProjectReporter.Controls
             newUnit.UnitType = "课题单位";
             newUnit.SecretQualification = "未知";
             newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
+        }
+
+        public void BuildKetiReadmPages()
+        {
+            if (KeTiList != null)
+            {
+                foreach (Project proj in KeTiList)
+                {
+                    knKetiReadmeList.Pages.Clear();
+
+                    KryptonPage kp = new KryptonPage(proj.Name);
+                    kp.Text = proj.Name;
+
+                    RTFTextEditor textEditor = new RTFTextEditor();
+                    textEditor.Dock = DockStyle.Fill;
+
+                    kp.Controls.Add(textEditor);
+                    knKetiReadmeList.Pages.Add(kp);
+                }
+            }
         }
     }
 }
