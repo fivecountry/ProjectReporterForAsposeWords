@@ -49,35 +49,35 @@ namespace ProjectReporter.Forms
                     txtPersonAddress.Text = PersonObj.Address;
                     txtPersonTelephone.Text = PersonObj.Telephone;
                     txtPersonMobilePhone.Text = PersonObj.MobilePhone;
-                }
-                
-                UnitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
-                UnitObj = ConnectionManager.Context.table("Unit").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
-                if (UnitObj != null && UnitExtObj != null)
-                {
-                    btnUnitSelect.Text = UnitExtObj.UnitBankNo;
-                    txtUnitName.Text = UnitObj.UnitName;
-                    txtUnitAddress.Text = UnitObj.Address;
-                    txtUnitContactName.Text = UnitObj.ContactName;
-                    txtUnitTelephone.Text = UnitObj.Telephone;
-                }
 
-                txtTaskContent.Text = TaskObj.Content;
-                txtWorkTimeInYear.Value = TaskObj.TotalTime != null ? TaskObj.TotalTime.Value : 0;
-
-                string roleName = string.Empty;
-                foreach (KeyValuePair<string, Project> kvp in JobDict)
-                {
-                    if (kvp.Value.ID != null && kvp.Value.ID.Equals(TaskObj.ProjectID))
+                    UnitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
+                    UnitObj = ConnectionManager.Context.table("Unit").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
+                    if (UnitObj != null && UnitExtObj != null)
                     {
-                        if (kvp.Key.EndsWith(TaskObj.Role))
+                        btnUnitSelect.Text = UnitExtObj.UnitBankNo;
+                        txtUnitName.Text = UnitObj.UnitName;
+                        txtUnitAddress.Text = UnitObj.Address;
+                        txtUnitContactName.Text = UnitObj.ContactName;
+                        txtUnitTelephone.Text = UnitObj.Telephone;
+                    }
+
+                    txtTaskContent.Text = TaskObj.Content;
+                    txtWorkTimeInYear.Value = TaskObj.TotalTime != null ? TaskObj.TotalTime.Value : 0;
+
+                    string roleName = string.Empty;
+                    foreach (KeyValuePair<string, Project> kvp in JobDict)
+                    {
+                        if (kvp.Value.ID != null && kvp.Value.ID.Equals(TaskObj.ProjectID))
                         {
-                            roleName = kvp.Key;
-                            break;
+                            if (kvp.Key.EndsWith(TaskObj.Role))
+                            {
+                                roleName = kvp.Key;
+                                break;
+                            }
                         }
                     }
+                    cbxItemJobs.Text = roleName;
                 }
-                cbxItemJobs.Text = roleName;
             }
         }
 
