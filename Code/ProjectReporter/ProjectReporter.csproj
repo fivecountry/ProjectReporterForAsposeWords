@@ -259,16 +259,16 @@
     <Compile Include="Forms\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewPersonForm.cs">
+    <Compile Include="Forms\Old\NewPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewPersonForm.Designer.cs">
+    <Compile Include="Forms\Old\NewPersonForm.Designer.cs">
       <DependentUpon>NewPersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PersonManagerForm.cs">
+    <Compile Include="Forms\Old\PersonManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PersonManagerForm.Designer.cs">
+    <Compile Include="Forms\Old\PersonManagerForm.Designer.cs">
       <DependentUpon>PersonManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UnitExtSelectForm.cs">
@@ -371,10 +371,10 @@
     <EmbeddedResource Include="Forms\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewPersonForm.resx">
+    <EmbeddedResource Include="Forms\Old\NewPersonForm.resx">
       <DependentUpon>NewPersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PersonManagerForm.resx">
+    <EmbeddedResource Include="Forms\Old\PersonManagerForm.resx">
       <DependentUpon>PersonManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnitExtSelectForm.resx">
