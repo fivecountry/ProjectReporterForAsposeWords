@@ -53,6 +53,7 @@ namespace ProjectReporter.Controls
                 Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + MainForm.Instance.ProjectObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
                 if (unitObj != null)
                 {
+                    txtUnitName.Text = unitObj.UnitName;
                     txtFlagName.Text = unitObj.FlagName;
                     txtNormalName.Text = unitObj.NormalName;
                     txtContactName.Text = unitObj.ContactName;
@@ -262,7 +263,7 @@ namespace ProjectReporter.Controls
             ConnectionManager.Context.table("Unit").where("ID='" + MainForm.Instance.ProjectObj.UnitID + "'").delete();
             Unit newUnit = new Unit();
             newUnit.ID = MainForm.Instance.ProjectObj.UnitID;
-            newUnit.UnitName = leSearchList.Text;
+            newUnit.UnitName = txtUnitName.Text;
             newUnit.FlagName = txtFlagName.Text;
             newUnit.NormalName = txtNormalName.Text;
             newUnit.ContactName = txtContactName.Text;
