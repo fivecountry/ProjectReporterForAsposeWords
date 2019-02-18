@@ -160,7 +160,7 @@ namespace ProjectReporter.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddUnit addUnit = new frmAddUnit();
+            AddUnitForm addUnit = new AddUnitForm();
             if (addUnit.ShowDialog() == DialogResult.OK)
             {
                 UpdateUnitList();

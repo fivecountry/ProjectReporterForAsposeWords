@@ -199,17 +199,17 @@
     <Compile Include="Forms\ClearForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAddUnit.cs">
+    <Compile Include="Forms\AddUnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAddUnit.designer.cs">
-      <DependentUpon>frmAddUnit.cs</DependentUpon>
+    <Compile Include="Forms\AddUnitForm.designer.cs">
+      <DependentUpon>AddUnitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmUnitManage.cs">
+    <Compile Include="Forms\UnitManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmUnitManage.designer.cs">
-      <DependentUpon>frmUnitManage.cs</DependentUpon>
+    <Compile Include="Forms\UnitManagerForm.designer.cs">
+      <DependentUpon>UnitManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\KeTiXiangXiForm.cs">
       <SubType>Form</SubType>
@@ -359,11 +359,11 @@
     <EmbeddedResource Include="Forms\ClearForm.resx">
       <DependentUpon>ClearForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAddUnit.resx">
-      <DependentUpon>frmAddUnit.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddUnitForm.resx">
+      <DependentUpon>AddUnitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmUnitManage.resx">
-      <DependentUpon>frmUnitManage.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UnitManagerForm.resx">
+      <DependentUpon>UnitManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KeTiXiangXiForm.resx">
       <DependentUpon>KeTiXiangXiForm.cs</DependentUpon>
