@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using ProjectReporter.DB;
 using ProjectReporter.DB.Entitys;
+using ProjectReporter.Forms;
 
 namespace ProjectReporter.Controls
 {
@@ -23,7 +24,11 @@ namespace ProjectReporter.Controls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            OnSaveEvent();
+            NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(null);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                RefreshView();
+            }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
@@ -355,6 +360,19 @@ namespace ProjectReporter.Controls
             }
 
             return dgvDetail.Rows.Count >= 1;
+        }
+
+        private void dgvDetail_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetail.Rows[e.RowIndex].Tag != null)
+            {
+                Task task = (Task)dgvDetail.Rows[e.RowIndex].Tag;
+                NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(task);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshView();
+                }
+            }
         }
     }
 }

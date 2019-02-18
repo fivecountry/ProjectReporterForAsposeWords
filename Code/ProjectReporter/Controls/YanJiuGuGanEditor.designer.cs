@@ -47,6 +47,7 @@
             this.colRenWuFenGong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMeiNianGongZuoShiJian = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -131,7 +132,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 25);
             this.btnSave.TabIndex = 0;
-            this.btnSave.Values.Text = "保存";
+            this.btnSave.Values.Text = "添加";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNext
@@ -171,10 +172,12 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 28;
+            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(849, 456);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
@@ -183,6 +186,7 @@
             this.dgvDetail.TabIndex = 5;
             this.dgvDetail.EditModeChanged += new System.EventHandler(this.dgvDetail_EditModeChanged);
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
+            this.dgvDetail.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentDoubleClick);
             this.dgvDetail.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dgvDetail_CellParsing);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
@@ -199,6 +203,7 @@
             this.colXingMing.DropDownWidth = 200;
             this.colXingMing.HeaderText = "姓名(身份证号)";
             this.colXingMing.Name = "colXingMing";
+            this.colXingMing.ReadOnly = true;
             this.colXingMing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colXingMing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colXingMing.Width = 149;
@@ -230,6 +235,7 @@
             this.colXiangMuZhongZhiWu.DropDownWidth = 200;
             this.colXiangMuZhongZhiWu.HeaderText = "项目中职务";
             this.colXiangMuZhongZhiWu.Name = "colXiangMuZhongZhiWu";
+            this.colXiangMuZhongZhiWu.ReadOnly = true;
             this.colXiangMuZhongZhiWu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colXiangMuZhongZhiWu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colXiangMuZhongZhiWu.Width = 117;
@@ -239,6 +245,7 @@
             this.colRenWuFenGong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colRenWuFenGong.HeaderText = "任务分工";
             this.colRenWuFenGong.Name = "colRenWuFenGong";
+            this.colRenWuFenGong.ReadOnly = true;
             // 
             // colMeiNianGongZuoShiJian
             // 
@@ -250,6 +257,7 @@
             0,
             0});
             this.colMeiNianGongZuoShiJian.Name = "colMeiNianGongZuoShiJian";
+            this.colMeiNianGongZuoShiJian.ReadOnly = true;
             this.colMeiNianGongZuoShiJian.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMeiNianGongZuoShiJian.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colMeiNianGongZuoShiJian.Width = 84;
@@ -262,6 +270,15 @@
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Width = 45;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "删除";
+            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 45;
             // 
             // YanJiuGuGanEditor
             // 
@@ -300,5 +317,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRenWuFenGong;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colMeiNianGongZuoShiJian;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
