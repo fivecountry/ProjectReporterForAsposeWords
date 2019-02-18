@@ -101,6 +101,7 @@
             this.btnLast.Size = new System.Drawing.Size(90, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
+            this.btnLast.Visible = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnSave
@@ -197,7 +198,7 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 52;
+            this.colKeTiMingCheng.Width = 51;
             // 
             // colMiJi
             // 
@@ -233,7 +234,7 @@
             this.colNeiRong.HeaderText = "内容";
             this.colNeiRong.Name = "colNeiRong";
             this.colNeiRong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colNeiRong.Width = 51;
+            this.colNeiRong.Width = 52;
             // 
             // colZongTiKeTi
             // 

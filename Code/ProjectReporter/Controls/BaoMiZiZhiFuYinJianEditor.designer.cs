@@ -95,6 +95,7 @@
             this.btnLast.Size = new System.Drawing.Size(90, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
+            this.btnLast.Visible = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnSave

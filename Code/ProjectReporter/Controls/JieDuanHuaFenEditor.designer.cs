@@ -108,6 +108,7 @@
             this.btnLast.Size = new System.Drawing.Size(90, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
+            this.btnLast.Visible = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnSave
@@ -148,7 +149,7 @@
             this.label1.Size = new System.Drawing.Size(796, 80);
             this.label1.TabIndex = 0;
             this.label1.Text = "（请根据项目研究需要，合理设置项目（课题）研究阶段和进度计划，如下表所示）\r\n（原则上每年度应至少设置一个阶段节点（若只设置一个节点，该节点时间不迟于当年12月1" +
-                "0日），具体时间视研究工作实际情况而定。）\r\n";
+    "0日），具体时间视研究工作实际情况而定。）\r\n";
             // 
             // plContent
             // 

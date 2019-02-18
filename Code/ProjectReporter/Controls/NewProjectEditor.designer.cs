@@ -695,12 +695,12 @@ namespace ProjectReporter.Controls
             // 
             // btnLast
             // 
-            this.btnLast.Enabled = false;
             this.btnLast.Location = new System.Drawing.Point(1119, 3);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(90, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
+            this.btnLast.Visible = false;
             // 
             // btnSave
             // 
