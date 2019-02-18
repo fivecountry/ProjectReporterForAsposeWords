@@ -46,8 +46,13 @@ namespace ProjectReporter.Forms
         {
             if (CurrentUnitExt == null)
             {
-                btnUnitSelect.Text = "点击选择单位！";
-                MessageBox.Show("请选择所属单位！");
+                btnUnitSelect.Text = "点击选择开户帐号！";
+                MessageBox.Show("请选择所属单位开户帐号！");
+                return;
+            }
+            if (string.IsNullOrEmpty(txtUnitName.Text))
+            {
+                MessageBox.Show("请输入单位名称！");
                 return;
             }
             if (string.IsNullOrEmpty(txtName.Text))
@@ -122,7 +127,7 @@ namespace ProjectReporter.Forms
                 PersonObj.copyTo(ConnectionManager.Context.table("Person")).where("ID='" + PersonObj.ID + "'").update();
             }
 
-            BuildUnitRecord(PersonObj.UnitID, CurrentUnitExt.UnitName, "未知...");
+            BuildUnitRecord(PersonObj.UnitID, txtUnitName.Text, "未知...");
 
             DialogResult = DialogResult.OK;
         }
@@ -137,7 +142,7 @@ namespace ProjectReporter.Forms
             UnitExtSelectForm uesf = new UnitExtSelectForm(PersonObj != null ? PersonObj.UnitID : string.Empty);
             if (uesf.ShowDialog() == DialogResult.OK && uesf.SelectedUnitExt != null)
             {
-                btnUnitSelect.Text = uesf.SelectedUnitExt.UnitName;
+                btnUnitSelect.Text = uesf.SelectedUnitExt.UnitBankNo;
                 CurrentUnitExt = uesf.SelectedUnitExt;
             }
         }

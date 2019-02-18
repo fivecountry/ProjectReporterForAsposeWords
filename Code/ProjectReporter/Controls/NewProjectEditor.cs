@@ -147,6 +147,11 @@ namespace ProjectReporter.Controls
 
         private long SaveProject()
         {
+            if (string.IsNullOrEmpty(txtUnitName.Text))
+            {
+                MessageBox.Show("对不起,请输入单位名称!");
+                return -1;
+            }
             if (string.IsNullOrEmpty(txtProjectName.Text))
             {
                 MessageBox.Show("对不起,请输入工程名称!");

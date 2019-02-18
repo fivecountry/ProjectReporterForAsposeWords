@@ -32,6 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.colType = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.colBankUserName = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.colBankName = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.colBankNo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.colUserAddeds = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.leSearchList = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.leSearchListView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -43,14 +51,6 @@
             this.gcUnitBankNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.colType = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.colBankUserName = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.colBankName = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.colBankNo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
-            this.colUserAddeds = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -103,6 +103,73 @@
             this.dgvDetail.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellEndEdit);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
+            // selpersonid
+            // 
+            this.selpersonid.HeaderText = "序号";
+            this.selpersonid.Name = "selpersonid";
+            this.selpersonid.ReadOnly = true;
+            this.selpersonid.Width = 50;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.HeaderText = "单位名称";
+            this.colName.Name = "colName";
+            this.colName.Visible = false;
+            this.colName.Width = 187;
+            // 
+            // colType
+            // 
+            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colType.HeaderText = "类型";
+            this.colType.Name = "colType";
+            this.colType.Visible = false;
+            this.colType.Width = 100;
+            // 
+            // colBankUserName
+            // 
+            this.colBankUserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBankUserName.HeaderText = "开户名称";
+            this.colBankUserName.Name = "colBankUserName";
+            this.colBankUserName.Visible = false;
+            this.colBankUserName.Width = 187;
+            // 
+            // colBankName
+            // 
+            this.colBankName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBankName.HeaderText = "开户行";
+            this.colBankName.Name = "colBankName";
+            this.colBankName.Width = 423;
+            // 
+            // colBankNo
+            // 
+            this.colBankNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBankNo.HeaderText = "帐户";
+            this.colBankNo.Name = "colBankNo";
+            this.colBankNo.Width = 423;
+            // 
+            // colUserAddeds
+            // 
+            this.colUserAddeds.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = false;
+            this.colUserAddeds.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colUserAddeds.FalseValue = null;
+            this.colUserAddeds.HeaderText = "用户自定义";
+            this.colUserAddeds.IndeterminateValue = null;
+            this.colUserAddeds.Name = "colUserAddeds";
+            this.colUserAddeds.ReadOnly = true;
+            this.colUserAddeds.TrueValue = null;
+            this.colUserAddeds.Width = 98;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "删除";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.Width = 45;
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.leSearchList);
@@ -151,24 +218,18 @@
             this.gcUnitName.Caption = "单位名称";
             this.gcUnitName.FieldName = "UnitName";
             this.gcUnitName.Name = "gcUnitName";
-            this.gcUnitName.Visible = true;
-            this.gcUnitName.VisibleIndex = 0;
             // 
             // gcUnitType
             // 
             this.gcUnitType.Caption = "单位类型";
             this.gcUnitType.FieldName = "UnitType";
             this.gcUnitType.Name = "gcUnitType";
-            this.gcUnitType.Visible = true;
-            this.gcUnitType.VisibleIndex = 1;
             // 
             // gcUnitBankUser
             // 
             this.gcUnitBankUser.Caption = "开户名称";
             this.gcUnitBankUser.FieldName = "UnitBankUser";
             this.gcUnitBankUser.Name = "gcUnitBankUser";
-            this.gcUnitBankUser.Visible = true;
-            this.gcUnitBankUser.VisibleIndex = 2;
             // 
             // gcUnitBankName
             // 
@@ -176,7 +237,7 @@
             this.gcUnitBankName.FieldName = "UnitBankName";
             this.gcUnitBankName.Name = "gcUnitBankName";
             this.gcUnitBankName.Visible = true;
-            this.gcUnitBankName.VisibleIndex = 3;
+            this.gcUnitBankName.VisibleIndex = 0;
             // 
             // gcUnitBankNo
             // 
@@ -184,7 +245,7 @@
             this.gcUnitBankNo.FieldName = "UnitBankNo";
             this.gcUnitBankNo.Name = "gcUnitBankNo";
             this.gcUnitBankNo.Visible = true;
-            this.gcUnitBankNo.VisibleIndex = 4;
+            this.gcUnitBankNo.VisibleIndex = 1;
             // 
             // btnAdd
             // 
@@ -210,81 +271,14 @@
             this.btnSave.Values.Text = "保存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // selpersonid
-            // 
-            this.selpersonid.HeaderText = "序号";
-            this.selpersonid.Name = "selpersonid";
-            this.selpersonid.ReadOnly = true;
-            this.selpersonid.Width = 50;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.HeaderText = "单位名称";
-            this.colName.Name = "colName";
-            this.colName.Visible = false;
-            this.colName.Width = 187;
-            // 
-            // colType
-            // 
-            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colType.HeaderText = "类型";
-            this.colType.Name = "colType";
-            this.colType.Visible = false;
-            this.colType.Width = 69;
-            // 
-            // colBankUserName
-            // 
-            this.colBankUserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBankUserName.HeaderText = "开户名称";
-            this.colBankUserName.Name = "colBankUserName";
-            this.colBankUserName.Visible = false;
-            this.colBankUserName.Width = 187;
-            // 
-            // colBankName
-            // 
-            this.colBankName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBankName.HeaderText = "开户行";
-            this.colBankName.Name = "colBankName";
-            this.colBankName.Width = 423;
-            // 
-            // colBankNo
-            // 
-            this.colBankNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBankNo.HeaderText = "帐户";
-            this.colBankNo.Name = "colBankNo";
-            this.colBankNo.Width = 423;
-            // 
-            // colUserAddeds
-            // 
-            this.colUserAddeds.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = false;
-            this.colUserAddeds.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colUserAddeds.FalseValue = null;
-            this.colUserAddeds.HeaderText = "用户自定义";
-            this.colUserAddeds.IndeterminateValue = null;
-            this.colUserAddeds.Name = "colUserAddeds";
-            this.colUserAddeds.ReadOnly = true;
-            this.colUserAddeds.TrueValue = null;
-            this.colUserAddeds.Width = 98;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "删除";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.Width = 45;
-            // 
-            // frmUnitManage
+            // UnitManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 504);
             this.Controls.Add(this.panelControl1);
             this.MinimizeBox = false;
-            this.Name = "frmUnitManage";
+            this.Name = "UnitManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "单位管理";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
