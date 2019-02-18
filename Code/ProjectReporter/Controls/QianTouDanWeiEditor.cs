@@ -82,6 +82,8 @@ namespace ProjectReporter.Controls
 
                         int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                         dgvDetail.Rows[rowIndex].Tag = wl;
+
+                        dgvDetail.Rows[rowIndex].Cells[1].Tag = unitExtObj.ID;
                     }
                 }
             }

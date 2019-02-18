@@ -42,7 +42,8 @@
             this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colFuZeRen = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
-            this.colChengDanDanWei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.colChengDanDanWeiMingCheng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChengDanDanWeiKaiHuXhangHao = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colNeiRong = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colZongTiKeTi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -163,7 +164,8 @@
             this.colKeTiMingCheng,
             this.colMiJi,
             this.colFuZeRen,
-            this.colChengDanDanWei,
+            this.colChengDanDanWeiMingCheng,
+            this.colChengDanDanWeiKaiHuXhangHao,
             this.colNeiRong,
             this.colZongTiKeTi,
             this.delete,
@@ -198,7 +200,7 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 51;
+            this.colKeTiMingCheng.Width = 50;
             // 
             // colMiJi
             // 
@@ -208,7 +210,7 @@
             this.colMiJi.Name = "colMiJi";
             this.colMiJi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMiJi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMiJi.Width = 51;
+            this.colMiJi.Width = 50;
             // 
             // colFuZeRen
             // 
@@ -220,13 +222,19 @@
             this.colFuZeRen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colFuZeRen.Width = 165;
             // 
-            // colChengDanDanWei
+            // colChengDanDanWeiMingCheng
             // 
-            this.colChengDanDanWei.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colChengDanDanWei.HeaderText = "承担单位";
-            this.colChengDanDanWei.Name = "colChengDanDanWei";
-            this.colChengDanDanWei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colChengDanDanWei.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colChengDanDanWeiMingCheng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colChengDanDanWeiMingCheng.HeaderText = "承担单位名称";
+            this.colChengDanDanWeiMingCheng.Name = "colChengDanDanWeiMingCheng";
+            // 
+            // colChengDanDanWeiKaiHuXhangHao
+            // 
+            this.colChengDanDanWeiKaiHuXhangHao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colChengDanDanWeiKaiHuXhangHao.HeaderText = "承担单位开户帐号";
+            this.colChengDanDanWeiKaiHuXhangHao.Name = "colChengDanDanWeiKaiHuXhangHao";
+            this.colChengDanDanWeiKaiHuXhangHao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colChengDanDanWeiKaiHuXhangHao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colNeiRong
             // 
@@ -234,7 +242,7 @@
             this.colNeiRong.HeaderText = "内容";
             this.colNeiRong.Name = "colNeiRong";
             this.colNeiRong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colNeiRong.Width = 52;
+            this.colNeiRong.Width = 50;
             // 
             // colZongTiKeTi
             // 
@@ -260,6 +268,7 @@
             this.colDetail.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
             this.colDetail.Name = "colDetail";
             this.colDetail.ReadOnly = true;
+            this.colDetail.Visible = false;
             this.colDetail.Width = 45;
             // 
             // KeTiTianBaoEditor
@@ -294,7 +303,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colKeTiMingCheng;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colMiJi;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colFuZeRen;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colChengDanDanWei;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colChengDanDanWeiMingCheng;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colChengDanDanWeiKaiHuXhangHao;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colNeiRong;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colZongTiKeTi;
         private System.Windows.Forms.DataGridViewImageColumn delete;

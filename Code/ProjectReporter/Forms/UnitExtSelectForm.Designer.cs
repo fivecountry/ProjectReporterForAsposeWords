@@ -139,7 +139,7 @@
             this.MinimizeBox = false;
             this.Name = "UnitExtSelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "单位选择";
+            this.Text = "开户帐号选择";
             ((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).EndInit();
             this.ResumeLayout(false);
