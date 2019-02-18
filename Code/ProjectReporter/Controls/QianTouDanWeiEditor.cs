@@ -68,11 +68,13 @@ namespace ProjectReporter.Controls
                 foreach (WhiteList wl in WhiteDataList)
                 {
                     Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + wl.UnitID + "'").select("*").getItem<Unit>(new Unit());
-                    if (unitObj != null && unitObj.ID != null && unitObj.ID.Length >= 1)
+                    UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + wl.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
+                    if (unitObj != null && unitExtObj != null && unitObj.ID != null && unitObj.ID.Length >= 1)
                     {
                         indexx++;
                         List<object> cells = new List<object>();
                         cells.Add(indexx + "");
+                        cells.Add(unitExtObj.UnitBankNo);
                         cells.Add(unitObj.UnitName);
                         cells.Add(unitObj.Address);
                         cells.Add(unitObj.ContactName);
@@ -102,40 +104,42 @@ namespace ProjectReporter.Controls
                     wlObj = (WhiteList)dgvRow.Tag;
                 }
 
-                if (dgvRow.Cells[1].Value == null || dgvRow.Cells[2].Value == null || dgvRow.Cells[3].Value == null || dgvRow.Cells[4].Value == null)
+                if (dgvRow.Cells[1].Value == null || dgvRow.Cells[2].Value == null || dgvRow.Cells[3].Value == null || dgvRow.Cells[4].Value == null || dgvRow.Cells[5].Value == null)
                 {
                     continue;
                 }
 
-                if (UnitDict.ContainsKey(dgvRow.Cells[1].Value.ToString()))
+                if (dgvRow.Cells[1].Tag == null)
                 {
-                    wlObj.UnitID = UnitDict[dgvRow.Cells[1].Value.ToString()].ID;
+                    continue;
+                }
 
-                    //创建单位信息
-                    ConnectionManager.Context.table("Unit").where("ID='" + wlObj.UnitID + "'").delete();
-                    Unit newUnit = new Unit();
-                    newUnit.ID = wlObj.UnitID;
-                    newUnit.UnitName = dgvRow.Cells[1].Value.ToString();
-                    newUnit.FlagName = dgvRow.Cells[1].Value.ToString();
-                    newUnit.NormalName = dgvRow.Cells[1].Value.ToString();
-                    newUnit.ContactName = dgvRow.Cells[3].Value.ToString();
-                    newUnit.Telephone = dgvRow.Cells[4].Value.ToString();
-                    newUnit.Address = dgvRow.Cells[2].Value.ToString();
-                    newUnit.UnitType = "候选单位";
-                    newUnit.SecretQualification = "未知";
-                    newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
+                wlObj.UnitID = dgvRow.Cells[1].Tag.ToString();
 
-                    if (string.IsNullOrEmpty(wlObj.ID))
-                    {
-                        //insert
-                        wlObj.ID = Guid.NewGuid().ToString();
-                        wlObj.copyTo(ConnectionManager.Context.table("WhiteList")).insert();
-                    }
-                    else
-                    {
-                        //update
-                        wlObj.copyTo(ConnectionManager.Context.table("WhiteList")).where("ID='" + wlObj.ID + "'").update();
-                    }
+                //创建单位信息
+                ConnectionManager.Context.table("Unit").where("ID='" + wlObj.UnitID + "'").delete();
+                Unit newUnit = new Unit();
+                newUnit.ID = wlObj.UnitID;
+                newUnit.UnitName = dgvRow.Cells[2].Value.ToString();
+                newUnit.FlagName = dgvRow.Cells[2].Value.ToString();
+                newUnit.NormalName = dgvRow.Cells[2].Value.ToString();
+                newUnit.ContactName = dgvRow.Cells[4].Value.ToString();
+                newUnit.Telephone = dgvRow.Cells[5].Value.ToString();
+                newUnit.Address = dgvRow.Cells[3].Value.ToString();
+                newUnit.UnitType = "候选单位";
+                newUnit.SecretQualification = "未知";
+                newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
+
+                if (string.IsNullOrEmpty(wlObj.ID))
+                {
+                    //insert
+                    wlObj.ID = Guid.NewGuid().ToString();
+                    wlObj.copyTo(ConnectionManager.Context.table("WhiteList")).insert();
+                }
+                else
+                {
+                    //update
+                    wlObj.copyTo(ConnectionManager.Context.table("WhiteList")).where("ID='" + wlObj.ID + "'").update();
                 }
             }
 
@@ -181,7 +185,8 @@ namespace ProjectReporter.Controls
                         {
                             if (usf.SelectedUnitExt != null)
                             {
-                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitName;
+                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitBankNo;
+                                dgvDetail.Rows[e.RowIndex].Cells[1].Tag = usf.SelectedUnitExt.ID;
                             }
                         }
                     }
@@ -209,7 +214,8 @@ namespace ProjectReporter.Controls
                         {
                             if (usf.SelectedUnitExt != null)
                             {
-                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitName;
+                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitBankNo;
+                                dgvDetail.Rows[e.RowIndex].Cells[1].Tag = usf.SelectedUnitExt.ID;
                             }
                         }
                     }

@@ -39,7 +39,8 @@
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDanWeiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.colKaiHuZhangHao = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.colDanWeiMingCheng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTongXinDiZhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLianXiRen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLianXiDianHua = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,6 +157,7 @@
             this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selpersonid,
+            this.colKaiHuZhangHao,
             this.colDanWeiMingCheng,
             this.colTongXinDiZhi,
             this.colLianXiRen,
@@ -186,15 +188,21 @@
             this.selpersonid.ReadOnly = true;
             this.selpersonid.Width = 80;
             // 
+            // colKaiHuZhangHao
+            // 
+            this.colKaiHuZhangHao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colKaiHuZhangHao.HeaderText = "开户帐号";
+            this.colKaiHuZhangHao.Name = "colKaiHuZhangHao";
+            this.colKaiHuZhangHao.ReadOnly = true;
+            this.colKaiHuZhangHao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colKaiHuZhangHao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colKaiHuZhangHao.Width = 101;
+            // 
             // colDanWeiMingCheng
             // 
-            this.colDanWeiMingCheng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colDanWeiMingCheng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDanWeiMingCheng.HeaderText = "单位名称";
             this.colDanWeiMingCheng.Name = "colDanWeiMingCheng";
-            this.colDanWeiMingCheng.ReadOnly = true;
-            this.colDanWeiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colDanWeiMingCheng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colDanWeiMingCheng.Width = 101;
             // 
             // colTongXinDiZhi
             // 
@@ -252,7 +260,8 @@
         private System.Windows.Forms.Panel plContent;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colDanWeiMingCheng;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colKaiHuZhangHao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDanWeiMingCheng;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTongXinDiZhi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLianXiRen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLianXiDianHua;
