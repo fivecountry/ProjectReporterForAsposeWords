@@ -265,23 +265,11 @@
     <Compile Include="Forms\NewPersonForm.Designer.cs">
       <DependentUpon>NewPersonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Old\NewUnitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Old\NewUnitForm.Designer.cs">
-      <DependentUpon>NewUnitForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\PersonManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\PersonManagerForm.Designer.cs">
       <DependentUpon>PersonManagerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Old\UnitManagerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Old\UnitManagerForm.Designer.cs">
-      <DependentUpon>UnitManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UnitExtSelectForm.cs">
       <SubType>Form</SubType>
@@ -386,14 +374,8 @@
     <EmbeddedResource Include="Forms\NewPersonForm.resx">
       <DependentUpon>NewPersonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Old\NewUnitForm.resx">
-      <DependentUpon>NewUnitForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PersonManagerForm.resx">
       <DependentUpon>PersonManagerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Old\UnitManagerForm.resx">
-      <DependentUpon>UnitManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnitExtSelectForm.resx">
       <DependentUpon>UnitExtSelectForm.cs</DependentUpon>
