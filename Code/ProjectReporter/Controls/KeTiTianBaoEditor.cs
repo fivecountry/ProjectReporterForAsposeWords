@@ -11,6 +11,7 @@ using ProjectReporter.Forms;
 using ProjectReporter.DB;
 using ProjectReporter.DB.Entitys;
 using ComponentFactory.Krypton.Navigator;
+using System.IO;
 
 namespace ProjectReporter.Controls
 {
@@ -436,19 +437,45 @@ namespace ProjectReporter.Controls
         {
             if (KeTiList != null)
             {
+                knKetiReadmeList.Pages.Clear();
                 foreach (Project proj in KeTiList)
                 {
-                    knKetiReadmeList.Pages.Clear();
-
                     KryptonPage kp = new KryptonPage(proj.Name);
                     kp.Text = proj.Name;
 
-                    RTFTextEditor textEditor = new RTFTextEditor();
-                    textEditor.Dock = DockStyle.Fill;
+                    RTFTextEditor rtfTextEditor = new RTFTextEditor();
+                    rtfTextEditor.TitleLabelText = "课题(" + proj.Name + ")详细内容";
+                    rtfTextEditor.Dock = DockStyle.Fill;
+                    rtfTextEditor.BackColor = Color.White;
 
-                    kp.Controls.Add(textEditor);
+                    rtfTextEditor.RTFFileFirstName = "keti_" + rtfTextEditor.RTFFileFirstName;
+                    rtfTextEditor.Name = rtfTextEditor.RTFEditorNameKey + proj.ID;
+                    if (!File.Exists(Path.Combine(MainForm.ProjectFilesDir, rtfTextEditor.RTFFileFirstName + proj.ID + ".rtf")))
+                    {
+                        File.Copy(Path.Combine(Application.StartupPath, "Helper//xitixiangxi.rtf"), Path.Combine(MainForm.ProjectFilesDir, rtfTextEditor.RTFFileFirstName + proj.ID + ".rtf"));
+                    }
+                    rtfTextEditor.RefreshView();
+
+                    rtfTextEditor.NextEvent += RtfTextEditor_NextEvent;
+
+                    kp.Controls.Add(rtfTextEditor);
                     knKetiReadmeList.Pages.Add(kp);
                 }
+            }
+        }
+
+        private void RtfTextEditor_NextEvent(object sender, EventArgs args)
+        {
+            RTFTextEditor textEditor = (RTFTextEditor)sender;
+            textEditor.OnSaveEvent();
+
+            if (knKetiReadmeList.Pages.Count - 1 == knKetiReadmeList.SelectedIndex)
+            {
+                OnNextEvent();
+            }
+            else
+            {
+                knKetiReadmeList.SelectedIndex += 1;
             }
         }
     }
