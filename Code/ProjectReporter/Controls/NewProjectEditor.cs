@@ -88,7 +88,7 @@ namespace ProjectReporter.Controls
             var unitList = _unitInforService.GetUnitInforList();
 
             leSearchList.Properties.DataSource = unitList;
-            leSearchList.Properties.DisplayMember = "ID";
+            leSearchList.Properties.DisplayMember = "UnitBankNo";
             leSearchList.Properties.ValueMember = "ID";
 
             if (MainForm.Instance.ProjectObj != null)
