@@ -11,10 +11,10 @@ using ProjectReporter.DB.Entitys;
 
 namespace ProjectReporter.Forms
 {
-    public partial class AddUnitForm : KryptonForm
+    public partial class NewUnitForm : KryptonForm
     {
         private UnitExtService _unitInforService = new UnitExtService();
-        public AddUnitForm()
+        public NewUnitForm()
         {
             InitializeComponent();
         }

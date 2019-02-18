@@ -199,11 +199,11 @@
     <Compile Include="Forms\ClearForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddUnitForm.cs">
+    <Compile Include="Forms\NewUnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddUnitForm.designer.cs">
-      <DependentUpon>AddUnitForm.cs</DependentUpon>
+    <Compile Include="Forms\NewUnitForm.designer.cs">
+      <DependentUpon>NewUnitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UnitManagerForm.cs">
       <SubType>Form</SubType>
@@ -341,8 +341,8 @@
     <EmbeddedResource Include="Forms\ClearForm.resx">
       <DependentUpon>ClearForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddUnitForm.resx">
-      <DependentUpon>AddUnitForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewUnitForm.resx">
+      <DependentUpon>NewUnitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnitManagerForm.resx">
       <DependentUpon>UnitManagerForm.cs</DependentUpon>

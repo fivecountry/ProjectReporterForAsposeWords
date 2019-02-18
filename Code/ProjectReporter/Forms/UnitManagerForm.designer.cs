@@ -1,6 +1,6 @@
 ﻿namespace ProjectReporter.Forms
 {
-    partial class frmUnitManage
+    partial class UnitManagerForm
     {
         /// <summary>
         /// Required designer variable.

@@ -13,11 +13,11 @@ using ProjectReporter.Properties;
 
 namespace ProjectReporter.Forms
 {
-    public partial class frmUnitManage : KryptonForm
+    public partial class UnitManagerForm : KryptonForm
     {
         UnitExtService _unitInforService = new UnitExtService();
 
-        public frmUnitManage()
+        public UnitManagerForm()
         {
             InitializeComponent();
 
@@ -160,7 +160,7 @@ namespace ProjectReporter.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddUnitForm addUnit = new AddUnitForm();
+            NewUnitForm addUnit = new NewUnitForm();
             if (addUnit.ShowDialog() == DialogResult.OK)
             {
                 UpdateUnitList();
