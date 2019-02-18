@@ -90,6 +90,7 @@
             this.btnLast.Size = new System.Drawing.Size(90, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
+            this.btnLast.Visible = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnSave
@@ -151,12 +152,12 @@
             this.txtContent.TabIndex = 0;
             this.txtContent.Text = "";
             // 
-            // frmRTFTextEditor
+            // RTFTextEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Name = "frmRTFTextEditor";
+            this.Name = "RTFTextEditor";
             this.Size = new System.Drawing.Size(1114, 553);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
