@@ -313,7 +313,7 @@ namespace ProjectReporter.Controls
                     task.IDCard = personObj.IDCard;
                     task.Role = "负责人";
                     task.Type = "课题";
-                    task.Content = dgvRow.Cells[5].Value != null ? dgvRow.Cells[5].Value.ToString() : string.Empty;
+                    task.Content = dgvRow.Cells[6].Value != null ? dgvRow.Cells[6].Value.ToString() : string.Empty;
                     task.TotalTime = 0;
 
                     if (string.IsNullOrEmpty(task.ID))

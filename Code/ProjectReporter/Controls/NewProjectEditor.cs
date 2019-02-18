@@ -54,7 +54,7 @@ namespace ProjectReporter.Controls
                 if (unitObj != null)
                 {
                     txtUnitName.Text = unitObj.UnitName;
-                    txtFlagName.Text = unitObj.FlagName;
+                    //txtFlagName.Text = unitObj.FlagName;
                     txtNormalName.Text = unitObj.NormalName;
                     txtContactName.Text = unitObj.ContactName;
                     txtAddress.Text = unitObj.Address;
@@ -210,11 +210,11 @@ namespace ProjectReporter.Controls
                 return -1;
             }
 
-            if (string.IsNullOrEmpty(txtFlagName.Text))
-            {
-                MessageBox.Show("对不起，请输入公章名称");
-                return -1;
-            }
+            //if (string.IsNullOrEmpty(txtFlagName.Text))
+            //{
+            //    MessageBox.Show("对不起，请输入公章名称");
+            //    return -1;
+            //}
 
             if (string.IsNullOrEmpty(txtNormalName.Text))
             {
@@ -269,7 +269,7 @@ namespace ProjectReporter.Controls
             Unit newUnit = new Unit();
             newUnit.ID = MainForm.Instance.ProjectObj.UnitID;
             newUnit.UnitName = txtUnitName.Text;
-            newUnit.FlagName = txtFlagName.Text;
+            //newUnit.FlagName = txtFlagName.Text;
             newUnit.NormalName = txtNormalName.Text;
             newUnit.ContactName = txtContactName.Text;
             newUnit.Telephone = txtTelphone.Text;

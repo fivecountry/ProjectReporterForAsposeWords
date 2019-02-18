@@ -47,12 +47,14 @@
             this.leSearchList.EditValue = "";
             this.leSearchList.Location = new System.Drawing.Point(12, 12);
             this.leSearchList.Name = "leSearchList";
+            this.leSearchList.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.leSearchList.Properties.Appearance.Options.UseFont = true;
             this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.leSearchList.Properties.ShowClearButton = false;
             this.leSearchList.Properties.ShowFooter = false;
             this.leSearchList.Properties.View = this.leSearchListView;
-            this.leSearchList.Size = new System.Drawing.Size(436, 20);
+            this.leSearchList.Size = new System.Drawing.Size(476, 38);
             this.leSearchList.TabIndex = 31;
             // 
             // leSearchListView
@@ -110,18 +112,20 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(233, 38);
+            this.btnCancel.Location = new System.Drawing.Point(253, 66);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(65, 25);
+            this.btnCancel.Size = new System.Drawing.Size(65, 39);
+            this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Values.Text = "取消";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(137, 38);
+            this.btnOK.Location = new System.Drawing.Point(157, 66);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(65, 25);
+            this.btnOK.Size = new System.Drawing.Size(65, 39);
+            this.btnOK.StateCommon.Content.ShortText.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.TabIndex = 33;
             this.btnOK.Values.Text = "确定";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -130,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 71);
+            this.ClientSize = new System.Drawing.Size(500, 113);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.leSearchList);

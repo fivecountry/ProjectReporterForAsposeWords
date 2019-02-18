@@ -192,7 +192,7 @@
             this.selpersonid.HeaderText = "序号";
             this.selpersonid.Name = "selpersonid";
             this.selpersonid.ReadOnly = true;
-            this.selpersonid.Width = 80;
+            this.selpersonid.Width = 50;
             // 
             // colKeTiMingCheng
             // 
@@ -200,11 +200,10 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 50;
+            this.colKeTiMingCheng.Width = 19;
             // 
             // colMiJi
             // 
-            this.colMiJi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colMiJi.DropDownWidth = 121;
             this.colMiJi.HeaderText = "密级";
             this.colMiJi.Name = "colMiJi";
@@ -238,20 +237,18 @@
             // 
             // colNeiRong
             // 
-            this.colNeiRong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colNeiRong.HeaderText = "内容";
             this.colNeiRong.Name = "colNeiRong";
             this.colNeiRong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colNeiRong.Width = 50;
+            this.colNeiRong.Width = 200;
             // 
             // colZongTiKeTi
             // 
-            this.colZongTiKeTi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colZongTiKeTi.HeaderText = "总体课题";
             this.colZongTiKeTi.Name = "colZongTiKeTi";
             this.colZongTiKeTi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colZongTiKeTi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colZongTiKeTi.Width = 101;
+            this.colZongTiKeTi.Width = 76;
             // 
             // delete
             // 
