@@ -112,6 +112,7 @@ namespace ProjectReporter.Controls
             if (ProjectPersonObj != null)
             {
                 txtMPersonName.Text = ProjectPersonObj.Name;
+                txtMPersonIDCard.Text = ProjectPersonObj.IDCard;
                 //cbxMPersonSex.Text = ProjectPersonObj.Sex;
                 //txtMPersonJob.Text = ProjectPersonObj.Job;
                 //txtMPersonTelephone.Text = ProjectPersonObj.Telephone;
