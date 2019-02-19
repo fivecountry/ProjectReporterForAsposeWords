@@ -17,6 +17,8 @@ namespace ProjectReporter.Controls
     {
         UnitExtService _unitInforService = new UnitExtService();
 
+        public Person ProjectPersonObj { get; private set; }
+
         public NewProjectEditor()
         {
             InitializeComponent();
@@ -68,7 +70,7 @@ namespace ProjectReporter.Controls
 
         public override void ClearView()
         {
-            cbxPersonList.Items.Clear();
+            //cbxPersonList.Items.Clear();
             leSearchList.Properties.DataSource = null;
             //cbxUnitA.Items.Clear();
             //cbxUnitB.Items.Clear();
@@ -78,7 +80,7 @@ namespace ProjectReporter.Controls
             txtTotalTime.Text = string.Empty;
             txtTotalMoney.Text = string.Empty;
             cbxSecret.SelectedIndex = 0;
-            cbxPersonList.Text = string.Empty;
+            txtMPersonName.Text = string.Empty;
             txtTelphone.Text = string.Empty;
             txtAddress.Text = string.Empty;
             txtKeyWords.Text = string.Empty;
@@ -99,26 +101,22 @@ namespace ProjectReporter.Controls
         }
 
         private void UpdatePersonList()
-        {
-            Person projectPersonObj = null;
+        {   
             if (MainForm.Instance.ProjectObj != null)
             {
-                projectPersonObj = ConnectionManager.Context.table("Person").where("ID in (select PersonID from task where Role='负责人' and Type='项目' and ProjectID = '" + MainForm.Instance.ProjectObj.ID + "')").select("*").getItem<Person>(new Person());
+                ProjectPersonObj = ConnectionManager.Context.table("Person").where("ID in (select PersonID from task where Role='负责人' and Type='项目' and ProjectID = '" + MainForm.Instance.ProjectObj.ID + "')").select("*").getItem<Person>(new Person());
 
             }
-            cbxPersonList.Items.Clear();
-            List<Person> list = ConnectionManager.Context.table("Person").select("*").getList<Person>(new Person());
 
-            foreach (Person p in list)
+            //显示项目负责人信息
+            if (ProjectPersonObj != null)
             {
-                string pName = p.Name + "(" + p.IDCard + ")";
-                ComboboxItem item = new ComboboxItem(pName, p);
-                cbxPersonList.Items.Add(item);
-
-                if (projectPersonObj != null && projectPersonObj.ID == p.ID)
-                {
-                    cbxPersonList.SelectedItem = item;
-                }
+                txtMPersonName.Text = ProjectPersonObj.Name;
+                //cbxMPersonSex.Text = ProjectPersonObj.Sex;
+                //txtMPersonJob.Text = ProjectPersonObj.Job;
+                //txtMPersonTelephone.Text = ProjectPersonObj.Telephone;
+                //txtMPersonMobilephone.Text = ProjectPersonObj.MobilePhone;
+                //txtMPersonBirthday.DateTime = ProjectPersonObj.Birthday != null ? ProjectPersonObj.Birthday.Value : DateTime.Now;
             }
         }
 
@@ -147,6 +145,16 @@ namespace ProjectReporter.Controls
 
         private long SaveProject()
         {
+            if (string.IsNullOrEmpty(txtMPersonName.Text))
+            {
+                MessageBox.Show("对不起,请输入项目负责人姓名!");
+                return -1;
+            }
+            if (string.IsNullOrEmpty(txtMPersonIDCard.Text))
+            {
+                MessageBox.Show("对不起,请输入项目负责人身份证!");
+                return -1;
+            }
             if (string.IsNullOrEmpty(txtUnitName.Text))
             {
                 MessageBox.Show("对不起,请输入单位名称!");
@@ -177,12 +185,6 @@ namespace ProjectReporter.Controls
             if (decimal.TryParse(txtTotalMoney.Text, out result2) == false)
             {
                 MessageBox.Show("对不起,研究经费格式不正确");
-                return -1;
-            }
-
-            if (cbxPersonList.SelectedIndex < 0)
-            {
-                MessageBox.Show("对不起,请选择项目负责人");
                 return -1;
             }
 
@@ -238,12 +240,28 @@ namespace ProjectReporter.Controls
                 projectIDs = MainForm.Instance.ProjectObj.ID;
             }
 
-            ComboboxItem personSelectedItem = (ComboboxItem)cbxPersonList.Items[cbxPersonList.SelectedIndex];
+            if (ProjectPersonObj != null)
+            {
+                ConnectionManager.Context.table("Person").where("ID = '" + ProjectPersonObj.ID + "'").delete();
+            }
+            ProjectPersonObj = new Person();
+            ProjectPersonObj.ID = Guid.NewGuid().ToString();
+            ProjectPersonObj.Name = txtMPersonName.Text;
+            ProjectPersonObj.UnitID = leSearchList.EditValue.ToString();
+            ProjectPersonObj.IDCard = txtMPersonIDCard.Text;
+            //ProjectPersonObj.IDCard = txtMPersonIDCard.Text;
+            //ProjectPersonObj.Sex = cbxMPersonSex.Text;
+            //ProjectPersonObj.Job = txtMPersonJob.Text;
+            //ProjectPersonObj.Birthday = txtMPersonBirthday.DateTime;
+            //ProjectPersonObj.Telephone = txtMPersonTelephone.Text;
+            //ProjectPersonObj.MobilePhone = txtMPersonMobilephone.Text;
+            ProjectPersonObj.copyTo(ConnectionManager.Context.table("Person")).insert();
+
             //ComboboxItem unitSelectedItem = ((ComboboxItem)cbxUnitA.Items[cbxUnitA.SelectedIndex]);
             Task projectPerson = new Task();
             projectPerson.ID = Guid.NewGuid().ToString();
-            projectPerson.PersonID = ((Person)personSelectedItem.Value).ID;
-            projectPerson.IDCard = ((Person)personSelectedItem.Value).IDCard;
+            projectPerson.PersonID = ProjectPersonObj.ID;
+            projectPerson.IDCard = ProjectPersonObj.IDCard;
             projectPerson.ProjectID = projectIDs;
             projectPerson.Role = "负责人";
             projectPerson.Type = "项目";
