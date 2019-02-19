@@ -373,6 +373,7 @@ namespace ProjectReporter.Controls
                     if (dgvRow.Cells[5].Tag != null)
                     {
                         Unit unitObj = (Unit)dgvRow.Cells[5].Tag;
+                        unitObj.UnitName = dgvRow.Cells[5].Value.ToString();
                         BuildUnitRecord(proj.UnitID, unitObj.UnitName, unitObj.ContactName, unitObj.Telephone, unitObj.UnitType, unitObj.Address);
                     }
                     else
