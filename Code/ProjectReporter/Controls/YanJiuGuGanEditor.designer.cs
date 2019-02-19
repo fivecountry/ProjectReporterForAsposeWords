@@ -47,8 +47,8 @@
             this.colXiangMuZhongZhiWu = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colRenWuFenGong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMeiNianGongZuoShiJian = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colEditThis = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colEditThis = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -168,8 +168,8 @@
             this.colXiangMuZhongZhiWu,
             this.colRenWuFenGong,
             this.colMeiNianGongZuoShiJian,
-            this.delete,
-            this.colEditThis});
+            this.colEditThis,
+            this.delete});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
@@ -273,6 +273,15 @@
             this.colMeiNianGongZuoShiJian.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colMeiNianGongZuoShiJian.Width = 79;
             // 
+            // colEditThis
+            // 
+            this.colEditThis.HeaderText = "";
+            this.colEditThis.Name = "colEditThis";
+            this.colEditThis.ReadOnly = true;
+            this.colEditThis.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEditThis.Text = "编辑";
+            this.colEditThis.Width = 50;
+            // 
             // delete
             // 
             this.delete.HeaderText = "删除";
@@ -281,13 +290,6 @@
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Width = 45;
-            // 
-            // colEditThis
-            // 
-            this.colEditThis.HeaderText = "编辑";
-            this.colEditThis.Name = "colEditThis";
-            this.colEditThis.ReadOnly = true;
-            this.colEditThis.Width = 50;
             // 
             // YanJiuGuGanEditor
             // 
@@ -326,7 +328,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colXiangMuZhongZhiWu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRenWuFenGong;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colMeiNianGongZuoShiJian;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEditThis;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewLinkColumn colEditThis;
     }
 }

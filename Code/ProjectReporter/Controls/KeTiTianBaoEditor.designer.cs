@@ -48,10 +48,9 @@
             this.colChengDanDanWeiKaiHuXhangHao = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colNeiRong = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colZongTiKeTi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colMakePage = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDetail = new System.Windows.Forms.DataGridViewImageColumn();
-            this.kpKetiDetails = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.knKetiReadmeList = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -62,10 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kpKetiItems)).BeginInit();
             this.kpKetiItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kpKetiDetails)).BeginInit();
-            this.kpKetiDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.knKetiReadmeList)).BeginInit();
-            this.knKetiReadmeList.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel15
@@ -169,19 +164,17 @@
             // 
             // kvKetiTabs
             // 
-            this.kvKetiTabs.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
+            this.kvKetiTabs.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.NextPrevious;
             this.kvKetiTabs.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.kvKetiTabs.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.kvKetiTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kvKetiTabs.Location = new System.Drawing.Point(0, 0);
             this.kvKetiTabs.Name = "kvKetiTabs";
             this.kvKetiTabs.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
-            this.kpKetiItems,
-            this.kpKetiDetails});
+            this.kpKetiItems});
             this.kvKetiTabs.SelectedIndex = 0;
             this.kvKetiTabs.Size = new System.Drawing.Size(683, 345);
             this.kvKetiTabs.TabIndex = 4;
-            this.kvKetiTabs.Text = "kryptonNavigator1";
             // 
             // kpKetiItems
             // 
@@ -209,6 +202,7 @@
             this.colChengDanDanWeiKaiHuXhangHao,
             this.colNeiRong,
             this.colZongTiKeTi,
+            this.colMakePage,
             this.delete,
             this.colDetail});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -241,7 +235,7 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 18;
+            this.colKeTiMingCheng.Width = 5;
             // 
             // colMiJi
             // 
@@ -291,6 +285,14 @@
             this.colZongTiKeTi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colZongTiKeTi.Width = 76;
             // 
+            // colMakePage
+            // 
+            this.colMakePage.HeaderText = "";
+            this.colMakePage.Name = "colMakePage";
+            this.colMakePage.ReadOnly = true;
+            this.colMakePage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMakePage.Text = "生成详细页";
+            // 
             // delete
             // 
             this.delete.HeaderText = "删除";
@@ -309,31 +311,6 @@
             this.colDetail.Visible = false;
             this.colDetail.Width = 45;
             // 
-            // kpKetiDetails
-            // 
-            this.kpKetiDetails.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kpKetiDetails.Controls.Add(this.knKetiReadmeList);
-            this.kpKetiDetails.Flags = 65534;
-            this.kpKetiDetails.LastVisibleSet = true;
-            this.kpKetiDetails.MinimumSize = new System.Drawing.Size(50, 50);
-            this.kpKetiDetails.Name = "kpKetiDetails";
-            this.kpKetiDetails.Size = new System.Drawing.Size(681, 318);
-            this.kpKetiDetails.Text = "课题详细";
-            this.kpKetiDetails.ToolTipTitle = "Page ToolTip";
-            this.kpKetiDetails.UniqueName = "16BCB81C76C447FBDFAC2A4C5978C3BA";
-            // 
-            // knKetiReadmeList
-            // 
-            this.knKetiReadmeList.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
-            this.knKetiReadmeList.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
-            this.knKetiReadmeList.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.knKetiReadmeList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.knKetiReadmeList.Location = new System.Drawing.Point(0, 0);
-            this.knKetiReadmeList.Name = "knKetiReadmeList";
-            this.knKetiReadmeList.Size = new System.Drawing.Size(681, 318);
-            this.knKetiReadmeList.TabIndex = 0;
-            this.knKetiReadmeList.Text = "kryptonNavigator1";
-            // 
             // KeTiTianBaoEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -351,10 +328,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kpKetiItems)).EndInit();
             this.kpKetiItems.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kpKetiDetails)).EndInit();
-            this.kpKetiDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.knKetiReadmeList)).EndInit();
-            this.knKetiReadmeList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,6 +343,8 @@
         private System.Windows.Forms.Panel plContent;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
         private System.Windows.Forms.Label label1;
+        private ComponentFactory.Krypton.Navigator.KryptonNavigator kvKetiTabs;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kpKetiItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colKeTiMingCheng;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colMiJi;
@@ -378,11 +353,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colChengDanDanWeiKaiHuXhangHao;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colNeiRong;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colZongTiKeTi;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colMakePage;
         private System.Windows.Forms.DataGridViewImageColumn delete;
         private System.Windows.Forms.DataGridViewImageColumn colDetail;
-        private ComponentFactory.Krypton.Navigator.KryptonNavigator kvKetiTabs;
-        private ComponentFactory.Krypton.Navigator.KryptonPage kpKetiItems;
-        private ComponentFactory.Krypton.Navigator.KryptonPage kpKetiDetails;
-        private ComponentFactory.Krypton.Navigator.KryptonNavigator knKetiReadmeList;
     }
 }

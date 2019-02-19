@@ -20,6 +20,7 @@ namespace ProjectReporter.Controls
             InitializeComponent();
 
             dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+            dgvDetail[dgvDetail.Columns.Count - 2, 0].Value = "编辑";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace ProjectReporter.Controls
         private void dgvDetail_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 1, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+            ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 2, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = "编辑";
         }
 
         public override void ClearView()
@@ -99,7 +101,7 @@ namespace ProjectReporter.Controls
 
             int indexx = 0;
             dgvDetail.Rows.Clear();
-            ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Image = ProjectReporter.Properties.Resources.DELETE_28;
+            ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 1]).Image = ProjectReporter.Properties.Resources.DELETE_28;
             foreach (Task task in TaskList)
             {
                 indexx++;
@@ -148,7 +150,8 @@ namespace ProjectReporter.Controls
                 cells.Add(roleName);
 
                 cells.Add(task.Content);
-                cells.Add(task.TotalTime);
+                cells.Add(task.TotalTime);                
+                cells.Add("编辑");
 
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                 dgvDetail.Rows[rowIndex].Tag = task;
@@ -325,7 +328,7 @@ namespace ProjectReporter.Controls
         {
             if (dgvDetail.Rows.Count >= 1)
             {
-                if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
+                if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
                 {
                     if (dgvDetail.Rows[e.RowIndex].Tag != null)
                     {
@@ -339,7 +342,7 @@ namespace ProjectReporter.Controls
                     }
                 }
 
-                if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
+                if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
                 {
                     if (dgvDetail.Rows[e.RowIndex].Tag != null)
                     {
@@ -352,7 +355,7 @@ namespace ProjectReporter.Controls
                     }
                     else
                     {
-                        if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
+                        if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
                         {
                             if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {

@@ -24,6 +24,7 @@ namespace ProjectReporter.Controls
             //显示图标
             dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.exclamation_16;
             dgvDetail[dgvDetail.Columns.Count - 2, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+            dgvDetail[dgvDetail.Columns.Count - 3, 0].Value = "生成标签页";
 
             //显示密级
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("公开");
@@ -112,6 +113,7 @@ namespace ProjectReporter.Controls
                 cells.Add(unitBankNo);
                 cells.Add(content);
                 cells.Add(keti.Type2 == "总体课题");
+                cells.Add("生成标签页");
 
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                 dgvDetail.Rows[rowIndex].Tag = keti;
@@ -162,6 +164,10 @@ namespace ProjectReporter.Controls
                             }
                         }
                     }
+                    else if (e.ColumnIndex == dgvDetail.Columns.Count - 3)
+                    {
+                        BuildOneKeTiDetailPageWithKeTiProject(kett);
+                    }
                 }
                 else if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
                 {
@@ -189,7 +195,21 @@ namespace ProjectReporter.Controls
                         }
                     }
                 }
+                else if (e.ColumnIndex == dgvDetail.Columns.Count - 3)
+                {
+                    BuildOneKeTiDetailPageWithKeTiRow(e.RowIndex);
+                }
             }
+        }
+
+        private void BuildOneKeTiDetailPageWithKeTiRow(int rowIndex)
+        {
+            
+        }
+
+        private void BuildOneKeTiDetailPageWithKeTiProject(Project kett)
+        {
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -211,6 +231,7 @@ namespace ProjectReporter.Controls
         {
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 1, e.RowIndex].Value = global::ProjectReporter.Properties.Resources.exclamation_16;
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 2, e.RowIndex].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+            ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 3, e.RowIndex].Value = "生成标签页";
         }
 
         public override void OnSaveEvent()
@@ -437,11 +458,26 @@ namespace ProjectReporter.Controls
         {
             if (KeTiList != null)
             {
-                knKetiReadmeList.Pages.Clear();
+                //删除除第一页之外其它标签页
+                List<KryptonPage> deletePageList = new List<KryptonPage>();
+                foreach (KryptonPage kp in kvKetiTabs.Pages)
+                {
+                    if (kp.Tag != null && kp.Tag.ToString() == "Dynamic")
+                    {
+                        deletePageList.Add(kp);
+                    }
+                }
+                foreach (KryptonPage kpp in deletePageList)
+                {
+                    kvKetiTabs.Pages.Remove(kpp);
+                }
+
                 foreach (Project proj in KeTiList)
                 {
-                    KryptonPage kp = new KryptonPage(proj.Name);
+                    KryptonPage kp = new KryptonPage();
+                    kp.Name = proj.ID;
                     kp.Text = proj.Name;
+                    kp.Tag = "Dynamic";
 
                     RTFTextEditor rtfTextEditor = new RTFTextEditor();
                     rtfTextEditor.TitleLabelText = "课题(" + proj.Name + ")详细内容";
@@ -459,7 +495,7 @@ namespace ProjectReporter.Controls
                     rtfTextEditor.NextEvent += RtfTextEditor_NextEvent;
 
                     kp.Controls.Add(rtfTextEditor);
-                    knKetiReadmeList.Pages.Add(kp);
+                    kvKetiTabs.Pages.Add(kp);
                 }
             }
         }
@@ -469,13 +505,13 @@ namespace ProjectReporter.Controls
             RTFTextEditor textEditor = (RTFTextEditor)sender;
             textEditor.OnSaveEvent();
 
-            if (knKetiReadmeList.Pages.Count - 1 == knKetiReadmeList.SelectedIndex)
+            if (kvKetiTabs.Pages.Count - 1 == kvKetiTabs.SelectedIndex)
             {
                 OnNextEvent();
             }
             else
             {
-                knKetiReadmeList.SelectedIndex += 1;
+                kvKetiTabs.SelectedIndex += 1;
             }
         }
     }
