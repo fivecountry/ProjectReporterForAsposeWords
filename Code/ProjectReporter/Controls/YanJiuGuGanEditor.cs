@@ -28,7 +28,7 @@ namespace ProjectReporter.Controls
             NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(null);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                RefreshView();
+                MainForm.Instance.RefreshEditor();
             }
         }
 
@@ -337,7 +337,7 @@ namespace ProjectReporter.Controls
                         NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(task);
                         if (form.ShowDialog() == DialogResult.OK)
                         {
-                            RefreshView();
+                            MainForm.Instance.RefreshEditor();
                         }
                     }
                 }
@@ -392,7 +392,7 @@ namespace ProjectReporter.Controls
                 NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(task);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    RefreshView();
+                    MainForm.Instance.RefreshEditor();
                 }
             }
         }
