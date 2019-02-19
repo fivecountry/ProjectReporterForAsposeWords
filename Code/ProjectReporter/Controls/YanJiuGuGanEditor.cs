@@ -330,6 +330,20 @@ namespace ProjectReporter.Controls
                     if (dgvDetail.Rows[e.RowIndex].Tag != null)
                     {
                         Task task = (Task)dgvDetail.Rows[e.RowIndex].Tag;
+
+                        NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(task);
+                        if (form.ShowDialog() == DialogResult.OK)
+                        {
+                            RefreshView();
+                        }
+                    }
+                }
+
+                if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
+                {
+                    if (dgvDetail.Rows[e.RowIndex].Tag != null)
+                    {
+                        Task task = (Task)dgvDetail.Rows[e.RowIndex].Tag;
                         if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             ConnectionManager.Context.table("Task").where("ID='" + task.ID + "'").delete();
@@ -338,7 +352,7 @@ namespace ProjectReporter.Controls
                     }
                     else
                     {
-                        if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
+                        if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
                         {
                             if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
