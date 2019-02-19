@@ -277,6 +277,15 @@ namespace ProjectReporter.Forms
             {
                 btnUnitSelect.Text = uesf.SelectedUnitExt.UnitBankNo;
                 UnitExtObj = uesf.SelectedUnitExt;
+
+                Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + UnitExtObj.ID + "'").select("*").getItem<Unit>(new Unit());
+                if (unitObj != null)
+                {
+                    txtUnitName.Text = unitObj.UnitName;
+                    txtUnitContactName.Text = unitObj.ContactName;
+                    txtUnitTelephone.Text = unitObj.Telephone;
+                    txtUnitAddress.Text = unitObj.Address;
+                }
             }
         }
 
