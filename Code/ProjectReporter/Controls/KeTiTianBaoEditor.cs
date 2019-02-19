@@ -267,8 +267,10 @@ namespace ProjectReporter.Controls
             
             if (oldPage == null)
             {
-                BuildOneKetiReadmePage(ketiID, ketiName);
+                oldPage = BuildOneKetiReadmePage(ketiID, ketiName);
             }
+
+            kvKetiTabs.SelectedPage = oldPage;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -560,7 +562,7 @@ namespace ProjectReporter.Controls
             }
         }
 
-        private void BuildOneKetiReadmePage(string ketiID, string ketiName)
+        private KryptonPage BuildOneKetiReadmePage(string ketiID, string ketiName)
         {
             KryptonPage kp = new KryptonPage();
             kp.Name = ketiID;
@@ -584,6 +586,8 @@ namespace ProjectReporter.Controls
 
             kp.Controls.Add(rtfTextEditor);
             kvKetiTabs.Pages.Add(kp);
+
+            return kp;
         }
 
         private void RtfTextEditor_NextEvent(object sender, EventArgs args)
