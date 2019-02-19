@@ -214,13 +214,17 @@ namespace ProjectReporter.Controls
             Project ketiProj =  (Project)dgvDetail.Rows[rowIndex].Tag;
             if (ketiProj == null)
             {
-                if (dgvDetail.Rows[rowIndex].Cells[0].Tag != null)
+                if (dgvDetail.Rows[rowIndex].Cells[0].Tag == null)
                 {
                     //需要生成一个课题ID,然后生成标签
                     ketiID = Guid.NewGuid().ToString();
 
                     //记录一下提前生成的课题ID
                     dgvDetail.Rows[rowIndex].Cells[0].Tag = ketiID;
+                }
+                else
+                {
+                    ketiID = dgvDetail.Rows[rowIndex].Cells[0].Tag.ToString();
                 }
             }
             else
