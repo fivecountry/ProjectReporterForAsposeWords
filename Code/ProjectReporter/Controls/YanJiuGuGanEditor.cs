@@ -99,7 +99,7 @@ namespace ProjectReporter.Controls
 
             int indexx = 0;
             dgvDetail.Rows.Clear();
-            ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 1]).Image = ProjectReporter.Properties.Resources.DELETE_28;
+            ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 2]).Image = ProjectReporter.Properties.Resources.DELETE_28;
             foreach (Task task in TaskList)
             {
                 indexx++;
