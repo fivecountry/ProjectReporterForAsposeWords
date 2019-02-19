@@ -166,7 +166,7 @@ namespace ProjectReporter.Controls
                     }
                     else if (e.ColumnIndex == dgvDetail.Columns.Count - 3)
                     {
-                        BuildOneKeTiDetailPageWithKeTiProject(kett);
+                        BuildOneKeTiDetailPageWithKeTiRow(e.RowIndex);
                     }
                 }
                 else if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
@@ -203,11 +203,6 @@ namespace ProjectReporter.Controls
         }
 
         private void BuildOneKeTiDetailPageWithKeTiRow(int rowIndex)
-        {
-            
-        }
-
-        private void BuildOneKeTiDetailPageWithKeTiProject(Project kett)
         {
             
         }
