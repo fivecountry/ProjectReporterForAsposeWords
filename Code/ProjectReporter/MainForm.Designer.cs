@@ -843,7 +843,7 @@ namespace ProjectReporter
             this.feUI6.Location = new System.Drawing.Point(0, 0);
             this.feUI6.Name = "feUI6";
             this.feUI6.ParentForm = null;
-            this.feUI6.PersonList = null;
+            //this.feUI6.PersonList = null;
             this.feUI6.Size = new System.Drawing.Size(1214, 599);
             this.feUI6.TabIndex = 0;
             this.feUI6.UnitList = null;

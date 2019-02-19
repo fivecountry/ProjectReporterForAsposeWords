@@ -43,7 +43,8 @@
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
-            this.colFuZeRen = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
+            this.colFuZeRen = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
+            this.colPersonIDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChengDanDanWeiMingCheng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChengDanDanWeiKaiHuXhangHao = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colNeiRong = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
@@ -198,6 +199,7 @@
             this.colKeTiMingCheng,
             this.colMiJi,
             this.colFuZeRen,
+            this.colPersonIDCard,
             this.colChengDanDanWeiMingCheng,
             this.colChengDanDanWeiKaiHuXhangHao,
             this.colNeiRong,
@@ -248,13 +250,17 @@
             // 
             // colFuZeRen
             // 
-            this.colFuZeRen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colFuZeRen.DropDownWidth = 121;
-            this.colFuZeRen.HeaderText = "负责人(身份证号)";
+            this.colFuZeRen.HeaderText = "负责人";
             this.colFuZeRen.Name = "colFuZeRen";
             this.colFuZeRen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colFuZeRen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colFuZeRen.Width = 165;
+            this.colFuZeRen.Width = 80;
+            // 
+            // colPersonIDCard
+            // 
+            this.colPersonIDCard.HeaderText = "身份证号";
+            this.colPersonIDCard.Name = "colPersonIDCard";
+            this.colPersonIDCard.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colPersonIDCard.Width = 120;
             // 
             // colChengDanDanWeiMingCheng
             // 
@@ -348,7 +354,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colKeTiMingCheng;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colMiJi;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colFuZeRen;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colFuZeRen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPersonIDCard;
         private System.Windows.Forms.DataGridViewTextBoxColumn colChengDanDanWeiMingCheng;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colChengDanDanWeiKaiHuXhangHao;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colNeiRong;

@@ -48,7 +48,7 @@ namespace ProjectReporter.Controls
             this.panel11 = new System.Windows.Forms.Panel();
             this.txtTotalMoney = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.txtTelphone = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtTelephone = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtProjectName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -73,6 +73,9 @@ namespace ProjectReporter.Controls
             this.label18 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbxSecret = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txtMPersonIDCard = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.plMain = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -81,9 +84,6 @@ namespace ProjectReporter.Controls
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtMPersonIDCard = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.hSkinTableLayoutPanel1.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -100,12 +100,12 @@ namespace ProjectReporter.Controls
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbxSecret)).BeginInit();
+            this.panel5.SuspendLayout();
             this.plMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // hSkinTableLayoutPanel1
@@ -212,6 +212,7 @@ namespace ProjectReporter.Controls
             this.leSearchList.Properties.View = this.leSearchListView;
             this.leSearchList.Size = new System.Drawing.Size(268, 34);
             this.leSearchList.TabIndex = 30;
+            this.leSearchList.EditValueChanged += new System.EventHandler(this.leSearchList_EditValueChanged);
             // 
             // leSearchListView
             // 
@@ -340,7 +341,7 @@ namespace ProjectReporter.Controls
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.White;
-            this.panel12.Controls.Add(this.txtTelphone);
+            this.panel12.Controls.Add(this.txtTelephone);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(987, 249);
             this.panel12.Margin = new System.Windows.Forms.Padding(1);
@@ -348,18 +349,18 @@ namespace ProjectReporter.Controls
             this.panel12.Size = new System.Drawing.Size(328, 60);
             this.panel12.TabIndex = 8;
             // 
-            // txtTelphone
+            // txtTelephone
             // 
-            this.txtTelphone.AlwaysActive = false;
-            this.txtTelphone.Location = new System.Drawing.Point(10, 8);
-            this.txtTelphone.Name = "txtTelphone";
-            this.txtTelphone.Size = new System.Drawing.Size(268, 29);
-            this.txtTelphone.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtTelphone.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtTelphone.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtTelphone.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtTelphone.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtTelphone.TabIndex = 15;
+            this.txtTelephone.AlwaysActive = false;
+            this.txtTelephone.Location = new System.Drawing.Point(10, 8);
+            this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.Size = new System.Drawing.Size(268, 29);
+            this.txtTelephone.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTelephone.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtTelephone.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTelephone.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTelephone.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtTelephone.TabIndex = 15;
             // 
             // panel10
             // 
@@ -650,6 +651,41 @@ namespace ProjectReporter.Controls
             this.cbxSecret.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("微软雅黑", 15F);
             this.cbxSecret.TabIndex = 20;
             // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(792, 372);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(191, 62);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "负责人身份证：";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.txtMPersonIDCard);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(987, 373);
+            this.panel5.Margin = new System.Windows.Forms.Padding(1);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(328, 60);
+            this.panel5.TabIndex = 6;
+            // 
+            // txtMPersonIDCard
+            // 
+            this.txtMPersonIDCard.AlwaysActive = false;
+            this.txtMPersonIDCard.Location = new System.Drawing.Point(10, 18);
+            this.txtMPersonIDCard.Name = "txtMPersonIDCard";
+            this.txtMPersonIDCard.Size = new System.Drawing.Size(268, 29);
+            this.txtMPersonIDCard.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtMPersonIDCard.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMPersonIDCard.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtMPersonIDCard.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtMPersonIDCard.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.txtMPersonIDCard.TabIndex = 16;
+            // 
             // plMain
             // 
             this.plMain.ColumnCount = 3;
@@ -747,41 +783,6 @@ namespace ProjectReporter.Controls
             this.panel13.Size = new System.Drawing.Size(1316, 503);
             this.panel13.TabIndex = 7;
             // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(792, 372);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 62);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "负责人身份证：";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.txtMPersonIDCard);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(987, 373);
-            this.panel5.Margin = new System.Windows.Forms.Padding(1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(328, 60);
-            this.panel5.TabIndex = 6;
-            // 
-            // txtMPersonIDCard
-            // 
-            this.txtMPersonIDCard.AlwaysActive = false;
-            this.txtMPersonIDCard.Location = new System.Drawing.Point(10, 18);
-            this.txtMPersonIDCard.Name = "txtMPersonIDCard";
-            this.txtMPersonIDCard.Size = new System.Drawing.Size(268, 29);
-            this.txtMPersonIDCard.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtMPersonIDCard.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtMPersonIDCard.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtMPersonIDCard.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtMPersonIDCard.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtMPersonIDCard.TabIndex = 16;
-            // 
             // NewProjectEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -815,13 +816,13 @@ namespace ProjectReporter.Controls
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbxSecret)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.plMain.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -850,7 +851,7 @@ namespace ProjectReporter.Controls
         private KryptonTextBox txtProjectName;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
-        private KryptonTextBox txtTelphone;
+        private KryptonTextBox txtTelephone;
         private KryptonTextBox txtTotalMoney;
         private KryptonTextBox txtTotalTime;
         private System.Windows.Forms.Label label2;

@@ -60,7 +60,7 @@ namespace ProjectReporter.Controls
                     txtNormalName.Text = unitObj.NormalName;
                     txtContactName.Text = unitObj.ContactName;
                     txtAddress.Text = unitObj.Address;
-                    txtTelphone.Text = unitObj.Telephone;
+                    txtTelephone.Text = unitObj.Telephone;
                 }
             }
 
@@ -81,7 +81,7 @@ namespace ProjectReporter.Controls
             txtTotalMoney.Text = string.Empty;
             cbxSecret.SelectedIndex = 0;
             txtMPersonName.Text = string.Empty;
-            txtTelphone.Text = string.Empty;
+            txtTelephone.Text = string.Empty;
             txtAddress.Text = string.Empty;
             txtKeyWords.Text = string.Empty;
         }
@@ -201,7 +201,7 @@ namespace ProjectReporter.Controls
                 return -1;
             }
 
-            if (string.IsNullOrEmpty(txtTelphone.Text))
+            if (string.IsNullOrEmpty(txtTelephone.Text))
             {
                 MessageBox.Show("对不起，请输入联系电话");
                 return -1;
@@ -291,7 +291,7 @@ namespace ProjectReporter.Controls
             //newUnit.FlagName = txtFlagName.Text;
             newUnit.NormalName = txtNormalName.Text;
             newUnit.ContactName = txtContactName.Text;
-            newUnit.Telephone = txtTelphone.Text;
+            newUnit.Telephone = txtTelephone.Text;
             newUnit.Address = txtAddress.Text;
             newUnit.UnitType = "申报单位";
             newUnit.SecretQualification = "未知";
@@ -328,6 +328,36 @@ namespace ProjectReporter.Controls
             //    txtFlagName.Text = uu.FlagName;
             //    txtNormalName.Text = uu.NormalName;
             //}
+        }
+
+        public void BuildUnitRecord(string unitExtId, string unitName, string contactName, string telephone, string unitType, string unitAddress)
+        {
+            ConnectionManager.Context.table("Unit").where("ID='" + unitExtId + "'").delete();
+
+            Unit newUnit = new Unit();
+            newUnit.ID = unitExtId;
+            newUnit.UnitName = unitName;
+            newUnit.FlagName = unitName;
+            newUnit.NormalName = unitName;
+            newUnit.ContactName = contactName;
+            newUnit.Telephone = telephone;
+            newUnit.Address = unitAddress;
+            newUnit.UnitType = unitType;
+            newUnit.SecretQualification = "未知";
+            newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
+        }
+
+        private void leSearchList_EditValueChanged(object sender, EventArgs e)
+        {
+            Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + leSearchList.EditValue + "'").select("*").getItem<Unit>(new Unit());
+            if (unitObj != null)
+            {
+                txtUnitName.Text = unitObj.UnitName;
+                txtContactName.Text = unitObj.ContactName;
+                txtTelephone.Text = unitObj.Telephone;
+                txtAddress.Text = unitObj.Address;
+                txtNormalName.Text = unitObj.NormalName;
+            }
         }
     }
 }
