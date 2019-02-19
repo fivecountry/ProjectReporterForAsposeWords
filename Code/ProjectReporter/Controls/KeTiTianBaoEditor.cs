@@ -204,7 +204,46 @@ namespace ProjectReporter.Controls
 
         private void BuildOneKeTiDetailPageWithKeTiRow(int rowIndex)
         {
+            if (dgvDetail.Rows[rowIndex].Cells[1].Value == null)
+            {
+                return;
+            }
+
+            string ketiName = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString();
+            string ketiID = string.Empty;
+            Project ketiProj =  (Project)dgvDetail.Rows[rowIndex].Tag;
+            if (ketiProj == null)
+            {
+                if (dgvDetail.Rows[rowIndex].Cells[0].Tag != null)
+                {
+                    //需要生成一个课题ID,然后生成标签
+                    ketiID = Guid.NewGuid().ToString();
+
+                    //记录一下提前生成的课题ID
+                    dgvDetail.Rows[rowIndex].Cells[0].Tag = ketiID;
+                }
+            }
+            else
+            {
+                //直接重新生成标签就可以
+                ketiID = ketiProj.ID;
+            }
+
+            //查找是否已存在
+            KryptonPage oldPage = null;
+            foreach (KryptonPage kp in kvKetiTabs.Pages)
+            {
+                if (kp.Name == ketiID)
+                {
+                    oldPage = kp;
+                    break;
+                }
+            }
             
+            if (oldPage == null)
+            {
+                BuildOneKetiReadmePage(ketiID, ketiName);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -309,7 +348,17 @@ namespace ProjectReporter.Controls
                     if (string.IsNullOrEmpty(proj.ID))
                     {
                         //新行
-                        proj.ID = Guid.NewGuid().ToString();
+                        if (dgvRow.Cells[0].Tag != null)
+                        {
+                            //点击了生成标签页，存在已生成的ID
+                            proj.ID = dgvRow.Cells[0].Tag.ToString();
+                        }
+                        else
+                        {
+                            //没有点击生成标签页，需要生成ID
+                            proj.ID = Guid.NewGuid().ToString();
+                        }
+
                         proj.copyTo(ConnectionManager.Context.table("Project")).insert();
                     }
                     else
@@ -469,30 +518,35 @@ namespace ProjectReporter.Controls
 
                 foreach (Project proj in KeTiList)
                 {
-                    KryptonPage kp = new KryptonPage();
-                    kp.Name = proj.ID;
-                    kp.Text = proj.Name;
-                    kp.Tag = "Dynamic";
-
-                    RTFTextEditor rtfTextEditor = new RTFTextEditor();
-                    rtfTextEditor.TitleLabelText = "课题(" + proj.Name + ")详细内容";
-                    rtfTextEditor.Dock = DockStyle.Fill;
-                    rtfTextEditor.BackColor = Color.White;
-
-                    rtfTextEditor.RTFFileFirstName = "keti_" + rtfTextEditor.RTFFileFirstName;
-                    rtfTextEditor.Name = rtfTextEditor.RTFEditorNameKey + proj.ID;
-                    if (!File.Exists(Path.Combine(MainForm.ProjectFilesDir, rtfTextEditor.RTFFileFirstName + proj.ID + ".rtf")))
-                    {
-                        File.Copy(Path.Combine(Application.StartupPath, "Helper//xitixiangxi.rtf"), Path.Combine(MainForm.ProjectFilesDir, rtfTextEditor.RTFFileFirstName + proj.ID + ".rtf"));
-                    }
-                    rtfTextEditor.RefreshView();
-
-                    rtfTextEditor.NextEvent += RtfTextEditor_NextEvent;
-
-                    kp.Controls.Add(rtfTextEditor);
-                    kvKetiTabs.Pages.Add(kp);
+                    BuildOneKetiReadmePage(proj.ID, proj.Name);
                 }
             }
+        }
+
+        private void BuildOneKetiReadmePage(string ketiID, string ketiName)
+        {
+            KryptonPage kp = new KryptonPage();
+            kp.Name = ketiID;
+            kp.Text = ketiName;
+            kp.Tag = "Dynamic";
+
+            RTFTextEditor rtfTextEditor = new RTFTextEditor();
+            rtfTextEditor.TitleLabelText = "课题(" + ketiName + ")详细内容";
+            rtfTextEditor.Dock = DockStyle.Fill;
+            rtfTextEditor.BackColor = Color.White;
+
+            rtfTextEditor.RTFFileFirstName = "keti_" + rtfTextEditor.RTFFileFirstName;
+            rtfTextEditor.Name = rtfTextEditor.RTFEditorNameKey + ketiID;
+            if (!File.Exists(Path.Combine(MainForm.ProjectFilesDir, rtfTextEditor.RTFFileFirstName + ketiID + ".rtf")))
+            {
+                File.Copy(Path.Combine(Application.StartupPath, "Helper//xitixiangxi.rtf"), Path.Combine(MainForm.ProjectFilesDir, rtfTextEditor.RTFFileFirstName + ketiID + ".rtf"));
+            }
+            rtfTextEditor.RefreshView();
+
+            rtfTextEditor.NextEvent += RtfTextEditor_NextEvent;
+
+            kp.Controls.Add(rtfTextEditor);
+            kvKetiTabs.Pages.Add(kp);
         }
 
         private void RtfTextEditor_NextEvent(object sender, EventArgs args)
