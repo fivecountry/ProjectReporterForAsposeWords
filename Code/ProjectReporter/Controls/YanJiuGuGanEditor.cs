@@ -113,10 +113,15 @@ namespace ProjectReporter.Controls
                         break;
                     }
                 }
+                
+                if (person == null || string.IsNullOrEmpty(person.ID))
+                {
+                    continue;
+                }
 
                 unit = ConnectionManager.Context.table("Unit").where("ID='" + person.UnitID + "'").select("*").getItem<Unit>(new Unit());
 
-                if (person == null || unit == null || string.IsNullOrEmpty(person.ID) || string.IsNullOrEmpty(unit.ID))
+                if (unit == null || string.IsNullOrEmpty(unit.ID))
                 {
                     continue;
                 }
