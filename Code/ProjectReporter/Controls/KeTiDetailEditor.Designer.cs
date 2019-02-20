@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
+            this.knKetiDetailTabs = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kpInfo = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.txtInfo = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.kpDest = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.txtDest = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.kpContent = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.txtContent = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.kpNeed = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.txtNeed = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -41,12 +45,8 @@
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.plContent = new System.Windows.Forms.Panel();
-            this.txtInfo = new ProjectReporter.Controls.RichTextBoxTableClass();
-            this.txtDest = new ProjectReporter.Controls.RichTextBoxTableClass();
-            this.txtContent = new ProjectReporter.Controls.RichTextBoxTableClass();
-            this.txtNeed = new ProjectReporter.Controls.RichTextBoxTableClass();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
-            this.kryptonNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.knKetiDetailTabs)).BeginInit();
+            this.knKetiDetailTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).BeginInit();
             this.kpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpDest)).BeginInit();
@@ -62,23 +62,23 @@
             this.plContent.SuspendLayout();
             this.SuspendLayout();
             // 
-            // kryptonNavigator1
+            // knKetiDetailTabs
             // 
-            this.kryptonNavigator1.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
-            this.kryptonNavigator1.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
-            this.kryptonNavigator1.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.kryptonNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonNavigator1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonNavigator1.Name = "kryptonNavigator1";
-            this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
+            this.knKetiDetailTabs.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
+            this.knKetiDetailTabs.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
+            this.knKetiDetailTabs.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.knKetiDetailTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.knKetiDetailTabs.Location = new System.Drawing.Point(0, 0);
+            this.knKetiDetailTabs.Name = "knKetiDetailTabs";
+            this.knKetiDetailTabs.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kpInfo,
             this.kpDest,
             this.kpContent,
             this.kpNeed});
-            this.kryptonNavigator1.SelectedIndex = 0;
-            this.kryptonNavigator1.Size = new System.Drawing.Size(752, 336);
-            this.kryptonNavigator1.TabIndex = 0;
-            this.kryptonNavigator1.Text = "kryptonNavigator1";
+            this.knKetiDetailTabs.SelectedIndex = 0;
+            this.knKetiDetailTabs.Size = new System.Drawing.Size(752, 336);
+            this.knKetiDetailTabs.TabIndex = 0;
+            this.knKetiDetailTabs.Text = "kryptonNavigator1";
             // 
             // kpInfo
             // 
@@ -93,6 +93,15 @@
             this.kpInfo.ToolTipTitle = "Page ToolTip";
             this.kpInfo.UniqueName = "480A3E3DB4644E2359A73CEE17D437D9";
             // 
+            // txtInfo
+            // 
+            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfo.Location = new System.Drawing.Point(0, 0);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(750, 309);
+            this.txtInfo.TabIndex = 0;
+            this.txtInfo.Text = "";
+            // 
             // kpDest
             // 
             this.kpDest.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -105,6 +114,15 @@
             this.kpDest.Text = "研究目标";
             this.kpDest.ToolTipTitle = "Page ToolTip";
             this.kpDest.UniqueName = "A7C07E934B1F414E99B2655E2A0D8ECC";
+            // 
+            // txtDest
+            // 
+            this.txtDest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDest.Location = new System.Drawing.Point(0, 0);
+            this.txtDest.Name = "txtDest";
+            this.txtDest.Size = new System.Drawing.Size(750, 309);
+            this.txtDest.TabIndex = 1;
+            this.txtDest.Text = "";
             // 
             // kpContent
             // 
@@ -119,6 +137,15 @@
             this.kpContent.ToolTipTitle = "Page ToolTip";
             this.kpContent.UniqueName = "D7C9060B093A424227B510727F20F652";
             // 
+            // txtContent
+            // 
+            this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtContent.Location = new System.Drawing.Point(0, 0);
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(750, 309);
+            this.txtContent.TabIndex = 1;
+            this.txtContent.Text = "";
+            // 
             // kpNeed
             // 
             this.kpNeed.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -131,6 +158,15 @@
             this.kpNeed.Text = "关键技术及研究思路";
             this.kpNeed.ToolTipTitle = "Page ToolTip";
             this.kpNeed.UniqueName = "C96959D95BED456940AB08FF33E3497B";
+            // 
+            // txtNeed
+            // 
+            this.txtNeed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNeed.Location = new System.Drawing.Point(0, 0);
+            this.txtNeed.Name = "txtNeed";
+            this.txtNeed.Size = new System.Drawing.Size(750, 309);
+            this.txtNeed.TabIndex = 1;
+            this.txtNeed.Text = "";
             // 
             // tableLayoutPanel15
             // 
@@ -223,48 +259,12 @@
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
-            this.plContent.Controls.Add(this.kryptonNavigator1);
+            this.plContent.Controls.Add(this.knKetiDetailTabs);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(53, 103);
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(752, 336);
             this.plContent.TabIndex = 7;
-            // 
-            // txtInfo
-            // 
-            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfo.Location = new System.Drawing.Point(0, 0);
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(750, 309);
-            this.txtInfo.TabIndex = 0;
-            this.txtInfo.Text = "";
-            // 
-            // txtDest
-            // 
-            this.txtDest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDest.Location = new System.Drawing.Point(0, 0);
-            this.txtDest.Name = "txtDest";
-            this.txtDest.Size = new System.Drawing.Size(750, 309);
-            this.txtDest.TabIndex = 1;
-            this.txtDest.Text = "";
-            // 
-            // txtContent
-            // 
-            this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtContent.Location = new System.Drawing.Point(0, 0);
-            this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(750, 309);
-            this.txtContent.TabIndex = 1;
-            this.txtContent.Text = "";
-            // 
-            // txtNeed
-            // 
-            this.txtNeed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNeed.Location = new System.Drawing.Point(0, 0);
-            this.txtNeed.Name = "txtNeed";
-            this.txtNeed.Size = new System.Drawing.Size(750, 309);
-            this.txtNeed.TabIndex = 1;
-            this.txtNeed.Text = "";
             // 
             // KeTiDetailEditor
             // 
@@ -273,8 +273,8 @@
             this.Controls.Add(this.tableLayoutPanel15);
             this.Name = "KeTiDetailEditor";
             this.Size = new System.Drawing.Size(858, 502);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).EndInit();
-            this.kryptonNavigator1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.knKetiDetailTabs)).EndInit();
+            this.knKetiDetailTabs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).EndInit();
             this.kpInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpDest)).EndInit();
@@ -294,7 +294,7 @@
 
         #endregion
 
-        private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
+        private ComponentFactory.Krypton.Navigator.KryptonNavigator knKetiDetailTabs;
         private ComponentFactory.Krypton.Navigator.KryptonPage kpInfo;
         private ComponentFactory.Krypton.Navigator.KryptonPage kpDest;
         private ComponentFactory.Krypton.Navigator.KryptonPage kpContent;

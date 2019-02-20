@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using ComponentFactory.Krypton.Navigator;
 
 namespace ProjectReporter.Controls
 {
@@ -28,6 +29,11 @@ namespace ProjectReporter.Controls
         public bool EnabledLastButton { get { return btnLast.Enabled; } set { btnLast.Enabled = value; } }
 
         public bool EnabledNextButton { get { return btnNext.Enabled; } set { btnNext.Enabled = value; } }
+
+        public KryptonNavigator DetailTabs
+        {
+            get { return knKetiDetailTabs; }
+        }
 
         public KeTiDetailEditor()
         {

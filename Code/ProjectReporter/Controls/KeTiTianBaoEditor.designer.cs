@@ -237,7 +237,7 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 5;
+            this.colKeTiMingCheng.Width = 30;
             // 
             // colMiJi
             // 
@@ -278,10 +278,11 @@
             // 
             // colNeiRong
             // 
-            this.colNeiRong.HeaderText = "内容";
+            this.colNeiRong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNeiRong.HeaderText = "研究经费";
             this.colNeiRong.Name = "colNeiRong";
             this.colNeiRong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colNeiRong.Width = 200;
+            this.colNeiRong.Width = 30;
             // 
             // colZongTiKeTi
             // 

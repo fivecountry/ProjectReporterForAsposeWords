@@ -569,19 +569,14 @@ namespace ProjectReporter.Controls
             kp.Text = ketiName;
             kp.Tag = "Dynamic";
 
-            RTFTextEditor rtfTextEditor = new RTFTextEditor();
+            KeTiDetailEditor rtfTextEditor = new KeTiDetailEditor();
             rtfTextEditor.TitleLabelText = "课题(" + ketiName + ")详细内容";
             rtfTextEditor.Dock = DockStyle.Fill;
             rtfTextEditor.BackColor = Color.White;
 
             rtfTextEditor.RTFFileFirstName = "keti_" + rtfTextEditor.RTFFileFirstName;
             rtfTextEditor.Name = rtfTextEditor.RTFEditorNameKey + ketiID;
-            if (!File.Exists(Path.Combine(MainForm.ProjectFilesDir, rtfTextEditor.RTFFileFirstName + ketiID + ".rtf")))
-            {
-                File.Copy(Path.Combine(Application.StartupPath, "Helper//xitixiangxi.rtf"), Path.Combine(MainForm.ProjectFilesDir, rtfTextEditor.RTFFileFirstName + ketiID + ".rtf"));
-            }
             rtfTextEditor.RefreshView();
-
             rtfTextEditor.NextEvent += RtfTextEditor_NextEvent;
 
             kp.Controls.Add(rtfTextEditor);
@@ -592,16 +587,23 @@ namespace ProjectReporter.Controls
 
         private void RtfTextEditor_NextEvent(object sender, EventArgs args)
         {
-            RTFTextEditor textEditor = (RTFTextEditor)sender;
+            KeTiDetailEditor textEditor = (KeTiDetailEditor)sender;
             textEditor.OnSaveEvent();
 
-            if (kvKetiTabs.Pages.Count - 1 == kvKetiTabs.SelectedIndex)
+            if (textEditor.DetailTabs.Pages.Count - 1 == textEditor.DetailTabs.SelectedIndex)
             {
-                OnNextEvent();
+                if (kvKetiTabs.Pages.Count - 1 == kvKetiTabs.SelectedIndex)
+                {
+                    OnNextEvent();
+                }
+                else
+                {
+                    kvKetiTabs.SelectedIndex += 1;
+                }
             }
             else
             {
-                kvKetiTabs.SelectedIndex += 1;
+                textEditor.DetailTabs.SelectedIndex += 1;
             }
         }
     }
