@@ -72,22 +72,22 @@ namespace ProjectReporter.Controls
             txtNeed.SaveFile(GetNeedFilePath());
         }
 
-        private string GetNeedFilePath()
+        public string GetNeedFilePath()
         {
             return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_need" + ".rtf");
         }
 
-        private string GetContentFilePath()
+        public string GetContentFilePath()
         {
             return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_cnt" + ".rtf");
         }
 
-        private string GetDestFilePath()
+        public string GetDestFilePath()
         {
             return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_dest" + ".rtf");
         }
 
-        private string GetInfoFilePath()
+        public string GetInfoFilePath()
         {
             return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_info" + ".rtf");
         }

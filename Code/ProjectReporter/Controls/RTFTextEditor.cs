@@ -69,22 +69,27 @@ namespace ProjectReporter.Controls
         {
             base.OnSaveEvent();
 
-            RichTextBoxControl.SaveFile(Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + ".rtf"));
+            RichTextBoxControl.SaveFile(GetTextFilePath());
+        }
+
+        public string GetTextFilePath()
+        {
+            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + ".rtf");
         }
 
         public override void RefreshView()
         {
             base.RefreshView();
 
-            if (File.Exists(Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + ".rtf")))
+            if (File.Exists(GetTextFilePath()))
             {
-                RichTextBoxControl.LoadFile(Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + ".rtf"));
+                RichTextBoxControl.LoadFile(GetTextFilePath());
             }
         }
 
         public override bool IsInputCompleted()
         {
-            return File.Exists(Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + ".rtf"));
+            return File.Exists(GetTextFilePath());
         }
     }
 }
