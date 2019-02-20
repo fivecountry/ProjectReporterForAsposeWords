@@ -11,9 +11,6 @@ using System.IO;
 using ProjectReporter.DB.Entitys;
 using ProjectReporter.DB;
 using System.Diagnostics;
-using Spire.Doc;
-using Spire.Doc.Documents;
-using Spire.Doc.Fields;
 
 namespace ProjectReporter.Forms
 {
