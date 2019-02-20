@@ -452,6 +452,9 @@
     <None Include="Helper\jianyishu.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Helper\newtemplete.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Helper\xitixiangxi.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

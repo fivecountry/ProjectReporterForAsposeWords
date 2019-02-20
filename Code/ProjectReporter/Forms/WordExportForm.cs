@@ -71,7 +71,7 @@ namespace ProjectReporter.Forms
 
             string fileName = MainForm.Instance.ProjectObj.Name + "-项目建议书.docx";
             WordUtility wu = new WordUtility();
-            wu.CreateNewDocument(Path.Combine(Path.Combine(Application.StartupPath, "Helper"), "jianyishu.docx"));
+            wu.CreateNewDocument(Path.Combine(Path.Combine(Application.StartupPath, "Helper"), "newtemplete.docx"));
 
             try
             {
