@@ -197,7 +197,7 @@
             // 
             // ofdUpload
             // 
-            this.ofdUpload.FileName = "openFileDialog1";
+            this.ofdUpload.Filter = "PNG文件|*.png|JPG文件|*.jpg|JPEG文件|*.jpeg|BMP文件|*.bmp";
             // 
             // BaoMiZiZhiFuYinJianEditor
             // 

@@ -40,6 +40,9 @@
             this.btnComsel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel67 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbcomattpath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lklDownloadFuJian = new System.Windows.Forms.LinkLabel();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -47,6 +50,7 @@
             this.plTitle.SuspendLayout();
             this.plContent.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel15
@@ -58,7 +62,7 @@
             this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel1, 1, 3);
             this.tableLayoutPanel15.Controls.Add(this.plTitle, 1, 1);
             this.tableLayoutPanel15.Controls.Add(this.plContent, 1, 2);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 5;
@@ -157,14 +161,15 @@
             this.tableLayoutPanel20.Controls.Add(this.btnComsel, 2, 0);
             this.tableLayoutPanel20.Controls.Add(this.kryptonLabel67, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.lbcomattpath, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 1;
+            this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(944, 40);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(944, 91);
             this.tableLayoutPanel20.TabIndex = 5;
             // 
             // btnComsel
@@ -195,9 +200,42 @@
             this.lbcomattpath.TabIndex = 8;
             this.lbcomattpath.Values.Text = "0";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lklDownloadFuJian);
+            this.panel1.Controls.Add(this.kryptonLabel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(63, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(728, 45);
+            this.panel1.TabIndex = 9;
+            // 
+            // lklDownloadFuJian
+            // 
+            this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lklDownloadFuJian.Location = new System.Drawing.Point(94, 0);
+            this.lklDownloadFuJian.Name = "lklDownloadFuJian";
+            this.lklDownloadFuJian.Size = new System.Drawing.Size(125, 45);
+            this.lklDownloadFuJian.TabIndex = 0;
+            this.lklDownloadFuJian.TabStop = true;
+            this.lklDownloadFuJian.Text = "项目经费概算说明.doc";
+            this.lklDownloadFuJian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lklDownloadFuJian.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadFuJian_LinkClicked);
+            this.lklDownloadFuJian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lklDownloadFuJian_MouseDoubleClick);
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(94, 45);
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel1.TabIndex = 2;
+            this.kryptonLabel1.Values.Text = "附件模板：";
+            // 
             // ofdUpload
             // 
-            this.ofdUpload.FileName = "openFileDialog1";
+            this.ofdUpload.Filter = "DOC文件|*.doc|DOCX文件|*.docx";
             // 
             // XiangMuJingFeiGaiSuanShuoMingEditor
             // 
@@ -213,6 +251,8 @@
             this.plContent.ResumeLayout(false);
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel20.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -232,5 +272,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel67;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel lbcomattpath;
         private System.Windows.Forms.OpenFileDialog ofdUpload;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.LinkLabel lklDownloadFuJian;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
     }
 }
