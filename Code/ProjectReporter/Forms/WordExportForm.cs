@@ -193,7 +193,12 @@ namespace ProjectReporter.Forms
                     wu.InsertFile("课题详细_" + ketiIndex + "_3", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_need" + ".rtf"), true);
 
                     //负责人
-                    wu.InsertValue("课题详细_" + ketiIndex + "_4", "…………………………");
+                    string fuzeUnit = string.Empty;
+                    string fuzePerson = string.Empty;
+                    fuzeUnit = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = (select ProjectID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "'))").select("UnitName").getValue<string>(string.Empty);
+                    fuzePerson = ConnectionManager.Context.table("Person").where("ID = (select PersonID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "')").select("Name").getValue<string>(string.Empty);
+
+                    wu.InsertValue("课题详细_" + ketiIndex + "_4", "负责人：" + fuzePerson + "\n负责单位：" + fuzeUnit);
 
                     //金额
                     string moneyStr = "0";

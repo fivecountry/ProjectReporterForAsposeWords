@@ -301,6 +301,7 @@ namespace ProjectReporter.Controls
 
             if (GetZongZiKetiCount() == 1)
             {
+                int saveCount = 0;
                 Project proj = null;
                 foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
                 {
@@ -347,6 +348,13 @@ namespace ProjectReporter.Controls
                     {
                         MessageBox.Show("对不起,请选择承担单位开户帐号!");
                         return;
+                    }
+
+                    saveCount++;
+                    if (saveCount >= 11)
+                    {
+                        MessageBox.Show("对不起，最多只能添加10个课题！");
+                        break;
                     }
 
                     ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").delete();

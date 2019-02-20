@@ -279,7 +279,7 @@
             // colNeiRong
             // 
             this.colNeiRong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNeiRong.HeaderText = "研究经费";
+            this.colNeiRong.HeaderText = "研究经费(万)";
             this.colNeiRong.Name = "colNeiRong";
             this.colNeiRong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colNeiRong.Width = 30;
