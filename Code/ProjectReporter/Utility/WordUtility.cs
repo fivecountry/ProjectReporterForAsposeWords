@@ -103,7 +103,7 @@ namespace ProjectReporter.Utility
         /// <param name="bookmark">书签</param>
         /// <param name="value">要插入的值</param>
         /// <returns></returns>
-        public bool InsertValue(string bookmark, string value,int fontSize,bool isBold)
+        public bool InsertValue(string bookmark, string value, int fontSize, bool isBold)
         {
             object bkObj = bookmark;
             if (wordApp.ActiveDocument.Bookmarks.Exists(bookmark))
@@ -113,7 +113,7 @@ namespace ProjectReporter.Utility
                 //保存先前的设置
                 float lastSize = wordApp.Selection.Font.Size;
                 int lastBold = wordApp.Selection.Font.Bold;
-                
+
                 //设置字号及是否加粗
                 wordApp.Selection.Font.Size = fontSize;
                 wordApp.Selection.Font.Bold = isBold ? 1 : 0;
@@ -135,7 +135,7 @@ namespace ProjectReporter.Utility
         /// <param name="bookmark">书签</param>
         /// <param name="value">要插入的文件路径</param>
         /// <returns></returns>
-        public bool InsertFile(string bookmark, string file1,bool enabledDeleteEnterFlag)
+        public bool InsertFile(string bookmark, string file1, bool enabledDeleteEnterFlag)
         {
             object value = System.Reflection.Missing.Value;
             object bkObj = bookmark;
@@ -152,6 +152,46 @@ namespace ProjectReporter.Utility
                     }
                     return true;
                 }
+            }
+            return false;
+        }
+
+        public bool CloneBookMark(string fromBookmark, string toBookmark, string text,bool isNeedEnterFlag)
+        {
+            object _unitObj = Microsoft.Office.Interop.Word.WdUnits.wdLine;
+            object _extendObj = Microsoft.Office.Interop.Word.WdMovementType.wdExtend;
+
+            //查找并切换到源书签
+            object bkObj = fromBookmark;
+            if (wordApp.ActiveDocument.Bookmarks.Exists(fromBookmark))
+            {
+                //切换到源书签
+                wordApp.ActiveDocument.Bookmarks.get_Item(ref bkObj).Select();
+
+                //复制这个标签的内容
+                wordApp.Selection.EndKey(ref _unitObj, ref _extendObj);
+                wordApp.Selection.Copy();
+
+                //查找并切换到目标书签
+                bkObj = fromBookmark;
+                if (wordApp.ActiveDocument.Bookmarks.Exists(fromBookmark))
+                {
+                    //切换到目标书签
+                    wordApp.ActiveDocument.Bookmarks.get_Item(ref bkObj).Select();
+
+                    //是否需要回车
+                    if (isNeedEnterFlag)
+                    {
+                        wordApp.Selection.TypeParagraph();
+                    }
+
+                    //粘贴内容
+                    wordApp.Selection.PasteAndFormat(WdRecoveryType.wdPasteDefault);
+
+                    //输入文字
+                    wordApp.Selection.TypeText(text);
+                }
+                return true;
             }
             return false;
         }
@@ -215,8 +255,8 @@ namespace ProjectReporter.Utility
             //ref _nullobj, ref _nullobj, ref _nullobj, 
             //ref _nullobj, ref objReplace, ref _nullobj, 
             //ref _nullobj, ref _nullobj, ref _nullobj); 
-        } 
-        
+        }
+
         /// <summary>
         ///插入表格
         /// </summary>
