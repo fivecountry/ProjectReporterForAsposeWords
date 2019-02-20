@@ -132,5 +132,20 @@ namespace ProjectReporter.Controls
             this.SelectionColor = fontColor;
             this.SelectionFont = new Font(fontName, fontSize);
         }
+
+        /// <summary>
+        /// 保存并格式化RTF文档
+        /// </summary>
+        /// <param name="rtfFile"></param>
+        public void SaveAndFormatFile(string rtfFile)
+        {
+            SelectAll();
+
+            SetFontWithAll(Color.Black, "仿宋", 12);
+            SetLineSpaceWithAll(25);
+
+            Clear();
+            LoadFile(rtfFile);
+        }
     }
 }

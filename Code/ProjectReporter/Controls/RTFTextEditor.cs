@@ -69,7 +69,7 @@ namespace ProjectReporter.Controls
         {
             base.OnSaveEvent();
 
-            RichTextBoxControl.SaveFile(GetTextFilePath());
+            RichTextBoxControl.SaveAndFormatFile(GetTextFilePath());
         }
 
         public string GetTextFilePath()

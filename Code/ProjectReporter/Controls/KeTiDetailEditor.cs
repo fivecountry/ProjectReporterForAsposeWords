@@ -73,9 +73,9 @@ namespace ProjectReporter.Controls
             base.OnSaveEvent();
 
             txtInfo.SaveFile(GetInfoFilePath());
-            txtDest.SaveFile(GetDestFilePath());
-            txtContent.SaveFile(GetContentFilePath());
-            txtNeed.SaveFile(GetNeedFilePath());
+            txtDest.SaveAndFormatFile(GetDestFilePath());
+            txtContent.SaveAndFormatFile(GetContentFilePath());
+            txtNeed.SaveAndFormatFile(GetNeedFilePath());
         }
 
         public string GetNeedFilePath()
