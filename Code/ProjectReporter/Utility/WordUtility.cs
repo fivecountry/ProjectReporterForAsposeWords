@@ -79,6 +79,15 @@ namespace ProjectReporter.Utility
             return false;
         }
 
+        public void AddBookMark(string bookMarkName)
+        {
+            Microsoft.Office.Interop.Word.Range r = wordApp.Selection.Range;
+            object rng = (object)r;
+            wordApp.ActiveDocument.Bookmarks.Add(bookMarkName, ref rng);
+            wordApp.ActiveDocument.Bookmarks.DefaultSorting = 0;
+            wordApp.ActiveDocument.Bookmarks.ShowHidden = false;
+        }
+
         /// <summary>
         /// 在书签处插入值
         /// </summary>
@@ -156,44 +165,31 @@ namespace ProjectReporter.Utility
             return false;
         }
 
-        public bool CloneBookMark(string fromBookmark, string toBookmark, string text,bool isNeedEnterFlag)
+        public void CopyCurrent()
         {
             object _unitObj = Microsoft.Office.Interop.Word.WdUnits.wdLine;
             object _extendObj = Microsoft.Office.Interop.Word.WdMovementType.wdExtend;
 
-            //查找并切换到源书签
-            object bkObj = fromBookmark;
-            if (wordApp.ActiveDocument.Bookmarks.Exists(fromBookmark))
-            {
-                //切换到源书签
-                wordApp.ActiveDocument.Bookmarks.get_Item(ref bkObj).Select();
+            //复制这个标签的内容
+            wordApp.Selection.EndKey(ref _unitObj, ref _extendObj);
+            wordApp.Selection.Copy();
+        }
 
-                //复制这个标签的内容
-                wordApp.Selection.EndKey(ref _unitObj, ref _extendObj);
-                wordApp.Selection.Copy();
+        public void NewLine()
+        {
+            wordApp.Selection.TypeParagraph();
+        }
 
-                //查找并切换到目标书签
-                bkObj = fromBookmark;
-                if (wordApp.ActiveDocument.Bookmarks.Exists(fromBookmark))
-                {
-                    //切换到目标书签
-                    wordApp.ActiveDocument.Bookmarks.get_Item(ref bkObj).Select();
+        public void SetText(string text)
+        {
+            //输入文字
+            wordApp.Selection.TypeText(text);
+        }
 
-                    //是否需要回车
-                    if (isNeedEnterFlag)
-                    {
-                        wordApp.Selection.TypeParagraph();
-                    }
-
-                    //粘贴内容
-                    wordApp.Selection.PasteAndFormat(WdRecoveryType.wdPasteDefault);
-
-                    //输入文字
-                    wordApp.Selection.TypeText(text);
-                }
-                return true;
-            }
-            return false;
+        public void PasteAndFormat()
+        {
+            //粘贴内容
+            wordApp.Selection.PasteAndFormat(WdRecoveryType.wdPasteDefault);
         }
 
         /// <summary>
