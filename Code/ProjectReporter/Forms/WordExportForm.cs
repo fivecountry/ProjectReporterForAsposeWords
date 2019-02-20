@@ -108,16 +108,6 @@ namespace ProjectReporter.Forms
                 List<Project> ketiList = ConnectionManager.Context.table("Project").where("ParentID = '" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Project>(new Project());
                 wu.InsertValue("课题数量", ketiList.Count + "");
 
-                int indexx = 0;
-                StringBuilder ketiStringBuilder = new StringBuilder();
-                foreach (Project proj in ketiList)
-                {
-                    indexx++;
-                    Task tt = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "'").select("*").getItem<Task>(new Task());
-                    ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(tt.Content).Append("\n");
-                }
-                wu.InsertValue("课题摘要", ketiStringBuilder.ToString());
-
                 wu.InsertValue("研究周期B", MainForm.Instance.ProjectObj.TotalTime + "");
                 wu.InsertValue("研究经费B", MainForm.Instance.ProjectObj.TotalMoney + "");
 
@@ -230,6 +220,16 @@ namespace ProjectReporter.Forms
                     }
                 }
                 ketiList.Reverse();
+
+                int indexx = 0;
+                StringBuilder ketiStringBuilder = new StringBuilder();
+                foreach (Project proj in ketiList)
+                {
+                    indexx++;
+                    Task tt = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "'").select("*").getItem<Task>(new Task());
+                    ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(tt.Content).Append("\n");
+                }
+                wu.InsertValue("课题摘要", ketiStringBuilder.ToString());
                 #endregion
 
                 this.setprogress(50, "写入阶段信息...");
