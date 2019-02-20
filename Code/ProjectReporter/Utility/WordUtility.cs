@@ -192,6 +192,35 @@ namespace ProjectReporter.Utility
             wordApp.Selection.PasteAndFormat(WdRecoveryType.wdPasteDefault);
         }
 
+        public void Delete()
+        {
+            object objValue = System.Reflection.Missing.Value;
+            wordApp.Selection.Delete(ref objValue, ref objValue);
+        }
+
+        public void DeleteCurrentAll()
+        {
+            object _unitObj = Microsoft.Office.Interop.Word.WdUnits.wdLine;
+            object _extendObj = Microsoft.Office.Interop.Word.WdMovementType.wdExtend;
+
+            wordApp.Selection.EndKey(ref _unitObj, ref _extendObj);
+
+            object objValue = System.Reflection.Missing.Value;
+            wordApp.Selection.Delete(ref objValue, ref objValue);
+        }
+
+        public void DeleteCurrentAndLast()
+        {
+            object _unitObj = Microsoft.Office.Interop.Word.WdUnits.wdLine;
+            object _countObj = 1;
+            object _extendObj = Microsoft.Office.Interop.Word.WdMovementType.wdExtend;
+
+            wordApp.Selection.MoveUp(ref _unitObj, ref _countObj,ref _extendObj);
+
+            object objValue = System.Reflection.Missing.Value;
+            wordApp.Selection.Delete(ref objValue, ref objValue);
+        }
+
         /// <summary>
         /// 替换指定文本
         /// </summary>

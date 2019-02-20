@@ -11,6 +11,9 @@ using System.IO;
 using ProjectReporter.DB.Entitys;
 using ProjectReporter.DB;
 using System.Diagnostics;
+using Spire.Doc;
+using Spire.Doc.Documents;
+using Spire.Doc.Fields;
 
 namespace ProjectReporter.Forms
 {
@@ -175,40 +178,33 @@ namespace ProjectReporter.Forms
                 List<KeyValuePair<string, Project>> ketiMap = new List<KeyValuePair<string, Project>>();
                 ketiMap.Add(new KeyValuePair<string, Project>("项目", MainForm.Instance.ProjectObj));
 
-                int indexxs = ketiList.Count;
-                ketiList.Reverse();
+                //替换课题详细内容
+                int ketiIndex = 1;
                 foreach (Project proj in ketiList)
                 {
-                    string ketiCode = "课题" + indexxs;
-                    
-                    //插入RTF文件
-                    string rtfFile = Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + ".rtf");
-                    if (File.Exists(rtfFile))
+                    string ketiCode = "课题" + ketiIndex;
+
+                    wu.SelectBookMark("课题详细_" + ketiIndex);
+                    wu.ReplaceA("F2-" + ketiIndex, ketiCode + ":" + proj.Name);
+
+                    //研究目标，研究内容，技术要求等文档
+                    wu.InsertFile("课题详细_" + ketiIndex + "_1", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_dest" + ".rtf"), true);
+                    wu.InsertFile("课题详细_" + ketiIndex + "_2", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_cnt" + ".rtf"), true);
+                    wu.InsertFile("课题详细_" + ketiIndex + "_3", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_need" + ".rtf"), true);
+
+                    //负责人
+                    wu.InsertValue("课题详细_" + ketiIndex + "_4", "…………………………");
+
+                    //金额
+                    string moneyStr = "0";
+                    Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + proj.ID + "'").select("*").getItem<Task>(new Task());
+                    if (ketiTask != null)
                     {
-                        wu.InsertFile("课题详细", rtfFile, false);
+                        moneyStr = ketiTask.Content;
                     }
+                    wu.InsertValue("课题详细_" + ketiIndex + "_5", moneyStr);
 
-                    //插入标题
-                    wu.InsertValue("课题详细", ketiCode + "： " + proj.Name + "\n", 16, false);
-
-                    //插入编号
-                    wu.SelectBookMark("课题详细");
-                    Microsoft.Office.Interop.Word.ListLevel ll = wu.Applicaton.ListGalleries[Microsoft.Office.Interop.Word.WdListGalleryType.wdNumberGallery].ListTemplates[1].ListLevels[1];
-                    ll.NumberFormat = "(%1)";
-                    ll.TrailingCharacter = Microsoft.Office.Interop.Word.WdTrailingCharacter.wdTrailingTab;
-                    ll.NumberStyle = Microsoft.Office.Interop.Word.WdListNumberStyle.wdListNumberStyleSimpChinNum3;
-                    ll.NumberPosition = wu.Applicaton.CentimetersToPoints(0);
-                    ll.Alignment = Microsoft.Office.Interop.Word.WdListLevelAlignment.wdListLevelAlignLeft;
-                    ll.TextPosition = wu.Applicaton.CentimetersToPoints(0.74f);
-                    //ll.TabPosition = 0;
-                    ll.ResetOnHigher = 0;
-                    ll.StartAt = indexxs;
-                    ll.LinkedStyle = "";
-                    ll.Font.Name = "";                    
-                    wu.Applicaton.ListGalleries[Microsoft.Office.Interop.Word.WdListGalleryType.wdNumberGallery].ListTemplates[1].Name = "";
-                    wu.Applicaton.Selection.Range.ListFormat.ApplyListTemplateWithLevel(wu.Applicaton.ListGalleries[Microsoft.Office.Interop.Word.WdListGalleryType.wdNumberGallery].ListTemplates[1]);
-                    
-                    indexxs--;
+                    ketiIndex++;
 
                     if (ketiMap.Count == 1)
                     {
@@ -219,15 +215,52 @@ namespace ProjectReporter.Forms
                         ketiMap.Insert(1, new KeyValuePair<string, Project>(ketiCode, proj));
                     }
                 }
-                ketiList.Reverse();
 
+                //删除多余的项目
+                int delCount = 10 - ketiList.Count;
+                if (delCount >= 1)
+                {
+                    for (int kk = 0; kk < delCount; kk++)
+                    {
+                        wu.SelectBookMark("课题详细_" + ketiIndex);
+                        wu.DeleteCurrentAll();
+
+                        wu.SelectBookMark("课题详细_" + ketiIndex + "_1");
+                        wu.DeleteCurrentAndLast();
+                        wu.Delete();
+
+                        wu.SelectBookMark("课题详细_" + ketiIndex + "_2");
+                        wu.DeleteCurrentAndLast();
+                        wu.Delete();
+
+                        wu.SelectBookMark("课题详细_" + ketiIndex + "_3");
+                        wu.DeleteCurrentAndLast();
+                        wu.Delete();
+
+                        wu.SelectBookMark("课题详细_" + ketiIndex + "_4");
+                        wu.DeleteCurrentAndLast();
+                        wu.Delete();
+
+                        wu.SelectBookMark("课题详细_" + ketiIndex + "_5");
+                        wu.DeleteCurrentAndLast();
+                        wu.Delete();
+
+                        ketiIndex++;
+                    }
+                }
+
+                //插入课题摘要
                 int indexx = 0;
                 StringBuilder ketiStringBuilder = new StringBuilder();
                 foreach (Project proj in ketiList)
                 {
                     indexx++;
                     Task tt = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "'").select("*").getItem<Task>(new Task());
-                    ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(tt.Content).Append("\n");
+
+                    string shortContent = string.Empty;
+                    shortContent = File.ReadAllText(Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_info" + ".rtf"));
+
+                    ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
                 }
                 wu.InsertValue("课题摘要", ketiStringBuilder.ToString());
                 #endregion
@@ -604,6 +637,9 @@ namespace ProjectReporter.Forms
                 //wu.Applicaton.ActiveWindow.View.SeekView = Microsoft.Office.Interop.Word.WdSeekView.wdSeekMainDocument;
                 #endregion
 
+                //Word路径
+                string wordFileTemp = string.Empty;
+
                 #region 显示文档
 
                 //临时文件及目录
@@ -612,18 +648,21 @@ namespace ProjectReporter.Forms
                 {
                     Directory.CreateDirectory(tempDir);
                 }
-                string savedFileName = Path.Combine(tempDir, Guid.NewGuid().ToString() + ".doc");
-
+                string sFN = Path.Combine(tempDir, Guid.NewGuid().ToString() + ".doc");
                 if (string.IsNullOrEmpty(ToWordFile))
                 {
-                    wu.SaveDocument(savedFileName);
-                    Process.Start(savedFileName);
+                    wu.SaveDocument(sFN);
+                    wordFileTemp = sFN;                    
                 }
                 else
                 {
                     wu.SaveDocument(ToWordFile);
+                    wordFileTemp = ToWordFile;
                 }
                 #endregion
+
+                //打开Word文件
+                Process.Start(wordFileTemp);
             }
             catch (Exception ex)
             {
