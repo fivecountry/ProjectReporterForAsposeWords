@@ -144,6 +144,8 @@ namespace ProjectReporter.Controls
             SetFontWithAll(Color.Black, "·ÂËÎ", 12);
             SetLineSpaceWithAll(25);
 
+            SaveFile(rtfFile);
+
             Clear();
             LoadFile(rtfFile);
         }
