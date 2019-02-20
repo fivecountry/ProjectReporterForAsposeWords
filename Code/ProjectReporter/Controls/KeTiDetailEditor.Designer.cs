@@ -30,7 +30,6 @@
         {
             this.knKetiDetailTabs = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kpInfo = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.txtInfo = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.kpDest = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.txtDest = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.kpContent = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -45,6 +44,7 @@
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.plContent = new System.Windows.Forms.Panel();
+            this.txtInfo = new TextBoxExt();
             ((System.ComponentModel.ISupportInitialize)(this.knKetiDetailTabs)).BeginInit();
             this.knKetiDetailTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).BeginInit();
@@ -92,15 +92,6 @@
             this.kpInfo.Text = "简述";
             this.kpInfo.ToolTipTitle = "Page ToolTip";
             this.kpInfo.UniqueName = "480A3E3DB4644E2359A73CEE17D437D9";
-            // 
-            // txtInfo
-            // 
-            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfo.Location = new System.Drawing.Point(0, 0);
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(750, 309);
-            this.txtInfo.TabIndex = 0;
-            this.txtInfo.Text = "";
             // 
             // kpDest
             // 
@@ -266,6 +257,15 @@
             this.plContent.Size = new System.Drawing.Size(752, 336);
             this.plContent.TabIndex = 7;
             // 
+            // txtInfo
+            // 
+            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfo.Location = new System.Drawing.Point(0, 0);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(750, 309);
+            this.txtInfo.TabIndex = 0;
+            // 
             // KeTiDetailEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -277,6 +277,7 @@
             this.knKetiDetailTabs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).EndInit();
             this.kpInfo.ResumeLayout(false);
+            this.kpInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpDest)).EndInit();
             this.kpDest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpContent)).EndInit();
@@ -307,9 +308,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel plContent;
-        private RichTextBoxTableClass txtInfo;
         private RichTextBoxTableClass txtDest;
         private RichTextBoxTableClass txtContent;
         private RichTextBoxTableClass txtNeed;
+        private TextBoxExt txtInfo;
     }
 }

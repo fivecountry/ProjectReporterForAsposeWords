@@ -191,6 +191,9 @@
     <Compile Include="Controls\RichTextBoxTableClass.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\TextBoxExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\WaterTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
