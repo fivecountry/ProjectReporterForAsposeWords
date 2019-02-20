@@ -170,7 +170,7 @@ namespace ProjectReporter.Forms
                     }
                 }
                 wu.InsertFile("附件1", u1, true);
-                wu.InsertFile("附件2", u2, true);
+                wu.InsertPicture("附件2", u2);
 
                 #endregion
 
