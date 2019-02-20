@@ -152,6 +152,12 @@
     <Compile Include="Controls\JingFeiYuSuanEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\KeTiDetailEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\KeTiDetailEditor.Designer.cs">
+      <DependentUpon>KeTiDetailEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\KeTiJieDuanHuaFenEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\JingFeiYuSuanEditor.resx">
       <DependentUpon>JingFeiYuSuanEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\KeTiDetailEditor.resx">
+      <DependentUpon>KeTiDetailEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\KeTiJieDuanHuaFenEditor.resx">
       <DependentUpon>KeTiJieDuanHuaFenEditor.cs</DependentUpon>
