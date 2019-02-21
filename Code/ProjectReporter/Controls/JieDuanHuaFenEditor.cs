@@ -185,7 +185,7 @@ namespace ProjectReporter.Controls
                 #endregion
             }
 
-            MainForm.Instance.RefreshEditor();
+            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
         }
 
         public List<Step> StepList { get; set; }
@@ -218,7 +218,7 @@ namespace ProjectReporter.Controls
                             }
                         }
 
-                        MainForm.Instance.RefreshEditor();
+                        MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
                     }
                 }else
                 {

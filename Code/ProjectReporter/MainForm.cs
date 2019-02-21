@@ -459,7 +459,7 @@ namespace ProjectReporter
             this.Text = this.Tag + " (项目:" + ProjectObj.Name + ")";
 
             //刷新Editor控件组
-            RefreshEditor();
+            RefreshAllEditor();
 
             //显示编辑控件
             //fnpDefault.Top = 0;
@@ -488,7 +488,25 @@ namespace ProjectReporter
         /// <summary>
         /// 刷新视图
         /// </summary>
-        public void RefreshEditor()
+        public void RefreshEditorWithoutRTFTextEditor()
+        {
+            if (ProjectObj != null)
+            {
+                fnpDefault.LoadProject();
+
+                foreach (BaseEditor be in EditorMaps.Values)
+                {
+                    if (be is RTFTextEditor)
+                    {
+                        continue;
+                    }
+
+                    be.RefreshView();
+                }
+            }
+        }
+
+        public void RefreshAllEditor()
         {
             if (ProjectObj != null)
             {
@@ -622,7 +640,7 @@ namespace ProjectReporter
                     if (ProjectObj != null)
                     {
                         //刷新视图
-                        RefreshEditor();
+                        RefreshAllEditor();
                     }
                     else
                     {

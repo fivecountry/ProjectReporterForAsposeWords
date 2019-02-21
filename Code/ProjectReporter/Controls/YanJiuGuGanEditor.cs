@@ -28,7 +28,7 @@ namespace ProjectReporter.Controls
             NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(null);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                MainForm.Instance.RefreshEditor();
+                MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
             }
         }
 
@@ -263,7 +263,7 @@ namespace ProjectReporter.Controls
                 }
             }
 
-            MainForm.Instance.RefreshEditor();
+            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
         }
 
         public List<Person> PersonList { get; set; }
@@ -337,7 +337,7 @@ namespace ProjectReporter.Controls
                         NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(task);
                         if (form.ShowDialog() == DialogResult.OK)
                         {
-                            MainForm.Instance.RefreshEditor();
+                            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
                         }
                     }
                 }
@@ -350,7 +350,7 @@ namespace ProjectReporter.Controls
                         if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             ConnectionManager.Context.table("Task").where("ID='" + task.ID + "'").delete();
-                            MainForm.Instance.RefreshEditor();
+                            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
                         }
                     }
                     else
@@ -392,7 +392,7 @@ namespace ProjectReporter.Controls
                 NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(task);
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    MainForm.Instance.RefreshEditor();
+                    MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
                 }
             }
         }

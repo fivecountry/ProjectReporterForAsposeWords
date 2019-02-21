@@ -155,7 +155,7 @@ namespace ProjectReporter.Controls
                             ConnectionManager.Context.table("MoneyAndType").where("ProjectID='" + kett.ID + "'").delete();
 
                             //UpdateKeTiList();
-                            MainForm.Instance.RefreshEditor();
+                            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
                         }
                         #endregion
                     }
