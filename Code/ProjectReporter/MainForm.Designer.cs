@@ -36,10 +36,10 @@ namespace ProjectReporter
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.btnUnitManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnPersonManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btninit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnImport = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnUnitManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnPersonManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnwordview = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnExport = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -282,15 +282,37 @@ namespace ProjectReporter
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(1458, 40);
+            this.kryptonPanel1.Size = new System.Drawing.Size(1458, 41);
             this.kryptonPanel1.TabIndex = 1;
+            // 
+            // btninit
+            // 
+            this.btninit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btninit.Location = new System.Drawing.Point(477, 0);
+            this.btninit.Name = "btninit";
+            this.btninit.Size = new System.Drawing.Size(109, 41);
+            this.btninit.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btninit.StateCommon.Back.Image")));
+            this.btninit.TabIndex = 25;
+            this.btninit.Values.Text = "";
+            this.btninit.Click += new System.EventHandler(this.btninit_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnImport.Location = new System.Drawing.Point(586, 0);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(109, 41);
+            this.btnImport.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.StateCommon.Back.Image")));
+            this.btnImport.TabIndex = 24;
+            this.btnImport.Values.Text = "";
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnUnitManager
             // 
             this.btnUnitManager.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnUnitManager.Location = new System.Drawing.Point(828, 0);
+            this.btnUnitManager.Location = new System.Drawing.Point(695, 0);
             this.btnUnitManager.Name = "btnUnitManager";
-            this.btnUnitManager.Size = new System.Drawing.Size(90, 40);
+            this.btnUnitManager.Size = new System.Drawing.Size(109, 41);
             this.btnUnitManager.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnUnitManager.StateCommon.Back.Image")));
             this.btnUnitManager.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUnitManager.TabIndex = 27;
@@ -300,44 +322,22 @@ namespace ProjectReporter
             // btnPersonManager
             // 
             this.btnPersonManager.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPersonManager.Location = new System.Drawing.Point(918, 0);
+            this.btnPersonManager.Location = new System.Drawing.Point(804, 0);
             this.btnPersonManager.Name = "btnPersonManager";
-            this.btnPersonManager.Size = new System.Drawing.Size(90, 40);
+            this.btnPersonManager.Size = new System.Drawing.Size(109, 41);
             this.btnPersonManager.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnPersonManager.TabIndex = 26;
             this.btnPersonManager.Values.Text = "人员管理";
             this.btnPersonManager.Visible = false;
             this.btnPersonManager.Click += new System.EventHandler(this.btnPersonManager_Click);
             // 
-            // btninit
-            // 
-            this.btninit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btninit.Location = new System.Drawing.Point(648, 0);
-            this.btninit.Name = "btninit";
-            this.btninit.Size = new System.Drawing.Size(90, 40);
-            this.btninit.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.New;
-            this.btninit.TabIndex = 25;
-            this.btninit.Values.Text = "";
-            this.btninit.Click += new System.EventHandler(this.btninit_Click);
-            // 
-            // btnImport
-            // 
-            this.btnImport.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnImport.Location = new System.Drawing.Point(738, 0);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(90, 40);
-            this.btnImport.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.Import;
-            this.btnImport.TabIndex = 24;
-            this.btnImport.Values.Text = "";
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
-            // 
             // btnwordview
             // 
             this.btnwordview.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnwordview.Location = new System.Drawing.Point(1008, 0);
+            this.btnwordview.Location = new System.Drawing.Point(913, 0);
             this.btnwordview.Name = "btnwordview";
-            this.btnwordview.Size = new System.Drawing.Size(90, 40);
-            this.btnwordview.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.preview;
+            this.btnwordview.Size = new System.Drawing.Size(109, 41);
+            this.btnwordview.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnwordview.StateCommon.Back.Image")));
             this.btnwordview.TabIndex = 23;
             this.btnwordview.Values.Text = "";
             this.btnwordview.Click += new System.EventHandler(this.btnwordview_Click);
@@ -345,9 +345,9 @@ namespace ProjectReporter
             // btnSave
             // 
             this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSave.Location = new System.Drawing.Point(1098, 0);
+            this.btnSave.Location = new System.Drawing.Point(1022, 0);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(90, 40);
+            this.btnSave.Size = new System.Drawing.Size(109, 41);
             this.btnSave.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.TEMPSAVE;
             this.btnSave.TabIndex = 22;
             this.btnSave.Values.Text = "";
@@ -357,9 +357,9 @@ namespace ProjectReporter
             // btnExport
             // 
             this.btnExport.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExport.Location = new System.Drawing.Point(1188, 0);
+            this.btnExport.Location = new System.Drawing.Point(1131, 0);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(90, 40);
+            this.btnExport.Size = new System.Drawing.Size(109, 41);
             this.btnExport.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.StateCommon.Back.Image")));
             this.btnExport.TabIndex = 13;
             this.btnExport.Values.Text = "";
@@ -368,9 +368,9 @@ namespace ProjectReporter
             // btnhelp
             // 
             this.btnhelp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnhelp.Location = new System.Drawing.Point(1278, 0);
+            this.btnhelp.Location = new System.Drawing.Point(1240, 0);
             this.btnhelp.Name = "btnhelp";
-            this.btnhelp.Size = new System.Drawing.Size(90, 40);
+            this.btnhelp.Size = new System.Drawing.Size(109, 41);
             this.btnhelp.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnhelp.StateCommon.Back.Image")));
             this.btnhelp.StateCommon.Content.ShortText.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnhelp.TabIndex = 10;
@@ -380,10 +380,10 @@ namespace ProjectReporter
             // btnquit
             // 
             this.btnquit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnquit.Location = new System.Drawing.Point(1368, 0);
+            this.btnquit.Location = new System.Drawing.Point(1349, 0);
             this.btnquit.Name = "btnquit";
-            this.btnquit.Size = new System.Drawing.Size(90, 40);
-            this.btnquit.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.Quit;
+            this.btnquit.Size = new System.Drawing.Size(109, 41);
+            this.btnquit.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnquit.StateCommon.Back.Image")));
             this.btnquit.TabIndex = 5;
             this.btnquit.Values.Text = "";
             this.btnquit.Click += new System.EventHandler(this.btnquit_Click);
@@ -393,7 +393,7 @@ namespace ProjectReporter
             this.lbcurtime.Dock = System.Windows.Forms.DockStyle.Left;
             this.lbcurtime.Location = new System.Drawing.Point(0, 0);
             this.lbcurtime.Name = "lbcurtime";
-            this.lbcurtime.Size = new System.Drawing.Size(78, 40);
+            this.lbcurtime.Size = new System.Drawing.Size(78, 41);
             this.lbcurtime.StateCommon.ShortText.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lbcurtime.TabIndex = 4;
             this.lbcurtime.Values.Text = "欢迎您！";
@@ -443,7 +443,7 @@ namespace ProjectReporter
             this.edithost2.Bar.ItemOrientation = ComponentFactory.Krypton.Toolkit.ButtonOrientation.FixedTop;
             this.edithost2.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.edithost2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edithost2.Location = new System.Drawing.Point(0, 40);
+            this.edithost2.Location = new System.Drawing.Point(0, 41);
             this.edithost2.Name = "edithost2";
             this.edithost2.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarRibbonTabGroup;
             this.edithost2.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
@@ -464,7 +464,7 @@ namespace ProjectReporter
             this.kpReportPage15,
             this.kpReportPage16});
             this.edithost2.SelectedIndex = 0;
-            this.edithost2.Size = new System.Drawing.Size(1458, 631);
+            this.edithost2.Size = new System.Drawing.Size(1458, 630);
             this.edithost2.TabIndex = 4;
             this.edithost2.SelectedPageChanged += new System.EventHandler(this.edithost2_SelectedPageChanged);
             // 
@@ -476,7 +476,7 @@ namespace ProjectReporter
             this.kpReportPage1.LastVisibleSet = true;
             this.kpReportPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage1.Name = "kpReportPage1";
-            this.kpReportPage1.Size = new System.Drawing.Size(1256, 629);
+            this.kpReportPage1.Size = new System.Drawing.Size(1256, 628);
             this.kpReportPage1.Text = "填写说明";
             this.kpReportPage1.ToolTipTitle = "Page ToolTip";
             this.kpReportPage1.UniqueName = "9B7D02A9426B4A7E32876CC330B9C07B";
@@ -492,7 +492,7 @@ namespace ProjectReporter
             this.knReportPage1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1});
             this.knReportPage1.SelectedIndex = 0;
-            this.knReportPage1.Size = new System.Drawing.Size(1256, 629);
+            this.knReportPage1.Size = new System.Drawing.Size(1256, 628);
             this.knReportPage1.TabIndex = 0;
             // 
             // kryptonPage1
@@ -503,7 +503,7 @@ namespace ProjectReporter
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(1254, 599);
+            this.kryptonPage1.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage1.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kryptonPage1.Text = "填写说明";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
@@ -514,7 +514,7 @@ namespace ProjectReporter
             this.txtReportReadme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtReportReadme.Location = new System.Drawing.Point(0, 0);
             this.txtReportReadme.Name = "txtReportReadme";
-            this.txtReportReadme.Size = new System.Drawing.Size(1254, 599);
+            this.txtReportReadme.Size = new System.Drawing.Size(1254, 598);
             this.txtReportReadme.TabIndex = 0;
             this.txtReportReadme.Text = "";
             // 
