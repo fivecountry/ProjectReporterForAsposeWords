@@ -380,7 +380,7 @@ namespace ProjectReporter.Controls
                     proj.Type2 = dgvRow.Cells[8].Value != null ? (((bool)dgvRow.Cells[8].Value) == true ? "总体课题" : "非总体课题") : "非总体课题";
 
                     //创建课题单位
-                    if (dgvRow.Cells[5].Tag != null)
+                    if (dgvRow.Cells[5].Tag != null && ((Unit)dgvRow.Cells[5].Tag).ID != null)
                     {
                         Unit unitObj = (Unit)dgvRow.Cells[5].Tag;
                         unitObj.UnitName = dgvRow.Cells[5].Value.ToString();
