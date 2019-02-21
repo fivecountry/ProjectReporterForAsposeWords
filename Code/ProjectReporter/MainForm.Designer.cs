@@ -33,6 +33,8 @@ namespace ProjectReporter
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btnUnitManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnPersonManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -45,8 +47,8 @@ namespace ProjectReporter
             this.btnquit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lbcurtime = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.buttonSpecAny1 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
-            this.maintimer = new System.Windows.Forms.Timer();
-            this.kryptonManager1 = new ComponentFactory.Krypton.Toolkit.KryptonManager();
+            this.maintimer = new System.Windows.Forms.Timer(this.components);
+            this.kryptonManager1 = new ComponentFactory.Krypton.Toolkit.KryptonManager(this.components);
             this.kpcontactinner = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.kryptonWrapLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonWrapLabel();
             this.edithost2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
@@ -267,10 +269,10 @@ namespace ProjectReporter
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.btnUnitManager);
-            this.kryptonPanel1.Controls.Add(this.btnPersonManager);
             this.kryptonPanel1.Controls.Add(this.btninit);
             this.kryptonPanel1.Controls.Add(this.btnImport);
+            this.kryptonPanel1.Controls.Add(this.btnUnitManager);
+            this.kryptonPanel1.Controls.Add(this.btnPersonManager);
             this.kryptonPanel1.Controls.Add(this.btnwordview);
             this.kryptonPanel1.Controls.Add(this.btnSave);
             this.kryptonPanel1.Controls.Add(this.btnExport);
@@ -286,18 +288,19 @@ namespace ProjectReporter
             // btnUnitManager
             // 
             this.btnUnitManager.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnUnitManager.Location = new System.Drawing.Point(648, 0);
+            this.btnUnitManager.Location = new System.Drawing.Point(828, 0);
             this.btnUnitManager.Name = "btnUnitManager";
             this.btnUnitManager.Size = new System.Drawing.Size(90, 40);
+            this.btnUnitManager.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnUnitManager.StateCommon.Back.Image")));
             this.btnUnitManager.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUnitManager.TabIndex = 27;
-            this.btnUnitManager.Values.Text = "单位管理";
+            this.btnUnitManager.Values.Text = "";
             this.btnUnitManager.Click += new System.EventHandler(this.btnUnitManager_Click);
             // 
             // btnPersonManager
             // 
             this.btnPersonManager.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPersonManager.Location = new System.Drawing.Point(738, 0);
+            this.btnPersonManager.Location = new System.Drawing.Point(918, 0);
             this.btnPersonManager.Name = "btnPersonManager";
             this.btnPersonManager.Size = new System.Drawing.Size(90, 40);
             this.btnPersonManager.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -309,7 +312,7 @@ namespace ProjectReporter
             // btninit
             // 
             this.btninit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btninit.Location = new System.Drawing.Point(828, 0);
+            this.btninit.Location = new System.Drawing.Point(648, 0);
             this.btninit.Name = "btninit";
             this.btninit.Size = new System.Drawing.Size(90, 40);
             this.btninit.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.New;
@@ -320,7 +323,7 @@ namespace ProjectReporter
             // btnImport
             // 
             this.btnImport.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnImport.Location = new System.Drawing.Point(918, 0);
+            this.btnImport.Location = new System.Drawing.Point(738, 0);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(90, 40);
             this.btnImport.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.Import;
@@ -357,7 +360,7 @@ namespace ProjectReporter
             this.btnExport.Location = new System.Drawing.Point(1188, 0);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(90, 40);
-            this.btnExport.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.UpLoad;
+            this.btnExport.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.StateCommon.Back.Image")));
             this.btnExport.TabIndex = 13;
             this.btnExport.Values.Text = "";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
@@ -368,7 +371,7 @@ namespace ProjectReporter
             this.btnhelp.Location = new System.Drawing.Point(1278, 0);
             this.btnhelp.Name = "btnhelp";
             this.btnhelp.Size = new System.Drawing.Size(90, 40);
-            this.btnhelp.StateCommon.Back.Image = global::ProjectReporter.Properties.Resources.Help;
+            this.btnhelp.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnhelp.StateCommon.Back.Image")));
             this.btnhelp.StateCommon.Content.ShortText.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnhelp.TabIndex = 10;
             this.btnhelp.Values.Text = "";
@@ -474,7 +477,7 @@ namespace ProjectReporter
             this.kpReportPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage1.Name = "kpReportPage1";
             this.kpReportPage1.Size = new System.Drawing.Size(1256, 629);
-            this.kpReportPage1.Text = "填报说明";
+            this.kpReportPage1.Text = "填写说明";
             this.kpReportPage1.ToolTipTitle = "Page ToolTip";
             this.kpReportPage1.UniqueName = "9B7D02A9426B4A7E32876CC330B9C07B";
             // 
@@ -502,7 +505,7 @@ namespace ProjectReporter
             this.kryptonPage1.Name = "kryptonPage1";
             this.kryptonPage1.Size = new System.Drawing.Size(1254, 599);
             this.kryptonPage1.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
-            this.kryptonPage1.Text = "填报说明";
+            this.kryptonPage1.Text = "填写说明";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "C049E3A97C914353ECA0934940308F04";
             // 
@@ -843,7 +846,6 @@ namespace ProjectReporter
             this.feUI6.Location = new System.Drawing.Point(0, 0);
             this.feUI6.Name = "feUI6";
             this.feUI6.ParentForm = null;
-            //this.feUI6.PersonList = null;
             this.feUI6.Size = new System.Drawing.Size(1214, 599);
             this.feUI6.TabIndex = 0;
             this.feUI6.UnitList = null;
