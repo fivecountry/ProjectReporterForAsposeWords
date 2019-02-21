@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -45,13 +45,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtStepCount = new System.Windows.Forms.Label();
-            this.txtStepCount.AutoSize = false;
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotalMoney = new System.Windows.Forms.Label();
-            this.txtTotalMoney.AutoSize = false;
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotalTime = new System.Windows.Forms.Label();
-            this.txtTotalTime.AutoSize = false;
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -60,9 +57,6 @@
             this.plContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStepCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalMoney)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalTime)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel15
@@ -178,9 +172,9 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 26);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 28;
             this.dgvDetail.Size = new System.Drawing.Size(790, 345);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -254,7 +248,7 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Location = new System.Drawing.Point(854, 0);
+            this.label5.Location = new System.Drawing.Point(773, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(150, 26);
             this.label5.TabIndex = 6;
@@ -263,15 +257,16 @@
             // txtStepCount
             // 
             this.txtStepCount.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtStepCount.Location = new System.Drawing.Point(767, 0);
+            this.txtStepCount.Location = new System.Drawing.Point(713, 0);
             this.txtStepCount.Name = "txtStepCount";
-            this.txtStepCount.Size = new System.Drawing.Size(87, 29);
+            this.txtStepCount.Size = new System.Drawing.Size(60, 26);
             this.txtStepCount.TabIndex = 5;
+            this.txtStepCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Location = new System.Drawing.Point(438, 0);
+            this.label4.Location = new System.Drawing.Point(384, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(329, 26);
             this.label4.TabIndex = 4;
@@ -281,15 +276,16 @@
             // 
             this.txtTotalMoney.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtTotalMoney.Enabled = false;
-            this.txtTotalMoney.Location = new System.Drawing.Point(351, 0);
+            this.txtTotalMoney.Location = new System.Drawing.Point(324, 0);
             this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.Size = new System.Drawing.Size(87, 29);
+            this.txtTotalMoney.Size = new System.Drawing.Size(60, 26);
             this.txtTotalMoney.TabIndex = 3;
+            this.txtTotalMoney.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Location = new System.Drawing.Point(237, 0);
+            this.label3.Location = new System.Drawing.Point(210, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 26);
             this.label3.TabIndex = 2;
@@ -301,8 +297,9 @@
             this.txtTotalTime.Enabled = false;
             this.txtTotalTime.Location = new System.Drawing.Point(150, 0);
             this.txtTotalTime.Name = "txtTotalTime";
-            this.txtTotalTime.Size = new System.Drawing.Size(87, 29);
+            this.txtTotalTime.Size = new System.Drawing.Size(60, 26);
             this.txtTotalTime.TabIndex = 1;
+            this.txtTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -327,9 +324,6 @@
             this.plContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtStepCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalMoney)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalTime)).EndInit();
             this.ResumeLayout(false);
 
         }
