@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -44,11 +44,14 @@
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtStepCount = new System.Windows.Forms.NumericUpDown();
+            this.txtStepCount = new System.Windows.Forms.Label();
+            this.txtStepCount.AutoSize = false;
             this.label4 = new System.Windows.Forms.Label();
-            this.txtTotalMoney = new System.Windows.Forms.NumericUpDown();
+            this.txtTotalMoney = new System.Windows.Forms.Label();
+            this.txtTotalMoney.AutoSize = false;
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTotalTime = new System.Windows.Forms.NumericUpDown();
+            this.txtTotalTime = new System.Windows.Forms.Label();
+            this.txtTotalTime.AutoSize = false;
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -175,9 +178,9 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 26);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.RowTemplate.Height = 28;
             this.dgvDetail.Size = new System.Drawing.Size(790, 345);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -260,13 +263,7 @@
             // txtStepCount
             // 
             this.txtStepCount.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtStepCount.Enabled = false;
             this.txtStepCount.Location = new System.Drawing.Point(767, 0);
-            this.txtStepCount.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
             this.txtStepCount.Name = "txtStepCount";
             this.txtStepCount.Size = new System.Drawing.Size(87, 29);
             this.txtStepCount.TabIndex = 5;
@@ -285,11 +282,6 @@
             this.txtTotalMoney.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtTotalMoney.Enabled = false;
             this.txtTotalMoney.Location = new System.Drawing.Point(351, 0);
-            this.txtTotalMoney.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
             this.txtTotalMoney.Name = "txtTotalMoney";
             this.txtTotalMoney.Size = new System.Drawing.Size(87, 29);
             this.txtTotalMoney.TabIndex = 3;
@@ -308,11 +300,6 @@
             this.txtTotalTime.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtTotalTime.Enabled = false;
             this.txtTotalTime.Location = new System.Drawing.Point(150, 0);
-            this.txtTotalTime.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
             this.txtTotalTime.Name = "txtTotalTime";
             this.txtTotalTime.Size = new System.Drawing.Size(87, 29);
             this.txtTotalTime.TabIndex = 1;
@@ -360,11 +347,11 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown txtTotalTime;
+        private System.Windows.Forms.Label txtTotalTime;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown txtStepCount;
+        private System.Windows.Forms.Label txtStepCount;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown txtTotalMoney;
+        private System.Windows.Forms.Label txtTotalMoney;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colKeTiMingCheng;

@@ -45,9 +45,9 @@ namespace ProjectReporter.Controls
         {
             base.ClearView();
 
-            txtTotalTime.Value = 0;
-            txtTotalMoney.Value = 0;
-            txtStepCount.Value = 0;
+            txtTotalTime.Text = "";
+            txtTotalMoney.Text = "";
+            txtStepCount.Text = "";
 
             dgvDetail.Rows.Clear();
         }
@@ -56,9 +56,9 @@ namespace ProjectReporter.Controls
         {
             base.RefreshView();
 
-            txtTotalTime.Value = MainForm.Instance.ProjectObj.TotalTime != null ? MainForm.Instance.ProjectObj.TotalTime.Value : 0;
-            txtTotalMoney.Value = MainForm.Instance.ProjectObj.TotalMoney != null ? MainForm.Instance.ProjectObj.TotalMoney.Value : 0;
-            txtStepCount.Value = 0;
+            txtTotalTime.Text = MainForm.Instance.ProjectObj.TotalTime != null ? MainForm.Instance.ProjectObj.TotalTime.Value + "" : "0";
+            txtTotalMoney.Text = MainForm.Instance.ProjectObj.TotalMoney != null ? MainForm.Instance.ProjectObj.TotalMoney.Value + "" : "0";
+            txtStepCount.Text = "0";
 
             UpdateStepList();
         }
@@ -84,7 +84,7 @@ namespace ProjectReporter.Controls
                 dgvDetail.Rows[rowIndex].Tag = step;
             }
 
-            txtStepCount.Value = StepList != null ? StepList.Count : 0;
+            txtStepCount.Text = StepList != null ? StepList.Count + "" : "0";
         }
 
         public override void OnSaveEvent()
