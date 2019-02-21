@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>f14.ico</ApplicationIcon>
+    <ApplicationIcon>w5.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Design, Version=4.3.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
@@ -515,6 +515,7 @@
     <Content Include="Helper\readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="w5.ico" />
     <None Include="Resources\tianbao.png" />
     <None Include="Resources\xiangmuxinxi.png" />
   </ItemGroup>

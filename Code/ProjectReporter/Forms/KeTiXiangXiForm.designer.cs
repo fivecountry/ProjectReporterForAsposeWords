@@ -55,6 +55,7 @@
             this.ClientSize = new System.Drawing.Size(917, 624);
             this.Controls.Add(this.freEditor);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "KeTiXiangXiForm";

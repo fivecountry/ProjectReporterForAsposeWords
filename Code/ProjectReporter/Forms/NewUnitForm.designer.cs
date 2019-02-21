@@ -32,7 +32,9 @@
             this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plContent = new DevExpress.XtraEditors.PanelControl();
+            this.txtUnitType = new System.Windows.Forms.ComboBox();
             this.txtUnitBankNo = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtUnitBankName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,10 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUnitName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUnitType = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.plButtons)).BeginInit();
             this.plButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).BeginInit();
@@ -104,12 +104,32 @@
             this.plContent.Size = new System.Drawing.Size(397, 247);
             this.plContent.TabIndex = 8;
             // 
+            // txtUnitType
+            // 
+            this.txtUnitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtUnitType.FormattingEnabled = true;
+            this.txtUnitType.Items.AddRange(new object[] {
+            "航天科技",
+            "航空科技"});
+            this.txtUnitType.Location = new System.Drawing.Point(79, 87);
+            this.txtUnitType.Name = "txtUnitType";
+            this.txtUnitType.Size = new System.Drawing.Size(300, 22);
+            this.txtUnitType.TabIndex = 10;
+            // 
             // txtUnitBankNo
             // 
             this.txtUnitBankNo.Location = new System.Drawing.Point(79, 171);
             this.txtUnitBankNo.Name = "txtUnitBankNo";
             this.txtUnitBankNo.Size = new System.Drawing.Size(300, 22);
             this.txtUnitBankNo.TabIndex = 9;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(79, 32);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '#';
+            this.txtPassword.Size = new System.Drawing.Size(300, 22);
+            this.txtPassword.TabIndex = 0;
             // 
             // label5
             // 
@@ -168,35 +188,6 @@
             this.txtUnitName.Size = new System.Drawing.Size(300, 22);
             this.txtUnitName.TabIndex = 9;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 14);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "单位名称：";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(79, 32);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '#';
-            this.txtPassword.Size = new System.Drawing.Size(300, 22);
-            this.txtPassword.TabIndex = 0;
-            // 
-            // txtUnitType
-            // 
-            this.txtUnitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtUnitType.FormattingEnabled = true;
-            this.txtUnitType.Items.AddRange(new object[] {
-            "航天科技",
-            "航空科技"});
-            this.txtUnitType.Location = new System.Drawing.Point(79, 87);
-            this.txtUnitType.Name = "txtUnitType";
-            this.txtUnitType.Size = new System.Drawing.Size(300, 22);
-            this.txtUnitType.TabIndex = 10;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -206,16 +197,25 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "添加密码：";
             // 
-            // frmAddUnit
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 14);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "单位名称：";
+            // 
+            // NewUnitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 245);
             this.Controls.Add(this.plContent);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmAddUnit";
+            this.Name = "NewUnitForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "添加单位";
             ((System.ComponentModel.ISupportInitialize)(this.plButtons)).EndInit();
