@@ -2337,7 +2337,7 @@ namespace ProjectReporter.Controls
         {
             string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "TianBaoShuoMing.docx"));
             string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "经费预算填报说明.doc");
-            File.Copy(sourcePath, destPath);
+            File.Copy(sourcePath, destPath, true);
             MessageBox.Show("已下载到桌面！");
             Process.Start(destPath);
         }
