@@ -635,21 +635,16 @@ namespace ProjectReporter.Controls
             this.cbxSecret.AlwaysActive = false;
             this.cbxSecret.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSecret.DropDownWidth = 121;
-            this.cbxSecret.FormattingEnabled = true;
             this.cbxSecret.Items.AddRange(new object[] {
             "公开",
             "秘密",
             "机密",
             "绝密"});
-            this.cbxSecret.Location = new System.Drawing.Point(8, 4);
+            this.cbxSecret.Location = new System.Drawing.Point(8, 12);
             this.cbxSecret.Name = "cbxSecret";
             this.cbxSecret.Size = new System.Drawing.Size(268, 33);
-            this.cbxSecret.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.cbxSecret.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.cbxSecret.StateCommon.Item.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.cbxSecret.StateCommon.Item.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.cbxSecret.StateCommon.Item.Content.ShortText.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.cbxSecret.TabIndex = 20;
+            this.cbxSecret.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxSecret.TabIndex = 21;
             // 
             // label4
             // 
@@ -840,7 +835,6 @@ namespace ProjectReporter.Controls
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private KryptonComboBox cbxSecret;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private KryptonTextBox txtAddress;
@@ -883,5 +877,6 @@ namespace ProjectReporter.Controls
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private KryptonTextBox txtMPersonIDCard;
+        private KryptonComboBox cbxSecret;
     }
 }
