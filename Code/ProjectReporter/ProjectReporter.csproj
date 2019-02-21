@@ -443,9 +443,6 @@
     <None Include="Helper\introduction.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Helper\jianyishu.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Helper\JingFeiFuJian.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
