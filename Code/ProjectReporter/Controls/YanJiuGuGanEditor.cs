@@ -18,9 +18,6 @@ namespace ProjectReporter.Controls
         public YanJiuGuGanEditor()
         {
             InitializeComponent();
-
-            dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
-            dgvDetail[dgvDetail.Columns.Count - 2, 0].Value = "编辑";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -100,8 +97,7 @@ namespace ProjectReporter.Controls
             TaskList = ConnectionManager.Context.table("Task").where("ProjectID in (select ID from Project where ParentID = '" + MainForm.Instance.ProjectObj.ID + "') or ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Task>(new Task());
 
             int indexx = 0;
-            dgvDetail.Rows.Clear();
-            ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 1]).Image = ProjectReporter.Properties.Resources.DELETE_28;
+            dgvDetail.Rows.Clear();            
             foreach (Task task in TaskList)
             {
                 indexx++;
