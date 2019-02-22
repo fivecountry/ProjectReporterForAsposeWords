@@ -63,7 +63,7 @@ namespace ProjectReporter
         /// </summary>
         public void InitAll()
         {
-            txtReportReadme.LoadFile(Path.Combine(Application.StartupPath, Path.Combine("Helper", "introduction.rtf")));
+            txtReportReadme.LoadDoc(Path.Combine(Application.StartupPath, Path.Combine("Helper", "introduction.rtf")));
         }
 
         /// <summary>

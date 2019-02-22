@@ -73,9 +73,9 @@ namespace ProjectReporter.Controls
             base.OnSaveEvent();
 
             txtInfo.SaveFile(GetInfoFilePath());
-            txtDest.SaveAndFormatFile(GetDestFilePath());
-            txtContent.SaveAndFormatFile(GetContentFilePath());
-            txtNeed.SaveAndFormatFile(GetNeedFilePath());
+            txtDest.SaveDoc(GetDestFilePath());
+            txtContent.SaveDoc(GetContentFilePath());
+            txtNeed.SaveDoc(GetNeedFilePath());
         }
 
         public string GetNeedFilePath()
@@ -109,17 +109,17 @@ namespace ProjectReporter.Controls
 
             if (File.Exists(GetDestFilePath()))
             {
-                txtDest.LoadFile(GetDestFilePath());
+                txtDest.LoadDoc(GetDestFilePath());
             }
 
             if (File.Exists(GetContentFilePath()))
             {
-                txtContent.LoadFile(GetContentFilePath());
+                txtContent.LoadDoc(GetContentFilePath());
             }
 
             if (File.Exists(GetNeedFilePath()))
             {
-                txtNeed.LoadFile(GetNeedFilePath());
+                txtNeed.LoadDoc(GetNeedFilePath());
             }
         }
 

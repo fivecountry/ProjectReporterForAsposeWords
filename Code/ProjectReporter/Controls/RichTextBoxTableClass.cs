@@ -137,7 +137,7 @@ namespace ProjectReporter.Controls
         /// 保存并格式化RTF文档
         /// </summary>
         /// <param name="rtfFile"></param>
-        public void SaveAndFormatFile(string rtfFile)
+        public void SaveDoc(string rtfFile)
         {
             SelectAll();
 
@@ -147,7 +147,12 @@ namespace ProjectReporter.Controls
             SaveFile(rtfFile);
 
             Clear();
-            LoadFile(rtfFile);
+            LoadDoc(rtfFile);
+        }
+
+        public void LoadDoc(string file)
+        {
+
         }
     }
 }
