@@ -271,7 +271,7 @@ namespace ProjectReporter
             }
             catch (Exception ex)
             {
-                MessageBox.Show("对不起，数据库加载失败！");
+                MessageBox.Show("对不起，数据库加载失败！Ex:" + ex.ToString());
                 Application.Exit();
             }
         }
