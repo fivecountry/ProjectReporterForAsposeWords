@@ -36,7 +36,10 @@ namespace ProjectReporter
                         string toZipFile = args[0].Replace("Export:", string.Empty);
                         string toZipDir = new FileInfo(toZipFile).DirectoryName;
                         string docFile = Path.Combine(toZipDir, "申报书.doc");
-                        File.Copy(docFile, Path.Combine(MainForm.ProjectDir, "申报书.doc"), true);
+                        if (File.Exists(docFile))
+                        {
+                            File.Copy(docFile, Path.Combine(MainForm.ProjectDir, "申报书.doc"), true);
+                        }
 
                         //打包文件
                         fzo.ZipFileDirectory(MainForm.ProjectDir, toZipFile);
