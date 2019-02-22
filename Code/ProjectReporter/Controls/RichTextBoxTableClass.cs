@@ -100,7 +100,7 @@ namespace ProjectReporter.Controls
         {
             PARAFORMAT2 fmt = new PARAFORMAT2();
             fmt.cbSize = Marshal.SizeOf(fmt);
-            fmt.bLineSpacingRule = 4;// bLineSpacingRule;
+            fmt.bLineSpacingRule = 3;// bLineSpacingRule;
             fmt.dyLineSpacing = dyLineSpacing;
             fmt.dwMask = PFM_LINESPACING;
             try
@@ -142,7 +142,7 @@ namespace ProjectReporter.Controls
             SelectAll();
 
             SetFontWithAll(Color.Black, "·ÂËÎ", 12);
-            //SetLineSpaceWithAll(25);
+            SetLineSpace(12);
 
             SaveFile(rtfFile);
 
