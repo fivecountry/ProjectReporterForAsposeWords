@@ -144,25 +144,32 @@ namespace ProjectReporter.Utility
         /// <param name="bookmark">书签</param>
         /// <param name="value">要插入的文件路径</param>
         /// <returns></returns>
-        public bool InsertFile(string bookmark, string file1, bool enabledDeleteEnterFlag)
+        public bool InsertFile(string bookmark, string filePath, bool enabledDeleteEnterFlag)
         {
-            object value = System.Reflection.Missing.Value;
-            object bkObj = bookmark;
-            if (File.Exists(file1))
+            if (File.Exists(filePath))
             {
-                if (wordApp.ActiveDocument.Bookmarks.Exists(bookmark))
+                object value = System.Reflection.Missing.Value;
+                object bkObj = bookmark;
+                if (File.Exists(filePath))
                 {
-                    wordApp.ActiveDocument.Bookmarks.get_Item(ref bkObj).Select();
-                    wordApp.Selection.InsertFile(file1, ref value, ref value, ref value, ref value);
-
-                    if (enabledDeleteEnterFlag)
+                    if (wordApp.ActiveDocument.Bookmarks.Exists(bookmark))
                     {
-                        wordApp.Selection.Delete(ref value, ref value);
+                        wordApp.ActiveDocument.Bookmarks.get_Item(ref bkObj).Select();
+                        wordApp.Selection.InsertFile(filePath, ref value, ref value, ref value, ref value);
+
+                        if (enabledDeleteEnterFlag)
+                        {
+                            wordApp.Selection.Delete(ref value, ref value);
+                        }
+                        return true;
                     }
-                    return true;
                 }
+                return false;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
         public void CopyCurrent()
@@ -465,14 +472,17 @@ namespace ProjectReporter.Utility
         /// <param name="hight"></param>
         public void InsertPicture(string bookmark, string picturePath, float width, float hight)
         {
-            object miss = System.Reflection.Missing.Value;
-            object oStart = bookmark;
-            object linkToFile = false; //图片不为外部链接
-            object saveWithDocment = true; //图片随文档一起保存
-            object range = wordDoc.Bookmarks.get_Item(ref oStart).Range; //图片插入位置
-            wordDoc.InlineShapes.AddPicture(picturePath, ref linkToFile, ref saveWithDocment, ref range);
-            wordDoc.Application.ActiveDocument.InlineShapes[1].Width = width;
-            wordDoc.Application.ActiveDocument.InlineShapes[1].Height = hight;
+            if (File.Exists(picturePath))
+            {
+                object miss = System.Reflection.Missing.Value;
+                object oStart = bookmark;
+                object linkToFile = false; //图片不为外部链接
+                object saveWithDocment = true; //图片随文档一起保存
+                object range = wordDoc.Bookmarks.get_Item(ref oStart).Range; //图片插入位置
+                wordDoc.InlineShapes.AddPicture(picturePath, ref linkToFile, ref saveWithDocment, ref range);
+                wordDoc.Application.ActiveDocument.InlineShapes[1].Width = width;
+                wordDoc.Application.ActiveDocument.InlineShapes[1].Height = hight;
+            }
         }
 
         /// <summary>
@@ -482,12 +492,15 @@ namespace ProjectReporter.Utility
         /// <param name="picturePath"></param>
         public void InsertPicture(string bookmark, string picturePath)
         {
-            object miss = System.Reflection.Missing.Value;
-            object oStart = bookmark;
-            object linkToFile = false; //图片不为外部链接
-            object saveWithDocment = true; //图片随文档一起保存
-            object range = wordDoc.Bookmarks.get_Item(ref oStart).Range; //图片插入位置
-            wordDoc.InlineShapes.AddPicture(picturePath, ref linkToFile, ref saveWithDocment, ref range);
+            if (File.Exists(picturePath))
+            {
+                object miss = System.Reflection.Missing.Value;
+                object oStart = bookmark;
+                object linkToFile = false; //图片不为外部链接
+                object saveWithDocment = true; //图片随文档一起保存
+                object range = wordDoc.Bookmarks.get_Item(ref oStart).Range; //图片插入位置
+                wordDoc.InlineShapes.AddPicture(picturePath, ref linkToFile, ref saveWithDocment, ref range);
+            }
         }
 
         /// <summary>
