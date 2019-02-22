@@ -99,14 +99,15 @@ namespace ProjectReporter
 
         private void btnwordview_Click(object sender, EventArgs e)
         {
-            if (!this.IsInputCompleted())
+            if (ProjectObj != null)
             {
-                MessageBox.Show("请将所有内容填写完整再点击预览!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                WordExportForm frmExportWord = new WordExportForm(string.Empty);
+                frmExportWord.ShowDialog();
             }
-
-            WordExportForm frmExportWord = new WordExportForm(string.Empty);
-            frmExportWord.ShowDialog();
+            else
+            {
+                MessageBox.Show("对不起，请填写项目信息！");
+            }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
