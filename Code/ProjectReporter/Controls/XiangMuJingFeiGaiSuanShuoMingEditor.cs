@@ -104,11 +104,7 @@ namespace ProjectReporter.Controls
             return true;
         }
 
-        private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) { }
-
-
-        private void lklDownloadFuJian_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
+        private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "JingFeiFuJian.doc"));
             string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "项目经费概算说明.doc");
             File.Copy(sourcePath, destPath, true);

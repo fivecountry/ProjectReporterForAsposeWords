@@ -221,7 +221,7 @@
             this.lklDownloadFuJian.Text = "项目经费概算说明.doc";
             this.lklDownloadFuJian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lklDownloadFuJian.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadFuJian_LinkClicked);
-            this.lklDownloadFuJian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lklDownloadFuJian_MouseDoubleClick);
+            //this.lklDownloadFuJian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lklDownloadFuJian_MouseDoubleClick);
             // 
             // kryptonLabel1
             // 

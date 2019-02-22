@@ -306,9 +306,9 @@ namespace ProjectReporter.Controls
             this.kryptonLabel4 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lklDownloadFuJian = new System.Windows.Forms.LinkLabel();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -1797,17 +1797,6 @@ namespace ProjectReporter.Controls
             this.panel2.Size = new System.Drawing.Size(537, 54);
             this.panel2.TabIndex = 10;
             // 
-            // kryptonLabel2
-            // 
-            this.kryptonLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonLabel2.Location = new System.Drawing.Point(0, 0);
-            this.kryptonLabel2.Name = "kryptonLabel2";
-            this.kryptonLabel2.Size = new System.Drawing.Size(537, 23);
-            this.kryptonLabel2.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.kryptonLabel2.TabIndex = 30;
-            this.kryptonLabel2.Values.Text = "注：经费预算按照《军队单位科研经费使用管理规定（试行）》（[2017]8号）有关要求编制。";
-            // 
             // lklDownloadFuJian
             // 
             this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1819,7 +1808,7 @@ namespace ProjectReporter.Controls
             this.lklDownloadFuJian.Text = "经费预算填报说明.doc";
             this.lklDownloadFuJian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lklDownloadFuJian.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadFuJian_LinkClicked);
-            this.lklDownloadFuJian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lklDownloadFuJian_MouseDoubleClick);
+            //this.lklDownloadFuJian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lklDownloadFuJian_MouseDoubleClick);
             // 
             // kryptonLabel5
             // 
@@ -1830,6 +1819,17 @@ namespace ProjectReporter.Controls
             this.kryptonLabel5.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.kryptonLabel5.TabIndex = 32;
             this.kryptonLabel5.Values.Text = "填写说明：";
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonLabel2.Location = new System.Drawing.Point(0, 0);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(537, 23);
+            this.kryptonLabel2.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
+            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel2.TabIndex = 30;
+            this.kryptonLabel2.Values.Text = "注：经费预算按照《军队单位科研经费使用管理规定（试行）》（[2017]8号）有关要求编制。";
             // 
             // JingFeiYuSuanEditor
             // 
@@ -2335,11 +2335,6 @@ namespace ProjectReporter.Controls
         }
          
         private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void lklDownloadFuJian_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "TianBaoShuoMing.docx"));
             string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "经费预算填报说明.doc");
