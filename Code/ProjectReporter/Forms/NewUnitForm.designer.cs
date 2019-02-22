@@ -217,7 +217,7 @@
             this.MinimizeBox = false;
             this.Name = "NewUnitForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "添加单位";
+            this.Text = "添加/编辑单位";
             ((System.ComponentModel.ISupportInitialize)(this.plButtons)).EndInit();
             this.plButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).EndInit();

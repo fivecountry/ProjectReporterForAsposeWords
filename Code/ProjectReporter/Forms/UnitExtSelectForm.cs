@@ -28,7 +28,6 @@ namespace ProjectReporter.Forms
 
             //显示选定项
             leSearchList.EditValue = unitID;
-            leSearchList_EditValueChanged(leSearchList, new EventArgs());
         }
 
         public UnitExtSelectForm() : this(string.Empty) { }
@@ -140,15 +139,7 @@ namespace ProjectReporter.Forms
             if (leSearchList.EditValue != null)
             {
                 List<string> idList = new List<string>();
-                int[] handleRows = leSearchListView.GetSelectedRows();
-                foreach (int rowHandle in handleRows)
-                {
-                    object obj = leSearchListView.GetRowCellValue(rowHandle, "ID");
-                    if (obj != null)
-                    {
-                        idList.Add(obj.ToString());
-                    }
-                }
+                idList.Add(leSearchList.EditValue.ToString());
 
                 UpdateUnitList(idList.ToArray());
             }
