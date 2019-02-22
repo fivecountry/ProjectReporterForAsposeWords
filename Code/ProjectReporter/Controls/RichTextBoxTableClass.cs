@@ -96,7 +96,7 @@ namespace ProjectReporter.Controls
         /// </summary>
         /// <param name="ctl">控件</param>
         /// <param name="dyLineSpacing">间距</param>
-        private static void SetLineSpace(Control ctl, int dyLineSpacing)
+        private static void SetLineSpaceWithControl(Control ctl, int dyLineSpacing)
         {
             PARAFORMAT2 fmt = new PARAFORMAT2();
             fmt.cbSize = Marshal.SizeOf(fmt);
@@ -116,9 +116,9 @@ namespace ProjectReporter.Controls
         /// 行间距
         /// </summary>
         /// <param name="lineSpacing">单位磅</param>
-        public void SetLineSpaceWithAll(int lineSpacing)
+        public void SetLineSpace(int lineSpacing)
         {
-            SetLineSpace(this, lineSpacing * 20);
+            SetLineSpaceWithControl(this, lineSpacing * 20);
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace ProjectReporter.Controls
 
         public void LoadDoc(string file)
         {
-
+            LoadFile(file);
         }
     }
 }
