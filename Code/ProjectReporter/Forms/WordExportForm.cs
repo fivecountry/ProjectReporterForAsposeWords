@@ -171,457 +171,490 @@ namespace ProjectReporter.Forms
 
                 #endregion
 
-                #region 插入课题详细RTF
                 List<KeyValuePair<string, Project>> ketiMap = new List<KeyValuePair<string, Project>>();
-                ketiMap.Add(new KeyValuePair<string, Project>("项目", MainForm.Instance.ProjectObj));
+                #region 插入课题详细RTF
+                try
+                {                    
+                    ketiMap.Add(new KeyValuePair<string, Project>("项目", MainForm.Instance.ProjectObj));
 
-                //替换课题详细内容
-                int ketiIndex = 1;
-                foreach (Project proj in ketiList)
-                {
-                    string ketiCode = "课题" + ketiIndex;
-
-                    wu.SelectBookMark("课题详细_" + ketiIndex);
-                    wu.ReplaceA("F2-" + ketiIndex, ketiCode + ":" + proj.Name);
-
-                    //研究目标，研究内容，技术要求等文档
-                    wu.InsertFile("课题详细_" + ketiIndex + "_1", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_dest" + ".rtf"), true);
-                    wu.InsertFile("课题详细_" + ketiIndex + "_2", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_cnt" + ".rtf"), true);
-                    wu.InsertFile("课题详细_" + ketiIndex + "_3", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_need" + ".rtf"), true);
-
-                    //负责人
-                    string fuzeUnit = string.Empty;
-                    string fuzePerson = string.Empty;
-                    fuzeUnit = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = (select ProjectID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "'))").select("UnitName").getValue<string>(string.Empty);
-                    fuzePerson = ConnectionManager.Context.table("Person").where("ID = (select PersonID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "')").select("Name").getValue<string>(string.Empty);
-
-                    wu.InsertValue("课题详细_" + ketiIndex + "_4", "负责人：" + fuzePerson + "\n负责单位：" + fuzeUnit);
-
-                    //金额
-                    string moneyStr = "0";
-                    Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + proj.ID + "'").select("*").getItem<Task>(new Task());
-                    if (ketiTask != null)
+                    //替换课题详细内容
+                    int ketiIndex = 1;
+                    foreach (Project proj in ketiList)
                     {
-                        moneyStr = ketiTask.Content;
-                    }
-                    wu.InsertValue("课题详细_" + ketiIndex + "_5", moneyStr);
+                        string ketiCode = "课题" + ketiIndex;
 
-                    ketiIndex++;
-
-                    if (ketiMap.Count == 1)
-                    {
-                        ketiMap.Add(new KeyValuePair<string, Project>(ketiCode, proj));
-                    }
-                    else
-                    {
-                        ketiMap.Insert(1, new KeyValuePair<string, Project>(ketiCode, proj));
-                    }
-                }
-
-                //删除多余的项目
-                int delCount = 10 - ketiList.Count;
-                if (delCount >= 1)
-                {
-                    for (int kk = 0; kk < delCount; kk++)
-                    {
                         wu.SelectBookMark("课题详细_" + ketiIndex);
-                        wu.DeleteCurrentAll();
+                        wu.ReplaceA("F2-" + ketiIndex, ketiCode + ":" + proj.Name);
 
-                        wu.SelectBookMark("课题详细_" + ketiIndex + "_1");
-                        wu.DeleteCurrentAndLast();
-                        wu.Delete();
+                        //研究目标，研究内容，技术要求等文档
+                        wu.InsertFile("课题详细_" + ketiIndex + "_1", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_dest" + ".rtf"), true);
+                        wu.InsertFile("课题详细_" + ketiIndex + "_2", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_cnt" + ".rtf"), true);
+                        wu.InsertFile("课题详细_" + ketiIndex + "_3", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_need" + ".rtf"), true);
 
-                        wu.SelectBookMark("课题详细_" + ketiIndex + "_2");
-                        wu.DeleteCurrentAndLast();
-                        wu.Delete();
+                        //负责人
+                        string fuzeUnit = string.Empty;
+                        string fuzePerson = string.Empty;
+                        fuzeUnit = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = (select ProjectID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "'))").select("UnitName").getValue<string>(string.Empty);
+                        fuzePerson = ConnectionManager.Context.table("Person").where("ID = (select PersonID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "')").select("Name").getValue<string>(string.Empty);
 
-                        wu.SelectBookMark("课题详细_" + ketiIndex + "_3");
-                        wu.DeleteCurrentAndLast();
-                        wu.Delete();
+                        wu.InsertValue("课题详细_" + ketiIndex + "_4", "负责人：" + fuzePerson + "\n负责单位：" + fuzeUnit);
 
-                        wu.SelectBookMark("课题详细_" + ketiIndex + "_4");
-                        wu.DeleteCurrentAndLast();
-                        wu.Delete();
-
-                        wu.SelectBookMark("课题详细_" + ketiIndex + "_5");
-                        wu.DeleteCurrentAndLast();
-                        wu.Delete();
+                        //金额
+                        string moneyStr = "0";
+                        Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + proj.ID + "'").select("*").getItem<Task>(new Task());
+                        if (ketiTask != null)
+                        {
+                            moneyStr = ketiTask.Content;
+                        }
+                        wu.InsertValue("课题详细_" + ketiIndex + "_5", moneyStr);
 
                         ketiIndex++;
+
+                        if (ketiMap.Count == 1)
+                        {
+                            ketiMap.Add(new KeyValuePair<string, Project>(ketiCode, proj));
+                        }
+                        else
+                        {
+                            ketiMap.Insert(1, new KeyValuePair<string, Project>(ketiCode, proj));
+                        }
                     }
-                }
 
-                //插入课题摘要
-                int indexx = 0;
-                StringBuilder ketiStringBuilder = new StringBuilder();
-                foreach (Project proj in ketiList)
+                    //删除多余的项目
+                    int delCount = 10 - ketiList.Count;
+                    if (delCount >= 1)
+                    {
+                        for (int kk = 0; kk < delCount; kk++)
+                        {
+                            wu.SelectBookMark("课题详细_" + ketiIndex);
+                            wu.DeleteCurrentAll();
+
+                            wu.SelectBookMark("课题详细_" + ketiIndex + "_1");
+                            wu.DeleteCurrentAndLast();
+                            wu.Delete();
+
+                            wu.SelectBookMark("课题详细_" + ketiIndex + "_2");
+                            wu.DeleteCurrentAndLast();
+                            wu.Delete();
+
+                            wu.SelectBookMark("课题详细_" + ketiIndex + "_3");
+                            wu.DeleteCurrentAndLast();
+                            wu.Delete();
+
+                            wu.SelectBookMark("课题详细_" + ketiIndex + "_4");
+                            wu.DeleteCurrentAndLast();
+                            wu.Delete();
+
+                            wu.SelectBookMark("课题详细_" + ketiIndex + "_5");
+                            wu.DeleteCurrentAndLast();
+                            wu.Delete();
+
+                            ketiIndex++;
+                        }
+                    }
+
+                    //插入课题摘要
+                    int indexx = 0;
+                    StringBuilder ketiStringBuilder = new StringBuilder();
+                    foreach (Project proj in ketiList)
+                    {
+                        indexx++;
+                        Task tt = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "'").select("*").getItem<Task>(new Task());
+
+                        string shortContent = string.Empty;
+                        shortContent = File.ReadAllText(Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_info" + ".rtf"));
+
+                        ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
+                    }
+                    wu.InsertValue("课题摘要", ketiStringBuilder.ToString());
+                }
+                catch (Exception ex)
                 {
-                    indexx++;
-                    Task tt = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "'").select("*").getItem<Task>(new Task());
-
-                    string shortContent = string.Empty;
-                    shortContent = File.ReadAllText(Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_info" + ".rtf"));
-
-                    ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
+                    System.Console.WriteLine(ex.ToString());
                 }
-                wu.InsertValue("课题摘要", ketiStringBuilder.ToString());
                 #endregion
 
                 this.setprogress(50, "写入阶段信息...");
 
                 #region 插入阶段划分和经费安排数据
-                foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                try
                 {
-                    if (table.Range.Text.Contains("第一阶段：X月"))
+                    foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
                     {
-                        //填充行和列
-                        int rowCount = ketiList.Count + 1;
-                        int colCount = projectStepList.Count;
-                        table.Select();
-                        for (int k = 0; k < rowCount - 1; k++)
+                        if (table.Range.Text.Contains("第一阶段：X月"))
                         {
-                            table.Rows.Add(ref defaultValue);
-                        }
-                        for (int k = 0; k < colCount - 1; k++)
-                        {
-                            table.Columns.Add(ref defaultValue);
-                        }
-
-                        //创建列标题
-                        int colIndex = 2;
-                        foreach (Step step in projectStepList)
-                        {
-                            table.Cell(1, colIndex).Range.Text = "阶段" + step.StepIndex + "(" + step.StepTime + "个月)";
-                            table.Cell(1, colIndex).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-                            colIndex++;
-                        }
-
-                        //创建数据
-                        int rowIndex = 2;
-                        foreach (KeyValuePair<string,Project> kvp in ketiMap)
-                        {
-                            int totalMoney = 0;
-                            //获取并填冲数据
-                            int dataColIndex = 2;
-                            List<Step> curStepList = ConnectionManager.Context.table("Step").where("ProjectID = '" + kvp.Value.ID + "'").select("*").getList<Step>(new Step());
-                            foreach (Step curStep in curStepList)
+                            //填充行和列
+                            int rowCount = ketiList.Count + 1;
+                            int colCount = projectStepList.Count;
+                            table.Select();
+                            for (int k = 0; k < rowCount - 1; k++)
                             {
-                                ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
+                                table.Rows.Add(ref defaultValue);
+                            }
+                            for (int k = 0; k < colCount - 1; k++)
+                            {
+                                table.Columns.Add(ref defaultValue);
+                            }
 
-                                StringBuilder sb = new StringBuilder();
-                                //阶段数据
-                                if (kvp.Key == "项目")
+                            //创建列标题
+                            int colIndex = 2;
+                            foreach (Step step in projectStepList)
+                            {
+                                table.Cell(1, colIndex).Range.Text = "阶段" + step.StepIndex + "(" + step.StepTime + "个月)";
+                                table.Cell(1, colIndex).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                colIndex++;
+                            }
+
+                            //创建数据
+                            int rowIndex = 2;
+                            foreach (KeyValuePair<string, Project> kvp in ketiMap)
+                            {
+                                int totalMoney = 0;
+                                //获取并填冲数据
+                                int dataColIndex = 2;
+                                List<Step> curStepList = ConnectionManager.Context.table("Step").where("ProjectID = '" + kvp.Value.ID + "'").select("*").getList<Step>(new Step());
+                                foreach (Step curStep in curStepList)
                                 {
-                                    //项目数据  研究内容,阶段目标,阶段经费
-                                    sb.Append("研究内容:").Append(curProjectAndStep.StepContent).Append("\n").Append("阶段目标:").Append(curStep.StepDest).Append("\n").Append("阶段经费:").Append(curStep.StepMoney);
+                                    ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
+
+                                    StringBuilder sb = new StringBuilder();
+                                    //阶段数据
+                                    if (kvp.Key == "项目")
+                                    {
+                                        //项目数据  研究内容,阶段目标,阶段经费
+                                        sb.Append("研究内容:").Append(curProjectAndStep.StepContent).Append("\n").Append("阶段目标:").Append(curStep.StepDest).Append("\n").Append("阶段经费:").Append(curStep.StepMoney);
+                                    }
+                                    else
+                                    {
+                                        //课题数据  研究内容,阶段成果,考核方式,阶段经费
+                                        sb.Append("研究内容:").Append(curProjectAndStep.StepContent).Append("\n").Append("阶段成果:").Append(curProjectAndStep.StepResult).Append("\n").Append("考核方式:").Append(curProjectAndStep.Method).Append("\n").Append("阶段经费:").Append(curProjectAndStep.Money);
+                                        totalMoney += (int)curProjectAndStep.Money;
+                                    }
+
+                                    table.Cell(rowIndex, dataColIndex).Range.Text = sb.ToString();
+                                    dataColIndex++;
+                                }
+
+                                //行标题
+                                if (kvp.Key != "项目")
+                                {
+                                    table.Cell(rowIndex, 1).Range.Text = kvp.Key + "(" + totalMoney + "万)";
                                 }
                                 else
                                 {
-                                    //课题数据  研究内容,阶段成果,考核方式,阶段经费
-                                    sb.Append("研究内容:").Append(curProjectAndStep.StepContent).Append("\n").Append("阶段成果:").Append(curProjectAndStep.StepResult).Append("\n").Append("考核方式:").Append(curProjectAndStep.Method).Append("\n").Append("阶段经费:").Append(curProjectAndStep.Money);
-                                    totalMoney += (int)curProjectAndStep.Money;
+                                    table.Cell(rowIndex, 1).Range.Text = kvp.Key;
                                 }
 
-                                table.Cell(rowIndex, dataColIndex).Range.Text = sb.ToString();
-                                dataColIndex++;
+                                rowIndex++;
                             }
-
-                            //行标题
-                            if (kvp.Key != "项目")
-                            {
-                                table.Cell(rowIndex, 1).Range.Text = kvp.Key + "(" + totalMoney + "万)";
-                            }
-                            else
-                            {
-                                table.Cell(rowIndex, 1).Range.Text = kvp.Key;
-                            }
-
-                            rowIndex++;
+                            break;
                         }
-                        break;
                     }
                 }
-
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.ToString());
+                }
                 #endregion
 
                 this.setprogress(60, "写入课题负责人及研究骨干信息...");
 
                 #region 插入课题负责人及研究骨干情况表
-                foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                try
                 {
-                    if (table.Range.Text.Contains("为本课题"))
+                    foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
                     {
-                        //获得课题与研究骨干关系表
-                        List<Task> taskList = ConnectionManager.Context.table("Task").where("ProjectID in (select ID from Project where ParentID = '" + MainForm.Instance.ProjectObj.ID + "') or ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Task>(new Task());
-
-                        //生成行和列
-                        int rowCount = taskList.Count;
-                        table.Select();
-                        for (int k = 0; k < rowCount - 1; k++)
+                        if (table.Range.Text.Contains("为本课题"))
                         {
-                            table.Rows.Add(ref defaultValue);
-                        }
+                            //获得课题与研究骨干关系表
+                            List<Task> taskList = ConnectionManager.Context.table("Task").where("ProjectID in (select ID from Project where ParentID = '" + MainForm.Instance.ProjectObj.ID + "') or ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Task>(new Task());
 
-                        //填冲数据
-                        int rowIndex = 2;
-                        foreach (Task curTask in taskList)
-                        {
-                            #region 提取人员信息
-                            Project taskKeti = ConnectionManager.Context.table("Project").where("ID='" + curTask.ProjectID + "'").select("*").getItem<Project>(new Project());
-                            Person person = ConnectionManager.Context.table("Person").where("ID='" + curTask.PersonID + "'").select("*").getItem<Person>(new Person());
-                            Unit unit = ConnectionManager.Context.table("Unit").where("ID='" + person.UnitID + "'").select("*").getItem<Unit>(new Unit());
-                            #endregion
-
-                            table.Cell(rowIndex, 1).Range.Text = (rowIndex - 1).ToString();
-                            table.Cell(rowIndex, 2).Range.Text = person.Name;
-                            table.Cell(rowIndex, 3).Range.Text = person.IDCard;
-                            table.Cell(rowIndex, 4).Range.Text = unit.UnitName;
-                            table.Cell(rowIndex, 5).Range.Text = person.Job;
-                            table.Cell(rowIndex, 6).Range.Text = person.Specialty;
-
-                            string KetiInProject = string.Empty;
-                            foreach (KeyValuePair<string,Project> kvp in ketiMap)
+                            //生成行和列
+                            int rowCount = taskList.Count;
+                            table.Select();
+                            for (int k = 0; k < rowCount - 1; k++)
                             {
-                                if (kvp.Value.ID == curTask.ProjectID)
-                                {
-                                    KetiInProject = kvp.Key + curTask.Role;
-                                    break;
-                                }
+                                table.Rows.Add(ref defaultValue);
                             }
-                            table.Cell(rowIndex, 7).Range.Text = KetiInProject;
 
-                            table.Cell(rowIndex, 8).Range.Text = curTask.Content;
-                            table.Cell(rowIndex, 9).Range.Text = curTask.TotalTime.ToString();
+                            //填冲数据
+                            int rowIndex = 2;
+                            foreach (Task curTask in taskList)
+                            {
+                                #region 提取人员信息
+                                Project taskKeti = ConnectionManager.Context.table("Project").where("ID='" + curTask.ProjectID + "'").select("*").getItem<Project>(new Project());
+                                Person person = ConnectionManager.Context.table("Person").where("ID='" + curTask.PersonID + "'").select("*").getItem<Person>(new Person());
+                                Unit unit = ConnectionManager.Context.table("Unit").where("ID='" + person.UnitID + "'").select("*").getItem<Unit>(new Unit());
+                                #endregion
 
-                            rowIndex++;
+                                table.Cell(rowIndex, 1).Range.Text = (rowIndex - 1).ToString();
+                                table.Cell(rowIndex, 2).Range.Text = person.Name;
+                                table.Cell(rowIndex, 3).Range.Text = person.IDCard;
+                                table.Cell(rowIndex, 4).Range.Text = unit.UnitName;
+                                table.Cell(rowIndex, 5).Range.Text = person.Job;
+                                table.Cell(rowIndex, 6).Range.Text = person.Specialty;
+
+                                string KetiInProject = string.Empty;
+                                foreach (KeyValuePair<string, Project> kvp in ketiMap)
+                                {
+                                    if (kvp.Value.ID == curTask.ProjectID)
+                                    {
+                                        KetiInProject = kvp.Key + curTask.Role;
+                                        break;
+                                    }
+                                }
+                                table.Cell(rowIndex, 7).Range.Text = KetiInProject;
+
+                                table.Cell(rowIndex, 8).Range.Text = curTask.Content;
+                                table.Cell(rowIndex, 9).Range.Text = curTask.TotalTime.ToString();
+
+                                rowIndex++;
+                            }
+
+                            break;
                         }
-
-                        break;
                     }
+                }
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.ToString());
                 }
                 #endregion
 
                 this.setprogress(70, "写入经费预算...");
 
                 #region 插入经费预算表
-                ProjectBudgetInfo pbinfo = ProjectReporter.Controls.JingFeiYuSuanEditor.GetBudgetInfoObject(MainForm.Instance.ProjectObj.ID);
-                if (pbinfo != null)
+                try
                 {
-                    wu.InsertValue("本项目申请经费", pbinfo.ProjectRFA + "");
-                    wu.InsertValue("本项目自筹经费", pbinfo.ProjectZiChouJingFei + "");
+                    ProjectBudgetInfo pbinfo = ProjectReporter.Controls.JingFeiYuSuanEditor.GetBudgetInfoObject(MainForm.Instance.ProjectObj.ID);
+                    if (pbinfo != null)
+                    {
+                        wu.InsertValue("本项目申请经费", pbinfo.ProjectRFA + "");
+                        wu.InsertValue("本项目自筹经费", pbinfo.ProjectZiChouJingFei + "");
 
-                    string bookmark = "ProjectRFAs";
-                    object obj4 = pbinfo.ProjectRFA;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA";
-                    wu.InsertValue(bookmark, obj4 + "万");
-                    bookmark = "ProjectRFA1";
-                    obj4 = pbinfo.ProjectRFA1;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_1";
-                    obj4 = pbinfo.ProjectRFA1_1;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_1_1";
-                    obj4 = pbinfo.ProjectRFA1_1_1;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_1_2";
-                    obj4 = pbinfo.ProjectRFA1_1_2;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_1_3";
-                    obj4 = pbinfo.ProjectRFA1_1_3;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_2";
-                    obj4 = pbinfo.ProjectRFA1_2;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_3";
-                    obj4 = pbinfo.ProjectRFA1_3;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_4";
-                    obj4 = pbinfo.ProjectRFA1_4;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_5";
-                    obj4 = pbinfo.ProjectRFA1_5;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_6";
-                    obj4 = pbinfo.ProjectRFA1_6;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_7";
-                    obj4 = pbinfo.ProjectRFA1_7;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_8";
-                    obj4 = pbinfo.ProjectRFA1_8;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_9";
-                    obj4 = pbinfo.ProjectRFA1_9;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA2";
-                    obj4 = pbinfo.ProjectRFA2;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA2_1";
-                    obj4 = pbinfo.ProjectRFA2_1;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectOutlay1";
-                    obj4 = pbinfo.Projectoutlay1;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectOutlay2";
-                    obj4 = pbinfo.Projectoutlay2;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectOutlay3";
-                    obj4 = pbinfo.Projectoutlay3;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectOutlay4";
-                    obj4 = pbinfo.Projectoutlay4;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectOutlay5";
-                    obj4 = pbinfo.Projectoutlay5;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFARm";
-                    obj4 = pbinfo.ProjectRFArm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1Rm";
-                    obj4 = pbinfo.ProjectRFA1rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_1Rm";
-                    obj4 = pbinfo.ProjectRFA1_1rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_1_1Rm";
-                    obj4 = pbinfo.ProjectRFA1_1_1rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_1_2Rm";
-                    obj4 = pbinfo.ProjectRFA1_1_2rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_1_3Rm";
-                    obj4 = pbinfo.ProjectRFA1_1_3rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_2Rm";
-                    obj4 = pbinfo.ProjectRFA1_2rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_3Rm";
-                    obj4 = pbinfo.ProjectRFA1_3rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_4Rm";
-                    obj4 = pbinfo.ProjectRFA1_4rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_5Rm";
-                    obj4 = pbinfo.ProjectRFA1_5rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_6Rm";
-                    obj4 = pbinfo.ProjectRFA1_6rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_7Rm";
-                    obj4 = pbinfo.ProjectRFA1_7rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_8Rm";
-                    obj4 = pbinfo.ProjectRFA1_8rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA1_9Rm";
-                    obj4 = pbinfo.ProjectRFA1_9rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA2Rm";
-                    obj4 = pbinfo.ProjectRFA2rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
-                    bookmark = "ProjectRFA2_1Rm";
-                    obj4 = pbinfo.ProjectRFA2_1rm;
-                    wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        string bookmark = "ProjectRFAs";
+                        object obj4 = pbinfo.ProjectRFA;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA";
+                        wu.InsertValue(bookmark, obj4 + "万");
+                        bookmark = "ProjectRFA1";
+                        obj4 = pbinfo.ProjectRFA1;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_1";
+                        obj4 = pbinfo.ProjectRFA1_1;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_1_1";
+                        obj4 = pbinfo.ProjectRFA1_1_1;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_1_2";
+                        obj4 = pbinfo.ProjectRFA1_1_2;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_1_3";
+                        obj4 = pbinfo.ProjectRFA1_1_3;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_2";
+                        obj4 = pbinfo.ProjectRFA1_2;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_3";
+                        obj4 = pbinfo.ProjectRFA1_3;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_4";
+                        obj4 = pbinfo.ProjectRFA1_4;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_5";
+                        obj4 = pbinfo.ProjectRFA1_5;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_6";
+                        obj4 = pbinfo.ProjectRFA1_6;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_7";
+                        obj4 = pbinfo.ProjectRFA1_7;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_8";
+                        obj4 = pbinfo.ProjectRFA1_8;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_9";
+                        obj4 = pbinfo.ProjectRFA1_9;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA2";
+                        obj4 = pbinfo.ProjectRFA2;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA2_1";
+                        obj4 = pbinfo.ProjectRFA2_1;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectOutlay1";
+                        obj4 = pbinfo.Projectoutlay1;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectOutlay2";
+                        obj4 = pbinfo.Projectoutlay2;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectOutlay3";
+                        obj4 = pbinfo.Projectoutlay3;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectOutlay4";
+                        obj4 = pbinfo.Projectoutlay4;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectOutlay5";
+                        obj4 = pbinfo.Projectoutlay5;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFARm";
+                        obj4 = pbinfo.ProjectRFArm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1Rm";
+                        obj4 = pbinfo.ProjectRFA1rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_1Rm";
+                        obj4 = pbinfo.ProjectRFA1_1rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_1_1Rm";
+                        obj4 = pbinfo.ProjectRFA1_1_1rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_1_2Rm";
+                        obj4 = pbinfo.ProjectRFA1_1_2rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_1_3Rm";
+                        obj4 = pbinfo.ProjectRFA1_1_3rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_2Rm";
+                        obj4 = pbinfo.ProjectRFA1_2rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_3Rm";
+                        obj4 = pbinfo.ProjectRFA1_3rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_4Rm";
+                        obj4 = pbinfo.ProjectRFA1_4rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_5Rm";
+                        obj4 = pbinfo.ProjectRFA1_5rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_6Rm";
+                        obj4 = pbinfo.ProjectRFA1_6rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_7Rm";
+                        obj4 = pbinfo.ProjectRFA1_7rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_8Rm";
+                        obj4 = pbinfo.ProjectRFA1_8rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA1_9Rm";
+                        obj4 = pbinfo.ProjectRFA1_9rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA2Rm";
+                        obj4 = pbinfo.ProjectRFA2rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                        bookmark = "ProjectRFA2_1Rm";
+                        obj4 = pbinfo.ProjectRFA2_1rm;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : string.Empty);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.ToString());
                 }
                 #endregion
 
                 this.setprogress(75, "写入联系方式...");
 
                 #region 插入联系方式
-                foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                try
                 {
-                    if (table.Range.Text.Contains("各课题联系方式"))
+                    foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
                     {
-                        int titleIndex = table.Rows.Count - 1;
-                        int dataIndex = table.Rows.Count;
+                        if (table.Range.Text.Contains("各课题联系方式"))
+                        {
+                            int titleIndex = table.Rows.Count - 1;
+                            int dataIndex = table.Rows.Count;
 
-                        //构造联系方式行
-                        int rowCountt = (ketiList.Count * 3) - 1;
-                        for (int k = 0; k < rowCountt; k++)
-                        {
-                            table.Select();
-                            table.Rows.Add(ref defaultValue);
-                        }
-                        //合并单元格
-                        if (rowCountt >= 2)
-                        {
-                            for (int k = 0; k < ketiList.Count; k++)
+                            //构造联系方式行
+                            int rowCountt = (ketiList.Count * 3) - 1;
+                            for (int k = 0; k < rowCountt; k++)
                             {
-                                //计算开始位置
-                                int rowStart = dataIndex + (k * 3);
-                                int rowEnd = rowStart + 2;
-
-                                #region 写入标签
-                                table.Cell(rowStart, 1).Range.Text = "课题" + (k + 1);
-                                table.Cell(rowStart, 1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart, 2).Range.Text = "负 责 人";
-                                table.Cell(rowStart, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart, 4).Range.Text = "性  别";
-                                table.Cell(rowStart, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart, 6).Range.Text = "出生年月";
-                                table.Cell(rowStart, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart + 1, 2).Range.Text = "职务职称";
-                                table.Cell(rowStart + 1, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart + 1, 4).Range.Text = "座  机";
-                                table.Cell(rowStart + 1, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart + 1, 6).Range.Text = "手  机";
-                                table.Cell(rowStart + 1, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart + 2, 2).Range.Text = "承担单位及通信地址";
-                                table.Cell(rowStart + 2, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-                                #endregion
-
-                                #region 写入实际数据
-                                Project proj = ketiList[k];
-                                Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + proj.UnitID + "'").select("*").getItem<Unit>(new Unit());
-                                Task taskObj = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "' and Type='课题' and Role='负责人'").select("*").getItem<Task>(new Task());
-                                Person personObj = ConnectionManager.Context.table("Person").where("ID ='" + taskObj.PersonID + "'").select("*").getItem<Person>(new Person());
-
-                                table.Cell(rowStart, 3).Range.Text = personObj.Name;
-                                table.Cell(rowStart, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart, 5).Range.Text = personObj.Sex;
-                                table.Cell(rowStart, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart, 7).Range.Text = personObj.Birthday != null ? personObj.Birthday.Value.ToShortDateString() : string.Empty;
-                                table.Cell(rowStart, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart + 1, 3).Range.Text = personObj.Job;
-                                table.Cell(rowStart + 1, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart + 1, 5).Range.Text = personObj.Telephone;
-                                table.Cell(rowStart + 1, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart + 1, 7).Range.Text = personObj.MobilePhone;
-                                table.Cell(rowStart + 1, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                table.Cell(rowStart + 2, 3).Range.Text = unitObj.UnitName + "," + unitObj.Address;
-                                table.Cell(rowStart + 2, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                                #endregion
-
-                                //合并单元格
-                                wu.MergeCell(table, rowEnd, 3, rowEnd, 7);
-                                wu.MergeCell(table, rowStart, 1, rowEnd, 1);
+                                table.Select();
+                                table.Rows.Add(ref defaultValue);
                             }
-                        }
-                        else
-                        {
-                            table.Rows[titleIndex].Delete();
-                            table.Rows[dataIndex].Delete();
-                        }
+                            //合并单元格
+                            if (rowCountt >= 2)
+                            {
+                                for (int k = 0; k < ketiList.Count; k++)
+                                {
+                                    //计算开始位置
+                                    int rowStart = dataIndex + (k * 3);
+                                    int rowEnd = rowStart + 2;
 
-                        break;
+                                    #region 写入标签
+                                    table.Cell(rowStart, 1).Range.Text = "课题" + (k + 1);
+                                    table.Cell(rowStart, 1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart, 2).Range.Text = "负 责 人";
+                                    table.Cell(rowStart, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart, 4).Range.Text = "性  别";
+                                    table.Cell(rowStart, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart, 6).Range.Text = "出生年月";
+                                    table.Cell(rowStart, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 1, 2).Range.Text = "职务职称";
+                                    table.Cell(rowStart + 1, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 1, 4).Range.Text = "座  机";
+                                    table.Cell(rowStart + 1, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 1, 6).Range.Text = "手  机";
+                                    table.Cell(rowStart + 1, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 2, 2).Range.Text = "承担单位及通信地址";
+                                    table.Cell(rowStart + 2, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    #endregion
+
+                                    #region 写入实际数据
+                                    Project proj = ketiList[k];
+                                    Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + proj.UnitID + "'").select("*").getItem<Unit>(new Unit());
+                                    Task taskObj = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "' and Type='课题' and Role='负责人'").select("*").getItem<Task>(new Task());
+                                    Person personObj = ConnectionManager.Context.table("Person").where("ID ='" + taskObj.PersonID + "'").select("*").getItem<Person>(new Person());
+
+                                    table.Cell(rowStart, 3).Range.Text = personObj.Name;
+                                    table.Cell(rowStart, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart, 5).Range.Text = personObj.Sex;
+                                    table.Cell(rowStart, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart, 7).Range.Text = personObj.Birthday != null ? personObj.Birthday.Value.ToShortDateString() : string.Empty;
+                                    table.Cell(rowStart, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 1, 3).Range.Text = personObj.Job;
+                                    table.Cell(rowStart + 1, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 1, 5).Range.Text = personObj.Telephone;
+                                    table.Cell(rowStart + 1, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 1, 7).Range.Text = personObj.MobilePhone;
+                                    table.Cell(rowStart + 1, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 2, 3).Range.Text = unitObj.UnitName + "," + unitObj.Address;
+                                    table.Cell(rowStart + 2, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    #endregion
+
+                                    //合并单元格
+                                    wu.MergeCell(table, rowEnd, 3, rowEnd, 7);
+                                    wu.MergeCell(table, rowStart, 1, rowEnd, 1);
+                                }
+                            }
+                            else
+                            {
+                                table.Rows[titleIndex].Delete();
+                                table.Rows[dataIndex].Delete();
+                            }
+
+                            break;
+                        }
                     }
                 }
-
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.ToString());
+                }
                 #endregion
 
                 #region 更新目录
@@ -640,9 +673,9 @@ namespace ProjectReporter.Forms
                 #endregion
 
                 //Word路径
-                string wordFileTemp = string.Empty;
+                string toWordPath = string.Empty;
 
-                #region 显示文档
+                #region 显示文档或生成文档
 
                 //临时文件及目录
                 string tempDir = Path.Combine(Application.StartupPath, "TempDocs");
@@ -650,21 +683,25 @@ namespace ProjectReporter.Forms
                 {
                     Directory.CreateDirectory(tempDir);
                 }
-                string sFN = Path.Combine(tempDir, Guid.NewGuid().ToString() + ".doc");
+                string tempFile = Path.Combine(tempDir, Guid.NewGuid().ToString() + ".doc");
                 if (string.IsNullOrEmpty(ToWordFile))
                 {
-                    wu.SaveDocument(sFN);
-                    wordFileTemp = sFN;                    
+                    //预览文档,需要显示
+                    wu.SaveDocument(tempFile);
+                    toWordPath = tempFile;
+
+                    //打开Word文件
+                    Process.Start(toWordPath);
                 }
                 else
                 {
+                    //导出时生成文档,不需要显示
                     wu.SaveDocument(ToWordFile);
-                    wordFileTemp = ToWordFile;
+                    toWordPath = ToWordFile;
                 }
                 #endregion
 
-                //打开Word文件
-                Process.Start(wordFileTemp);
+
             }
             catch (Exception ex)
             {
