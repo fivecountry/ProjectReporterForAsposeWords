@@ -387,7 +387,7 @@ namespace ProjectReporter.Controls
                 _editValue = value;
                 if (value != null)
                 {
-                    EditText = ConnectionManager.Context.table("UnitExt").where("ID='" + value + "'").select("UnitBankNo").getValue<string>(string.Empty);
+                    EditText = ConnectionManager.Context.table("UnitExt").where("ID='" + value + "'").select("UnitBankNo").getValue<string>("请选择开户帐号！");
                 }
             }
         }
