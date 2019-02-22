@@ -317,6 +317,7 @@ namespace ProjectReporter
             this.btnUnitManager.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnUnitManager.TabIndex = 27;
             this.btnUnitManager.Values.Text = "";
+            this.btnUnitManager.Visible = false;
             this.btnUnitManager.Click += new System.EventHandler(this.btnUnitManager_Click);
             // 
             // btnPersonManager

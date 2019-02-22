@@ -14,9 +14,22 @@ namespace ProjectReporter.Forms
     public partial class NewUnitForm : KryptonForm
     {
         private UnitExtService _unitInforService = new UnitExtService();
-        public NewUnitForm()
+
+        private UnitExt unitExtObj = null;
+
+        public NewUnitForm(UnitExt obj)
         {
             InitializeComponent();
+
+            unitExtObj = obj;
+            if (unitExtObj != null)
+            {
+                txtUnitName.Text = unitExtObj.UnitName;
+                txtUnitType.Text = unitExtObj.UnitType;
+                txtUnitBankName.Text = unitExtObj.UnitBankName;
+                txtUnitBankUser.Text = unitExtObj.UnitBankUser;
+                txtUnitBankNo.Text = unitExtObj.UnitBankNo;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -54,15 +67,17 @@ namespace ProjectReporter.Forms
                     return;
                 }
 
-                UnitExt unitInfo = new UnitExt();
-                unitInfo.UnitName = txtUnitName.Text;
-                unitInfo.UnitType = txtUnitType.Text;
-                unitInfo.UnitBankUser = txtUnitBankUser.Text;
-                unitInfo.UnitBankName = txtUnitBankName.Text;
-                unitInfo.UnitBankNo = txtUnitBankNo.Text;
-                unitInfo.IsUserAdded = 1;
-
-                _unitInforService.UpdateUnitInfors(new List<UnitExt>(new UnitExt[] { unitInfo }));
+                if (unitExtObj == null)
+                {
+                    unitExtObj = new UnitExt();
+                }
+                unitExtObj.UnitName = txtUnitName.Text;
+                unitExtObj.UnitType = txtUnitType.Text;
+                unitExtObj.UnitBankUser = txtUnitBankUser.Text;
+                unitExtObj.UnitBankName = txtUnitBankName.Text;
+                unitExtObj.UnitBankNo = txtUnitBankNo.Text;
+                unitExtObj.IsUserAdded = 1;
+                _unitInforService.UpdateUnitInfors(new List<UnitExt>(new UnitExt[] { unitExtObj }));
 
                 DialogResult = DialogResult.OK;
             }

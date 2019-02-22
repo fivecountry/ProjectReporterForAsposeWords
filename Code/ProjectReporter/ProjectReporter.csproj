@@ -223,11 +223,11 @@
     <Compile Include="Forms\NewUnitForm.designer.cs">
       <DependentUpon>NewUnitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UnitManagerForm.cs">
+    <Compile Include="Forms\UnitExtSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UnitManagerForm.designer.cs">
-      <DependentUpon>UnitManagerForm.cs</DependentUpon>
+    <Compile Include="Forms\UnitExtSelectForm.designer.cs">
+      <DependentUpon>UnitExtSelectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\KeTiXiangXiForm.cs">
       <SubType>Form</SubType>
@@ -288,12 +288,6 @@
     </Compile>
     <Compile Include="Forms\Old\PersonManagerForm.Designer.cs">
       <DependentUpon>PersonManagerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UnitExtSelectForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UnitExtSelectForm.Designer.cs">
-      <DependentUpon>UnitExtSelectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WelcomeForm.cs">
       <SubType>Form</SubType>
@@ -368,8 +362,8 @@
     <EmbeddedResource Include="Forms\NewUnitForm.resx">
       <DependentUpon>NewUnitForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UnitManagerForm.resx">
-      <DependentUpon>UnitManagerForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UnitExtSelectForm.resx">
+      <DependentUpon>UnitExtSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KeTiXiangXiForm.resx">
       <DependentUpon>KeTiXiangXiForm.cs</DependentUpon>
@@ -400,9 +394,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Old\PersonManagerForm.resx">
       <DependentUpon>PersonManagerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UnitExtSelectForm.resx">
-      <DependentUpon>UnitExtSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
