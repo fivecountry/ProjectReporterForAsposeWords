@@ -33,8 +33,8 @@ namespace ProjectReporter.Controls
             this.panel14 = new System.Windows.Forms.Panel();
             this.txtUnitName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.leSearchList = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.leSearchListView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.leSearchList = new BankSelectButton();
+            //this.leSearchListView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcUnitName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcUnitType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -87,8 +87,8 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -176,7 +176,7 @@ namespace ProjectReporter.Controls
             // txtUnitName
             // 
             this.txtUnitName.AlwaysActive = false;
-            this.txtUnitName.Location = new System.Drawing.Point(10, 8);
+            this.txtUnitName.Location = new System.Drawing.Point(10, 17);
             this.txtUnitName.Name = "txtUnitName";
             this.txtUnitName.Size = new System.Drawing.Size(520, 29);
             this.txtUnitName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -200,33 +200,33 @@ namespace ProjectReporter.Controls
             // leSearchList
             // 
             this.leSearchList.EditValue = "";
-            this.leSearchList.Location = new System.Drawing.Point(10, 7);
+            this.leSearchList.Location = new System.Drawing.Point(10, 14);
             this.leSearchList.Name = "leSearchList";
-            this.leSearchList.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.leSearchList.Properties.Appearance.Options.UseFont = true;
-            this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.leSearchList.Properties.NullText = "请选择开户帐号！";
-            this.leSearchList.Properties.ShowClearButton = false;
-            this.leSearchList.Properties.ShowFooter = false;
-            this.leSearchList.Properties.View = this.leSearchListView;
+            //this.leSearchList.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 15F);
+            //this.leSearchList.Properties.Appearance.Options.UseFont = true;
+            //this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            //new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            //this.leSearchList.Properties.NullText = "请选择开户帐号！";
+            //this.leSearchList.Properties.ShowClearButton = false;
+            //this.leSearchList.Properties.ShowFooter = false;
+            //this.leSearchList.Properties.View = this.leSearchListView;
             this.leSearchList.Size = new System.Drawing.Size(268, 34);
             this.leSearchList.TabIndex = 30;
-            this.leSearchList.EditValueChanged += new System.EventHandler(this.leSearchList_EditValueChanged);
+            this.leSearchList.EditValueChanged += new EditValueChangedDelegate(this.leSearchList_EditValueChanged);
             // 
             // leSearchListView
             // 
-            this.leSearchListView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gcID,
-            this.gcUnitName,
-            this.gcUnitType,
-            this.gcUnitBankUser,
-            this.gcUnitBankName,
-            this.gcUnitBankNo});
-            this.leSearchListView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.leSearchListView.Name = "leSearchListView";
-            this.leSearchListView.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.leSearchListView.OptionsView.ShowGroupPanel = false;
+            //this.leSearchListView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            //this.gcID,
+            //this.gcUnitName,
+            //this.gcUnitType,
+            //this.gcUnitBankUser,
+            //this.gcUnitBankName,
+            //this.gcUnitBankNo});
+            //this.leSearchListView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            //this.leSearchListView.Name = "leSearchListView";
+            //this.leSearchListView.OptionsSelection.EnableAppearanceFocusedCell = false;
+            //this.leSearchListView.OptionsView.ShowGroupPanel = false;
             // 
             // gcID
             // 
@@ -293,7 +293,7 @@ namespace ProjectReporter.Controls
             // txtContactName
             // 
             this.txtContactName.AlwaysActive = false;
-            this.txtContactName.Location = new System.Drawing.Point(10, 8);
+            this.txtContactName.Location = new System.Drawing.Point(10, 15);
             this.txtContactName.Name = "txtContactName";
             this.txtContactName.Size = new System.Drawing.Size(520, 29);
             this.txtContactName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -328,7 +328,7 @@ namespace ProjectReporter.Controls
             // txtTotalMoney
             // 
             this.txtTotalMoney.AlwaysActive = false;
-            this.txtTotalMoney.Location = new System.Drawing.Point(10, 11);
+            this.txtTotalMoney.Location = new System.Drawing.Point(10, 19);
             this.txtTotalMoney.Name = "txtTotalMoney";
             this.txtTotalMoney.Size = new System.Drawing.Size(268, 29);
             this.txtTotalMoney.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -352,7 +352,7 @@ namespace ProjectReporter.Controls
             // txtTelephone
             // 
             this.txtTelephone.AlwaysActive = false;
-            this.txtTelephone.Location = new System.Drawing.Point(10, 8);
+            this.txtTelephone.Location = new System.Drawing.Point(10, 15);
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.Size = new System.Drawing.Size(268, 29);
             this.txtTelephone.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -377,7 +377,7 @@ namespace ProjectReporter.Controls
             // txtProjectName
             // 
             this.txtProjectName.AlwaysActive = false;
-            this.txtProjectName.Location = new System.Drawing.Point(10, 8);
+            this.txtProjectName.Location = new System.Drawing.Point(10, 15);
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.Size = new System.Drawing.Size(990, 29);
             this.txtProjectName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -402,7 +402,7 @@ namespace ProjectReporter.Controls
             // txtTotalTime
             // 
             this.txtTotalTime.AlwaysActive = false;
-            this.txtTotalTime.Location = new System.Drawing.Point(10, 12);
+            this.txtTotalTime.Location = new System.Drawing.Point(10, 19);
             this.txtTotalTime.Name = "txtTotalTime";
             this.txtTotalTime.Size = new System.Drawing.Size(520, 29);
             this.txtTotalTime.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -427,7 +427,7 @@ namespace ProjectReporter.Controls
             // txtAddress
             // 
             this.txtAddress.AlwaysActive = false;
-            this.txtAddress.Location = new System.Drawing.Point(10, 8);
+            this.txtAddress.Location = new System.Drawing.Point(10, 16);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(990, 29);
             this.txtAddress.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -452,7 +452,7 @@ namespace ProjectReporter.Controls
             // txtNormalName
             // 
             this.txtNormalName.AlwaysActive = false;
-            this.txtNormalName.Location = new System.Drawing.Point(10, 8);
+            this.txtNormalName.Location = new System.Drawing.Point(10, 14);
             this.txtNormalName.Name = "txtNormalName";
             this.txtNormalName.Size = new System.Drawing.Size(1014, 29);
             this.txtNormalName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -543,7 +543,7 @@ namespace ProjectReporter.Controls
             // txtKeyWords
             // 
             this.txtKeyWords.AlwaysActive = false;
-            this.txtKeyWords.Location = new System.Drawing.Point(10, 8);
+            this.txtKeyWords.Location = new System.Drawing.Point(10, 14);
             this.txtKeyWords.Name = "txtKeyWords";
             this.txtKeyWords.Size = new System.Drawing.Size(520, 29);
             this.txtKeyWords.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -591,20 +591,22 @@ namespace ProjectReporter.Controls
             // 
             // label12
             // 
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label12.Location = new System.Drawing.Point(792, 124);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(178, 45);
+            this.label12.Size = new System.Drawing.Size(191, 62);
             this.label12.TabIndex = 4;
             this.label12.Text = "单位开户帐号：";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(3, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 45);
+            this.label2.Size = new System.Drawing.Size(178, 62);
             this.label2.TabIndex = 19;
             this.label2.Text = "关键字：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -789,8 +791,8 @@ namespace ProjectReporter.Controls
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -854,8 +856,8 @@ namespace ProjectReporter.Controls
         private System.Windows.Forms.Panel panel4;
         private KryptonTextBox txtContactName;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.SearchLookUpEdit leSearchList;
-        private DevExpress.XtraGrid.Views.Grid.GridView leSearchListView;
+        private BankSelectButton leSearchList;
+        //private DevExpress.XtraGrid.Views.Grid.GridView leSearchListView;
         private DevExpress.XtraGrid.Columns.GridColumn gcID;
         private DevExpress.XtraGrid.Columns.GridColumn gcUnitName;
         private DevExpress.XtraGrid.Columns.GridColumn gcUnitType;

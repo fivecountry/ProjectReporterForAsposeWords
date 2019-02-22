@@ -10,6 +10,7 @@ using ProjectReporter.DB.Entitys;
 using ProjectReporter.DB;
 using ProjectReporter.Forms;
 using ProjectReporter.DB.Services;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace ProjectReporter.Controls
 {
@@ -71,7 +72,7 @@ namespace ProjectReporter.Controls
         public override void ClearView()
         {
             //cbxPersonList.Items.Clear();
-            leSearchList.Properties.DataSource = null;
+            //leSearchList.Properties.DataSource = null;
             //cbxUnitA.Items.Clear();
             //cbxUnitB.Items.Clear();
             //cbxUnitC.Items.Clear();
@@ -90,9 +91,9 @@ namespace ProjectReporter.Controls
         {
             var unitList = _unitInforService.GetUnitInforList();
 
-            leSearchList.Properties.DataSource = unitList;
-            leSearchList.Properties.DisplayMember = "UnitBankNo";
-            leSearchList.Properties.ValueMember = "ID";
+            //leSearchList.Properties.DataSource = unitList;
+            //leSearchList.Properties.DisplayMember = "UnitBankNo";
+            //leSearchList.Properties.ValueMember = "ID";
 
             if (MainForm.Instance.ProjectObj != null)
             {
@@ -357,6 +358,61 @@ namespace ProjectReporter.Controls
                 txtTelephone.Text = unitObj.Telephone;
                 txtAddress.Text = unitObj.Address;
                 txtNormalName.Text = unitObj.NormalName;
+            }
+        }
+    }
+
+    public delegate void EditValueChangedDelegate(object sender, EventArgs e);
+
+    public class BankSelectButton : KryptonButton
+    {
+        public BankSelectButton():base()
+        {
+            Text = "请选择开户帐号！";
+        }
+
+        public event EditValueChangedDelegate EditValueChanged;
+
+        private object _editValue = null;
+
+        public object EditValue
+        {
+            get
+            {
+                return _editValue;
+            }
+
+            set
+            {
+                _editValue = value;
+                if (value != null)
+                {
+                    EditText = ConnectionManager.Context.table("UnitExt").where("ID='" + value + "'").select("UnitBankNo").getValue<string>(string.Empty);
+                }
+            }
+        }
+
+        public string EditText
+        {
+            get { return Text; }
+
+            set { Text = value; }
+        }
+
+        protected override void OnClick(EventArgs e)
+        {
+            base.OnClick(e);
+
+            UnitExtSelectForm selectForm = new UnitExtSelectForm(EditValue != null ? EditValue.ToString() : string.Empty);
+            if (selectForm.ShowDialog() == DialogResult.OK)
+            {
+                EditValue = selectForm.SelectedUnitExt.ID;
+                Text = selectForm.SelectedUnitExt.UnitBankNo;
+
+                if (EditValueChanged != null)
+                {
+                    EditValueChanged(this, new EventArgs());
+                }
             }
         }
     }
