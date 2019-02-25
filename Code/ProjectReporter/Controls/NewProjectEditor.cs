@@ -195,7 +195,7 @@ namespace ProjectReporter.Controls
                 return -1;
             }
 
-            if (leSearchList.EditValue == null)
+            if (leSearchList.EditValue == null || leSearchList.EditValue == "")
             {
                 MessageBox.Show("对不起，请选择申报单位");
                 return -1;
