@@ -24,7 +24,7 @@ namespace ProjectReporter.Controls
             //显示图标
             dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.exclamation_16;
             dgvDetail[dgvDetail.Columns.Count - 2, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
-            dgvDetail[dgvDetail.Columns.Count - 3, 0].Value = "生成标签页";
+            dgvDetail[dgvDetail.Columns.Count - 3, 0].Value = "填报课题内容";
 
             //显示密级
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("公开");
@@ -119,7 +119,7 @@ namespace ProjectReporter.Controls
                 cells.Add(unitBankNo);
                 cells.Add(content);
                 cells.Add(keti.Type2 == "总体课题");
-                cells.Add("生成标签页");
+                cells.Add("填报课题内容");
 
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                 dgvDetail.Rows[rowIndex].Tag = keti;
@@ -292,7 +292,7 @@ namespace ProjectReporter.Controls
         {
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 1, e.RowIndex].Value = global::ProjectReporter.Properties.Resources.exclamation_16;
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 2, e.RowIndex].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
-            ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 3, e.RowIndex].Value = "生成标签页";
+            ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 3, e.RowIndex].Value = "填报课题内容";
         }
 
         public override void OnSaveEvent()
