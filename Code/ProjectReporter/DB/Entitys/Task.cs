@@ -23,6 +23,7 @@ namespace ProjectReporter.DB.Entitys
             query.set("Content", Content);
             query.set("TotalTime", TotalTime);
             query.set("IDCard", IDCard);
+            query.set("DisplayOrder", DisplayOrder);
 
             return query;
         }
@@ -36,6 +37,8 @@ namespace ProjectReporter.DB.Entitys
         private string _Content;
         private int? _totaltime;
         private string _idcard;
+        private int? _displayOrder;
+
         /// <summary>
         /// 
         /// </summary>
@@ -100,6 +103,20 @@ namespace ProjectReporter.DB.Entitys
             set { _idcard = value; }
             get { return _idcard; }
         }
+
+        public int? DisplayOrder
+        {
+            get
+            {
+                return _displayOrder;
+            }
+
+            set
+            {
+                _displayOrder = value;
+            }
+        }
+
         #endregion Model
 
         public override void bind(Noear.Weed.GetHandlerEx source)
@@ -112,6 +129,7 @@ namespace ProjectReporter.DB.Entitys
             Content = source("Content").value<string>(string.Empty);
             TotalTime = source("TotalTime").value<int>(0);
             IDCard = source("IDCard").value<string>(string.Empty);
+            DisplayOrder = source("DisplayOrder").value<int>(0);
         }
 
         public override Noear.Weed.IBinder clone()
