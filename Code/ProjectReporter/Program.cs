@@ -6,6 +6,7 @@ using System.IO;
 using ProjectReporter.Forms;
 using System.Diagnostics;
 using ProjectReporter.Utility;
+using System.Threading;
 
 namespace ProjectReporter
 {
@@ -19,77 +20,90 @@ namespace ProjectReporter
         [STAThread]
         static void Main(string[] args)
         {
-            #region 初始化目录
-            //InitProjectDir("P" + Process.GetCurrentProcess().Id + "-Project");
-            TryInitProjectDir("Current");
-
-            if (args.Length >= 1)
+            //进行清空或导入导出工作时等待另外一个读写static.db的进程关闭
+            if (args != null && args.Length >= 1)
             {
-                //需要导入文件
-                FileZipOpr fzo = new FileZipOpr();
+                Thread.Sleep(2000);
+            }
 
-                if (args[0] != null)
+            try
+            {
+                #region 初始化目录
+                //InitProjectDir("P" + Process.GetCurrentProcess().Id + "-Project");
+                TryInitProjectDir("Current");
+
+                if (args.Length >= 1)
                 {
-                    if (args[0].StartsWith("Export:"))
+                    //需要导入文件
+                    FileZipOpr fzo = new FileZipOpr();
+
+                    if (args[0] != null)
                     {
-                        //导出
-                        string toZipFile = args[0].Replace("Export:", string.Empty);
-                        string toZipDir = new FileInfo(toZipFile).DirectoryName;
-                        string docFile = Path.Combine(toZipDir, "申报书.doc");
-                        if (File.Exists(docFile))
+                        if (args[0].StartsWith("Export:"))
                         {
-                            File.Copy(docFile, Path.Combine(MainForm.ProjectDir, "申报书.doc"), true);
+                            //导出
+                            string toZipFile = args[0].Replace("Export:", string.Empty);
+                            string toZipDir = new FileInfo(toZipFile).DirectoryName;
+                            string docFile = Path.Combine(toZipDir, "申报书.doc");
+                            if (File.Exists(docFile))
+                            {
+                                File.Copy(docFile, Path.Combine(MainForm.ProjectDir, "申报书.doc"), true);
+                            }
+
+                            //打包文件
+                            fzo.ZipFileDirectory(MainForm.ProjectDir, toZipFile);
+
+                            //删除临时Doc文件
+                            File.Delete(Path.Combine(MainForm.ProjectDir, "申报书.doc"));
                         }
-
-                        //打包文件
-                        fzo.ZipFileDirectory(MainForm.ProjectDir, toZipFile);
-
-                        //删除临时Doc文件
-                        File.Delete(Path.Combine(MainForm.ProjectDir, "申报书.doc"));
-                    }
-                    else if (args[0].StartsWith("Clear:"))
-                    {
-                        Directory.Delete(MainForm.ProjectDir, true);
-                        TryInitProjectDir("Current");
-                    }
-                    else
-                    {
-                        //导入
-
-                        //备份当前的数据库
-                        if (Directory.Exists(Path.Combine(MainForm.BaseDir, "import-backup")))
+                        else if (args[0].StartsWith("Clear:"))
                         {
-                            Directory.Delete(Path.Combine(MainForm.BaseDir, "import-backup"), true);
+                            Directory.Delete(MainForm.ProjectDir, true);
+                            TryInitProjectDir("Current");
                         }
-                        Directory.Move(MainForm.ProjectDir, Path.Combine(MainForm.BaseDir, "import-backup"));
-                        Directory.CreateDirectory(MainForm.ProjectDir);
+                        else
+                        {
+                            //导入
 
-                        //解压需要导入的包                        
-                        fzo.UnZipFile(args[0], MainForm.ProjectDir, string.Empty, true);
+                            //备份当前的数据库
+                            if (Directory.Exists(Path.Combine(MainForm.BaseDir, "import-backup")))
+                            {
+                                Directory.Delete(Path.Combine(MainForm.BaseDir, "import-backup"), true);
+                            }
+                            Directory.Move(MainForm.ProjectDir, Path.Combine(MainForm.BaseDir, "import-backup"));
+                            Directory.CreateDirectory(MainForm.ProjectDir);
+
+                            //解压需要导入的包                        
+                            fzo.UnZipFile(args[0], MainForm.ProjectDir, string.Empty, true);
+                        }
                     }
+
+                    //打开DB文件连接
+                    TryOpenProjectDirDB();
+                }
+                else
+                {
+                    //打开DB文件连接
+                    TryOpenProjectDirDB();
                 }
 
-                //打开DB文件连接
-                TryOpenProjectDirDB();
+                #endregion
+
+                #region 启动窗体
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                WelcomeForm startform = new WelcomeForm();
+                startform.Show();
+                Program.context = new ApplicationContext();
+                Program.context.Tag = startform;
+                Application.Idle += new EventHandler(Program.Application_Idle);
+                Application.Run(Program.context);
+                #endregion
             }
-            else
+            catch (Exception exxx)
             {
-                //打开DB文件连接
-                TryOpenProjectDirDB();
+                MessageBox.Show("启动失败！Ex:" + exxx.ToString(), "错误", MessageBoxButtons.OK);
             }
-
-            #endregion
-
-            #region 启动窗体
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            WelcomeForm startform = new WelcomeForm();
-            startform.Show();
-            Program.context = new ApplicationContext();
-            Program.context.Tag = startform;
-            Application.Idle += new EventHandler(Program.Application_Idle);
-            Application.Run(Program.context);
-            #endregion
         }
 
         private static void Application_Idle(object sender, EventArgs e)
