@@ -220,11 +220,11 @@ namespace ProjectReporter.Controls
             //    return -1;
             //}
 
-            if (string.IsNullOrEmpty(txtNormalName.Text))
-            {
-                MessageBox.Show("对不起，请输入常用名");
-                return -1;
-            }
+            //if (string.IsNullOrEmpty(txtNormalName.Text))
+            //{
+            //    MessageBox.Show("对不起，请输入常用名");
+            //    return -1;
+            //}
 
             //项目负责人
             if (MainForm.Instance.ProjectObj != null)
