@@ -33,6 +33,7 @@
             this.txtWord3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtWord4 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtWord5 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.bsaKeyWordHint = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,7 +43,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.bsaKeyWordHint = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -56,7 +56,7 @@
             this.txtWord1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtWord1.Location = new System.Drawing.Point(0, 0);
             this.txtWord1.Name = "txtWord1";
-            this.txtWord1.Size = new System.Drawing.Size(90, 29);
+            this.txtWord1.Size = new System.Drawing.Size(95, 29);
             this.txtWord1.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord1.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtWord1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -70,7 +70,7 @@
             this.txtWord2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtWord2.Location = new System.Drawing.Point(0, 0);
             this.txtWord2.Name = "txtWord2";
-            this.txtWord2.Size = new System.Drawing.Size(90, 29);
+            this.txtWord2.Size = new System.Drawing.Size(95, 29);
             this.txtWord2.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord2.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtWord2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -84,7 +84,7 @@
             this.txtWord3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtWord3.Location = new System.Drawing.Point(0, 0);
             this.txtWord3.Name = "txtWord3";
-            this.txtWord3.Size = new System.Drawing.Size(90, 29);
+            this.txtWord3.Size = new System.Drawing.Size(95, 29);
             this.txtWord3.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord3.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtWord3.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -98,7 +98,7 @@
             this.txtWord4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtWord4.Location = new System.Drawing.Point(0, 0);
             this.txtWord4.Name = "txtWord4";
-            this.txtWord4.Size = new System.Drawing.Size(90, 29);
+            this.txtWord4.Size = new System.Drawing.Size(95, 29);
             this.txtWord4.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord4.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtWord4.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -114,13 +114,19 @@
             this.txtWord5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtWord5.Location = new System.Drawing.Point(0, 0);
             this.txtWord5.Name = "txtWord5";
-            this.txtWord5.Size = new System.Drawing.Size(317, 29);
+            this.txtWord5.Size = new System.Drawing.Size(350, 29);
             this.txtWord5.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord5.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtWord5.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord5.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord5.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord5.TabIndex = 16;
+            // 
+            // bsaKeyWordHint
+            // 
+            this.bsaKeyWordHint.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
+            this.bsaKeyWordHint.Text = "关键字需至少填写三个，最多填写五个";
+            this.bsaKeyWordHint.UniqueName = "9B66C5621A0C48B2399F2EFD728AC9D1";
             // 
             // panel1
             // 
@@ -129,7 +135,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(111, 31);
+            this.panel1.Size = new System.Drawing.Size(125, 31);
             this.panel1.TabIndex = 17;
             // 
             // label5
@@ -138,9 +144,9 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(90, 0);
+            this.label5.Location = new System.Drawing.Point(95, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 31);
+            this.label5.Size = new System.Drawing.Size(30, 31);
             this.label5.TabIndex = 18;
             this.label5.Text = "*";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,9 +156,9 @@
             this.panel2.Controls.Add(this.txtWord2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(111, 0);
+            this.panel2.Location = new System.Drawing.Point(125, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(111, 31);
+            this.panel2.Size = new System.Drawing.Size(125, 31);
             this.panel2.TabIndex = 17;
             // 
             // label1
@@ -161,9 +167,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(90, 0);
+            this.label1.Location = new System.Drawing.Point(95, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 31);
+            this.label1.Size = new System.Drawing.Size(30, 31);
             this.label1.TabIndex = 19;
             this.label1.Text = "*";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,9 +179,9 @@
             this.panel3.Controls.Add(this.txtWord3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(222, 0);
+            this.panel3.Location = new System.Drawing.Point(250, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(111, 31);
+            this.panel3.Size = new System.Drawing.Size(125, 31);
             this.panel3.TabIndex = 17;
             // 
             // label2
@@ -184,9 +190,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(90, 0);
+            this.label2.Location = new System.Drawing.Point(95, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 31);
+            this.label2.Size = new System.Drawing.Size(30, 31);
             this.label2.TabIndex = 19;
             this.label2.Text = "*";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,9 +202,9 @@
             this.panel4.Controls.Add(this.txtWord4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(333, 0);
+            this.panel4.Location = new System.Drawing.Point(375, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(111, 31);
+            this.panel4.Size = new System.Drawing.Size(125, 31);
             this.panel4.TabIndex = 17;
             // 
             // label3
@@ -207,9 +213,9 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Right;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(90, 0);
+            this.label3.Location = new System.Drawing.Point(95, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 31);
+            this.label3.Size = new System.Drawing.Size(30, 31);
             this.label3.TabIndex = 20;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -217,16 +223,10 @@
             // 
             this.panel5.Controls.Add(this.txtWord5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(444, 0);
+            this.panel5.Location = new System.Drawing.Point(500, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(317, 31);
+            this.panel5.Size = new System.Drawing.Size(350, 31);
             this.panel5.TabIndex = 17;
-            // 
-            // bsaKeyWordHint
-            // 
-            this.bsaKeyWordHint.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
-            this.bsaKeyWordHint.Text = "关键字需至少填写三个，最多填写五个";
-            this.bsaKeyWordHint.UniqueName = "9B66C5621A0C48B2399F2EFD728AC9D1";
             // 
             // ProjectKeyControl
             // 
@@ -239,7 +239,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "ProjectKeyControl";
-            this.Size = new System.Drawing.Size(761, 31);
+            this.Size = new System.Drawing.Size(850, 31);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

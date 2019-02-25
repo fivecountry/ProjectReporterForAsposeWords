@@ -365,6 +365,12 @@ namespace ProjectReporter.Controls
                 txtNormalName.Text = unitObj.NormalName;
             }
         }
+
+        private void NewProjectEditor_SizeChanged(object sender, EventArgs e)
+        {
+            //plMain.Left = (Width - plMain.Width) / 2;
+            //plMain.Top = (Height - plMain.Height) / 2;
+        }
     }
 
     public delegate void EditValueChangedDelegate(object sender, EventArgs e);
