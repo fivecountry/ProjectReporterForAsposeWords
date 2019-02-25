@@ -43,6 +43,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonSpecAny1 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -95,10 +96,12 @@
             // txtWord4
             // 
             this.txtWord4.AlwaysActive = false;
+            this.txtWord4.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
+            this.buttonSpecAny1});
             this.txtWord4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtWord4.Location = new System.Drawing.Point(0, 0);
             this.txtWord4.Name = "txtWord4";
-            this.txtWord4.Size = new System.Drawing.Size(95, 29);
+            this.txtWord4.Size = new System.Drawing.Size(320, 29);
             this.txtWord4.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord4.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtWord4.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -114,7 +117,7 @@
             this.txtWord5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtWord5.Location = new System.Drawing.Point(0, 0);
             this.txtWord5.Name = "txtWord5";
-            this.txtWord5.Size = new System.Drawing.Size(350, 29);
+            this.txtWord5.Size = new System.Drawing.Size(335, 29);
             this.txtWord5.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord5.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtWord5.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -204,7 +207,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(375, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(125, 31);
+            this.panel4.Size = new System.Drawing.Size(350, 31);
             this.panel4.TabIndex = 17;
             // 
             // label3
@@ -213,7 +216,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Right;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(95, 0);
+            this.label3.Location = new System.Drawing.Point(320, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 31);
             this.label3.TabIndex = 20;
@@ -223,10 +226,16 @@
             // 
             this.panel5.Controls.Add(this.txtWord5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(500, 0);
+            this.panel5.Location = new System.Drawing.Point(725, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 31);
+            this.panel5.Size = new System.Drawing.Size(335, 31);
             this.panel5.TabIndex = 17;
+            // 
+            // buttonSpecAny1
+            // 
+            this.buttonSpecAny1.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
+            this.buttonSpecAny1.Text = "关键字需至少填写三个，最多填写五个";
+            this.buttonSpecAny1.UniqueName = "8A5AC0A0916442761F898B1830A8F4FD";
             // 
             // ProjectKeyControl
             // 
@@ -239,7 +248,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "ProjectKeyControl";
-            this.Size = new System.Drawing.Size(850, 31);
+            this.Size = new System.Drawing.Size(1060, 31);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -269,7 +278,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private ComponentFactory.Krypton.Toolkit.ButtonSpecAny bsaKeyWordHint;
+        private System.Windows.Forms.Label label3;
+        private ComponentFactory.Krypton.Toolkit.ButtonSpecAny buttonSpecAny1;
     }
 }
