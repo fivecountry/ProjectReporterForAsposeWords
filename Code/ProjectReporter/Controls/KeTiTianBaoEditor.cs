@@ -504,7 +504,13 @@ namespace ProjectReporter.Controls
             {
                 if (be is JieDuanHuaFenEditor)
                 {
+                    //刷新列表
                     be.RefreshView();
+
+                    //尝试创建4个初始项目
+                    ((JieDuanHuaFenEditor)be).Build4StepItems();
+
+                    //保存数据
                     be.OnSaveEvent();
                     break;
                 }

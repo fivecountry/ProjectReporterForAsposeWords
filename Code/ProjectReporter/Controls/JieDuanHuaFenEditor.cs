@@ -87,6 +87,23 @@ namespace ProjectReporter.Controls
             txtStepCount.Text = StepList != null ? StepList.Count + "" : "0";
         }
 
+        public void Build4StepItems()
+        {
+            if (StepList == null || StepList.Count == 0)
+            {
+                int[] times = new int[] { 18, 12, 12, 18 };
+                for (int k = 0; k < 4; k++)
+                {
+                    List<object> cells = new List<object>();
+                    cells.Add(k + 1);
+                    cells.Add(k + 1);
+                    cells.Add(times[k]);
+
+                    dgvDetail.Rows.Add(cells.ToArray());
+                }
+            }
+        }
+
         public override void OnSaveEvent()
         {
             base.OnSaveEvent();
