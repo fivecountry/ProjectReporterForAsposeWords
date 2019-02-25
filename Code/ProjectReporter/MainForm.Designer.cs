@@ -94,8 +94,6 @@ namespace ProjectReporter
             this.knReportPage8 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage21 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.feUI11 = new ProjectReporter.Controls.JieDuanHuaFenEditor();
-            this.kryptonPage35 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.feUI12 = new ProjectReporter.Controls.XiangMuJieDuanHuaFenEditor();
             this.kryptonPage32 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.feUI13 = new ProjectReporter.Controls.KeTiJieDuanHuaFenEditor();
             this.kpReportPage9 = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -204,8 +202,6 @@ namespace ProjectReporter
             this.knReportPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage21)).BeginInit();
             this.kryptonPage21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage35)).BeginInit();
-            this.kryptonPage35.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage32)).BeginInit();
             this.kryptonPage32.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpReportPage9)).BeginInit();
@@ -1007,7 +1003,7 @@ namespace ProjectReporter
             this.kpReportPage8.LastVisibleSet = true;
             this.kpReportPage8.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage8.Name = "kpReportPage8";
-            this.kpReportPage8.Size = new System.Drawing.Size(1216, 629);
+            this.kpReportPage8.Size = new System.Drawing.Size(1256, 628);
             this.kpReportPage8.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kpReportPage8.Text = "研究周期，阶段划分,经费安排";
             this.kpReportPage8.ToolTipTitle = "Page ToolTip";
@@ -1022,10 +1018,9 @@ namespace ProjectReporter
             this.knReportPage8.Name = "knReportPage8";
             this.knReportPage8.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage21,
-            this.kryptonPage35,
             this.kryptonPage32});
             this.knReportPage8.SelectedIndex = 0;
-            this.knReportPage8.Size = new System.Drawing.Size(1216, 629);
+            this.knReportPage8.Size = new System.Drawing.Size(1256, 628);
             this.knReportPage8.TabIndex = 2;
             this.knReportPage8.Text = "kryptonNavigator12";
             // 
@@ -1037,7 +1032,7 @@ namespace ProjectReporter
             this.kryptonPage21.LastVisibleSet = true;
             this.kryptonPage21.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage21.Name = "kryptonPage21";
-            this.kryptonPage21.Size = new System.Drawing.Size(1214, 599);
+            this.kryptonPage21.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage21.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonPage21.Text = "阶段划分";
             this.kryptonPage21.ToolTipTitle = "Page ToolTip";
@@ -1050,33 +1045,9 @@ namespace ProjectReporter
             this.feUI11.Location = new System.Drawing.Point(0, 0);
             this.feUI11.Name = "feUI11";
             this.feUI11.ParentForm = null;
-            this.feUI11.Size = new System.Drawing.Size(1214, 599);
+            this.feUI11.Size = new System.Drawing.Size(1254, 598);
             this.feUI11.StepList = null;
             this.feUI11.TabIndex = 0;
-            // 
-            // kryptonPage35
-            // 
-            this.kryptonPage35.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage35.Controls.Add(this.feUI12);
-            this.kryptonPage35.Flags = 65534;
-            this.kryptonPage35.LastVisibleSet = true;
-            this.kryptonPage35.MinimumSize = new System.Drawing.Size(50, 50);
-            this.kryptonPage35.Name = "kryptonPage35";
-            this.kryptonPage35.Size = new System.Drawing.Size(1112, 483);
-            this.kryptonPage35.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
-            this.kryptonPage35.Text = "项目阶段划分和经费安排";
-            this.kryptonPage35.ToolTipTitle = "Page ToolTip";
-            this.kryptonPage35.UniqueName = "FD6AE7543C1D4A5774B98E493AE5CFE1";
-            // 
-            // feUI12
-            // 
-            this.feUI12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI12.Location = new System.Drawing.Point(0, 0);
-            this.feUI12.Name = "feUI12";
-            this.feUI12.ParentForm = null;
-            this.feUI12.Size = new System.Drawing.Size(1112, 483);
-            this.feUI12.StepList = null;
-            this.feUI12.TabIndex = 0;
             // 
             // kryptonPage32
             // 
@@ -1086,7 +1057,7 @@ namespace ProjectReporter
             this.kryptonPage32.LastVisibleSet = true;
             this.kryptonPage32.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage32.Name = "kryptonPage32";
-            this.kryptonPage32.Size = new System.Drawing.Size(1112, 483);
+            this.kryptonPage32.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage32.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kryptonPage32.Text = "课题阶段划分和经费安排";
             this.kryptonPage32.ToolTipTitle = "Page ToolTip";
@@ -1099,7 +1070,7 @@ namespace ProjectReporter
             this.feUI13.Location = new System.Drawing.Point(0, 0);
             this.feUI13.Name = "feUI13";
             this.feUI13.ParentForm = null;
-            this.feUI13.Size = new System.Drawing.Size(1112, 483);
+            this.feUI13.Size = new System.Drawing.Size(1254, 598);
             this.feUI13.StepList = null;
             this.feUI13.TabIndex = 0;
             // 
@@ -1739,8 +1710,6 @@ namespace ProjectReporter
             this.knReportPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage21)).EndInit();
             this.kryptonPage21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage35)).EndInit();
-            this.kryptonPage35.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage32)).EndInit();
             this.kryptonPage32.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpReportPage9)).EndInit();
@@ -1886,7 +1855,6 @@ namespace ProjectReporter
         private KryptonPage kryptonPage16;
         private KryptonPage kryptonPage56;
         private KryptonPage kryptonPage34;
-        private KryptonPage kryptonPage35;
         private KryptonPage kryptonPage36;
         private KryptonPage kryptonPage37;
         private RTFTextEditor feUI3;
@@ -1901,7 +1869,6 @@ namespace ProjectReporter
         private RTFTextEditor feUI10;
         private JieDuanHuaFenEditor feUI11;
         private KryptonPage kryptonPage32;
-        private XiangMuJieDuanHuaFenEditor feUI12;
         private KeTiJieDuanHuaFenEditor feUI13;
         private RTFTextEditor feUI14;
         private RTFTextEditor feUI15;

@@ -73,12 +73,21 @@ namespace ProjectReporter.Controls
             ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 1]).Image = ProjectReporter.Properties.Resources.DELETE_28;
             foreach (Step step in StepList)
             {
+                string stepContent = string.Empty;
+                ProjectAndStep projectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
+                if (projectAndStep != null)
+                {
+                    stepContent = projectAndStep.StepContent;
+                }
+
                 List<object> cells = new List<object>();
                 indexx++;
                 cells.Add(indexx+"");
                 cells.Add(step.StepIndex != null ? step.StepIndex.Value : 0);
                 cells.Add(step.StepTime != null ? step.StepTime.Value : 0);
-
+                cells.Add(stepContent);
+                cells.Add(step.StepDest);
+                cells.Add(step.StepMoney);
 
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                 dgvDetail.Rows[rowIndex].Tag = step;
@@ -140,6 +149,22 @@ namespace ProjectReporter.Controls
                     break;
                 }
 
+                if (dgvRow.Cells[3].Value == null || string.IsNullOrEmpty(dgvRow.Cells[3].Value.ToString()))
+                {
+                    MessageBox.Show("对不起,请输入阶段内容");
+                    return;
+                }
+                if (dgvRow.Cells[4].Value == null || string.IsNullOrEmpty(dgvRow.Cells[4].Value.ToString()))
+                {
+                    MessageBox.Show("对不起,请输入阶段目标");
+                    return;
+                }
+                if (dgvRow.Cells[5].Value == null || string.IsNullOrEmpty(dgvRow.Cells[5].Value.ToString()))
+                {
+                    MessageBox.Show("对不起,请输入阶段经费");
+                    return;
+                }
+
                 step.StepIndex = Int32.Parse(((KryptonDataGridViewNumericUpDownCell)dgvRow.Cells[1]).Value.ToString());
                 step.StepTime = Int32.Parse(((KryptonDataGridViewNumericUpDownCell)dgvRow.Cells[2]).Value.ToString());
 
@@ -158,6 +183,20 @@ namespace ProjectReporter.Controls
                 {
                     step.copyTo(ConnectionManager.Context.table("Step")).where("ID='" + step.ID + "'").update();
                 }
+
+
+
+                ProjectAndStep pas = ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
+                if (pas != null)
+                {
+                    pas.StepContent = dgvRow.Cells[3].Value.ToString();
+                    pas.copyTo(ConnectionManager.Context.table("ProjectAndStep")).where("ID='" + pas.ID + "'").update();
+                }
+
+                step.StepDest = dgvRow.Cells[4].Value.ToString();
+                step.StepMoney = decimal.Parse(dgvRow.Cells[5].Value.ToString());
+
+                step.copyTo(ConnectionManager.Context.table("Step")).where("ID='" + step.ID + "'").update();
                 #endregion
 
                 #region 添加课题的Step
@@ -212,7 +251,7 @@ namespace ProjectReporter.Controls
             if (dgvDetail.Rows.Count >= 1)
             {
                 Step step = (Step)dgvDetail.Rows[e.RowIndex].Tag;
-                if (step != null)
+                if (step != null && e.ColumnIndex == dgvDetail.Columns.Count - 1)
                 {
                     if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {

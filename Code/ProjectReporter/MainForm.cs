@@ -297,7 +297,7 @@ namespace ProjectReporter
             controlList.Add(feUI9);
             controlList.Add(feUI10);
             controlList.Add(feUI11);
-            controlList.Add(feUI12);
+            //controlList.Add(feUI12);
             controlList.Add(feUI13);
             controlList.Add(feUI14);
             controlList.Add(feUI15);
