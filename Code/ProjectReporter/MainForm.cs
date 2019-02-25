@@ -531,8 +531,7 @@ namespace ProjectReporter
             //edithost2.Visible = false;
             //fnpDefault.Visible = true;
 
-            SwitchToReportPage(1);
-
+            SwitchToReportPage(0);
             fnpDefault.LoadProject();
         }
 
