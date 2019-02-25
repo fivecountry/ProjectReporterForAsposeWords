@@ -33,14 +33,7 @@ namespace ProjectReporter.Controls
             this.panel14 = new System.Windows.Forms.Panel();
             this.txtUnitName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.leSearchList = new BankSelectButton();
-            //this.leSearchListView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gcID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitBankUser = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitBankName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitBankNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.leSearchList = new ProjectReporter.Controls.BankSelectButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtContactName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -76,6 +69,12 @@ namespace ProjectReporter.Controls
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtMPersonIDCard = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.gcID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankUser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.plMain = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -87,8 +86,6 @@ namespace ProjectReporter.Controls
             this.hSkinTableLayoutPanel1.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -199,73 +196,17 @@ namespace ProjectReporter.Controls
             // 
             // leSearchList
             // 
+            this.leSearchList.EditText = "请选择！";
             this.leSearchList.EditValue = "";
             this.leSearchList.Location = new System.Drawing.Point(10, 14);
             this.leSearchList.Name = "leSearchList";
-            //this.leSearchList.Properties.Appearance.Font = new System.Drawing.Font("微软雅黑", 15F);
-            //this.leSearchList.Properties.Appearance.Options.UseFont = true;
-            //this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            //new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            //this.leSearchList.Properties.NullText = "请选择开户帐号！";
-            //this.leSearchList.Properties.ShowClearButton = false;
-            //this.leSearchList.Properties.ShowFooter = false;
-            //this.leSearchList.Properties.View = this.leSearchListView;
             this.leSearchList.Size = new System.Drawing.Size(268, 34);
+            this.leSearchList.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.leSearchList.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            this.leSearchList.StateCommon.Content.ShortText.Font = new System.Drawing.Font("微软雅黑", 15F);
             this.leSearchList.TabIndex = 30;
-            this.leSearchList.EditValueChanged += new EditValueChangedDelegate(this.leSearchList_EditValueChanged);
-            // 
-            // leSearchListView
-            // 
-            //this.leSearchListView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            //this.gcID,
-            //this.gcUnitName,
-            //this.gcUnitType,
-            //this.gcUnitBankUser,
-            //this.gcUnitBankName,
-            //this.gcUnitBankNo});
-            //this.leSearchListView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            //this.leSearchListView.Name = "leSearchListView";
-            //this.leSearchListView.OptionsSelection.EnableAppearanceFocusedCell = false;
-            //this.leSearchListView.OptionsView.ShowGroupPanel = false;
-            // 
-            // gcID
-            // 
-            this.gcID.FieldName = "ID";
-            this.gcID.Name = "gcID";
-            // 
-            // gcUnitName
-            // 
-            this.gcUnitName.Caption = "单位名称";
-            this.gcUnitName.FieldName = "UnitName";
-            this.gcUnitName.Name = "gcUnitName";
-            // 
-            // gcUnitType
-            // 
-            this.gcUnitType.Caption = "单位类型";
-            this.gcUnitType.FieldName = "UnitType";
-            this.gcUnitType.Name = "gcUnitType";
-            // 
-            // gcUnitBankUser
-            // 
-            this.gcUnitBankUser.Caption = "开户名称";
-            this.gcUnitBankUser.FieldName = "UnitBankUser";
-            this.gcUnitBankUser.Name = "gcUnitBankUser";
-            // 
-            // gcUnitBankName
-            // 
-            this.gcUnitBankName.Caption = "开户行名称";
-            this.gcUnitBankName.FieldName = "UnitBankName";
-            this.gcUnitBankName.Name = "gcUnitBankName";
-            this.gcUnitBankName.Visible = true;
-            this.gcUnitBankName.VisibleIndex = 0;
-            // 
-            // gcUnitBankNo
-            // 
-            this.gcUnitBankNo.Caption = "账号";
-            this.gcUnitBankNo.FieldName = "UnitBankNo";
-            this.gcUnitBankNo.Name = "gcUnitBankNo";
-            this.gcUnitBankNo.Visible = true;
-            this.gcUnitBankNo.VisibleIndex = 1;
+            this.leSearchList.Values.Text = "请选择！";
+            this.leSearchList.EditValueChanged += new ProjectReporter.Controls.EditValueChangedDelegate(this.leSearchList_EditValueChanged);
             // 
             // label1
             // 
@@ -683,6 +624,45 @@ namespace ProjectReporter.Controls
             this.txtMPersonIDCard.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtMPersonIDCard.TabIndex = 16;
             // 
+            // gcID
+            // 
+            this.gcID.FieldName = "ID";
+            this.gcID.Name = "gcID";
+            // 
+            // gcUnitName
+            // 
+            this.gcUnitName.Caption = "单位名称";
+            this.gcUnitName.FieldName = "UnitName";
+            this.gcUnitName.Name = "gcUnitName";
+            // 
+            // gcUnitType
+            // 
+            this.gcUnitType.Caption = "单位类型";
+            this.gcUnitType.FieldName = "UnitType";
+            this.gcUnitType.Name = "gcUnitType";
+            // 
+            // gcUnitBankUser
+            // 
+            this.gcUnitBankUser.Caption = "开户名称";
+            this.gcUnitBankUser.FieldName = "UnitBankUser";
+            this.gcUnitBankUser.Name = "gcUnitBankUser";
+            // 
+            // gcUnitBankName
+            // 
+            this.gcUnitBankName.Caption = "开户行名称";
+            this.gcUnitBankName.FieldName = "UnitBankName";
+            this.gcUnitBankName.Name = "gcUnitBankName";
+            this.gcUnitBankName.Visible = true;
+            this.gcUnitBankName.VisibleIndex = 0;
+            // 
+            // gcUnitBankNo
+            // 
+            this.gcUnitBankNo.Caption = "账号";
+            this.gcUnitBankNo.FieldName = "UnitBankNo";
+            this.gcUnitBankNo.Name = "gcUnitBankNo";
+            this.gcUnitBankNo.Visible = true;
+            this.gcUnitBankNo.VisibleIndex = 1;
+            // 
             // plMain
             // 
             this.plMain.ColumnCount = 3;
@@ -791,8 +771,6 @@ namespace ProjectReporter.Controls
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel2.ResumeLayout(false);
-            //((System.ComponentModel.ISupportInitialize)(this.leSearchList.Properties)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.leSearchListView)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel11.ResumeLayout(false);
