@@ -21,27 +21,27 @@ namespace ProjectReporter.Controls
             get
             {
                 StringBuilder sb = new StringBuilder();
-                if (string.IsNullOrEmpty(txtWord1.Text))
+                if (!string.IsNullOrEmpty(txtWord1.Text))
                 {
                     sb.Append(txtWord1.Text).Append(";");
                 }
 
-                if (string.IsNullOrEmpty(txtWord2.Text))
+                if (!string.IsNullOrEmpty(txtWord2.Text))
                 {
                     sb.Append(txtWord2.Text).Append(";");
                 }
 
-                if (string.IsNullOrEmpty(txtWord3.Text))
+                if (!string.IsNullOrEmpty(txtWord3.Text))
                 {
                     sb.Append(txtWord3.Text).Append(";");
                 }
 
-                if (string.IsNullOrEmpty(txtWord4.Text))
+                if (!string.IsNullOrEmpty(txtWord4.Text))
                 {
                     sb.Append(txtWord4.Text).Append(";");
                 }
 
-                if (string.IsNullOrEmpty(txtWord5.Text))
+                if (!string.IsNullOrEmpty(txtWord5.Text))
                 {
                     sb.Append(txtWord5.Text).Append(";");
                 }
