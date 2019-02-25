@@ -117,10 +117,15 @@ namespace ProjectReporter
                 MessageBox.Show("请将所有内容填写完整再点击上报!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+            string unitName = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = '" + ProjectObj.ID + "')").select("UnitName").getValue<string>(string.Empty);
+            string personName = ConnectionManager.Context.table("Person").where("ID=(select PersonID from Task where Role = '负责人' and  ProjectID = '" + ProjectObj.ID + "')").select("Name").getValue<string>(string.Empty);
+            string docName = unitName + "_" + personName;            
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "zip files(*.zip)|*.zip";
-            saveFileDialog.FileName = ProjectObj.Name + "_上报文件.zip";
-            saveFileDialog.FilterIndex = 2;
+            saveFileDialog.FileName = docName + ".zip";
+            saveFileDialog.FilterIndex = 0;
             saveFileDialog.RestoreDirectory = true;
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
