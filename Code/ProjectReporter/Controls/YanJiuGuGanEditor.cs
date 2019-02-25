@@ -43,6 +43,8 @@ namespace ProjectReporter.Controls
         {
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 1, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 2, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = "编辑";
+            ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 3, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = "向下";
+            ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 4, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = "向上";
         }
 
         public override void ClearView()
@@ -94,7 +96,7 @@ namespace ProjectReporter.Controls
 
         private void UpdateTaskList()
         {
-            TaskList = ConnectionManager.Context.table("Task").where("ProjectID in (select ID from Project where ParentID = '" + MainForm.Instance.ProjectObj.ID + "') or ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Task>(new Task());
+            TaskList = ConnectionManager.Context.table("Task").where("ProjectID in (select ID from Project where ParentID = '" + MainForm.Instance.ProjectObj.ID + "') or ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").orderBy("DisplayOrder").select("*").getList<Task>(new Task());
 
             int indexx = 0;
             dgvDetail.Rows.Clear();            
@@ -146,7 +148,9 @@ namespace ProjectReporter.Controls
                 cells.Add(roleName);
 
                 cells.Add(task.Content);
-                cells.Add(task.TotalTime);                
+                cells.Add(task.TotalTime);
+                cells.Add("向上");
+                cells.Add("向下");
                 cells.Add("编辑");
 
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
