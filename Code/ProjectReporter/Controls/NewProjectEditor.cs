@@ -177,6 +177,11 @@ namespace ProjectReporter.Controls
                 MessageBox.Show("对不起,请输入研究经费!");
                 return -1;
             }
+            if (string.IsNullOrEmpty(txtKeyWords.Text))
+            {
+                MessageBox.Show("对不起,请输入关键字!");
+                return -1;
+            }
             int result = 0;
             decimal result2 = 0;
             if (int.TryParse(txtTotalTime.Text, out result) == false)

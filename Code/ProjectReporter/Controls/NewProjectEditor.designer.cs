@@ -66,7 +66,7 @@ namespace ProjectReporter.Controls
             this.label20 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtKeyWords = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txtKeyWords = new ProjectKeyControl();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.txtMPersonName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -612,15 +612,15 @@ namespace ProjectReporter.Controls
             // 
             // txtKeyWords
             // 
-            this.txtKeyWords.AlwaysActive = false;
+            //this.txtKeyWords.AlwaysActive = false;
             this.txtKeyWords.Location = new System.Drawing.Point(10, 15);
             this.txtKeyWords.Name = "txtKeyWords";
             this.txtKeyWords.Size = new System.Drawing.Size(990, 29);
-            this.txtKeyWords.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtKeyWords.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtKeyWords.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtKeyWords.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtKeyWords.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
+            //this.txtKeyWords.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
+            //this.txtKeyWords.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            //this.txtKeyWords.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
+            //this.txtKeyWords.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
+            //this.txtKeyWords.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtKeyWords.TabIndex = 15;
             // 
             // panel6
@@ -1000,7 +1000,7 @@ namespace ProjectReporter.Controls
         private KryptonTextBox txtTotalTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private KryptonTextBox txtKeyWords;
+        private ProjectKeyControl txtKeyWords;
         private System.Windows.Forms.Panel panel4;
         private KryptonTextBox txtContactName;
         private System.Windows.Forms.Label label3;
