@@ -38,7 +38,7 @@ namespace ProjectReporter.Forms
             var unitList = _unitInforService.GetUnitInforList();
 
             leSearchList.Properties.DataSource = unitList;
-            leSearchList.Properties.DisplayMember = "UnitName";
+            leSearchList.Properties.DisplayMember = "UnitBankNo";
             leSearchList.Properties.ValueMember = "ID";
 
             int rrIndex = 0;
