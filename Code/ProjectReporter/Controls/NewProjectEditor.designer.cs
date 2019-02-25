@@ -598,9 +598,9 @@ namespace ProjectReporter.Controls
             // 
             // txtKeyWords
             // 
-            this.txtKeyWords.Location = new System.Drawing.Point(10, 13);
+            this.txtKeyWords.Location = new System.Drawing.Point(10, 15);
             this.txtKeyWords.Name = "txtKeyWords";
-            this.txtKeyWords.Size = new System.Drawing.Size(1001, 33);
+            this.txtKeyWords.Size = new System.Drawing.Size(776, 33);
             this.txtKeyWords.TabIndex = 15;
             // 
             // panel6
