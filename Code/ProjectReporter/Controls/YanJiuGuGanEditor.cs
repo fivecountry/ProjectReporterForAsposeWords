@@ -328,6 +328,24 @@ namespace ProjectReporter.Controls
         {
             if (dgvDetail.Rows.Count >= 1)
             {
+                if (e.ColumnIndex == dgvDetail.Columns.Count - 3)
+                {
+                    if (dgvDetail.Rows[e.RowIndex].Tag != null)
+                    {
+                        Task task = (Task)dgvDetail.Rows[e.RowIndex].Tag;
+                        MoveToDown(e.RowIndex, task);
+                    }
+                }
+
+                if (e.ColumnIndex == dgvDetail.Columns.Count - 4)
+                {
+                    if (dgvDetail.Rows[e.RowIndex].Tag != null)
+                    {
+                        Task task = (Task)dgvDetail.Rows[e.RowIndex].Tag;
+                        MoveToUp(e.RowIndex, task);
+                    }
+                }
+
                 if (e.ColumnIndex == dgvDetail.Columns.Count - 2)
                 {
                     if (dgvDetail.Rows[e.RowIndex].Tag != null)
@@ -370,6 +388,64 @@ namespace ProjectReporter.Controls
                             }
                         }
                     }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 向上移动
+        /// </summary>
+        /// <param name="rowIndex"></param>
+        /// <param name="task"></param>
+        private void MoveToUp(int rowIndex, Task task)
+        {
+            if (TaskList != null)
+            {
+                int taskIndex = TaskList.IndexOf(task);
+                if (taskIndex >= 1)
+                {
+                    TaskList.Remove(task);
+                    TaskList.Insert(taskIndex - 1, task);
+
+                    int ri = 0;
+                    foreach (Task t in TaskList)
+                    {
+                        t.DisplayOrder = ri;
+                        ri++;
+
+                        t.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + t.ID + "'").update();
+                    }
+
+                    UpdateTaskList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 向下移动
+        /// </summary>
+        /// <param name="rowIndex"></param>
+        /// <param name="task"></param>
+        private void MoveToDown(int rowIndex, Task task)
+        {
+            if (TaskList != null)
+            {
+                int taskIndex = TaskList.IndexOf(task);
+                if (taskIndex <= TaskList.Count - 2)
+                {
+                    TaskList.Remove(task);
+                    TaskList.Insert(taskIndex + 1, task);
+
+                    int ri = 0;
+                    foreach (Task t in TaskList)
+                    {
+                        t.DisplayOrder = ri;
+                        ri++;
+
+                        t.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + t.ID + "'").update();
+                    }
+
+                    UpdateTaskList();
                 }
             }
         }
