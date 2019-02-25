@@ -332,26 +332,31 @@ namespace ProjectReporter
             current.OnSaveEvent();
 
             //下一步
-            string nextName = "feUI" + (Int32.Parse(current.Name.Replace("feUI", string.Empty)) + 1);
-            if (EditorMaps.ContainsKey(nextName))
+            for (int kk = 1; kk <= 3; kk++)
             {
-                BaseEditor next = EditorMaps[nextName];
-                if (next.Parent is KryptonPage)
+                string nextName = "feUI" + (Int32.Parse(current.Name.Replace("feUI", string.Empty)) + kk);
+                if (EditorMaps.ContainsKey(nextName))
                 {
-                    //上一个页签归0
-                    KryptonNavigator subTab = ((KryptonNavigator)((KryptonPage)current.Parent).Parent.Parent);
-                    subTab.SelectedIndex = 0;
+                    BaseEditor next = EditorMaps[nextName];
+                    if (next.Parent is KryptonPage)
+                    {
+                        //上一个页签归0
+                        KryptonNavigator subTab = ((KryptonNavigator)((KryptonPage)current.Parent).Parent.Parent);
+                        subTab.SelectedIndex = 0;
 
-                    //目标子Tab切换
-                    subTab = ((KryptonNavigator)((KryptonPage)next.Parent).Parent.Parent);
-                    subTab.SelectedPage = (KryptonPage)next.Parent;
+                        //目标子Tab切换
+                        subTab = ((KryptonNavigator)((KryptonPage)next.Parent).Parent.Parent);
+                        subTab.SelectedPage = (KryptonPage)next.Parent;
 
-                    //主Tab切换
-                    edithost2.SelectedPage = ((KryptonPage)subTab.Parent);
+                        //主Tab切换
+                        edithost2.SelectedPage = ((KryptonPage)subTab.Parent);
+                    }
+
+                    //刷新视图
+                    next.RefreshView();
+
+                    break;
                 }
-
-                //刷新视图
-                next.RefreshView();
             }
         }
 
