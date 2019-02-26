@@ -37,7 +37,7 @@ namespace ProjectReporter.DB.Entitys
         private string _type;
         private string _Content;
         private int? _totaltime;
-        private double? _totalMoney;
+        private decimal? _totalMoney;
         private string _idcard;
         private int? _displayOrder;
 
@@ -119,7 +119,7 @@ namespace ProjectReporter.DB.Entitys
             }
         }
 
-        public double? TotalMoney
+        public decimal? TotalMoney
         {
             get
             {
@@ -143,7 +143,7 @@ namespace ProjectReporter.DB.Entitys
             Type = source("Type").value<string>(string.Empty);
             Content = source("Content").value<string>(string.Empty);
             TotalTime = source("TotalTime").value<int>(0);
-            TotalMoney = source("TotalMoney").value<double>(0.0);
+            TotalMoney = source("TotalMoney").value<decimal>(0);
             IDCard = source("IDCard").value<string>(string.Empty);
             DisplayOrder = source("DisplayOrder").value<int>(0);
         }
