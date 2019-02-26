@@ -107,6 +107,9 @@ namespace ProjectReporter.Controls
                     cells.Add(k + 1);
                     cells.Add(k + 1);
                     cells.Add(times[k]);
+                    cells.Add("空");
+                    cells.Add("空");
+                    cells.Add("空");
 
                     dgvDetail.Rows.Add(cells.ToArray());
                 }
