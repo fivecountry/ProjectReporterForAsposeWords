@@ -264,7 +264,8 @@ namespace ProjectReporter.Forms
                         string shortContent = string.Empty;
                         shortContent = File.ReadAllText(Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_info" + ".rtf"));
 
-                        ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
+                        //ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
+                        ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
                     }
                     wu.InsertValue("课题摘要", ketiStringBuilder.ToString());
                 }
