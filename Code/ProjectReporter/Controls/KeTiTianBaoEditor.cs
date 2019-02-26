@@ -74,7 +74,7 @@ namespace ProjectReporter.Controls
                 string personName = string.Empty;
                 string personIdCard = string.Empty;
                 string unitName = string.Empty;
-                string content = string.Empty;
+                //string content = string.Empty;
                 string unitBankNo = string.Empty;
                 string unitExtId = string.Empty;
                 Person personObj = null;
@@ -84,7 +84,7 @@ namespace ProjectReporter.Controls
                 Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + keti.ID + "'").select("*").getItem<Task>(new Task());
                 if (ketiTask != null)
                 {
-                    content = ketiTask.Content;
+                    //content = ketiTask.Content;
 
                     personObj = ConnectionManager.Context.table("Person").where("ID='" + ketiTask.PersonID + "'").select("*").getItem<Person>(new Person());
                     unitObj = ConnectionManager.Context.table("Unit").where("ID='" + keti.UnitID + "'").select("*").getItem<Unit>(new Unit());
@@ -117,7 +117,7 @@ namespace ProjectReporter.Controls
                 cells.Add(personIdCard);
                 cells.Add(unitName);
                 cells.Add(unitBankNo);
-                cells.Add(content);
+                cells.Add(ketiTask.TotalMoney);
                 cells.Add(keti.Type2 == "总体课题");
                 cells.Add("填报课题内容");
 
@@ -350,6 +350,13 @@ namespace ProjectReporter.Controls
                         return;
                     }
 
+                    decimal totalMoney = 0;
+                    if (dgvRow.Cells[7].Value != null && decimal.TryParse(dgvRow.Cells[7].Value.ToString(), out totalMoney) == false)
+                    {
+                        MessageBox.Show("对不起,请输入正确的研究经费!");
+                        return;
+                    }
+
                     saveCount++;
                     if (saveCount >= 11)
                     {
@@ -427,7 +434,7 @@ namespace ProjectReporter.Controls
                     task.IDCard = personObj.IDCard;
                     task.Role = "负责人";
                     task.Type = "课题";
-                    task.Content = dgvRow.Cells[7].Value != null ? dgvRow.Cells[7].Value.ToString() : string.Empty;
+                    task.TotalMoney = totalMoney;
                     task.TotalTime = 0;
 
                     if (string.IsNullOrEmpty(task.ID))

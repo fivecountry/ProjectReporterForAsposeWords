@@ -204,7 +204,7 @@ namespace ProjectReporter.Forms
                         Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + proj.ID + "'").select("*").getItem<Task>(new Task());
                         if (ketiTask != null)
                         {
-                            moneyStr = ketiTask.Content;
+                            moneyStr = ketiTask.TotalMoney + "万";
                         }
                         wu.InsertValue("课题详细_" + ketiIndex + "_5", moneyStr);
 
