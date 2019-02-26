@@ -265,8 +265,8 @@
             // 
             // colMeiNianGongZuoShiJian
             // 
-            this.colMeiNianGongZuoShiJian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMeiNianGongZuoShiJian.HeaderText = "每年为本课题工作时间(月)";
+            this.colMeiNianGongZuoShiJian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colMeiNianGongZuoShiJian.HeaderText = "工作时间(月)/年";
             this.colMeiNianGongZuoShiJian.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -276,7 +276,7 @@
             this.colMeiNianGongZuoShiJian.ReadOnly = true;
             this.colMeiNianGongZuoShiJian.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMeiNianGongZuoShiJian.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMeiNianGongZuoShiJian.Width = 59;
+            this.colMeiNianGongZuoShiJian.Width = 157;
             // 
             // colMoveUp
             // 

@@ -281,7 +281,7 @@
             // 
             // colKeTiMingCheng
             // 
-            this.colKeTiMingCheng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colKeTiMingCheng.FillWeight = 263.1579F;
             this.colKeTiMingCheng.HeaderText = "阶段序号";
             this.colKeTiMingCheng.Maximum = new decimal(new int[] {
             99999999,
@@ -291,11 +291,11 @@
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colKeTiMingCheng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colKeTiMingCheng.Width = 141;
+            this.colKeTiMingCheng.Width = 80;
             // 
             // colMiJi
             // 
-            this.colMiJi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMiJi.FillWeight = 59.21053F;
             this.colMiJi.HeaderText = "阶段时间(月)";
             this.colMiJi.Maximum = new decimal(new int[] {
             99999999,
@@ -305,25 +305,28 @@
             this.colMiJi.Name = "colMiJi";
             this.colMiJi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMiJi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMiJi.Width = 141;
+            this.colMiJi.Width = 110;
             // 
             // colContent
             // 
             this.colContent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colContent.FillWeight = 59.21053F;
             this.colContent.HeaderText = "研究内容";
             this.colContent.Name = "colContent";
             // 
             // colDest
             // 
             this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDest.FillWeight = 59.21053F;
             this.colDest.HeaderText = "研究目标";
             this.colDest.Name = "colDest";
             // 
             // colMoney
             // 
-            this.colMoney.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMoney.FillWeight = 59.21053F;
             this.colMoney.HeaderText = "阶段经费";
             this.colMoney.Name = "colMoney";
+            this.colMoney.Width = 80;
             // 
             // delete
             // 
