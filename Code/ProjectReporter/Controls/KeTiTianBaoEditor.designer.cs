@@ -237,7 +237,7 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 30;
+            this.colKeTiMingCheng.Width = 51;
             // 
             // colMiJi
             // 
@@ -257,10 +257,10 @@
             // 
             // colPersonIDCard
             // 
+            this.colPersonIDCard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colPersonIDCard.HeaderText = "身份证号";
             this.colPersonIDCard.Name = "colPersonIDCard";
             this.colPersonIDCard.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colPersonIDCard.Width = 120;
             // 
             // colChengDanDanWeiMingCheng
             // 
@@ -278,11 +278,10 @@
             // 
             // colNeiRong
             // 
-            this.colNeiRong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colNeiRong.HeaderText = "研究经费(万)";
             this.colNeiRong.Name = "colNeiRong";
             this.colNeiRong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colNeiRong.Width = 30;
+            this.colNeiRong.Width = 110;
             // 
             // colZongTiKeTi
             // 
@@ -290,6 +289,7 @@
             this.colZongTiKeTi.Name = "colZongTiKeTi";
             this.colZongTiKeTi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colZongTiKeTi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colZongTiKeTi.Visible = false;
             this.colZongTiKeTi.Width = 76;
             // 
             // colMakePage

@@ -523,14 +523,14 @@ namespace ProjectReporter.Controls
         /// <returns></returns>
         private int GetZongZiKetiCount()
         {
-            int result = 0;
-            foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
-            {
-                if (dgvRow.Cells[8].Value != null && ((bool)dgvRow.Cells[8].Value) == true)
-                {
-                    result += 1;
-                }
-            }
+            int result = 1;
+            //foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+            //{
+            //    if (dgvRow.Cells[8].Value != null && ((bool)dgvRow.Cells[8].Value) == true)
+            //    {
+            //        result += 1;
+            //    }
+            //}
             return result;
         }
 
