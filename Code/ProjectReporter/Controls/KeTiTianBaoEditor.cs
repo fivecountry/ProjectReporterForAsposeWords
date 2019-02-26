@@ -620,5 +620,14 @@ namespace ProjectReporter.Controls
                 textEditor.DetailTabs.SelectedIndex += 1;
             }
         }
+
+        private void dgvDetail_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (e.ColumnIndex == 1 && e.RowIndex == 0)
+            {
+                ttcHintTool.HideHint();
+                ttcHintTool.ShowHint("项目原则上需设置一个总体课题，由牵头申报单位承担，课题负责人由项目负责人担任。", dgvDetail.PointToScreen(dgvDetail.GetCellDisplayRectangle(1, e.RowIndex, false).Location));
+            }
+        }
     }
 }

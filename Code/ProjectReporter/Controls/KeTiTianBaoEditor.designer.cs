@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,6 +53,7 @@
             this.colMakePage = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDetail = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ttcHintTool = new DevExpress.Utils.ToolTipController(this.components);
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -150,8 +152,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(689, 80);
             this.label1.TabIndex = 0;
-            this.label1.Text = "围绕如何全面、有效实现项目目标，进行课题分解，明确每个课题的密级，并简述研究内容；项目必须设置一个总体课题，由牵头申报单位承担，课题负责人由项目负责人担任；牵头申" +
-    "报单位承担的课题数不超过课题总数的三分之二";
+            this.label1.Text = "围绕如何全面、有效实现项目目标，进行课题分解，明确每个课题的密级，并简述研究内容；牵头申报单位承担的课题数不超过课题总数的三分之二";
             // 
             // plContent
             // 
@@ -221,6 +222,7 @@
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgvDetail.StateCommon.HeaderColumn.Content.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.dgvDetail.TabIndex = 3;
+            this.dgvDetail.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvDetail_CellBeginEdit);
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
@@ -318,6 +320,16 @@
             this.colDetail.Visible = false;
             this.colDetail.Width = 45;
             // 
+            // ttcHintTool
+            // 
+            this.ttcHintTool.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ttcHintTool.Appearance.Options.UseFont = true;
+            this.ttcHintTool.AutoPopDelay = 3000;
+            this.ttcHintTool.IconSize = DevExpress.Utils.ToolTipIconSize.Large;
+            this.ttcHintTool.Rounded = true;
+            this.ttcHintTool.ShowBeak = true;
+            this.ttcHintTool.ToolTipType = DevExpress.Utils.ToolTipType.Standard;
+            // 
             // KeTiTianBaoEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -364,5 +376,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colMakePage;
         private System.Windows.Forms.DataGridViewImageColumn delete;
         private System.Windows.Forms.DataGridViewImageColumn colDetail;
+        private DevExpress.Utils.ToolTipController ttcHintTool;
     }
 }
