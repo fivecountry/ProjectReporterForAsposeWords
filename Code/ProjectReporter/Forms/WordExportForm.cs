@@ -11,11 +11,18 @@ using System.IO;
 using ProjectReporter.DB.Entitys;
 using ProjectReporter.DB;
 using System.Diagnostics;
+using ProjectReporter.Controls;
 
 namespace ProjectReporter.Forms
 {
     public partial class WordExportForm : BaseForm
     {
+        string uploadA = string.Empty;
+
+        string uploadBTemp = string.Empty;
+
+        string uploadB = string.Empty;
+
         protected object defaultValue = System.Reflection.Missing.Value;
 
         public WordExportForm(string toWordFile)
@@ -25,6 +32,25 @@ namespace ProjectReporter.Forms
             this.ToWordFile = toWordFile;
             this.picbox.Image = global::ProjectReporter.Properties.Resources.ToWord;
             this.pbar.Maximum = 80;
+
+            string[] filess = Directory.GetFiles(MainForm.ProjectFilesDir);
+            foreach (string f in filess)
+            {
+                if (f.Contains("upload_1"))
+                {
+                    uploadA = f;
+                }
+                else if (f.Contains("upload_2"))
+                {
+                    uploadBTemp = f;
+                }
+            }
+            //将Image转换为RTF文件并设置段落为最小值25
+            if (File.Exists(uploadBTemp))
+            {
+                uploadB = Path.Combine(MainForm.ProjectFilesDir, Guid.NewGuid().ToString() + ".rtf");
+                ConvertToRTF(uploadBTemp, uploadB, new RichTextBoxTableClass());
+            }
 
             BaseForm.AsyncDelegate del = delegate
             {
@@ -152,22 +178,8 @@ namespace ProjectReporter.Forms
                 wu.InsertFile("组织实施与风险控制", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_18.rtf"), true);
                 wu.InsertFile("与有关计划关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_19.rtf"), true);
 
-                string u1 = string.Empty;
-                string u2 = string.Empty; ;
-                string[] filess = Directory.GetFiles(MainForm.ProjectFilesDir);
-                foreach (string f in filess)
-                {
-                    if (f.Contains("upload_1"))
-                    {
-                        u1 = f;
-                    }
-                    else if (f.Contains("upload_2"))
-                    {
-                        u2 = f;
-                    }
-                }
-                wu.InsertFile("附件1", u1, true);
-                wu.InsertPicture("附件2", u2);
+                wu.InsertFile("附件1", uploadA, true);
+                wu.InsertFile("附件2", uploadB, true);
 
                 #endregion
 
@@ -721,5 +733,28 @@ namespace ProjectReporter.Forms
         }
 
         public string ToWordFile { get; set; }
+
+        public void ConvertToRTF(string imageFile, string tempRTFFile,RichTextBoxTableClass richTextObj)
+        {
+            try
+            {
+                Bitmap bmp = new Bitmap(imageFile);
+                Clipboard.SetDataObject(bmp);
+                DataFormats.Format dataFormat = DataFormats.GetFormat(DataFormats.Bitmap);
+                if (richTextObj.CanPaste(dataFormat))
+                {
+                    richTextObj.Paste(dataFormat);
+                }
+
+                richTextObj.SelectAll();
+                richTextObj.SetLineSpace(25);
+
+                richTextObj.SaveFile(tempRTFFile);
+            }
+            catch (Exception exc)
+            {
+                System.Console.WriteLine(exc.ToString());
+            }
+        }
     }
 }
