@@ -455,6 +455,9 @@
     <None Include="Helper\TianBaoShuoMing.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Helper\xiangmuzhaiyaomoban.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Helper\xitixiangxi.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

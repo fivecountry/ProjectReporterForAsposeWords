@@ -286,6 +286,7 @@ namespace ProjectReporter
         {
             #region 控件列表
             List<Control> controlList = new List<Control>();
+            controlList.Add(feUI0);
             controlList.Add(feUI1);
             controlList.Add(feUI2);
             controlList.Add(feUI3);

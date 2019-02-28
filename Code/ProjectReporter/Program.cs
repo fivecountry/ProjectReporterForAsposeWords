@@ -20,12 +20,6 @@ namespace ProjectReporter
         [STAThread]
         static void Main(string[] args)
         {
-            //进行清空或导入导出工作时等待另外一个读写static.db的进程关闭
-            if (args != null && args.Length >= 1)
-            {
-                Thread.Sleep(2000);
-            }
-
             try
             {
                 #region 初始化目录
@@ -60,6 +54,9 @@ namespace ProjectReporter
                         {
                             Directory.Delete(MainForm.ProjectDir, true);
                             TryInitProjectDir("Current");
+
+                            //复制摘要模板
+                            File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Helper", "xiangmuzhaiyaomoban.rtf")), Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"), true);
                         }
                         else
                         {
