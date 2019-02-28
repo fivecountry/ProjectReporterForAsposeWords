@@ -163,6 +163,7 @@ namespace ProjectReporter.Forms
                 this.setprogress(40, "写入文档文件...");
 
                 #region 插入固定RTF文件
+                wu.InsertFile("项目摘要", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"), true);
                 wu.InsertFile("基本概念及内涵", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_1.rtf"), true);
                 wu.InsertFile("军事需求分析", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_2.rtf"), true);
                 wu.InsertFile("研究现状", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_3.rtf"), true);
