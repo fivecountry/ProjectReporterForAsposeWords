@@ -84,7 +84,10 @@ namespace ProjectReporter
                     TryOpenProjectDirDB();
 
                     //复制摘要模板
-                    File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Helper", "xiangmuzhaiyaomoban.rtf")), Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"));
+                    if (!File.Exists(Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf")))
+                    {
+                        File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Helper", "xiangmuzhaiyaomoban.rtf")), Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"));
+                    }
                 }
 
                 #endregion
