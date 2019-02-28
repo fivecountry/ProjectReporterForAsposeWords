@@ -464,7 +464,7 @@ namespace ProjectReporter
             this.kpReportPage14,
             this.kpReportPage15,
             this.kpReportPage16});
-            this.edithost2.SelectedIndex = 0;
+            this.edithost2.SelectedIndex = 2;
             this.edithost2.Size = new System.Drawing.Size(1458, 630);
             this.edithost2.TabIndex = 4;
             this.edithost2.SelectedPageChanged += new System.EventHandler(this.edithost2_SelectedPageChanged);
@@ -626,7 +626,7 @@ namespace ProjectReporter
             this.feUI0.RTFFileFirstName = "rtpinput_";
             this.feUI0.Size = new System.Drawing.Size(1254, 598);
             this.feUI0.TabIndex = 0;
-            this.feUI0.TitleLabelText = "（1000字以内）";
+            this.feUI0.TitleLabelText = "项目摘要（1000字以内）";
             // 
             // kpfPage1
             // 
