@@ -173,7 +173,7 @@
             this.btnComsel.Name = "btnComsel";
             this.btnComsel.Size = new System.Drawing.Size(82, 29);
             this.btnComsel.TabIndex = 5;
-            this.btnComsel.Values.Text = "选择附件";
+            this.btnComsel.Values.Text = "上传附件";
             this.btnComsel.Click += new System.EventHandler(this.btnComsel_Click);
             // 
             // kryptonLabel67

@@ -178,7 +178,7 @@
             this.btnComsel.Name = "btnComsel";
             this.btnComsel.Size = new System.Drawing.Size(82, 29);
             this.btnComsel.TabIndex = 5;
-            this.btnComsel.Values.Text = "选择附件";
+            this.btnComsel.Values.Text = "上传附件";
             this.btnComsel.Click += new System.EventHandler(this.btnComsel_Click);
             // 
             // kryptonLabel67
@@ -221,7 +221,6 @@
             this.lklDownloadFuJian.Text = "项目经费概算说明.doc";
             this.lklDownloadFuJian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lklDownloadFuJian.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadFuJian_LinkClicked);
-            //this.lklDownloadFuJian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lklDownloadFuJian_MouseDoubleClick);
             // 
             // kryptonLabel1
             // 
