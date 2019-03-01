@@ -177,5 +177,20 @@ namespace ProjectReporter.Forms
                 DialogResult = DialogResult.OK;
             }
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if (dgvDetail.SelectedRows.Count >= 1 && dgvDetail.SelectedRows[0].Tag != null)
+            {
+                UnitExt uir = (UnitExt)dgvDetail.SelectedRows[0].Tag;
+                SelectedUnitExt = uir;
+                DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
     }
 }
