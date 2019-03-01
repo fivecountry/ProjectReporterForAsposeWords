@@ -17,9 +17,13 @@ namespace ProjectReporter.Controls
 {
     public partial class KeTiTianBaoEditor : BaseEditor
     {
+        private KryptonNavigator ParentNavigator = null;
+
         public KeTiTianBaoEditor()
         {
             InitializeComponent();
+
+            EnabledAutoNextPage = false;
 
             //显示图标
             dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.exclamation_16;
@@ -256,7 +260,7 @@ namespace ProjectReporter.Controls
 
             //查找是否已存在
             KryptonPage oldPage = null;
-            foreach (KryptonPage kp in kvKetiTabs.Pages)
+            foreach (KryptonPage kp in ParentNavigator.Pages)
             {
                 if (kp.Name == ketiID)
                 {
@@ -270,7 +274,7 @@ namespace ProjectReporter.Controls
                 oldPage = BuildOneKetiReadmePage(ketiID, ketiName);
             }
 
-            kvKetiTabs.SelectedPage = oldPage;
+            ParentNavigator.SelectedPage = oldPage;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -471,6 +475,9 @@ namespace ProjectReporter.Controls
         {
             base.RefreshView();
 
+            //获得上一级的Tab控件
+            ParentNavigator = MainForm.Instance.GetTabControl(this);
+
             //显示负责人
             UpdatePersonList();
 
@@ -564,16 +571,16 @@ namespace ProjectReporter.Controls
             {
                 //删除除第一页之外其它标签页
                 List<KryptonPage> deletePageList = new List<KryptonPage>();
-                foreach (KryptonPage kp in kvKetiTabs.Pages)
+                foreach (KryptonPage kp in ParentNavigator.Pages)
                 {
-                    if (kp.Tag != null && kp.Tag.ToString() == "Dynamic")
+                    if (kp.Tag != null && kp.Tag.ToString() == "KeTiDynamic")
                     {
                         deletePageList.Add(kp);
                     }
                 }
                 foreach (KryptonPage kpp in deletePageList)
                 {
-                    kvKetiTabs.Pages.Remove(kpp);
+                    ParentNavigator.Pages.Remove(kpp);
                 }
 
                 foreach (Project proj in KeTiList)
@@ -588,7 +595,7 @@ namespace ProjectReporter.Controls
             KryptonPage kp = new KryptonPage();
             kp.Name = ketiID;
             kp.Text = ketiName;
-            kp.Tag = "Dynamic";
+            kp.Tag = "KeTiDynamic";
 
             KeTiDetailEditor rtfTextEditor = new KeTiDetailEditor();
             rtfTextEditor.TitleLabelText = "课题(" + ketiName + ")详细内容";
@@ -601,8 +608,9 @@ namespace ProjectReporter.Controls
             rtfTextEditor.NextEvent += RtfTextEditor_NextEvent;
 
             kp.Controls.Add(rtfTextEditor);
-            kvKetiTabs.Pages.Add(kp);
 
+            //插入到课题关系之前
+            ParentNavigator.Pages.Insert(ParentNavigator.Pages.Count - 1, kp);
             return kp;
         }
 
@@ -613,13 +621,14 @@ namespace ProjectReporter.Controls
 
             if (textEditor.DetailTabs.Pages.Count - 1 == textEditor.DetailTabs.SelectedIndex)
             {
-                if (kvKetiTabs.Pages.Count - 1 == kvKetiTabs.SelectedIndex)
+                if (ParentNavigator.Pages.Count - 2 == ParentNavigator.SelectedIndex)
                 {
-                    OnNextEvent();
+                    //切换到下一页(课题关系)
+                    MainForm.Instance.SwitchToNextPage(this);
                 }
                 else
                 {
-                    kvKetiTabs.SelectedIndex += 1;
+                    ParentNavigator.SelectedIndex += 1;
                 }
             }
             else
@@ -634,6 +643,16 @@ namespace ProjectReporter.Controls
             {
                 ttcHintTool.HideHint();
                 ttcHintTool.ShowHint("项目原则上需设置一个总体课题，由牵头申报单位承担，课题负责人由项目负责人担任。", dgvDetail.PointToScreen(dgvDetail.GetCellDisplayRectangle(1, e.RowIndex, false).Location));
+            }
+        }
+
+        public override void NextPage()
+        {
+            base.NextPage();
+
+            if (dgvDetail.Rows.Count >= 1)
+            {
+                BuildOneKeTiDetailPageWithKeTiRow(0);
             }
         }
     }
