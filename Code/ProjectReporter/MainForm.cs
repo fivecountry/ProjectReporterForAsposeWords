@@ -329,6 +329,16 @@ namespace ProjectReporter
         {
             BaseEditor current = (BaseEditor)sender;
 
+            //切换到下一页(正常顺序)
+            SwitchToNextPage(current);
+        }
+
+        /// <summary>
+        /// 切换到下一页(正常顺序)
+        /// </summary>
+        /// <param name="current"></param>
+        public void SwitchToNextPage(BaseEditor current)
+        {
             //保存
             current.OnSaveEvent();
 
@@ -342,12 +352,12 @@ namespace ProjectReporter
                     if (next.Parent is KryptonPage)
                     {
                         //上一个页签归0
-                        KryptonNavigator subTab = ((KryptonNavigator)((KryptonPage)current.Parent).Parent.Parent);
+                        KryptonNavigator subTab = GetTabControl(current);
                         subTab.SelectedIndex = 0;
 
                         //目标子Tab切换
-                        subTab = ((KryptonNavigator)((KryptonPage)next.Parent).Parent.Parent);
-                        subTab.SelectedPage = (KryptonPage)next.Parent;
+                        subTab = GetTabControl(next);
+                        subTab.SelectedPage = GetPageControl(next);
 
                         //主Tab切换
                         edithost2.SelectedPage = ((KryptonPage)subTab.Parent);
@@ -355,10 +365,29 @@ namespace ProjectReporter
 
                     //刷新视图
                     next.RefreshView();
-
                     break;
                 }
             }
+        }
+
+        /// <summary>
+        /// 获得编辑控件所在的KryptonNavigator
+        /// </summary>
+        /// <param name="baseEditor"></param>
+        /// <returns></returns>
+        public KryptonNavigator GetTabControl(BaseEditor baseEditor)
+        {
+            return ((KryptonNavigator)GetPageControl(baseEditor).Parent.Parent);
+        }
+
+        /// <summary>
+        /// 获得编辑控件所在的KryptonPage
+        /// </summary>
+        /// <param name="baseEditor"></param>
+        /// <returns></returns>
+        public KryptonPage GetPageControl(BaseEditor baseEditor)
+        {
+            return ((KryptonPage)baseEditor.Parent);
         }
 
         void be_LastEvent(object sender, EventArgs args)
