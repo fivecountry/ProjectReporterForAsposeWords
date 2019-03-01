@@ -329,8 +329,16 @@ namespace ProjectReporter
         {
             BaseEditor current = (BaseEditor)sender;
 
-            //切换到下一页(正常顺序)
-            SwitchToNextPage(current);
+            if (current.EnabledAutoNextPage)
+            {
+                //切换到下一页(正常顺序)
+                SwitchToNextPage(current);
+            }
+            else
+            {
+                //使用自定义切换
+                current.NextPage();
+            }
         }
 
         /// <summary>

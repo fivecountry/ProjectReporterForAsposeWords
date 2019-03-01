@@ -13,8 +13,22 @@ namespace ProjectReporter.Controls
 
 	public partial class BaseEditor: UserControl
 	{
-        public MainForm ParentForm { get; set; }
+        private bool _enabledAutoNextPage = true;
+        public bool EnabledAutoNextPage
+        {
+            get
+            {
+                return _enabledAutoNextPage;
+            }
 
+            set
+            {
+                _enabledAutoNextPage = value;
+            }
+        }
+
+        public new MainForm ParentForm { get; set; }
+        
         public event SaveOrLastOrNextEventDelegate SaveEvent;
 
         public event SaveOrLastOrNextEventDelegate LastEvent;
@@ -61,9 +75,9 @@ namespace ProjectReporter.Controls
         public virtual void RefreshView() { }
 
         /// <summary>
-        /// 保存数据
+        /// 下一页（自定义）
         /// </summary>
-        public virtual void SaveData() { }
+        public virtual void NextPage() { }
 
         /// <summary>
         /// 是否输入完成
