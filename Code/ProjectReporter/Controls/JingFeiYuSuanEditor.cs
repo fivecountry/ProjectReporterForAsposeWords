@@ -1939,46 +1939,46 @@ namespace ProjectReporter.Controls
                 {
                     KryptonTextBox kryptonTextBox = (KryptonTextBox)sender;
                     decimal value = 0m;
-                    bool flag = kryptonTextBox.Text.Trim() == string.Empty;
+                    bool flag = string.IsNullOrEmpty(kryptonTextBox.Text.Trim());
                     decimal.TryParse(kryptonTextBox.Text, out value);
                     string name;
                     switch (name = kryptonTextBox.Name)
                     {
                         case "ProjectRFA1_1_1":
-                            this.pbinfo.ProjectRFA1_1_1 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_1_1 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_1_2":
-                            this.pbinfo.ProjectRFA1_1_2 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_1_2 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_1_3":
-                            this.pbinfo.ProjectRFA1_1_3 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_1_3 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_2":
-                            this.pbinfo.ProjectRFA1_2 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_2 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_3":
-                            this.pbinfo.ProjectRFA1_3 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_3 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_4":
-                            this.pbinfo.ProjectRFA1_4 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_4 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_5":
-                            this.pbinfo.ProjectRFA1_5 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_5 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_6":
-                            this.pbinfo.ProjectRFA1_6 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_6 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_7":
-                            this.pbinfo.ProjectRFA1_7 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_7 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_8":
-                            this.pbinfo.ProjectRFA1_8 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_8 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA1_9":
-                            this.pbinfo.ProjectRFA1_9 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA1_9 = (flag ? 0 : new decimal?(value));
                             break;
                         case "ProjectRFA2_1":
-                            this.pbinfo.ProjectRFA2_1 = (flag ? null : new decimal?(value));
+                            this.pbinfo.ProjectRFA2_1 = (flag ? 0 : new decimal?(value));
                             break;
                     }
                     this.pbinfo.Calc();
