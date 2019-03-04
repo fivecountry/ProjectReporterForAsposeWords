@@ -39,7 +39,7 @@
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKaiHuZhangHao = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
+            this.colKaiHuZhangHao = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colDanWeiMingCheng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTongXinDiZhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLianXiRen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -197,7 +197,6 @@
             this.colKaiHuZhangHao.Name = "colKaiHuZhangHao";
             this.colKaiHuZhangHao.ReadOnly = true;
             this.colKaiHuZhangHao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKaiHuZhangHao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colKaiHuZhangHao.Width = 101;
             // 
             // colDanWeiMingCheng
@@ -235,6 +234,7 @@
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.Visible = false;
             this.delete.Width = 45;
             // 
             // QianTouDanWeiEditor
@@ -266,7 +266,7 @@
         private System.Windows.Forms.Panel plContent;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colKaiHuZhangHao;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colKaiHuZhangHao;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDanWeiMingCheng;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTongXinDiZhi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLianXiRen;

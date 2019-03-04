@@ -167,62 +167,62 @@ namespace ProjectReporter.Controls
 
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDetail.Rows.Count >= 1)
-            {
-                if (dgvDetail.Rows[e.RowIndex].Tag != null)
-                {
-                    WhiteList wlObj = (WhiteList)dgvDetail.Rows[e.RowIndex].Tag;
-                    if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
-                    {
-                        if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            ConnectionManager.Context.table("WhiteList").where("ID='" + wlObj.ID + "'").delete();
-                            UpdateQianTouDanWeiList();
-                        }
-                    }
-                    else if (e.ColumnIndex == 1)
-                    {
-                        UnitExtSelectForm usf = new UnitExtSelectForm(wlObj.UnitID);
-                        if (usf.ShowDialog() == DialogResult.OK)
-                        {
-                            if (usf.SelectedUnitExt != null)
-                            {
-                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitBankNo;
-                                dgvDetail.Rows[e.RowIndex].Cells[1].Tag = usf.SelectedUnitExt.ID;
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
-                    {
-                        if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            try
-                            {
-                                dgvDetail.Rows.RemoveAt(e.RowIndex);
-                            }
-                            catch (Exception ex)
-                            {
-                                UpdateQianTouDanWeiList();
-                            }
-                        }
-                    }
-                    else if (e.ColumnIndex == 1)
-                    {
-                        UnitExtSelectForm usf = new UnitExtSelectForm(string.Empty);
-                        if (usf.ShowDialog() == DialogResult.OK)
-                        {
-                            if (usf.SelectedUnitExt != null)
-                            {
-                                dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitBankNo;
-                                dgvDetail.Rows[e.RowIndex].Cells[1].Tag = usf.SelectedUnitExt.ID;
-                            }
-                        }
-                    }
-                }
-            }
+            //if (dgvDetail.Rows.Count >= 1)
+            //{
+            //    if (dgvDetail.Rows[e.RowIndex].Tag != null)
+            //    {
+            //        WhiteList wlObj = (WhiteList)dgvDetail.Rows[e.RowIndex].Tag;
+            //        if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
+            //        {
+            //            if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //            {
+            //                ConnectionManager.Context.table("WhiteList").where("ID='" + wlObj.ID + "'").delete();
+            //                UpdateQianTouDanWeiList();
+            //            }
+            //        }
+            //        else if (e.ColumnIndex == 1)
+            //        {
+            //            UnitExtSelectForm usf = new UnitExtSelectForm(wlObj.UnitID);
+            //            if (usf.ShowDialog() == DialogResult.OK)
+            //            {
+            //                if (usf.SelectedUnitExt != null)
+            //                {
+            //                    dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitBankNo;
+            //                    dgvDetail.Rows[e.RowIndex].Cells[1].Tag = usf.SelectedUnitExt.ID;
+            //                }
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
+            //        {
+            //            if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //            {
+            //                try
+            //                {
+            //                    dgvDetail.Rows.RemoveAt(e.RowIndex);
+            //                }
+            //                catch (Exception ex)
+            //                {
+            //                    UpdateQianTouDanWeiList();
+            //                }
+            //            }
+            //        }
+            //        else if (e.ColumnIndex == 1)
+            //        {
+            //            UnitExtSelectForm usf = new UnitExtSelectForm(string.Empty);
+            //            if (usf.ShowDialog() == DialogResult.OK)
+            //            {
+            //                if (usf.SelectedUnitExt != null)
+            //                {
+            //                    dgvDetail.Rows[e.RowIndex].Cells[1].Value = usf.SelectedUnitExt.UnitBankNo;
+            //                    dgvDetail.Rows[e.RowIndex].Cells[1].Tag = usf.SelectedUnitExt.ID;
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         private void dgvDetail_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
