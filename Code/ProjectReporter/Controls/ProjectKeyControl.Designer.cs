@@ -32,6 +32,7 @@
             this.txtWord2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtWord3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtWord4 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.buttonSpecAny1 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.txtWord5 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.bsaKeyWordHint = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.buttonSpecAny1 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -108,6 +108,12 @@
             this.txtWord4.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord4.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord4.TabIndex = 16;
+            // 
+            // buttonSpecAny1
+            // 
+            this.buttonSpecAny1.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
+            this.buttonSpecAny1.Text = "关键字需至少填写三个，最多填写五个";
+            this.buttonSpecAny1.UniqueName = "8A5AC0A0916442761F898B1830A8F4FD";
             // 
             // txtWord5
             // 
@@ -230,12 +236,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(335, 31);
             this.panel5.TabIndex = 17;
-            // 
-            // buttonSpecAny1
-            // 
-            this.buttonSpecAny1.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
-            this.buttonSpecAny1.Text = "关键字需至少填写三个，最多填写五个";
-            this.buttonSpecAny1.UniqueName = "8A5AC0A0916442761F898B1830A8F4FD";
             // 
             // ProjectKeyControl
             // 
