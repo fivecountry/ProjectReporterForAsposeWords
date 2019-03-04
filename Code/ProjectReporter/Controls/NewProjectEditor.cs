@@ -303,6 +303,9 @@ namespace ProjectReporter.Controls
             newUnit.SecretQualification = "未知";
             newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
 
+            //创建候选单位
+            BuildWhiteList();
+
             //添加/修改工程
             if (string.IsNullOrEmpty(MainForm.Instance.ProjectObj.ID))
             {
@@ -351,6 +354,22 @@ namespace ProjectReporter.Controls
             newUnit.UnitType = unitType;
             newUnit.SecretQualification = "未知";
             newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
+        }
+
+        /// <summary>
+        /// 创建候选牵头单位
+        /// </summary>
+        private void BuildWhiteList()
+        {
+            //删除所有记录
+            ConnectionManager.Context.table("WhiteList").delete();
+
+            //创建新的记录
+            WhiteList wl = new WhiteList();
+            wl.ID = Guid.NewGuid().ToString();
+            wl.ProjectID = MainForm.Instance.ProjectObj.ID;
+            wl.UnitID = MainForm.Instance.ProjectObj.UnitID;
+            wl.copyTo(ConnectionManager.Context.table("WhiteList")).insert();
         }
 
         private void leSearchList_EditValueChanged(object sender, EventArgs e)
