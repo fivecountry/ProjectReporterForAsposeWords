@@ -133,7 +133,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(943, 30);
@@ -166,7 +166,7 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 28;
@@ -184,14 +184,14 @@
             this.selpersonid.HeaderText = "序号";
             this.selpersonid.Name = "selpersonid";
             this.selpersonid.ReadOnly = true;
-            this.selpersonid.Width = 80;
+            this.selpersonid.Width = 50;
             // 
             // colJieDuanHuaFen
             // 
-            this.colJieDuanHuaFen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colJieDuanHuaFen.HeaderText = "阶段序号";
+            this.colJieDuanHuaFen.HeaderText = "阶段";
             this.colJieDuanHuaFen.Name = "colJieDuanHuaFen";
             this.colJieDuanHuaFen.ReadOnly = true;
+            this.colJieDuanHuaFen.Width = 50;
             // 
             // colYanJiuNeiRong
             // 
@@ -217,7 +217,7 @@
             this.colJieDuanJingFei.Name = "colJieDuanJingFei";
             this.colJieDuanJingFei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colJieDuanJingFei.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colJieDuanJingFei.Width = 204;
+            this.colJieDuanJingFei.Width = 265;
             // 
             // delete
             // 
