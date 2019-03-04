@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -168,9 +168,10 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDetail.ReadOnly = true;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 28;
             this.dgvDetail.Size = new System.Drawing.Size(845, 469);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -204,24 +205,28 @@
             this.colDanWeiMingCheng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDanWeiMingCheng.HeaderText = "单位名称";
             this.colDanWeiMingCheng.Name = "colDanWeiMingCheng";
+            this.colDanWeiMingCheng.ReadOnly = true;
             // 
             // colTongXinDiZhi
             // 
             this.colTongXinDiZhi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colTongXinDiZhi.HeaderText = "通信地址";
             this.colTongXinDiZhi.Name = "colTongXinDiZhi";
+            this.colTongXinDiZhi.ReadOnly = true;
             // 
             // colLianXiRen
             // 
             this.colLianXiRen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colLianXiRen.HeaderText = "联系人";
             this.colLianXiRen.Name = "colLianXiRen";
+            this.colLianXiRen.ReadOnly = true;
             // 
             // colLianXiDianHua
             // 
             this.colLianXiDianHua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colLianXiDianHua.HeaderText = "联系电话";
             this.colLianXiDianHua.Name = "colLianXiDianHua";
+            this.colLianXiDianHua.ReadOnly = true;
             // 
             // delete
             // 
