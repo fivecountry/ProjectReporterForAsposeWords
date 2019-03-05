@@ -723,10 +723,10 @@ namespace ProjectReporter
         private bool CheckTotalMoneys()
         {
             //项目总时间
-            long totalTime = ConnectionManager.Context.table("Project").where("ParentID is null").select("TotalTime").getValue<long>(0);
+            int totalTime = ConnectionManager.Context.table("Project").where("Type = '项目'").select("TotalTime").getValue<int>(0);
             
             //项目总金额
-            decimal totalMoney = ConnectionManager.Context.table("Project").where("ParentID is null").select("TotalMoney").getValue<decimal>(0);
+            decimal totalMoney = ConnectionManager.Context.table("Project").where("Type = '项目'").select("TotalMoney").getValue<decimal>(0);
 
             //经费表总额
             string projectMoneyStr = ConnectionManager.Context.table("MoneyAndYear").where("Name = 'ProjectRFA'").select("Value").getValue<string>("0");
@@ -744,7 +744,7 @@ namespace ProjectReporter
             long stepTime = (long)Math.Round(ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepTime)").getValue<long>(0) / 12d);
 
             //课题阶段经费总额
-            long ketiStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where ParentID is not null))").select("sum(Money)").getValue<long>(0);
+            long ketiStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where Type = '课题'))").select("sum(Money)").getValue<long>(0);
             
             //判断条件是否符合
             return totalMoney == projectMoney && totalMoney == stepMoney && totalMoney == ketiStepMoney && totalTime == stepTime;
