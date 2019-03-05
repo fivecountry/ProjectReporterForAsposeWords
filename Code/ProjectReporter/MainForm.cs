@@ -118,6 +118,12 @@ namespace ProjectReporter
                 return;
             }
 
+            if (!this.CheckTotalMoneys())
+            {
+                MessageBox.Show("对不起，课题经费或时间校验失败，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             string unitName = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = '" + ProjectObj.ID + "')").select("UnitName").getValue<string>(string.Empty);
             string personName = ConnectionManager.Context.table("Person").where("ID=(select PersonID from Task where Role = '负责人' and  ProjectID = '" + ProjectObj.ID + "')").select("Name").getValue<string>(string.Empty);
             string docName = unitName + "_" + personName;            
@@ -708,6 +714,40 @@ namespace ProjectReporter
                     SwitchToReportPage(1);
                 }
             }
+        }
+
+        /// <summary>
+        /// 检查时间与金额一致性
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckTotalMoneys()
+        {
+            //项目总时间
+            long totalTime = ConnectionManager.Context.table("Project").where("ParentID is null").select("TotalTime").getValue<long>(0);
+            
+            //项目总金额
+            decimal totalMoney = ConnectionManager.Context.table("Project").where("ParentID is null").select("TotalMoney").getValue<decimal>(0);
+
+            //经费表总额
+            string projectMoneyStr = ConnectionManager.Context.table("MoneyAndYear").where("Name = 'ProjectRFA'").select("Value").getValue<string>("0");
+            decimal projectMoney = 0;
+            try
+            {
+                projectMoney = decimal.Parse(projectMoneyStr);
+            }
+            catch (Exception ex) { }
+
+            //阶段总额
+            decimal stepMoney = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepMoney)").getValue<decimal>(0);
+
+            //阶段总时间
+            long stepTime = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepTime)").getValue<long>(0);
+
+            //课题阶段经费总额
+            decimal ketiStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where ParentID is not null))").select("sum(Money)").getValue<decimal>(0);
+            
+            //判断条件是否符合
+            return totalMoney == projectMoney && totalMoney == stepMoney && totalMoney == ketiStepMoney && totalTime == stepTime;
         }
     }
 }
