@@ -738,13 +738,13 @@ namespace ProjectReporter
             catch (Exception ex) { }
 
             //阶段总额
-            decimal stepMoney = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepMoney)").getValue<decimal>(0);
+            long stepMoney = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepMoney)").getValue<long>(0);
 
             //阶段总时间
-            long stepTime = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepTime)").getValue<long>(0);
+            long stepTime = (long)Math.Round(ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepTime)").getValue<long>(0) / 12d);
 
             //课题阶段经费总额
-            decimal ketiStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where ParentID is not null))").select("sum(Money)").getValue<decimal>(0);
+            long ketiStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where ParentID is not null))").select("sum(Money)").getValue<long>(0);
             
             //判断条件是否符合
             return totalMoney == projectMoney && totalMoney == stepMoney && totalMoney == ketiStepMoney && totalTime == stepTime;
