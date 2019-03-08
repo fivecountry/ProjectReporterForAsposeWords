@@ -281,7 +281,7 @@
             // colKeTiMingCheng
             // 
             this.colKeTiMingCheng.FillWeight = 263.1579F;
-            this.colKeTiMingCheng.HeaderText = "阶段";
+            this.colKeTiMingCheng.HeaderText = "阶段序号";
             this.colKeTiMingCheng.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -290,7 +290,7 @@
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colKeTiMingCheng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colKeTiMingCheng.Width = 50;
+            this.colKeTiMingCheng.Width = 80;
             // 
             // colMiJi
             // 

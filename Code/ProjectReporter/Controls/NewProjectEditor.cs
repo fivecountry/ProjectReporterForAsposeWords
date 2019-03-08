@@ -437,7 +437,8 @@ namespace ProjectReporter.Controls
         {
             base.OnClick(e);
 
-            UnitExtSelectForm selectForm = new UnitExtSelectForm(EditValue != null ? EditValue.ToString() : string.Empty);
+            UnitExtSelectForm selectForm = new UnitExtSelectForm(string.Empty);
+            //UnitExtSelectForm selectForm = new UnitExtSelectForm(EditValue != null ? EditValue.ToString() : string.Empty);
             if (selectForm.ShowDialog() == DialogResult.OK)
             {
                 EditValue = selectForm.SelectedUnitExt.ID;
