@@ -303,17 +303,21 @@ namespace ProjectReporter.Controls
             newUnit.SecretQualification = "未知";
             newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
 
-            //创建候选单位
-            BuildWhiteList();
-
             //添加/修改工程
             if (string.IsNullOrEmpty(MainForm.Instance.ProjectObj.ID))
             {
                 MainForm.Instance.ProjectObj.ID = projectIDs;
+
+                //创建候选单位
+                BuildWhiteList();
+
                 return MainForm.Instance.ProjectObj.copyTo(ConnectionManager.Context.table("Project")).insert();
             }
             else
             {
+                //创建候选单位
+                BuildWhiteList();
+
                 return MainForm.Instance.ProjectObj.copyTo(ConnectionManager.Context.table("Project")).where("ID='" + MainForm.Instance.ProjectObj.ID + "'").update();
             }
         }
