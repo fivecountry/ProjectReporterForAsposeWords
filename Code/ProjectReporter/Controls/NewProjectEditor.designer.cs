@@ -887,7 +887,7 @@ namespace ProjectReporter.Controls
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1422, 80);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "本建议书填报信息真实有效，相关研究内容没有在其它计划渠道重复申报。\r\n本人完全清楚本声明的法律后果，如有不实，愿意承担相应的法律责任。\r\n";
+            this.lblTitle.Text = "本单位代表申报团队郑重承诺：本建议书填报信息真实有效，相关研究内容没有在其它计划渠道重复申报。\r\n";
             // 
             // plMain
             // 
