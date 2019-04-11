@@ -153,17 +153,17 @@ namespace ProjectReporter.Controls
             List<UnitExt> unitList = ConnectionManager.Context.table("UnitExt").select("*").getList<UnitExt>(new UnitExt());
             if (unitList != null)
             {
-                //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Clear();
-                UnitDict.Clear();
-                foreach (UnitExt u in unitList)
-                {
-                    //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Add(u.UnitName);
-                    UnitDict.Add(u.UnitName, u);
-                }
+                ////((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Clear();
+                //UnitDict.Clear();
+                //foreach (UnitExt u in unitList)
+                //{
+                //    //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[1]).Items.Add(u.UnitName);
+                //    UnitDict.Add(u.UnitName, u);
+                //}
             }
         }
 
-        public Dictionary<string, UnitExt> UnitDict = new Dictionary<string, UnitExt>();
+        //public Dictionary<string, UnitExt> UnitDict = new Dictionary<string, UnitExt>();
 
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
