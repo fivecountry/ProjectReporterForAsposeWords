@@ -24,7 +24,7 @@ namespace ProjectReporter
         /// <summary>
         /// 基础目录
         /// </summary>
-        public static string BaseDir = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ProjectReporter"), "Data");
+        public static string BaseDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data");
 
         /// <summary>
         /// 工程目录
