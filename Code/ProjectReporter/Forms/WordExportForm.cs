@@ -167,7 +167,7 @@ namespace ProjectReporter.Forms
                 wu.InsertFile("基本概念及内涵", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_1.rtf"), true);
                 wu.InsertFile("军事需求分析", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_2.rtf"), true);
                 wu.InsertFile("研究现状", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_3.rtf"), true);
-                wu.InsertFile("研究目标", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_4.rtf"), true);
+                wu.InsertFile("研究目标", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_4.rtf"), false);
                 wu.InsertFile("基础性问题", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_5.rtf"), true);
                 wu.InsertFile("课题之间的关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_7.rtf"), true);
                 wu.InsertFile("研究成果及考核指标", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_8.rtf"), true);
