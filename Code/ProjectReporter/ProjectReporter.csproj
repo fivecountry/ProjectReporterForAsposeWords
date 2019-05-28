@@ -128,6 +128,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\AutoHeightLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\BaseEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>

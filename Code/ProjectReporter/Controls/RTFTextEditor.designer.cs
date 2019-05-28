@@ -34,7 +34,7 @@
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
             this.txtContent = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.tableLayoutPanel15.SuspendLayout();
@@ -113,33 +113,36 @@
             // 
             // plTitle
             // 
+            this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.lblTitle);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plTitle.Location = new System.Drawing.Point(50, 20);
             this.plTitle.Margin = new System.Windows.Forms.Padding(0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(1014, 80);
+            this.plTitle.Size = new System.Drawing.Size(1014, 21);
             this.plTitle.TabIndex = 0;
             // 
             // lblTitle
             // 
+            this.lblTitle.AutoHeight = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1014, 80);
+            this.lblTitle.Size = new System.Drawing.Size(1014, 21);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = ".............";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
             this.plContent.Controls.Add(this.txtContent);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 103);
+            this.plContent.Location = new System.Drawing.Point(53, 44);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1008, 387);
+            this.plContent.Size = new System.Drawing.Size(1008, 446);
             this.plContent.TabIndex = 7;
             // 
             // txtContent
@@ -148,7 +151,7 @@
             this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtContent.Location = new System.Drawing.Point(0, 0);
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(1008, 387);
+            this.txtContent.Size = new System.Drawing.Size(1008, 446);
             this.txtContent.TabIndex = 0;
             this.txtContent.Text = "";
             // 
@@ -160,6 +163,7 @@
             this.Name = "RTFTextEditor";
             this.Size = new System.Drawing.Size(1114, 553);
             this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
@@ -178,7 +182,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
         private System.Windows.Forms.Panel plContent;
         private RichTextBoxTableClass txtContent;
-        private System.Windows.Forms.Label lblTitle;
+        private AutoHeightLabel lblTitle;
 
 
     }

@@ -19,7 +19,7 @@ namespace ProjectReporter.Controls
 
         public string TitleLabelText { get { return TitleLabelControl.Text; } set { TitleLabelControl.Text = value; } }
 
-        public Label TitleLabelControl
+        public AutoHeightLabel TitleLabelControl
         {
             get { return lblTitle; }
         }
