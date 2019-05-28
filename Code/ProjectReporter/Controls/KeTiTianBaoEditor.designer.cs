@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.ttcHintTool = new DevExpress.Utils.ToolTipController(this.components);
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.plContent = new System.Windows.Forms.Panel();
             this.kvKetiTabs = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kpKetiItems = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -53,7 +53,7 @@
             this.colMakePage = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDetail = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ttcHintTool = new DevExpress.Utils.ToolTipController(this.components);
+            this.label1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -65,6 +65,16 @@
             this.kpKetiItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ttcHintTool
+            // 
+            this.ttcHintTool.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ttcHintTool.Appearance.Options.UseFont = true;
+            this.ttcHintTool.AutoPopDelay = 3000;
+            this.ttcHintTool.IconSize = DevExpress.Utils.ToolTipIconSize.Large;
+            this.ttcHintTool.Rounded = true;
+            this.ttcHintTool.ShowBeak = true;
+            this.ttcHintTool.ToolTipType = DevExpress.Utils.ToolTipType.Standard;
             // 
             // tableLayoutPanel15
             // 
@@ -80,7 +90,7 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 5;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -135,33 +145,23 @@
             // 
             // plTitle
             // 
+            this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.label1);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plTitle.Location = new System.Drawing.Point(50, 20);
             this.plTitle.Margin = new System.Windows.Forms.Padding(0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(689, 80);
+            this.plTitle.Size = new System.Drawing.Size(689, 48);
             this.plTitle.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(689, 80);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "围绕如何全面、有效实现项目目标，进行课题分解，明确每个课题的密级，并简述研究内容；牵头申报单位承担的课题数不超过课题总数的三分之二";
             // 
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
             this.plContent.Controls.Add(this.kvKetiTabs);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 103);
+            this.plContent.Location = new System.Drawing.Point(53, 71);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(683, 345);
+            this.plContent.Size = new System.Drawing.Size(683, 377);
             this.plContent.TabIndex = 7;
             // 
             // kvKetiTabs
@@ -175,7 +175,7 @@
             this.kvKetiTabs.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kpKetiItems});
             this.kvKetiTabs.SelectedIndex = 0;
-            this.kvKetiTabs.Size = new System.Drawing.Size(683, 345);
+            this.kvKetiTabs.Size = new System.Drawing.Size(683, 377);
             this.kvKetiTabs.TabIndex = 4;
             // 
             // kpKetiItems
@@ -186,7 +186,7 @@
             this.kpKetiItems.LastVisibleSet = true;
             this.kpKetiItems.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpKetiItems.Name = "kpKetiItems";
-            this.kpKetiItems.Size = new System.Drawing.Size(681, 318);
+            this.kpKetiItems.Size = new System.Drawing.Size(681, 350);
             this.kpKetiItems.Text = "课题列表";
             this.kpKetiItems.ToolTipTitle = "Page ToolTip";
             this.kpKetiItems.UniqueName = "E9C2A15C70F847D472B1468CE3270072";
@@ -212,11 +212,11 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.RowTemplate.Height = 28;
-            this.dgvDetail.Size = new System.Drawing.Size(681, 318);
+            this.dgvDetail.Size = new System.Drawing.Size(681, 350);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -320,15 +320,17 @@
             this.colDetail.Visible = false;
             this.colDetail.Width = 45;
             // 
-            // ttcHintTool
+            // label1
             // 
-            this.ttcHintTool.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ttcHintTool.Appearance.Options.UseFont = true;
-            this.ttcHintTool.AutoPopDelay = 3000;
-            this.ttcHintTool.IconSize = DevExpress.Utils.ToolTipIconSize.Large;
-            this.ttcHintTool.Rounded = true;
-            this.ttcHintTool.ShowBeak = true;
-            this.ttcHintTool.ToolTipType = DevExpress.Utils.ToolTipType.Standard;
+            this.label1.AutoHeight = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(689, 48);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "围绕如何全面的、有效的实现项目目标，进行课题分解，明确每个课题的密级，并简述研究内容；牵头申报单位承担的课题数不超过课题总数的三分之二";
             // 
             // KeTiTianBaoEditor
             // 
@@ -338,6 +340,7 @@
             this.Name = "KeTiTianBaoEditor";
             this.Size = new System.Drawing.Size(789, 511);
             this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
@@ -361,7 +364,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
         private System.Windows.Forms.Panel plContent;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
-        private System.Windows.Forms.Label label1;
+        private AutoHeightLabel label1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kvKetiTabs;
         private ComponentFactory.Krypton.Navigator.KryptonPage kpKetiItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;

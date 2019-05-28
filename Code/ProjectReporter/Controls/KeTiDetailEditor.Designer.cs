@@ -30,6 +30,7 @@
         {
             this.knKetiDetailTabs = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kpInfo = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.txtInfo = new ProjectReporter.Controls.TextBoxExt();
             this.kpDest = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.txtDest = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.kpContent = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -42,9 +43,8 @@
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
-            this.txtInfo = new TextBoxExt();
             ((System.ComponentModel.ISupportInitialize)(this.knKetiDetailTabs)).BeginInit();
             this.knKetiDetailTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).BeginInit();
@@ -76,7 +76,7 @@
             this.kpContent,
             this.kpNeed});
             this.knKetiDetailTabs.SelectedIndex = 0;
-            this.knKetiDetailTabs.Size = new System.Drawing.Size(752, 336);
+            this.knKetiDetailTabs.Size = new System.Drawing.Size(752, 392);
             this.knKetiDetailTabs.TabIndex = 0;
             this.knKetiDetailTabs.Text = "kryptonNavigator1";
             // 
@@ -88,10 +88,19 @@
             this.kpInfo.LastVisibleSet = true;
             this.kpInfo.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpInfo.Name = "kpInfo";
-            this.kpInfo.Size = new System.Drawing.Size(750, 309);
+            this.kpInfo.Size = new System.Drawing.Size(750, 365);
             this.kpInfo.Text = "简述";
             this.kpInfo.ToolTipTitle = "Page ToolTip";
             this.kpInfo.UniqueName = "480A3E3DB4644E2359A73CEE17D437D9";
+            // 
+            // txtInfo
+            // 
+            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfo.Location = new System.Drawing.Point(0, 0);
+            this.txtInfo.Multiline = true;
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.Size = new System.Drawing.Size(750, 365);
+            this.txtInfo.TabIndex = 0;
             // 
             // kpDest
             // 
@@ -101,7 +110,7 @@
             this.kpDest.LastVisibleSet = true;
             this.kpDest.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpDest.Name = "kpDest";
-            this.kpDest.Size = new System.Drawing.Size(750, 309);
+            this.kpDest.Size = new System.Drawing.Size(750, 369);
             this.kpDest.Text = "研究目标";
             this.kpDest.ToolTipTitle = "Page ToolTip";
             this.kpDest.UniqueName = "A7C07E934B1F414E99B2655E2A0D8ECC";
@@ -111,7 +120,7 @@
             this.txtDest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDest.Location = new System.Drawing.Point(0, 0);
             this.txtDest.Name = "txtDest";
-            this.txtDest.Size = new System.Drawing.Size(750, 309);
+            this.txtDest.Size = new System.Drawing.Size(750, 369);
             this.txtDest.TabIndex = 1;
             this.txtDest.Text = "";
             // 
@@ -123,7 +132,7 @@
             this.kpContent.LastVisibleSet = true;
             this.kpContent.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpContent.Name = "kpContent";
-            this.kpContent.Size = new System.Drawing.Size(750, 309);
+            this.kpContent.Size = new System.Drawing.Size(750, 369);
             this.kpContent.Text = "研究内容";
             this.kpContent.ToolTipTitle = "Page ToolTip";
             this.kpContent.UniqueName = "D7C9060B093A424227B510727F20F652";
@@ -133,7 +142,7 @@
             this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtContent.Location = new System.Drawing.Point(0, 0);
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(750, 309);
+            this.txtContent.Size = new System.Drawing.Size(750, 369);
             this.txtContent.TabIndex = 1;
             this.txtContent.Text = "";
             // 
@@ -145,7 +154,7 @@
             this.kpNeed.LastVisibleSet = true;
             this.kpNeed.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpNeed.Name = "kpNeed";
-            this.kpNeed.Size = new System.Drawing.Size(750, 309);
+            this.kpNeed.Size = new System.Drawing.Size(750, 369);
             this.kpNeed.Text = "关键技术及研究思路";
             this.kpNeed.ToolTipTitle = "Page ToolTip";
             this.kpNeed.UniqueName = "C96959D95BED456940AB08FF33E3497B";
@@ -155,7 +164,7 @@
             this.txtNeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNeed.Location = new System.Drawing.Point(0, 0);
             this.txtNeed.Name = "txtNeed";
-            this.txtNeed.Size = new System.Drawing.Size(750, 309);
+            this.txtNeed.Size = new System.Drawing.Size(750, 369);
             this.txtNeed.TabIndex = 1;
             this.txtNeed.Text = "";
             // 
@@ -228,22 +237,24 @@
             // 
             // plTitle
             // 
+            this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.lblTitle);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plTitle.Location = new System.Drawing.Point(50, 20);
             this.plTitle.Margin = new System.Windows.Forms.Padding(0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(758, 80);
+            this.plTitle.Size = new System.Drawing.Size(758, 24);
             this.plTitle.TabIndex = 0;
             // 
             // lblTitle
             // 
+            this.lblTitle.AutoHeight = false;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(758, 80);
+            this.lblTitle.Size = new System.Drawing.Size(758, 24);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = ".............";
             // 
@@ -252,19 +263,10 @@
             this.plContent.BackColor = System.Drawing.Color.Transparent;
             this.plContent.Controls.Add(this.knKetiDetailTabs);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 103);
+            this.plContent.Location = new System.Drawing.Point(53, 47);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(752, 336);
+            this.plContent.Size = new System.Drawing.Size(752, 392);
             this.plContent.TabIndex = 7;
-            // 
-            // txtInfo
-            // 
-            this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfo.Location = new System.Drawing.Point(0, 0);
-            this.txtInfo.Multiline = true;
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(750, 309);
-            this.txtInfo.TabIndex = 0;
             // 
             // KeTiDetailEditor
             // 
@@ -285,6 +287,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kpNeed)).EndInit();
             this.kpNeed.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
@@ -306,7 +309,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnNext;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
-        private System.Windows.Forms.Label lblTitle;
+        private AutoHeightLabel lblTitle;
         private System.Windows.Forms.Panel plContent;
         private RichTextBoxTableClass txtDest;
         private RichTextBoxTableClass txtContent;

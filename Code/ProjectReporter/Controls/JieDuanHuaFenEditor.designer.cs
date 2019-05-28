@@ -35,9 +35,16 @@
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtStepCount = new System.Windows.Forms.Label();
@@ -46,13 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotalTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
-            this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
-            this.colContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -76,7 +76,7 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 5;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -131,22 +131,24 @@
             // 
             // plTitle
             // 
+            this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.label1);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plTitle.Location = new System.Drawing.Point(50, 20);
             this.plTitle.Margin = new System.Windows.Forms.Padding(0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(796, 80);
+            this.plTitle.Size = new System.Drawing.Size(796, 46);
             this.plTitle.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.AutoHeight = false;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(796, 80);
+            this.label1.Size = new System.Drawing.Size(796, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "请根据项目研究需要，合理设置项目（课题）研究阶段和进度计划\r\n原则上全周期研究阶段设置应不少于4个。建议每阶段截止时间为该年度5月10日或11月10日";
             // 
@@ -156,9 +158,9 @@
             this.plContent.Controls.Add(this.dgvDetail);
             this.plContent.Controls.Add(this.panel1);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 103);
+            this.plContent.Location = new System.Drawing.Point(53, 69);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(790, 371);
+            this.plContent.Size = new System.Drawing.Size(790, 405);
             this.plContent.TabIndex = 7;
             // 
             // dgvDetail
@@ -181,7 +183,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 28;
-            this.dgvDetail.Size = new System.Drawing.Size(790, 345);
+            this.dgvDetail.Size = new System.Drawing.Size(790, 379);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -189,6 +191,71 @@
             this.dgvDetail.TabIndex = 4;
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
+            // 
+            // selpersonid
+            // 
+            this.selpersonid.HeaderText = "序号";
+            this.selpersonid.Name = "selpersonid";
+            this.selpersonid.Visible = false;
+            this.selpersonid.Width = 80;
+            // 
+            // colKeTiMingCheng
+            // 
+            this.colKeTiMingCheng.FillWeight = 263.1579F;
+            this.colKeTiMingCheng.HeaderText = "阶段序号";
+            this.colKeTiMingCheng.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.colKeTiMingCheng.Name = "colKeTiMingCheng";
+            this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colKeTiMingCheng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colKeTiMingCheng.Width = 80;
+            // 
+            // colMiJi
+            // 
+            this.colMiJi.FillWeight = 59.21053F;
+            this.colMiJi.HeaderText = "阶段时间(月)";
+            this.colMiJi.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.colMiJi.Name = "colMiJi";
+            this.colMiJi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMiJi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMiJi.Width = 110;
+            // 
+            // colContent
+            // 
+            this.colContent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colContent.FillWeight = 59.21053F;
+            this.colContent.HeaderText = "研究内容";
+            this.colContent.Name = "colContent";
+            // 
+            // colDest
+            // 
+            this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDest.FillWeight = 59.21053F;
+            this.colDest.HeaderText = "研究目标";
+            this.colDest.Name = "colDest";
+            // 
+            // colMoney
+            // 
+            this.colMoney.FillWeight = 59.21053F;
+            this.colMoney.HeaderText = "阶段经费";
+            this.colMoney.Name = "colMoney";
+            this.colMoney.Width = 80;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "删除";
+            this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.Width = 45;
             // 
             // panel1
             // 
@@ -271,71 +338,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "本项目研究周期";
             // 
-            // selpersonid
-            // 
-            this.selpersonid.HeaderText = "序号";
-            this.selpersonid.Name = "selpersonid";
-            this.selpersonid.Visible = false;
-            this.selpersonid.Width = 80;
-            // 
-            // colKeTiMingCheng
-            // 
-            this.colKeTiMingCheng.FillWeight = 263.1579F;
-            this.colKeTiMingCheng.HeaderText = "阶段序号";
-            this.colKeTiMingCheng.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.colKeTiMingCheng.Name = "colKeTiMingCheng";
-            this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colKeTiMingCheng.Width = 80;
-            // 
-            // colMiJi
-            // 
-            this.colMiJi.FillWeight = 59.21053F;
-            this.colMiJi.HeaderText = "阶段时间(月)";
-            this.colMiJi.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.colMiJi.Name = "colMiJi";
-            this.colMiJi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMiJi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMiJi.Width = 110;
-            // 
-            // colContent
-            // 
-            this.colContent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colContent.FillWeight = 59.21053F;
-            this.colContent.HeaderText = "研究内容";
-            this.colContent.Name = "colContent";
-            // 
-            // colDest
-            // 
-            this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDest.FillWeight = 59.21053F;
-            this.colDest.HeaderText = "研究目标";
-            this.colDest.Name = "colDest";
-            // 
-            // colMoney
-            // 
-            this.colMoney.FillWeight = 59.21053F;
-            this.colMoney.HeaderText = "阶段经费";
-            this.colMoney.Name = "colMoney";
-            this.colMoney.Width = 80;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "删除";
-            this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.Width = 45;
-            // 
             // JieDuanHuaFenEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -344,6 +346,7 @@
             this.Name = "JieDuanHuaFenEditor";
             this.Size = new System.Drawing.Size(896, 537);
             this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
@@ -363,7 +366,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnNext;
         private System.Windows.Forms.Panel plContent;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
-        private System.Windows.Forms.Label label1;
+        private AutoHeightLabel label1;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;

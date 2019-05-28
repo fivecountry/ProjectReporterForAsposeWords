@@ -143,6 +143,7 @@
             this.label1.Size = new System.Drawing.Size(906, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "课题负责人联系方式";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
             // 

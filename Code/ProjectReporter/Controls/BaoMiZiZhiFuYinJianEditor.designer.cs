@@ -136,6 +136,7 @@
             this.label1.Size = new System.Drawing.Size(916, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "若该项目内容涉密，请申请单位提供与申报密级相应的保密资质复印件，无需盖章";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
             // 

@@ -36,7 +36,7 @@ namespace ProjectReporter.Controls
                 base.Text = value;
 
                 //处理标签框高度
-                processLabelHeight(value);
+                processLabelHeight(base.Text);
             }
         }
 
@@ -53,23 +53,44 @@ namespace ProjectReporter.Controls
                 System.Drawing.Graphics g = CreateGraphics();
                 try
                 {
+                    //设置单位为像素
+                    g.PageUnit = System.Drawing.GraphicsUnit.Pixel;
+
                     //文本大小
-                    System.Drawing.SizeF size = g.MeasureString(value, Font);
+                    System.Drawing.SizeF totalSize = g.MeasureString(value, Font);
 
-                    //文字高度
-                    int wordHeight = (int)size.Height;
+                    //单字大小
+                    System.Drawing.SizeF wordSize = g.MeasureString("王", Font);
 
-                    //文本宽度份数
-                    int widthCuts = (int)size.Width / Width;
-                    if ((int)size.Width % Width > 0)
+                    //单字高度
+                    int wordHeight = (int)wordSize.Height;
+                    //单字宽度
+                    int wordWidth = (int)wordSize.Width;
+                    
+                    //文本行数
+                    int widthRowCount = 0;
+
+                    //判断是否一行能显示完
+                    if (Width > totalSize.Width)
                     {
-                        widthCuts++;
+                        //可以显示在一行
+                        widthRowCount = 1;
+                    }
+                    else
+                    {
+                        //不能显示在一行
+                        widthRowCount = (int)totalSize.Width / Width;
+                        int widthElse = (int)totalSize.Width % Width;
+                        if (widthElse > wordWidth)
+                        {
+                            widthRowCount++;
+                        }
                     }
 
                     //判断是否我多行文本
-                    if (widthCuts > 1)
+                    if (widthRowCount > 1)
                     {
-                        Height = widthCuts * wordHeight;
+                        Height = widthRowCount * wordHeight;
                     }
                     else
                     {
@@ -81,11 +102,6 @@ namespace ProjectReporter.Controls
                     //结束绘图板
                     g.Dispose();
                 }
-            }
-            else
-            {
-                //设置初始高度
-                Height = 60;
             }
         }
 

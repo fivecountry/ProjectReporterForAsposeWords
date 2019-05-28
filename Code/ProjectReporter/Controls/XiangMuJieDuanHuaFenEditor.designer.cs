@@ -139,6 +139,7 @@
             this.label1.Size = new System.Drawing.Size(943, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "项目阶段划分和经费安排";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
             // 

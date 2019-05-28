@@ -91,7 +91,7 @@ namespace ProjectReporter.Controls
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblTitle = new ProjectReporter.Controls.AutoHeightLabel();
             this.plMain = new System.Windows.Forms.Panel();
             this.plContent = new System.Windows.Forms.Panel();
             this.tlpContent.SuspendLayout();
@@ -875,17 +875,18 @@ namespace ProjectReporter.Controls
             this.plTitle.Location = new System.Drawing.Point(0, 0);
             this.plTitle.Margin = new System.Windows.Forms.Padding(0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(1422, 80);
+            this.plTitle.Size = new System.Drawing.Size(1422, 40);
             this.plTitle.TabIndex = 0;
             // 
             // lblTitle
             // 
+            this.lblTitle.AutoHeight = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1422, 80);
+            this.lblTitle.Size = new System.Drawing.Size(1422, 34);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "本单位代表申报团队郑重承诺：本建议书填报信息真实有效，相关研究内容没有在其它计划渠道重复申报。\r\n";
             // 
@@ -906,9 +907,9 @@ namespace ProjectReporter.Controls
             this.plContent.AutoScroll = true;
             this.plContent.Controls.Add(this.tlpContent);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(0, 80);
+            this.plContent.Location = new System.Drawing.Point(0, 40);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1422, 555);
+            this.plContent.Size = new System.Drawing.Size(1422, 595);
             this.plContent.TabIndex = 7;
             // 
             // NewProjectEditor
@@ -1000,7 +1001,7 @@ namespace ProjectReporter.Controls
         private KryptonButton btnSave;
         private KryptonButton btnNext;
         private KryptonPanel plTitle;
-        private System.Windows.Forms.Label lblTitle;
+        private AutoHeightLabel lblTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel14;
         private KryptonTextBox txtUnitName;

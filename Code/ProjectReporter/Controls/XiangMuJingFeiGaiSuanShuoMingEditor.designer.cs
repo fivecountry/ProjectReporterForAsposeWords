@@ -140,6 +140,7 @@
             this.label1.Size = new System.Drawing.Size(950, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "介绍本项目总经费预算构成，应能够支撑对项目总经费及相关课题经费安排合理性进行审核评估";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
             // 
