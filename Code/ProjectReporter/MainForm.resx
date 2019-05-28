@@ -395,6 +395,9 @@
   <metadata name="kryptonManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="feUI0.TitleLabelText" xml:space="preserve">
+    <value>简述背景及必要性，介绍问题提出的JS应用背景或需求，重点阐述其现实“瓶颈”属性或引领未来重大技术发展方向属性，分析国内外研究现状和差距。介绍项目研究目标，概述拟突破的主要基础问题或关键技术、主要成果形式和预期技术指标，分析对解决GFKJ现实瓶颈问题和支撑未来技术发展方面的预期支撑作用。围绕项目研究目标，突出GF基础研究的任务特点，从增强原始创新能力和支撑未来发展的角度出发，概述本项目需要重点研究解决的基础性问题。项目由XXX牵头，XXX等单位参研，研究周期X年，申请经费XXXX万元。项目负责人为XXX(院士/研究员/教授)</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAoAMDAQAAEABABoBgAApgAAACAgEAABAAQA6AIAAA4HAAAQEBAAAQAEACgBAAD2CQAAMDAAAAEA

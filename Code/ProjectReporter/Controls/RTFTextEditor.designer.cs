@@ -119,7 +119,7 @@
             this.plTitle.Location = new System.Drawing.Point(50, 20);
             this.plTitle.Margin = new System.Windows.Forms.Padding(0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(1014, 21);
+            this.plTitle.Size = new System.Drawing.Size(1014, 24);
             this.plTitle.TabIndex = 0;
             // 
             // lblTitle
@@ -130,19 +130,18 @@
             this.lblTitle.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1014, 21);
+            this.lblTitle.Size = new System.Drawing.Size(1014, 24);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = ".............";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
             this.plContent.Controls.Add(this.txtContent);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 44);
+            this.plContent.Location = new System.Drawing.Point(53, 47);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1008, 446);
+            this.plContent.Size = new System.Drawing.Size(1008, 443);
             this.plContent.TabIndex = 7;
             // 
             // txtContent
@@ -151,7 +150,7 @@
             this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtContent.Location = new System.Drawing.Point(0, 0);
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(1008, 446);
+            this.txtContent.Size = new System.Drawing.Size(1008, 443);
             this.txtContent.TabIndex = 0;
             this.txtContent.Text = "";
             // 
