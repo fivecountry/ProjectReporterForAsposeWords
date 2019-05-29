@@ -595,7 +595,7 @@ namespace ProjectReporter
             this.kpfPage1,
             this.kpfPage2,
             this.kpfPage3});
-            this.knReportPage3.SelectedIndex = 0;
+            this.knReportPage3.SelectedIndex = 3;
             this.knReportPage3.Size = new System.Drawing.Size(1256, 628);
             this.knReportPage3.TabIndex = 1;
             this.knReportPage3.Text = "kryptonNavigator7";
@@ -706,7 +706,7 @@ namespace ProjectReporter
             this.kpfPage3.Name = "kpfPage3";
             this.kpfPage3.Size = new System.Drawing.Size(1254, 598);
             this.kpfPage3.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
-            this.kpfPage3.Text = "研究状态";
+            this.kpfPage3.Text = "研究现状";
             this.kpfPage3.ToolTipTitle = "Page ToolTip";
             this.kpfPage3.UniqueName = "BBF2813E462E4E455599AA44FDC01FC7";
             // 
