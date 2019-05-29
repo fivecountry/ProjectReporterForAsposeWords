@@ -19,7 +19,7 @@ namespace ProjectReporter.Controls
         {
             InitializeComponent();
 
-            dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+            //dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace ProjectReporter.Controls
             dgvDetail.Rows.Clear();
             if (WhiteDataList != null)
             {
-                dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = ProjectReporter.Properties.Resources.DELETE_28;
+                //dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = ProjectReporter.Properties.Resources.DELETE_28;
                 int indexx = 0;
                 foreach (WhiteList wl in WhiteDataList)
                 {
