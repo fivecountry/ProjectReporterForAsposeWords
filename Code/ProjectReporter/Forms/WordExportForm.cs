@@ -735,6 +735,20 @@ namespace ProjectReporter.Forms
                     wu.WordDoc.Styles["目录 3"].Font.Size = 12;
                     wu.WordDoc.Styles["目录 3"].Font.Bold = 0;
                     wu.WordDoc.Styles["目录 3"].Font.Italic = 0;
+
+                    object missing = System.Reflection.Missing.Value;
+                    Microsoft.Office.Interop.Word.Range myRange = wu.WordDoc.TablesOfContents[1].Range;
+                    wu.WordDoc.TablesOfContents[1].Delete();                    
+                    object useHeadingStyle = true; //使用Head样式
+                    object upperHeadingLevel = 1;  //最大一级
+                    object lowerHeadingLevel = 2;  //最小三级
+                    object useHypeLinks = true;
+                    //TablesOfContents的Add方法添加目录
+                    wu.WordDoc.TablesOfContents.Add(myRange, ref useHeadingStyle,
+                        ref upperHeadingLevel, ref lowerHeadingLevel,
+                        ref missing, ref missing, ref missing, ref missing,
+                        ref missing, ref useHypeLinks, ref missing, ref missing);
+                    wu.WordDoc.TablesOfContents[1].TabLeader = Microsoft.Office.Interop.Word.WdTabLeader.wdTabLeaderDots;
                 }
                 catch (Exception ex) { }
 
