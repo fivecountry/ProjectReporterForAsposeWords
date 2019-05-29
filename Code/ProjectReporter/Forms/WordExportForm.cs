@@ -727,11 +727,17 @@ namespace ProjectReporter.Forms
                     wu.WordDoc.Styles["目录 1"].Font.Italic = 0;
 
                     wu.WordDoc.Styles["目录 2"].Font.NameFarEast = "楷体";
+                    wu.WordDoc.Styles["目录 2"].Font.NameAscii = wu.WordDoc.Styles["目录 1"].Font.NameAscii;
+                    wu.WordDoc.Styles["目录 2"].Font.NameBi = wu.WordDoc.Styles["目录 1"].Font.NameBi;
+                    wu.WordDoc.Styles["目录 2"].Font.NameOther = wu.WordDoc.Styles["目录 1"].Font.NameOther;
                     wu.WordDoc.Styles["目录 2"].Font.Size = 12;
                     wu.WordDoc.Styles["目录 2"].Font.Bold = 0;
                     wu.WordDoc.Styles["目录 2"].Font.Italic = 0;
 
                     wu.WordDoc.Styles["目录 3"].Font.NameFarEast = "楷体";
+                    wu.WordDoc.Styles["目录 3"].Font.NameAscii = wu.WordDoc.Styles["目录 1"].Font.NameAscii;
+                    wu.WordDoc.Styles["目录 3"].Font.NameBi = wu.WordDoc.Styles["目录 1"].Font.NameBi;
+                    wu.WordDoc.Styles["目录 3"].Font.NameOther = wu.WordDoc.Styles["目录 1"].Font.NameOther;
                     wu.WordDoc.Styles["目录 3"].Font.Size = 12;
                     wu.WordDoc.Styles["目录 3"].Font.Bold = 0;
                     wu.WordDoc.Styles["目录 3"].Font.Italic = 0;
