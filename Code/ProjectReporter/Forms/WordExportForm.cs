@@ -595,30 +595,55 @@ namespace ProjectReporter.Forms
                                     int rowStart = dataIndex + (k * 3);
                                     int rowEnd = rowStart + 2;
 
-                                    #region 写入标签
+                                    #region 写入标签                                    
                                     table.Cell(rowStart, 1).Range.Text = "课题" + (k + 1);
                                     table.Cell(rowStart, 1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart, 1).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
                                     table.Cell(rowStart, 2).Range.Text = "负责人";
                                     table.Cell(rowStart, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
+                                    table.Cell(rowStart, 2).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
                                     table.Cell(rowStart, 4).Range.Text = "性别";
                                     table.Cell(rowStart, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart, 4).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
                                     table.Cell(rowStart, 6).Range.Text = "出生年月";
                                     table.Cell(rowStart, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
+                                    table.Cell(rowStart, 6).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
                                     table.Cell(rowStart + 1, 2).Range.Text = "职务职称";
                                     table.Cell(rowStart + 1, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 1, 2).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
                                     table.Cell(rowStart + 1, 4).Range.Text = "座机";
                                     table.Cell(rowStart + 1, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
+                                    table.Cell(rowStart + 1, 4).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
                                     table.Cell(rowStart + 1, 6).Range.Text = "手机";
                                     table.Cell(rowStart + 1, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
+                                    table.Cell(rowStart + 1, 6).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
                                     table.Cell(rowStart + 2, 2).Range.Text = "承担单位及通信地址";
                                     table.Cell(rowStart + 2, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 2, 2).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+
                                     #endregion
 
                                     #region 写入实际数据
@@ -630,23 +655,44 @@ namespace ProjectReporter.Forms
                                     table.Cell(rowStart, 3).Range.Text = personObj.Name;
                                     table.Cell(rowStart, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
+                                    table.Cell(rowStart, 3).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
                                     table.Cell(rowStart, 5).Range.Text = personObj.Sex;
                                     table.Cell(rowStart, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart, 5).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
                                     table.Cell(rowStart, 7).Range.Text = personObj.Birthday != null ? personObj.Birthday.Value.ToShortDateString() : string.Empty;
                                     table.Cell(rowStart, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
+                                    table.Cell(rowStart, 7).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
                                     table.Cell(rowStart + 1, 3).Range.Text = personObj.Job;
                                     table.Cell(rowStart + 1, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 1, 3).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
                                     table.Cell(rowStart + 1, 5).Range.Text = personObj.Telephone;
                                     table.Cell(rowStart + 1, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
+                                    table.Cell(rowStart + 1, 5).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
                                     table.Cell(rowStart + 1, 7).Range.Text = personObj.MobilePhone;
                                     table.Cell(rowStart + 1, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
+                                    table.Cell(rowStart + 1, 7).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+
                                     table.Cell(rowStart + 2, 3).Range.Text = unitObj.UnitName + "," + unitObj.Address;
                                     table.Cell(rowStart + 2, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+
+                                    table.Cell(rowStart + 2, 3).Select();
+                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
                                     #endregion
 
