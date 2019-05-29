@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -138,7 +138,7 @@
             this.plTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.plTitle.Name = "plTitle";
             this.plTitle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.plTitle.Size = new System.Drawing.Size(788, 46);
+            this.plTitle.Size = new System.Drawing.Size(788, 54);
             this.plTitle.TabIndex = 0;
             // 
             // label1
@@ -149,9 +149,10 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(782, 46);
+            this.label1.Size = new System.Drawing.Size(782, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "请根据项目研究需要，合理设置项目（课题）研究阶段和进度计划\r\n原则上全周期研究阶段设置应不少于4个。建议每阶段截止时间为该年度5月10日或11月10日";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
             // 
@@ -159,9 +160,9 @@
             this.plContent.Controls.Add(this.dgvDetail);
             this.plContent.Controls.Add(this.panel1);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 69);
+            this.plContent.Location = new System.Drawing.Point(53, 77);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(790, 405);
+            this.plContent.Size = new System.Drawing.Size(790, 397);
             this.plContent.TabIndex = 7;
             // 
             // dgvDetail
@@ -180,11 +181,11 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 26);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 28;
-            this.dgvDetail.Size = new System.Drawing.Size(790, 379);
+            this.dgvDetail.Size = new System.Drawing.Size(790, 371);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

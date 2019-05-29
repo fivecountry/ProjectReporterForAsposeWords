@@ -258,6 +258,7 @@
             this.lblTitle.Size = new System.Drawing.Size(744, 24);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = ".............";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
             // 
