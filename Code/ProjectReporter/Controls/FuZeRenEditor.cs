@@ -86,7 +86,7 @@ namespace ProjectReporter.Controls
                 cells.Add(indexx + "");
                 cells.Add(personKey);
                 cells.Add(personObj.Sex);
-                cells.Add(personObj.Birthday);
+                cells.Add(personObj.Birthday != null ? personObj.Birthday.Value.ToShortDateString() : "未知");
                 cells.Add(personObj.Job);
                 cells.Add(personObj.Telephone);
                 cells.Add(personObj.MobilePhone);

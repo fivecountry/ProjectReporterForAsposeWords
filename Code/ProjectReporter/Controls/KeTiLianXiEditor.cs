@@ -92,7 +92,7 @@ namespace ProjectReporter.Controls
                         cells.Add(proj.Name + "," + taskObj.Role);
                         cells.Add(personObj.Name + "(" + personObj.IDCard + ")");
                         cells.Add(personObj.Sex);
-                        cells.Add(personObj.Birthday);
+                        cells.Add(personObj.Birthday != null ? personObj.Birthday.Value.ToShortDateString() : "未知");
                         cells.Add(personObj.Job);
                         cells.Add(personObj.MobilePhone);
                         cells.Add(unitObj.UnitName + "," + unitObj.Address);
