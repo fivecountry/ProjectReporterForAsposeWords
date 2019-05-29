@@ -110,6 +110,14 @@ namespace ProjectReporter.Controls
             base.OnResize(e);
 
             //处理标签框高度
+            countLabelHeight();
+        }
+
+        /// <summary>
+        /// 统计标签高度
+        /// </summary>
+        public void countLabelHeight()
+        {
             processLabelHeight(Text);
         }
     }

@@ -17,6 +17,7 @@ namespace ProjectReporter.Controls
 
         public string RTFEditorNameKey { get; set; }
 
+        [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))]
         public string TitleLabelText { get { return TitleLabelControl.Text; } set { TitleLabelControl.Text = value; } }
 
         public AutoHeightLabel TitleLabelControl
@@ -27,6 +28,31 @@ namespace ProjectReporter.Controls
         public RichTextBoxTableClass RichTextBoxControl
         {
             get { return txtContent; }
+        }
+
+        public bool EnabledLabelAutoHeight
+        {
+            get
+            {
+                return TitleLabelControl.AutoHeight;
+            }
+            set
+            {
+                TitleLabelControl.AutoHeight = value;
+                
+                //检查是否需要计算标签高度
+                if (value)
+                {
+                    //计算标签高度
+                    TitleLabelControl.countLabelHeight();
+                }
+            }
+        }
+
+        public int TitleLabelHeight
+        {
+            get { return TitleLabelControl.Height; }
+            set { TitleLabelControl.Height = value; }
         }
 
         public bool EnabledSaveButton { get { return btnSave.Enabled; } set { btnSave.Enabled = value; } }

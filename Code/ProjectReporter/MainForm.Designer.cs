@@ -55,90 +55,90 @@ namespace ProjectReporter
             this.kpReportPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.txtReportReadme = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.kpReportPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.fnpDefault = new ProjectReporter.Controls.NewProjectEditor();
             this.kpReportPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage3 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kpfPage0 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI0 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpfPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI1 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpfPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI2 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpfPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI3 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage4 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage17 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI4 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage5 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage18 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI5 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage6 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage6 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage19 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI6 = new ProjectReporter.Controls.KeTiTianBaoEditor();
             this.kryptonPage16 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI7 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage7 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage20 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI8 = new ProjectReporter.Controls.RTFTextEditor();
             this.kryptonPage56 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI9 = new ProjectReporter.Controls.RTFTextEditor();
             this.kryptonPage34 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI10 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage8 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage8 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage21 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI11 = new ProjectReporter.Controls.JieDuanHuaFenEditor();
             this.kryptonPage32 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI13 = new ProjectReporter.Controls.KeTiJieDuanHuaFenEditor();
             this.kpReportPage9 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage9 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage22 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI14 = new ProjectReporter.Controls.RTFTextEditor();
             this.kryptonPage36 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI15 = new ProjectReporter.Controls.RTFTextEditor();
             this.kryptonPage37 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI16 = new ProjectReporter.Controls.YanJiuGuGanEditor();
             this.kpReportPage10 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage10 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage23 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI17 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage11 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage11 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage24 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI18 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage12 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage12 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage25 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI19 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage13 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage13 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage26 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI20 = new ProjectReporter.Controls.JingFeiYuSuanEditor();
             this.kpReportPage14 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage14 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage27 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI21 = new ProjectReporter.Controls.FuZeRenEditor();
             this.kryptonPage38 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI22 = new ProjectReporter.Controls.QianTouDanWeiEditor();
             this.kryptonPage39 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI23 = new ProjectReporter.Controls.KeTiLianXiEditor();
             this.kpReportPage15 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage15 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage28 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI24 = new ProjectReporter.Controls.XiangMuJingFeiGaiSuanShuoMingEditor();
             this.kpReportPage16 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage16 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage29 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.topBanner = new System.Windows.Forms.PictureBox();
-            this.txtReportReadme = new ProjectReporter.Controls.RichTextBoxTableClass();
-            this.fnpDefault = new ProjectReporter.Controls.NewProjectEditor();
-            this.feUI0 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI1 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI2 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI3 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI4 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI5 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI6 = new ProjectReporter.Controls.KeTiTianBaoEditor();
-            this.feUI7 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI8 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI9 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI10 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI11 = new ProjectReporter.Controls.JieDuanHuaFenEditor();
-            this.feUI13 = new ProjectReporter.Controls.KeTiJieDuanHuaFenEditor();
-            this.feUI14 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI15 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI16 = new ProjectReporter.Controls.YanJiuGuGanEditor();
-            this.feUI17 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI18 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI19 = new ProjectReporter.Controls.RTFTextEditor();
-            this.feUI20 = new ProjectReporter.Controls.JingFeiYuSuanEditor();
-            this.feUI21 = new ProjectReporter.Controls.FuZeRenEditor();
-            this.feUI22 = new ProjectReporter.Controls.QianTouDanWeiEditor();
-            this.feUI23 = new ProjectReporter.Controls.KeTiLianXiEditor();
-            this.feUI24 = new ProjectReporter.Controls.XiangMuJingFeiGaiSuanShuoMingEditor();
             this.feUI25 = new ProjectReporter.Controls.BaoMiZiZhiFuYinJianEditor();
+            this.topBanner = new System.Windows.Forms.PictureBox();
             this.kpcontact = new ProjectReporter.Controls.HSkinTableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -510,6 +510,15 @@ namespace ProjectReporter
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "C049E3A97C914353ECA0934940308F04";
             // 
+            // txtReportReadme
+            // 
+            this.txtReportReadme.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtReportReadme.Location = new System.Drawing.Point(0, 0);
+            this.txtReportReadme.Name = "txtReportReadme";
+            this.txtReportReadme.Size = new System.Drawing.Size(1254, 598);
+            this.txtReportReadme.TabIndex = 0;
+            this.txtReportReadme.Text = "";
+            // 
             // kpReportPage2
             // 
             this.kpReportPage2.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -550,6 +559,16 @@ namespace ProjectReporter
             this.kryptonPage2.Text = "项目信息";
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "C049E3A97C914353ECA0934940308F04";
+            // 
+            // fnpDefault
+            // 
+            this.fnpDefault.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fnpDefault.EnabledAutoNextPage = true;
+            this.fnpDefault.Location = new System.Drawing.Point(0, 0);
+            this.fnpDefault.Name = "fnpDefault";
+            this.fnpDefault.ParentForm = null;
+            this.fnpDefault.Size = new System.Drawing.Size(1254, 598);
+            this.fnpDefault.TabIndex = 3;
             // 
             // kpReportPage3
             // 
@@ -595,6 +614,24 @@ namespace ProjectReporter
             this.kpfPage0.ToolTipTitle = "Page ToolTip";
             this.kpfPage0.UniqueName = "CD5BE1298E4F4A45DEBB9FBA2B90F85E";
             // 
+            // feUI0
+            // 
+            this.feUI0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI0.EnabledAutoNextPage = true;
+            this.feUI0.EnabledLabelAutoHeight = false;
+            this.feUI0.EnabledLastButton = false;
+            this.feUI0.EnabledNextButton = true;
+            this.feUI0.EnabledSaveButton = true;
+            this.feUI0.Location = new System.Drawing.Point(0, 0);
+            this.feUI0.Name = "feUI0";
+            this.feUI0.ParentForm = null;
+            this.feUI0.RTFEditorNameKey = "feUI";
+            this.feUI0.RTFFileFirstName = "rtpinput_";
+            this.feUI0.Size = new System.Drawing.Size(1254, 598);
+            this.feUI0.TabIndex = 0;
+            this.feUI0.TitleLabelHeight = 145;
+            this.feUI0.TitleLabelText = resources.GetString("feUI0.TitleLabelText");
+            // 
             // kpfPage1
             // 
             this.kpfPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -608,6 +645,24 @@ namespace ProjectReporter
             this.kpfPage1.Text = "基本概念及内涵";
             this.kpfPage1.ToolTipTitle = "Page ToolTip";
             this.kpfPage1.UniqueName = "601ED654FB3447B6B3944404A612B730";
+            // 
+            // feUI1
+            // 
+            this.feUI1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI1.EnabledAutoNextPage = true;
+            this.feUI1.EnabledLabelAutoHeight = true;
+            this.feUI1.EnabledLastButton = true;
+            this.feUI1.EnabledNextButton = true;
+            this.feUI1.EnabledSaveButton = true;
+            this.feUI1.Location = new System.Drawing.Point(0, 0);
+            this.feUI1.Name = "feUI1";
+            this.feUI1.ParentForm = null;
+            this.feUI1.RTFEditorNameKey = "feUI";
+            this.feUI1.RTFFileFirstName = "rtpinput_";
+            this.feUI1.Size = new System.Drawing.Size(1254, 598);
+            this.feUI1.TabIndex = 1;
+            this.feUI1.TitleLabelHeight = 24;
+            this.feUI1.TitleLabelText = "简要介绍相关研究对象的基本概念及内涵等";
             // 
             // kpfPage2
             // 
@@ -623,6 +678,24 @@ namespace ProjectReporter
             this.kpfPage2.ToolTipTitle = "Page ToolTip";
             this.kpfPage2.UniqueName = "ABAECFFE58E74F8CD4AB0726EF7D36D1";
             // 
+            // feUI2
+            // 
+            this.feUI2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI2.EnabledAutoNextPage = true;
+            this.feUI2.EnabledLabelAutoHeight = true;
+            this.feUI2.EnabledLastButton = true;
+            this.feUI2.EnabledNextButton = true;
+            this.feUI2.EnabledSaveButton = true;
+            this.feUI2.Location = new System.Drawing.Point(0, 0);
+            this.feUI2.Name = "feUI2";
+            this.feUI2.ParentForm = null;
+            this.feUI2.RTFEditorNameKey = "feUI";
+            this.feUI2.RTFFileFirstName = "rtpinput_";
+            this.feUI2.Size = new System.Drawing.Size(1112, 483);
+            this.feUI2.TabIndex = 1;
+            this.feUI2.TitleLabelHeight = 24;
+            this.feUI2.TitleLabelText = "分析本项目有关军事需求背景，提出面临的困难和瓶颈问题等";
+            // 
             // kpfPage3
             // 
             this.kpfPage3.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -636,6 +709,24 @@ namespace ProjectReporter
             this.kpfPage3.Text = "研究状态";
             this.kpfPage3.ToolTipTitle = "Page ToolTip";
             this.kpfPage3.UniqueName = "BBF2813E462E4E455599AA44FDC01FC7";
+            // 
+            // feUI3
+            // 
+            this.feUI3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI3.EnabledAutoNextPage = true;
+            this.feUI3.EnabledLabelAutoHeight = true;
+            this.feUI3.EnabledLastButton = true;
+            this.feUI3.EnabledNextButton = true;
+            this.feUI3.EnabledSaveButton = true;
+            this.feUI3.Location = new System.Drawing.Point(0, 0);
+            this.feUI3.Name = "feUI3";
+            this.feUI3.ParentForm = null;
+            this.feUI3.RTFEditorNameKey = "feUI";
+            this.feUI3.RTFFileFirstName = "rtpinput_";
+            this.feUI3.Size = new System.Drawing.Size(1254, 598);
+            this.feUI3.TabIndex = 1;
+            this.feUI3.TitleLabelHeight = 48;
+            this.feUI3.TitleLabelText = "全面客观地论述国内与国外研究现状，重点聚焦与本项目核心问题相关的技术研究情况其中包括研究水平、差距与不足等，注重定量描述，避免泛泛而谈";
             // 
             // kpReportPage4
             // 
@@ -678,6 +769,24 @@ namespace ProjectReporter
             this.kryptonPage17.ToolTipTitle = "Page ToolTip";
             this.kryptonPage17.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI4
+            // 
+            this.feUI4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI4.EnabledAutoNextPage = true;
+            this.feUI4.EnabledLabelAutoHeight = true;
+            this.feUI4.EnabledLastButton = true;
+            this.feUI4.EnabledNextButton = true;
+            this.feUI4.EnabledSaveButton = true;
+            this.feUI4.Location = new System.Drawing.Point(0, 0);
+            this.feUI4.Name = "feUI4";
+            this.feUI4.ParentForm = null;
+            this.feUI4.RTFEditorNameKey = "feUI";
+            this.feUI4.RTFFileFirstName = "rtpinput_";
+            this.feUI4.Size = new System.Drawing.Size(1254, 598);
+            this.feUI4.TabIndex = 1;
+            this.feUI4.TitleLabelHeight = 24;
+            this.feUI4.TitleLabelText = "凝练提出项目研究目标，表述需明确、具体、准确，避免过于笼统。";
+            // 
             // kpReportPage5
             // 
             this.kpReportPage5.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -718,6 +827,24 @@ namespace ProjectReporter
             this.kryptonPage18.Text = "基础性问题";
             this.kryptonPage18.ToolTipTitle = "Page ToolTip";
             this.kryptonPage18.UniqueName = "601ED654FB3447B6B3944404A612B730";
+            // 
+            // feUI5
+            // 
+            this.feUI5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI5.EnabledAutoNextPage = true;
+            this.feUI5.EnabledLabelAutoHeight = true;
+            this.feUI5.EnabledLastButton = true;
+            this.feUI5.EnabledNextButton = true;
+            this.feUI5.EnabledSaveButton = true;
+            this.feUI5.Location = new System.Drawing.Point(0, 0);
+            this.feUI5.Name = "feUI5";
+            this.feUI5.ParentForm = null;
+            this.feUI5.RTFEditorNameKey = "feUI";
+            this.feUI5.RTFFileFirstName = "rtpinput_";
+            this.feUI5.Size = new System.Drawing.Size(1254, 598);
+            this.feUI5.TabIndex = 1;
+            this.feUI5.TitleLabelHeight = 24;
+            this.feUI5.TitleLabelText = "围绕项目研究目标，突出国防基础研究的任务特点，梳理提出本项目需要重点研究解决的基础性问题(简要描述每个问题，200字以内)";
             // 
             // kpReportPage6
             // 
@@ -762,6 +889,18 @@ namespace ProjectReporter
             this.kryptonPage19.ToolTipTitle = "Page ToolTip";
             this.kryptonPage19.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI6
+            // 
+            this.feUI6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI6.EnabledAutoNextPage = false;
+            this.feUI6.KeTiList = null;
+            this.feUI6.Location = new System.Drawing.Point(0, 0);
+            this.feUI6.Name = "feUI6";
+            this.feUI6.ParentForm = null;
+            this.feUI6.Size = new System.Drawing.Size(1254, 598);
+            this.feUI6.TabIndex = 0;
+            this.feUI6.UnitList = null;
+            // 
             // kryptonPage16
             // 
             this.kryptonPage16.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -775,6 +914,24 @@ namespace ProjectReporter
             this.kryptonPage16.Text = "课题关系";
             this.kryptonPage16.ToolTipTitle = "Page ToolTip";
             this.kryptonPage16.UniqueName = "0EA59E7B7C584FAB7B913DD4E0F47344";
+            // 
+            // feUI7
+            // 
+            this.feUI7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI7.EnabledAutoNextPage = true;
+            this.feUI7.EnabledLabelAutoHeight = true;
+            this.feUI7.EnabledLastButton = true;
+            this.feUI7.EnabledNextButton = true;
+            this.feUI7.EnabledSaveButton = true;
+            this.feUI7.Location = new System.Drawing.Point(0, 0);
+            this.feUI7.Name = "feUI7";
+            this.feUI7.ParentForm = null;
+            this.feUI7.RTFEditorNameKey = "feUI";
+            this.feUI7.RTFFileFirstName = "rtpinput_";
+            this.feUI7.Size = new System.Drawing.Size(1254, 598);
+            this.feUI7.TabIndex = 0;
+            this.feUI7.TitleLabelHeight = 24;
+            this.feUI7.TitleLabelText = "基础性问题与课题之间的关系、各课题之间的关系（简要叙述，建议500字之内，可用图表示）";
             // 
             // kpReportPage7
             // 
@@ -820,6 +977,25 @@ namespace ProjectReporter
             this.kryptonPage20.ToolTipTitle = "Page ToolTip";
             this.kryptonPage20.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI8
+            // 
+            this.feUI8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI8.EnabledAutoNextPage = true;
+            this.feUI8.EnabledLabelAutoHeight = true;
+            this.feUI8.EnabledLastButton = true;
+            this.feUI8.EnabledNextButton = true;
+            this.feUI8.EnabledSaveButton = true;
+            this.feUI8.Location = new System.Drawing.Point(0, 0);
+            this.feUI8.Name = "feUI8";
+            this.feUI8.ParentForm = null;
+            this.feUI8.RTFEditorNameKey = "feUI";
+            this.feUI8.RTFFileFirstName = "rtpinput_";
+            this.feUI8.Size = new System.Drawing.Size(1254, 598);
+            this.feUI8.TabIndex = 0;
+            this.feUI8.TitleLabelHeight = 48;
+            this.feUI8.TitleLabelText = "分类逐项列出研究成果及考核指标。研究成果形式包括研究报告、试验（测试）方案、试验（测试）结果分析报告、样品、样机、试验（验证）系统、数据库、软件、工程工艺、标准（" +
+    "规范）等。指标体系应系统完整。";
+            // 
             // kryptonPage56
             // 
             this.kryptonPage56.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -834,6 +1010,25 @@ namespace ProjectReporter
             this.kryptonPage56.ToolTipTitle = "Page ToolTip";
             this.kryptonPage56.UniqueName = "574DDD6C923E47C0F39DA10BA065E942";
             // 
+            // feUI9
+            // 
+            this.feUI9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI9.EnabledAutoNextPage = true;
+            this.feUI9.EnabledLabelAutoHeight = true;
+            this.feUI9.EnabledLastButton = true;
+            this.feUI9.EnabledNextButton = true;
+            this.feUI9.EnabledSaveButton = true;
+            this.feUI9.Location = new System.Drawing.Point(0, 0);
+            this.feUI9.Name = "feUI9";
+            this.feUI9.ParentForm = null;
+            this.feUI9.RTFEditorNameKey = "feUI";
+            this.feUI9.RTFFileFirstName = "rtpinput_";
+            this.feUI9.Size = new System.Drawing.Size(1254, 598);
+            this.feUI9.TabIndex = 1;
+            this.feUI9.TitleLabelHeight = 48;
+            this.feUI9.TitleLabelText = "围绕课题的研究成果及考核指标，提出具体的评估方案。可考虑通过国标、检测机构、企业标准测量、实验等多种方法，具体落实各项指标的评测。对可能影响指标评测结果的各种边界" +
+    "因素条件，均应明确说明，避免理解歧义。";
+            // 
             // kryptonPage34
             // 
             this.kryptonPage34.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -847,6 +1042,24 @@ namespace ProjectReporter
             this.kryptonPage34.Text = "预期收益";
             this.kryptonPage34.ToolTipTitle = "Page ToolTip";
             this.kryptonPage34.UniqueName = "754BF6994CBD4D55D0B8360A0FB0EBB3";
+            // 
+            // feUI10
+            // 
+            this.feUI10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI10.EnabledAutoNextPage = true;
+            this.feUI10.EnabledLabelAutoHeight = true;
+            this.feUI10.EnabledLastButton = true;
+            this.feUI10.EnabledNextButton = true;
+            this.feUI10.EnabledSaveButton = true;
+            this.feUI10.Location = new System.Drawing.Point(0, 0);
+            this.feUI10.Name = "feUI10";
+            this.feUI10.ParentForm = null;
+            this.feUI10.RTFEditorNameKey = "feUI";
+            this.feUI10.RTFFileFirstName = "rtpinput_";
+            this.feUI10.Size = new System.Drawing.Size(1254, 598);
+            this.feUI10.TabIndex = 1;
+            this.feUI10.TitleLabelHeight = 24;
+            this.feUI10.TitleLabelText = "简要描述该项目研究成果得到应用后，对解决国防科技现实瓶颈问题和支撑未来技术发展方面的预期支撑作用。";
             // 
             // kpReportPage8
             // 
@@ -891,6 +1104,18 @@ namespace ProjectReporter
             this.kryptonPage21.ToolTipTitle = "Page ToolTip";
             this.kryptonPage21.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI11
+            // 
+            this.feUI11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI11.EnabledAutoNextPage = true;
+            this.feUI11.KeTiList = null;
+            this.feUI11.Location = new System.Drawing.Point(0, 0);
+            this.feUI11.Name = "feUI11";
+            this.feUI11.ParentForm = null;
+            this.feUI11.Size = new System.Drawing.Size(1254, 598);
+            this.feUI11.StepList = null;
+            this.feUI11.TabIndex = 0;
+            // 
             // kryptonPage32
             // 
             this.kryptonPage32.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -904,6 +1129,18 @@ namespace ProjectReporter
             this.kryptonPage32.Text = "课题阶段划分和经费安排";
             this.kryptonPage32.ToolTipTitle = "Page ToolTip";
             this.kryptonPage32.UniqueName = "495C9294D0324F2FC4A9E7BAF9BBDADF";
+            // 
+            // feUI13
+            // 
+            this.feUI13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI13.EnabledAutoNextPage = true;
+            this.feUI13.KeTiList = null;
+            this.feUI13.Location = new System.Drawing.Point(0, 0);
+            this.feUI13.Name = "feUI13";
+            this.feUI13.ParentForm = null;
+            this.feUI13.Size = new System.Drawing.Size(1254, 598);
+            this.feUI13.StepList = null;
+            this.feUI13.TabIndex = 0;
             // 
             // kpReportPage9
             // 
@@ -948,6 +1185,25 @@ namespace ProjectReporter
             this.kryptonPage22.ToolTipTitle = "Page ToolTip";
             this.kryptonPage22.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI14
+            // 
+            this.feUI14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI14.EnabledAutoNextPage = true;
+            this.feUI14.EnabledLabelAutoHeight = true;
+            this.feUI14.EnabledLastButton = true;
+            this.feUI14.EnabledNextButton = true;
+            this.feUI14.EnabledSaveButton = true;
+            this.feUI14.Location = new System.Drawing.Point(0, 0);
+            this.feUI14.Name = "feUI14";
+            this.feUI14.ParentForm = null;
+            this.feUI14.RTFEditorNameKey = "feUI";
+            this.feUI14.RTFFileFirstName = "rtpinput_";
+            this.feUI14.Size = new System.Drawing.Size(1254, 598);
+            this.feUI14.TabIndex = 0;
+            this.feUI14.TitleLabelHeight = 48;
+            this.feUI14.TitleLabelText = "介绍项目负责人的职务职称、受教育情况、履历，代表性论文、专著、专利、奖励、人才计划资助情况，以及近五年主持的相关国家科技计划项目情况，限800字以内。要求实事求是" +
+    "填报，有关信息纳入科研诚信评价体系。";
+            // 
             // kryptonPage36
             // 
             this.kryptonPage36.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -962,6 +1218,25 @@ namespace ProjectReporter
             this.kryptonPage36.ToolTipTitle = "Page ToolTip";
             this.kryptonPage36.UniqueName = "F752A029EC6448616BB52A255B09A3EB";
             // 
+            // feUI15
+            // 
+            this.feUI15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI15.EnabledAutoNextPage = true;
+            this.feUI15.EnabledLabelAutoHeight = true;
+            this.feUI15.EnabledLastButton = true;
+            this.feUI15.EnabledNextButton = true;
+            this.feUI15.EnabledSaveButton = true;
+            this.feUI15.Location = new System.Drawing.Point(0, 0);
+            this.feUI15.Name = "feUI15";
+            this.feUI15.ParentForm = null;
+            this.feUI15.RTFEditorNameKey = "feUI";
+            this.feUI15.RTFFileFirstName = "rtpinput_";
+            this.feUI15.Size = new System.Drawing.Size(1254, 598);
+            this.feUI15.TabIndex = 0;
+            this.feUI15.TitleLabelHeight = 48;
+            this.feUI15.TitleLabelText = "简要介绍本项目除项目负责人外的课题负责人的职务职称、受教育情况、履历，代表性论文、专著、专利、奖励、人才计划资助情况，以及近五年主持的相关国家科技计划项目情况，限" +
+    "1000字以内。要求实事求是填报，有关信息纳入科研诚信评价体系。";
+            // 
             // kryptonPage37
             // 
             this.kryptonPage37.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -975,6 +1250,18 @@ namespace ProjectReporter
             this.kryptonPage37.Text = "负责人及研究骨干情况表";
             this.kryptonPage37.ToolTipTitle = "Page ToolTip";
             this.kryptonPage37.UniqueName = "028323267E084C75BB94C0590A833220";
+            // 
+            // feUI16
+            // 
+            this.feUI16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI16.EnabledAutoNextPage = true;
+            this.feUI16.Location = new System.Drawing.Point(0, 0);
+            this.feUI16.Name = "feUI16";
+            this.feUI16.ParentForm = null;
+            this.feUI16.PersonList = null;
+            this.feUI16.Size = new System.Drawing.Size(1254, 598);
+            this.feUI16.TabIndex = 0;
+            this.feUI16.TaskList = null;
             // 
             // kpReportPage10
             // 
@@ -1017,6 +1304,24 @@ namespace ProjectReporter
             this.kryptonPage23.ToolTipTitle = "Page ToolTip";
             this.kryptonPage23.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI17
+            // 
+            this.feUI17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI17.EnabledAutoNextPage = true;
+            this.feUI17.EnabledLabelAutoHeight = true;
+            this.feUI17.EnabledLastButton = true;
+            this.feUI17.EnabledNextButton = true;
+            this.feUI17.EnabledSaveButton = true;
+            this.feUI17.Location = new System.Drawing.Point(0, 0);
+            this.feUI17.Name = "feUI17";
+            this.feUI17.ParentForm = null;
+            this.feUI17.RTFEditorNameKey = "feUI";
+            this.feUI17.RTFFileFirstName = "rtpinput_";
+            this.feUI17.Size = new System.Drawing.Size(1254, 598);
+            this.feUI17.TabIndex = 0;
+            this.feUI17.TitleLabelHeight = 24;
+            this.feUI17.TitleLabelText = "已有研究基础和软硬件保障条件，包括国家研究中心、国家重点实验室、国家工程（技术）中心等，以及自筹经费情况，800字以内";
+            // 
             // kpReportPage11
             // 
             this.kpReportPage11.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -1057,6 +1362,24 @@ namespace ProjectReporter
             this.kryptonPage24.Text = "组织实施与风险控制";
             this.kryptonPage24.ToolTipTitle = "Page ToolTip";
             this.kryptonPage24.UniqueName = "601ED654FB3447B6B3944404A612B730";
+            // 
+            // feUI18
+            // 
+            this.feUI18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI18.EnabledAutoNextPage = true;
+            this.feUI18.EnabledLabelAutoHeight = true;
+            this.feUI18.EnabledLastButton = true;
+            this.feUI18.EnabledNextButton = true;
+            this.feUI18.EnabledSaveButton = true;
+            this.feUI18.Location = new System.Drawing.Point(0, 0);
+            this.feUI18.Name = "feUI18";
+            this.feUI18.ParentForm = null;
+            this.feUI18.RTFEditorNameKey = "feUI";
+            this.feUI18.RTFFileFirstName = "rtpinput_";
+            this.feUI18.Size = new System.Drawing.Size(1254, 598);
+            this.feUI18.TabIndex = 0;
+            this.feUI18.TitleLabelHeight = 24;
+            this.feUI18.TitleLabelText = "对本项目可能存在的技术和管理风险进行分析，提出思路举措，500字以内";
             // 
             // kpReportPage12
             // 
@@ -1099,6 +1422,24 @@ namespace ProjectReporter
             this.kryptonPage25.ToolTipTitle = "Page ToolTip";
             this.kryptonPage25.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI19
+            // 
+            this.feUI19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI19.EnabledAutoNextPage = true;
+            this.feUI19.EnabledLabelAutoHeight = true;
+            this.feUI19.EnabledLastButton = true;
+            this.feUI19.EnabledNextButton = true;
+            this.feUI19.EnabledSaveButton = true;
+            this.feUI19.Location = new System.Drawing.Point(0, 0);
+            this.feUI19.Name = "feUI19";
+            this.feUI19.ParentForm = null;
+            this.feUI19.RTFEditorNameKey = "feUI";
+            this.feUI19.RTFFileFirstName = "rtpinput_";
+            this.feUI19.Size = new System.Drawing.Size(1254, 598);
+            this.feUI19.TabIndex = 0;
+            this.feUI19.TitleLabelHeight = 24;
+            this.feUI19.TitleLabelText = "介绍与本项目研究内容相关的国家和军队各类科技计划安排情况，对本项目与有关计划安排的界面关系进行说明。";
+            // 
             // kpReportPage13
             // 
             this.kpReportPage13.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -1139,6 +1480,16 @@ namespace ProjectReporter
             this.kryptonPage26.Text = "经费预算表";
             this.kryptonPage26.ToolTipTitle = "Page ToolTip";
             this.kryptonPage26.UniqueName = "601ED654FB3447B6B3944404A612B730";
+            // 
+            // feUI20
+            // 
+            this.feUI20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI20.EnabledAutoNextPage = true;
+            this.feUI20.Location = new System.Drawing.Point(0, 0);
+            this.feUI20.Name = "feUI20";
+            this.feUI20.ParentForm = null;
+            this.feUI20.Size = new System.Drawing.Size(1254, 598);
+            this.feUI20.TabIndex = 0;
             // 
             // kpReportPage14
             // 
@@ -1183,6 +1534,16 @@ namespace ProjectReporter
             this.kryptonPage27.ToolTipTitle = "Page ToolTip";
             this.kryptonPage27.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI21
+            // 
+            this.feUI21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI21.EnabledAutoNextPage = true;
+            this.feUI21.Location = new System.Drawing.Point(0, 0);
+            this.feUI21.Name = "feUI21";
+            this.feUI21.ParentForm = null;
+            this.feUI21.Size = new System.Drawing.Size(1254, 598);
+            this.feUI21.TabIndex = 0;
+            // 
             // kryptonPage38
             // 
             this.kryptonPage38.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -1197,6 +1558,17 @@ namespace ProjectReporter
             this.kryptonPage38.ToolTipTitle = "Page ToolTip";
             this.kryptonPage38.UniqueName = "227CA1483BF642FD51853E16BE752DBA";
             // 
+            // feUI22
+            // 
+            this.feUI22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI22.EnabledAutoNextPage = true;
+            this.feUI22.Location = new System.Drawing.Point(0, 0);
+            this.feUI22.Name = "feUI22";
+            this.feUI22.ParentForm = null;
+            this.feUI22.Size = new System.Drawing.Size(1112, 483);
+            this.feUI22.TabIndex = 0;
+            this.feUI22.WhiteDataList = null;
+            // 
             // kryptonPage39
             // 
             this.kryptonPage39.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -1210,6 +1582,17 @@ namespace ProjectReporter
             this.kryptonPage39.Text = "课题负责人联系方式";
             this.kryptonPage39.ToolTipTitle = "Page ToolTip";
             this.kryptonPage39.UniqueName = "4F697550E94641F0CCB45CBC51B8FCC0";
+            // 
+            // feUI23
+            // 
+            this.feUI23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI23.EnabledAutoNextPage = true;
+            this.feUI23.KeTiList = null;
+            this.feUI23.Location = new System.Drawing.Point(0, 0);
+            this.feUI23.Name = "feUI23";
+            this.feUI23.ParentForm = null;
+            this.feUI23.Size = new System.Drawing.Size(1112, 483);
+            this.feUI23.TabIndex = 0;
             // 
             // kpReportPage15
             // 
@@ -1252,6 +1635,17 @@ namespace ProjectReporter
             this.kryptonPage28.ToolTipTitle = "Page ToolTip";
             this.kryptonPage28.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI24
+            // 
+            this.feUI24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI24.EnabledAutoNextPage = true;
+            this.feUI24.FilePath = null;
+            this.feUI24.Location = new System.Drawing.Point(0, 0);
+            this.feUI24.Name = "feUI24";
+            this.feUI24.ParentForm = null;
+            this.feUI24.Size = new System.Drawing.Size(1214, 599);
+            this.feUI24.TabIndex = 0;
+            // 
             // kpReportPage16
             // 
             this.kpReportPage16.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -1293,380 +1687,6 @@ namespace ProjectReporter
             this.kryptonPage29.ToolTipTitle = "Page ToolTip";
             this.kryptonPage29.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
-            // topBanner
-            // 
-            this.topBanner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topBanner.Location = new System.Drawing.Point(0, 0);
-            this.topBanner.Name = "topBanner";
-            this.topBanner.Size = new System.Drawing.Size(1366, 120);
-            this.topBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.topBanner.TabIndex = 0;
-            this.topBanner.TabStop = false;
-            // 
-            // txtReportReadme
-            // 
-            this.txtReportReadme.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReportReadme.Location = new System.Drawing.Point(0, 0);
-            this.txtReportReadme.Name = "txtReportReadme";
-            this.txtReportReadme.Size = new System.Drawing.Size(1254, 598);
-            this.txtReportReadme.TabIndex = 0;
-            this.txtReportReadme.Text = "";
-            // 
-            // fnpDefault
-            // 
-            this.fnpDefault.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fnpDefault.EnabledAutoNextPage = true;
-            this.fnpDefault.Location = new System.Drawing.Point(0, 0);
-            this.fnpDefault.Name = "fnpDefault";
-            this.fnpDefault.ParentForm = null;
-            this.fnpDefault.Size = new System.Drawing.Size(1254, 598);
-            this.fnpDefault.TabIndex = 3;
-            // 
-            // feUI0
-            // 
-            this.feUI0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI0.EnabledAutoNextPage = true;
-            this.feUI0.EnabledLastButton = false;
-            this.feUI0.EnabledNextButton = true;
-            this.feUI0.EnabledSaveButton = true;
-            this.feUI0.Location = new System.Drawing.Point(0, 0);
-            this.feUI0.Name = "feUI0";
-            this.feUI0.ParentForm = null;
-            this.feUI0.RTFEditorNameKey = "feUI";
-            this.feUI0.RTFFileFirstName = "rtpinput_";
-            this.feUI0.Size = new System.Drawing.Size(1254, 598);
-            this.feUI0.TabIndex = 0;
-            this.feUI0.TitleLabelText = resources.GetString("feUI0.TitleLabelText");
-            // 
-            // feUI1
-            // 
-            this.feUI1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI1.EnabledAutoNextPage = true;
-            this.feUI1.EnabledLastButton = true;
-            this.feUI1.EnabledNextButton = true;
-            this.feUI1.EnabledSaveButton = true;
-            this.feUI1.Location = new System.Drawing.Point(0, 0);
-            this.feUI1.Name = "feUI1";
-            this.feUI1.ParentForm = null;
-            this.feUI1.RTFEditorNameKey = "feUI";
-            this.feUI1.RTFFileFirstName = "rtpinput_";
-            this.feUI1.Size = new System.Drawing.Size(1254, 598);
-            this.feUI1.TabIndex = 1;
-            this.feUI1.TitleLabelText = "简要介绍相关研究对象的基本概念及内涵等";
-            // 
-            // feUI2
-            // 
-            this.feUI2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI2.EnabledAutoNextPage = true;
-            this.feUI2.EnabledLastButton = true;
-            this.feUI2.EnabledNextButton = true;
-            this.feUI2.EnabledSaveButton = true;
-            this.feUI2.Location = new System.Drawing.Point(0, 0);
-            this.feUI2.Name = "feUI2";
-            this.feUI2.ParentForm = null;
-            this.feUI2.RTFEditorNameKey = "feUI";
-            this.feUI2.RTFFileFirstName = "rtpinput_";
-            this.feUI2.Size = new System.Drawing.Size(1112, 483);
-            this.feUI2.TabIndex = 1;
-            this.feUI2.TitleLabelText = "分析本项目有关军事需求背景，提出面临的困难和瓶颈问题等";
-            // 
-            // feUI3
-            // 
-            this.feUI3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI3.EnabledAutoNextPage = true;
-            this.feUI3.EnabledLastButton = true;
-            this.feUI3.EnabledNextButton = true;
-            this.feUI3.EnabledSaveButton = true;
-            this.feUI3.Location = new System.Drawing.Point(0, 0);
-            this.feUI3.Name = "feUI3";
-            this.feUI3.ParentForm = null;
-            this.feUI3.RTFEditorNameKey = "feUI";
-            this.feUI3.RTFFileFirstName = "rtpinput_";
-            this.feUI3.Size = new System.Drawing.Size(1254, 598);
-            this.feUI3.TabIndex = 1;
-            this.feUI3.TitleLabelText = "全面客观地论述国内与国外研究现状，重点聚焦与本项目核心问题相关的技术研究情况其中包括研究水平、差距与不足等，注重定量描述，避免泛泛而谈";
-            // 
-            // feUI4
-            // 
-            this.feUI4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI4.EnabledAutoNextPage = true;
-            this.feUI4.EnabledLastButton = true;
-            this.feUI4.EnabledNextButton = true;
-            this.feUI4.EnabledSaveButton = true;
-            this.feUI4.Location = new System.Drawing.Point(0, 0);
-            this.feUI4.Name = "feUI4";
-            this.feUI4.ParentForm = null;
-            this.feUI4.RTFEditorNameKey = "feUI";
-            this.feUI4.RTFFileFirstName = "rtpinput_";
-            this.feUI4.Size = new System.Drawing.Size(1254, 598);
-            this.feUI4.TabIndex = 1;
-            this.feUI4.TitleLabelText = "凝练提出项目研究目标，表述需明确、具体、准确，避免过于笼统。";
-            // 
-            // feUI5
-            // 
-            this.feUI5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI5.EnabledAutoNextPage = true;
-            this.feUI5.EnabledLastButton = true;
-            this.feUI5.EnabledNextButton = true;
-            this.feUI5.EnabledSaveButton = true;
-            this.feUI5.Location = new System.Drawing.Point(0, 0);
-            this.feUI5.Name = "feUI5";
-            this.feUI5.ParentForm = null;
-            this.feUI5.RTFEditorNameKey = "feUI";
-            this.feUI5.RTFFileFirstName = "rtpinput_";
-            this.feUI5.Size = new System.Drawing.Size(1254, 598);
-            this.feUI5.TabIndex = 1;
-            this.feUI5.TitleLabelText = "围绕项目研究目标，突出国防基础研究的任务特点，梳理提出本项目需要重点研究解决的基础性问题(简要描述每个问题，200字以内)";
-            // 
-            // feUI6
-            // 
-            this.feUI6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI6.EnabledAutoNextPage = false;
-            this.feUI6.KeTiList = null;
-            this.feUI6.Location = new System.Drawing.Point(0, 0);
-            this.feUI6.Name = "feUI6";
-            this.feUI6.ParentForm = null;
-            this.feUI6.Size = new System.Drawing.Size(1254, 598);
-            this.feUI6.TabIndex = 0;
-            this.feUI6.UnitList = null;
-            // 
-            // feUI7
-            // 
-            this.feUI7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI7.EnabledAutoNextPage = true;
-            this.feUI7.EnabledLastButton = true;
-            this.feUI7.EnabledNextButton = true;
-            this.feUI7.EnabledSaveButton = true;
-            this.feUI7.Location = new System.Drawing.Point(0, 0);
-            this.feUI7.Name = "feUI7";
-            this.feUI7.ParentForm = null;
-            this.feUI7.RTFEditorNameKey = "feUI";
-            this.feUI7.RTFFileFirstName = "rtpinput_";
-            this.feUI7.Size = new System.Drawing.Size(1254, 598);
-            this.feUI7.TabIndex = 0;
-            this.feUI7.TitleLabelText = "基础性问题与课题之间的关系、各课题之间的关系（简要叙述，建议500字之内，可用图表示）";
-            // 
-            // feUI8
-            // 
-            this.feUI8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI8.EnabledAutoNextPage = true;
-            this.feUI8.EnabledLastButton = true;
-            this.feUI8.EnabledNextButton = true;
-            this.feUI8.EnabledSaveButton = true;
-            this.feUI8.Location = new System.Drawing.Point(0, 0);
-            this.feUI8.Name = "feUI8";
-            this.feUI8.ParentForm = null;
-            this.feUI8.RTFEditorNameKey = "feUI";
-            this.feUI8.RTFFileFirstName = "rtpinput_";
-            this.feUI8.Size = new System.Drawing.Size(1254, 598);
-            this.feUI8.TabIndex = 0;
-            this.feUI8.TitleLabelText = "分类逐项列出研究成果及考核指标。研究成果形式包括研究报告、试验（测试）方案、试验（测试）结果分析报告、样品、样机、试验（验证）系统、数据库、软件、工程工艺、标准（" +
-    "规范）等。指标体系应系统完整。";
-            // 
-            // feUI9
-            // 
-            this.feUI9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI9.EnabledAutoNextPage = true;
-            this.feUI9.EnabledLastButton = true;
-            this.feUI9.EnabledNextButton = true;
-            this.feUI9.EnabledSaveButton = true;
-            this.feUI9.Location = new System.Drawing.Point(0, 0);
-            this.feUI9.Name = "feUI9";
-            this.feUI9.ParentForm = null;
-            this.feUI9.RTFEditorNameKey = "feUI";
-            this.feUI9.RTFFileFirstName = "rtpinput_";
-            this.feUI9.Size = new System.Drawing.Size(1254, 598);
-            this.feUI9.TabIndex = 1;
-            this.feUI9.TitleLabelText = "围绕课题的研究成果及考核指标，提出具体的评估方案。可考虑通过国标、检测机构、企业标准测量、实验等多种方法，具体落实各项指标的评测。对可能影响指标评测结果的各种边界" +
-    "因素条件，均应明确说明，避免理解歧义。";
-            // 
-            // feUI10
-            // 
-            this.feUI10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI10.EnabledAutoNextPage = true;
-            this.feUI10.EnabledLastButton = true;
-            this.feUI10.EnabledNextButton = true;
-            this.feUI10.EnabledSaveButton = true;
-            this.feUI10.Location = new System.Drawing.Point(0, 0);
-            this.feUI10.Name = "feUI10";
-            this.feUI10.ParentForm = null;
-            this.feUI10.RTFEditorNameKey = "feUI";
-            this.feUI10.RTFFileFirstName = "rtpinput_";
-            this.feUI10.Size = new System.Drawing.Size(1254, 598);
-            this.feUI10.TabIndex = 1;
-            this.feUI10.TitleLabelText = "简要描述该项目研究成果得到应用后，对解决国防科技现实瓶颈问题和支撑未来技术发展方面的预期支撑作用。";
-            // 
-            // feUI11
-            // 
-            this.feUI11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI11.EnabledAutoNextPage = true;
-            this.feUI11.KeTiList = null;
-            this.feUI11.Location = new System.Drawing.Point(0, 0);
-            this.feUI11.Name = "feUI11";
-            this.feUI11.ParentForm = null;
-            this.feUI11.Size = new System.Drawing.Size(1254, 598);
-            this.feUI11.StepList = null;
-            this.feUI11.TabIndex = 0;
-            // 
-            // feUI13
-            // 
-            this.feUI13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI13.EnabledAutoNextPage = true;
-            this.feUI13.KeTiList = null;
-            this.feUI13.Location = new System.Drawing.Point(0, 0);
-            this.feUI13.Name = "feUI13";
-            this.feUI13.ParentForm = null;
-            this.feUI13.Size = new System.Drawing.Size(1254, 598);
-            this.feUI13.StepList = null;
-            this.feUI13.TabIndex = 0;
-            // 
-            // feUI14
-            // 
-            this.feUI14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI14.EnabledAutoNextPage = true;
-            this.feUI14.EnabledLastButton = true;
-            this.feUI14.EnabledNextButton = true;
-            this.feUI14.EnabledSaveButton = true;
-            this.feUI14.Location = new System.Drawing.Point(0, 0);
-            this.feUI14.Name = "feUI14";
-            this.feUI14.ParentForm = null;
-            this.feUI14.RTFEditorNameKey = "feUI";
-            this.feUI14.RTFFileFirstName = "rtpinput_";
-            this.feUI14.Size = new System.Drawing.Size(1254, 598);
-            this.feUI14.TabIndex = 0;
-            this.feUI14.TitleLabelText = "介绍项目负责人的职务职称、受教育情况、履历，代表性论文、专著、专利、奖励、人才计划资助情况，以及近五年主持的相关国家科技计划项目情况，限800字以内。要求实事求是" +
-    "填报，有关信息纳入科研诚信评价体系。";
-            // 
-            // feUI15
-            // 
-            this.feUI15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI15.EnabledAutoNextPage = true;
-            this.feUI15.EnabledLastButton = true;
-            this.feUI15.EnabledNextButton = true;
-            this.feUI15.EnabledSaveButton = true;
-            this.feUI15.Location = new System.Drawing.Point(0, 0);
-            this.feUI15.Name = "feUI15";
-            this.feUI15.ParentForm = null;
-            this.feUI15.RTFEditorNameKey = "feUI";
-            this.feUI15.RTFFileFirstName = "rtpinput_";
-            this.feUI15.Size = new System.Drawing.Size(1254, 598);
-            this.feUI15.TabIndex = 0;
-            this.feUI15.TitleLabelText = "简要介绍本项目除项目负责人外的课题负责人的职务职称、受教育情况、履历，代表性论文、专著、专利、奖励、人才计划资助情况，以及近五年主持的相关国家科技计划项目情况，限" +
-    "1000字以内。要求实事求是填报，有关信息纳入科研诚信评价体系。";
-            // 
-            // feUI16
-            // 
-            this.feUI16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI16.EnabledAutoNextPage = true;
-            this.feUI16.Location = new System.Drawing.Point(0, 0);
-            this.feUI16.Name = "feUI16";
-            this.feUI16.ParentForm = null;
-            this.feUI16.PersonList = null;
-            this.feUI16.Size = new System.Drawing.Size(1254, 598);
-            this.feUI16.TabIndex = 0;
-            this.feUI16.TaskList = null;
-            // 
-            // feUI17
-            // 
-            this.feUI17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI17.EnabledAutoNextPage = true;
-            this.feUI17.EnabledLastButton = true;
-            this.feUI17.EnabledNextButton = true;
-            this.feUI17.EnabledSaveButton = true;
-            this.feUI17.Location = new System.Drawing.Point(0, 0);
-            this.feUI17.Name = "feUI17";
-            this.feUI17.ParentForm = null;
-            this.feUI17.RTFEditorNameKey = "feUI";
-            this.feUI17.RTFFileFirstName = "rtpinput_";
-            this.feUI17.Size = new System.Drawing.Size(1254, 598);
-            this.feUI17.TabIndex = 0;
-            this.feUI17.TitleLabelText = "已有研究基础和软硬件保障条件，包括国家研究中心、国家重点实验室、国家工程（技术）中心等，以及自筹经费情况，800字以内";
-            // 
-            // feUI18
-            // 
-            this.feUI18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI18.EnabledAutoNextPage = true;
-            this.feUI18.EnabledLastButton = true;
-            this.feUI18.EnabledNextButton = true;
-            this.feUI18.EnabledSaveButton = true;
-            this.feUI18.Location = new System.Drawing.Point(0, 0);
-            this.feUI18.Name = "feUI18";
-            this.feUI18.ParentForm = null;
-            this.feUI18.RTFEditorNameKey = "feUI";
-            this.feUI18.RTFFileFirstName = "rtpinput_";
-            this.feUI18.Size = new System.Drawing.Size(1254, 598);
-            this.feUI18.TabIndex = 0;
-            this.feUI18.TitleLabelText = "对本项目可能存在的技术和管理风险进行分析，提出思路举措，500字以内";
-            // 
-            // feUI19
-            // 
-            this.feUI19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI19.EnabledAutoNextPage = true;
-            this.feUI19.EnabledLastButton = true;
-            this.feUI19.EnabledNextButton = true;
-            this.feUI19.EnabledSaveButton = true;
-            this.feUI19.Location = new System.Drawing.Point(0, 0);
-            this.feUI19.Name = "feUI19";
-            this.feUI19.ParentForm = null;
-            this.feUI19.RTFEditorNameKey = "feUI";
-            this.feUI19.RTFFileFirstName = "rtpinput_";
-            this.feUI19.Size = new System.Drawing.Size(1254, 598);
-            this.feUI19.TabIndex = 0;
-            this.feUI19.TitleLabelText = "介绍与本项目研究内容相关的国家和军队各类科技计划安排情况，对本项目与有关计划安排的界面关系进行说明。";
-            // 
-            // feUI20
-            // 
-            this.feUI20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI20.EnabledAutoNextPage = true;
-            this.feUI20.Location = new System.Drawing.Point(0, 0);
-            this.feUI20.Name = "feUI20";
-            this.feUI20.ParentForm = null;
-            this.feUI20.Size = new System.Drawing.Size(1254, 598);
-            this.feUI20.TabIndex = 0;
-            // 
-            // feUI21
-            // 
-            this.feUI21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI21.EnabledAutoNextPage = true;
-            this.feUI21.Location = new System.Drawing.Point(0, 0);
-            this.feUI21.Name = "feUI21";
-            this.feUI21.ParentForm = null;
-            this.feUI21.Size = new System.Drawing.Size(1254, 598);
-            this.feUI21.TabIndex = 0;
-            // 
-            // feUI22
-            // 
-            this.feUI22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI22.EnabledAutoNextPage = true;
-            this.feUI22.Location = new System.Drawing.Point(0, 0);
-            this.feUI22.Name = "feUI22";
-            this.feUI22.ParentForm = null;
-            this.feUI22.Size = new System.Drawing.Size(1112, 483);
-            this.feUI22.TabIndex = 0;
-            this.feUI22.WhiteDataList = null;
-            // 
-            // feUI23
-            // 
-            this.feUI23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI23.EnabledAutoNextPage = true;
-            this.feUI23.KeTiList = null;
-            this.feUI23.Location = new System.Drawing.Point(0, 0);
-            this.feUI23.Name = "feUI23";
-            this.feUI23.ParentForm = null;
-            this.feUI23.Size = new System.Drawing.Size(1112, 483);
-            this.feUI23.TabIndex = 0;
-            // 
-            // feUI24
-            // 
-            this.feUI24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI24.EnabledAutoNextPage = true;
-            this.feUI24.FilePath = null;
-            this.feUI24.Location = new System.Drawing.Point(0, 0);
-            this.feUI24.Name = "feUI24";
-            this.feUI24.ParentForm = null;
-            this.feUI24.Size = new System.Drawing.Size(1214, 599);
-            this.feUI24.TabIndex = 0;
-            // 
             // feUI25
             // 
             this.feUI25.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1677,6 +1697,16 @@ namespace ProjectReporter
             this.feUI25.ParentForm = null;
             this.feUI25.Size = new System.Drawing.Size(1214, 599);
             this.feUI25.TabIndex = 0;
+            // 
+            // topBanner
+            // 
+            this.topBanner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topBanner.Location = new System.Drawing.Point(0, 0);
+            this.topBanner.Name = "topBanner";
+            this.topBanner.Size = new System.Drawing.Size(1366, 120);
+            this.topBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.topBanner.TabIndex = 0;
+            this.topBanner.TabStop = false;
             // 
             // kpcontact
             // 
