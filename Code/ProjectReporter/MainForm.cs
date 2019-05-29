@@ -118,7 +118,7 @@ namespace ProjectReporter
                 return;
             }
 
-            if (!this.IsErrorMoneyOrTime())
+            if (!this.IsRightMoneyOrTime())
             {
                 return;
             }
@@ -719,7 +719,7 @@ namespace ProjectReporter
         /// 检查时间与金额一致性
         /// </summary>
         /// <returns></returns>
-        private bool IsErrorMoneyOrTime()
+        private bool IsRightMoneyOrTime()
         {
             //项目总时间
             int totalTime = ConnectionManager.Context.table("Project").where("Type = '项目'").select("TotalTime").getValue<int>(0);
@@ -762,8 +762,8 @@ namespace ProjectReporter
                     try
                     {
                         int stepIndex = di.getInt("StepIndex");
-                        double stepMoney = di.getDouble("StepMoney");
-                        double subjectStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where Type = '课题') and StepIndex = " + stepIndex + ")").select("sum(Money)").getValue<double>(0);
+                        long stepMoney = long.Parse(di.get("StepMoney").ToString());
+                        long subjectStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where Type = '课题') and StepIndex = " + stepIndex + ")").select("sum(Money)").getValue<long>(0);
 
                         //判断阶段经费是不是相等
                         if (stepMoney == subjectStepMoney)
@@ -775,26 +775,29 @@ namespace ProjectReporter
                 }
             }
 
-            if (totalMoney == projectMoney)
+            if (totalMoney != projectMoney)
             {
-                MessageBox.Show("对不起，项目总经费与经费表总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }else if (totalMoney == totalStepMoney)
+                MessageBox.Show("对不起，项目总金额与经费表总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (totalMoney != totalStepMoney)
             {
-                MessageBox.Show("对不起，项目总经费与阶段总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }else if (totalMoney == totalKetiStepMoney)
+                MessageBox.Show("对不起，项目总金额与阶段总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (totalMoney != totalKetiStepMoney)
             {
-                MessageBox.Show("对不起，项目总经费与课题阶段总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }else if (totalTime == totalStepTime)
+                MessageBox.Show("对不起，项目总金额与课题阶段总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (totalTime != totalStepTime)
             {
                 MessageBox.Show("对不起，项目总时间与阶段总时间不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (totalRightStepCount != totalStepCount)
             {
-                MessageBox.Show("对不起，阶段经费与课题阶段金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("对不起，阶段金额与课题阶段金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             //判断条件是否符合
-            return totalMoney == projectMoney && totalMoney == totalStepMoney && totalMoney == totalKetiStepMoney && totalTime == totalStepTime && totalRightStepCount != totalStepCount;
+            return totalMoney == projectMoney && totalMoney == totalStepMoney && totalMoney == totalKetiStepMoney && totalTime == totalStepTime && totalRightStepCount == totalStepCount;
         }
     }
 }
