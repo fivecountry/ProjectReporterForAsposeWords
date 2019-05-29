@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,6 +38,7 @@
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colXingMing = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colGongZuoDanWei = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,11 +47,11 @@
             this.colXiangMuZhongZhiWu = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colRenWuFenGong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMeiNianGongZuoShiJian = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colAddNew = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colMoveUp = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colMoveDown = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colEditThis = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -138,6 +139,7 @@
             this.btnSave.Size = new System.Drawing.Size(90, 25);
             this.btnSave.TabIndex = 0;
             this.btnSave.Values.Text = "添加";
+            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNext
@@ -173,6 +175,7 @@
             this.colXiangMuZhongZhiWu,
             this.colRenWuFenGong,
             this.colMeiNianGongZuoShiJian,
+            this.colAddNew,
             this.colMoveUp,
             this.colMoveDown,
             this.colEditThis,
@@ -182,9 +185,9 @@
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.RowTemplate.Height = 28;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(849, 456);
@@ -198,6 +201,15 @@
             this.dgvDetail.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentDoubleClick);
             this.dgvDetail.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dgvDetail_CellParsing);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "删除";
+            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 45;
             // 
             // selpersonid
             // 
@@ -271,6 +283,14 @@
             this.colMeiNianGongZuoShiJian.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colMeiNianGongZuoShiJian.Width = 157;
             // 
+            // colAddNew
+            // 
+            this.colAddNew.HeaderText = "";
+            this.colAddNew.Name = "colAddNew";
+            this.colAddNew.ReadOnly = true;
+            this.colAddNew.Text = "添加";
+            this.colAddNew.Width = 50;
+            // 
             // colMoveUp
             // 
             this.colMoveUp.HeaderText = "";
@@ -304,15 +324,6 @@
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Width = 45;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "删除";
-            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 45;
             // 
             // YanJiuGuGanEditor
             // 
@@ -351,6 +362,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colXiangMuZhongZhiWu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRenWuFenGong;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colMeiNianGongZuoShiJian;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colAddNew;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colMoveUp;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colMoveDown;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEditThis;
