@@ -349,7 +349,7 @@
             this.btnUnitSelect.Name = "btnUnitSelect";
             this.btnUnitSelect.Size = new System.Drawing.Size(300, 29);
             this.btnUnitSelect.TabIndex = 15;
-            this.btnUnitSelect.Values.Text = "点击选择开户帐号！";
+            this.btnUnitSelect.Values.Text = "选择单位帐号";
             this.btnUnitSelect.Click += new System.EventHandler(this.btnUnitSelect_Click);
             // 
             // label1
