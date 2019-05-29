@@ -118,9 +118,8 @@ namespace ProjectReporter
                 return;
             }
 
-            if (!this.CheckTotalMoneys())
+            if (!this.IsErrorMoneyOrTime())
             {
-                MessageBox.Show("对不起，课题经费或时间校验失败，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -720,7 +719,7 @@ namespace ProjectReporter
         /// 检查时间与金额一致性
         /// </summary>
         /// <returns></returns>
-        private bool CheckTotalMoneys()
+        private bool IsErrorMoneyOrTime()
         {
             //项目总时间
             int totalTime = ConnectionManager.Context.table("Project").where("Type = '项目'").select("TotalTime").getValue<int>(0);
@@ -738,16 +737,64 @@ namespace ProjectReporter
             catch (Exception ex) { }
 
             //阶段总额
-            long stepMoney = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepMoney)").getValue<long>(0);
+            long totalStepMoney = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepMoney)").getValue<long>(0);
 
             //阶段总时间
-            long stepTime = (long)Math.Round(ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepTime)").getValue<long>(0) / 12d);
+            long totalStepTime = (long)Math.Round(ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("sum(StepTime)").getValue<long>(0) / 12d);
 
             //课题阶段经费总额
-            long ketiStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where Type = '课题'))").select("sum(Money)").getValue<long>(0);
+            long totalKetiStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where Type = '课题'))").select("sum(Money)").getValue<long>(0);
             
+            //阶段经费表
+            Noear.Weed.DataList dlStepList = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("StepIndex,StepMoney").getDataList();
+
+            //课题阶段经费表
+            int totalRightStepCount = 0;
+            int totalStepCount = 0;
+            if (dlStepList != null && dlStepList.getRowCount() >= 1)
+            {
+                //阶段数量
+                totalStepCount = dlStepList.getRowCount();
+
+                //检查课题阶段金额
+                foreach (Noear.Weed.DataItem di in dlStepList.getRows())
+                {
+                    try
+                    {
+                        int stepIndex = di.getInt("StepIndex");
+                        double stepMoney = di.getDouble("StepMoney");
+                        double subjectStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where Type = '课题') and StepIndex = " + stepIndex + ")").select("sum(Money)").getValue<double>(0);
+
+                        //判断阶段经费是不是相等
+                        if (stepMoney == subjectStepMoney)
+                        {
+                            totalRightStepCount++;
+                        }
+                    }
+                    catch (Exception ex) { }
+                }
+            }
+
+            if (totalMoney == projectMoney)
+            {
+                MessageBox.Show("对不起，项目总经费与经费表总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }else if (totalMoney == totalStepMoney)
+            {
+                MessageBox.Show("对不起，项目总经费与阶段总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }else if (totalMoney == totalKetiStepMoney)
+            {
+                MessageBox.Show("对不起，项目总经费与课题阶段总金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }else if (totalTime == totalStepTime)
+            {
+                MessageBox.Show("对不起，项目总时间与阶段总时间不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (totalRightStepCount != totalStepCount)
+            {
+                MessageBox.Show("对不起，阶段经费与课题阶段金额不同，请检查!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             //判断条件是否符合
-            return totalMoney == projectMoney && totalMoney == stepMoney && totalMoney == ketiStepMoney && totalTime == stepTime;
+            return totalMoney == projectMoney && totalMoney == totalStepMoney && totalMoney == totalKetiStepMoney && totalTime == totalStepTime && totalRightStepCount != totalStepCount;
         }
     }
 }
