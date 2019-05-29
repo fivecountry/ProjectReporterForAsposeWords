@@ -70,6 +70,8 @@ namespace ProjectReporter
             this.feUI2 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpfPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.feUI3 = new ProjectReporter.Controls.RTFTextEditor();
+            this.kpfPage00 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI30 = new ProjectReporter.Controls.RTFTextEditor();
             this.kpReportPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage4 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage17 = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -170,6 +172,8 @@ namespace ProjectReporter
             this.kpfPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpfPage3)).BeginInit();
             this.kpfPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kpfPage00)).BeginInit();
+            this.kpfPage00.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpReportPage4)).BeginInit();
             this.kpReportPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.knReportPage4)).BeginInit();
@@ -594,8 +598,9 @@ namespace ProjectReporter
             this.kpfPage0,
             this.kpfPage1,
             this.kpfPage2,
-            this.kpfPage3});
-            this.knReportPage3.SelectedIndex = 3;
+            this.kpfPage3,
+            this.kpfPage00});
+            this.knReportPage3.SelectedIndex = 0;
             this.knReportPage3.Size = new System.Drawing.Size(1256, 628);
             this.knReportPage3.TabIndex = 1;
             this.knReportPage3.Text = "kryptonNavigator7";
@@ -727,6 +732,39 @@ namespace ProjectReporter
             this.feUI3.TabIndex = 1;
             this.feUI3.TitleLabelHeight = 48;
             this.feUI3.TitleLabelText = "全面客观地论述国内与国外研究现状，重点聚焦与本项目核心问题相关的技术研究情况其中包括研究水平、差距与不足等，注重定量描述，避免泛泛而谈";
+            // 
+            // kpfPage00
+            // 
+            this.kpfPage00.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kpfPage00.Controls.Add(this.feUI30);
+            this.kpfPage00.Flags = 65534;
+            this.kpfPage00.LastVisibleSet = true;
+            this.kpfPage00.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kpfPage00.Name = "kpfPage00";
+            this.kpfPage00.Size = new System.Drawing.Size(1254, 598);
+            this.kpfPage00.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
+            this.kpfPage00.Text = "项目建议书摘要";
+            this.kpfPage00.ToolTipTitle = "Page ToolTip";
+            this.kpfPage00.UniqueName = "1C1D7240FD0F41265498C187414B5A6D";
+            // 
+            // feUI30
+            // 
+            this.feUI30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI30.EnabledAutoNextPage = true;
+            this.feUI30.EnabledLabelAutoHeight = false;
+            this.feUI30.EnabledLastButton = false;
+            this.feUI30.EnabledNextButton = true;
+            this.feUI30.EnabledSaveButton = true;
+            this.feUI30.Location = new System.Drawing.Point(0, 0);
+            this.feUI30.Name = "feUI30";
+            this.feUI30.ParentForm = null;
+            this.feUI30.RTFEditorNameKey = "feUI";
+            this.feUI30.RTFFileFirstName = "rtpinput_";
+            this.feUI30.Size = new System.Drawing.Size(1254, 598);
+            this.feUI30.TabIndex = 2;
+            this.feUI30.TitleLabelHeight = 90;
+            this.feUI30.TitleLabelText = "一、项目目标及涉及的基础性问题400字\r\n二、简介课题设置及主要研究内容400字\r\n三、详细、分类列出项目研究成果及其技术指标，详细说明每项技术指标的考核方式（包" +
+    "括考核条件）1000字\r\n四、项目牵头单位、项目负责人，各课题负责单位、课题负责人，研究周期X年，申请经费XXXX万元，200字";
             // 
             // kpReportPage4
             // 
@@ -1766,6 +1804,8 @@ namespace ProjectReporter
             this.kpfPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpfPage3)).EndInit();
             this.kpfPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kpfPage00)).EndInit();
+            this.kpfPage00.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpReportPage4)).EndInit();
             this.kpReportPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.knReportPage4)).EndInit();
@@ -1987,6 +2027,8 @@ namespace ProjectReporter
         private RichTextBoxTableClass txtReportReadme;
         private KryptonPage kpfPage0;
         private RTFTextEditor feUI0;
+        private KryptonPage kpfPage00;
+        private RTFTextEditor feUI30;
     }
 }
 

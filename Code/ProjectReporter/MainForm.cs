@@ -42,6 +42,11 @@ namespace ProjectReporter
         public SortedList<string, BaseEditor> EditorMaps = new SortedList<string, BaseEditor>();
 
         /// <summary>
+        /// 编辑控件检索表
+        /// </summary>
+        public List<BaseEditor> EditorIndexLists = new List<BaseEditor>();
+
+        /// <summary>
         /// 工程说明控件
         /// </summary>
         public NewProjectEditor ProjectInfo { get { return this.fnpDefault; } }
@@ -125,7 +130,7 @@ namespace ProjectReporter
 
             string unitName = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = '" + ProjectObj.ID + "')").select("UnitName").getValue<string>(string.Empty);
             string personName = ConnectionManager.Context.table("Person").where("ID=(select PersonID from Task where Role = '负责人' and  ProjectID = '" + ProjectObj.ID + "')").select("Name").getValue<string>(string.Empty);
-            string docName = unitName + "_" + personName;            
+            string docName = unitName + "_" + personName;
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "zip files(*.zip)|*.zip";
@@ -151,7 +156,7 @@ namespace ProjectReporter
                 {
                     continue;
                 }
-                else 
+                else
                 {
                     return false;
                 }
@@ -261,7 +266,7 @@ namespace ProjectReporter
             LoadEditorEvents();
 
             //载入工程
-            LoadProjects();            
+            LoadProjects();
         }
 
         public void LoadProjects()
@@ -290,38 +295,38 @@ namespace ProjectReporter
         private void LoadEditorEvents()
         {
             #region 控件列表
-            List<Control> controlList = new List<Control>();
-            controlList.Add(feUI0);
-            controlList.Add(feUI1);
-            controlList.Add(feUI2);
-            controlList.Add(feUI3);
-            controlList.Add(feUI4);
-            controlList.Add(feUI5);
-            controlList.Add(feUI6);
-            controlList.Add(feUI7);
-            controlList.Add(feUI8);
-            controlList.Add(feUI9);
-            controlList.Add(feUI10);
-            controlList.Add(feUI11);
+            EditorIndexLists = new List<BaseEditor>();
+            EditorIndexLists.Add(feUI0);
+            EditorIndexLists.Add(feUI1);
+            EditorIndexLists.Add(feUI2);
+            EditorIndexLists.Add(feUI3);
+            EditorIndexLists.Add(feUI30);
+            EditorIndexLists.Add(feUI4);
+            EditorIndexLists.Add(feUI5);
+            EditorIndexLists.Add(feUI6);
+            EditorIndexLists.Add(feUI7);
+            EditorIndexLists.Add(feUI8);
+            EditorIndexLists.Add(feUI9);
+            EditorIndexLists.Add(feUI10);
+            EditorIndexLists.Add(feUI11);
             //controlList.Add(feUI12);
-            controlList.Add(feUI13);
-            controlList.Add(feUI14);
-            controlList.Add(feUI15);
-            controlList.Add(feUI16);
-            controlList.Add(feUI17);
-            controlList.Add(feUI18);
-            controlList.Add(feUI19);
-            controlList.Add(feUI20);
-            controlList.Add(feUI21);
-            controlList.Add(feUI22);
-            controlList.Add(feUI23);
-            controlList.Add(feUI24);
-            controlList.Add(feUI25);
+            EditorIndexLists.Add(feUI13);
+            EditorIndexLists.Add(feUI14);
+            EditorIndexLists.Add(feUI15);
+            EditorIndexLists.Add(feUI16);
+            EditorIndexLists.Add(feUI17);
+            EditorIndexLists.Add(feUI18);
+            EditorIndexLists.Add(feUI19);
+            EditorIndexLists.Add(feUI20);
+            EditorIndexLists.Add(feUI21);
+            EditorIndexLists.Add(feUI22);
+            EditorIndexLists.Add(feUI23);
+            EditorIndexLists.Add(feUI24);
+            EditorIndexLists.Add(feUI25);
             #endregion
 
-            foreach (Control c in controlList)
+            foreach (BaseEditor be in EditorIndexLists)
             {
-                BaseEditor be = (BaseEditor)c;
                 EditorMaps.Add(be.Name, be);
 
                 be.SaveEvent += new SaveOrLastOrNextEventDelegate(be_SaveEvent);
@@ -356,30 +361,30 @@ namespace ProjectReporter
             current.OnSaveEvent();
 
             //下一步
-            for (int kk = 1; kk <= 3; kk++)
+            int currentIndex = EditorIndexLists.IndexOf(current);
+            if (currentIndex + 1 >= EditorIndexLists.Count)
             {
-                string nextName = "feUI" + (Int32.Parse(current.Name.Replace("feUI", string.Empty)) + kk);
-                if (EditorMaps.ContainsKey(nextName))
+                return;
+            }
+            else
+            {
+                BaseEditor next = EditorIndexLists[currentIndex + 1];
+                if (next.Parent is KryptonPage)
                 {
-                    BaseEditor next = EditorMaps[nextName];
-                    if (next.Parent is KryptonPage)
-                    {
-                        //上一个页签归0
-                        KryptonNavigator subTab = GetTabControl(current);
-                        subTab.SelectedIndex = 0;
+                    //上一个页签归0
+                    KryptonNavigator subTab = GetTabControl(current);
+                    subTab.SelectedIndex = 0;
 
-                        //目标子Tab切换
-                        subTab = GetTabControl(next);
-                        subTab.SelectedPage = GetPageControl(next);
+                    //目标子Tab切换
+                    subTab = GetTabControl(next);
+                    subTab.SelectedPage = GetPageControl(next);
 
-                        //主Tab切换
-                        edithost2.SelectedPage = ((KryptonPage)subTab.Parent);
-                    }
-
-                    //刷新视图
-                    next.RefreshView();
-                    break;
+                    //主Tab切换
+                    edithost2.SelectedPage = ((KryptonPage)subTab.Parent);
                 }
+
+                //刷新视图
+                next.RefreshView();
             }
         }
 
@@ -723,7 +728,7 @@ namespace ProjectReporter
         {
             //项目总时间
             int totalTime = ConnectionManager.Context.table("Project").where("Type = '项目'").select("TotalTime").getValue<int>(0);
-            
+
             //项目总金额
             decimal totalMoney = ConnectionManager.Context.table("Project").where("Type = '项目'").select("TotalMoney").getValue<decimal>(0);
 
@@ -744,7 +749,7 @@ namespace ProjectReporter
 
             //课题阶段经费总额
             long totalKetiStepMoney = ConnectionManager.Context.table("ProjectAndStep").where("StepID in (select ID from Step where ProjectID in (select ID from Project where Type = '课题'))").select("sum(Money)").getValue<long>(0);
-            
+
             //阶段经费表
             Noear.Weed.DataList dlStepList = ConnectionManager.Context.table("Step").where("ProjectID = '" + MainForm.Instance.ProjectObj.ID + "'").select("StepIndex,StepMoney").getDataList();
 
