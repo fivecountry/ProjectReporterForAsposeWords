@@ -718,6 +718,26 @@ namespace ProjectReporter.Forms
                 #endregion
 
                 #region 更新目录
+
+                try
+                {   
+                    wu.WordDoc.Styles["目录 1"].Font.NameFarEast = "黑体";
+                    wu.WordDoc.Styles["目录 1"].Font.Size = 14;
+                    wu.WordDoc.Styles["目录 1"].Font.Bold = 0;
+                    wu.WordDoc.Styles["目录 1"].Font.Italic = 0;
+
+                    wu.WordDoc.Styles["目录 2"].Font.NameFarEast = "楷体";
+                    wu.WordDoc.Styles["目录 2"].Font.Size = 12;
+                    wu.WordDoc.Styles["目录 2"].Font.Bold = 0;
+                    wu.WordDoc.Styles["目录 2"].Font.Italic = 0;
+
+                    wu.WordDoc.Styles["目录 3"].Font.NameFarEast = "楷体";
+                    wu.WordDoc.Styles["目录 3"].Font.Size = 12;
+                    wu.WordDoc.Styles["目录 3"].Font.Bold = 0;
+                    wu.WordDoc.Styles["目录 3"].Font.Italic = 0;
+                }
+                catch (Exception ex) { }
+
                 wu.WordDoc.ResetFormFields();
                 wu.WordDoc.Fields.Update();
                 #endregion
@@ -760,8 +780,6 @@ namespace ProjectReporter.Forms
                     toWordPath = ToWordFile;
                 }
                 #endregion
-
-
             }
             catch (Exception ex)
             {
