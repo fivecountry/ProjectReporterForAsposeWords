@@ -599,10 +599,10 @@ namespace ProjectReporter.Forms
                                     table.Cell(rowStart, 1).Range.Text = "课题" + (k + 1);
                                     table.Cell(rowStart, 1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 2).Range.Text = "负 责 人";
+                                    table.Cell(rowStart, 2).Range.Text = "负责人";
                                     table.Cell(rowStart, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 4).Range.Text = "性  别";
+                                    table.Cell(rowStart, 4).Range.Text = "性别";
                                     table.Cell(rowStart, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     table.Cell(rowStart, 6).Range.Text = "出生年月";
@@ -611,10 +611,10 @@ namespace ProjectReporter.Forms
                                     table.Cell(rowStart + 1, 2).Range.Text = "职务职称";
                                     table.Cell(rowStart + 1, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 1, 4).Range.Text = "座  机";
+                                    table.Cell(rowStart + 1, 4).Range.Text = "座机";
                                     table.Cell(rowStart + 1, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 1, 6).Range.Text = "手  机";
+                                    table.Cell(rowStart + 1, 6).Range.Text = "手机";
                                     table.Cell(rowStart + 1, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     table.Cell(rowStart + 2, 2).Range.Text = "承担单位及通信地址";
