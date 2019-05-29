@@ -519,6 +519,9 @@
     <Content Include="Helper\readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Office.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="w5.ico" />
     <None Include="Resources\tianbao.png" />
     <None Include="Resources\xiangmuxinxi.png" />
