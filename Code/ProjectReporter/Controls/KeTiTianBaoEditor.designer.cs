@@ -37,6 +37,7 @@
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.label1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
             this.kvKetiTabs = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kpKetiItems = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -53,7 +54,6 @@
             this.colMakePage = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.colDetail = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -148,11 +148,24 @@
             this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.label1);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plTitle.Location = new System.Drawing.Point(50, 20);
-            this.plTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.plTitle.Location = new System.Drawing.Point(54, 20);
+            this.plTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(689, 48);
+            this.plTitle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.plTitle.Size = new System.Drawing.Size(681, 48);
             this.plTitle.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoHeight = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(675, 48);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "围绕如何全面的、有效的实现项目目标，进行课题分解，明确每个课题的密级，并简述研究内容；牵头申报单位承担的课题数不超过课题总数的三分之二";
             // 
             // plContent
             // 
@@ -319,18 +332,6 @@
             this.colDetail.ReadOnly = true;
             this.colDetail.Visible = false;
             this.colDetail.Width = 45;
-            // 
-            // label1
-            // 
-            this.label1.AutoHeight = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(689, 48);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "围绕如何全面的、有效的实现项目目标，进行课题分解，明确每个课题的密级，并简述研究内容；牵头申报单位承担的课题数不超过课题总数的三分之二";
             // 
             // KeTiTianBaoEditor
             // 

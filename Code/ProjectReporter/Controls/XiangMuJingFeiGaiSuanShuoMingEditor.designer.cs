@@ -124,10 +124,11 @@
             // 
             this.plTitle.Controls.Add(this.label1);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plTitle.Location = new System.Drawing.Point(50, 20);
-            this.plTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.plTitle.Location = new System.Drawing.Point(54, 20);
+            this.plTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(950, 30);
+            this.plTitle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.plTitle.Size = new System.Drawing.Size(942, 30);
             this.plTitle.TabIndex = 0;
             // 
             // label1
@@ -135,9 +136,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(950, 30);
+            this.label1.Size = new System.Drawing.Size(936, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "介绍本项目总经费预算构成，应能够支撑对项目总经费及相关课题经费安排合理性进行审核评估";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

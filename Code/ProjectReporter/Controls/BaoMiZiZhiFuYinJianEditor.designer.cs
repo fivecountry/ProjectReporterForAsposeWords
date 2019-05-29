@@ -120,10 +120,11 @@
             // 
             this.plTitle.Controls.Add(this.label1);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plTitle.Location = new System.Drawing.Point(50, 20);
-            this.plTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.plTitle.Location = new System.Drawing.Point(54, 20);
+            this.plTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(916, 30);
+            this.plTitle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.plTitle.Size = new System.Drawing.Size(908, 30);
             this.plTitle.TabIndex = 0;
             // 
             // label1
@@ -131,9 +132,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(916, 30);
+            this.label1.Size = new System.Drawing.Size(902, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "若该项目内容涉密，请申请单位提供与申报密级相应的保密资质复印件，无需盖章";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

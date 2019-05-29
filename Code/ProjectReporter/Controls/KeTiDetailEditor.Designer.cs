@@ -240,10 +240,11 @@
             this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.lblTitle);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plTitle.Location = new System.Drawing.Point(50, 20);
-            this.plTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.plTitle.Location = new System.Drawing.Point(54, 20);
+            this.plTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(758, 24);
+            this.plTitle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.plTitle.Size = new System.Drawing.Size(750, 24);
             this.plTitle.TabIndex = 0;
             // 
             // lblTitle
@@ -252,9 +253,9 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Location = new System.Drawing.Point(6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(758, 24);
+            this.lblTitle.Size = new System.Drawing.Size(744, 24);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = ".............";
             // 
