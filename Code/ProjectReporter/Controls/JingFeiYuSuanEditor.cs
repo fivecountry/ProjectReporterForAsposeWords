@@ -1745,12 +1745,12 @@ namespace ProjectReporter.Controls
             this.plBottomInfoBox.Controls.Add(this.kryptonLabel3);
             this.plBottomInfoBox.Location = new System.Drawing.Point(133, 3);
             this.plBottomInfoBox.Name = "plBottomInfoBox";
-            this.plBottomInfoBox.Size = new System.Drawing.Size(404, 34);
+            this.plBottomInfoBox.Size = new System.Drawing.Size(421, 34);
             this.plBottomInfoBox.TabIndex = 30;
             // 
             // txtZiChouJingFei
             // 
-            this.txtZiChouJingFei.Location = new System.Drawing.Point(273, 2);
+            this.txtZiChouJingFei.Location = new System.Drawing.Point(295, 2);
             this.txtZiChouJingFei.Margin = new System.Windows.Forms.Padding(2);
             this.txtZiChouJingFei.Name = "txtZiChouJingFei";
             this.txtZiChouJingFei.Size = new System.Drawing.Size(72, 24);
@@ -1768,7 +1768,7 @@ namespace ProjectReporter.Controls
             // 
             // kryptonLabel4
             // 
-            this.kryptonLabel4.Location = new System.Drawing.Point(328, 5);
+            this.kryptonLabel4.Location = new System.Drawing.Point(350, 5);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(62, 23);
             this.kryptonLabel4.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
@@ -1927,7 +1927,7 @@ namespace ProjectReporter.Controls
                 }
             }
 
-            kryptonLabel3.Text = "本项目申请经费" + ProjectRFA.Text + "万元，其中自筹经费";
+            kryptonLabel3.Text = "本项目申请经费" + ProjectRFA.Text + "万元，自筹经费";
         }
 
 		private void ProjectRFA_Leave(object sender, EventArgs e)
