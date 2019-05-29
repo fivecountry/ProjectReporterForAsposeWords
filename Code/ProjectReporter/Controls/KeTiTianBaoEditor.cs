@@ -297,6 +297,11 @@ namespace ProjectReporter.Controls
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 1, e.RowIndex].Value = global::ProjectReporter.Properties.Resources.exclamation_16;
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 2, e.RowIndex].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 3, e.RowIndex].Value = "填报课题内容";
+
+            if (((KryptonDataGridView)sender)[6, e.RowIndex].Value == null || ((KryptonDataGridView)sender)[6, e.RowIndex].Value == "")
+            {
+                ((KryptonDataGridView)sender)[6, e.RowIndex].Value = "选择单位帐号";
+            }
         }
 
         public override void OnSaveEvent()

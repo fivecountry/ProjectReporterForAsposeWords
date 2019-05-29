@@ -232,7 +232,7 @@ namespace ProjectReporter.Controls
             // 
             // leSearchList
             // 
-            this.leSearchList.EditText = "请选择！";
+            this.leSearchList.EditText = "选择单位帐号";
             this.leSearchList.EditValue = "";
             this.leSearchList.Location = new System.Drawing.Point(10, 14);
             this.leSearchList.Name = "leSearchList";
@@ -241,7 +241,7 @@ namespace ProjectReporter.Controls
             this.leSearchList.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.leSearchList.StateCommon.Content.ShortText.Font = new System.Drawing.Font("微软雅黑", 15F);
             this.leSearchList.TabIndex = 30;
-            this.leSearchList.Values.Text = "请选择！";
+            this.leSearchList.Values.Text = "选择单位帐号";
             this.leSearchList.EditValueChanged += new ProjectReporter.Controls.EditValueChangedDelegate(this.leSearchList_EditValueChanged);
             // 
             // label1

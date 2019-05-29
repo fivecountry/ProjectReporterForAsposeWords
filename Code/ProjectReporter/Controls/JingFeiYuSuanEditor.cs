@@ -1578,7 +1578,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay1.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.ProjectOutlay1.TabIndex = 6;
-            this.ProjectOutlay1.Text = "100";
+            this.ProjectOutlay1.Text = "0";
             this.ProjectOutlay1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay1.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             // 
@@ -1598,7 +1598,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay2.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.ProjectOutlay2.TabIndex = 7;
-            this.ProjectOutlay2.Text = "100";
+            this.ProjectOutlay2.Text = "0";
             this.ProjectOutlay2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay2.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             // 
@@ -1618,7 +1618,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay3.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.ProjectOutlay3.TabIndex = 8;
-            this.ProjectOutlay3.Text = "100";
+            this.ProjectOutlay3.Text = "0";
             this.ProjectOutlay3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay3.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             // 
@@ -1638,7 +1638,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay4.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.ProjectOutlay4.TabIndex = 9;
-            this.ProjectOutlay4.Text = "100";
+            this.ProjectOutlay4.Text = "0";
             this.ProjectOutlay4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay4.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             // 
@@ -1658,7 +1658,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay5.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.ProjectOutlay5.TabIndex = 10;
-            this.ProjectOutlay5.Text = "100";
+            this.ProjectOutlay5.Text = "0";
             this.ProjectOutlay5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay5.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             // 
@@ -1743,14 +1743,14 @@ namespace ProjectReporter.Controls
             this.plBottomInfoBox.Controls.Add(this.txtZiChouJingFei);
             this.plBottomInfoBox.Controls.Add(this.kryptonLabel4);
             this.plBottomInfoBox.Controls.Add(this.kryptonLabel3);
-            this.plBottomInfoBox.Location = new System.Drawing.Point(132, 3);
+            this.plBottomInfoBox.Location = new System.Drawing.Point(133, 3);
             this.plBottomInfoBox.Name = "plBottomInfoBox";
-            this.plBottomInfoBox.Size = new System.Drawing.Size(447, 34);
+            this.plBottomInfoBox.Size = new System.Drawing.Size(404, 34);
             this.plBottomInfoBox.TabIndex = 30;
             // 
             // txtZiChouJingFei
             // 
-            this.txtZiChouJingFei.Location = new System.Drawing.Point(327, 2);
+            this.txtZiChouJingFei.Location = new System.Drawing.Point(273, 2);
             this.txtZiChouJingFei.Margin = new System.Windows.Forms.Padding(2);
             this.txtZiChouJingFei.Name = "txtZiChouJingFei";
             this.txtZiChouJingFei.Size = new System.Drawing.Size(72, 24);
@@ -1768,7 +1768,7 @@ namespace ProjectReporter.Controls
             // 
             // kryptonLabel4
             // 
-            this.kryptonLabel4.Location = new System.Drawing.Point(380, 5);
+            this.kryptonLabel4.Location = new System.Drawing.Point(328, 5);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(62, 23);
             this.kryptonLabel4.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
@@ -1780,11 +1780,11 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel3.Location = new System.Drawing.Point(4, 5);
             this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(301, 23);
+            this.kryptonLabel3.Size = new System.Drawing.Size(268, 23);
             this.kryptonLabel3.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
             this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.kryptonLabel3.TabIndex = 29;
-            this.kryptonLabel3.Values.Text = "本项目申请经费0万元，其中自筹经费";
+            this.kryptonLabel3.Values.Text = "本项目申请经费0万元，自筹经费";
             // 
             // panel2
             // 
@@ -1808,7 +1808,6 @@ namespace ProjectReporter.Controls
             this.lklDownloadFuJian.Text = "经费预算填报说明.doc";
             this.lklDownloadFuJian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lklDownloadFuJian.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadFuJian_LinkClicked);
-            //this.lklDownloadFuJian.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lklDownloadFuJian_MouseDoubleClick);
             // 
             // kryptonLabel5
             // 
