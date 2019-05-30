@@ -158,6 +158,12 @@ namespace ProjectReporter.Forms
             catch (Exception exxx)
             {
                 MessageBox.Show("启动失败！Ex:" + exxx.ToString(), "错误", MessageBoxButtons.OK);
+
+                //重新启动
+                System.Diagnostics.Process.Start(Application.ExecutablePath);
+
+                //退出当前程序
+                Application.Exit();
             }
         }
     }
