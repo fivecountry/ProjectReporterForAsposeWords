@@ -777,52 +777,52 @@ namespace ProjectReporter.Forms
 
                 #region 设置表头重复
 
-                foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
-                {
-                    if (table.Range.Text.Contains("申请经费"))
-                    {
-                        //设置经费预算表头重复
-                        if (table.Rows.Count >= 1)
-                        {
-                            try
-                            {
-                                table.Rows[1].HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
-                            }
-                            catch (Exception ex)
-                            {
-                                System.Console.WriteLine(ex.ToString());
-                            }
-                        }
-                    }
-                    else
-                    {
-                        //设置其它表头重复
-                        if (table.Rows.Count >= 1)
-                        {
-                            try
-                            {
-                                //object _unitObj = Microsoft.Office.Interop.Word.WdUnits.wdLine;
-                                //object _extendObj = Microsoft.Office.Interop.Word.WdMovementType.wdExtend;
+                //foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                //{
+                //    if (table.Range.Text.Contains("申请经费"))
+                //    {
+                //        //设置经费预算表头重复
+                //        if (table.Rows.Count >= 1)
+                //        {
+                //            try
+                //            {
+                //                table.Rows[1].HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
+                //            }
+                //            catch (Exception ex)
+                //            {
+                //                System.Console.WriteLine(ex.ToString());
+                //            }
+                //        }
+                //    }
+                //    else
+                //    {
+                //        //设置其它表头重复
+                //        if (table.Rows.Count >= 1)
+                //        {
+                //            try
+                //            {
+                //                //object _unitObj = Microsoft.Office.Interop.Word.WdUnits.wdLine;
+                //                //object _extendObj = Microsoft.Office.Interop.Word.WdMovementType.wdExtend;
 
-                                //table.Cell(1, 1).Range.Select();
+                //                //table.Cell(1, 1).Range.Select();
 
-                                //wu.Applicaton.Selection.HomeKey(ref _unitObj);
-                                //for (int k = 0; k < table.Rows[1].Cells.Count; k++)
-                                //{
-                                //    wu.Applicaton.Selection.EndKey(ref _unitObj, ref _extendObj);
-                                //}
-                                //wu.Applicaton.Selection.Rows.HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
+                //                //wu.Applicaton.Selection.HomeKey(ref _unitObj);
+                //                //for (int k = 0; k < table.Rows[1].Cells.Count; k++)
+                //                //{
+                //                //    wu.Applicaton.Selection.EndKey(ref _unitObj, ref _extendObj);
+                //                //}
+                //                //wu.Applicaton.Selection.Rows.HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
 
-                                table.Rows[1].HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
-                            }
-                            catch (Exception ex)
-                            {
-                                System.Console.WriteLine(ex.ToString());
-                                System.Console.WriteLine(table.Range.Text.Replace(" ", string.Empty));
-                            }
-                        }
-                    }
-                }
+                //                table.Rows[1].HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
+                //            }
+                //            catch (Exception ex)
+                //            {
+                //                System.Console.WriteLine(ex.ToString());
+                //                System.Console.WriteLine(table.Range.Text.Replace(" ", string.Empty));
+                //            }
+                //        }
+                //    }
+                //}
 
                 #endregion
 
