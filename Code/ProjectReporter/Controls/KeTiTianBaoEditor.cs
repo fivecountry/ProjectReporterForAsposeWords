@@ -655,9 +655,14 @@ namespace ProjectReporter.Controls
         {
             base.NextPage();
 
-            if (dgvDetail.Rows.Count >= 1)
+            //判断列表中是否有数据，如果有则执行课题页签下一页的过程，如果没有则调用系统的下一页
+            if (dgvDetail.Rows.Count >= 2)
             {
                 BuildOneKeTiDetailPageWithKeTiRow(0);
+            }
+            else
+            {
+                MainForm.Instance.SwitchToNextPage(this);
             }
         }
     }
