@@ -53,10 +53,10 @@
             this.lbMessage.BackColor = System.Drawing.Color.White;
             this.lbMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbMessage.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbMessage.Location = new System.Drawing.Point(0, 343);
+            this.lbMessage.Location = new System.Drawing.Point(0, 332);
             this.lbMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(655, 29);
+            this.lbMessage.Size = new System.Drawing.Size(655, 40);
             this.lbMessage.TabIndex = 2;
             this.lbMessage.Text = "正在载入，请稍等......";
             this.lbMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,7 +74,7 @@
             this.Controls.Add(this.lbMessage);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WelcomeForm";
