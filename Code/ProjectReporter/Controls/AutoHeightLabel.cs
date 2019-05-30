@@ -66,7 +66,7 @@ namespace ProjectReporter.Controls
                     int wordHeight = (int)wordSize.Height;
                     //单字宽度
                     int wordWidth = (int)wordSize.Width;
-                    
+
                     //文本行数
                     int widthRowCount = 0;
 
@@ -96,6 +96,10 @@ namespace ProjectReporter.Controls
                     {
                         Height = wordHeight;
                     }
+                }
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex.ToString());
                 }
                 finally
                 {
