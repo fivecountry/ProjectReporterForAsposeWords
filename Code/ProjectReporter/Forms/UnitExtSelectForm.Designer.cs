@@ -32,6 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.leSearchList = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.leSearchListView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankUser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcUnitBankNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnEdit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colType = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
@@ -40,21 +55,6 @@
             this.colBankNo = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn();
             this.colUserAddeds = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCancel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnOK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.leSearchList = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.leSearchListView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnEdit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gcID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitBankUser = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitBankName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcUnitBankNo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -72,8 +72,9 @@
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1084, 504);
+            this.panelControl1.Size = new System.Drawing.Size(1445, 630);
             this.panelControl1.TabIndex = 0;
             // 
             // dgvDetail
@@ -81,6 +82,7 @@
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
             this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dgvDetail.ColumnHeadersHeight = 35;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selpersonid,
             this.colName,
@@ -91,16 +93,17 @@
             this.colUserAddeds,
             this.delete});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetail.Location = new System.Drawing.Point(2, 44);
+            this.dgvDetail.Location = new System.Drawing.Point(2, 54);
+            this.dgvDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDetail.RowTemplate.Height = 28;
+            this.dgvDetail.RowTemplate.Height = 35;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(1080, 413);
+            this.dgvDetail.Size = new System.Drawing.Size(1441, 518);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -111,93 +114,23 @@
             this.dgvDetail.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellEndEdit);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
-            // selpersonid
-            // 
-            this.selpersonid.HeaderText = "序号";
-            this.selpersonid.Name = "selpersonid";
-            this.selpersonid.ReadOnly = true;
-            this.selpersonid.Width = 50;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colName.HeaderText = "单位名称";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Visible = false;
-            this.colName.Width = 187;
-            // 
-            // colType
-            // 
-            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colType.HeaderText = "类型";
-            this.colType.Name = "colType";
-            this.colType.ReadOnly = true;
-            this.colType.Visible = false;
-            this.colType.Width = 60;
-            // 
-            // colBankUserName
-            // 
-            this.colBankUserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBankUserName.HeaderText = "开户名称";
-            this.colBankUserName.Name = "colBankUserName";
-            this.colBankUserName.ReadOnly = true;
-            this.colBankUserName.Visible = false;
-            this.colBankUserName.Width = 187;
-            // 
-            // colBankName
-            // 
-            this.colBankName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBankName.HeaderText = "开户行";
-            this.colBankName.Name = "colBankName";
-            this.colBankName.ReadOnly = true;
-            this.colBankName.Width = 423;
-            // 
-            // colBankNo
-            // 
-            this.colBankNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBankNo.HeaderText = "帐户";
-            this.colBankNo.Name = "colBankNo";
-            this.colBankNo.ReadOnly = true;
-            this.colBankNo.Width = 423;
-            // 
-            // colUserAddeds
-            // 
-            this.colUserAddeds.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = false;
-            this.colUserAddeds.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colUserAddeds.FalseValue = null;
-            this.colUserAddeds.HeaderText = "用户自定义";
-            this.colUserAddeds.IndeterminateValue = null;
-            this.colUserAddeds.Name = "colUserAddeds";
-            this.colUserAddeds.ReadOnly = true;
-            this.colUserAddeds.TrueValue = null;
-            this.colUserAddeds.Width = 98;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "删除";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.Width = 45;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(2, 457);
+            this.panel1.Location = new System.Drawing.Point(2, 572);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 45);
+            this.panel1.Size = new System.Drawing.Size(1441, 56);
             this.panel1.TabIndex = 7;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(590, 0);
+            this.btnCancel.Location = new System.Drawing.Point(787, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(79, 45);
+            this.btnCancel.Size = new System.Drawing.Size(105, 56);
             this.btnCancel.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.TabIndex = 29;
@@ -206,9 +139,10 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(500, 0);
+            this.btnOK.Location = new System.Drawing.Point(667, 0);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(84, 45);
+            this.btnOK.Size = new System.Drawing.Size(112, 56);
             this.btnOK.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.TabIndex = 29;
@@ -223,20 +157,34 @@
             this.panelControl2.Controls.Add(this.btnEdit);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(2, 2);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1080, 42);
+            this.panelControl2.Size = new System.Drawing.Size(1441, 52);
             this.panelControl2.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(747, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 24);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "请选择已在科技委备案的帐号！";
             // 
             // leSearchList
             // 
             this.leSearchList.EditValue = "";
-            this.leSearchList.Location = new System.Drawing.Point(39, 12);
+            this.leSearchList.Location = new System.Drawing.Point(52, 15);
+            this.leSearchList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.leSearchList.Name = "leSearchList";
             this.leSearchList.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.leSearchList.Properties.ShowFooter = false;
             this.leSearchList.Properties.View = this.leSearchListView;
-            this.leSearchList.Size = new System.Drawing.Size(515, 20);
+            this.leSearchList.Size = new System.Drawing.Size(687, 24);
             this.leSearchList.TabIndex = 29;
             this.leSearchList.EditValueChanged += new System.EventHandler(this.leSearchList_EditValueChanged);
             // 
@@ -253,41 +201,6 @@
             this.leSearchListView.Name = "leSearchListView";
             this.leSearchListView.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.leSearchListView.OptionsView.ShowGroupPanel = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAdd.Location = new System.Drawing.Point(898, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 38);
-            this.btnAdd.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnAdd.TabIndex = 28;
-            this.btnAdd.Values.Text = "添加";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnEdit.Location = new System.Drawing.Point(988, 2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(90, 38);
-            this.btnEdit.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnEdit.TabIndex = 27;
-            this.btnEdit.Values.Text = "编辑";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(560, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 20);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "请选择已在科技委备案的帐号！";
             // 
             // gcID
             // 
@@ -328,14 +241,113 @@
             this.gcUnitBankNo.Visible = true;
             this.gcUnitBankNo.VisibleIndex = 1;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAdd.Location = new System.Drawing.Point(1199, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(120, 48);
+            this.btnAdd.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAdd.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAdd.TabIndex = 28;
+            this.btnAdd.Values.Text = "添加";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnEdit.Location = new System.Drawing.Point(1319, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(120, 48);
+            this.btnEdit.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEdit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEdit.TabIndex = 27;
+            this.btnEdit.Values.Text = "编辑";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // selpersonid
+            // 
+            this.selpersonid.HeaderText = "序号";
+            this.selpersonid.Name = "selpersonid";
+            this.selpersonid.ReadOnly = true;
+            this.selpersonid.Width = 60;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colName.HeaderText = "单位名称";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Visible = false;
+            this.colName.Width = 187;
+            // 
+            // colType
+            // 
+            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colType.HeaderText = "类型";
+            this.colType.Name = "colType";
+            this.colType.ReadOnly = true;
+            this.colType.Visible = false;
+            this.colType.Width = 78;
+            // 
+            // colBankUserName
+            // 
+            this.colBankUserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBankUserName.HeaderText = "开户名称";
+            this.colBankUserName.Name = "colBankUserName";
+            this.colBankUserName.ReadOnly = true;
+            this.colBankUserName.Visible = false;
+            this.colBankUserName.Width = 187;
+            // 
+            // colBankName
+            // 
+            this.colBankName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBankName.HeaderText = "开户行";
+            this.colBankName.Name = "colBankName";
+            this.colBankName.ReadOnly = true;
+            this.colBankName.Width = 581;
+            // 
+            // colBankNo
+            // 
+            this.colBankNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBankNo.HeaderText = "帐户";
+            this.colBankNo.Name = "colBankNo";
+            this.colBankNo.ReadOnly = true;
+            this.colBankNo.Width = 580;
+            // 
+            // colUserAddeds
+            // 
+            this.colUserAddeds.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = false;
+            this.colUserAddeds.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colUserAddeds.FalseValue = null;
+            this.colUserAddeds.HeaderText = "用户自定义";
+            this.colUserAddeds.IndeterminateValue = null;
+            this.colUserAddeds.Name = "colUserAddeds";
+            this.colUserAddeds.ReadOnly = true;
+            this.colUserAddeds.TrueValue = null;
+            this.colUserAddeds.Width = 119;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "删除";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.Width = 60;
+            // 
             // UnitExtSelectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 504);
+            this.ClientSize = new System.Drawing.Size(1445, 630);
             this.Controls.Add(this.panelControl1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UnitExtSelectForm";
@@ -369,6 +381,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gcUnitBankName;
         private DevExpress.XtraGrid.Columns.GridColumn gcUnitBankNo;
         private DevExpress.XtraGrid.Columns.GridColumn gcID;
+        private System.Windows.Forms.Panel panel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnOK;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colName;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colType;
@@ -377,9 +393,5 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colBankNo;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn colUserAddeds;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private System.Windows.Forms.Panel panel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnOK;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;
-        private System.Windows.Forms.Label label1;
     }
 }
