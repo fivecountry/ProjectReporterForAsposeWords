@@ -801,13 +801,24 @@ namespace ProjectReporter.Forms
                         {
                             try
                             {
-                                table.Cell(1, 1).Select();
-                                wu.Applicaton.Selection.SelectRow();
-                                wu.Applicaton.Selection.Rows.HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
+                                //object _unitObj = Microsoft.Office.Interop.Word.WdUnits.wdLine;
+                                //object _extendObj = Microsoft.Office.Interop.Word.WdMovementType.wdExtend;
+
+                                //table.Cell(1, 1).Range.Select();
+
+                                //wu.Applicaton.Selection.HomeKey(ref _unitObj);
+                                //for (int k = 0; k < table.Rows[1].Cells.Count; k++)
+                                //{
+                                //    wu.Applicaton.Selection.EndKey(ref _unitObj, ref _extendObj);
+                                //}
+                                //wu.Applicaton.Selection.Rows.HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
+
+                                table.Rows[1].HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
                             }
                             catch (Exception ex)
                             {
                                 System.Console.WriteLine(ex.ToString());
+                                System.Console.WriteLine(table.Range.Text.Replace(" ", string.Empty));
                             }
                         }
                     }
