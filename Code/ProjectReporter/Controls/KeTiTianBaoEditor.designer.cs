@@ -87,7 +87,7 @@
             this.tableLayoutPanel15.Controls.Add(this.plContent, 1, 2);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 5;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -110,7 +110,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(71, 568);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -120,7 +120,7 @@
             // btnLast
             // 
             this.btnLast.Location = new System.Drawing.Point(781, 4);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(4);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(1, 31);
             this.btnLast.TabIndex = 1;
@@ -131,7 +131,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(648, 4);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 34);
             this.btnSave.TabIndex = 0;
@@ -141,7 +141,7 @@
             // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(781, 4);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(120, 34);
             this.btnNext.TabIndex = 2;
@@ -180,7 +180,7 @@
             this.plContent.Controls.Add(this.kvKetiTabs);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(71, 89);
-            this.plContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.plContent.Margin = new System.Windows.Forms.Padding(4);
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(910, 471);
             this.plContent.TabIndex = 7;
@@ -192,7 +192,7 @@
             this.kvKetiTabs.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.kvKetiTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kvKetiTabs.Location = new System.Drawing.Point(0, 0);
-            this.kvKetiTabs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kvKetiTabs.Margin = new System.Windows.Forms.Padding(4);
             this.kvKetiTabs.Name = "kvKetiTabs";
             this.kvKetiTabs.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kpKetiItems});
@@ -206,7 +206,7 @@
             this.kpKetiItems.Controls.Add(this.dgvDetail);
             this.kpKetiItems.Flags = 65534;
             this.kpKetiItems.LastVisibleSet = true;
-            this.kpKetiItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kpKetiItems.Margin = new System.Windows.Forms.Padding(4);
             this.kpKetiItems.MinimumSize = new System.Drawing.Size(67, 62);
             this.kpKetiItems.Name = "kpKetiItems";
             this.kpKetiItems.Size = new System.Drawing.Size(908, 440);
@@ -234,7 +234,7 @@
             this.colDetail});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
-            this.dgvDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDetail.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -256,7 +256,7 @@
             this.selpersonid.HeaderText = "序号";
             this.selpersonid.Name = "selpersonid";
             this.selpersonid.ReadOnly = true;
-            this.selpersonid.Width = 50;
+            this.selpersonid.Width = 60;
             // 
             // colKeTiMingCheng
             // 
@@ -264,7 +264,7 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 108;
+            this.colKeTiMingCheng.Width = 99;
             // 
             // colMiJi
             // 
@@ -273,7 +273,7 @@
             this.colMiJi.Name = "colMiJi";
             this.colMiJi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMiJi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMiJi.Width = 50;
+            this.colMiJi.Width = 60;
             // 
             // colFuZeRen
             // 
@@ -334,7 +334,7 @@
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.Width = 45;
+            this.delete.Width = 60;
             // 
             // colDetail
             // 
@@ -343,14 +343,14 @@
             this.colDetail.Name = "colDetail";
             this.colDetail.ReadOnly = true;
             this.colDetail.Visible = false;
-            this.colDetail.Width = 45;
+            this.colDetail.Width = 60;
             // 
             // KeTiTianBaoEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "KeTiTianBaoEditor";
             this.Size = new System.Drawing.Size(1052, 639);
             this.tableLayoutPanel15.ResumeLayout(false);
@@ -381,6 +381,7 @@
         private AutoHeightLabel label1;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kvKetiTabs;
         private ComponentFactory.Krypton.Navigator.KryptonPage kpKetiItems;
+        private DevExpress.Utils.ToolTipController ttcHintTool;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn colKeTiMingCheng;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colMiJi;
@@ -393,6 +394,5 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colMakePage;
         private System.Windows.Forms.DataGridViewImageColumn delete;
         private System.Windows.Forms.DataGridViewImageColumn colDetail;
-        private DevExpress.Utils.ToolTipController ttcHintTool;
     }
 }

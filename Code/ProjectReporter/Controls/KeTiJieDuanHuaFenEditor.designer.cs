@@ -65,7 +65,7 @@
             this.tableLayoutPanel15.Controls.Add(this.plContent, 1, 2);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 5;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -88,7 +88,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(71, 708);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -98,7 +98,7 @@
             // btnLast
             // 
             this.btnLast.Location = new System.Drawing.Point(957, 4);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(4);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(1, 31);
             this.btnLast.TabIndex = 1;
@@ -109,7 +109,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(824, 4);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 34);
             this.btnSave.TabIndex = 0;
@@ -119,7 +119,7 @@
             // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(957, 4);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(120, 34);
             this.btnNext.TabIndex = 2;
@@ -156,7 +156,7 @@
             this.plContent.Controls.Add(this.dgvDetail);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(71, 67);
-            this.plContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.plContent.Margin = new System.Windows.Forms.Padding(4);
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(1086, 633);
             this.plContent.TabIndex = 7;
@@ -178,7 +178,7 @@
             this.delete});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
-            this.dgvDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDetail.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -212,7 +212,7 @@
             this.colJieDuanHuaHuaFen.HeaderText = "阶段";
             this.colJieDuanHuaHuaFen.Name = "colJieDuanHuaHuaFen";
             this.colJieDuanHuaHuaFen.ReadOnly = true;
-            this.colJieDuanHuaHuaFen.Width = 50;
+            this.colJieDuanHuaHuaFen.Width = 60;
             // 
             // colYanJiuNeiRong
             // 
@@ -244,7 +244,7 @@
             this.colJieDuanJingFei.Name = "colJieDuanJingFei";
             this.colJieDuanJingFei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colJieDuanJingFei.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colJieDuanJingFei.Width = 183;
+            this.colJieDuanJingFei.Width = 181;
             // 
             // delete
             // 
@@ -254,14 +254,14 @@
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Visible = false;
-            this.delete.Width = 45;
+            this.delete.Width = 60;
             // 
             // KeTiJieDuanHuaFenEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "KeTiJieDuanHuaFenEditor";
             this.Size = new System.Drawing.Size(1228, 779);
             this.tableLayoutPanel15.ResumeLayout(false);
