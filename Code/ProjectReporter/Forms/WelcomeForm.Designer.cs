@@ -43,8 +43,8 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(491, 298);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(655, 372);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -53,9 +53,10 @@
             this.lbMessage.BackColor = System.Drawing.Color.White;
             this.lbMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbMessage.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbMessage.Location = new System.Drawing.Point(0, 275);
+            this.lbMessage.Location = new System.Drawing.Point(0, 343);
+            this.lbMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(491, 23);
+            this.lbMessage.Size = new System.Drawing.Size(655, 29);
             this.lbMessage.TabIndex = 2;
             this.lbMessage.Text = "正在载入，请稍等......";
             this.lbMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,18 +68,18 @@
             // 
             // WelcomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 298);
+            this.ClientSize = new System.Drawing.Size(655, 372);
             this.Controls.Add(this.lbMessage);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WelcomeForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
