@@ -127,7 +127,7 @@ namespace ProjectReporter.Forms
                 }
                 #endregion
 
-                printHint("正在准备启动，请稍等......");
+                printHint("正在启动中，请稍等......");
 
                 #region 启动窗体
                 if (IsHandleCreated)
