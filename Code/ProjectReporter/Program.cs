@@ -12,7 +12,7 @@ namespace ProjectReporter
 {
     static class Program
     {
-        private static ApplicationContext context;
+        public static ApplicationContext context;
 
         /// <summary>
         /// 应用程序的主入口点。
@@ -22,104 +22,27 @@ namespace ProjectReporter
         {
             try
             {
-                #region 初始化目录
-                //InitProjectDir("P" + Process.GetCurrentProcess().Id + "-Project");
-                TryInitProjectDir("Current");
-
-                if (args.Length >= 1)
-                {
-                    //需要导入文件
-                    FileZipOpr fzo = new FileZipOpr();
-
-                    if (args[0] != null)
-                    {
-                        if (args[0].StartsWith("Export:"))
-                        {
-                            //导出
-                            string toZipFile = args[0].Replace("Export:", string.Empty);
-                            string toZipDir = new FileInfo(toZipFile).DirectoryName;
-                            string docFile = Path.Combine(toZipDir, "申报书.doc");
-                            if (File.Exists(docFile))
-                            {
-                                File.Copy(docFile, Path.Combine(MainForm.ProjectDir, "申报书.doc"), true);
-                            }
-
-                            //打包文件
-                            fzo.ZipFileDirectory(MainForm.ProjectDir, toZipFile);
-
-                            //删除临时Doc文件
-                            File.Delete(Path.Combine(MainForm.ProjectDir, "申报书.doc"));
-                        }
-                        else if (args[0].StartsWith("Clear:"))
-                        {
-                            Directory.Delete(MainForm.ProjectDir, true);
-                            TryInitProjectDir("Current");
-
-                            //复制摘要模板
-                            File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Helper", "xiangmuzhaiyaomoban.rtf")), Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"), true);
-                        }
-                        else
-                        {
-                            //导入
-
-                            //备份当前的数据库
-                            if (Directory.Exists(Path.Combine(MainForm.BaseDir, "import-backup")))
-                            {
-                                Directory.Delete(Path.Combine(MainForm.BaseDir, "import-backup"), true);
-                            }
-                            Directory.Move(MainForm.ProjectDir, Path.Combine(MainForm.BaseDir, "import-backup"));
-                            Directory.CreateDirectory(MainForm.ProjectDir);
-
-                            //解压需要导入的包                        
-                            fzo.UnZipFile(args[0], MainForm.ProjectDir, string.Empty, true);
-                        }
-                    }
-
-                    //打开DB文件连接
-                    TryOpenProjectDirDB();
-                }
-                else
-                {
-                    //打开DB文件连接
-                    TryOpenProjectDirDB();
-
-                    //复制摘要模板
-                    if (!File.Exists(Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf")))
-                    {
-                        File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Helper", "xiangmuzhaiyaomoban.rtf")), Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"));
-                    }
-                }
-
-                #endregion
-
-                #region 启动窗体
+                //初始化
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+
+                //创建欢迎窗体界面
                 WelcomeForm startform = new WelcomeForm();
+
+                //设置启动参数
+                startform.StartupParams = args;
+
+                //显示欢迎窗体
                 startform.Show();
+
+                //开始消息循环
                 Program.context = new ApplicationContext();
                 Program.context.Tag = startform;
-                Application.Idle += new EventHandler(Program.Application_Idle);
-                Application.Run(Program.context);
-                #endregion
+                Application.Run(Program.context); 
             }
             catch (Exception exxx)
             {
                 MessageBox.Show("启动失败！Ex:" + exxx.ToString(), "错误", MessageBoxButtons.OK);
-            }
-        }
-
-        private static void Application_Idle(object sender, EventArgs e)
-        {
-            Application.Idle -= new EventHandler(Program.Application_Idle);
-            if (Program.context.MainForm == null)
-            {
-                MainForm logicform = new MainForm();
-                Program.context.MainForm = logicform;
-                logicform.InitAll();
-                WelcomeForm startform = (WelcomeForm)Program.context.Tag;
-                startform.Close();
-                logicform.Show();
             }
         }
 
