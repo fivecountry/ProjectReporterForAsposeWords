@@ -1903,11 +1903,11 @@ namespace ProjectReporter.Controls
                 this.ProjectRFA2Rm.Text = this.pbinfo.ProjectRFA2rm;
                 this.ProjectRFA2_1Rm.Text = this.pbinfo.ProjectRFA2_1rm;
 
-                this.ProjectOutlay1.Text = this.pbinfo.Projectoutlay1.HasValue ? this.pbinfo.Projectoutlay1.Value.ToString() : "100";
-                this.ProjectOutlay2.Text = this.pbinfo.Projectoutlay2.HasValue ? this.pbinfo.Projectoutlay2.Value.ToString() : "100";
-                this.ProjectOutlay3.Text = this.pbinfo.Projectoutlay3.HasValue ? this.pbinfo.Projectoutlay3.Value.ToString() : "100";
-                this.ProjectOutlay4.Text = this.pbinfo.Projectoutlay4.HasValue ? this.pbinfo.Projectoutlay4.Value.ToString() : "100";
-                this.ProjectOutlay5.Text = this.pbinfo.Projectoutlay5.HasValue ? this.pbinfo.Projectoutlay5.Value.ToString() : "100";
+                this.ProjectOutlay1.Text = this.pbinfo.Projectoutlay1.HasValue ? this.pbinfo.Projectoutlay1.Value.ToString() : "0";
+                this.ProjectOutlay2.Text = this.pbinfo.Projectoutlay2.HasValue ? this.pbinfo.Projectoutlay2.Value.ToString() : "0";
+                this.ProjectOutlay3.Text = this.pbinfo.Projectoutlay3.HasValue ? this.pbinfo.Projectoutlay3.Value.ToString() : "0";
+                this.ProjectOutlay4.Text = this.pbinfo.Projectoutlay4.HasValue ? this.pbinfo.Projectoutlay4.Value.ToString() : "0";
+                this.ProjectOutlay5.Text = this.pbinfo.Projectoutlay5.HasValue ? this.pbinfo.Projectoutlay5.Value.ToString() : "0";
             }
 		}
 
