@@ -78,6 +78,9 @@ namespace ProjectReporter.Forms
 
         private bool ExportWord()
         {
+            //Word路径
+            string toWordPath = string.Empty;
+
             this.setprogress(10, "准备Word...");
             string msg = "";
             if (!FileOp.RunWordInstCheck(out msg))
@@ -772,8 +775,45 @@ namespace ProjectReporter.Forms
                 //wu.Applicaton.ActiveWindow.View.SeekView = Microsoft.Office.Interop.Word.WdSeekView.wdSeekMainDocument;
                 #endregion
 
-                //Word路径
-                string toWordPath = string.Empty;
+                #region 设置表头重复
+
+                foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                {
+                    if (table.Range.Text.Contains("申请经费"))
+                    {
+                        //设置经费预算表头重复
+                        if (table.Rows.Count >= 1)
+                        {
+                            try
+                            {
+                                table.Rows[1].HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
+                            }
+                            catch (Exception ex)
+                            {
+                                System.Console.WriteLine(ex.ToString());
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //设置其它表头重复
+                        if (table.Rows.Count >= 1)
+                        {
+                            try
+                            {
+                                table.Cell(1, 1).Select();
+                                wu.Applicaton.Selection.SelectRow();
+                                wu.Applicaton.Selection.Rows.HeadingFormat = (int)Microsoft.Office.Interop.Word.WdConstants.wdToggle;
+                            }
+                            catch (Exception ex)
+                            {
+                                System.Console.WriteLine(ex.ToString());
+                            }
+                        }
+                    }
+                }
+
+                #endregion
 
                 #region 显示文档或生成文档
 
