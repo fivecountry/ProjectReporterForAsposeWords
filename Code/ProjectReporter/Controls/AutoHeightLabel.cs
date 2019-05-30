@@ -49,18 +49,13 @@ namespace ProjectReporter.Controls
             //判断是否需要处适应高度
             if (AutoHeight)
             {
-                //检测文本的宽度和高度
-                System.Drawing.Graphics g = CreateGraphics();
                 try
                 {
-                    //设置单位为像素
-                    g.PageUnit = System.Drawing.GraphicsUnit.Pixel;
-
                     //文本大小
-                    System.Drawing.SizeF totalSize = g.MeasureString(value, Font);
+                    System.Drawing.SizeF totalSize = TextRenderer.MeasureText(value, Font);
 
                     //单字大小
-                    System.Drawing.SizeF wordSize = g.MeasureString("王", Font);
+                    System.Drawing.SizeF wordSize = TextRenderer.MeasureText("王", Font);
 
                     //单字高度
                     int wordHeight = (int)wordSize.Height;
@@ -100,12 +95,7 @@ namespace ProjectReporter.Controls
                 catch (Exception ex)
                 {
                     System.Console.WriteLine(ex.ToString());
-                }
-                finally
-                {
-                    //结束绘图板
-                    g.Dispose();
-                }
+                }                
             }
         }
 
