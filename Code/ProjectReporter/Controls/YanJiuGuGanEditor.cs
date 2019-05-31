@@ -498,6 +498,7 @@ namespace ProjectReporter.Controls
                         }
                     }
 
+                    RefreshView();
                     MessageBox.Show("导入完成！");
                 }
             }
