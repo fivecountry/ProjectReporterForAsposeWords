@@ -85,11 +85,11 @@ namespace ProjectReporter.Controls
                     //判断是否我多行文本
                     if (widthRowCount > 1)
                     {
-                        Height = widthRowCount * wordHeight;
+                        Height = (widthRowCount * wordHeight) + 20;
                     }
                     else
                     {
-                        Height = wordHeight;
+                        Height = wordHeight + 20;
                     }
                 }
                 catch (Exception ex)
