@@ -435,7 +435,7 @@ namespace ProjectReporter
             int iconIndex = 0;
             foreach (KryptonPage kp in edithost2.Pages)
             {
-                Bitmap bmp = new Bitmap(200, 40);
+                Bitmap bmp = new Bitmap(310, 40);
                 Graphics g = Graphics.FromImage(bmp);
                 try
                 {

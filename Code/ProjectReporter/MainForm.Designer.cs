@@ -443,8 +443,8 @@ namespace ProjectReporter
             this.edithost2.AllowPageReorder = false;
             this.edithost2.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
             this.edithost2.Bar.BarOrientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left;
-            this.edithost2.Bar.ItemMaximumSize = new System.Drawing.Size(300, 200);
-            this.edithost2.Bar.ItemMinimumSize = new System.Drawing.Size(200, 30);
+            this.edithost2.Bar.ItemMaximumSize = new System.Drawing.Size(400, 200);
+            this.edithost2.Bar.ItemMinimumSize = new System.Drawing.Size(310, 30);
             this.edithost2.Bar.ItemOrientation = ComponentFactory.Krypton.Toolkit.ButtonOrientation.FixedTop;
             this.edithost2.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.edithost2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -481,7 +481,7 @@ namespace ProjectReporter
             this.kpReportPage1.LastVisibleSet = true;
             this.kpReportPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage1.Name = "kpReportPage1";
-            this.kpReportPage1.Size = new System.Drawing.Size(1236, 628);
+            this.kpReportPage1.Size = new System.Drawing.Size(1146, 628);
             this.kpReportPage1.Text = "填写说明";
             this.kpReportPage1.ToolTipTitle = "Page ToolTip";
             this.kpReportPage1.UniqueName = "9B7D02A9426B4A7E32876CC330B9C07B";
@@ -497,7 +497,7 @@ namespace ProjectReporter
             this.knReportPage1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1});
             this.knReportPage1.SelectedIndex = 0;
-            this.knReportPage1.Size = new System.Drawing.Size(1236, 628);
+            this.knReportPage1.Size = new System.Drawing.Size(1146, 628);
             this.knReportPage1.TabIndex = 0;
             // 
             // kryptonPage1
@@ -508,7 +508,7 @@ namespace ProjectReporter
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(1234, 593);
+            this.kryptonPage1.Size = new System.Drawing.Size(1144, 593);
             this.kryptonPage1.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kryptonPage1.Text = "填写说明";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
@@ -519,7 +519,7 @@ namespace ProjectReporter
             this.txtReportReadme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtReportReadme.Location = new System.Drawing.Point(0, 0);
             this.txtReportReadme.Name = "txtReportReadme";
-            this.txtReportReadme.Size = new System.Drawing.Size(1234, 593);
+            this.txtReportReadme.Size = new System.Drawing.Size(1144, 593);
             this.txtReportReadme.TabIndex = 0;
             this.txtReportReadme.Text = "";
             // 
@@ -900,7 +900,7 @@ namespace ProjectReporter
             this.kpReportPage6.LastVisibleSet = true;
             this.kpReportPage6.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage6.Name = "kpReportPage6";
-            this.kpReportPage6.Size = new System.Drawing.Size(1256, 628);
+            this.kpReportPage6.Size = new System.Drawing.Size(1156, 628);
             this.kpReportPage6.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kpReportPage6.Text = "课题分解";
             this.kpReportPage6.ToolTipTitle = "Page ToolTip";
@@ -917,7 +917,7 @@ namespace ProjectReporter
             this.kryptonPage19,
             this.kryptonPage16});
             this.knReportPage6.SelectedIndex = 0;
-            this.knReportPage6.Size = new System.Drawing.Size(1256, 628);
+            this.knReportPage6.Size = new System.Drawing.Size(1156, 628);
             this.knReportPage6.TabIndex = 2;
             this.knReportPage6.Text = "kryptonNavigator10";
             // 
@@ -929,7 +929,7 @@ namespace ProjectReporter
             this.kryptonPage19.LastVisibleSet = true;
             this.kryptonPage19.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage19.Name = "kryptonPage19";
-            this.kryptonPage19.Size = new System.Drawing.Size(1254, 593);
+            this.kryptonPage19.Size = new System.Drawing.Size(1154, 593);
             this.kryptonPage19.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonPage19.Text = "课题填报";
             this.kryptonPage19.ToolTipTitle = "Page ToolTip";
@@ -944,7 +944,7 @@ namespace ProjectReporter
             this.feUI6.Margin = new System.Windows.Forms.Padding(5);
             this.feUI6.Name = "feUI6";
             this.feUI6.ParentForm = null;
-            this.feUI6.Size = new System.Drawing.Size(1254, 593);
+            this.feUI6.Size = new System.Drawing.Size(1154, 593);
             this.feUI6.TabIndex = 0;
             this.feUI6.UnitList = null;
             // 
