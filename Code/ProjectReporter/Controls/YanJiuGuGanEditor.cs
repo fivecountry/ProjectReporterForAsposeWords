@@ -557,10 +557,10 @@ namespace ProjectReporter.Controls
                     unitExtObj.UnitBankNo = unitBankNo;
                     unitExtObj.IsUserAdded = 1;
                     _unitInforService.UpdateUnitInfors(new List<UnitExt>(new UnitExt[] { unitExtObj }));
-
-                    //创建单位信息
-                    NewGuGanLianXiRenForm.BuildUnitRecord(unitExtObj.ID, unitName, unitContact, unitTelephone, unitType, unitAddress);
                 }
+
+                //创建单位信息
+                NewGuGanLianXiRenForm.BuildUnitRecord(unitExtObj.ID, unitName, unitContact, unitTelephone, unitType, unitAddress);
 
                 //创建人员
                 ConnectionManager.Context.table("Person").where("IDCard = '" + personIDCard + "'").delete();
