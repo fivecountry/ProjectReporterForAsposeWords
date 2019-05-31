@@ -45,7 +45,6 @@ namespace ProjectReporter.Controls
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 2, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = "编辑";
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 3, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = "向下";
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 4, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = "向上";
-            ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 5, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = "添加";
         }
 
         public override void ClearView()
@@ -150,7 +149,6 @@ namespace ProjectReporter.Controls
 
                 cells.Add(task.Content);
                 cells.Add(task.TotalTime);
-                cells.Add("添加");
                 cells.Add("向上");
                 cells.Add("向下");
                 cells.Add("编辑");
@@ -345,15 +343,6 @@ namespace ProjectReporter.Controls
                     {
                         Task task = (Task)dgvDetail.Rows[e.RowIndex].Tag;
                         MoveToUp(e.RowIndex, task);
-                    }
-                }
-
-                if (e.ColumnIndex == dgvDetail.Columns.Count - 5)
-                {
-                    NewGuGanLianXiRenForm form = new NewGuGanLianXiRenForm(null);
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
                     }
                 }
 
