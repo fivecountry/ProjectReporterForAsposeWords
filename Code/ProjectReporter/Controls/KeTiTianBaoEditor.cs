@@ -135,7 +135,7 @@ namespace ProjectReporter.Controls
 
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDetail.Rows.Count >= 1)
+            if (dgvDetail.Rows.Count >= 1 && dgvDetail.Rows.Count > e.RowIndex && e.RowIndex >= 0)
             {
                 Project kett = ((Project)dgvDetail.Rows[e.RowIndex].Tag);
                 if (kett != null)

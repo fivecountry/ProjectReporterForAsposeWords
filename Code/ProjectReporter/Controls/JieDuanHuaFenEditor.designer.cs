@@ -346,6 +346,7 @@
             this.colMoney.FillWeight = 59.21053F;
             this.colMoney.HeaderText = "阶段经费";
             this.colMoney.Name = "colMoney";
+            this.colMoney.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // delete
             // 

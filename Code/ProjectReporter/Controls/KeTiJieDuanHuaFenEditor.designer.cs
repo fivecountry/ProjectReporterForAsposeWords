@@ -231,6 +231,7 @@
             this.colKaoHeFangShi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colKaoHeFangShi.HeaderText = "考核方式";
             this.colKaoHeFangShi.Name = "colKaoHeFangShi";
+            this.colKaoHeFangShi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colJieDuanJingFei
             // 
@@ -243,7 +244,6 @@
             0});
             this.colJieDuanJingFei.Name = "colJieDuanJingFei";
             this.colJieDuanJingFei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colJieDuanJingFei.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colJieDuanJingFei.Width = 181;
             // 
             // delete

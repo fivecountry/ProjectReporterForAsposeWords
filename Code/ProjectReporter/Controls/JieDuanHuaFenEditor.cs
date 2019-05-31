@@ -251,7 +251,7 @@ namespace ProjectReporter.Controls
 
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDetail.Rows.Count >= 1)
+            if (dgvDetail.Rows.Count >= 1 && dgvDetail.Rows.Count > e.RowIndex && e.RowIndex >= 0)
             {
                 Step step = (Step)dgvDetail.Rows[e.RowIndex].Tag;
                 if (step != null && e.ColumnIndex == dgvDetail.Columns.Count - 1)

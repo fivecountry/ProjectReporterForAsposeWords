@@ -157,7 +157,7 @@
             this.plTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.plTitle.Name = "plTitle";
             this.plTitle.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.plTitle.Size = new System.Drawing.Size(908, 60);
+            this.plTitle.Size = new System.Drawing.Size(908, 68);
             this.plTitle.TabIndex = 0;
             // 
             // label1
@@ -169,7 +169,7 @@
             this.label1.Location = new System.Drawing.Point(8, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(900, 60);
+            this.label1.Size = new System.Drawing.Size(900, 68);
             this.label1.TabIndex = 0;
             this.label1.Text = "围绕如何全面的、有效的实现项目目标，进行课题分解，明确每个课题的密级，并简述研究内容；牵头申报单位承担的课题数不超过课题总数的三分之二";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,10 +179,10 @@
             this.plContent.BackColor = System.Drawing.Color.Transparent;
             this.plContent.Controls.Add(this.kvKetiTabs);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(71, 89);
+            this.plContent.Location = new System.Drawing.Point(71, 97);
             this.plContent.Margin = new System.Windows.Forms.Padding(4);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(910, 471);
+            this.plContent.Size = new System.Drawing.Size(910, 463);
             this.plContent.TabIndex = 7;
             // 
             // kvKetiTabs
@@ -197,7 +197,7 @@
             this.kvKetiTabs.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kpKetiItems});
             this.kvKetiTabs.SelectedIndex = 0;
-            this.kvKetiTabs.Size = new System.Drawing.Size(910, 471);
+            this.kvKetiTabs.Size = new System.Drawing.Size(910, 463);
             this.kvKetiTabs.TabIndex = 4;
             // 
             // kpKetiItems
@@ -209,7 +209,7 @@
             this.kpKetiItems.Margin = new System.Windows.Forms.Padding(4);
             this.kpKetiItems.MinimumSize = new System.Drawing.Size(67, 62);
             this.kpKetiItems.Name = "kpKetiItems";
-            this.kpKetiItems.Size = new System.Drawing.Size(908, 440);
+            this.kpKetiItems.Size = new System.Drawing.Size(908, 432);
             this.kpKetiItems.Text = "课题列表";
             this.kpKetiItems.ToolTipTitle = "Page ToolTip";
             this.kpKetiItems.UniqueName = "E9C2A15C70F847D472B1468CE3270072";
@@ -241,7 +241,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 35;
-            this.dgvDetail.Size = new System.Drawing.Size(908, 440);
+            this.dgvDetail.Size = new System.Drawing.Size(908, 432);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -308,6 +308,7 @@
             this.colNeiRong.HeaderText = "研究经费(万)";
             this.colNeiRong.Name = "colNeiRong";
             this.colNeiRong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colNeiRong.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colNeiRong.Width = 110;
             // 
             // colZongTiKeTi
