@@ -168,17 +168,17 @@ namespace ProjectReporter.Utility
                     {
                         switch (cell.CellType)
                         {
-                            case CellType.BLANK:
+                            case CellType.Blank:
                                 {
                                     dr[j] = DBNull.Value;
                                     break;
                                 }
-                            case CellType.BOOLEAN:
+                            case CellType.Boolean:
                                 {
                                     dr[j] = cell.BooleanCellValue;
                                     break;
                                 }
-                            case CellType.NUMERIC:
+                            case CellType.Numeric:
                                 {
                                     if (DateUtil.IsCellDateFormatted(cell))
                                     {
@@ -190,17 +190,17 @@ namespace ProjectReporter.Utility
                                     }
                                     break;
                                 }
-                            case CellType.STRING:
+                            case CellType.String:
                                 {
                                     dr[j] = cell.StringCellValue;
                                     break;
                                 }
-                            case CellType.ERROR:
+                            case CellType.Error:
                                 {
                                     dr[j] = cell.ErrorCellValue;
                                     break;
                                 }
-                            case CellType.FORMULA:
+                            case CellType.Formula:
                                 {
                                     cell = evaluator.EvaluateInCell(cell) as HSSFCell;
                                     dr[j] = cell.ToString();
@@ -268,7 +268,7 @@ namespace ProjectReporter.Utility
             //填写表头
             for (int i = 0; i < data.Columns.Count; i++)
             {
-                rowHead.CreateCell(i, CellType.STRING).SetCellValue(data.Columns[i].ColumnName.ToString());
+                rowHead.CreateCell(i, CellType.String).SetCellValue(data.Columns[i].ColumnName.ToString());
             }
             //填写内容
             for (int i = 0; i < data.Rows.Count; i++)
@@ -276,7 +276,7 @@ namespace ProjectReporter.Utility
                 IRow row = sheet.CreateRow(i + 1);
                 for (int j = 0; j < data.Columns.Count; j++)
                 {
-                    row.CreateCell(j, CellType.STRING).SetCellValue(data.Rows[i][j].ToString());
+                    row.CreateCell(j, CellType.String).SetCellValue(data.Rows[i][j].ToString());
                 }
             }
 
