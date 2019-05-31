@@ -55,17 +55,19 @@
             this.plButtons.Controls.Add(this.btnOK);
             this.plButtons.Controls.Add(this.btnCancel);
             this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plButtons.Location = new System.Drawing.Point(2, 209);
+            this.plButtons.Location = new System.Drawing.Point(2, 262);
+            this.plButtons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plButtons.Name = "plButtons";
-            this.plButtons.Size = new System.Drawing.Size(393, 36);
+            this.plButtons.Size = new System.Drawing.Size(525, 45);
             this.plButtons.TabIndex = 7;
             // 
             // btnOK
             // 
             this.btnOK.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnOK.Location = new System.Drawing.Point(211, 2);
+            this.btnOK.Location = new System.Drawing.Point(283, 2);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(90, 32);
+            this.btnOK.Size = new System.Drawing.Size(120, 41);
             this.btnOK.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.TabIndex = 28;
@@ -75,9 +77,10 @@
             // btnCancel
             // 
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.Location = new System.Drawing.Point(301, 2);
+            this.btnCancel.Location = new System.Drawing.Point(403, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 32);
+            this.btnCancel.Size = new System.Drawing.Size(120, 41);
             this.btnCancel.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.TabIndex = 27;
@@ -100,8 +103,9 @@
             this.plContent.Controls.Add(this.label1);
             this.plContent.Controls.Add(this.plButtons);
             this.plContent.Location = new System.Drawing.Point(0, 0);
+            this.plContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(397, 247);
+            this.plContent.Size = new System.Drawing.Size(529, 309);
             this.plContent.TabIndex = 8;
             // 
             // txtUnitType
@@ -109,110 +113,148 @@
             this.txtUnitType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtUnitType.FormattingEnabled = true;
             this.txtUnitType.Items.AddRange(new object[] {
-            "航天科技",
-            "航空科技"});
-            this.txtUnitType.Location = new System.Drawing.Point(79, 87);
+            "陆军",
+            "海军",
+            "空军",
+            "火箭军",
+            "战略支援部队",
+            "联合勤务保障部队",
+            "军委机关直属单位",
+            "军事科学院",
+            "国防大学",
+            "国防科技大学",
+            "武警部队",
+            "教育部",
+            "工信部",
+            "中国科学院",
+            "中国兵器工业集团公司",
+            "中国兵器装备集团公司",
+            "中国船舶工业集团公司",
+            "中国船舶重工集团公司",
+            "中国电子科技集团公司",
+            "中国电子信息产业集团公司",
+            "中国航空发动机集团公司",
+            "中国航空工业集团公司",
+            "中国航天科工集团公司",
+            "中国航天科技集团公司",
+            "中国核工业集团公司",
+            "中国工程物理研究院",
+            "其它"});
+            this.txtUnitType.Location = new System.Drawing.Point(105, 109);
+            this.txtUnitType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnitType.Name = "txtUnitType";
-            this.txtUnitType.Size = new System.Drawing.Size(300, 22);
+            this.txtUnitType.Size = new System.Drawing.Size(399, 26);
             this.txtUnitType.TabIndex = 10;
             // 
             // txtUnitBankNo
             // 
-            this.txtUnitBankNo.Location = new System.Drawing.Point(79, 171);
+            this.txtUnitBankNo.Location = new System.Drawing.Point(105, 214);
+            this.txtUnitBankNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnitBankNo.Name = "txtUnitBankNo";
-            this.txtUnitBankNo.Size = new System.Drawing.Size(300, 22);
+            this.txtUnitBankNo.Size = new System.Drawing.Size(399, 26);
             this.txtUnitBankNo.TabIndex = 9;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(79, 32);
+            this.txtPassword.Location = new System.Drawing.Point(105, 40);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '#';
-            this.txtPassword.Size = new System.Drawing.Size(300, 22);
+            this.txtPassword.Size = new System.Drawing.Size(399, 26);
             this.txtPassword.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 174);
+            this.label5.Location = new System.Drawing.Point(20, 218);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 14);
+            this.label5.Size = new System.Drawing.Size(83, 18);
             this.label5.TabIndex = 8;
             this.label5.Text = "  账    号：";
             // 
             // txtUnitBankName
             // 
-            this.txtUnitBankName.Location = new System.Drawing.Point(79, 143);
+            this.txtUnitBankName.Location = new System.Drawing.Point(105, 179);
+            this.txtUnitBankName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnitBankName.Name = "txtUnitBankName";
-            this.txtUnitBankName.Size = new System.Drawing.Size(300, 22);
+            this.txtUnitBankName.Size = new System.Drawing.Size(399, 26);
             this.txtUnitBankName.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 146);
+            this.label4.Location = new System.Drawing.Point(20, 182);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 14);
+            this.label4.Size = new System.Drawing.Size(83, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = " 开 户 行：";
             // 
             // txtUnitBankUser
             // 
-            this.txtUnitBankUser.Location = new System.Drawing.Point(79, 115);
+            this.txtUnitBankUser.Location = new System.Drawing.Point(105, 144);
+            this.txtUnitBankUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnitBankUser.Name = "txtUnitBankUser";
-            this.txtUnitBankUser.Size = new System.Drawing.Size(300, 22);
+            this.txtUnitBankUser.Size = new System.Drawing.Size(399, 26);
             this.txtUnitBankUser.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 118);
+            this.label3.Location = new System.Drawing.Point(20, 148);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 14);
+            this.label3.Size = new System.Drawing.Size(83, 18);
             this.label3.TabIndex = 8;
             this.label3.Text = "开户名称：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 90);
+            this.label2.Location = new System.Drawing.Point(20, 112);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 14);
+            this.label2.Size = new System.Drawing.Size(83, 18);
             this.label2.TabIndex = 8;
-            this.label2.Text = "单位类型：";
+            this.label2.Text = "隶属部门：";
             // 
             // txtUnitName
             // 
-            this.txtUnitName.Location = new System.Drawing.Point(79, 59);
+            this.txtUnitName.Location = new System.Drawing.Point(105, 74);
+            this.txtUnitName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUnitName.Name = "txtUnitName";
-            this.txtUnitName.Size = new System.Drawing.Size(300, 22);
+            this.txtUnitName.Size = new System.Drawing.Size(399, 26);
             this.txtUnitName.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 35);
+            this.label6.Location = new System.Drawing.Point(20, 44);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 14);
+            this.label6.Size = new System.Drawing.Size(83, 18);
             this.label6.TabIndex = 8;
             this.label6.Text = "添加密码：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 62);
+            this.label1.Location = new System.Drawing.Point(20, 78);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 14);
+            this.label1.Size = new System.Drawing.Size(83, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "单位名称：";
             // 
             // NewUnitForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 245);
+            this.ClientSize = new System.Drawing.Size(529, 306);
             this.Controls.Add(this.plContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewUnitForm";
