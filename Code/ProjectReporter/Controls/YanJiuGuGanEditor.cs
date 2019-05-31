@@ -472,5 +472,13 @@ namespace ProjectReporter.Controls
                 }
             }
         }
+
+        private void btnExcelLoad_Click(object sender, EventArgs e)
+        {
+            if (ofdExcelDialog.ShowDialog() == DialogResult.OK)
+            {
+               
+            }
+        }
     }
 }
