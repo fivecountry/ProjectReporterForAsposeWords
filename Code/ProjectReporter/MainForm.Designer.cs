@@ -583,7 +583,7 @@ namespace ProjectReporter
             this.kpReportPage3.LastVisibleSet = true;
             this.kpReportPage3.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage3.Name = "kpReportPage3";
-            this.kpReportPage3.Size = new System.Drawing.Size(1236, 628);
+            this.kpReportPage3.Size = new System.Drawing.Size(1146, 628);
             this.kpReportPage3.Text = "概述";
             this.kpReportPage3.ToolTipTitle = "Page ToolTip";
             this.kpReportPage3.UniqueName = "33D955EDE7674DC864A18B2B491B4501";
@@ -602,7 +602,7 @@ namespace ProjectReporter
             this.kpfPage3,
             this.kpfPage00});
             this.knReportPage3.SelectedIndex = 0;
-            this.knReportPage3.Size = new System.Drawing.Size(1236, 628);
+            this.knReportPage3.Size = new System.Drawing.Size(1146, 628);
             this.knReportPage3.TabIndex = 1;
             this.knReportPage3.Text = "kryptonNavigator7";
             // 
@@ -614,7 +614,7 @@ namespace ProjectReporter
             this.kpfPage0.LastVisibleSet = true;
             this.kpfPage0.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpfPage0.Name = "kpfPage0";
-            this.kpfPage0.Size = new System.Drawing.Size(1234, 593);
+            this.kpfPage0.Size = new System.Drawing.Size(1144, 593);
             this.kpfPage0.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kpfPage0.Text = "项目摘要";
             this.kpfPage0.ToolTipTitle = "Page ToolTip";
@@ -634,9 +634,9 @@ namespace ProjectReporter
             this.feUI0.ParentForm = null;
             this.feUI0.RTFEditorNameKey = "feUI";
             this.feUI0.RTFFileFirstName = "rtpinput_";
-            this.feUI0.Size = new System.Drawing.Size(1234, 593);
+            this.feUI0.Size = new System.Drawing.Size(1144, 593);
             this.feUI0.TabIndex = 0;
-            this.feUI0.TitleLabelHeight = 180;
+            this.feUI0.TitleLabelHeight = 210;
             this.feUI0.TitleLabelText = resources.GetString("feUI0.TitleLabelText");
             // 
             // kpfPage1
@@ -746,7 +746,7 @@ namespace ProjectReporter
             this.kpfPage00.LastVisibleSet = true;
             this.kpfPage00.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpfPage00.Name = "kpfPage00";
-            this.kpfPage00.Size = new System.Drawing.Size(1234, 593);
+            this.kpfPage00.Size = new System.Drawing.Size(1144, 593);
             this.kpfPage00.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kpfPage00.Text = "项目建议书摘要";
             this.kpfPage00.ToolTipTitle = "Page ToolTip";
@@ -766,9 +766,9 @@ namespace ProjectReporter
             this.feUI30.ParentForm = null;
             this.feUI30.RTFEditorNameKey = "feUI";
             this.feUI30.RTFFileFirstName = "rtpinput_";
-            this.feUI30.Size = new System.Drawing.Size(1234, 593);
+            this.feUI30.Size = new System.Drawing.Size(1144, 593);
             this.feUI30.TabIndex = 2;
-            this.feUI30.TitleLabelHeight = 115;
+            this.feUI30.TitleLabelHeight = 130;
             this.feUI30.TitleLabelText = "一、项目目标及涉及的基础性问题400字\r\n二、简介课题设置及主要研究内容400字\r\n三、详细、分类列出项目研究成果及其技术指标，详细说明每项技术指标的考核方式（包" +
     "括考核条件）1000字\r\n四、项目牵头单位、项目负责人，各课题负责单位、课题负责人，研究周期X年，申请经费XXXX万元，200字";
             // 
