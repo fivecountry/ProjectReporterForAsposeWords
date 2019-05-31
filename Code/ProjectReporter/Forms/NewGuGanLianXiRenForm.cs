@@ -298,7 +298,7 @@ namespace ProjectReporter.Forms
         /// <param name="telephone"></param>
         /// <param name="unitType"></param>
         /// <param name="unitAddress"></param>
-        public void BuildUnitRecord(string unitExtId, string unitName, string contactName, string telephone, string unitType, string unitAddress)
+        public static void BuildUnitRecord(string unitExtId, string unitName, string contactName, string telephone, string unitType, string unitAddress)
         {
             ConnectionManager.Context.table("Unit").where("ID='" + unitExtId + "'").delete();
 

@@ -10,6 +10,7 @@ using ComponentFactory.Krypton.Toolkit;
 using ProjectReporter.DB;
 using ProjectReporter.DB.Entitys;
 using ProjectReporter.Forms;
+using ProjectReporter.DB.Services;
 
 namespace ProjectReporter.Controls
 {
@@ -484,18 +485,130 @@ namespace ProjectReporter.Controls
                     {
                         foreach (DataRow dr in dt.Rows)
                         {
-                            if (dr[0] != null && dr[0].ToString().Equals("项目名称"))
+                            if (dr[0] != null && dr[0].ToString().Equals("单位开户帐号"))
                             {
                                 continue;
                             }
 
                             if (dr.ItemArray != null)
                             {
-
+                                //插入骨干人员
+                                insertPersonFromDataRow(dr);
                             }
                         }
                     }
+
+                    MessageBox.Show("导入完成！");
                 }
+            }
+        }
+
+        /// <summary>
+        /// 插入骨干人员信息
+        /// </summary>
+        /// <param name="dr">行数据</param>
+        private void insertPersonFromDataRow(DataRow dr)
+        {
+            UnitExtService _unitInforService = new UnitExtService();
+
+            try
+            {
+                //加载字段
+                string unitBankNo = dr["单位开户帐号"] != null ? dr["单位开户帐号"].ToString() : string.Empty;
+                string unitBankUser = dr["开户名称"] != null ? dr["开户名称"].ToString() : string.Empty;
+                string unitBankName = dr["开户行"] != null ? dr["开户行"].ToString() : string.Empty;
+                string unitName = dr["单位名称"] != null ? dr["单位名称"].ToString() : string.Empty;
+                string unitType = dr["隶属部门"] != null ? dr["隶属部门"].ToString() : string.Empty;
+                string unitAddress = dr["单位通信地址"] != null ? dr["单位通信地址"].ToString() : string.Empty;
+                string unitContact = dr["单位联系人"] != null ? dr["单位联系人"].ToString() : string.Empty;
+                string unitTelephone = dr["单位联系电话"] != null ? dr["单位联系电话"].ToString() : string.Empty;
+                string personName = dr["姓名"] != null ? dr["姓名"].ToString() : string.Empty;
+                string personIDCard = dr["身份证"] != null ? dr["身份证"].ToString() : string.Empty;
+                string personJob = dr["职务职称"] != null ? dr["职务职称"].ToString() : string.Empty;
+                string personSpecialty = dr["从事专业"] != null ? dr["从事专业"].ToString() : string.Empty;
+                string personSex = dr["性别"] != null ? dr["性别"].ToString() : string.Empty;
+                string personBirthday = dr["出生年月"] != null ? dr["出生年月"].ToString() : string.Empty;
+                string personTelephone = dr["座机"] != null ? dr["座机"].ToString() : string.Empty;
+                string personMobilePhone = dr["手机"] != null ? dr["手机"].ToString() : string.Empty;
+                string personAddress = dr["通信地址"] != null ? dr["通信地址"].ToString() : string.Empty;
+                string subjectName = dr["课题名称"] != null ? dr["课题名称"].ToString() : string.Empty;
+                string jobInProjectOrSubject = dr["项目或课题中职务"] != null ? dr["项目或课题中职务"].ToString() : string.Empty;
+                string taskInProject = dr["任务分工"] != null ? dr["任务分工"].ToString() : string.Empty;
+                string timeInProject = dr["每年为本项目工作时间"] != null ? dr["每年为本项目工作时间"].ToString() : string.Empty;
+
+                //判断是不是需要创建单位
+                UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("UnitBankNo='" + unitBankNo + "'").select("*").getValue<UnitExt>(new UnitExt());
+                
+                //判断是否需要创建单位信息
+                if (string.IsNullOrEmpty(unitExtObj.ID))
+                {
+                    //需要创建单位
+
+                    //创建帐号信息
+                    if (unitExtObj == null)
+                    {
+                        unitExtObj = new UnitExt();
+                    }
+                    unitExtObj.UnitName = unitName;
+                    unitExtObj.UnitType = unitType;
+                    unitExtObj.UnitBankUser = unitBankUser;
+                    unitExtObj.UnitBankName = unitBankName;
+                    unitExtObj.UnitBankNo = unitBankNo;
+                    unitExtObj.IsUserAdded = 1;
+                    _unitInforService.UpdateUnitInfors(new List<UnitExt>(new UnitExt[] { unitExtObj }));
+
+                    //创建单位信息
+                    NewGuGanLianXiRenForm.BuildUnitRecord(unitExtObj.ID, unitName, unitContact, unitTelephone, unitType, unitAddress);
+                }
+
+                //创建人员
+                ConnectionManager.Context.table("Person").where("IDCard = '" + personIDCard + "'").delete();
+                Person PersonObj = new Person();
+                PersonObj.UnitID = unitExtObj.ID;
+                PersonObj.ID = Guid.NewGuid().ToString();
+                PersonObj.Name = personName;
+                PersonObj.Sex = personSex;
+                PersonObj.Birthday = DateTime.Parse(personBirthday);
+                PersonObj.IDCard = personIDCard;
+                PersonObj.Job = personJob;
+                PersonObj.Specialty = personSpecialty;
+                PersonObj.Address = personAddress;
+                PersonObj.Telephone = personTelephone;
+                PersonObj.MobilePhone = personMobilePhone;
+                PersonObj.copyTo(ConnectionManager.Context.table("Person")).insert();
+
+                //添加/修改Task
+                Task task = ConnectionManager.Context.table("Task").where("IDCard='" + personIDCard + "' and ProjectID in (select ID from Project where Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "')").select("*").getValue<Task>(new Task());
+                if (task == null)
+                {
+                    //新行
+                    task = new Task();
+                    task.ProjectID = ConnectionManager.Context.table("Project").where("Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "'").select("ID").getValue<string>(string.Empty);
+                    task.Type = string.IsNullOrEmpty(subjectName) || subjectName == MainForm.Instance.ProjectObj.Name ? "项目" : "课题";
+                    task.Role = jobInProjectOrSubject;
+                }
+
+                task.PersonID = PersonObj.ID;
+                task.IDCard = PersonObj.IDCard;
+
+                task.Content = taskInProject;
+                task.TotalTime = int.Parse(timeInProject);
+
+                if (string.IsNullOrEmpty(task.ID))
+                {
+                    //insert
+                    task.ID = Guid.NewGuid().ToString();
+                    task.copyTo(ConnectionManager.Context.table("Task")).insert();
+                }
+                else
+                {
+                    //update
+                    task.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + task.ID + "'").update();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("插入错误！Ex:" + ex.ToString(), "错误");
             }
         }
     }
