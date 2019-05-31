@@ -537,7 +537,7 @@ namespace ProjectReporter.Controls
                 string timeInProject = dr["每年为本项目工作时间"] != null ? dr["每年为本项目工作时间"].ToString() : string.Empty;
 
                 //判断是不是需要创建单位
-                UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("UnitBankNo='" + unitBankNo + "'").select("*").getValue<UnitExt>(new UnitExt());
+                UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("UnitBankNo='" + unitBankNo + "'").select("*").getItem<UnitExt>(new UnitExt());
                 
                 //判断是否需要创建单位信息
                 if (string.IsNullOrEmpty(unitExtObj.ID))
@@ -578,7 +578,7 @@ namespace ProjectReporter.Controls
                 PersonObj.copyTo(ConnectionManager.Context.table("Person")).insert();
 
                 //添加/修改Task
-                Task task = ConnectionManager.Context.table("Task").where("IDCard='" + personIDCard + "' and ProjectID in (select ID from Project where Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "')").select("*").getValue<Task>(new Task());
+                Task task = ConnectionManager.Context.table("Task").where("IDCard='" + personIDCard + "' and ProjectID in (select ID from Project where Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "')").select("*").getItem<Task>(new Task());
                 if (task == null || string.IsNullOrEmpty(task.ID))
                 {
                     //新行
