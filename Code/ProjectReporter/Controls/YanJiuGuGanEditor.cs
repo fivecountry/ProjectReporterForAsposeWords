@@ -477,7 +477,25 @@ namespace ProjectReporter.Controls
         {
             if (ofdExcelDialog.ShowDialog() == DialogResult.OK)
             {
-               
+                DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
+                if (ds != null && ds.Tables.Count >= 1)
+                {
+                    foreach (DataTable dt in ds.Tables)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            if (dr[0] != null && dr[0].ToString().Equals("项目名称"))
+                            {
+                                continue;
+                            }
+
+                            if (dr.ItemArray != null)
+                            {
+
+                            }
+                        }
+                    }
+                }
             }
         }
     }
