@@ -920,7 +920,7 @@ namespace ProjectReporter.Controls
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1896, 60);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "本单位代表申报团队郑重承诺：本建议书填报信息真实有效，相关研究内容没有在其它计划渠道重复申报。\r\n";
+            this.lblTitle.Text = "本单位代表申报团队郑重承诺:本建议书填报信息真实有效,相关研究内容没有在其它计划渠道重复申报.";
             // 
             // plMain
             // 
