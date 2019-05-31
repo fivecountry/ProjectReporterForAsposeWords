@@ -579,7 +579,7 @@ namespace ProjectReporter.Controls
 
                 //添加/修改Task
                 Task task = ConnectionManager.Context.table("Task").where("IDCard='" + personIDCard + "' and ProjectID in (select ID from Project where Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "')").select("*").getValue<Task>(new Task());
-                if (task == null)
+                if (task == null || string.IsNullOrEmpty(task.ID))
                 {
                     //新行
                     task = new Task();
