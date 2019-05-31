@@ -23,12 +23,23 @@ namespace ProjectReporter.DB
             factory = new System.Data.SQLite.SQLiteFactory();
             Context = new DbContext("main", "Data Source=" + dbFile, factory);
             Context.IsSupportInsertAfterSelectIdentity = false;
+            Context.IsSupportGCAfterDispose = true;
         }
 
         public static void Close()
         {
-            Context.getConnection().Dispose();
-            factory.Dispose();
+            try
+            {
+                factory.Dispose();
+            }
+            catch (Exception ex) { }
+            factory = null;
+
+            try
+            {
+                Context.Dispose();
+            }
+            catch (Exception ex) { }
             Context = null;
         }
     }
