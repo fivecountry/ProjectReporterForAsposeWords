@@ -56,7 +56,7 @@ namespace ProjectReporter.Forms
         {
             try
             {
-                printHint("正在载入数据，请稍等......");
+                printHint("正在准备数据，请稍等......");
 
                 #region 初始化目录
                 //InitProjectDir("P" + Process.GetCurrentProcess().Id + "-Project");
