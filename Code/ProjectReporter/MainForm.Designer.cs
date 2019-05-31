@@ -768,7 +768,7 @@ namespace ProjectReporter
             this.feUI30.RTFFileFirstName = "rtpinput_";
             this.feUI30.Size = new System.Drawing.Size(1144, 593);
             this.feUI30.TabIndex = 2;
-            this.feUI30.TitleLabelHeight = 130;
+            this.feUI30.TitleLabelHeight = 160;
             this.feUI30.TitleLabelText = "一、项目目标及涉及的基础性问题400字\r\n二、简介课题设置及主要研究内容400字\r\n三、详细、分类列出项目研究成果及其技术指标，详细说明每项技术指标的考核方式（包" +
     "括考核条件）1000字\r\n四、项目牵头单位、项目负责人，各课题负责单位、课题负责人，研究周期X年，申请经费XXXX万元，200字";
             // 
