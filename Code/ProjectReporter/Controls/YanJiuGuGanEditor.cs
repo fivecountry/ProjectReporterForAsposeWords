@@ -594,7 +594,7 @@ namespace ProjectReporter.Controls
                     {
                         continue;
                     }
-                    else if (dr[dc.ColumnName] == null || dr[dc.ColumnName] == string.Empty)
+                    else if (dr[dc.ColumnName] == null || dr[dc.ColumnName].ToString() == string.Empty)
                     {
                         throw new Exception("对不起，'" + dc.ColumnName + "'不能为空！");
                     }

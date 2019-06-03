@@ -273,7 +273,6 @@
             // 
             // colMeiNianGongZuoShiJian
             // 
-            this.colMeiNianGongZuoShiJian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colMeiNianGongZuoShiJian.HeaderText = "工作时间(月)/年";
             this.colMeiNianGongZuoShiJian.Maximum = new decimal(new int[] {
             1410065407,
@@ -284,7 +283,7 @@
             this.colMeiNianGongZuoShiJian.ReadOnly = true;
             this.colMeiNianGongZuoShiJian.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMeiNianGongZuoShiJian.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMeiNianGongZuoShiJian.Width = 157;
+            this.colMeiNianGongZuoShiJian.Width = 80;
             // 
             // colMoveUp
             // 
@@ -338,7 +337,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "YanJiuGuGanEditor";
             this.Size = new System.Drawing.Size(955, 572);
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
@@ -363,6 +362,8 @@
         private System.Windows.Forms.Panel plContent;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
+        private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colXingMing;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGongZuoDanWei;
@@ -375,7 +376,5 @@
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colMoveDown;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEditThis;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
-        private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
     }
 }
