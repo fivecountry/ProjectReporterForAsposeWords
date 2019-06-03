@@ -587,6 +587,19 @@ namespace ProjectReporter.Controls
                     }
                 }
 
+                //检查非空
+                foreach (DataColumn dc in dr.Table.Columns)
+                {
+                    if (dc.ColumnName == "课题名称")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        throw new Exception("对不起，'" + dc.ColumnName + "'不能为空！");
+                    }
+                }
+
                 #region 插入人员数据
 
                 //判断是不是需要创建单位
