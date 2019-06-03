@@ -38,6 +38,13 @@
             this.label1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtStepCount = new System.Windows.Forms.Label();
@@ -46,13 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotalTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
-            this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
-            this.colContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -65,50 +65,47 @@
             // tableLayoutPanel15
             // 
             this.tableLayoutPanel15.ColumnCount = 3;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel1, 1, 3);
             this.tableLayoutPanel15.Controls.Add(this.plTitle, 1, 1);
             this.tableLayoutPanel15.Controls.Add(this.plContent, 1, 2);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 5;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(1195, 671);
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(896, 537);
             this.tableLayoutPanel15.TabIndex = 4;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Controls.Add(this.btnLast, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(71, 600);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 480);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1053, 42);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(790, 34);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(924, 4);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLast.Location = new System.Drawing.Point(693, 3);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(1, 31);
+            this.btnLast.Size = new System.Drawing.Size(1, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
             this.btnLast.Visible = false;
@@ -116,20 +113,18 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(791, 4);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(593, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 34);
+            this.btnSave.Size = new System.Drawing.Size(90, 27);
             this.btnSave.TabIndex = 0;
             this.btnSave.Values.Text = "保存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(924, 4);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNext.Location = new System.Drawing.Point(693, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(120, 34);
+            this.btnNext.Size = new System.Drawing.Size(90, 27);
             this.btnNext.TabIndex = 2;
             this.btnNext.Values.Text = "下一步";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -139,11 +134,11 @@
             this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.label1);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plTitle.Location = new System.Drawing.Point(72, 25);
-            this.plTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.plTitle.Location = new System.Drawing.Point(54, 20);
+            this.plTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.plTitle.Size = new System.Drawing.Size(1051, 72);
+            this.plTitle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.plTitle.Size = new System.Drawing.Size(788, 58);
             this.plTitle.TabIndex = 0;
             // 
             // label1
@@ -151,11 +146,10 @@
             this.label1.AutoHeight = false;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(8, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("宋体", 14.25F);
+            this.label1.Location = new System.Drawing.Point(6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1043, 72);
+            this.label1.Size = new System.Drawing.Size(782, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "请根据项目研究需要，合理设置项目（课题）研究阶段和进度计划\r\n原则上全周期研究阶段设置应不少于4个。建议每阶段截止时间为该年度5月10日或11月10日";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,10 +160,9 @@
             this.plContent.Controls.Add(this.dgvDetail);
             this.plContent.Controls.Add(this.panel1);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(71, 101);
-            this.plContent.Margin = new System.Windows.Forms.Padding(4);
+            this.plContent.Location = new System.Drawing.Point(53, 81);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1053, 491);
+            this.plContent.Size = new System.Drawing.Size(790, 393);
             this.plContent.TabIndex = 7;
             // 
             // dgvDetail
@@ -186,15 +179,14 @@
             this.colMoney,
             this.delete});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetail.Location = new System.Drawing.Point(0, 32);
-            this.dgvDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDetail.Location = new System.Drawing.Point(0, 26);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 35;
-            this.dgvDetail.Size = new System.Drawing.Size(1053, 459);
+            this.dgvDetail.Size = new System.Drawing.Size(790, 367);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -202,95 +194,6 @@
             this.dgvDetail.TabIndex = 4;
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtStepCount);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtTotalMoney);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtTotalTime);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 32);
-            this.panel1.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Location = new System.Drawing.Point(1031, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 32);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "个阶段";
-            // 
-            // txtStepCount
-            // 
-            this.txtStepCount.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtStepCount.Location = new System.Drawing.Point(951, 0);
-            this.txtStepCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtStepCount.Name = "txtStepCount";
-            this.txtStepCount.Size = new System.Drawing.Size(80, 32);
-            this.txtStepCount.TabIndex = 5;
-            this.txtStepCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Location = new System.Drawing.Point(512, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(439, 32);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "万，根据项目实际，项目研究划分为";
-            // 
-            // txtTotalMoney
-            // 
-            this.txtTotalMoney.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtTotalMoney.Enabled = false;
-            this.txtTotalMoney.Location = new System.Drawing.Point(432, 0);
-            this.txtTotalMoney.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtTotalMoney.Name = "txtTotalMoney";
-            this.txtTotalMoney.Size = new System.Drawing.Size(80, 32);
-            this.txtTotalMoney.TabIndex = 3;
-            this.txtTotalMoney.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Location = new System.Drawing.Point(280, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "年，总经费";
-            // 
-            // txtTotalTime
-            // 
-            this.txtTotalTime.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtTotalTime.Enabled = false;
-            this.txtTotalTime.Location = new System.Drawing.Point(200, 0);
-            this.txtTotalTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtTotalTime.Name = "txtTotalTime";
-            this.txtTotalTime.Size = new System.Drawing.Size(80, 32);
-            this.txtTotalTime.TabIndex = 1;
-            this.txtTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 32);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "本项目研究周期";
             // 
             // selpersonid
             // 
@@ -357,14 +260,95 @@
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Width = 60;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtStepCount);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtTotalMoney);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtTotalTime);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(790, 26);
+            this.panel1.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label5.Location = new System.Drawing.Point(773, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(150, 26);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "个阶段";
+            // 
+            // txtStepCount
+            // 
+            this.txtStepCount.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtStepCount.Location = new System.Drawing.Point(713, 0);
+            this.txtStepCount.Name = "txtStepCount";
+            this.txtStepCount.Size = new System.Drawing.Size(60, 26);
+            this.txtStepCount.TabIndex = 5;
+            this.txtStepCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Location = new System.Drawing.Point(384, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(329, 26);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "万，根据项目实际，项目研究划分为";
+            // 
+            // txtTotalMoney
+            // 
+            this.txtTotalMoney.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtTotalMoney.Enabled = false;
+            this.txtTotalMoney.Location = new System.Drawing.Point(324, 0);
+            this.txtTotalMoney.Name = "txtTotalMoney";
+            this.txtTotalMoney.Size = new System.Drawing.Size(60, 26);
+            this.txtTotalMoney.TabIndex = 3;
+            this.txtTotalMoney.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Location = new System.Drawing.Point(210, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 26);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "年，总经费";
+            // 
+            // txtTotalTime
+            // 
+            this.txtTotalTime.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtTotalTime.Enabled = false;
+            this.txtTotalTime.Location = new System.Drawing.Point(150, 0);
+            this.txtTotalTime.Name = "txtTotalTime";
+            this.txtTotalTime.Size = new System.Drawing.Size(60, 26);
+            this.txtTotalTime.TabIndex = 1;
+            this.txtTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 26);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "本项目研究周期";
+            // 
             // JieDuanHuaFenEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "JieDuanHuaFenEditor";
-            this.Size = new System.Drawing.Size(1195, 671);
+            this.Size = new System.Drawing.Size(896, 537);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

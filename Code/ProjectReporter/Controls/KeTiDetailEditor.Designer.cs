@@ -69,7 +69,6 @@
             this.knKetiDetailTabs.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.knKetiDetailTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.knKetiDetailTabs.Location = new System.Drawing.Point(0, 0);
-            this.knKetiDetailTabs.Margin = new System.Windows.Forms.Padding(4);
             this.knKetiDetailTabs.Name = "knKetiDetailTabs";
             this.knKetiDetailTabs.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kpInfo,
@@ -77,7 +76,7 @@
             this.kpContent,
             this.kpNeed});
             this.knKetiDetailTabs.SelectedIndex = 0;
-            this.knKetiDetailTabs.Size = new System.Drawing.Size(1002, 485);
+            this.knKetiDetailTabs.Size = new System.Drawing.Size(752, 388);
             this.knKetiDetailTabs.TabIndex = 0;
             this.knKetiDetailTabs.Text = "kryptonNavigator1";
             // 
@@ -87,10 +86,9 @@
             this.kpInfo.Controls.Add(this.txtInfo);
             this.kpInfo.Flags = 65534;
             this.kpInfo.LastVisibleSet = true;
-            this.kpInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.kpInfo.MinimumSize = new System.Drawing.Size(67, 62);
+            this.kpInfo.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpInfo.Name = "kpInfo";
-            this.kpInfo.Size = new System.Drawing.Size(1000, 454);
+            this.kpInfo.Size = new System.Drawing.Size(750, 361);
             this.kpInfo.Text = "简述";
             this.kpInfo.ToolTipTitle = "Page ToolTip";
             this.kpInfo.UniqueName = "480A3E3DB4644E2359A73CEE17D437D9";
@@ -99,10 +97,9 @@
             // 
             this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInfo.Location = new System.Drawing.Point(0, 0);
-            this.txtInfo.Margin = new System.Windows.Forms.Padding(4);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(1000, 454);
+            this.txtInfo.Size = new System.Drawing.Size(750, 361);
             this.txtInfo.TabIndex = 0;
             // 
             // kpDest
@@ -111,10 +108,9 @@
             this.kpDest.Controls.Add(this.txtDest);
             this.kpDest.Flags = 65534;
             this.kpDest.LastVisibleSet = true;
-            this.kpDest.Margin = new System.Windows.Forms.Padding(4);
-            this.kpDest.MinimumSize = new System.Drawing.Size(67, 62);
+            this.kpDest.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpDest.Name = "kpDest";
-            this.kpDest.Size = new System.Drawing.Size(1000, 461);
+            this.kpDest.Size = new System.Drawing.Size(750, 369);
             this.kpDest.Text = "研究目标";
             this.kpDest.ToolTipTitle = "Page ToolTip";
             this.kpDest.UniqueName = "A7C07E934B1F414E99B2655E2A0D8ECC";
@@ -123,9 +119,8 @@
             // 
             this.txtDest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDest.Location = new System.Drawing.Point(0, 0);
-            this.txtDest.Margin = new System.Windows.Forms.Padding(4);
             this.txtDest.Name = "txtDest";
-            this.txtDest.Size = new System.Drawing.Size(1000, 461);
+            this.txtDest.Size = new System.Drawing.Size(750, 369);
             this.txtDest.TabIndex = 1;
             this.txtDest.Text = "";
             // 
@@ -135,10 +130,9 @@
             this.kpContent.Controls.Add(this.txtContent);
             this.kpContent.Flags = 65534;
             this.kpContent.LastVisibleSet = true;
-            this.kpContent.Margin = new System.Windows.Forms.Padding(4);
-            this.kpContent.MinimumSize = new System.Drawing.Size(67, 62);
+            this.kpContent.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpContent.Name = "kpContent";
-            this.kpContent.Size = new System.Drawing.Size(1000, 461);
+            this.kpContent.Size = new System.Drawing.Size(750, 369);
             this.kpContent.Text = "研究内容";
             this.kpContent.ToolTipTitle = "Page ToolTip";
             this.kpContent.UniqueName = "D7C9060B093A424227B510727F20F652";
@@ -147,9 +141,8 @@
             // 
             this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtContent.Location = new System.Drawing.Point(0, 0);
-            this.txtContent.Margin = new System.Windows.Forms.Padding(4);
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(1000, 461);
+            this.txtContent.Size = new System.Drawing.Size(750, 369);
             this.txtContent.TabIndex = 1;
             this.txtContent.Text = "";
             // 
@@ -159,10 +152,9 @@
             this.kpNeed.Controls.Add(this.txtNeed);
             this.kpNeed.Flags = 65534;
             this.kpNeed.LastVisibleSet = true;
-            this.kpNeed.Margin = new System.Windows.Forms.Padding(4);
-            this.kpNeed.MinimumSize = new System.Drawing.Size(67, 62);
+            this.kpNeed.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpNeed.Name = "kpNeed";
-            this.kpNeed.Size = new System.Drawing.Size(1000, 461);
+            this.kpNeed.Size = new System.Drawing.Size(750, 369);
             this.kpNeed.Text = "关键技术及研究思路";
             this.kpNeed.ToolTipTitle = "Page ToolTip";
             this.kpNeed.UniqueName = "C96959D95BED456940AB08FF33E3497B";
@@ -171,59 +163,55 @@
             // 
             this.txtNeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNeed.Location = new System.Drawing.Point(0, 0);
-            this.txtNeed.Margin = new System.Windows.Forms.Padding(4);
             this.txtNeed.Name = "txtNeed";
-            this.txtNeed.Size = new System.Drawing.Size(1000, 461);
+            this.txtNeed.Size = new System.Drawing.Size(750, 369);
             this.txtNeed.TabIndex = 1;
             this.txtNeed.Text = "";
             // 
             // tableLayoutPanel15
             // 
             this.tableLayoutPanel15.ColumnCount = 3;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel1, 1, 3);
             this.tableLayoutPanel15.Controls.Add(this.plTitle, 1, 1);
             this.tableLayoutPanel15.Controls.Add(this.plContent, 1, 2);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 5;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(1144, 628);
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(858, 502);
             this.tableLayoutPanel15.TabIndex = 5;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Controls.Add(this.btnLast, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(71, 557);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 445);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1002, 42);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(752, 34);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(873, 4);
-            this.btnLast.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLast.Location = new System.Drawing.Point(655, 3);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(1, 31);
+            this.btnLast.Size = new System.Drawing.Size(1, 25);
             this.btnLast.TabIndex = 1;
             this.btnLast.Values.Text = "返回";
             this.btnLast.Visible = false;
@@ -231,20 +219,18 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(740, 4);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(555, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 34);
+            this.btnSave.Size = new System.Drawing.Size(90, 27);
             this.btnSave.TabIndex = 0;
             this.btnSave.Values.Text = "保存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(873, 4);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNext.Location = new System.Drawing.Point(655, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(120, 34);
+            this.btnNext.Size = new System.Drawing.Size(90, 27);
             this.btnNext.TabIndex = 2;
             this.btnNext.Values.Text = "下一步";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -254,11 +240,11 @@
             this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.lblTitle);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plTitle.Location = new System.Drawing.Point(72, 25);
-            this.plTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.plTitle.Location = new System.Drawing.Point(54, 20);
+            this.plTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.plTitle.Size = new System.Drawing.Size(1000, 35);
+            this.plTitle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.plTitle.Size = new System.Drawing.Size(750, 28);
             this.plTitle.TabIndex = 0;
             // 
             // lblTitle
@@ -266,11 +252,10 @@
             this.lblTitle.AutoHeight = false;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("楷体_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTitle.Location = new System.Drawing.Point(8, 0);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Font = new System.Drawing.Font("宋体", 14.25F);
+            this.lblTitle.Location = new System.Drawing.Point(6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(992, 35);
+            this.lblTitle.Size = new System.Drawing.Size(744, 28);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = ".............";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,20 +265,19 @@
             this.plContent.BackColor = System.Drawing.Color.Transparent;
             this.plContent.Controls.Add(this.knKetiDetailTabs);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(71, 64);
-            this.plContent.Margin = new System.Windows.Forms.Padding(4);
+            this.plContent.Location = new System.Drawing.Point(53, 51);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1002, 485);
+            this.plContent.Size = new System.Drawing.Size(752, 388);
             this.plContent.TabIndex = 7;
             // 
             // KeTiDetailEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KeTiDetailEditor";
-            this.Size = new System.Drawing.Size(1144, 628);
+            this.Size = new System.Drawing.Size(858, 502);
             ((System.ComponentModel.ISupportInitialize)(this.knKetiDetailTabs)).EndInit();
             this.knKetiDetailTabs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).EndInit();
