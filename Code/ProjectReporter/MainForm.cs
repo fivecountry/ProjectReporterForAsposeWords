@@ -104,6 +104,9 @@ namespace ProjectReporter
 
         private void btnwordview_Click(object sender, EventArgs e)
         {
+            //保存所有
+            SaveAll();
+
             if (ProjectObj != null)
             {
                 WordExportForm frmExportWord = new WordExportForm(string.Empty);
@@ -117,6 +120,9 @@ namespace ProjectReporter
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            //保存所有
+            SaveAll();
+
             if (!this.IsInputCompleted())
             {
                 MessageBox.Show("请将所有内容填写完整再点击上报!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -803,6 +809,19 @@ namespace ProjectReporter
 
             //判断条件是否符合
             return totalMoney == projectMoney && totalMoney == totalStepMoney && totalMoney == totalKetiStepMoney && totalTime == totalStepTime && totalRightStepCount == totalStepCount;
+        }
+
+        /// <summary>
+        /// 保存所有
+        /// </summary>
+        public void SaveAll()
+        {
+            //循环所有控件，一个一个保存
+            foreach (BaseEditor be in EditorIndexLists)
+            {
+                //保存
+                be.OnSaveEvent();
+            }
         }
     }
 }
