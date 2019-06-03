@@ -101,7 +101,7 @@ namespace ProjectReporter.Controls
 
         public override bool IsInputCompleted()
         {
-            return true;
+            return File.Exists(FilePath);
         }
 
         private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {

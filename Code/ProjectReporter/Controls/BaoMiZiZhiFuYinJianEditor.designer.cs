@@ -41,12 +41,16 @@
             this.kryptonLabel67 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbcomattpath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.cbMilitary = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.plContent.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel15
@@ -159,14 +163,18 @@
             this.tableLayoutPanel20.Controls.Add(this.btnComsel, 2, 0);
             this.tableLayoutPanel20.Controls.Add(this.kryptonLabel67, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.lbcomattpath, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 1;
+            this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(910, 40);
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(910, 85);
             this.tableLayoutPanel20.TabIndex = 4;
             // 
             // btnComsel
@@ -180,9 +188,10 @@
             // 
             // kryptonLabel67
             // 
+            this.kryptonLabel67.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonLabel67.Location = new System.Drawing.Point(3, 3);
             this.kryptonLabel67.Name = "kryptonLabel67";
-            this.kryptonLabel67.Size = new System.Drawing.Size(45, 23);
+            this.kryptonLabel67.Size = new System.Drawing.Size(54, 34);
             this.kryptonLabel67.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.kryptonLabel67.TabIndex = 1;
             this.kryptonLabel67.Values.Text = "附件";
@@ -201,6 +210,35 @@
             // 
             this.ofdUpload.Filter = "PNG文件|*.png|JPG文件|*.jpg|JPEG文件|*.jpeg|BMP文件|*.bmp";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cbMilitary);
+            this.panel1.Controls.Add(this.kryptonLabel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(63, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(694, 39);
+            this.panel1.TabIndex = 9;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(144, 39);
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel1.TabIndex = 3;
+            this.kryptonLabel1.Values.Text = "是否为军队单位：";
+            // 
+            // cbMilitary
+            // 
+            this.cbMilitary.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbMilitary.Location = new System.Drawing.Point(144, 0);
+            this.cbMilitary.Name = "cbMilitary";
+            this.cbMilitary.Size = new System.Drawing.Size(20, 39);
+            this.cbMilitary.TabIndex = 4;
+            this.cbMilitary.UseVisualStyleBackColor = true;
+            // 
             // BaoMiZiZhiFuYinJianEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -216,6 +254,8 @@
             this.plContent.ResumeLayout(false);
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel20.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -235,5 +275,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnComsel;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel lbcomattpath;
         private System.Windows.Forms.OpenFileDialog ofdUpload;
+        private System.Windows.Forms.Panel panel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private System.Windows.Forms.CheckBox cbMilitary;
     }
 }

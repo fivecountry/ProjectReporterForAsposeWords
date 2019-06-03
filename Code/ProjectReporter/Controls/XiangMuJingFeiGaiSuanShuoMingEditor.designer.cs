@@ -185,9 +185,10 @@
             // 
             // kryptonLabel67
             // 
+            this.kryptonLabel67.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonLabel67.Location = new System.Drawing.Point(3, 3);
             this.kryptonLabel67.Name = "kryptonLabel67";
-            this.kryptonLabel67.Size = new System.Drawing.Size(45, 23);
+            this.kryptonLabel67.Size = new System.Drawing.Size(54, 34);
             this.kryptonLabel67.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.kryptonLabel67.TabIndex = 1;
             this.kryptonLabel67.Values.Text = "附件";
@@ -243,7 +244,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "XiangMuJingFeiGaiSuanShuoMingEditor";
             this.Size = new System.Drawing.Size(1050, 562);
             this.tableLayoutPanel15.ResumeLayout(false);

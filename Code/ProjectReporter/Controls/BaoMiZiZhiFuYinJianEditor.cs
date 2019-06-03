@@ -65,6 +65,16 @@ namespace ProjectReporter.Controls
                     }
                 }
             }
+
+            //判断文件是否不存在,如果存在就是非军队单位，如果不存在就是军队单位
+            if (File.Exists(FilePath))
+            {
+                cbMilitary.Checked = false;
+            }
+            else
+            {
+                cbMilitary.Checked = true;
+            }
         }
 
         public override void OnSaveEvent()
@@ -95,12 +105,13 @@ namespace ProjectReporter.Controls
             if (ofdUpload.ShowDialog() == DialogResult.OK)
             {
                 lbcomattpath.Text = new FileInfo(ofdUpload.FileName).Name;
+                cbMilitary.Checked = false;
             }
         }
 
         public override bool IsInputCompleted()
         {
-            return true;
+            return cbMilitary.Checked ? true : (File.Exists(FilePath));
         }
     }
 }
