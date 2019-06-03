@@ -435,7 +435,7 @@ namespace ProjectReporter
             int iconIndex = 0;
             foreach (KryptonPage kp in edithost2.Pages)
             {
-                Bitmap bmp = new Bitmap(250, 50);
+                Bitmap bmp = new Bitmap(200, 55);
                 Graphics g = Graphics.FromImage(bmp);
                 try
                 {
@@ -448,7 +448,7 @@ namespace ProjectReporter
                     if (img != null)
                     {
                         //画图标                    
-                        g.DrawImage(img, new Rectangle(10, (50 - 32) / 2, 32, 32));
+                        g.DrawImage(img, new Rectangle(10, (55 - 32) / 2, 32, 32));
 
                         //画字符串
                         g.DrawString(kp.Text, new Font("微软雅黑", 11), new SolidBrush(Color.Black), new RectangleF(52, 0, bmp.Width - 52, bmp.Height), sf);

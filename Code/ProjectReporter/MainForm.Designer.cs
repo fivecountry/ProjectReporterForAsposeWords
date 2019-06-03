@@ -444,7 +444,7 @@ namespace ProjectReporter
             this.edithost2.Bar.BarMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.Text;
             this.edithost2.Bar.BarOrientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left;
             this.edithost2.Bar.ItemMaximumSize = new System.Drawing.Size(400, 200);
-            this.edithost2.Bar.ItemMinimumSize = new System.Drawing.Size(250, 30);
+            this.edithost2.Bar.ItemMinimumSize = new System.Drawing.Size(200, 30);
             this.edithost2.Bar.ItemOrientation = ComponentFactory.Krypton.Toolkit.ButtonOrientation.FixedTop;
             this.edithost2.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
             this.edithost2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -481,7 +481,7 @@ namespace ProjectReporter
             this.kpReportPage1.LastVisibleSet = true;
             this.kpReportPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage1.Name = "kpReportPage1";
-            this.kpReportPage1.Size = new System.Drawing.Size(1206, 628);
+            this.kpReportPage1.Size = new System.Drawing.Size(1256, 628);
             this.kpReportPage1.Text = "填写说明";
             this.kpReportPage1.ToolTipTitle = "Page ToolTip";
             this.kpReportPage1.UniqueName = "9B7D02A9426B4A7E32876CC330B9C07B";
@@ -497,7 +497,7 @@ namespace ProjectReporter
             this.knReportPage1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1});
             this.knReportPage1.SelectedIndex = 0;
-            this.knReportPage1.Size = new System.Drawing.Size(1206, 628);
+            this.knReportPage1.Size = new System.Drawing.Size(1256, 628);
             this.knReportPage1.TabIndex = 0;
             // 
             // kryptonPage1
@@ -508,7 +508,7 @@ namespace ProjectReporter
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(1204, 598);
+            this.kryptonPage1.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage1.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kryptonPage1.Text = "填写说明";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
@@ -519,7 +519,7 @@ namespace ProjectReporter
             this.txtReportReadme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtReportReadme.Location = new System.Drawing.Point(0, 0);
             this.txtReportReadme.Name = "txtReportReadme";
-            this.txtReportReadme.Size = new System.Drawing.Size(1204, 598);
+            this.txtReportReadme.Size = new System.Drawing.Size(1254, 598);
             this.txtReportReadme.TabIndex = 0;
             this.txtReportReadme.Text = "";
             // 
@@ -889,7 +889,7 @@ namespace ProjectReporter
             this.feUI5.RTFFileFirstName = "rtpinput_";
             this.feUI5.Size = new System.Drawing.Size(1254, 598);
             this.feUI5.TabIndex = 1;
-            this.feUI5.TitleLabelHeight = 58;
+            this.feUI5.TitleLabelHeight = 39;
             this.feUI5.TitleLabelText = "围绕项目研究目标，突出国防基础研究的任务特点，梳理提出本项目需要重点研究解决的基础性问题(简要描述每个问题，200字以内)";
             // 
             // kpReportPage6
