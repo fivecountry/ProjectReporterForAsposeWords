@@ -537,6 +537,58 @@ namespace ProjectReporter.Controls
                 string taskInProject = dr["任务分工"] != null ? dr["任务分工"].ToString() : string.Empty;
                 string timeInProject = dr["每年为本项目工作时间"] != null ? dr["每年为本项目工作时间"].ToString() : string.Empty;
 
+                //进行必要字段的校验
+                
+                //检查单位帐号
+                if (string.IsNullOrEmpty(unitBankNo))
+                {
+                    throw new Exception("对不起，'单位开户帐号'不能为空！");
+                }
+
+                //检查身份证
+                if (string.IsNullOrEmpty(personIDCard))
+                {
+                    throw new Exception("对不起，'身份证'不能为空");
+                }
+
+                //检查出生日期
+                DateTime dt = DateTime.MinValue;
+                if (DateTime.TryParse(personBirthday, out dt) == false)
+                {
+                    throw new Exception("对不起，'出生日期'格式错误！");
+                }
+
+                //检查项目或课题中职务f
+                if (jobInProjectOrSubject != "成员" && jobInProjectOrSubject != "负责人")
+                {
+                    throw new Exception("对不起，'项目或课题中职务'里只能写成员或负责人！");
+                }
+
+                //检查性别
+                if (personSex != "男" && personSex != "女")
+                {
+                    throw new Exception("对不起，性别必须是'男'或'女'");
+                }
+
+                //检查每年为本项目工作时间
+                int timeResult = 0;
+                if (int.TryParse(timeInProject, out timeResult) == false)
+                {
+                    throw new Exception("对不起，'每年为本项目工作时间'只能是数字！");
+                }
+
+                //检查课题名称
+                if (!string.IsNullOrEmpty(subjectName))
+                {
+                    long subjectCount = ConnectionManager.Context.table("Project").where("Name='" + subjectName + "'").select("count(*)").getValue<long>(0);
+                    if (subjectCount <= 0)
+                    {
+                        throw new Exception("对不起，'" + subjectName + "'不是有效的课题名称！");
+                    }
+                }
+
+                #region 插入人员数据
+
                 //判断是不是需要创建单位
                 UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("UnitBankNo='" + unitBankNo + "'").select("*").getItem<UnitExt>(new UnitExt());
                 
@@ -606,6 +658,7 @@ namespace ProjectReporter.Controls
                     //update
                     task.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + task.ID + "'").update();
                 }
+                #endregion
             }
             catch (Exception ex)
             {
