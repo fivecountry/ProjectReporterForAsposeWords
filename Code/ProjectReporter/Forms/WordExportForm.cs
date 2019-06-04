@@ -180,7 +180,7 @@ namespace ProjectReporter.Forms
                 wu.InsertFile("研究团队", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_15.rtf"), true);
                 wu.InsertFile("研究基础与保障条件", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_17.rtf"), true);
                 wu.InsertFile("组织实施与风险控制", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_18.rtf"), true);
-                wu.InsertFile("与有关计划关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_19.rtf"), true);
+                wu.InsertFile("与有关计划关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_19.rtf"), false);
 
                 wu.InsertFile("附件1", uploadA, true);
                 wu.InsertFile("附件2", uploadB, true);
