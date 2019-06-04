@@ -220,9 +220,9 @@ namespace ProjectReporter.Forms
                         Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + proj.ID + "'").select("*").getItem<Task>(new Task());
                         if (ketiTask != null)
                         {
-                            moneyStr = ketiTask.TotalMoney + "万";
+                            moneyStr = "  " + ketiTask.TotalMoney + "万";
                         }
-                        wu.InsertValue("  课题详细_" + ketiIndex + "_5", moneyStr);
+                        wu.InsertValue("课题详细_" + ketiIndex + "_5", moneyStr);
 
                         ketiIndex++;
 
@@ -232,7 +232,7 @@ namespace ProjectReporter.Forms
                         }
                         else
                         {
-                            ketiMap.Insert(1, new KeyValuePair<string, Project>(ketiCode, proj));
+                            ketiMap.Add(new KeyValuePair<string, Project>(ketiCode, proj));
                         }
                     }
 
