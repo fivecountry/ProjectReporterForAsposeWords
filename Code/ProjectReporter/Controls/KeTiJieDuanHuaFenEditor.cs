@@ -18,7 +18,88 @@ namespace ProjectReporter.Controls
         {
             InitializeComponent();
 
+            dgvDetail.Paint += dgvDetail_Paint;
             //dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+        }
+
+        void dgvDetail_Paint(object sender, PaintEventArgs e)
+        {
+            //字符串显示格式
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;
+            sf.LineAlignment = StringAlignment.Center;
+
+            //合并列表
+            List<KeyValuePair<int, int>> mergeList = new List<KeyValuePair<int, int>>();
+
+            //处理列合并
+            #region 1. 首先确定哪些可以合并
+            int rowCount = dgvDetail.Rows.Count;
+            object lastValue = null;
+            int startRowIndex = -1;
+            int endRowIndex = -1;
+            for (int k = 0; k < rowCount; k++)
+            {
+                object value = dgvDetail.Rows[k].Cells[1].Value;
+                if (k == 0)
+                {
+                    lastValue = value;
+                    startRowIndex = k;
+                    endRowIndex = -1;
+                }
+                else
+                {
+                    if (value == lastValue)
+                    {
+                        endRowIndex = k;
+                        continue;
+                    }
+                    else
+                    {
+                        if (endRowIndex > startRowIndex)
+                        {
+                            mergeList.Add(new KeyValuePair<int, int>(startRowIndex, endRowIndex)); 
+                        }
+
+                        lastValue = value;
+                        startRowIndex = k;
+                        endRowIndex = -1;
+                    }
+                }
+            }
+            if (endRowIndex > startRowIndex)
+            {
+                mergeList.Add(new KeyValuePair<int, int>(startRowIndex, endRowIndex));
+            }
+            #endregion
+
+            #region 2. 重新绘制单元格文本
+            foreach (KeyValuePair<int, int> kvps in mergeList)
+            {
+                if (kvps.Value > kvps.Key)
+                {
+                    //可显示的文本
+                    string rowText = dgvDetail.Rows[kvps.Key].Cells[1].Value != null ? dgvDetail.Rows[kvps.Key].Cells[1].Value.ToString() : string.Empty;
+
+                    //开始的单元格显示范围
+                    Rectangle rectStart = dgvDetail.GetCellDisplayRectangle(1, kvps.Key, false);
+                    for (int displayIndex = kvps.Key + 1; displayIndex <= kvps.Value; displayIndex++)
+                    {
+                        Rectangle rectEnd = dgvDetail.GetCellDisplayRectangle(1, displayIndex, false);
+                        rectStart.Height += rectEnd.Height;   
+                    }
+                    
+                    //覆盖已经输出的文字
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), new Rectangle(rectStart.X + 1, rectStart.Y + 1, rectStart.Width - 2, rectStart.Height - 2));
+
+                    //重新绘制文本
+                    e.Graphics.DrawString(rowText, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))), new SolidBrush(Color.Black), new RectangleF(rectStart.X + 1, rectStart.Y + 1, rectStart.Width - 2, rectStart.Height - 2), sf);
+
+                    //绘制底部边框线
+                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.LightGray), 1), new Point(rectStart.Left, rectStart.Bottom), new Point(rectStart.Right, rectStart.Bottom));
+                }
+            }
+            #endregion
         }
 
         private void btnSave_Click(object sender, EventArgs e)
