@@ -71,6 +71,8 @@ namespace ProjectReporter.Forms
                     {
                         if (StartupParams[0].StartsWith("Export:"))
                         {
+                            printHint("正在导出数据，请稍等......");
+
                             //导出
                             string toZipFile = StartupParams[0].Replace("Export:", string.Empty);
                             string toZipDir = new FileInfo(toZipFile).DirectoryName;
@@ -88,6 +90,8 @@ namespace ProjectReporter.Forms
                         }
                         else if (StartupParams[0].StartsWith("Clear:"))
                         {
+                            printHint("正在清理数据，请稍等......");
+
                             Directory.Delete(MainForm.ProjectDir, true);
                             Program.TryInitProjectDir("Current");
 
@@ -97,6 +101,8 @@ namespace ProjectReporter.Forms
                         else
                         {
                             //导入
+
+                            printHint("正在导入数据，请稍等......");
 
                             //备份当前的数据库
                             if (Directory.Exists(Path.Combine(MainForm.BaseDir, "import-backup")))

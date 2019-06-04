@@ -213,7 +213,7 @@ namespace ProjectReporter.Forms
                         fuzeUnit = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = (select ProjectID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "'))").select("UnitName").getValue<string>(string.Empty);
                         fuzePerson = ConnectionManager.Context.table("Person").where("ID = (select PersonID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "')").select("Name").getValue<string>(string.Empty);
 
-                        wu.InsertValue("课题详细_" + ketiIndex + "_4", "负责人：" + fuzePerson + "\n负责单位：" + fuzeUnit);
+                        wu.InsertValue("课题详细_" + ketiIndex + "_4", "  负责人：" + fuzePerson + "\n  负责单位：" + fuzeUnit);
 
                         //金额
                         string moneyStr = "0";
@@ -222,7 +222,7 @@ namespace ProjectReporter.Forms
                         {
                             moneyStr = ketiTask.TotalMoney + "万";
                         }
-                        wu.InsertValue("课题详细_" + ketiIndex + "_5", moneyStr);
+                        wu.InsertValue("  课题详细_" + ketiIndex + "_5", moneyStr);
 
                         ketiIndex++;
 
