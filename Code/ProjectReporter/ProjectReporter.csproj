@@ -207,6 +207,7 @@
     <Compile Include="Controls\BaoMiZiZhiFuYinJianEditor.designer.cs">
       <DependentUpon>BaoMiZiZhiFuYinJianEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DataGridViewEx\DataGridViewWithMerge.cs" />
     <Compile Include="Controls\FuZeRenEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
