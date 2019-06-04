@@ -40,10 +40,10 @@
             this.btnComsel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel67 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbcomattpath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.cbMilitary = new System.Windows.Forms.CheckBox();
+            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -206,10 +206,6 @@
             this.lbcomattpath.TabIndex = 8;
             this.lbcomattpath.Values.Text = "0";
             // 
-            // ofdUpload
-            // 
-            this.ofdUpload.Filter = "PNG文件|*.png|JPG文件|*.jpg|JPEG文件|*.jpeg|BMP文件|*.bmp";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cbMilitary);
@@ -219,6 +215,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(694, 39);
             this.panel1.TabIndex = 9;
+            // 
+            // cbMilitary
+            // 
+            this.cbMilitary.Checked = true;
+            this.cbMilitary.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbMilitary.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbMilitary.Location = new System.Drawing.Point(144, 0);
+            this.cbMilitary.Name = "cbMilitary";
+            this.cbMilitary.Size = new System.Drawing.Size(20, 39);
+            this.cbMilitary.TabIndex = 4;
+            this.cbMilitary.UseVisualStyleBackColor = true;
             // 
             // kryptonLabel1
             // 
@@ -230,14 +237,9 @@
             this.kryptonLabel1.TabIndex = 3;
             this.kryptonLabel1.Values.Text = "是否为军队单位：";
             // 
-            // cbMilitary
+            // ofdUpload
             // 
-            this.cbMilitary.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbMilitary.Location = new System.Drawing.Point(144, 0);
-            this.cbMilitary.Name = "cbMilitary";
-            this.cbMilitary.Size = new System.Drawing.Size(20, 39);
-            this.cbMilitary.TabIndex = 4;
-            this.cbMilitary.UseVisualStyleBackColor = true;
+            this.ofdUpload.Filter = "PNG文件|*.png|JPG文件|*.jpg|JPEG文件|*.jpeg|BMP文件|*.bmp";
             // 
             // BaoMiZiZhiFuYinJianEditor
             // 

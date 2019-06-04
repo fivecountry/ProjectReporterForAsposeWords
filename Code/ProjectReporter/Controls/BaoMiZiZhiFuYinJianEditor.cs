@@ -70,11 +70,7 @@ namespace ProjectReporter.Controls
             if (File.Exists(FilePath))
             {
                 cbMilitary.Checked = false;
-            }
-            else
-            {
-                cbMilitary.Checked = true;
-            }
+            }            
         }
 
         public override void OnSaveEvent()
