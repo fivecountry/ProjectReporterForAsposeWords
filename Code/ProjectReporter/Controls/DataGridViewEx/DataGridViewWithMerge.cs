@@ -13,12 +13,12 @@ using ComponentFactory.Krypton.Toolkit;
 
 namespace ProjectReporter.Controls.DataGridViewEx
 {
-    public class KryptonDataGridViewWithMerge : KryptonDataGridView
+    public class DataGridViewWithMerge : DataGridView
     {
         private System.Windows.Forms.Timer timer1;
 
         #region 构造函数
-        public KryptonDataGridViewWithMerge()
+        public DataGridViewWithMerge()
             : base()
         {
             this.timer1 = new System.Windows.Forms.Timer();   
