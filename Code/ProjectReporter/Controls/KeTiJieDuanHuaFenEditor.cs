@@ -90,13 +90,13 @@ namespace ProjectReporter.Controls
                     }
                     
                     //覆盖已经输出的文字
-                    e.Graphics.FillRectangle(new SolidBrush(Color.White), new Rectangle(rectStart.X + 1, rectStart.Y + 1, rectStart.Width - 2, rectStart.Height - 2));
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), new Rectangle(rectStart.X + 2, rectStart.Y + 2, rectStart.Width - 4, rectStart.Height - 4));
 
                     //重新绘制文本
-                    e.Graphics.DrawString(rowText, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))), new SolidBrush(Color.Black), new RectangleF(rectStart.X + 1, rectStart.Y + 1, rectStart.Width - 2, rectStart.Height - 2), sf);
+                    e.Graphics.DrawString(rowText, new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))), new SolidBrush(Color.Black), new RectangleF(rectStart.X + 2, rectStart.Y + 2, rectStart.Width - 4, rectStart.Height - 4), sf);
 
                     //绘制底部边框线
-                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.LightGray), 1), new Point(rectStart.Left, rectStart.Bottom), new Point(rectStart.Right, rectStart.Bottom));
+                    //e.Graphics.DrawLine(new Pen(new SolidBrush(Color.LightGray), 1), new Point(rectStart.Left, rectStart.Bottom), new Point(rectStart.Right, rectStart.Bottom));
                 }
             }
             #endregion
