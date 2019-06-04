@@ -520,6 +520,9 @@
     <None Include="Helper\JingFeiFuJian.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Helper\lianxiren.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Helper\newtemplete.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
