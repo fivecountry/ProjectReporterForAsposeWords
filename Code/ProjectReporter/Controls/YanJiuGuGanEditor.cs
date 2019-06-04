@@ -11,6 +11,8 @@ using ProjectReporter.DB;
 using ProjectReporter.DB.Entitys;
 using ProjectReporter.Forms;
 using ProjectReporter.DB.Services;
+using System.IO;
+using System.Diagnostics;
 
 namespace ProjectReporter.Controls
 {
@@ -677,6 +679,15 @@ namespace ProjectReporter.Controls
             {
                 MessageBox.Show("插入错误！Ex:" + ex.ToString(), "错误");
             }
+        }
+
+        private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "lianxiren.xlsx"));
+            string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), lklDownloadFuJian.Text.Trim());
+            File.Copy(sourcePath, destPath, true);
+            MessageBox.Show("已下载到桌面！");
+            Process.Start(destPath);
         }
     }
 }
