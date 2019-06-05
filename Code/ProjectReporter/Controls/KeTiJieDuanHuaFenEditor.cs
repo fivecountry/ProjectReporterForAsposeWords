@@ -182,6 +182,10 @@ namespace ProjectReporter.Controls
                 }
 
                 dgvDetail.Sort(dgvDetail.Columns[1], ListSortDirection.Ascending);
+                foreach (DataGridViewColumn col in dgvDetail.Columns)
+                {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             }
         }
 
