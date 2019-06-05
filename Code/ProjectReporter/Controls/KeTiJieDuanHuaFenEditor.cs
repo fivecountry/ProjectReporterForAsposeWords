@@ -180,6 +180,8 @@ namespace ProjectReporter.Controls
                     int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                     dgvDetail.Rows[rowIndex].Tag = step;
                 }
+
+                dgvDetail.Sort(dgvDetail.Columns[1], ListSortDirection.Ascending);
             }
         }
 
