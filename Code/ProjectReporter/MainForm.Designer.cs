@@ -447,6 +447,9 @@ namespace ProjectReporter
             this.edithost2.Bar.ItemMinimumSize = new System.Drawing.Size(200, 30);
             this.edithost2.Bar.ItemOrientation = ComponentFactory.Krypton.Toolkit.ButtonOrientation.FixedTop;
             this.edithost2.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.edithost2.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.edithost2.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.ShowEnabled;
+            this.edithost2.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.ShowEnabled;
             this.edithost2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.edithost2.Location = new System.Drawing.Point(0, 41);
             this.edithost2.Name = "edithost2";
