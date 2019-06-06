@@ -160,10 +160,10 @@
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel20.Controls.Add(this.btnComsel, 2, 0);
-            this.tableLayoutPanel20.Controls.Add(this.kryptonLabel67, 0, 0);
-            this.tableLayoutPanel20.Controls.Add(this.lbcomattpath, 1, 0);
-            this.tableLayoutPanel20.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel20.Controls.Add(this.btnComsel, 2, 1);
+            this.tableLayoutPanel20.Controls.Add(this.kryptonLabel67, 0, 1);
+            this.tableLayoutPanel20.Controls.Add(this.lbcomattpath, 1, 1);
+            this.tableLayoutPanel20.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
@@ -172,14 +172,12 @@
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(910, 85);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(910, 84);
             this.tableLayoutPanel20.TabIndex = 4;
             // 
             // btnComsel
             // 
-            this.btnComsel.Location = new System.Drawing.Point(763, 3);
+            this.btnComsel.Location = new System.Drawing.Point(763, 43);
             this.btnComsel.Name = "btnComsel";
             this.btnComsel.Size = new System.Drawing.Size(82, 29);
             this.btnComsel.TabIndex = 5;
@@ -189,9 +187,9 @@
             // kryptonLabel67
             // 
             this.kryptonLabel67.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonLabel67.Location = new System.Drawing.Point(3, 3);
+            this.kryptonLabel67.Location = new System.Drawing.Point(3, 43);
             this.kryptonLabel67.Name = "kryptonLabel67";
-            this.kryptonLabel67.Size = new System.Drawing.Size(54, 34);
+            this.kryptonLabel67.Size = new System.Drawing.Size(54, 38);
             this.kryptonLabel67.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.kryptonLabel67.TabIndex = 1;
             this.kryptonLabel67.Values.Text = "附件";
@@ -199,21 +197,24 @@
             // lbcomattpath
             // 
             this.lbcomattpath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbcomattpath.Location = new System.Drawing.Point(63, 3);
+            this.lbcomattpath.Location = new System.Drawing.Point(63, 43);
             this.lbcomattpath.Name = "lbcomattpath";
-            this.lbcomattpath.Size = new System.Drawing.Size(694, 34);
+            this.lbcomattpath.Size = new System.Drawing.Size(694, 38);
             this.lbcomattpath.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.lbcomattpath.TabIndex = 8;
             this.lbcomattpath.Values.Text = "0";
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel20.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.cbMilitary);
             this.panel1.Controls.Add(this.kryptonLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(63, 43);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(694, 39);
+            this.panel1.Size = new System.Drawing.Size(910, 40);
             this.panel1.TabIndex = 9;
             // 
             // cbMilitary
@@ -221,9 +222,9 @@
             this.cbMilitary.Checked = true;
             this.cbMilitary.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMilitary.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbMilitary.Location = new System.Drawing.Point(144, 0);
+            this.cbMilitary.Location = new System.Drawing.Point(473, 0);
             this.cbMilitary.Name = "cbMilitary";
-            this.cbMilitary.Size = new System.Drawing.Size(20, 39);
+            this.cbMilitary.Size = new System.Drawing.Size(20, 40);
             this.cbMilitary.TabIndex = 4;
             this.cbMilitary.UseVisualStyleBackColor = true;
             // 
@@ -232,10 +233,10 @@
             this.kryptonLabel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(144, 39);
+            this.kryptonLabel1.Size = new System.Drawing.Size(473, 40);
             this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
             this.kryptonLabel1.TabIndex = 3;
-            this.kryptonLabel1.Values.Text = "是否为军队单位：";
+            this.kryptonLabel1.Values.Text = "是否为军队单位（如果是军队单位，则无需上传保密资质！）：";
             // 
             // ofdUpload
             // 
