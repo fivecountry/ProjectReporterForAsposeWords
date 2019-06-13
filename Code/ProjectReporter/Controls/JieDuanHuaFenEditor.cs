@@ -223,8 +223,7 @@ namespace ProjectReporter.Controls
                            ketiStep.StepTime = step.StepTime;
 
                            ketiStep.copyTo(ConnectionManager.Context.table("Step")).insert();
-
-
+                           
                            //添加ProjectAndStep数据
                            ProjectAndStep projectAndStep = new ProjectAndStep();
                            projectAndStep.ID = Guid.NewGuid().ToString();
