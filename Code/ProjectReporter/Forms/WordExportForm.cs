@@ -334,21 +334,24 @@ namespace ProjectReporter.Forms
                                 {
                                     ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
 
-                                    StringBuilder sb = new StringBuilder();
+                                    //输出格式
+                                    string outputFormat = "阶段目标:{0}\n完成内容:{0}\n阶段成果:{0}\n考核指标:{0}\n阶段经费:{0}";
+
+                                    string resultStr = string.Empty;
                                     //阶段数据
                                     if (kvp.Key == "项目")
                                     {
-                                        //项目数据  研究内容,阶段目标,阶段经费
-                                        sb.Append("研究内容:").Append(curProjectAndStep.StepContent).Append("\n").Append("阶段目标:").Append(curStep.StepDest).Append("\n").Append("阶段经费:").Append(curStep.StepMoney);
+                                        resultStr = string.Format(outputFormat, curStep.StepDest, curStep.StepContent, curStep.StepResult, curStep.StepTarget, curStep.StepMoney);
                                     }
                                     else
                                     {
-                                        //课题数据  研究内容,阶段成果,考核方式,阶段经费
-                                        sb.Append("研究内容:").Append(curProjectAndStep.StepContent).Append("\n").Append("阶段成果:").Append(curProjectAndStep.StepResult).Append("\n").Append("考核方式:").Append(curProjectAndStep.Method).Append("\n").Append("阶段经费:").Append(curProjectAndStep.Money);
+                                        resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepContent, curProjectAndStep.StepResult, curProjectAndStep.StepTarget, curProjectAndStep.Money);
+
+                                        //计算总金额
                                         totalMoney += (int)curProjectAndStep.Money;
                                     }
 
-                                    table.Cell(rowIndex, dataColIndex).Range.Text = sb.ToString();
+                                    table.Cell(rowIndex, dataColIndex).Range.Text = resultStr;
                                     dataColIndex++;
                                 }
 
