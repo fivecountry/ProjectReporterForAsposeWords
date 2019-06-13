@@ -138,7 +138,7 @@
             this.plTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.plTitle.Name = "plTitle";
             this.plTitle.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.plTitle.Size = new System.Drawing.Size(788, 58);
+            this.plTitle.Size = new System.Drawing.Size(788, 65);
             this.plTitle.TabIndex = 0;
             // 
             // label1
@@ -149,9 +149,10 @@
             this.label1.Font = new System.Drawing.Font("宋体", 14.25F);
             this.label1.Location = new System.Drawing.Point(6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(782, 58);
+            this.label1.Size = new System.Drawing.Size(782, 65);
             this.label1.TabIndex = 0;
-            this.label1.Text = "请根据项目研究需要，合理设置项目（课题）研究阶段和进度计划\r\n原则上全周期研究阶段设置应不少于4个。建议每阶段截止时间为该年度5月10日或11月10日";
+            this.label1.Text = "请根据项目研究需要，合理设置项目（课题）研究阶段和进度计划\r\n原则上全周期研究阶段设置应不少于4个。为便于经费管理工作统筹,建议每个阶段截止时间按年中或年底进行筹" +
+    "划";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
@@ -160,9 +161,9 @@
             this.plContent.Controls.Add(this.dgvDetail);
             this.plContent.Controls.Add(this.panel1);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 81);
+            this.plContent.Location = new System.Drawing.Point(53, 88);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(790, 393);
+            this.plContent.Size = new System.Drawing.Size(790, 386);
             this.plContent.TabIndex = 7;
             // 
             // dgvDetail
@@ -186,7 +187,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 35;
-            this.dgvDetail.Size = new System.Drawing.Size(790, 367);
+            this.dgvDetail.Size = new System.Drawing.Size(790, 360);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

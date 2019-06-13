@@ -919,7 +919,7 @@ namespace ProjectReporter
             this.knReportPage6.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage19,
             this.kryptonPage16});
-            this.knReportPage6.SelectedIndex = 1;
+            this.knReportPage6.SelectedIndex = 0;
             this.knReportPage6.Size = new System.Drawing.Size(1256, 628);
             this.knReportPage6.TabIndex = 2;
             this.knReportPage6.Text = "kryptonNavigator10";
