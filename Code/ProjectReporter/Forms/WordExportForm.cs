@@ -335,7 +335,7 @@ namespace ProjectReporter.Forms
                                     ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
 
                                     //输出格式
-                                    string outputFormat = "阶段目标:{0}\n完成内容:{0}\n阶段成果:{0}\n考核指标:{0}\n阶段经费:{0}";
+                                    string outputFormat = "阶段目标:{0}\n完成内容:{1}\n阶段成果:{2}\n考核指标:{3}\n阶段经费:{4}";
 
                                     string resultStr = string.Empty;
                                     //阶段数据
