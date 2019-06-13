@@ -209,7 +209,7 @@
             // colYanJiuNeiRong
             // 
             this.colYanJiuNeiRong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colYanJiuNeiRong.HeaderText = "研究内容";
+            this.colYanJiuNeiRong.HeaderText = "完成内容";
             this.colYanJiuNeiRong.Name = "colYanJiuNeiRong";
             // 
             // colJieDuanChengGuo
@@ -221,7 +221,7 @@
             // colKaoHeFangShi
             // 
             this.colKaoHeFangShi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colKaoHeFangShi.HeaderText = "考核方式";
+            this.colKaoHeFangShi.HeaderText = "考核指标";
             this.colKaoHeFangShi.Name = "colKaoHeFangShi";
             this.colKaoHeFangShi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
