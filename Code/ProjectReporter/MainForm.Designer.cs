@@ -905,7 +905,7 @@ namespace ProjectReporter
             this.kpReportPage6.Name = "kpReportPage6";
             this.kpReportPage6.Size = new System.Drawing.Size(1156, 628);
             this.kpReportPage6.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
-            this.kpReportPage6.Text = "课题分解";
+            this.kpReportPage6.Text = "项目分解";
             this.kpReportPage6.ToolTipTitle = "Page ToolTip";
             this.kpReportPage6.UniqueName = "13F717104302419853A02559F94C24C0";
             // 
