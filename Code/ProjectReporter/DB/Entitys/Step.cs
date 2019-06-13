@@ -18,76 +18,35 @@ namespace ProjectReporter.DB.Entitys
             query.set("ID", ID);
             query.set("ProjectID", ProjectID);
             query.set("StepTime", StepTime);
+            query.set("StepContent", StepContent);
             query.set("StepDest", StepDest);
+            query.set("StepTarget", StepTarget);
+            query.set("StepResult", StepResult);
             query.set("StepMoney", StepMoney);
             query.set("StepIndex", StepIndex);
 
             return query;
         }
 
-        #region Model
-        private string _id;
-        private string _projectid;
-        private int? _steptime;
-        private string _stepdest;
-        private decimal? _stepmoney;
-        private int? _StepIndex;
-        /// <summary>
-        /// 
-        /// </summary>
-        public string ID
-        {
-            set { _id = value; }
-            get { return _id; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string ProjectID
-        {
-            set { _projectid = value; }
-            get { return _projectid; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int? StepTime
-        {
-            set { _steptime = value; }
-            get { return _steptime; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string StepDest
-        {
-            set { _stepdest = value; }
-            get { return _stepdest; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public decimal? StepMoney
-        {
-            set { _stepmoney = value; }
-            get { return _stepmoney; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int? StepIndex
-        {
-            set { _StepIndex = value; }
-            get { return _StepIndex; }
-        }
-        #endregion Model
+        public string ID { get; set; }
+        public string ProjectID { get; set; }
+        public int? StepTime { get; set; }
+        public string StepContent { get; set; }
+        public string StepDest { get; set; }
+        public string StepTarget { get; set; }
+        public string StepResult { get; set; }
+        public decimal? StepMoney { get; set; }
+        public int? StepIndex { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
             ID = source("ID").value<string>(Guid.NewGuid().ToString());
-            ProjectID = source("ProjectID").value<string>(string.Empty);
+            ProjectID = source("ProjectID").value<string>("");
             StepTime = source("StepTime").value<int>(0);
-            StepDest = source("StepDest").value<string>(string.Empty);
+            StepContent = source("StepContent").value<string>("");
+            StepDest = source("StepDest").value<string>("");
+            StepTarget = source("StepTarget").value<string>("");
+            StepResult = source("StepResult").value<string>("");
             StepMoney = source("StepMoney").value<decimal>(0);
             StepIndex = source("StepIndex").value<int>(0);
         }

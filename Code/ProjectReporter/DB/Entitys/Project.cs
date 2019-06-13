@@ -25,122 +25,39 @@ namespace ProjectReporter.DB.Entitys
             query.set("TotalTime", TotalTime);
             query.set("TotalMoney", TotalMoney);
             query.set("Keywords", Keywords);
+            query.set("Domain", Domain);
+            query.set("Direction", Direction);
 
             return query;
         }
 
-        #region Model
-        private string _id;
-        private string _name;
-        private string _secretlevel;
-        private string _type;
-        private string _type2;
-        private string _parentid;
-        private string _unitid;
-        private string _keywords;
-        private int? _totaltime;
-        private decimal? _totalmoney;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public string ID
-        {
-            set { _id = value; }
-            get { return _id; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Name
-        {
-            set { _name = value; }
-            get { return _name; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string SecretLevel
-        {
-            set { _secretlevel = value; }
-            get { return _secretlevel; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Type
-        {
-            set { _type = value; }
-            get { return _type; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Type2
-        {
-            get { return _type2; }
-            set { _type2 = value; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string ParentID
-        {
-            set { _parentid = value; }
-            get { return _parentid; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string UnitID
-        {
-            set { _unitid = value; }
-            get { return _unitid; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public int? TotalTime
-        {
-            set { _totaltime = value; }
-            get { return _totaltime; }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public decimal? TotalMoney
-        {
-            set { _totalmoney = value; }
-            get { return _totalmoney; }
-        }
-
-        public string Keywords
-        {
-            get
-            {
-                return _keywords;
-            }
-
-            set
-            {
-                _keywords = value;
-            }
-        }
-
-        #endregion Model
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string SecretLevel { get; set; }
+        public string Type { get; set; }
+        public string Type2 { get; set; }
+        public string ParentID { get; set; }
+        public string UnitID { get; set; }
+        public int? TotalTime { get; set; }
+        public decimal? TotalMoney { get; set; }
+        public string Keywords { get; set; }
+        public string Domain { get; set; }
+        public string Direction { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
             ID = source("ID").value<string>(Guid.NewGuid().ToString());
-            Name = source("Name").value<string>(string.Empty);
-            SecretLevel = source("SecretLevel").value<string>(string.Empty);
-            Type = source("Type").value<string>(string.Empty);
-            Type2 = source("Type2").value<string>(string.Empty);
-            ParentID = source("ParentID").value<string>(string.Empty);
-            UnitID = source("UnitID").value<string>(string.Empty);
+            Name = source("Name").value<string>("");
+            SecretLevel = source("SecretLevel").value<string>("");
+            Type = source("Type").value<string>("");
+            Type2 = source("Type2").value<string>("");
+            ParentID = source("ParentID").value<string>("");
+            UnitID = source("UnitID").value<string>("");
             TotalTime = source("TotalTime").value<int>(0);
             TotalMoney = source("TotalMoney").value<decimal>(0);
-            Keywords = source("Keywords").value<string>(string.Empty);
+            Keywords = source("Keywords").value<string>("");
+            Domain = source("Domain").value<string>("");
+            Direction = source("Direction").value<string>("");
         }
 
         public override Noear.Weed.IBinder clone()
