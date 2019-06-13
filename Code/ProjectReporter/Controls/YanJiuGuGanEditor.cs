@@ -420,6 +420,10 @@ namespace ProjectReporter.Controls
                     }
 
                     UpdateTaskList();
+                    if (rowIndex >= 1)
+                    {
+                        dgvDetail.Rows[rowIndex - 1].Selected = true;
+                    }
                 }
             }
         }
@@ -449,6 +453,14 @@ namespace ProjectReporter.Controls
                     }
 
                     UpdateTaskList();
+                    if (rowIndex < dgvDetail.Rows.Count - 1)
+                    {
+                        dgvDetail.Rows[rowIndex + 1].Selected = true;
+                    }
+                    else
+                    {
+                        dgvDetail.Rows[dgvDetail.Rows.Count - 1].Selected = true;
+                    }
                 }
             }
         }
@@ -516,6 +528,9 @@ namespace ProjectReporter.Controls
 
             try
             {
+                //排序号
+                int displayOrderIndex = dgvDetail.Rows.Count;
+
                 //加载字段
                 string unitBankNo = dr["单位开户帐号"] != null ? dr["单位开户帐号"].ToString() : string.Empty;
                 string unitBankUser = dr["开户名称"] != null ? dr["开户名称"].ToString() : string.Empty;
@@ -661,6 +676,9 @@ namespace ProjectReporter.Controls
 
                 task.Content = taskInProject;
                 task.TotalTime = int.Parse(timeInProject);
+
+                task.DisplayOrder = displayOrderIndex;
+                displayOrderIndex++;
 
                 if (string.IsNullOrEmpty(task.ID))
                 {
