@@ -41,9 +41,10 @@
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colKeTi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJieDuanHuaHuaFen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colYanJiuNeiRong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJieDuanChengGuo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKaoHeFangShi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTarget = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJieDuanJingFei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel15.SuspendLayout();
@@ -164,9 +165,10 @@
             this.selpersonid,
             this.colKeTi,
             this.colJieDuanHuaHuaFen,
-            this.colYanJiuNeiRong,
-            this.colJieDuanChengGuo,
-            this.colKaoHeFangShi,
+            this.colDest,
+            this.colContent,
+            this.colResult,
+            this.colTarget,
             this.colJieDuanJingFei,
             this.delete});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -206,24 +208,30 @@
             this.colJieDuanHuaHuaFen.ReadOnly = true;
             this.colJieDuanHuaHuaFen.Width = 60;
             // 
-            // colYanJiuNeiRong
+            // colDest
             // 
-            this.colYanJiuNeiRong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colYanJiuNeiRong.HeaderText = "完成内容";
-            this.colYanJiuNeiRong.Name = "colYanJiuNeiRong";
+            this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDest.HeaderText = "阶段目标";
+            this.colDest.Name = "colDest";
             // 
-            // colJieDuanChengGuo
+            // colContent
             // 
-            this.colJieDuanChengGuo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colJieDuanChengGuo.HeaderText = "阶段成果";
-            this.colJieDuanChengGuo.Name = "colJieDuanChengGuo";
+            this.colContent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colContent.HeaderText = "完成内容";
+            this.colContent.Name = "colContent";
             // 
-            // colKaoHeFangShi
+            // colResult
             // 
-            this.colKaoHeFangShi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colKaoHeFangShi.HeaderText = "考核指标";
-            this.colKaoHeFangShi.Name = "colKaoHeFangShi";
-            this.colKaoHeFangShi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colResult.HeaderText = "阶段成果";
+            this.colResult.Name = "colResult";
+            // 
+            // colTarget
+            // 
+            this.colTarget.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTarget.HeaderText = "考核指标";
+            this.colTarget.Name = "colTarget";
+            this.colTarget.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // colJieDuanJingFei
             // 
@@ -236,7 +244,7 @@
             0});
             this.colJieDuanJingFei.Name = "colJieDuanJingFei";
             this.colJieDuanJingFei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colJieDuanJingFei.Width = 127;
+            this.colJieDuanJingFei.Width = 106;
             // 
             // delete
             // 
@@ -280,9 +288,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKeTi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJieDuanHuaHuaFen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colYanJiuNeiRong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colJieDuanChengGuo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colKaoHeFangShi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colContent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colResult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTarget;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colJieDuanJingFei;
         private System.Windows.Forms.DataGridViewImageColumn delete;
     }

@@ -172,9 +172,10 @@ namespace ProjectReporter.Controls
                     cells.Add(indexx + "");
                     cells.Add(ketiProject.Name);
                     cells.Add(step.StepIndex);
+                    cells.Add(projectAndStep.StepDest);
                     cells.Add(projectAndStep.StepContent);
                     cells.Add(projectAndStep.StepResult);
-                    cells.Add(projectAndStep.Method);
+                    cells.Add(projectAndStep.StepTarget);
                     cells.Add(projectAndStep.Money);
 
                     int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
@@ -201,30 +202,36 @@ namespace ProjectReporter.Controls
 
                     if (dgvRow.Cells[3].Value == null || string.IsNullOrEmpty(dgvRow.Cells[3].Value.ToString()))
                     {
-                        MessageBox.Show("对不起,请输入研究内容");
+                        MessageBox.Show("对不起,请输入阶段目标");
                         return;
                     }
                     if (dgvRow.Cells[4].Value == null || string.IsNullOrEmpty(dgvRow.Cells[4].Value.ToString()))
                     {
-                        MessageBox.Show("对不起,请输入研究成果");
+                        MessageBox.Show("对不起,请输入完成内容");
                         return;
                     }
                     if (dgvRow.Cells[5].Value == null || string.IsNullOrEmpty(dgvRow.Cells[5].Value.ToString()))
                     {
-                        MessageBox.Show("对不起,请输入考核方式");
+                        MessageBox.Show("对不起,请输入阶段成果");
                         return;
                     }
                     if (dgvRow.Cells[6].Value == null || string.IsNullOrEmpty(dgvRow.Cells[6].Value.ToString()))
+                    {
+                        MessageBox.Show("对不起,请输入考核指标");
+                        return;
+                    }
+                    if (dgvRow.Cells[7].Value == null || string.IsNullOrEmpty(dgvRow.Cells[7].Value.ToString()))
                     {
                         MessageBox.Show("对不起,请输入阶段经费");
                         return;
                     }
 
                     ProjectAndStep pas = ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
-                    pas.StepContent = dgvRow.Cells[3].Value.ToString();
-                    pas.StepResult = dgvRow.Cells[4].Value.ToString();
-                    pas.Method = dgvRow.Cells[5].Value.ToString();
-                    pas.Money = decimal.Parse(dgvRow.Cells[6].Value.ToString());
+                    pas.StepDest = dgvRow.Cells[3].Value.ToString();
+                    pas.StepContent = dgvRow.Cells[4].Value.ToString();
+                    pas.StepResult = dgvRow.Cells[5].Value.ToString();
+                    pas.StepTarget = dgvRow.Cells[6].Value.ToString();
+                    pas.Money = decimal.Parse(dgvRow.Cells[7].Value.ToString());
 
                     pas.copyTo(ConnectionManager.Context.table("ProjectAndStep")).where("ID='" + pas.ID + "'").update();
                 }
