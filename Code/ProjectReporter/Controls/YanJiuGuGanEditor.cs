@@ -420,9 +420,9 @@ namespace ProjectReporter.Controls
                     }
 
                     UpdateTaskList();
-                    if (rowIndex >= 1)
+                    if (taskIndex >= 1)
                     {
-                        dgvDetail.Rows[rowIndex - 1].Selected = true;
+                        dgvDetail.Rows[taskIndex - 1].Selected = true;
                     }
                 }
             }
@@ -453,9 +453,9 @@ namespace ProjectReporter.Controls
                     }
 
                     UpdateTaskList();
-                    if (rowIndex < dgvDetail.Rows.Count - 1)
+                    if (taskIndex < dgvDetail.Rows.Count - 1)
                     {
-                        dgvDetail.Rows[rowIndex + 1].Selected = true;
+                        dgvDetail.Rows[taskIndex + 1].Selected = true;
                     }
                     else
                     {
