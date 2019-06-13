@@ -73,20 +73,15 @@ namespace ProjectReporter.Controls
             ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 1]).Image = ProjectReporter.Properties.Resources.DELETE_28;
             foreach (Step step in StepList)
             {
-                string stepContent = string.Empty;
-                ProjectAndStep projectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
-                if (projectAndStep != null)
-                {
-                    stepContent = projectAndStep.StepContent;
-                }
-
                 List<object> cells = new List<object>();
                 indexx++;
                 cells.Add(indexx+"");
                 cells.Add(step.StepIndex != null ? step.StepIndex.Value : 0);
                 cells.Add(step.StepTime != null ? step.StepTime.Value : 0);
-                cells.Add(stepContent);
                 cells.Add(step.StepDest);
+                cells.Add(step.StepContent);
+                cells.Add(step.StepResult);
+                cells.Add(step.StepTarget);
                 cells.Add(step.StepMoney);
 
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
@@ -107,6 +102,8 @@ namespace ProjectReporter.Controls
                     cells.Add(k + 1);
                     cells.Add(k + 1);
                     cells.Add(times[k]);
+                    cells.Add("空");
+                    cells.Add("空");
                     cells.Add("空");
                     cells.Add("空");
                     cells.Add("0");
@@ -154,15 +151,25 @@ namespace ProjectReporter.Controls
 
                 if (dgvRow.Cells[3].Value == null || string.IsNullOrEmpty(dgvRow.Cells[3].Value.ToString()))
                 {
-                    MessageBox.Show("对不起,请输入阶段内容");
+                    MessageBox.Show("对不起,请输入阶段目标");
                     return;
                 }
                 if (dgvRow.Cells[4].Value == null || string.IsNullOrEmpty(dgvRow.Cells[4].Value.ToString()))
                 {
-                    MessageBox.Show("对不起,请输入阶段目标");
+                    MessageBox.Show("对不起,请输入完成内容");
                     return;
                 }
                 if (dgvRow.Cells[5].Value == null || string.IsNullOrEmpty(dgvRow.Cells[5].Value.ToString()))
+                {
+                    MessageBox.Show("对不起,请输入阶段成果");
+                    return;
+                }
+                if (dgvRow.Cells[6].Value == null || string.IsNullOrEmpty(dgvRow.Cells[6].Value.ToString()))
+                {
+                    MessageBox.Show("对不起,请输入考核指标");
+                    return;
+                }
+                if (dgvRow.Cells[7].Value == null || string.IsNullOrEmpty(dgvRow.Cells[7].Value.ToString()))
                 {
                     MessageBox.Show("对不起,请输入阶段经费");
                     return;
@@ -170,36 +177,21 @@ namespace ProjectReporter.Controls
 
                 step.StepIndex = Int32.Parse(((KryptonDataGridViewNumericUpDownCell)dgvRow.Cells[1]).Value.ToString());
                 step.StepTime = Int32.Parse(((KryptonDataGridViewNumericUpDownCell)dgvRow.Cells[2]).Value.ToString());
+                step.StepDest = dgvRow.Cells[3].Value.ToString();
+                step.StepContent = dgvRow.Cells[4].Value.ToString();
+                step.StepResult = dgvRow.Cells[5].Value.ToString();
+                step.StepTarget = dgvRow.Cells[6].Value.ToString();
+                step.StepMoney = decimal.Parse(dgvRow.Cells[7].Value.ToString());
 
                 if (string.IsNullOrEmpty(step.ID))
                 {
                     step.ID = Guid.NewGuid().ToString();
                     step.copyTo(ConnectionManager.Context.table("Step")).insert();
-
-                    //添加ProjectAndStep数据
-                    ProjectAndStep projectAndStep = new ProjectAndStep();
-                    projectAndStep.ID = Guid.NewGuid().ToString();
-                    projectAndStep.StepID = step.ID;
-                    projectAndStep.copyTo(ConnectionManager.Context.table("ProjectAndStep")).insert();
                 }
                 else
                 {
                     step.copyTo(ConnectionManager.Context.table("Step")).where("ID='" + step.ID + "'").update();
                 }
-
-
-
-                ProjectAndStep pas = ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
-                if (pas != null)
-                {
-                    pas.StepContent = dgvRow.Cells[3].Value.ToString();
-                    pas.copyTo(ConnectionManager.Context.table("ProjectAndStep")).where("ID='" + pas.ID + "'").update();
-                }
-
-                step.StepDest = dgvRow.Cells[4].Value.ToString();
-                step.StepMoney = decimal.Parse(dgvRow.Cells[5].Value.ToString());
-
-                step.copyTo(ConnectionManager.Context.table("Step")).where("ID='" + step.ID + "'").update();
                 #endregion
 
                 #region 添加课题的Step
