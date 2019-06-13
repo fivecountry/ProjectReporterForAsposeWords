@@ -603,7 +603,7 @@ namespace ProjectReporter.Controls
             kp.Tag = "KeTiDynamic";
 
             KeTiDetailEditor rtfTextEditor = new KeTiDetailEditor();
-            rtfTextEditor.TitleLabelText = "课题(" + ketiName + ")详细内容";
+            rtfTextEditor.TitleLabelText = "课题(" + ketiName + ")详细内容(200字以内)";
             rtfTextEditor.Dock = DockStyle.Fill;
             rtfTextEditor.BackColor = Color.White;
 

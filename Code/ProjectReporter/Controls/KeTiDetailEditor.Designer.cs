@@ -96,6 +96,7 @@
             // txtInfo
             // 
             this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtInfo.Font = new System.Drawing.Font("仿宋_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtInfo.Location = new System.Drawing.Point(0, 0);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
