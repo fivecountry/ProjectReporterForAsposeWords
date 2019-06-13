@@ -586,7 +586,7 @@ namespace ProjectReporter
             this.kpReportPage3.LastVisibleSet = true;
             this.kpReportPage3.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage3.Name = "kpReportPage3";
-            this.kpReportPage3.Size = new System.Drawing.Size(1146, 628);
+            this.kpReportPage3.Size = new System.Drawing.Size(1256, 628);
             this.kpReportPage3.Text = "概述";
             this.kpReportPage3.ToolTipTitle = "Page ToolTip";
             this.kpReportPage3.UniqueName = "33D955EDE7674DC864A18B2B491B4501";
@@ -605,7 +605,7 @@ namespace ProjectReporter
             this.kpfPage3,
             this.kpfPage00});
             this.knReportPage3.SelectedIndex = 0;
-            this.knReportPage3.Size = new System.Drawing.Size(1146, 628);
+            this.knReportPage3.Size = new System.Drawing.Size(1256, 628);
             this.knReportPage3.TabIndex = 1;
             this.knReportPage3.Text = "kryptonNavigator7";
             // 
@@ -617,7 +617,7 @@ namespace ProjectReporter
             this.kpfPage0.LastVisibleSet = true;
             this.kpfPage0.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpfPage0.Name = "kpfPage0";
-            this.kpfPage0.Size = new System.Drawing.Size(1144, 598);
+            this.kpfPage0.Size = new System.Drawing.Size(1254, 598);
             this.kpfPage0.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kpfPage0.Text = "项目摘要";
             this.kpfPage0.ToolTipTitle = "Page ToolTip";
@@ -637,7 +637,7 @@ namespace ProjectReporter
             this.feUI0.ParentForm = null;
             this.feUI0.RTFEditorNameKey = "feUI";
             this.feUI0.RTFFileFirstName = "rtpinput_";
-            this.feUI0.Size = new System.Drawing.Size(1144, 598);
+            this.feUI0.Size = new System.Drawing.Size(1254, 598);
             this.feUI0.TabIndex = 0;
             this.feUI0.TitleLabelHeight = 210;
             this.feUI0.TitleLabelText = resources.GetString("feUI0.TitleLabelText");
@@ -903,7 +903,7 @@ namespace ProjectReporter
             this.kpReportPage6.LastVisibleSet = true;
             this.kpReportPage6.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpReportPage6.Name = "kpReportPage6";
-            this.kpReportPage6.Size = new System.Drawing.Size(1156, 628);
+            this.kpReportPage6.Size = new System.Drawing.Size(1256, 628);
             this.kpReportPage6.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kpReportPage6.Text = "项目分解";
             this.kpReportPage6.ToolTipTitle = "Page ToolTip";
@@ -919,8 +919,8 @@ namespace ProjectReporter
             this.knReportPage6.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage19,
             this.kryptonPage16});
-            this.knReportPage6.SelectedIndex = 0;
-            this.knReportPage6.Size = new System.Drawing.Size(1156, 628);
+            this.knReportPage6.SelectedIndex = 1;
+            this.knReportPage6.Size = new System.Drawing.Size(1256, 628);
             this.knReportPage6.TabIndex = 2;
             this.knReportPage6.Text = "kryptonNavigator10";
             // 
@@ -932,7 +932,7 @@ namespace ProjectReporter
             this.kryptonPage19.LastVisibleSet = true;
             this.kryptonPage19.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage19.Name = "kryptonPage19";
-            this.kryptonPage19.Size = new System.Drawing.Size(1154, 598);
+            this.kryptonPage19.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage19.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonPage19.Text = "课题填报";
             this.kryptonPage19.ToolTipTitle = "Page ToolTip";
@@ -947,7 +947,7 @@ namespace ProjectReporter
             this.feUI6.Margin = new System.Windows.Forms.Padding(5);
             this.feUI6.Name = "feUI6";
             this.feUI6.ParentForm = null;
-            this.feUI6.Size = new System.Drawing.Size(1154, 598);
+            this.feUI6.Size = new System.Drawing.Size(1254, 598);
             this.feUI6.TabIndex = 0;
             this.feUI6.UnitList = null;
             // 
@@ -982,7 +982,7 @@ namespace ProjectReporter
             this.feUI7.Size = new System.Drawing.Size(1254, 598);
             this.feUI7.TabIndex = 0;
             this.feUI7.TitleLabelHeight = 39;
-            this.feUI7.TitleLabelText = "基础性问题与课题之间的关系、各课题之间的关系（简要叙述，建议500字之内，可用图表示）";
+            this.feUI7.TitleLabelText = "基础性问题与课题之间的关系、各课题之间的关系（简要叙述，建议1000字之内，可用图表示）";
             // 
             // kpReportPage7
             // 
