@@ -376,7 +376,7 @@ namespace ProjectReporter.Controls
                     }
 
                     //查找人员信息
-                    personObj = ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").select("*").getValue<Person>(new Person());
+                    personObj = ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").select("*").getItem<Person>(new Person());
                     //删除这条记录
                     ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").delete();
 
