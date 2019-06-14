@@ -52,6 +52,8 @@ namespace ProjectReporter.Controls
                 txtTotalTime.Text = MainForm.Instance.ProjectObj.TotalTime + "";
                 txtTotalMoney.Text = MainForm.Instance.ProjectObj.TotalMoney + "";
                 txtKeyWords.Text = MainForm.Instance.ProjectObj.Keywords;
+                txtDomain.Text = MainForm.Instance.ProjectObj.Domain;
+                txtDirection.Text = MainForm.Instance.ProjectObj.Direction;
 
                 Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + MainForm.Instance.ProjectObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
                 if (unitObj != null)
@@ -218,6 +220,11 @@ namespace ProjectReporter.Controls
                 MessageBox.Show("对不起，请输入通信地址");
                 return -1;
             }
+            if (string.IsNullOrEmpty(txtDomain.Text))
+            {
+                MessageBox.Show("对不起，请输入申报领域");
+                return -1;
+            }
 
             //if (string.IsNullOrEmpty(txtFlagName.Text))
             //{
@@ -288,6 +295,8 @@ namespace ProjectReporter.Controls
             MainForm.Instance.ProjectObj.TotalTime = int.Parse(txtTotalTime.Text);
             MainForm.Instance.ProjectObj.TotalMoney = decimal.Parse(txtTotalMoney.Text);
             MainForm.Instance.ProjectObj.Keywords = txtKeyWords.Text;
+            MainForm.Instance.ProjectObj.Domain = txtDomain.Text;
+            MainForm.Instance.ProjectObj.Direction = txtDirection.Text;
 
             //创建单位信息
             ConnectionManager.Context.table("Unit").where("ID='" + MainForm.Instance.ProjectObj.UnitID + "'").delete();
