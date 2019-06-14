@@ -254,7 +254,7 @@
             this.colKeTiMingCheng.HeaderText = "课题名称";
             this.colKeTiMingCheng.Name = "colKeTiMingCheng";
             this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.Width = 43;
+            this.colKeTiMingCheng.Width = 57;
             // 
             // colMiJi
             // 
@@ -292,6 +292,7 @@
             this.colChengDanDanWeiKaiHuXhangHao.Name = "colChengDanDanWeiKaiHuXhangHao";
             this.colChengDanDanWeiKaiHuXhangHao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colChengDanDanWeiKaiHuXhangHao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colChengDanDanWeiKaiHuXhangHao.Visible = false;
             // 
             // colNeiRong
             // 
@@ -341,7 +342,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KeTiTianBaoEditor";
             this.Size = new System.Drawing.Size(789, 511);
             this.tableLayoutPanel15.ResumeLayout(false);

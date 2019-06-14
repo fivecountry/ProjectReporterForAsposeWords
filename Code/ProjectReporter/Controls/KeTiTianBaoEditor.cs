@@ -79,11 +79,11 @@ namespace ProjectReporter.Controls
                 string personIdCard = string.Empty;
                 string unitName = string.Empty;
                 //string content = string.Empty;
-                string unitBankNo = string.Empty;
-                string unitExtId = string.Empty;
+                //string unitBankNo = string.Empty;
+                //string unitExtId = string.Empty;
                 Person personObj = null;
                 Unit unitObj = null;
-                UnitExt unitExtObj = null;
+                //UnitExt unitExtObj = null;
 
                 Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + keti.ID + "'").select("*").getItem<Task>(new Task());
                 if (ketiTask != null)
@@ -92,7 +92,7 @@ namespace ProjectReporter.Controls
 
                     personObj = ConnectionManager.Context.table("Person").where("ID='" + ketiTask.PersonID + "'").select("*").getItem<Person>(new Person());
                     unitObj = ConnectionManager.Context.table("Unit").where("ID='" + keti.UnitID + "'").select("*").getItem<Unit>(new Unit());
-                    unitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + keti.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
+                    //unitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + keti.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
 
                     if (personObj != null)
                     {
@@ -105,11 +105,11 @@ namespace ProjectReporter.Controls
                         unitName = unitObj.UnitName;
                     }
 
-                    if (unitExtObj != null)
-                    {
-                        unitBankNo = unitExtObj.UnitBankNo;
-                        unitExtId = unitExtObj.ID;
-                    }
+                    //if (unitExtObj != null)
+                    //{
+                    //    unitBankNo = unitExtObj.UnitBankNo;
+                    //    unitExtId = unitExtObj.ID;
+                    //}
                 }
 
                 indexx++;
@@ -120,7 +120,8 @@ namespace ProjectReporter.Controls
                 cells.Add(personName);
                 cells.Add(personIdCard);
                 cells.Add(unitName);
-                cells.Add(unitBankNo);
+                //cells.Add(unitBankNo);
+                cells.Add("");
                 cells.Add(ketiTask.TotalMoney);
                 cells.Add(keti.Type2 == "总体课题");
                 cells.Add("填报课题内容");
@@ -128,7 +129,7 @@ namespace ProjectReporter.Controls
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                 dgvDetail.Rows[rowIndex].Tag = keti;
 
-                dgvDetail.Rows[rowIndex].Cells[6].Tag = unitExtId;
+                dgvDetail.Rows[rowIndex].Cells[6].Tag = keti.UnitID;
                 dgvDetail.Rows[rowIndex].Cells[5].Tag = unitObj;
             }
         }
@@ -355,8 +356,9 @@ namespace ProjectReporter.Controls
                     }
                     if (dgvRow.Cells[6].Tag == null)
                     {
-                        MessageBox.Show("对不起,请选择承担单位开户帐号!");
-                        return;
+                        //MessageBox.Show("对不起,请选择承担单位开户帐号!");
+                        //return;
+                        dgvRow.Cells[6].Tag = Guid.NewGuid().ToString();
                     }
 
                     decimal totalMoney = 0;
@@ -400,11 +402,11 @@ namespace ProjectReporter.Controls
                     {
                         Unit unitObj = (Unit)dgvRow.Cells[5].Tag;
                         unitObj.UnitName = dgvRow.Cells[5].Value.ToString();
-                        BuildUnitRecord(proj.UnitID, unitObj.UnitName, unitObj.ContactName, unitObj.Telephone, unitObj.UnitType, unitObj.Address);
+                        NewProjectEditor.BuildUnitRecord(dgvRow.Cells[6].Tag.ToString(), unitObj.UnitName, unitObj.UnitName, unitObj.UnitName, unitObj.ContactName, unitObj.Telephone, unitObj.UnitType, unitObj.Address);
                     }
                     else
                     {
-                        BuildUnitRecord(proj.UnitID, dgvRow.Cells[5].Value.ToString(), "未知", "未知", "课题单位", "未知");
+                        NewProjectEditor.BuildUnitRecord(dgvRow.Cells[6].Tag.ToString(), dgvRow.Cells[5].Value.ToString(), dgvRow.Cells[5].Value.ToString(), dgvRow.Cells[5].Value.ToString(), "未知", "未知", "课题单位", "未知");
                     }
 
                     //添加或更新课题数据
@@ -551,23 +553,6 @@ namespace ProjectReporter.Controls
             //    }
             //}
             return result;
-        }
-
-        public void BuildUnitRecord(string unitExtId, string unitName, string contactName, string telephone, string unitType, string unitAddress)
-        {
-            ConnectionManager.Context.table("Unit").where("ID='" + unitExtId + "'").delete();
-
-            Unit newUnit = new Unit();
-            newUnit.ID = unitExtId;
-            newUnit.UnitName = unitName;
-            newUnit.FlagName = unitName;
-            newUnit.NormalName = unitName;
-            newUnit.ContactName = contactName;
-            newUnit.Telephone = telephone;
-            newUnit.Address = unitAddress;
-            newUnit.UnitType = unitType;
-            newUnit.SecretQualification = "未知";
-            newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
         }
 
         public void BuildKetiReadmPages()
