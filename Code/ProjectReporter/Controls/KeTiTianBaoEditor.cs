@@ -375,8 +375,16 @@ namespace ProjectReporter.Controls
                         break;
                     }
 
+                    //查找人员信息
+                    personObj = ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").select("*").getValue<Person>(new Person());
+                    //删除这条记录
                     ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").delete();
-                    personObj = new Person();
+
+                    if (personObj == null)
+                    {
+                        personObj = new Person();
+                    }
+
                     personObj.ID = Guid.NewGuid().ToString();
                     personObj.Name = dgvRow.Cells[3].Value.ToString();
                     personObj.UnitID = dgvRow.Cells[6].Tag.ToString();

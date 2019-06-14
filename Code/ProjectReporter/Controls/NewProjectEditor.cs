@@ -263,7 +263,11 @@ namespace ProjectReporter.Controls
             {
                 ConnectionManager.Context.table("Person").where("ID = '" + ProjectPersonObj.ID + "'").delete();
             }
-            ProjectPersonObj = new Person();
+            else
+            {
+                ProjectPersonObj = new Person();
+            }
+
             ProjectPersonObj.ID = Guid.NewGuid().ToString();
             ProjectPersonObj.Name = txtMPersonName.Text;
             ProjectPersonObj.UnitID = unitExtId;
