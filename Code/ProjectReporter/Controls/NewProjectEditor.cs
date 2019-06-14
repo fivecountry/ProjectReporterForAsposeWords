@@ -240,7 +240,7 @@ namespace ProjectReporter.Controls
             
             //创建单位信息
             string unitExtId = (MainForm.Instance.ProjectObj != null && !string.IsNullOrEmpty(MainForm.Instance.ProjectObj.UnitID)) ? MainForm.Instance.ProjectObj.UnitID : Guid.NewGuid().ToString();
-            BuildUnitRecord(unitExtId, txtUnitName.Text, txtContactName.Text, txtTelephone.Text, "项目单位", txtAddress.Text);
+            BuildUnitRecord(unitExtId, txtUnitName.Text, txtContactName.Text, txtTelephone.Text, "申报单位", txtAddress.Text);
 
             //项目负责人
             if (MainForm.Instance.ProjectObj != null)
@@ -301,20 +301,6 @@ namespace ProjectReporter.Controls
             MainForm.Instance.ProjectObj.Keywords = txtKeyWords.Text;
             MainForm.Instance.ProjectObj.Domain = txtDomain.Text;
             MainForm.Instance.ProjectObj.Direction = txtDirection.Text;
-
-            //创建单位信息
-            ConnectionManager.Context.table("Unit").where("ID='" + MainForm.Instance.ProjectObj.UnitID + "'").delete();
-            Unit newUnit = new Unit();
-            newUnit.ID = MainForm.Instance.ProjectObj.UnitID;
-            newUnit.UnitName = txtUnitName.Text;
-            //newUnit.FlagName = txtFlagName.Text;
-            newUnit.NormalName = txtNormalName.Text;
-            newUnit.ContactName = txtContactName.Text;
-            newUnit.Telephone = txtTelephone.Text;
-            newUnit.Address = txtAddress.Text;
-            newUnit.UnitType = "申报单位";
-            newUnit.SecretQualification = "未知";
-            newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
 
             //添加/修改工程
             if (string.IsNullOrEmpty(MainForm.Instance.ProjectObj.ID))
