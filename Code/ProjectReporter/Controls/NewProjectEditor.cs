@@ -281,8 +281,8 @@ namespace ProjectReporter.Controls
             ProjectPersonObj.copyTo(ConnectionManager.Context.table("Person")).insert();
 
             //删除这个记录
-            Task projectPerson = ConnectionManager.Context.table("Task").where("ProjectID = '" + projectIDs + "' and Role = '负责人' and Type = '项目'").select("*").getItem<Task>(new Task());
-            ConnectionManager.Context.table("Task").where("ProjectID = '" + projectIDs + "' and Role = '负责人' and Type = '项目'").delete();
+            Task projectPerson = ConnectionManager.Context.table("Task").where("Role = '负责人' and Type = '项目'").select("*").getItem<Task>(new Task());
+            ConnectionManager.Context.table("Task").where("Role = '负责人' and Type = '项目'").delete();
 
             if (projectPerson == null)
             {
