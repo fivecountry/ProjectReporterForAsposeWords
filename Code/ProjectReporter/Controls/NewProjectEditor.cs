@@ -140,6 +140,7 @@ namespace ProjectReporter.Controls
         private void btnSave_Click(object sender, EventArgs e)
         {
             long result = SaveProject();
+            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
 
             if (result >= 0)
             {
@@ -240,7 +241,7 @@ namespace ProjectReporter.Controls
             
             //创建单位信息
             string unitExtId = (MainForm.Instance.ProjectObj != null && !string.IsNullOrEmpty(MainForm.Instance.ProjectObj.UnitID)) ? MainForm.Instance.ProjectObj.UnitID : Guid.NewGuid().ToString();
-            BuildUnitRecord(unitExtId, txtUnitName.Text, txtContactName.Text, txtTelephone.Text, "申报单位", txtAddress.Text);
+            BuildUnitRecord(unitExtId, txtUnitName.Text, txtUnitName.Text, txtNormalName.Text, txtContactName.Text, txtTelephone.Text, "申报单位", txtAddress.Text);
 
             //项目负责人
             if (MainForm.Instance.ProjectObj != null)
@@ -341,25 +342,27 @@ namespace ProjectReporter.Controls
             //    txtNormalName.Text = uu.NormalName;
             //}
         }
-
+        
         /// <summary>
         /// 创建单位信息
         /// </summary>
-        /// <param name="unitExtId"></param>
-        /// <param name="unitName"></param>
-        /// <param name="contactName"></param>
-        /// <param name="telephone"></param>
-        /// <param name="unitType"></param>
-        /// <param name="unitAddress"></param>
-        public static void BuildUnitRecord(string unitExtId, string unitName, string contactName, string telephone, string unitType, string unitAddress)
+        /// <param name="unitId">单位ID</param>
+        /// <param name="unitName">单位名称</param>
+        /// <param name="flagName">公章名称</param>
+        /// <param name="normalName">单位常用名</param>
+        /// <param name="contactName">联系人</param>
+        /// <param name="telephone">电话</param>
+        /// <param name="unitType">单位类型</param>
+        /// <param name="unitAddress">通信地址</param>
+        public static void BuildUnitRecord(string unitId, string unitName, string flagName,string normalName,string contactName, string telephone, string unitType, string unitAddress)
         {
-            ConnectionManager.Context.table("Unit").where("ID='" + unitExtId + "'").delete();
+            ConnectionManager.Context.table("Unit").where("ID='" + unitId + "'").delete();
 
             Unit newUnit = new Unit();
-            newUnit.ID = unitExtId;
+            newUnit.ID = unitId;
             newUnit.UnitName = unitName;
-            newUnit.FlagName = unitName;
-            newUnit.NormalName = unitName;
+            newUnit.FlagName = flagName;
+            newUnit.NormalName = normalName;
             newUnit.ContactName = contactName;
             newUnit.Telephone = telephone;
             newUnit.Address = unitAddress;

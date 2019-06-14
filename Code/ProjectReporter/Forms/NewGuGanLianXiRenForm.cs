@@ -197,7 +197,7 @@ namespace ProjectReporter.Forms
             string unitExtId = (PersonObj != null && !string.IsNullOrEmpty(PersonObj.UnitID)) ? PersonObj.UnitID : Guid.NewGuid().ToString();
 
             //创建单位
-            ProjectReporter.Controls.NewProjectEditor.BuildUnitRecord(unitExtId, txtUnitName.Text, txtUnitContactName.Text, txtUnitTelephone.Text, "课题单位", txtUnitAddress.Text);
+            ProjectReporter.Controls.NewProjectEditor.BuildUnitRecord(unitExtId, txtUnitName.Text, txtUnitName.Text, txtUnitName.Text, txtUnitContactName.Text, txtUnitTelephone.Text, "课题单位", txtUnitAddress.Text);
 
             //创建人员
             ConnectionManager.Context.table("Person").where("IDCard = '" + txtPersonIDCard.Text.Trim() + "'").delete();

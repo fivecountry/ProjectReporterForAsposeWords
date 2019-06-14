@@ -38,6 +38,7 @@ namespace ProjectReporter.Controls
             this.panel14 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtUnitName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.bsaHint3 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -99,7 +100,6 @@ namespace ProjectReporter.Controls
             this.lblTitle = new ProjectReporter.Controls.AutoHeightLabel();
             this.plMain = new System.Windows.Forms.Panel();
             this.plContent = new System.Windows.Forms.Panel();
-            this.bsaHint3 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.tlpContent.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -263,7 +263,7 @@ namespace ProjectReporter.Controls
             this.txtUnitName.AlwaysActive = false;
             this.txtUnitName.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
             this.bsaHint3});
-            this.txtUnitName.Location = new System.Drawing.Point(10, 17);
+            this.txtUnitName.Location = new System.Drawing.Point(10, 15);
             this.txtUnitName.Name = "txtUnitName";
             this.txtUnitName.Size = new System.Drawing.Size(1002, 29);
             this.txtUnitName.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -272,6 +272,12 @@ namespace ProjectReporter.Controls
             this.txtUnitName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtUnitName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtUnitName.TabIndex = 15;
+            // 
+            // bsaHint3
+            // 
+            this.bsaHint3.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
+            this.bsaHint3.Text = "单位名称与单位公章一致";
+            this.bsaHint3.UniqueName = "14C52A622CD84C1B1A8DE4466C48A1FA";
             // 
             // label1
             // 
@@ -976,12 +982,6 @@ namespace ProjectReporter.Controls
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(1422, 584);
             this.plContent.TabIndex = 7;
-            // 
-            // bsaHint3
-            // 
-            this.bsaHint3.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
-            this.bsaHint3.Text = "单位名称与单位公章一致";
-            this.bsaHint3.UniqueName = "14C52A622CD84C1B1A8DE4466C48A1FA";
             // 
             // NewProjectEditor
             // 
