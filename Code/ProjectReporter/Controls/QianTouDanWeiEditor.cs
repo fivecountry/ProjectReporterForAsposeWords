@@ -68,13 +68,15 @@ namespace ProjectReporter.Controls
                 foreach (WhiteList wl in WhiteDataList)
                 {
                     Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + wl.UnitID + "'").select("*").getItem<Unit>(new Unit());
-                    UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + wl.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
-                    if (unitObj != null && unitExtObj != null && unitObj.ID != null && unitObj.ID.Length >= 1)
+                    //UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + wl.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
+                    //if (unitObj != null && unitExtObj != null && unitObj.ID != null && unitObj.ID.Length >= 1)
+                    if (unitObj != null && unitObj.ID != null && unitObj.ID.Length >= 1)
                     {
                         indexx++;
                         List<object> cells = new List<object>();
                         cells.Add(indexx + "");
-                        cells.Add(unitExtObj.UnitBankNo);
+                        //cells.Add(unitExtObj.UnitBankNo);
+                        cells.Add(string.Empty);
                         cells.Add(unitObj.UnitName);
                         cells.Add(unitObj.Address);
                         cells.Add(unitObj.ContactName);
@@ -83,7 +85,8 @@ namespace ProjectReporter.Controls
                         int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                         dgvDetail.Rows[rowIndex].Tag = wl;
 
-                        dgvDetail.Rows[rowIndex].Cells[1].Tag = unitExtObj.ID;
+                        //dgvDetail.Rows[rowIndex].Cells[1].Tag = unitExtObj.ID;
+                        dgvDetail.Rows[rowIndex].Cells[1].Tag = unitObj.ID;
                     }
                 }
             }
@@ -93,59 +96,59 @@ namespace ProjectReporter.Controls
         {
             base.OnSaveEvent();
 
-            foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
-            {
-                WhiteList wlObj = null;
-                if (dgvRow.Tag == null)
-                {
-                    wlObj = new WhiteList();
-                    wlObj.ProjectID = MainForm.Instance.ProjectObj.ID;
-                }
-                else
-                {
-                    wlObj = (WhiteList)dgvRow.Tag;
-                }
+            //foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+            //{
+            //    WhiteList wlObj = null;
+            //    if (dgvRow.Tag == null)
+            //    {
+            //        wlObj = new WhiteList();
+            //        wlObj.ProjectID = MainForm.Instance.ProjectObj.ID;
+            //    }
+            //    else
+            //    {
+            //        wlObj = (WhiteList)dgvRow.Tag;
+            //    }
 
-                if (dgvRow.Cells[1].Value == null || dgvRow.Cells[2].Value == null || dgvRow.Cells[3].Value == null || dgvRow.Cells[4].Value == null || dgvRow.Cells[5].Value == null)
-                {
-                    continue;
-                }
+            //    if (dgvRow.Cells[1].Value == null || dgvRow.Cells[2].Value == null || dgvRow.Cells[3].Value == null || dgvRow.Cells[4].Value == null || dgvRow.Cells[5].Value == null)
+            //    {
+            //        continue;
+            //    }
 
-                if (dgvRow.Cells[1].Tag == null)
-                {
-                    continue;
-                }
+            //    if (dgvRow.Cells[1].Tag == null)
+            //    {
+            //        continue;
+            //    }
 
-                wlObj.UnitID = dgvRow.Cells[1].Tag.ToString();
+            //    wlObj.UnitID = dgvRow.Cells[1].Tag.ToString();
 
-                //创建单位信息
-                ConnectionManager.Context.table("Unit").where("ID='" + wlObj.UnitID + "'").delete();
-                Unit newUnit = new Unit();
-                newUnit.ID = wlObj.UnitID;
-                newUnit.UnitName = dgvRow.Cells[2].Value.ToString();
-                newUnit.FlagName = dgvRow.Cells[2].Value.ToString();
-                newUnit.NormalName = dgvRow.Cells[2].Value.ToString();
-                newUnit.ContactName = dgvRow.Cells[4].Value.ToString();
-                newUnit.Telephone = dgvRow.Cells[5].Value.ToString();
-                newUnit.Address = dgvRow.Cells[3].Value.ToString();
-                newUnit.UnitType = "候选单位";
-                newUnit.SecretQualification = "未知";
-                newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
+            //    //创建单位信息
+            //    ConnectionManager.Context.table("Unit").where("ID='" + wlObj.UnitID + "'").delete();
+            //    Unit newUnit = new Unit();
+            //    newUnit.ID = wlObj.UnitID;
+            //    newUnit.UnitName = dgvRow.Cells[2].Value.ToString();
+            //    newUnit.FlagName = dgvRow.Cells[2].Value.ToString();
+            //    newUnit.NormalName = dgvRow.Cells[2].Value.ToString();
+            //    newUnit.ContactName = dgvRow.Cells[4].Value.ToString();
+            //    newUnit.Telephone = dgvRow.Cells[5].Value.ToString();
+            //    newUnit.Address = dgvRow.Cells[3].Value.ToString();
+            //    newUnit.UnitType = "候选单位";
+            //    newUnit.SecretQualification = "未知";
+            //    newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
 
-                if (string.IsNullOrEmpty(wlObj.ID))
-                {
-                    //insert
-                    wlObj.ID = Guid.NewGuid().ToString();
-                    wlObj.copyTo(ConnectionManager.Context.table("WhiteList")).insert();
-                }
-                else
-                {
-                    //update
-                    wlObj.copyTo(ConnectionManager.Context.table("WhiteList")).where("ID='" + wlObj.ID + "'").update();
-                }
-            }
+            //    if (string.IsNullOrEmpty(wlObj.ID))
+            //    {
+            //        //insert
+            //        wlObj.ID = Guid.NewGuid().ToString();
+            //        wlObj.copyTo(ConnectionManager.Context.table("WhiteList")).insert();
+            //    }
+            //    else
+            //    {
+            //        //update
+            //        wlObj.copyTo(ConnectionManager.Context.table("WhiteList")).where("ID='" + wlObj.ID + "'").update();
+            //    }
+            //}
 
-            UpdateQianTouDanWeiList();
+            //UpdateQianTouDanWeiList();
         }
 
         private void UpdateUnitList()

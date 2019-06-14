@@ -108,25 +108,25 @@ namespace ProjectReporter.Controls
         {
             base.OnSaveEvent();
 
-            foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
-            {
-                Project data = null;
-                if (dgvRow.Tag != null)
-                {
-                    data = (Project)dgvRow.Tag;
+            //foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+            //{
+            //    Project data = null;
+            //    if (dgvRow.Tag != null)
+            //    {
+            //        data = (Project)dgvRow.Tag;
 
-                    if (PersonDict.ContainsKey(dgvRow.Cells[2].Value.ToString()))
-                    {
-                        Task ddd = ConnectionManager.Context.table("Task").where("ProjectID='" + data.ID + "' and Type = '课题'  and Role='负责人'").select("*").getItem<Task>(new Task());
-                        ddd.PersonID = PersonDict[dgvRow.Cells[2].Value.ToString()].ID;
-                        ddd.IDCard = PersonDict[dgvRow.Cells[2].Value.ToString()].IDCard;
+            //        if (PersonDict.ContainsKey(dgvRow.Cells[2].Value.ToString()))
+            //        {
+            //            Task ddd = ConnectionManager.Context.table("Task").where("ProjectID='" + data.ID + "' and Type = '课题'  and Role='负责人'").select("*").getItem<Task>(new Task());
+            //            ddd.PersonID = PersonDict[dgvRow.Cells[2].Value.ToString()].ID;
+            //            ddd.IDCard = PersonDict[dgvRow.Cells[2].Value.ToString()].IDCard;
 
-                        ddd.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + ddd.ID + "'").update();
-                    }
-                }
-            }
+            //            ddd.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + ddd.ID + "'").update();
+            //        }
+            //    }
+            //}
 
-            UpdateKeTiLianXiList();
+            //UpdateKeTiLianXiList();
         }
 
         private void UpdatePersonList()

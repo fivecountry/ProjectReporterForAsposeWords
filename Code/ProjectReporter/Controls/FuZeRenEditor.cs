@@ -100,24 +100,24 @@ namespace ProjectReporter.Controls
         {
             base.OnSaveEvent();
 
-            foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
-            {
-                Task data = null;
-                if (dgvRow.Tag != null)
-                {
-                    data = (Task)dgvRow.Tag;
+            //foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+            //{
+            //    Task data = null;
+            //    if (dgvRow.Tag != null)
+            //    {
+            //        data = (Task)dgvRow.Tag;
 
-                    if (PersonDict.ContainsKey(dgvRow.Cells[1].Value.ToString()))
-                    {
-                        data.PersonID = PersonDict[dgvRow.Cells[1].Value.ToString()].ID;
-                        data.IDCard = PersonDict[dgvRow.Cells[1].Value.ToString()].IDCard;
+            //        if (PersonDict.ContainsKey(dgvRow.Cells[1].Value.ToString()))
+            //        {
+            //            data.PersonID = PersonDict[dgvRow.Cells[1].Value.ToString()].ID;
+            //            data.IDCard = PersonDict[dgvRow.Cells[1].Value.ToString()].IDCard;
 
-                        data.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + data.ID + "'").update();
-                    }
-                }
-            }
+            //            data.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + data.ID + "'").update();
+            //        }
+            //    }
+            //}
 
-            UpdateFuZeRenList();
+            //UpdateFuZeRenList();
         }
 
         private void UpdatePersonList()

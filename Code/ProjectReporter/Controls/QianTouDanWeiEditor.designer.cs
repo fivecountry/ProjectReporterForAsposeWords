@@ -201,6 +201,7 @@
             this.colKaiHuZhangHao.Name = "colKaiHuZhangHao";
             this.colKaiHuZhangHao.ReadOnly = true;
             this.colKaiHuZhangHao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colKaiHuZhangHao.Visible = false;
             this.colKaiHuZhangHao.Width = 101;
             // 
             // colDanWeiMingCheng
@@ -246,7 +247,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel15);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QianTouDanWeiEditor";
             this.Size = new System.Drawing.Size(951, 585);
             this.tableLayoutPanel15.ResumeLayout(false);
