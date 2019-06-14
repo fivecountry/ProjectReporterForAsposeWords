@@ -91,16 +91,16 @@ namespace ProjectReporter.Controls
 
         private void UpdateUnitList()
         {
-            var unitList = _unitInforService.GetUnitInforList();
+            //var unitList = _unitInforService.GetUnitInforList();
 
             //leSearchList.Properties.DataSource = unitList;
             //leSearchList.Properties.DisplayMember = "UnitBankNo";
             //leSearchList.Properties.ValueMember = "ID";
 
-            if (MainForm.Instance.ProjectObj != null)
-            {
-                leSearchList.EditValue = MainForm.Instance.ProjectObj.UnitID;
-            }
+            //if (MainForm.Instance.ProjectObj != null)
+            //{
+            //    leSearchList.EditValue = MainForm.Instance.ProjectObj.UnitID;
+            //}
         }
 
         private void UpdatePersonList()
@@ -197,11 +197,11 @@ namespace ProjectReporter.Controls
                 return -1;
             }
 
-            if (leSearchList.EditValue == null || leSearchList.EditValue == "")
-            {
-                MessageBox.Show("对不起，请选择申报单位");
-                return -1;
-            }
+            //if (leSearchList.EditValue == null || leSearchList.EditValue == "")
+            //{
+            //    MessageBox.Show("对不起，请选择申报单位");
+            //    return -1;
+            //}
 
             if (string.IsNullOrEmpty(txtContactName.Text))
             {
@@ -237,6 +237,10 @@ namespace ProjectReporter.Controls
             //    MessageBox.Show("对不起，请输入常用名");
             //    return -1;
             //}
+            
+            //创建单位信息
+            string unitExtId = (MainForm.Instance.ProjectObj != null && !string.IsNullOrEmpty(MainForm.Instance.ProjectObj.UnitID)) ? MainForm.Instance.ProjectObj.UnitID : Guid.NewGuid().ToString();
+            BuildUnitRecord(unitExtId, txtUnitName.Text, txtContactName.Text, txtTelephone.Text, "其它", txtAddress.Text);
 
             //项目负责人
             if (MainForm.Instance.ProjectObj != null)
@@ -261,7 +265,7 @@ namespace ProjectReporter.Controls
             ProjectPersonObj = new Person();
             ProjectPersonObj.ID = Guid.NewGuid().ToString();
             ProjectPersonObj.Name = txtMPersonName.Text;
-            ProjectPersonObj.UnitID = leSearchList.EditValue.ToString();
+            ProjectPersonObj.UnitID = unitExtId;
             ProjectPersonObj.IDCard = txtMPersonIDCard.Text;
             //ProjectPersonObj.IDCard = txtMPersonIDCard.Text;
             //ProjectPersonObj.Sex = cbxMPersonSex.Text;
@@ -288,7 +292,7 @@ namespace ProjectReporter.Controls
             }
 
             MainForm.Instance.ProjectObj.ParentID = string.Empty;
-            MainForm.Instance.ProjectObj.UnitID = leSearchList.EditValue.ToString();
+            MainForm.Instance.ProjectObj.UnitID = unitExtId;
             MainForm.Instance.ProjectObj.Type = "项目";
             MainForm.Instance.ProjectObj.SecretLevel = cbxSecret.SelectedItem != null ? cbxSecret.SelectedItem.ToString() : "公开";
             MainForm.Instance.ProjectObj.Name = txtProjectName.Text;
@@ -387,15 +391,15 @@ namespace ProjectReporter.Controls
 
         private void leSearchList_EditValueChanged(object sender, EventArgs e)
         {
-            Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + leSearchList.EditValue + "'").select("*").getItem<Unit>(new Unit());
-            if (unitObj != null)
-            {
-                txtUnitName.Text = unitObj.UnitName;
-                txtContactName.Text = unitObj.ContactName;
-                txtTelephone.Text = unitObj.Telephone;
-                txtAddress.Text = unitObj.Address;
-                txtNormalName.Text = unitObj.NormalName;
-            }
+            //Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + leSearchList.EditValue + "'").select("*").getItem<Unit>(new Unit());
+            //if (unitObj != null)
+            //{
+            //    txtUnitName.Text = unitObj.UnitName;
+            //    txtContactName.Text = unitObj.ContactName;
+            //    txtTelephone.Text = unitObj.Telephone;
+            //    txtAddress.Text = unitObj.Address;
+            //    txtNormalName.Text = unitObj.NormalName;
+            //}
         }
 
         private void NewProjectEditor_SizeChanged(object sender, EventArgs e)
