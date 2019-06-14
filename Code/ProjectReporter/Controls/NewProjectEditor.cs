@@ -280,8 +280,15 @@ namespace ProjectReporter.Controls
             //ProjectPersonObj.MobilePhone = txtMPersonMobilephone.Text;
             ProjectPersonObj.copyTo(ConnectionManager.Context.table("Person")).insert();
 
-            //ComboboxItem unitSelectedItem = ((ComboboxItem)cbxUnitA.Items[cbxUnitA.SelectedIndex]);
-            Task projectPerson = new Task();
+            //删除这个记录
+            Task projectPerson = ConnectionManager.Context.table("Task").where("ProjectID = '" + projectIDs + "' and Role = '负责人' and Type = '项目'").select("*").getItem<Task>(new Task());
+            ConnectionManager.Context.table("Task").where("ProjectID = '" + projectIDs + "' and Role = '负责人' and Type = '项目'").delete();
+
+            if (projectPerson == null)
+            {
+                projectPerson = new Task();
+            }
+
             projectPerson.ID = Guid.NewGuid().ToString();
             projectPerson.PersonID = ProjectPersonObj.ID;
             projectPerson.IDCard = ProjectPersonObj.IDCard;
