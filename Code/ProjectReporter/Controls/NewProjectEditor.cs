@@ -243,12 +243,6 @@ namespace ProjectReporter.Controls
             string unitExtId = (MainForm.Instance.ProjectObj != null && !string.IsNullOrEmpty(MainForm.Instance.ProjectObj.UnitID)) ? MainForm.Instance.ProjectObj.UnitID : Guid.NewGuid().ToString();
             BuildUnitRecord(unitExtId, txtUnitName.Text, txtUnitName.Text, txtNormalName.Text, txtContactName.Text, txtTelephone.Text, "申报单位", txtAddress.Text);
 
-            //项目负责人
-            if (MainForm.Instance.ProjectObj != null)
-            {
-                ConnectionManager.Context.table("Task").where("Role='负责人' and Type='项目' and ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").delete();
-            }
-
             string projectIDs = string.Empty;
             if (MainForm.Instance.ProjectObj == null)
             {
