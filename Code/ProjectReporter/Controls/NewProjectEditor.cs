@@ -356,7 +356,16 @@ namespace ProjectReporter.Controls
             //}
         }
 
-        public void BuildUnitRecord(string unitExtId, string unitName, string contactName, string telephone, string unitType, string unitAddress)
+        /// <summary>
+        /// 创建单位信息
+        /// </summary>
+        /// <param name="unitExtId"></param>
+        /// <param name="unitName"></param>
+        /// <param name="contactName"></param>
+        /// <param name="telephone"></param>
+        /// <param name="unitType"></param>
+        /// <param name="unitAddress"></param>
+        public static void BuildUnitRecord(string unitExtId, string unitName, string contactName, string telephone, string unitType, string unitAddress)
         {
             ConnectionManager.Context.table("Unit").where("ID='" + unitExtId + "'").delete();
 
