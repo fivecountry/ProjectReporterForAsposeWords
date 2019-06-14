@@ -532,9 +532,6 @@ namespace ProjectReporter.Controls
                 int displayOrderIndex = dgvDetail.Rows.Count;
 
                 //加载字段
-                string unitBankNo = dr["单位开户帐号"] != null ? dr["单位开户帐号"].ToString() : string.Empty;
-                string unitBankUser = dr["开户名称"] != null ? dr["开户名称"].ToString() : string.Empty;
-                string unitBankName = dr["开户行"] != null ? dr["开户行"].ToString() : string.Empty;
                 string unitName = dr["单位名称"] != null ? dr["单位名称"].ToString() : string.Empty;
                 string unitType = dr["隶属部门"] != null ? dr["隶属部门"].ToString() : string.Empty;
                 string unitAddress = dr["单位通信地址"] != null ? dr["单位通信地址"].ToString() : string.Empty;
@@ -556,12 +553,6 @@ namespace ProjectReporter.Controls
 
                 //进行必要字段的校验
                 
-                //检查单位帐号
-                if (string.IsNullOrEmpty(unitBankNo))
-                {
-                    throw new Exception("对不起，'单位开户帐号'不能为空！");
-                }
-
                 //检查身份证
                 if (string.IsNullOrEmpty(personIDCard))
                 {
@@ -619,35 +610,38 @@ namespace ProjectReporter.Controls
 
                 #region 插入人员数据
 
-                //判断是不是需要创建单位
-                UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("UnitBankNo='" + unitBankNo + "'").select("*").getItem<UnitExt>(new UnitExt());
+                ////判断是不是需要创建单位
+                //UnitExt unitExtObj = ConnectionManager.Context.table("UnitExt").where("UnitBankNo='" + unitBankNo + "'").select("*").getItem<UnitExt>(new UnitExt());
                 
-                //判断是否需要创建单位信息
-                if (string.IsNullOrEmpty(unitExtObj.ID))
-                {
-                    //需要创建单位
+                ////判断是否需要创建单位信息
+                //if (string.IsNullOrEmpty(unitExtObj.ID))
+                //{
+                //    //需要创建单位
 
-                    //创建帐号信息
-                    if (unitExtObj == null)
-                    {
-                        unitExtObj = new UnitExt();
-                    }
-                    unitExtObj.UnitName = unitName;
-                    unitExtObj.UnitType = unitType;
-                    unitExtObj.UnitBankUser = unitBankUser;
-                    unitExtObj.UnitBankName = unitBankName;
-                    unitExtObj.UnitBankNo = unitBankNo;
-                    unitExtObj.IsUserAdded = 1;
-                    _unitInforService.UpdateUnitInfors(new List<UnitExt>(new UnitExt[] { unitExtObj }));
-                }
+                //    //创建帐号信息
+                //    if (unitExtObj == null)
+                //    {
+                //        unitExtObj = new UnitExt();
+                //    }
+                //    unitExtObj.UnitName = unitName;
+                //    unitExtObj.UnitType = unitType;
+                //    unitExtObj.UnitBankUser = unitBankUser;
+                //    unitExtObj.UnitBankName = unitBankName;
+                //    unitExtObj.UnitBankNo = unitBankNo;
+                //    unitExtObj.IsUserAdded = 1;
+                //    _unitInforService.UpdateUnitInfors(new List<UnitExt>(new UnitExt[] { unitExtObj }));
+                //}
+
+                string unitID = Guid.NewGuid().ToString();
+                unitID = ConnectionManager.Context.table("Unit").where("UnitName='" + unitName + "'").select("ID").getValue<string>(Guid.NewGuid().ToString());
 
                 //创建单位信息
-                NewGuGanLianXiRenForm.BuildUnitRecord(unitExtObj.ID, unitName, unitContact, unitTelephone, unitType, unitAddress);
+                NewProjectEditor.BuildUnitRecord(unitID, unitName, unitName, unitName, unitContact, unitTelephone, unitType, unitAddress);
 
                 //创建人员
                 ConnectionManager.Context.table("Person").where("IDCard = '" + personIDCard + "'").delete();
                 Person PersonObj = new Person();
-                PersonObj.UnitID = unitExtObj.ID;
+                PersonObj.UnitID = unitID;
                 PersonObj.ID = Guid.NewGuid().ToString();
                 PersonObj.Name = personName;
                 PersonObj.Sex = personSex;
