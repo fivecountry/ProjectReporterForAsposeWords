@@ -454,7 +454,6 @@ namespace ProjectReporter.Controls
                     task.Role = "负责人";
                     task.Type = "课题";
                     task.TotalMoney = totalMoney;
-                    task.TotalTime = 0;
 
                     if (string.IsNullOrEmpty(task.ID))
                     {
