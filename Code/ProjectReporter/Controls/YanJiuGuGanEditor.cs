@@ -184,89 +184,89 @@ namespace ProjectReporter.Controls
         {
             base.OnSaveEvent();
 
-            foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
-            {
-                Task task = null;
-                if (dgvRow.Tag == null)
-                {
-                    //新行
-                    task = new Task();
-                    task.ProjectID = MainForm.Instance.ProjectObj.ID;
-                    task.Type = "项目";
-                }
-                else
-                {
-                    //已存在
-                    task = (Task)dgvRow.Tag;
-                }
+            //foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+            //{
+            //    Task task = null;
+            //    if (dgvRow.Tag == null)
+            //    {
+            //        //新行
+            //        task = new Task();
+            //        task.ProjectID = MainForm.Instance.ProjectObj.ID;
+            //        task.Type = "项目";
+            //    }
+            //    else
+            //    {
+            //        //已存在
+            //        task = (Task)dgvRow.Tag;
+            //    }
 
-                if (dgvRow.Cells[1].Value == null || string.IsNullOrEmpty(dgvRow.Cells[1].Value.ToString()))
-                {
-                    continue;
-                }
-                if (dgvRow.Cells[5].Value == null || string.IsNullOrEmpty(dgvRow.Cells[5].Value.ToString()))
-                {
-                    MessageBox.Show("对不起,请选择项目内职务");
-                    return;
-                }
-                if (dgvRow.Cells[6].Value == null || string.IsNullOrEmpty(dgvRow.Cells[6].Value.ToString()))
-                {
-                    MessageBox.Show("对不起,请输入任务分工");
-                    return;
-                }
-                if (dgvRow.Cells[7].Value == null || string.IsNullOrEmpty(dgvRow.Cells[7].Value.ToString()))
-                {
-                    MessageBox.Show("对不起,请输入每年为项目工作时间(月)");
-                    return;
-                }
+            //    if (dgvRow.Cells[1].Value == null || string.IsNullOrEmpty(dgvRow.Cells[1].Value.ToString()))
+            //    {
+            //        continue;
+            //    }
+            //    if (dgvRow.Cells[5].Value == null || string.IsNullOrEmpty(dgvRow.Cells[5].Value.ToString()))
+            //    {
+            //        MessageBox.Show("对不起,请选择项目内职务");
+            //        return;
+            //    }
+            //    if (dgvRow.Cells[6].Value == null || string.IsNullOrEmpty(dgvRow.Cells[6].Value.ToString()))
+            //    {
+            //        MessageBox.Show("对不起,请输入任务分工");
+            //        return;
+            //    }
+            //    if (dgvRow.Cells[7].Value == null || string.IsNullOrEmpty(dgvRow.Cells[7].Value.ToString()))
+            //    {
+            //        MessageBox.Show("对不起,请输入每年为项目工作时间(月)");
+            //        return;
+            //    }
 
-                if (PersonDict.ContainsKey(dgvRow.Cells[1].Value.ToString()))
-                {
-                    task.PersonID = PersonDict[dgvRow.Cells[1].Value.ToString()].ID;
-                    task.IDCard = PersonDict[dgvRow.Cells[1].Value.ToString()].IDCard;
-                }
-                else
-                {
-                    MessageBox.Show("对不起,人员不存在");
-                    return;
-                }
+            //    if (PersonDict.ContainsKey(dgvRow.Cells[1].Value.ToString()))
+            //    {
+            //        task.PersonID = PersonDict[dgvRow.Cells[1].Value.ToString()].ID;
+            //        task.IDCard = PersonDict[dgvRow.Cells[1].Value.ToString()].IDCard;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("对不起,人员不存在");
+            //        return;
+            //    }
 
-                string roleName = dgvRow.Cells[5].Value.ToString();
-                if (JobDict.ContainsKey(roleName))
-                {
-                    if (roleName.StartsWith("项目-"))
-                    {
-                        //项目
-                        task.Type = "项目";
-                        task.Role = roleName.Replace("项目-", string.Empty);
-                    }
-                    else
-                    {
-                        //课题
-                        task.Type = "课题";
-                        task.Role = roleName.Split('-')[1];
-                    }
+            //    string roleName = dgvRow.Cells[5].Value.ToString();
+            //    if (JobDict.ContainsKey(roleName))
+            //    {
+            //        if (roleName.StartsWith("项目-"))
+            //        {
+            //            //项目
+            //            task.Type = "项目";
+            //            task.Role = roleName.Replace("项目-", string.Empty);
+            //        }
+            //        else
+            //        {
+            //            //课题
+            //            task.Type = "课题";
+            //            task.Role = roleName.Split('-')[1];
+            //        }
 
-                    task.ProjectID = JobDict[roleName].ID;
-                }
+            //        task.ProjectID = JobDict[roleName].ID;
+            //    }
 
-                task.Content = dgvRow.Cells[6].Value.ToString();
-                task.TotalTime = Int32.Parse(dgvRow.Cells[7].Value.ToString());
+            //    task.Content = dgvRow.Cells[6].Value.ToString();
+            //    task.TotalTime = Int32.Parse(dgvRow.Cells[7].Value.ToString());
 
-                if (string.IsNullOrEmpty(task.ID))
-                {
-                    //insert
-                    task.ID = Guid.NewGuid().ToString();
-                    task.copyTo(ConnectionManager.Context.table("Task")).insert();
-                }
-                else
-                {
-                    //update
-                    task.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + task.ID + "'").update();
-                }
-            }
+            //    if (string.IsNullOrEmpty(task.ID))
+            //    {
+            //        //insert
+            //        task.ID = Guid.NewGuid().ToString();
+            //        task.copyTo(ConnectionManager.Context.table("Task")).insert();
+            //    }
+            //    else
+            //    {
+            //        //update
+            //        task.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + task.ID + "'").update();
+            //    }
+            //}
 
-            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
+            //MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
         }
 
         public List<Person> PersonList { get; set; }
