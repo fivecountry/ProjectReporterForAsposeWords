@@ -54,8 +54,6 @@
             this.txtUnitAddress = new System.Windows.Forms.TextBox();
             this.txtUnitContactName = new System.Windows.Forms.TextBox();
             this.txtUnitTelephone = new System.Windows.Forms.TextBox();
-            this.btnUnitSelect = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -102,13 +100,13 @@
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(0, 0);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(478, 626);
+            this.plContent.Size = new System.Drawing.Size(478, 603);
             this.plContent.TabIndex = 10;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(265, 562);
+            this.label18.Location = new System.Drawing.Point(265, 528);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(19, 14);
             this.label18.TabIndex = 19;
@@ -116,7 +114,7 @@
             // 
             // plPersonInfo
             // 
-            this.plPersonInfo.Location = new System.Drawing.Point(8, 181);
+            this.plPersonInfo.Location = new System.Drawing.Point(8, 147);
             this.plPersonInfo.Name = "plPersonInfo";
             // 
             // plPersonInfo.Panel
@@ -305,64 +303,45 @@
             this.plWorkUnit.Panel.Controls.Add(this.txtUnitAddress);
             this.plWorkUnit.Panel.Controls.Add(this.txtUnitContactName);
             this.plWorkUnit.Panel.Controls.Add(this.txtUnitTelephone);
-            this.plWorkUnit.Panel.Controls.Add(this.btnUnitSelect);
-            this.plWorkUnit.Panel.Controls.Add(this.label1);
             this.plWorkUnit.Panel.Controls.Add(this.label6);
             this.plWorkUnit.Panel.Controls.Add(this.label13);
             this.plWorkUnit.Panel.Controls.Add(this.label14);
             this.plWorkUnit.Panel.Controls.Add(this.label15);
-            this.plWorkUnit.Size = new System.Drawing.Size(456, 176);
+            this.plWorkUnit.Size = new System.Drawing.Size(456, 140);
             this.plWorkUnit.TabIndex = 17;
             this.plWorkUnit.Values.Heading = "工作单位";
             // 
             // txtUnitName
             // 
-            this.txtUnitName.Location = new System.Drawing.Point(141, 39);
+            this.txtUnitName.Location = new System.Drawing.Point(141, 4);
             this.txtUnitName.Name = "txtUnitName";
             this.txtUnitName.Size = new System.Drawing.Size(300, 22);
             this.txtUnitName.TabIndex = 9;
             // 
             // txtUnitAddress
             // 
-            this.txtUnitAddress.Location = new System.Drawing.Point(141, 67);
+            this.txtUnitAddress.Location = new System.Drawing.Point(141, 32);
             this.txtUnitAddress.Name = "txtUnitAddress";
             this.txtUnitAddress.Size = new System.Drawing.Size(300, 22);
             this.txtUnitAddress.TabIndex = 9;
             // 
             // txtUnitContactName
             // 
-            this.txtUnitContactName.Location = new System.Drawing.Point(141, 95);
+            this.txtUnitContactName.Location = new System.Drawing.Point(141, 60);
             this.txtUnitContactName.Name = "txtUnitContactName";
             this.txtUnitContactName.Size = new System.Drawing.Size(300, 22);
             this.txtUnitContactName.TabIndex = 9;
             // 
             // txtUnitTelephone
             // 
-            this.txtUnitTelephone.Location = new System.Drawing.Point(141, 123);
+            this.txtUnitTelephone.Location = new System.Drawing.Point(141, 88);
             this.txtUnitTelephone.Name = "txtUnitTelephone";
             this.txtUnitTelephone.Size = new System.Drawing.Size(300, 22);
             this.txtUnitTelephone.TabIndex = 9;
             // 
-            // btnUnitSelect
-            // 
-            this.btnUnitSelect.Location = new System.Drawing.Point(141, 3);
-            this.btnUnitSelect.Name = "btnUnitSelect";
-            this.btnUnitSelect.Size = new System.Drawing.Size(300, 29);
-            this.btnUnitSelect.TabIndex = 15;
-            this.btnUnitSelect.Values.Text = "选择单位帐号";
-            this.btnUnitSelect.Click += new System.EventHandler(this.btnUnitSelect_Click);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(53, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 14);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "单位开户帐号：";
-            // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(77, 42);
+            this.label6.Location = new System.Drawing.Point(77, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 14);
             this.label6.TabIndex = 8;
@@ -370,7 +349,7 @@
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(77, 70);
+            this.label13.Location = new System.Drawing.Point(77, 35);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 14);
             this.label13.TabIndex = 8;
@@ -378,7 +357,7 @@
             // 
             // label14
             // 
-            this.label14.Location = new System.Drawing.Point(77, 98);
+            this.label14.Location = new System.Drawing.Point(77, 63);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(67, 14);
             this.label14.TabIndex = 8;
@@ -386,7 +365,7 @@
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(77, 126);
+            this.label15.Location = new System.Drawing.Point(77, 91);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 14);
             this.label15.TabIndex = 8;
@@ -394,7 +373,7 @@
             // 
             // txtWorkTimeInYear
             // 
-            this.txtWorkTimeInYear.Location = new System.Drawing.Point(151, 558);
+            this.txtWorkTimeInYear.Location = new System.Drawing.Point(151, 524);
             this.txtWorkTimeInYear.Name = "txtWorkTimeInYear";
             this.txtWorkTimeInYear.Size = new System.Drawing.Size(112, 22);
             this.txtWorkTimeInYear.TabIndex = 16;
@@ -403,14 +382,14 @@
             // 
             this.cbxItemJobs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxItemJobs.DropDownWidth = 300;
-            this.cbxItemJobs.Location = new System.Drawing.Point(151, 464);
+            this.cbxItemJobs.Location = new System.Drawing.Point(151, 430);
             this.cbxItemJobs.Name = "cbxItemJobs";
             this.cbxItemJobs.Size = new System.Drawing.Size(313, 22);
             this.cbxItemJobs.TabIndex = 13;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 559);
+            this.label2.Location = new System.Drawing.Point(12, 525);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 14);
             this.label2.TabIndex = 10;
@@ -418,7 +397,7 @@
             // 
             // txtTaskContent
             // 
-            this.txtTaskContent.Location = new System.Drawing.Point(151, 492);
+            this.txtTaskContent.Location = new System.Drawing.Point(151, 458);
             this.txtTaskContent.Multiline = true;
             this.txtTaskContent.Name = "txtTaskContent";
             this.txtTaskContent.Size = new System.Drawing.Size(313, 57);
@@ -426,7 +405,7 @@
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(13, 512);
+            this.label11.Location = new System.Drawing.Point(13, 478);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(142, 17);
             this.label11.TabIndex = 8;
@@ -434,7 +413,7 @@
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(14, 467);
+            this.label12.Location = new System.Drawing.Point(14, 433);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(144, 14);
             this.label12.TabIndex = 8;
@@ -445,9 +424,9 @@
             this.plButtons.Controls.Add(this.btnOK);
             this.plButtons.Controls.Add(this.btnCancel);
             this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plButtons.Location = new System.Drawing.Point(2, 588);
+            this.plButtons.Location = new System.Drawing.Point(2, 552);
             this.plButtons.Name = "plButtons";
-            this.plButtons.Size = new System.Drawing.Size(474, 36);
+            this.plButtons.Size = new System.Drawing.Size(474, 49);
             this.plButtons.TabIndex = 7;
             // 
             // btnOK
@@ -455,7 +434,7 @@
             this.btnOK.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnOK.Location = new System.Drawing.Point(292, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(90, 32);
+            this.btnOK.Size = new System.Drawing.Size(90, 45);
             this.btnOK.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.TabIndex = 28;
@@ -467,7 +446,7 @@
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCancel.Location = new System.Drawing.Point(382, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 32);
+            this.btnCancel.Size = new System.Drawing.Size(90, 45);
             this.btnCancel.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.TabIndex = 27;
@@ -478,7 +457,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 626);
+            this.ClientSize = new System.Drawing.Size(478, 603);
             this.Controls.Add(this.plContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "NewGuGanLianXiRenForm";
@@ -510,7 +489,6 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl plContent;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnUnitSelect;
         private DevExpress.XtraEditors.DateEdit dePersonBirthday;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox cbxPersonSex;
         private System.Windows.Forms.Label label2;
@@ -530,7 +508,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPersonName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.PanelControl plButtons;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnOK;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCancel;

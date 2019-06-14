@@ -240,7 +240,7 @@ namespace ProjectReporter.Controls
             
             //创建单位信息
             string unitExtId = (MainForm.Instance.ProjectObj != null && !string.IsNullOrEmpty(MainForm.Instance.ProjectObj.UnitID)) ? MainForm.Instance.ProjectObj.UnitID : Guid.NewGuid().ToString();
-            BuildUnitRecord(unitExtId, txtUnitName.Text, txtContactName.Text, txtTelephone.Text, "其它", txtAddress.Text);
+            BuildUnitRecord(unitExtId, txtUnitName.Text, txtContactName.Text, txtTelephone.Text, "项目单位", txtAddress.Text);
 
             //项目负责人
             if (MainForm.Instance.ProjectObj != null)

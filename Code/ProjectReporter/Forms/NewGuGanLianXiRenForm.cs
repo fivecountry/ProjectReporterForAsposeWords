@@ -14,8 +14,6 @@ namespace ProjectReporter.Forms
     {
         protected Dictionary<string, Project> JobDict = new Dictionary<string, Project>();
 
-        public UnitExt UnitExtObj { get; private set; }
-
         public Unit UnitObj { get; private set; }
 
         public Task TaskObj { get; private set; }
@@ -50,11 +48,10 @@ namespace ProjectReporter.Forms
                     txtPersonTelephone.Text = PersonObj.Telephone;
                     txtPersonMobilePhone.Text = PersonObj.MobilePhone;
 
-                    UnitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
+                    //UnitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
                     UnitObj = ConnectionManager.Context.table("Unit").where("ID='" + PersonObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
-                    if (UnitObj != null && UnitExtObj != null)
-                    {
-                        btnUnitSelect.Text = UnitExtObj.UnitBankNo;
+                    if (UnitObj != null)
+                    {   
                         txtUnitName.Text = UnitObj.UnitName;
                         txtUnitAddress.Text = UnitObj.Address;
                         txtUnitContactName.Text = UnitObj.ContactName;
@@ -196,13 +193,16 @@ namespace ProjectReporter.Forms
                 return;
             }
 
+            //单位ID
+            string unitExtId = (PersonObj != null && !string.IsNullOrEmpty(PersonObj.UnitID)) ? PersonObj.UnitID : Guid.NewGuid().ToString();
+
             //创建单位
-            BuildUnitRecord(UnitExtObj.ID, txtUnitName.Text, txtUnitContactName.Text, txtUnitTelephone.Text, "课题单位", txtUnitAddress.Text);
+            ProjectReporter.Controls.NewProjectEditor.BuildUnitRecord(unitExtId, txtUnitName.Text, txtUnitContactName.Text, txtUnitTelephone.Text, "课题单位", txtUnitAddress.Text);
 
             //创建人员
             ConnectionManager.Context.table("Person").where("IDCard = '" + txtPersonIDCard.Text.Trim() + "'").delete();
             PersonObj = new Person();
-            PersonObj.UnitID = UnitExtObj.ID;
+            PersonObj.UnitID = unitExtId;
             PersonObj.ID = Guid.NewGuid().ToString();
             PersonObj.Name = txtPersonName.Text;
             PersonObj.Sex = cbxPersonSex.Text;
@@ -268,51 +268,6 @@ namespace ProjectReporter.Forms
             }
 
             DialogResult = DialogResult.OK;
-        }
-
-        private void btnUnitSelect_Click(object sender, EventArgs e)
-        {
-            UnitExtSelectForm uesf = new UnitExtSelectForm(PersonObj != null ? PersonObj.UnitID : string.Empty);
-            if (uesf.ShowDialog() == DialogResult.OK && uesf.SelectedUnitExt != null)
-            {
-                btnUnitSelect.Text = uesf.SelectedUnitExt.UnitBankNo;
-                UnitExtObj = uesf.SelectedUnitExt;
-
-                Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + UnitExtObj.ID + "'").select("*").getItem<Unit>(new Unit());
-                if (unitObj != null)
-                {
-                    txtUnitName.Text = unitObj.UnitName;
-                    txtUnitContactName.Text = unitObj.ContactName;
-                    txtUnitTelephone.Text = unitObj.Telephone;
-                    txtUnitAddress.Text = unitObj.Address;
-                }
-            }
-        }
-
-        /// <summary>
-        /// 创建单位信息
-        /// </summary>
-        /// <param name="unitExtId"></param>
-        /// <param name="unitName"></param>
-        /// <param name="contactName"></param>
-        /// <param name="telephone"></param>
-        /// <param name="unitType"></param>
-        /// <param name="unitAddress"></param>
-        public static void BuildUnitRecord(string unitExtId, string unitName, string contactName, string telephone, string unitType, string unitAddress)
-        {
-            ConnectionManager.Context.table("Unit").where("ID='" + unitExtId + "'").delete();
-
-            Unit newUnit = new Unit();
-            newUnit.ID = unitExtId;
-            newUnit.UnitName = unitName;
-            newUnit.FlagName = unitName;
-            newUnit.NormalName = unitName;
-            newUnit.ContactName = contactName;
-            newUnit.Telephone = telephone;
-            newUnit.Address = unitAddress;
-            newUnit.UnitType = unitType;
-            newUnit.SecretQualification = "未知";
-            newUnit.copyTo(ConnectionManager.Context.table("Unit")).insert();
         }
     }
 }
