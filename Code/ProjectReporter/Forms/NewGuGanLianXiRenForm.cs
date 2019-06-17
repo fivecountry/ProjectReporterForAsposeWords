@@ -199,11 +199,19 @@ namespace ProjectReporter.Forms
             //创建单位
             ProjectReporter.Controls.NewProjectEditor.BuildUnitRecord(unitExtId, txtUnitName.Text, txtUnitName.Text, txtUnitName.Text, txtUnitContactName.Text, txtUnitTelephone.Text, "课题单位", txtUnitAddress.Text);
 
+            //新的人员ID
+            string newPersonId = Guid.NewGuid().ToString();
+
             //创建人员
             ConnectionManager.Context.table("Person").where("IDCard = '" + txtPersonIDCard.Text.Trim() + "'").delete();
+
+            //更新人员ID
+            ConnectionManager.Context.table("Task").where("IDCard = '" + txtPersonIDCard.Text.Trim() + "'").set("PersonID", newPersonId).update();
+
+            //添加人员
             PersonObj = new Person();
             PersonObj.UnitID = unitExtId;
-            PersonObj.ID = Guid.NewGuid().ToString();
+            PersonObj.ID = newPersonId;
             PersonObj.Name = txtPersonName.Text;
             PersonObj.Sex = cbxPersonSex.Text;
             PersonObj.Birthday = dePersonBirthday.DateTime != null ? dePersonBirthday.DateTime : DateTime.Now;

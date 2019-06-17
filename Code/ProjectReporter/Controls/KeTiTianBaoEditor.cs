@@ -375,17 +375,24 @@ namespace ProjectReporter.Controls
                         break;
                     }
 
+                    //新的人员ID
+                    string newPersonId = Guid.NewGuid().ToString();
+
                     //查找人员信息
                     personObj = ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").select("*").getItem<Person>(new Person());
+
                     //删除这条记录
                     ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").delete();
+
+                    //更新人员ID
+                    ConnectionManager.Context.table("Task").where("IDCard = '" + dgvRow.Cells[4].Value + "'").set("PersonID", newPersonId).update();
 
                     if (personObj == null)
                     {
                         personObj = new Person();
                     }
 
-                    personObj.ID = Guid.NewGuid().ToString();
+                    personObj.ID = newPersonId;
                     personObj.Name = dgvRow.Cells[3].Value.ToString();
                     personObj.UnitID = dgvRow.Cells[6].Tag.ToString();
                     personObj.IDCard = dgvRow.Cells[4].Value.ToString();

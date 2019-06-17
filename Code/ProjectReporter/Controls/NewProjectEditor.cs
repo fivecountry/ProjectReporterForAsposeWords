@@ -253,16 +253,22 @@ namespace ProjectReporter.Controls
                 projectIDs = MainForm.Instance.ProjectObj.ID;
             }
 
+            //新的人员ID
+            string newPersonId = Guid.NewGuid().ToString();
+
             if (ProjectPersonObj != null)
             {
-                ConnectionManager.Context.table("Person").where("ID = '" + ProjectPersonObj.ID + "'").delete();
+                ConnectionManager.Context.table("Person").where("IDCard = '" + ProjectPersonObj.IDCard + "'").delete();
+
+                //更新人员ID
+                ConnectionManager.Context.table("Task").where("IDCard = '" + ProjectPersonObj.IDCard + "'").set("PersonID", newPersonId).update();
             }
             else
             {
                 ProjectPersonObj = new Person();
             }
 
-            ProjectPersonObj.ID = Guid.NewGuid().ToString();
+            ProjectPersonObj.ID = newPersonId;
             ProjectPersonObj.Name = txtMPersonName.Text;
             ProjectPersonObj.UnitID = unitExtId;
             ProjectPersonObj.IDCard = txtMPersonIDCard.Text;
