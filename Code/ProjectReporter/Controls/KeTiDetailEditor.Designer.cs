@@ -89,7 +89,7 @@
             this.kpInfo.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpInfo.Name = "kpInfo";
             this.kpInfo.Size = new System.Drawing.Size(750, 361);
-            this.kpInfo.Text = "简述";
+            this.kpInfo.Text = "简述(200字以内)";
             this.kpInfo.ToolTipTitle = "Page ToolTip";
             this.kpInfo.UniqueName = "480A3E3DB4644E2359A73CEE17D437D9";
             // 
