@@ -515,7 +515,7 @@ namespace ProjectReporter.Controls
                     }
 
                     RefreshView();
-                    MessageBox.Show("导入完成！");
+                    MessageBox.Show("操作完成！");
                 }
             }
         }
@@ -535,7 +535,8 @@ namespace ProjectReporter.Controls
 
                 //加载字段
                 string unitName = dr["单位名称"] != null ? dr["单位名称"].ToString() : string.Empty;
-                string unitType = dr["隶属部门"] != null ? dr["隶属部门"].ToString() : string.Empty;
+                //string unitType = dr["隶属部门"] != null ? dr["隶属部门"].ToString() : string.Empty;
+                string unitType = "其它";
                 string unitAddress = dr["单位通信地址"] != null ? dr["单位通信地址"].ToString() : string.Empty;
                 string unitContact = dr["单位联系人"] != null ? dr["单位联系人"].ToString() : string.Empty;
                 string unitTelephone = dr["单位联系电话"] != null ? dr["单位联系电话"].ToString() : string.Empty;
@@ -551,7 +552,7 @@ namespace ProjectReporter.Controls
                 string subjectName = dr["课题名称"] != null ? dr["课题名称"].ToString() : string.Empty;
                 string jobInProjectOrSubject = dr["项目或课题中职务"] != null ? dr["项目或课题中职务"].ToString() : string.Empty;
                 string taskInProject = dr["任务分工"] != null ? dr["任务分工"].ToString() : string.Empty;
-                string timeInProject = dr["每年为本项目工作时间"] != null ? dr["每年为本项目工作时间"].ToString() : string.Empty;
+                string timeInProject = dr["每年为本项目工作时间(月)"] != null ? dr["每年为本项目工作时间(月)"].ToString() : string.Empty;
 
                 //进行必要字段的校验
                 
