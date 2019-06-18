@@ -207,6 +207,12 @@
     <Compile Include="Controls\BaoMiZiZhiFuYinJianEditor.designer.cs">
       <DependentUpon>BaoMiZiZhiFuYinJianEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ChengNuoShuEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ChengNuoShuEditor.Designer.cs">
+      <DependentUpon>ChengNuoShuEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DataGridViewEx\DataGridViewWithMerge.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -409,6 +415,9 @@
     <EmbeddedResource Include="Controls\BaoMiZiZhiFuYinJianEditor.resx">
       <DependentUpon>BaoMiZiZhiFuYinJianEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ChengNuoShuEditor.resx">
+      <DependentUpon>ChengNuoShuEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FuZeRenEditor.resx">
       <DependentUpon>FuZeRenEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -511,30 +520,33 @@
     <None Include="Fonts\simkai_0.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Helper\help.rtf">
+    <Content Include="Helper\chengnuoshu.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Helper\introduction.rtf">
+    </Content>
+    <Content Include="Helper\help.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Helper\JingFeiFuJian.doc">
+    </Content>
+    <Content Include="Helper\introduction.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Helper\lianxiren.xlsx">
+    </Content>
+    <Content Include="Helper\JingFeiFuJian.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Helper\newtemplete.docx">
+    </Content>
+    <Content Include="Helper\lianxiren.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Helper\TianBaoShuoMing.docx">
+    </Content>
+    <Content Include="Helper\newtemplete.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Helper\xiangmuzhaiyaomoban.rtf">
+    </Content>
+    <Content Include="Helper\TianBaoShuoMing.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Helper\xitixiangxi.rtf">
+    </Content>
+    <Content Include="Helper\xiangmuzhaiyaomoban.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Content Include="Helper\xitixiangxi.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -329,6 +329,7 @@ namespace ProjectReporter
             EditorIndexLists.Add(feUI23);
             EditorIndexLists.Add(feUI24);
             EditorIndexLists.Add(feUI25);
+            EditorIndexLists.Add(feUI31);
             #endregion
 
             foreach (BaseEditor be in EditorIndexLists)
