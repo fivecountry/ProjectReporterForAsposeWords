@@ -1092,7 +1092,7 @@ namespace ProjectReporter
             this.kryptonPage34.Name = "kryptonPage34";
             this.kryptonPage34.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage34.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
-            this.kryptonPage34.Text = "预期收益";
+            this.kryptonPage34.Text = "预期效益";
             this.kryptonPage34.ToolTipTitle = "Page ToolTip";
             this.kryptonPage34.UniqueName = "754BF6994CBD4D55D0B8360A0FB0EBB3";
             // 
