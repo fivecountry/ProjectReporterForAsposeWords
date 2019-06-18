@@ -70,15 +70,15 @@ namespace ProjectReporter.Controls
 
         private void UpdateJobList()
         {
-            KryptonDataGridViewComboBoxColumn comboboxColumn = (KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[5];
+            KryptonDataGridViewComboBoxColumn comboboxColumn = (KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9];
             comboboxColumn.Items.Clear();
             JobDict.Clear();
 
             //项目的负责人和成员
             string projectA = "项目-负责人";
             string projectB = "项目-成员";
-            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[5]).Items.Add(projectA);
-            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[5]).Items.Add(projectB);
+            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectA);
+            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectB);
             JobDict.Add(projectA, MainForm.Instance.ProjectObj);
             JobDict.Add(projectB, MainForm.Instance.ProjectObj);
 
@@ -89,8 +89,8 @@ namespace ProjectReporter.Controls
                 {
                     projectA = proj.Name + "-负责人";
                     projectB = proj.Name + "-成员";
-                    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[5]).Items.Add(projectA);
-                    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[5]).Items.Add(projectB);
+                    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectA);
+                    ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectB);
                     JobDict.Add(projectA, proj);
                     JobDict.Add(projectB, proj);
                 }
@@ -131,10 +131,14 @@ namespace ProjectReporter.Controls
 
                 List<object> cells = new List<object>();
                 cells.Add(indexx + "");
-                cells.Add(person.Name + "(" + person.IDCard + ")");
-                cells.Add(unit.UnitName);
+                cells.Add(person.Name);
+                cells.Add(person.Sex);
                 cells.Add(person.Job);
                 cells.Add(person.Specialty);
+                cells.Add(unit.UnitName);
+                cells.Add(task.TotalTime);
+                cells.Add(task.Content);
+                cells.Add(person.IDCard);
 
                 string roleName = string.Empty;
                 foreach (KeyValuePair<string, Project> kvp in JobDict)
@@ -148,10 +152,8 @@ namespace ProjectReporter.Controls
                         }
                     }
                 }
-                cells.Add(roleName);
-
-                cells.Add(task.Content);
-                cells.Add(task.TotalTime);
+                cells.Add(roleName);                
+                
                 cells.Add("向上");
                 cells.Add("向下");
                 cells.Add("编辑");

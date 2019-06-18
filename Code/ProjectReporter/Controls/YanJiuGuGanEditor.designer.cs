@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,20 +40,22 @@
             this.lklDownloadFuJian = new System.Windows.Forms.LinkLabel();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colXingMing = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
-            this.colGongZuoDanWei = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colZhiWu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCongShiZhuanYe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colXiangMuZhongZhiWu = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
-            this.colRenWuFenGong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGongZuoDanWei = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMeiNianGongZuoShiJian = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colRenWuFenGong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colXiangMuZhongZhiWu = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colMoveUp = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colMoveDown = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colEditThis = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -198,12 +200,14 @@
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selpersonid,
             this.colXingMing,
-            this.colGongZuoDanWei,
+            this.colSex,
             this.colZhiWu,
             this.colCongShiZhuanYe,
-            this.colXiangMuZhongZhiWu,
-            this.colRenWuFenGong,
+            this.colGongZuoDanWei,
             this.colMeiNianGongZuoShiJian,
+            this.colRenWuFenGong,
+            this.colIDCard,
+            this.colXiangMuZhongZhiWu,
             this.colMoveUp,
             this.colMoveDown,
             this.colEditThis,
@@ -213,9 +217,9 @@
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 35;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(849, 456);
@@ -230,6 +234,19 @@
             this.dgvDetail.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dgvDetail_CellParsing);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "删除";
+            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 45;
+            // 
+            // ofdExcelDialog
+            // 
+            this.ofdExcelDialog.Filter = "*.xlsx|*.xlsx";
+            // 
             // selpersonid
             // 
             this.selpersonid.HeaderText = "序号";
@@ -241,19 +258,20 @@
             // 
             this.colXingMing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colXingMing.DropDownWidth = 200;
-            this.colXingMing.HeaderText = "姓名(身份证号)";
+            this.colXingMing.HeaderText = "姓名";
             this.colXingMing.Name = "colXingMing";
             this.colXingMing.ReadOnly = true;
             this.colXingMing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colXingMing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colXingMing.Width = 149;
+            this.colXingMing.Width = 69;
             // 
-            // colGongZuoDanWei
+            // colSex
             // 
-            this.colGongZuoDanWei.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colGongZuoDanWei.HeaderText = "工作单位";
-            this.colGongZuoDanWei.Name = "colGongZuoDanWei";
-            this.colGongZuoDanWei.ReadOnly = true;
+            this.colSex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSex.HeaderText = "性别";
+            this.colSex.Name = "colSex";
+            this.colSex.ReadOnly = true;
+            this.colSex.Width = 69;
             // 
             // colZhiWu
             // 
@@ -269,27 +287,16 @@
             this.colCongShiZhuanYe.Name = "colCongShiZhuanYe";
             this.colCongShiZhuanYe.ReadOnly = true;
             // 
-            // colXiangMuZhongZhiWu
+            // colGongZuoDanWei
             // 
-            this.colXiangMuZhongZhiWu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colXiangMuZhongZhiWu.DropDownWidth = 200;
-            this.colXiangMuZhongZhiWu.HeaderText = "项目中职务";
-            this.colXiangMuZhongZhiWu.Name = "colXiangMuZhongZhiWu";
-            this.colXiangMuZhongZhiWu.ReadOnly = true;
-            this.colXiangMuZhongZhiWu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colXiangMuZhongZhiWu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colXiangMuZhongZhiWu.Width = 117;
-            // 
-            // colRenWuFenGong
-            // 
-            this.colRenWuFenGong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRenWuFenGong.HeaderText = "任务分工";
-            this.colRenWuFenGong.Name = "colRenWuFenGong";
-            this.colRenWuFenGong.ReadOnly = true;
+            this.colGongZuoDanWei.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colGongZuoDanWei.HeaderText = "工作单位";
+            this.colGongZuoDanWei.Name = "colGongZuoDanWei";
+            this.colGongZuoDanWei.ReadOnly = true;
             // 
             // colMeiNianGongZuoShiJian
             // 
-            this.colMeiNianGongZuoShiJian.HeaderText = "工作时间(月)/年";
+            this.colMeiNianGongZuoShiJian.HeaderText = "工作时间(月)";
             this.colMeiNianGongZuoShiJian.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -300,6 +307,31 @@
             this.colMeiNianGongZuoShiJian.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMeiNianGongZuoShiJian.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colMeiNianGongZuoShiJian.Width = 80;
+            // 
+            // colRenWuFenGong
+            // 
+            this.colRenWuFenGong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRenWuFenGong.HeaderText = "任务分工";
+            this.colRenWuFenGong.Name = "colRenWuFenGong";
+            this.colRenWuFenGong.ReadOnly = true;
+            // 
+            // colIDCard
+            // 
+            this.colIDCard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colIDCard.HeaderText = "身份证号码";
+            this.colIDCard.Name = "colIDCard";
+            this.colIDCard.ReadOnly = true;
+            // 
+            // colXiangMuZhongZhiWu
+            // 
+            this.colXiangMuZhongZhiWu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colXiangMuZhongZhiWu.DropDownWidth = 200;
+            this.colXiangMuZhongZhiWu.HeaderText = "项目中职务";
+            this.colXiangMuZhongZhiWu.Name = "colXiangMuZhongZhiWu";
+            this.colXiangMuZhongZhiWu.ReadOnly = true;
+            this.colXiangMuZhongZhiWu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colXiangMuZhongZhiWu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colXiangMuZhongZhiWu.Width = 117;
             // 
             // colMoveUp
             // 
@@ -335,19 +367,6 @@
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Width = 45;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "删除";
-            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 45;
-            // 
-            // ofdExcelDialog
-            // 
-            this.ofdExcelDialog.Filter = "*.xlsx|*.xlsx";
-            // 
             // YanJiuGuGanEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -380,18 +399,20 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
         private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
+        private System.Windows.Forms.LinkLabel lklDownloadFuJian;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colXingMing;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGongZuoDanWei;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSex;
         private System.Windows.Forms.DataGridViewTextBoxColumn colZhiWu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCongShiZhuanYe;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colXiangMuZhongZhiWu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRenWuFenGong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGongZuoDanWei;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colMeiNianGongZuoShiJian;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRenWuFenGong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCard;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn colXiangMuZhongZhiWu;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colMoveUp;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colMoveDown;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colEditThis;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private System.Windows.Forms.LinkLabel lklDownloadFuJian;
     }
 }
