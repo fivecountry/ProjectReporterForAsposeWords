@@ -749,9 +749,9 @@ namespace ProjectReporter
             this.kpfPage00.LastVisibleSet = true;
             this.kpfPage00.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpfPage00.Name = "kpfPage00";
-            this.kpfPage00.Size = new System.Drawing.Size(1144, 593);
+            this.kpfPage00.Size = new System.Drawing.Size(1254, 598);
             this.kpfPage00.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
-            this.kpfPage00.Text = "项目建议书摘要";
+            this.kpfPage00.Text = "项目关键信息";
             this.kpfPage00.ToolTipTitle = "Page ToolTip";
             this.kpfPage00.UniqueName = "1C1D7240FD0F41265498C187414B5A6D";
             // 
@@ -769,7 +769,7 @@ namespace ProjectReporter
             this.feUI30.ParentForm = null;
             this.feUI30.RTFEditorNameKey = "feUI";
             this.feUI30.RTFFileFirstName = "rtpinput_";
-            this.feUI30.Size = new System.Drawing.Size(1144, 593);
+            this.feUI30.Size = new System.Drawing.Size(1254, 598);
             this.feUI30.TabIndex = 2;
             this.feUI30.TitleLabelHeight = 160;
             this.feUI30.TitleLabelText = "一、项目目标及涉及的基础性问题400字\r\n二、简介课题设置及主要研究内容400字\r\n三、详细、分类列出项目研究成果及其技术指标，详细说明每项技术指标的考核方式（包" +
