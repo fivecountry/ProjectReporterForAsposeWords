@@ -45,6 +45,8 @@
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.lblTitle = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.autoHeightLabel1 = new ProjectReporter.Controls.AutoHeightLabel();
             ((System.ComponentModel.ISupportInitialize)(this.knKetiDetailTabs)).BeginInit();
             this.knKetiDetailTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).BeginInit();
@@ -60,6 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.plContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // knKetiDetailTabs
@@ -84,12 +88,13 @@
             // 
             this.kpInfo.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.kpInfo.Controls.Add(this.txtInfo);
+            this.kpInfo.Controls.Add(this.kryptonPanel1);
             this.kpInfo.Flags = 65534;
             this.kpInfo.LastVisibleSet = true;
             this.kpInfo.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpInfo.Name = "kpInfo";
             this.kpInfo.Size = new System.Drawing.Size(750, 361);
-            this.kpInfo.Text = "简述(200字以内)";
+            this.kpInfo.Text = "简述";
             this.kpInfo.ToolTipTitle = "Page ToolTip";
             this.kpInfo.UniqueName = "480A3E3DB4644E2359A73CEE17D437D9";
             // 
@@ -97,10 +102,10 @@
             // 
             this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInfo.Font = new System.Drawing.Font("仿宋_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtInfo.Location = new System.Drawing.Point(0, 0);
+            this.txtInfo.Location = new System.Drawing.Point(0, 28);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(750, 361);
+            this.txtInfo.Size = new System.Drawing.Size(750, 333);
             this.txtInfo.TabIndex = 0;
             // 
             // kpDest
@@ -271,6 +276,31 @@
             this.plContent.Size = new System.Drawing.Size(752, 388);
             this.plContent.TabIndex = 7;
             // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.AutoSize = true;
+            this.kryptonPanel1.Controls.Add(this.autoHeightLabel1);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.kryptonPanel1.Size = new System.Drawing.Size(750, 28);
+            this.kryptonPanel1.TabIndex = 1;
+            // 
+            // autoHeightLabel1
+            // 
+            this.autoHeightLabel1.AutoHeight = false;
+            this.autoHeightLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.autoHeightLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.autoHeightLabel1.Font = new System.Drawing.Font("宋体", 14.25F);
+            this.autoHeightLabel1.Location = new System.Drawing.Point(6, 0);
+            this.autoHeightLabel1.Name = "autoHeightLabel1";
+            this.autoHeightLabel1.Size = new System.Drawing.Size(744, 28);
+            this.autoHeightLabel1.TabIndex = 0;
+            this.autoHeightLabel1.Text = "(200字以内)";
+            this.autoHeightLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // KeTiDetailEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -296,6 +326,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
             this.plContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -319,5 +351,7 @@
         private RichTextBoxTableClass txtContent;
         private RichTextBoxTableClass txtNeed;
         private TextBoxExt txtInfo;
+        private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
+        private AutoHeightLabel autoHeightLabel1;
     }
 }
