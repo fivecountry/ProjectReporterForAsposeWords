@@ -529,7 +529,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectRFA1_3_1.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.ProjectRFA1_3_1.TabIndex = 87;
+            this.ProjectRFA1_3_1.TabIndex = 31;
             this.ProjectRFA1_3_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_3_1.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             this.ProjectRFA1_3_1.Leave += new System.EventHandler(this.ProjectRFA_Leave);
@@ -1220,7 +1220,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectRFA1_4.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.ProjectRFA1_4.TabIndex = 32;
+            this.ProjectRFA1_4.TabIndex = 33;
             this.ProjectRFA1_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_4.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             this.ProjectRFA1_4.Leave += new System.EventHandler(this.ProjectRFA_Leave);
@@ -1567,7 +1567,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectRFA1_3_2.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.ProjectRFA1_3_2.TabIndex = 87;
+            this.ProjectRFA1_3_2.TabIndex = 32;
             this.ProjectRFA1_3_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_3_2.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             this.ProjectRFA1_3_2.Leave += new System.EventHandler(this.ProjectRFA_Leave);
@@ -1697,7 +1697,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay1.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.ProjectOutlay1.TabIndex = 6;
+            this.ProjectOutlay1.TabIndex = 40;
             this.ProjectOutlay1.Text = "0";
             this.ProjectOutlay1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay1.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1717,7 +1717,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay2.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.ProjectOutlay2.TabIndex = 7;
+            this.ProjectOutlay2.TabIndex = 41;
             this.ProjectOutlay2.Text = "0";
             this.ProjectOutlay2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay2.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1737,7 +1737,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay3.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.ProjectOutlay3.TabIndex = 8;
+            this.ProjectOutlay3.TabIndex = 42;
             this.ProjectOutlay3.Text = "0";
             this.ProjectOutlay3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay3.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1757,7 +1757,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay4.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.ProjectOutlay4.TabIndex = 9;
+            this.ProjectOutlay4.TabIndex = 43;
             this.ProjectOutlay4.Text = "0";
             this.ProjectOutlay4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay4.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1777,7 +1777,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.ProjectOutlay5.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.ProjectOutlay5.TabIndex = 10;
+            this.ProjectOutlay5.TabIndex = 44;
             this.ProjectOutlay5.Text = "0";
             this.ProjectOutlay5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay5.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1883,7 +1883,7 @@ namespace ProjectReporter.Controls
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.txtZiChouJingFei.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.txtZiChouJingFei.TabIndex = 28;
+            this.txtZiChouJingFei.TabIndex = 45;
             this.txtZiChouJingFei.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // kryptonLabel4
