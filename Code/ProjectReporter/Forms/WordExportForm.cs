@@ -19,6 +19,8 @@ namespace ProjectReporter.Forms
     {
         string uploadA = string.Empty;
 
+        string uploadC = string.Empty;
+
         string uploadBTemp = string.Empty;
 
         string uploadB = string.Empty;
@@ -43,6 +45,10 @@ namespace ProjectReporter.Forms
                 else if (f.Contains("upload_2"))
                 {
                     uploadBTemp = f;
+                }
+                else if (f.Contains("upload_3"))
+                {
+                    uploadC = f;
                 }
             }
             //将Image转换为RTF文件并设置段落为最小值25
@@ -124,6 +130,8 @@ namespace ProjectReporter.Forms
                 #region 固定文本替换
                 wu.InsertValue("项目名称", MainForm.Instance.ProjectObj.Name);
                 wu.InsertValue("首页密级", MainForm.Instance.ProjectObj.SecretLevel);
+                wu.InsertValue("申报领域", MainForm.Instance.ProjectObj.Domain);
+                wu.InsertValue("申报方向", MainForm.Instance.ProjectObj.Direction);
                 wu.InsertValue("单位名称", projectUnitObj.UnitName);
                 wu.InsertValue("单位常用名", projectUnitObj.NormalName);
                 wu.InsertValue("项目负责人", projectPersonObj.Name);
@@ -132,7 +140,7 @@ namespace ProjectReporter.Forms
                 wu.InsertValue("通信地址", projectUnitObj.Address);
                 wu.InsertValue("研究周期", MainForm.Instance.ProjectObj.TotalTime + "");
                 wu.InsertValue("研究经费", MainForm.Instance.ProjectObj.TotalMoney + "");
-                wu.InsertValue("项目关键字", MainForm.Instance.ProjectObj.Keywords != null ? MainForm.Instance.ProjectObj.Keywords.Replace(";", " ") : string.Empty);
+                wu.InsertValue("项目关键字", MainForm.Instance.ProjectObj.Keywords != null ? MainForm.Instance.ProjectObj.Keywords : string.Empty);
 
                 List<Project> ketiList = ConnectionManager.Context.table("Project").where("ParentID = '" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Project>(new Project());
                 wu.InsertValue("课题数量", ketiList.Count + "");
@@ -184,7 +192,7 @@ namespace ProjectReporter.Forms
 
                 wu.InsertFile("附件1", uploadA, true);
                 wu.InsertFile("附件2", uploadB, true);
-
+                wu.InsertFile("附件3", uploadC, true);
                 #endregion
 
                 List<KeyValuePair<string, Project>> ketiMap = new List<KeyValuePair<string, Project>>();

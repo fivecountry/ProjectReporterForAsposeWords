@@ -215,9 +215,10 @@ namespace ProjectReporter.Controls
 
                     if (dgvRow.Cells[3].Value == null || string.IsNullOrEmpty(dgvRow.Cells[3].Value.ToString()))
                     {
-                        MessageBox.Show("对不起,请输入阶段目标");
+                        MessageBox.Show("对不起,请输入阶段目标及完成内容");
                         return;
                     }
+                    dgvRow.Cells[4].Value = "暂时不用";
                     if (dgvRow.Cells[4].Value == null || string.IsNullOrEmpty(dgvRow.Cells[4].Value.ToString()))
                     {
                         MessageBox.Show("对不起,请输入完成内容");
