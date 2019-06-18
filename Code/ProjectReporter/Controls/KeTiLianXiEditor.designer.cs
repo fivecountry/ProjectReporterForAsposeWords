@@ -248,7 +248,7 @@
             // colChengDanDanWeiJiTongXinFangShi
             // 
             this.colChengDanDanWeiJiTongXinFangShi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colChengDanDanWeiJiTongXinFangShi.HeaderText = "承担单位及通信方式";
+            this.colChengDanDanWeiJiTongXinFangShi.HeaderText = "承担单位及通信地址";
             this.colChengDanDanWeiJiTongXinFangShi.Name = "colChengDanDanWeiJiTongXinFangShi";
             this.colChengDanDanWeiJiTongXinFangShi.ReadOnly = true;
             // 
