@@ -486,6 +486,12 @@ namespace ProjectReporter.Forms
                         bookmark = "ProjectRFA1_3";
                         obj4 = pbinfo.ProjectRFA1_3;
                         wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : "0");
+                        bookmark = "ProjectRFA1_3_1";
+                        obj4 = pbinfo.ProjectRFA1_3_1;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : "0");
+                        bookmark = "ProjectRFA1_3_2";
+                        obj4 = pbinfo.ProjectRFA1_3_2;
+                        wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : "0");
                         bookmark = "ProjectRFA1_4";
                         obj4 = pbinfo.ProjectRFA1_4;
                         wu.InsertValue(bookmark, obj4 != null ? obj4.ToString() : "0");
