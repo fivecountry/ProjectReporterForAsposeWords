@@ -155,6 +155,10 @@ namespace ProjectReporter.Forms
                 {
                     stepBuilders.Append("阶段").Append(step.StepIndex).Append("为").Append(step.StepTime).Append("月").Append(",");
                 }
+                if (stepBuilders.Length > 1)
+                {
+                    stepBuilders.Remove(stepBuilders.Length - 1, 1);
+                }
                 wu.InsertValue("阶段时间摘要", stepBuilders.ToString());
 
                 wu.InsertValue("项目负责人B", projectPersonObj.Name);
