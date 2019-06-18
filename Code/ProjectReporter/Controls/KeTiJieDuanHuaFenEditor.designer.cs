@@ -212,7 +212,7 @@
             // colDest
             // 
             this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDest.HeaderText = "阶段目标";
+            this.colDest.HeaderText = "阶段目标及完成内容";
             this.colDest.Name = "colDest";
             // 
             // colContent
@@ -220,6 +220,7 @@
             this.colContent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colContent.HeaderText = "完成内容";
             this.colContent.Name = "colContent";
+            this.colContent.Visible = false;
             // 
             // colResult
             // 
@@ -245,7 +246,7 @@
             0});
             this.colJieDuanJingFei.Name = "colJieDuanJingFei";
             this.colJieDuanJingFei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colJieDuanJingFei.Width = 119;
+            this.colJieDuanJingFei.Width = 143;
             // 
             // delete
             // 

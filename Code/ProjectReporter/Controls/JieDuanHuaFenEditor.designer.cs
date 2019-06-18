@@ -329,7 +329,7 @@
             // 
             this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colDest.FillWeight = 59.21053F;
-            this.colDest.HeaderText = "阶段目标";
+            this.colDest.HeaderText = "阶段目标及完成内容";
             this.colDest.Name = "colDest";
             // 
             // colContent
@@ -338,6 +338,7 @@
             this.colContent.FillWeight = 59.21053F;
             this.colContent.HeaderText = "完成内容";
             this.colContent.Name = "colContent";
+            this.colContent.Visible = false;
             // 
             // colResult
             // 
