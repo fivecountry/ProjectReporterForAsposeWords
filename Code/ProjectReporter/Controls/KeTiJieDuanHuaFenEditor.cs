@@ -120,6 +120,7 @@ namespace ProjectReporter.Controls
         private void dgvDetail_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 1, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+            ((KryptonDataGridView)sender).Rows[e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Height = 150;
         }
 
         private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
