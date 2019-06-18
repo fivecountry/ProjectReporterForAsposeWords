@@ -221,11 +221,11 @@
             this.cbMilitary.Checked = true;
             this.cbMilitary.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMilitary.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbMilitary.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbMilitary.Font = new System.Drawing.Font("仿宋_GB2312", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbMilitary.ForeColor = System.Drawing.Color.Red;
             this.cbMilitary.Location = new System.Drawing.Point(10, 0);
             this.cbMilitary.Name = "cbMilitary";
-            this.cbMilitary.Size = new System.Drawing.Size(634, 40);
+            this.cbMilitary.Size = new System.Drawing.Size(656, 40);
             this.cbMilitary.TabIndex = 4;
             this.cbMilitary.Text = "是否为军队单位（如果是军队单位，则无需上传保密资质附件！）";
             this.cbMilitary.UseVisualStyleBackColor = true;
