@@ -222,7 +222,7 @@
             this.cbMilitary.Checked = true;
             this.cbMilitary.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMilitary.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbMilitary.Location = new System.Drawing.Point(506, 0);
+            this.cbMilitary.Location = new System.Drawing.Point(601, 0);
             this.cbMilitary.Name = "cbMilitary";
             this.cbMilitary.Size = new System.Drawing.Size(20, 40);
             this.cbMilitary.TabIndex = 4;
@@ -233,8 +233,9 @@
             this.kryptonLabel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(506, 40);
-            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel1.Size = new System.Drawing.Size(601, 40);
+            this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Red;
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonLabel1.TabIndex = 3;
             this.kryptonLabel1.Values.Text = "是否为军队单位（如果是军队单位，则无需上传保密资质附件！）：";
             // 
