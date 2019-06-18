@@ -42,7 +42,6 @@
             this.lbcomattpath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbMilitary = new System.Windows.Forms.CheckBox();
-            this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -209,11 +208,11 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel20.SetColumnSpan(this.panel1, 3);
             this.panel1.Controls.Add(this.cbMilitary);
-            this.panel1.Controls.Add(this.kryptonLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel1.Size = new System.Drawing.Size(910, 40);
             this.panel1.TabIndex = 9;
             // 
@@ -222,22 +221,14 @@
             this.cbMilitary.Checked = true;
             this.cbMilitary.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMilitary.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbMilitary.Location = new System.Drawing.Point(601, 0);
+            this.cbMilitary.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbMilitary.ForeColor = System.Drawing.Color.Red;
+            this.cbMilitary.Location = new System.Drawing.Point(10, 0);
             this.cbMilitary.Name = "cbMilitary";
-            this.cbMilitary.Size = new System.Drawing.Size(20, 40);
+            this.cbMilitary.Size = new System.Drawing.Size(634, 40);
             this.cbMilitary.TabIndex = 4;
+            this.cbMilitary.Text = "是否为军队单位（如果是军队单位，则无需上传保密资质附件！）";
             this.cbMilitary.UseVisualStyleBackColor = true;
-            // 
-            // kryptonLabel1
-            // 
-            this.kryptonLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(601, 40);
-            this.kryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.Red;
-            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.kryptonLabel1.TabIndex = 3;
-            this.kryptonLabel1.Values.Text = "是否为军队单位（如果是军队单位，则无需上传保密资质附件！）：";
             // 
             // ofdUpload
             // 
@@ -259,7 +250,6 @@
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel20.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -280,7 +270,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel lbcomattpath;
         private System.Windows.Forms.OpenFileDialog ofdUpload;
         private System.Windows.Forms.Panel panel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.CheckBox cbMilitary;
     }
 }
