@@ -192,6 +192,7 @@
             // 
             this.selpersonid.HeaderText = "序号";
             this.selpersonid.Name = "selpersonid";
+            this.selpersonid.Visible = false;
             this.selpersonid.Width = 80;
             // 
             // colKeTi
@@ -244,7 +245,7 @@
             0});
             this.colJieDuanJingFei.Name = "colJieDuanJingFei";
             this.colJieDuanJingFei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colJieDuanJingFei.Width = 106;
+            this.colJieDuanJingFei.Width = 119;
             // 
             // delete
             // 

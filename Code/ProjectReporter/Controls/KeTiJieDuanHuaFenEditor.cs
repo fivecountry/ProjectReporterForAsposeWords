@@ -147,8 +147,10 @@ namespace ProjectReporter.Controls
             StepList = ConnectionManager.Context.table("Step").where("ProjectID in (select ID from Project where Type='" + "课题" + "' and ParentID='" + MainForm.Instance.ProjectObj.ID + "')").select("*").getList<Step>(new Step());
             if (StepList != null && KeTiList != null && StepList.Count >= 1 && KeTiList.Count >= 1)
             {
+                //数据行列表，先生成然后等待排序
+                List<DataGridViewRow> rowList = new List<DataGridViewRow>();
+
                 int indexx = 0;
-                dgvDetail.Rows.Clear();
                 foreach (Step step in StepList)
                 {
                     ProjectAndStep projectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
@@ -177,15 +179,26 @@ namespace ProjectReporter.Controls
                     cells.Add(projectAndStep.StepResult);
                     cells.Add(projectAndStep.StepTarget);
                     cells.Add(projectAndStep.Money);
-
-                    int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
-                    dgvDetail.Rows[rowIndex].Tag = step;
+                    
+                    DataGridViewRow dgvRow = new DataGridViewRow();
+                    dgvRow.CreateCells(dgvDetail, cells.ToArray());
+                    dgvRow.Tag = step;
+                    
+                    rowList.Add(dgvRow);
                 }
 
-                dgvDetail.Sort(dgvDetail.Columns[1], ListSortDirection.Ascending);
                 foreach (DataGridViewColumn col in dgvDetail.Columns)
                 {
                     col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+
+                dgvDetail.Rows.Clear();
+                foreach (IGrouping<object, DataGridViewRow> group in rowList.GroupBy(x => x.Cells[1].Value))
+                {
+                    foreach (DataGridViewRow student in group.OrderBy(a => (int)a.Cells[2].Value))//不排序直接输出的话：Student student in group
+                    {
+                        dgvDetail.Rows.Add(student);
+                    }
                 }
             }
         }
