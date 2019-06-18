@@ -304,12 +304,78 @@ namespace ProjectReporter.Forms
                 #region 插入阶段划分和经费安排数据
                 try
                 {
+                    //项目
+                    foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                    {
+                        if (table.Range.Text.Contains("进度要求"))
+                        {
+                            //填充行和列
+                            int rowCount = projectStepList.Count;
+                            int colCount = 3;
+                            table.Select();
+                            for (int k = 0; k < rowCount - 1; k++)
+                            {
+                                table.Rows.Add(ref defaultValue);
+                            }
+                            //for (int k = 0; k < colCount - 1; k++)
+                            //{
+                            //    table.Columns.Add(ref defaultValue);
+                            //}
+
+                            ////创建列标题
+                            //int colIndex = 2;
+                            //foreach (Step step in projectStepList)
+                            //{
+                            //    table.Cell(1, colIndex).Range.Text = "阶段" + step.StepIndex + "(" + step.StepTime + "个月)";
+                            //    table.Cell(1, colIndex).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                            //    colIndex++;
+                            //}
+
+                            //创建数据
+                            int rowIndex = 2;
+                            foreach (KeyValuePair<string, Project> kvp in ketiMap)
+                            {
+                                if (kvp.Key == "项目")
+                                {
+                                    List<Step> curStepList = ConnectionManager.Context.table("Step").where("ProjectID = '" + kvp.Value.ID + "'").select("*").getList<Step>(new Step());
+                                    foreach (Step curStep in curStepList)
+                                    {
+                                        ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
+
+                                        //输出格式
+                                        string outputFormat = "阶段目标及完成内容:{0}\n阶段成果:{1}\n考核指标:{2}\n阶段经费:{3}万";
+
+                                        string resultStr = string.Empty;
+                                        //阶段数据
+                                        if (kvp.Key == "项目")
+                                        {
+                                            resultStr = string.Format(outputFormat, curStep.StepDest, curStep.StepResult, curStep.StepTarget, curStep.StepMoney);
+                                        }
+                                        else
+                                        {
+                                            resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepResult, curProjectAndStep.StepTarget, curProjectAndStep.Money);
+                                        }
+
+                                        table.Cell(rowIndex, 1).Range.Text = curStep.StepIndex + "";
+                                        table.Cell(rowIndex, 2).Range.Text = curStep.StepTime + "";
+                                        table.Cell(rowIndex, 3).Range.Text = resultStr;
+                                        
+                                        rowIndex++;
+                                    }
+                                }
+                            }
+                            break;
+                        }
+                    }
+
+                    //课题
                     foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
                     {
                         if (table.Range.Text.Contains("第一阶段：X月"))
                         {
                             //填充行和列
-                            int rowCount = ketiList.Count + 1;
+                            //int rowCount = ketiList.Count + 1;
+                            int rowCount = ketiList.Count;
                             int colCount = projectStepList.Count;
                             table.Select();
                             for (int k = 0; k < rowCount - 1; k++)
@@ -334,6 +400,11 @@ namespace ProjectReporter.Forms
                             int rowIndex = 2;
                             foreach (KeyValuePair<string, Project> kvp in ketiMap)
                             {
+                                if (kvp.Key == "项目")
+                                {
+                                    continue;
+                                }
+
                                 int totalMoney = 0;
                                 //获取并填冲数据
                                 int dataColIndex = 2;
@@ -343,17 +414,17 @@ namespace ProjectReporter.Forms
                                     ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
 
                                     //输出格式
-                                    string outputFormat = "阶段目标:{0}\n完成内容:{1}\n阶段成果:{2}\n考核指标:{3}\n阶段经费:{4}";
+                                    string outputFormat = "阶段目标及完成内容:{0}\n阶段成果:{1}\n考核指标:{2}\n阶段经费:{3}万";
 
                                     string resultStr = string.Empty;
                                     //阶段数据
                                     if (kvp.Key == "项目")
                                     {
-                                        resultStr = string.Format(outputFormat, curStep.StepDest, curStep.StepContent, curStep.StepResult, curStep.StepTarget, curStep.StepMoney);
+                                        resultStr = string.Format(outputFormat, curStep.StepDest, curStep.StepResult, curStep.StepTarget, curStep.StepMoney);
                                     }
                                     else
                                     {
-                                        resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepContent, curProjectAndStep.StepResult, curProjectAndStep.StepTarget, curProjectAndStep.Money);
+                                        resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepResult, curProjectAndStep.StepTarget, curProjectAndStep.Money);
 
                                         //计算总金额
                                         totalMoney += (int)curProjectAndStep.Money;
