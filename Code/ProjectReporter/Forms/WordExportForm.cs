@@ -392,10 +392,10 @@ namespace ProjectReporter.Forms
                 {
                     foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
                     {
-                        if (table.Range.Text.Contains("为本课题"))
+                        if (table.Range.Text.Contains("年投入"))
                         {
                             //获得课题与研究骨干关系表
-                            List<Task> taskList = ConnectionManager.Context.table("Task").where("ProjectID in (select ID from Project where ParentID = '" + MainForm.Instance.ProjectObj.ID + "') or ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Task>(new Task());
+                            List<Task> taskList = ConnectionManager.Context.table("Task").where("ProjectID in (select ID from Project where ParentID = '" + MainForm.Instance.ProjectObj.ID + "') or ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").orderBy("DisplayOrder").select("*").getList<Task>(new Task());
 
                             //生成行和列
                             int rowCount = taskList.Count;
@@ -417,10 +417,13 @@ namespace ProjectReporter.Forms
 
                                 table.Cell(rowIndex, 1).Range.Text = (rowIndex - 1).ToString();
                                 table.Cell(rowIndex, 2).Range.Text = person.Name;
-                                table.Cell(rowIndex, 3).Range.Text = person.IDCard;
-                                table.Cell(rowIndex, 4).Range.Text = unit.UnitName;
-                                table.Cell(rowIndex, 5).Range.Text = person.Job;
-                                table.Cell(rowIndex, 6).Range.Text = person.Specialty;
+                                table.Cell(rowIndex, 3).Range.Text = person.Sex;
+                                table.Cell(rowIndex, 4).Range.Text = person.Job;
+                                table.Cell(rowIndex, 5).Range.Text = person.Specialty;
+                                table.Cell(rowIndex, 6).Range.Text = unit.UnitName;
+                                table.Cell(rowIndex, 7).Range.Text = curTask.TotalTime.ToString();
+                                table.Cell(rowIndex, 8).Range.Text = curTask.Content;
+                                table.Cell(rowIndex, 9).Range.Text = person.IDCard;
 
                                 string KetiInProject = string.Empty;
                                 foreach (KeyValuePair<string, Project> kvp in ketiMap)
@@ -431,10 +434,7 @@ namespace ProjectReporter.Forms
                                         break;
                                     }
                                 }
-                                table.Cell(rowIndex, 7).Range.Text = KetiInProject;
-
-                                table.Cell(rowIndex, 8).Range.Text = curTask.Content;
-                                table.Cell(rowIndex, 9).Range.Text = curTask.TotalTime.ToString();
+                                table.Cell(rowIndex, 10).Range.Text = KetiInProject;
 
                                 rowIndex++;
                             }
