@@ -2283,10 +2283,10 @@ namespace ProjectReporter.Controls
 			{
 				text = "请注意，分年度经费预算之和与项目总经费不等，正确无误后方能保存。\r\n";
 			}
-			else if (d > 500m)
-			{
-				text += "请注意，经费总额超过500万,需要重新制定，正确无误后方能保存。\r\n";
-			}
+            //else if (d > 500m)
+            //{
+            //    text += "请注意，经费总额超过500万,需要重新制定，正确无误后方能保存。\r\n";
+            //}
 			decimal d3 = 0m;
 			decimal d4 = 0m;
 			decimal d5 = 0m;
