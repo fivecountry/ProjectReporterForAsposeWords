@@ -196,7 +196,11 @@ namespace ProjectReporter.Forms
 
                 wu.InsertFile("附件1", uploadA, true);
                 wu.InsertFile("附件2", uploadB, true);
+
+                //处理诚信承诺书
+                uploadC = Path.Combine(Application.StartupPath, Path.Combine("Helper", "chengnuoshu.doc"));
                 wu.InsertFile("附件3", uploadC, true);
+                wu.InsertValue("诚信负责人", MainForm.Instance.ProjectObj.Name);
                 #endregion
 
                 List<KeyValuePair<string, Project>> ketiMap = new List<KeyValuePair<string, Project>>();
