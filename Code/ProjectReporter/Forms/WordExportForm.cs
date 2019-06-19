@@ -136,7 +136,7 @@ namespace ProjectReporter.Forms
                 wu.InsertValue("单位常用名", projectUnitObj.NormalName);
                 wu.InsertValue("项目负责人", projectPersonObj.Name);
                 wu.InsertValue("单位联系人", projectUnitObj.ContactName);
-                wu.InsertValue("联系电话", projectUnitObj.Telephone);
+                wu.InsertValue("联系电话", projectUnitObj.Telephone, 18, false, false, true);
                 wu.InsertValue("通信地址", projectUnitObj.Address);
                 wu.InsertValue("研究周期", MainForm.Instance.ProjectObj.TotalTime + "");
                 wu.InsertValue("研究经费", MainForm.Instance.ProjectObj.TotalMoney + "");

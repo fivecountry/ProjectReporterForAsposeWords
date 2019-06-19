@@ -139,6 +139,79 @@ namespace ProjectReporter.Utility
         }
 
         /// <summary>
+        /// 在书签处插入值(改变字体在小及是否加粗)
+        /// </summary>
+        /// <param name="bookmark">书签</param>
+        /// <param name="value">要插入的值</param>
+        /// <returns></returns>
+        public bool InsertValue(string bookmark, string value, int fontSize, bool isBold, bool isItalic)
+        {
+            object bkObj = bookmark;
+            if (wordApp.ActiveDocument.Bookmarks.Exists(bookmark))
+            {
+                wordApp.ActiveDocument.Bookmarks.get_Item(ref bkObj).Select();
+
+                //保存先前的设置
+                float lastSize = wordApp.Selection.Font.Size;
+                int lastBold = wordApp.Selection.Font.Bold;
+                int lastItalic = wordApp.Selection.Font.Italic;
+
+                //设置字号及是否加粗
+                wordApp.Selection.Font.Size = fontSize;
+                wordApp.Selection.Font.Bold = isBold ? 1 : 0;
+                wordApp.Selection.Font.Italic = isItalic ? 1 : 0;
+
+                wordApp.Selection.TypeText(value);
+
+                //恢复先前的设置
+                wordApp.Selection.Font.Size = lastSize;
+                wordApp.Selection.Font.Bold = lastBold;
+                wordApp.Selection.Font.Italic = lastItalic;
+
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 在书签处插入值(改变字体在小及是否加粗)
+        /// </summary>
+        /// <param name="bookmark">书签</param>
+        /// <param name="value">要插入的值</param>
+        /// <returns></returns>
+        public bool InsertValue(string bookmark, string value, int fontSize, bool isBold, bool isItalic, bool isUnderline)
+        {
+            object bkObj = bookmark;
+            if (wordApp.ActiveDocument.Bookmarks.Exists(bookmark))
+            {
+                wordApp.ActiveDocument.Bookmarks.get_Item(ref bkObj).Select();
+
+                //保存先前的设置
+                float lastSize = wordApp.Selection.Font.Size;
+                int lastBold = wordApp.Selection.Font.Bold;
+                int lastItalic = wordApp.Selection.Font.Italic;
+                WdUnderline lastUnderline = wordApp.Selection.Font.Underline;
+
+                //设置字号及是否加粗
+                wordApp.Selection.Font.Size = fontSize;
+                wordApp.Selection.Font.Bold = isBold ? 1 : 0;
+                wordApp.Selection.Font.Italic = isItalic ? 1 : 0;
+                wordApp.Selection.Font.Underline = isUnderline ? WdUnderline.wdUnderlineSingle : WdUnderline.wdUnderlineNone;
+
+                wordApp.Selection.TypeText(value);
+
+                //恢复先前的设置
+                wordApp.Selection.Font.Size = lastSize;
+                wordApp.Selection.Font.Bold = lastBold;
+                wordApp.Selection.Font.Italic = lastItalic;
+                wordApp.Selection.Font.Underline = lastUnderline;
+
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// 在书签处插入文件
         /// </summary>
         /// <param name="bookmark">书签</param>
