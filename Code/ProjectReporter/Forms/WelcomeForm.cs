@@ -142,12 +142,15 @@ namespace ProjectReporter.Forms
                         {
                             try
                             {
+                                //显示主窗体
                                 MainForm logicform = new MainForm();
                                 Program.context.MainForm = logicform;
                                 logicform.InitAll();
-                                WelcomeForm startform = (WelcomeForm)Program.context.Tag;
-                                startform.Close();
                                 logicform.Show();
+
+                                //关闭欢迎窗体
+                                WelcomeForm startform = (WelcomeForm)Program.context.Tag;
+                                startform.Close();                                
                             }
                             catch (Exception exxx)
                             {
