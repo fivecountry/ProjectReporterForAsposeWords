@@ -63,7 +63,7 @@
             this.txtWord1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord1.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord1.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtWord1.TabIndex = 16;
+            this.txtWord1.TabIndex = 6;
             // 
             // txtWord2
             // 
@@ -77,7 +77,7 @@
             this.txtWord2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord2.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord2.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtWord2.TabIndex = 16;
+            this.txtWord2.TabIndex = 5;
             // 
             // txtWord3
             // 
@@ -91,7 +91,7 @@
             this.txtWord3.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord3.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord3.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtWord3.TabIndex = 16;
+            this.txtWord3.TabIndex = 4;
             // 
             // txtWord4
             // 
@@ -107,7 +107,7 @@
             this.txtWord4.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord4.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord4.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtWord4.TabIndex = 16;
+            this.txtWord4.TabIndex = 3;
             // 
             // buttonSpecAny1
             // 
@@ -129,7 +129,7 @@
             this.txtWord5.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord5.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtWord5.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtWord5.TabIndex = 16;
+            this.txtWord5.TabIndex = 2;
             // 
             // bsaKeyWordHint
             // 
@@ -156,7 +156,7 @@
             this.label5.Location = new System.Drawing.Point(95, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 31);
-            this.label5.TabIndex = 18;
+            this.label5.TabIndex = 100;
             this.label5.Text = "*";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -168,7 +168,7 @@
             this.panel2.Location = new System.Drawing.Point(125, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(125, 31);
-            this.panel2.TabIndex = 17;
+            this.panel2.TabIndex = 18;
             // 
             // label1
             // 
@@ -179,7 +179,7 @@
             this.label1.Location = new System.Drawing.Point(95, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 31);
-            this.label1.TabIndex = 19;
+            this.label1.TabIndex = 100;
             this.label1.Text = "*";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -191,7 +191,7 @@
             this.panel3.Location = new System.Drawing.Point(250, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(125, 31);
-            this.panel3.TabIndex = 17;
+            this.panel3.TabIndex = 19;
             // 
             // label2
             // 
@@ -202,7 +202,7 @@
             this.label2.Location = new System.Drawing.Point(95, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 31);
-            this.label2.TabIndex = 19;
+            this.label2.TabIndex = 100;
             this.label2.Text = "*";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -214,7 +214,7 @@
             this.panel4.Location = new System.Drawing.Point(375, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(350, 31);
-            this.panel4.TabIndex = 17;
+            this.panel4.TabIndex = 20;
             // 
             // label3
             // 
@@ -225,7 +225,7 @@
             this.label3.Location = new System.Drawing.Point(320, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 31);
-            this.label3.TabIndex = 20;
+            this.label3.TabIndex = 100;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -235,7 +235,7 @@
             this.panel5.Location = new System.Drawing.Point(725, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(335, 31);
-            this.panel5.TabIndex = 17;
+            this.panel5.TabIndex = 21;
             // 
             // ProjectKeyControl
             // 

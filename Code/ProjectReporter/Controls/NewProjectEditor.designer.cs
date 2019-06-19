@@ -184,7 +184,7 @@ namespace ProjectReporter.Controls
             this.label27.Margin = new System.Windows.Forms.Padding(3);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(178, 51);
-            this.label27.TabIndex = 35;
+            this.label27.TabIndex = 200;
             this.label27.Text = "申报方向：";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -196,7 +196,7 @@ namespace ProjectReporter.Controls
             this.label26.Margin = new System.Windows.Forms.Padding(3);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(178, 51);
-            this.label26.TabIndex = 34;
+            this.label26.TabIndex = 200;
             this.label26.Text = "申报领域：";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -225,7 +225,7 @@ namespace ProjectReporter.Controls
             this.txtDirection.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtDirection.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtDirection.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtDirection.TabIndex = 18;
+            this.txtDirection.TabIndex = 2;
             // 
             // bsaHint2
             // 
@@ -244,7 +244,7 @@ namespace ProjectReporter.Controls
             this.panel14.Margin = new System.Windows.Forms.Padding(1);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1130, 55);
-            this.panel14.TabIndex = 16;
+            this.panel14.TabIndex = 37;
             // 
             // label7
             // 
@@ -254,7 +254,7 @@ namespace ProjectReporter.Controls
             this.label7.Location = new System.Drawing.Point(1015, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 27);
-            this.label7.TabIndex = 17;
+            this.label7.TabIndex = 100;
             this.label7.Text = "*";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -271,7 +271,7 @@ namespace ProjectReporter.Controls
             this.txtUnitName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtUnitName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtUnitName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtUnitName.TabIndex = 15;
+            this.txtUnitName.TabIndex = 6;
             // 
             // bsaHint3
             // 
@@ -287,7 +287,7 @@ namespace ProjectReporter.Controls
             this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 51);
-            this.label1.TabIndex = 31;
+            this.label1.TabIndex = 200;
             this.label1.Text = "单位名称：";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -302,7 +302,7 @@ namespace ProjectReporter.Controls
             this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(603, 55);
-            this.panel4.TabIndex = 10;
+            this.panel4.TabIndex = 39;
             // 
             // label10
             // 
@@ -312,7 +312,7 @@ namespace ProjectReporter.Controls
             this.label10.Location = new System.Drawing.Point(536, 15);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(21, 27);
-            this.label10.TabIndex = 17;
+            this.label10.TabIndex = 100;
             this.label10.Text = "*";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -327,7 +327,7 @@ namespace ProjectReporter.Controls
             this.txtContactName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtContactName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtContactName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtContactName.TabIndex = 15;
+            this.txtContactName.TabIndex = 8;
             // 
             // label3
             // 
@@ -337,7 +337,7 @@ namespace ProjectReporter.Controls
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 51);
-            this.label3.TabIndex = 9;
+            this.label3.TabIndex = 200;
             this.label3.Text = "联系人：";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -351,7 +351,7 @@ namespace ProjectReporter.Controls
             this.panel11.Margin = new System.Windows.Forms.Padding(1);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(328, 59);
-            this.panel11.TabIndex = 7;
+            this.panel11.TabIndex = 45;
             // 
             // label25
             // 
@@ -361,7 +361,7 @@ namespace ProjectReporter.Controls
             this.label25.Location = new System.Drawing.Point(284, 19);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(21, 27);
-            this.label25.TabIndex = 17;
+            this.label25.TabIndex = 100;
             this.label25.Text = "*";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -376,7 +376,7 @@ namespace ProjectReporter.Controls
             this.txtTotalMoney.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTotalMoney.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTotalMoney.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtTotalMoney.TabIndex = 15;
+            this.txtTotalMoney.TabIndex = 14;
             // 
             // panel12
             // 
@@ -388,7 +388,7 @@ namespace ProjectReporter.Controls
             this.panel12.Margin = new System.Windows.Forms.Padding(1);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(328, 55);
-            this.panel12.TabIndex = 8;
+            this.panel12.TabIndex = 40;
             // 
             // label13
             // 
@@ -398,7 +398,7 @@ namespace ProjectReporter.Controls
             this.label13.Location = new System.Drawing.Point(284, 17);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(21, 27);
-            this.label13.TabIndex = 17;
+            this.label13.TabIndex = 100;
             this.label13.Text = "*";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -413,7 +413,7 @@ namespace ProjectReporter.Controls
             this.txtTelephone.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTelephone.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTelephone.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtTelephone.TabIndex = 15;
+            this.txtTelephone.TabIndex = 9;
             // 
             // panel10
             // 
@@ -426,7 +426,7 @@ namespace ProjectReporter.Controls
             this.panel10.Margin = new System.Windows.Forms.Padding(1);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(603, 55);
-            this.panel10.TabIndex = 6;
+            this.panel10.TabIndex = 34;
             // 
             // label5
             // 
@@ -436,7 +436,7 @@ namespace ProjectReporter.Controls
             this.label5.Location = new System.Drawing.Point(536, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 27);
-            this.label5.TabIndex = 16;
+            this.label5.TabIndex = 100;
             this.label5.Text = "*";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -451,7 +451,7 @@ namespace ProjectReporter.Controls
             this.txtProjectName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtProjectName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtProjectName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtProjectName.TabIndex = 15;
+            this.txtProjectName.TabIndex = 3;
             // 
             // panel9
             // 
@@ -464,7 +464,7 @@ namespace ProjectReporter.Controls
             this.panel9.Margin = new System.Windows.Forms.Padding(1);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(603, 59);
-            this.panel9.TabIndex = 9;
+            this.panel9.TabIndex = 44;
             // 
             // label24
             // 
@@ -474,7 +474,7 @@ namespace ProjectReporter.Controls
             this.label24.Location = new System.Drawing.Point(536, 19);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(21, 27);
-            this.label24.TabIndex = 17;
+            this.label24.TabIndex = 100;
             this.label24.Text = "*";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -489,7 +489,7 @@ namespace ProjectReporter.Controls
             this.txtTotalTime.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTotalTime.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtTotalTime.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtTotalTime.TabIndex = 15;
+            this.txtTotalTime.TabIndex = 13;
             // 
             // panel7
             // 
@@ -502,7 +502,7 @@ namespace ProjectReporter.Controls
             this.panel7.Margin = new System.Windows.Forms.Padding(1);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1130, 55);
-            this.panel7.TabIndex = 7;
+            this.panel7.TabIndex = 41;
             // 
             // label21
             // 
@@ -512,7 +512,7 @@ namespace ProjectReporter.Controls
             this.label21.Location = new System.Drawing.Point(1015, 17);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(21, 27);
-            this.label21.TabIndex = 17;
+            this.label21.TabIndex = 100;
             this.label21.Text = "*";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -527,7 +527,7 @@ namespace ProjectReporter.Controls
             this.txtAddress.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtAddress.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtAddress.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtAddress.TabIndex = 15;
+            this.txtAddress.TabIndex = 10;
             // 
             // panel8
             // 
@@ -539,7 +539,7 @@ namespace ProjectReporter.Controls
             this.panel8.Margin = new System.Windows.Forms.Padding(1);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1130, 55);
-            this.panel8.TabIndex = 8;
+            this.panel8.TabIndex = 38;
             // 
             // txtNormalName
             // 
@@ -552,7 +552,7 @@ namespace ProjectReporter.Controls
             this.txtNormalName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtNormalName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtNormalName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtNormalName.TabIndex = 15;
+            this.txtNormalName.TabIndex = 7;
             // 
             // label17
             // 
@@ -562,7 +562,7 @@ namespace ProjectReporter.Controls
             this.label17.Margin = new System.Windows.Forms.Padding(3);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(178, 55);
-            this.label17.TabIndex = 10;
+            this.label17.TabIndex = 200;
             this.label17.Text = "研究周期(年)：";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -574,7 +574,7 @@ namespace ProjectReporter.Controls
             this.label11.Margin = new System.Windows.Forms.Padding(3);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(178, 51);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 200;
             this.label11.Text = "项目名称：";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -586,7 +586,7 @@ namespace ProjectReporter.Controls
             this.label14.Margin = new System.Windows.Forms.Padding(3);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(178, 51);
-            this.label14.TabIndex = 7;
+            this.label14.TabIndex = 200;
             this.label14.Text = "单位常用名：";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -598,7 +598,7 @@ namespace ProjectReporter.Controls
             this.label16.Margin = new System.Windows.Forms.Padding(3);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(178, 51);
-            this.label16.TabIndex = 9;
+            this.label16.TabIndex = 200;
             this.label16.Text = "通信地址：";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -610,7 +610,7 @@ namespace ProjectReporter.Controls
             this.label19.Margin = new System.Windows.Forms.Padding(3);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(191, 51);
-            this.label19.TabIndex = 12;
+            this.label19.TabIndex = 200;
             this.label19.Text = "联系电话：";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -622,7 +622,7 @@ namespace ProjectReporter.Controls
             this.label20.Margin = new System.Windows.Forms.Padding(3);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(191, 55);
-            this.label20.TabIndex = 13;
+            this.label20.TabIndex = 200;
             this.label20.Text = "研究经费(万)：";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -636,7 +636,7 @@ namespace ProjectReporter.Controls
             this.panel3.Margin = new System.Windows.Forms.Padding(1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1130, 55);
-            this.panel3.TabIndex = 20;
+            this.panel3.TabIndex = 36;
             // 
             // txtKeyWords
             // 
@@ -644,7 +644,7 @@ namespace ProjectReporter.Controls
             this.txtKeyWords.Margin = new System.Windows.Forms.Padding(4);
             this.txtKeyWords.Name = "txtKeyWords";
             this.txtKeyWords.Size = new System.Drawing.Size(1060, 33);
-            this.txtKeyWords.TabIndex = 15;
+            this.txtKeyWords.TabIndex = 5;
             // 
             // panel6
             // 
@@ -657,7 +657,7 @@ namespace ProjectReporter.Controls
             this.panel6.Margin = new System.Windows.Forms.Padding(1);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(603, 55);
-            this.panel6.TabIndex = 6;
+            this.panel6.TabIndex = 42;
             // 
             // label22
             // 
@@ -667,7 +667,7 @@ namespace ProjectReporter.Controls
             this.label22.Location = new System.Drawing.Point(536, 17);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(21, 27);
-            this.label22.TabIndex = 17;
+            this.label22.TabIndex = 100;
             this.label22.Text = "*";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -682,7 +682,7 @@ namespace ProjectReporter.Controls
             this.txtMPersonName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtMPersonName.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtMPersonName.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtMPersonName.TabIndex = 16;
+            this.txtMPersonName.TabIndex = 11;
             // 
             // label15
             // 
@@ -692,7 +692,7 @@ namespace ProjectReporter.Controls
             this.label15.Margin = new System.Windows.Forms.Padding(3);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(178, 51);
-            this.label15.TabIndex = 8;
+            this.label15.TabIndex = 200;
             this.label15.Text = "项目负责人：";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -704,7 +704,7 @@ namespace ProjectReporter.Controls
             this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 51);
-            this.label2.TabIndex = 19;
+            this.label2.TabIndex = 200;
             this.label2.Text = "关键词：";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -716,7 +716,7 @@ namespace ProjectReporter.Controls
             this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(191, 51);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 200;
             this.label4.Text = "负责人身份证：";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -730,7 +730,7 @@ namespace ProjectReporter.Controls
             this.panel5.Margin = new System.Windows.Forms.Padding(1);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(328, 55);
-            this.panel5.TabIndex = 6;
+            this.panel5.TabIndex = 43;
             // 
             // label23
             // 
@@ -740,7 +740,7 @@ namespace ProjectReporter.Controls
             this.label23.Location = new System.Drawing.Point(284, 20);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(21, 27);
-            this.label23.TabIndex = 17;
+            this.label23.TabIndex = 100;
             this.label23.Text = "*";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -755,7 +755,7 @@ namespace ProjectReporter.Controls
             this.txtMPersonIDCard.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtMPersonIDCard.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtMPersonIDCard.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtMPersonIDCard.TabIndex = 16;
+            this.txtMPersonIDCard.TabIndex = 12;
             // 
             // label18
             // 
@@ -765,7 +765,7 @@ namespace ProjectReporter.Controls
             this.label18.Margin = new System.Windows.Forms.Padding(3);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(191, 51);
-            this.label18.TabIndex = 11;
+            this.label18.TabIndex = 200;
             this.label18.Text = "密级：";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -778,7 +778,7 @@ namespace ProjectReporter.Controls
             this.panel1.Location = new System.Drawing.Point(989, 117);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(324, 51);
-            this.panel1.TabIndex = 17;
+            this.panel1.TabIndex = 35;
             // 
             // label8
             // 
@@ -788,7 +788,7 @@ namespace ProjectReporter.Controls
             this.label8.Location = new System.Drawing.Point(282, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 27);
-            this.label8.TabIndex = 22;
+            this.label8.TabIndex = 100;
             this.label8.Text = "*";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -806,7 +806,7 @@ namespace ProjectReporter.Controls
             this.cbxSecret.Name = "cbxSecret";
             this.cbxSecret.Size = new System.Drawing.Size(268, 33);
             this.cbxSecret.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cbxSecret.TabIndex = 21;
+            this.cbxSecret.TabIndex = 4;
             // 
             // panel13
             // 
@@ -829,7 +829,7 @@ namespace ProjectReporter.Controls
             this.label6.Location = new System.Drawing.Point(1016, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(21, 27);
-            this.label6.TabIndex = 19;
+            this.label6.TabIndex = 100;
             this.label6.Text = "*";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -846,7 +846,7 @@ namespace ProjectReporter.Controls
             this.txtDomain.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtDomain.StateDisabled.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtDomain.StateNormal.Content.Padding = new System.Windows.Forms.Padding(0);
-            this.txtDomain.TabIndex = 18;
+            this.txtDomain.TabIndex = 1;
             // 
             // bsaHint
             // 
@@ -909,7 +909,7 @@ namespace ProjectReporter.Controls
             this.plBottom.RowCount = 1;
             this.plBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.plBottom.Size = new System.Drawing.Size(1422, 34);
-            this.plBottom.TabIndex = 6;
+            this.plBottom.TabIndex = 46;
             // 
             // btnLast
             // 
@@ -925,7 +925,8 @@ namespace ProjectReporter.Controls
             this.btnSave.Location = new System.Drawing.Point(1225, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 27);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 15;
+            this.btnSave.TabStop = false;
             this.btnSave.Values.Text = "保存";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -934,19 +935,19 @@ namespace ProjectReporter.Controls
             this.btnNext.Location = new System.Drawing.Point(1325, 3);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(90, 27);
-            this.btnNext.TabIndex = 2;
+            this.btnNext.TabIndex = 16;
+            this.btnNext.TabStop = false;
             this.btnNext.Values.Text = "下一步";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // plTitle
             // 
-            this.plTitle.AutoSize = true;
             this.plTitle.Controls.Add(this.lblTitle);
             this.plTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.plTitle.Location = new System.Drawing.Point(0, 0);
             this.plTitle.Margin = new System.Windows.Forms.Padding(0);
             this.plTitle.Name = "plTitle";
-            this.plTitle.Size = new System.Drawing.Size(1422, 51);
+            this.plTitle.Size = new System.Drawing.Size(1422, 70);
             this.plTitle.TabIndex = 0;
             // 
             // lblTitle
@@ -978,9 +979,9 @@ namespace ProjectReporter.Controls
             this.plContent.AutoScroll = true;
             this.plContent.Controls.Add(this.tlpContent);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(0, 51);
+            this.plContent.Location = new System.Drawing.Point(0, 70);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1422, 584);
+            this.plContent.Size = new System.Drawing.Size(1422, 565);
             this.plContent.TabIndex = 7;
             // 
             // NewProjectEditor
@@ -1025,7 +1026,6 @@ namespace ProjectReporter.Controls
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
             this.plMain.ResumeLayout(false);
-            this.plMain.PerformLayout();
             this.plContent.ResumeLayout(false);
             this.ResumeLayout(false);
 

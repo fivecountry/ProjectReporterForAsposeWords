@@ -146,7 +146,7 @@
             this.txtPersonName.Location = new System.Drawing.Point(141, 2);
             this.txtPersonName.Name = "txtPersonName";
             this.txtPersonName.Size = new System.Drawing.Size(300, 22);
-            this.txtPersonName.TabIndex = 9;
+            this.txtPersonName.TabIndex = 5;
             // 
             // dePersonBirthday
             // 
@@ -158,14 +158,14 @@
             this.dePersonBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dePersonBirthday.Size = new System.Drawing.Size(300, 20);
-            this.dePersonBirthday.TabIndex = 14;
+            this.dePersonBirthday.TabIndex = 10;
             // 
             // txtPersonIDCard
             // 
             this.txtPersonIDCard.Location = new System.Drawing.Point(141, 30);
             this.txtPersonIDCard.Name = "txtPersonIDCard";
             this.txtPersonIDCard.Size = new System.Drawing.Size(300, 22);
-            this.txtPersonIDCard.TabIndex = 9;
+            this.txtPersonIDCard.TabIndex = 6;
             // 
             // cbxPersonSex
             // 
@@ -177,14 +177,14 @@
             this.cbxPersonSex.Location = new System.Drawing.Point(141, 114);
             this.cbxPersonSex.Name = "cbxPersonSex";
             this.cbxPersonSex.Size = new System.Drawing.Size(300, 22);
-            this.cbxPersonSex.TabIndex = 13;
+            this.cbxPersonSex.TabIndex = 9;
             // 
             // txtPersonJob
             // 
             this.txtPersonJob.Location = new System.Drawing.Point(141, 58);
             this.txtPersonJob.Name = "txtPersonJob";
             this.txtPersonJob.Size = new System.Drawing.Size(300, 22);
-            this.txtPersonJob.TabIndex = 9;
+            this.txtPersonJob.TabIndex = 7;
             // 
             // txtPersonAddress
             // 
@@ -192,7 +192,7 @@
             this.txtPersonAddress.Location = new System.Drawing.Point(141, 226);
             this.txtPersonAddress.Name = "txtPersonAddress";
             this.txtPersonAddress.Size = new System.Drawing.Size(300, 22);
-            this.txtPersonAddress.TabIndex = 9;
+            this.txtPersonAddress.TabIndex = 13;
             // 
             // txtPersonMobilePhone
             // 
@@ -200,7 +200,7 @@
             this.txtPersonMobilePhone.Location = new System.Drawing.Point(141, 198);
             this.txtPersonMobilePhone.Name = "txtPersonMobilePhone";
             this.txtPersonMobilePhone.Size = new System.Drawing.Size(300, 22);
-            this.txtPersonMobilePhone.TabIndex = 9;
+            this.txtPersonMobilePhone.TabIndex = 12;
             // 
             // txtPersonTelephone
             // 
@@ -208,14 +208,14 @@
             this.txtPersonTelephone.Location = new System.Drawing.Point(141, 170);
             this.txtPersonTelephone.Name = "txtPersonTelephone";
             this.txtPersonTelephone.Size = new System.Drawing.Size(300, 22);
-            this.txtPersonTelephone.TabIndex = 9;
+            this.txtPersonTelephone.TabIndex = 11;
             // 
             // txtPersonSpecialty
             // 
             this.txtPersonSpecialty.Location = new System.Drawing.Point(141, 86);
             this.txtPersonSpecialty.Name = "txtPersonSpecialty";
             this.txtPersonSpecialty.Size = new System.Drawing.Size(300, 22);
-            this.txtPersonSpecialty.TabIndex = 9;
+            this.txtPersonSpecialty.TabIndex = 8;
             // 
             // label3
             // 
@@ -316,28 +316,28 @@
             this.txtUnitName.Location = new System.Drawing.Point(141, 4);
             this.txtUnitName.Name = "txtUnitName";
             this.txtUnitName.Size = new System.Drawing.Size(300, 22);
-            this.txtUnitName.TabIndex = 9;
+            this.txtUnitName.TabIndex = 1;
             // 
             // txtUnitAddress
             // 
             this.txtUnitAddress.Location = new System.Drawing.Point(141, 32);
             this.txtUnitAddress.Name = "txtUnitAddress";
             this.txtUnitAddress.Size = new System.Drawing.Size(300, 22);
-            this.txtUnitAddress.TabIndex = 9;
+            this.txtUnitAddress.TabIndex = 2;
             // 
             // txtUnitContactName
             // 
             this.txtUnitContactName.Location = new System.Drawing.Point(141, 60);
             this.txtUnitContactName.Name = "txtUnitContactName";
             this.txtUnitContactName.Size = new System.Drawing.Size(300, 22);
-            this.txtUnitContactName.TabIndex = 9;
+            this.txtUnitContactName.TabIndex = 3;
             // 
             // txtUnitTelephone
             // 
             this.txtUnitTelephone.Location = new System.Drawing.Point(141, 88);
             this.txtUnitTelephone.Name = "txtUnitTelephone";
             this.txtUnitTelephone.Size = new System.Drawing.Size(300, 22);
-            this.txtUnitTelephone.TabIndex = 9;
+            this.txtUnitTelephone.TabIndex = 4;
             // 
             // label6
             // 
@@ -385,7 +385,7 @@
             this.cbxItemJobs.Location = new System.Drawing.Point(151, 430);
             this.cbxItemJobs.Name = "cbxItemJobs";
             this.cbxItemJobs.Size = new System.Drawing.Size(313, 22);
-            this.cbxItemJobs.TabIndex = 13;
+            this.cbxItemJobs.TabIndex = 14;
             // 
             // label2
             // 
@@ -401,7 +401,7 @@
             this.txtTaskContent.Multiline = true;
             this.txtTaskContent.Name = "txtTaskContent";
             this.txtTaskContent.Size = new System.Drawing.Size(313, 57);
-            this.txtTaskContent.TabIndex = 9;
+            this.txtTaskContent.TabIndex = 15;
             // 
             // label11
             // 
@@ -437,7 +437,8 @@
             this.btnOK.Size = new System.Drawing.Size(90, 45);
             this.btnOK.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOK.TabIndex = 28;
+            this.btnOK.TabIndex = 17;
+            this.btnOK.TabStop = false;
             this.btnOK.Values.Text = "保存";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -449,7 +450,8 @@
             this.btnCancel.Size = new System.Drawing.Size(90, 45);
             this.btnCancel.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCancel.TabIndex = 27;
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.TabStop = false;
             this.btnCancel.Values.Text = "取消";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
