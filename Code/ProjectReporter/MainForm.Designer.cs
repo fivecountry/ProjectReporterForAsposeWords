@@ -139,13 +139,13 @@ namespace ProjectReporter
             this.kpReportPage16 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.knReportPage16 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage29 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.feUI25 = new ProjectReporter.Controls.BaoMiZiZhiFuYinJianEditor();
             this.kpReportPage17 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.feUI31 = new ProjectReporter.Controls.ChengNuoShuEditor();
             this.topBanner = new System.Windows.Forms.PictureBox();
             this.kpcontact = new ProjectReporter.Controls.HSkinTableLayoutPanel();
-            this.feUI25 = new ProjectReporter.Controls.BaoMiZiZhiFuYinJianEditor();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpcontactinner)).BeginInit();
@@ -1765,6 +1765,18 @@ namespace ProjectReporter
             this.kryptonPage29.ToolTipTitle = "Page ToolTip";
             this.kryptonPage29.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 
+            // feUI25
+            // 
+            this.feUI25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.feUI25.EnabledAutoNextPage = true;
+            this.feUI25.FilePath = null;
+            this.feUI25.Location = new System.Drawing.Point(0, 0);
+            this.feUI25.Margin = new System.Windows.Forms.Padding(4);
+            this.feUI25.Name = "feUI25";
+            this.feUI25.ParentForm = null;
+            this.feUI25.Size = new System.Drawing.Size(1254, 598);
+            this.feUI25.TabIndex = 0;
+            // 
             // kpReportPage17
             // 
             this.kpReportPage17.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -1777,6 +1789,7 @@ namespace ProjectReporter
             this.kpReportPage17.Text = "附件3：科研诚信承诺书";
             this.kpReportPage17.ToolTipTitle = "Page ToolTip";
             this.kpReportPage17.UniqueName = "4C590D790CA74B777A99B4E98FC871AF";
+            this.kpReportPage17.Visible = false;
             // 
             // kryptonNavigator1
             // 
@@ -1834,18 +1847,6 @@ namespace ProjectReporter
             this.kpcontact.Name = "kpcontact";
             this.kpcontact.Size = new System.Drawing.Size(200, 100);
             this.kpcontact.TabIndex = 0;
-            // 
-            // feUI25
-            // 
-            this.feUI25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.feUI25.EnabledAutoNextPage = true;
-            this.feUI25.FilePath = null;
-            this.feUI25.Location = new System.Drawing.Point(0, 0);
-            this.feUI25.Margin = new System.Windows.Forms.Padding(4);
-            this.feUI25.Name = "feUI25";
-            this.feUI25.ParentForm = null;
-            this.feUI25.Size = new System.Drawing.Size(1254, 598);
-            this.feUI25.TabIndex = 0;
             // 
             // MainForm
             // 
