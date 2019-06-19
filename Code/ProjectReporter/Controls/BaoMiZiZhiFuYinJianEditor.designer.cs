@@ -225,9 +225,9 @@
             this.cbMilitary.ForeColor = System.Drawing.Color.Red;
             this.cbMilitary.Location = new System.Drawing.Point(10, 0);
             this.cbMilitary.Name = "cbMilitary";
-            this.cbMilitary.Size = new System.Drawing.Size(656, 40);
+            this.cbMilitary.Size = new System.Drawing.Size(793, 40);
             this.cbMilitary.TabIndex = 4;
-            this.cbMilitary.Text = "是否为军队单位（如果是军队单位，则无需上传保密资质附件！）";
+            this.cbMilitary.Text = "是否为军队单位（勾选状态表示是军队单位，军队单位无需上传保密资质附件！）";
             this.cbMilitary.UseVisualStyleBackColor = true;
             // 
             // ofdUpload
