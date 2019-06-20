@@ -351,17 +351,17 @@ namespace ProjectReporter.Forms
                                         ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
 
                                         //输出格式
-                                        string outputFormat = "阶段目标及完成内容:{0}\n阶段成果:{1}\n考核指标:{2}\n阶段经费:{3}万";
+                                        string outputFormat = "完成内容及阶段目标:{0}\n阶段成果、考核指标及考核方式:{1}\n阶段经费:{3}万";
 
                                         string resultStr = string.Empty;
                                         //阶段数据
                                         if (kvp.Key == "项目")
                                         {
-                                            resultStr = string.Format(outputFormat, curStep.StepDest, curStep.StepResult, curStep.StepTarget, curStep.StepMoney);
+                                            resultStr = string.Format(outputFormat, curStep.StepDest, curStep.StepResult, curStep.StepMoney);
                                         }
                                         else
                                         {
-                                            resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepResult, curProjectAndStep.StepTarget, curProjectAndStep.Money);
+                                            resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepResult, curProjectAndStep.Money);
                                         }
 
                                         table.Cell(rowIndex, 1).Range.Text = curStep.StepIndex + "";
@@ -422,17 +422,17 @@ namespace ProjectReporter.Forms
                                     ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
 
                                     //输出格式
-                                    string outputFormat = "阶段目标及完成内容:{0}\n阶段成果:{1}\n考核指标:{2}\n阶段经费:{3}万";
+                                    string outputFormat = "完成内容及阶段目标:{0}\n阶段成果、考核指标及考核方式:{1}\n阶段经费:{3}万";
 
                                     string resultStr = string.Empty;
                                     //阶段数据
                                     if (kvp.Key == "项目")
                                     {
-                                        resultStr = string.Format(outputFormat, curStep.StepDest, curStep.StepResult, curStep.StepTarget, curStep.StepMoney);
+                                        resultStr = string.Format(outputFormat, curStep.StepDest, curStep.StepResult, curStep.StepMoney);
                                     }
                                     else
                                     {
-                                        resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepResult, curProjectAndStep.StepTarget, curProjectAndStep.Money);
+                                        resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepResult, curProjectAndStep.Money);
 
                                         //计算总金额
                                         totalMoney += (int)curProjectAndStep.Money;
