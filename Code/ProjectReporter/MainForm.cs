@@ -208,6 +208,10 @@ namespace ProjectReporter
         {
             base.OnFormClosing(e);
 
+            //先保存
+            SaveAll();
+
+            //询问是否备份
             if (ProjectObj != null)
             {
                 DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
@@ -703,24 +707,24 @@ namespace ProjectReporter
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            try
-            {
-                if (EnabledRefreshPage)
-                {
-                    EnabledRefreshPage = false;
+            //try
+            //{
+            //    if (EnabledRefreshPage)
+            //    {
+            //        EnabledRefreshPage = false;
 
-                    if (ProjectObj != null)
-                    {
-                        //刷新视图
-                        RefreshAllEditor();
-                    }
-                    else
-                    {
-                        fnpDefault.LoadProject();
-                    }
-                }
-            }
-            catch (Exception ex) { }
+            //        if (ProjectObj != null)
+            //        {
+            //            //刷新视图
+            //            RefreshAllEditor();
+            //        }
+            //        else
+            //        {
+            //            fnpDefault.LoadProject();
+            //        }
+            //    }
+            //}
+            //catch (Exception ex) { }
         }
 
         private void edithost2_SelectedPageChanged(object sender, EventArgs e)
