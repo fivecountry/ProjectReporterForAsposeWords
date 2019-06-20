@@ -196,10 +196,11 @@
             // 
             // colKeTi
             // 
-            this.colKeTi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colKeTi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colKeTi.HeaderText = "课题";
             this.colKeTi.Name = "colKeTi";
             this.colKeTi.ReadOnly = true;
+            this.colKeTi.Width = 69;
             // 
             // colJieDuanHuaHuaFen
             // 
@@ -211,7 +212,7 @@
             // colDest
             // 
             this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDest.HeaderText = "阶段目标及完成内容";
+            this.colDest.HeaderText = "完成内容及阶段目标";
             this.colDest.Name = "colDest";
             // 
             // colContent
@@ -224,7 +225,7 @@
             // colResult
             // 
             this.colResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colResult.HeaderText = "阶段成果";
+            this.colResult.HeaderText = "阶段成果、考核指标及考核方式";
             this.colResult.Name = "colResult";
             // 
             // colTarget
@@ -233,11 +234,11 @@
             this.colTarget.HeaderText = "考核指标";
             this.colTarget.Name = "colTarget";
             this.colTarget.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colTarget.Visible = false;
             // 
             // colJieDuanJingFei
             // 
-            this.colJieDuanJingFei.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colJieDuanJingFei.HeaderText = "阶段经费";
+            this.colJieDuanJingFei.HeaderText = "阶段经费(万)";
             this.colJieDuanJingFei.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -245,7 +246,7 @@
             0});
             this.colJieDuanJingFei.Name = "colJieDuanJingFei";
             this.colJieDuanJingFei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colJieDuanJingFei.Width = 143;
+            this.colJieDuanJingFei.Width = 110;
             // 
             // delete
             // 

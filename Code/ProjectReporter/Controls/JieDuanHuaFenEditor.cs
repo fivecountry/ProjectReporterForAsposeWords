@@ -145,13 +145,13 @@ namespace ProjectReporter.Controls
 
                 if (dgvRow.Cells[2].Value == null)
                 {
-                    MessageBox.Show("对不起,请输入阶段时长");
+                    MessageBox.Show("对不起,请输入阶段时长(月)");
                     break;
                 }
 
                 if (dgvRow.Cells[3].Value == null || string.IsNullOrEmpty(dgvRow.Cells[3].Value.ToString()))
                 {
-                    MessageBox.Show("对不起,请输入阶段目标及完成内容");
+                    MessageBox.Show("对不起,请输入完成内容及阶段目标");
                     return;
                 }
                 dgvRow.Cells[4].Value = "暂时不用";
@@ -162,9 +162,11 @@ namespace ProjectReporter.Controls
                 }
                 if (dgvRow.Cells[5].Value == null || string.IsNullOrEmpty(dgvRow.Cells[5].Value.ToString()))
                 {
-                    MessageBox.Show("对不起,请输入阶段成果");
+                    MessageBox.Show("对不起,请输入阶段成果、考核指标及考核方式");
                     return;
                 }
+
+                dgvRow.Cells[6].Value = "暂时不用";
                 if (dgvRow.Cells[6].Value == null || string.IsNullOrEmpty(dgvRow.Cells[6].Value.ToString()))
                 {
                     MessageBox.Show("对不起,请输入考核指标");
@@ -172,7 +174,7 @@ namespace ProjectReporter.Controls
                 }
                 if (dgvRow.Cells[7].Value == null || string.IsNullOrEmpty(dgvRow.Cells[7].Value.ToString()))
                 {
-                    MessageBox.Show("对不起,请输入阶段经费");
+                    MessageBox.Show("对不起,请输入阶段经费(万)");
                     return;
                 }
 
