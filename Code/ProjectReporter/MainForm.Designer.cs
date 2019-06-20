@@ -1577,6 +1577,7 @@ namespace ProjectReporter
             this.kpReportPage14.Text = "联系方式";
             this.kpReportPage14.ToolTipTitle = "Page ToolTip";
             this.kpReportPage14.UniqueName = "172B3150655F44437CB6F969A363B0D1";
+            this.kpReportPage14.Visible = false;
             // 
             // knReportPage14
             // 
@@ -1627,7 +1628,7 @@ namespace ProjectReporter
             this.kryptonPage38.LastVisibleSet = true;
             this.kryptonPage38.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage38.Name = "kryptonPage38";
-            this.kryptonPage38.Size = new System.Drawing.Size(1112, 483);
+            this.kryptonPage38.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage38.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kryptonPage38.Text = "候选牵头单位";
             this.kryptonPage38.ToolTipTitle = "Page ToolTip";
@@ -1641,7 +1642,7 @@ namespace ProjectReporter
             this.feUI22.Margin = new System.Windows.Forms.Padding(5);
             this.feUI22.Name = "feUI22";
             this.feUI22.ParentForm = null;
-            this.feUI22.Size = new System.Drawing.Size(1112, 483);
+            this.feUI22.Size = new System.Drawing.Size(1254, 598);
             this.feUI22.TabIndex = 0;
             this.feUI22.WhiteDataList = null;
             // 
@@ -1653,7 +1654,7 @@ namespace ProjectReporter
             this.kryptonPage39.LastVisibleSet = true;
             this.kryptonPage39.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage39.Name = "kryptonPage39";
-            this.kryptonPage39.Size = new System.Drawing.Size(1112, 483);
+            this.kryptonPage39.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage39.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F);
             this.kryptonPage39.Text = "课题负责人联系方式";
             this.kryptonPage39.ToolTipTitle = "Page ToolTip";
@@ -1668,7 +1669,7 @@ namespace ProjectReporter
             this.feUI23.Margin = new System.Windows.Forms.Padding(5);
             this.feUI23.Name = "feUI23";
             this.feUI23.ParentForm = null;
-            this.feUI23.Size = new System.Drawing.Size(1112, 483);
+            this.feUI23.Size = new System.Drawing.Size(1254, 598);
             this.feUI23.TabIndex = 0;
             // 
             // kpReportPage15
