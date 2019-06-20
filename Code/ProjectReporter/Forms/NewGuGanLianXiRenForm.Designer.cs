@@ -250,7 +250,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 14);
             this.label7.TabIndex = 8;
-            this.label7.Text = "  从事专业：";
+            this.label7.Text = "  技术方向：";
             // 
             // label17
             // 

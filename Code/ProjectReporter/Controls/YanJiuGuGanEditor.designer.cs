@@ -217,7 +217,7 @@
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 35;
@@ -283,7 +283,7 @@
             // colCongShiZhuanYe
             // 
             this.colCongShiZhuanYe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCongShiZhuanYe.HeaderText = "从事专业";
+            this.colCongShiZhuanYe.HeaderText = "技术方向";
             this.colCongShiZhuanYe.Name = "colCongShiZhuanYe";
             this.colCongShiZhuanYe.ReadOnly = true;
             // 
