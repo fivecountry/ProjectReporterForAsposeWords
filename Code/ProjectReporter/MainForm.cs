@@ -164,6 +164,10 @@ namespace ProjectReporter
                 }
                 else
                 {
+                    if (GetPageControl(be) != null)
+                    {
+                        MessageBox.Show("对不起，" + GetPageControl(be).Text + "未填写完成，请检查！");
+                    }
                     return false;
                 }
             }
