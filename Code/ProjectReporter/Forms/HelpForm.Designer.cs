@@ -36,6 +36,7 @@
             this.txtRich.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtRich.Location = new System.Drawing.Point(0, 0);
             this.txtRich.Name = "txtRich";
+            this.txtRich.ReadOnly = true;
             this.txtRich.Size = new System.Drawing.Size(764, 479);
             this.txtRich.TabIndex = 0;
             this.txtRich.Text = "";
