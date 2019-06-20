@@ -230,7 +230,7 @@ namespace ProjectReporter.Controls
             // bsaHint2
             // 
             this.bsaHint2.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
-            this.bsaHint2.Text = "填写指南（1.0版）对应领域中的研究方向名称，军事智能基础、基础学科可不填写，不在指南中的项目也可不填写";
+            this.bsaHint2.Text = "对应领域中的研究方向名称（军事智能基础、基础学科；不在指南中的项目也可不填）";
             this.bsaHint2.UniqueName = "BF642C49234148C27C80CD3FECA99F44";
             // 
             // panel14
