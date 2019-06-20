@@ -487,7 +487,7 @@ namespace ProjectReporter.Controls
             this.kryptonTextBox5.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox5.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonTextBox5.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonTextBox5.TabIndex = 87;
             this.kryptonTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -508,7 +508,7 @@ namespace ProjectReporter.Controls
             this.kryptonTextBox4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox4.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonTextBox4.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonTextBox4.TabIndex = 87;
             this.kryptonTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -528,7 +528,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_3_1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_1.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_3_1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_3_1.TabIndex = 31;
             this.ProjectRFA1_3_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_3_1.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -541,7 +541,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel6.Name = "kryptonLabel6";
             this.kryptonLabel6.Size = new System.Drawing.Size(261, 24);
             this.kryptonLabel6.StateCommon.Padding = new System.Windows.Forms.Padding(30, -1, -1, -1);
-            this.kryptonLabel6.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel6.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel6.TabIndex = 11;
             this.kryptonLabel6.Values.Text = "（1）检验、测试、化验、加工费";
             // 
@@ -563,7 +563,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA2_1Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA2_1Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA2_1Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA2_1Rm.TabIndex = 86;
             // 
             // ProjectRFA2Rm
@@ -584,7 +584,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA2Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA2Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA2Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA2Rm.TabIndex = 85;
             // 
             // ProjectRFA1_9Rm
@@ -605,7 +605,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_9Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_9Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_9Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_9Rm.TabIndex = 84;
             // 
             // ProjectRFA1_8Rm
@@ -626,7 +626,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_8Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_8Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_8Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_8Rm.TabIndex = 83;
             // 
             // ProjectRFA1_7Rm
@@ -647,7 +647,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_7Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_7Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_7Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_7Rm.TabIndex = 82;
             // 
             // ProjectRFA1_6Rm
@@ -668,7 +668,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_6Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_6Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_6Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_6Rm.TabIndex = 81;
             // 
             // ProjectRFA1_5Rm
@@ -689,7 +689,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_5Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_5Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_5Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_5Rm.TabIndex = 80;
             // 
             // ProjectRFA1_4Rm
@@ -710,7 +710,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_4Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_4Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_4Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_4Rm.TabIndex = 79;
             // 
             // ProjectRFA1_3Rm
@@ -731,7 +731,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_3Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_3Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_3Rm.TabIndex = 78;
             // 
             // ProjectRFA1_2Rm
@@ -752,7 +752,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_2Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_2Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_2Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_2Rm.TabIndex = 77;
             // 
             // ProjectRFA1_1_3Rm
@@ -773,7 +773,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_1_3Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_1_3Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_3Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_3Rm.TabIndex = 76;
             // 
             // ProjectRFA1_1_2Rm
@@ -794,7 +794,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_1_2Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_1_2Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_2Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_2Rm.TabIndex = 75;
             // 
             // ProjectRFA1_1_1Rm
@@ -815,7 +815,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_1_1Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_1_1Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_1Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_1Rm.TabIndex = 74;
             // 
             // ProjectRFA1_1Rm
@@ -836,7 +836,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_1Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_1Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1Rm.TabIndex = 73;
             // 
             // kryptonLabel39
@@ -903,7 +903,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA.Location = new System.Drawing.Point(270, 33);
             this.ProjectRFA.Name = "ProjectRFA";
             this.ProjectRFA.Size = new System.Drawing.Size(114, 24);
-            this.ProjectRFA.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ProjectRFA.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ProjectRFA.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.ProjectRFA.StateCommon.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.ProjectRFA.TabIndex = 5;
@@ -929,16 +929,16 @@ namespace ProjectReporter.Controls
             this.ProjectRFARm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFARm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFARm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFARm.TabIndex = 6;
             // 
             // kryptonLabel42
             // 
             this.kryptonLabel42.Location = new System.Drawing.Point(3, 93);
             this.kryptonLabel42.Name = "kryptonLabel42";
-            this.kryptonLabel42.Size = new System.Drawing.Size(95, 23);
+            this.kryptonLabel42.Size = new System.Drawing.Size(97, 23);
             this.kryptonLabel42.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel42.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.kryptonLabel42.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonLabel42.TabIndex = 8;
             this.kryptonLabel42.Values.Text = "1.设备费";
             // 
@@ -946,9 +946,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel43.Location = new System.Drawing.Point(3, 123);
             this.kryptonLabel43.Name = "kryptonLabel43";
-            this.kryptonLabel43.Size = new System.Drawing.Size(162, 23);
+            this.kryptonLabel43.Size = new System.Drawing.Size(175, 23);
             this.kryptonLabel43.StateCommon.Padding = new System.Windows.Forms.Padding(30, -1, -1, -1);
-            this.kryptonLabel43.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel43.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel43.TabIndex = 9;
             this.kryptonLabel43.Values.Text = "（1）设备购置费";
             // 
@@ -956,9 +956,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel44.Location = new System.Drawing.Point(3, 153);
             this.kryptonLabel44.Name = "kryptonLabel44";
-            this.kryptonLabel44.Size = new System.Drawing.Size(162, 23);
+            this.kryptonLabel44.Size = new System.Drawing.Size(175, 23);
             this.kryptonLabel44.StateCommon.Padding = new System.Windows.Forms.Padding(30, -1, -1, -1);
-            this.kryptonLabel44.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel44.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel44.TabIndex = 10;
             this.kryptonLabel44.Values.Text = "（2）设备试制费";
             // 
@@ -966,8 +966,8 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel41.Location = new System.Drawing.Point(3, 63);
             this.kryptonLabel41.Name = "kryptonLabel41";
-            this.kryptonLabel41.Size = new System.Drawing.Size(127, 23);
-            this.kryptonLabel41.StateCommon.ShortText.Font = new System.Drawing.Font("楷体_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.kryptonLabel41.Size = new System.Drawing.Size(139, 23);
+            this.kryptonLabel41.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonLabel41.TabIndex = 12;
             this.kryptonLabel41.Values.Text = "（一）直接费用";
             // 
@@ -975,9 +975,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel46.Location = new System.Drawing.Point(3, 213);
             this.kryptonLabel46.Name = "kryptonLabel46";
-            this.kryptonLabel46.Size = new System.Drawing.Size(95, 23);
+            this.kryptonLabel46.Size = new System.Drawing.Size(97, 23);
             this.kryptonLabel46.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel46.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel46.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel46.TabIndex = 13;
             this.kryptonLabel46.Values.Text = "2.材料费";
             // 
@@ -985,9 +985,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel47.Location = new System.Drawing.Point(3, 183);
             this.kryptonLabel47.Name = "kryptonLabel47";
-            this.kryptonLabel47.Size = new System.Drawing.Size(113, 23);
+            this.kryptonLabel47.Size = new System.Drawing.Size(120, 23);
             this.kryptonLabel47.StateCommon.Padding = new System.Windows.Forms.Padding(30, -1, -1, -1);
-            this.kryptonLabel47.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel47.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel47.TabIndex = 14;
             this.kryptonLabel47.Values.Text = "（3）其他";
             // 
@@ -995,9 +995,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel48.Location = new System.Drawing.Point(3, 243);
             this.kryptonLabel48.Name = "kryptonLabel48";
-            this.kryptonLabel48.Size = new System.Drawing.Size(128, 23);
+            this.kryptonLabel48.Size = new System.Drawing.Size(133, 23);
             this.kryptonLabel48.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel48.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel48.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel48.TabIndex = 15;
             this.kryptonLabel48.Values.Text = "3.外部协作费";
             // 
@@ -1007,7 +1007,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1.Location = new System.Drawing.Point(270, 63);
             this.ProjectRFA1.Name = "ProjectRFA1";
             this.ProjectRFA1.Size = new System.Drawing.Size(114, 24);
-            this.ProjectRFA1.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ProjectRFA1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ProjectRFA1.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.ProjectRFA1.TabIndex = 16;
             this.ProjectRFA1.Values.Text = "0";
@@ -1016,9 +1016,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel50.Location = new System.Drawing.Point(3, 333);
             this.kryptonLabel50.Name = "kryptonLabel50";
-            this.kryptonLabel50.Size = new System.Drawing.Size(128, 23);
+            this.kryptonLabel50.Size = new System.Drawing.Size(133, 23);
             this.kryptonLabel50.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel50.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel50.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel50.TabIndex = 17;
             this.kryptonLabel50.Values.Text = "4.燃料动力费";
             // 
@@ -1028,7 +1028,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel51.Name = "kryptonLabel51";
             this.kryptonLabel51.Size = new System.Drawing.Size(261, 23);
             this.kryptonLabel51.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel51.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel51.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel51.TabIndex = 18;
             this.kryptonLabel51.Values.Text = "5.会议、差旅、国际合作与交流费";
             // 
@@ -1038,7 +1038,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel52.Name = "kryptonLabel52";
             this.kryptonLabel52.Size = new System.Drawing.Size(261, 23);
             this.kryptonLabel52.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel52.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel52.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel52.TabIndex = 19;
             this.kryptonLabel52.Values.Text = "6.出版、文献、信息传播、知识产权事务费";
             // 
@@ -1046,9 +1046,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel53.Location = new System.Drawing.Point(3, 423);
             this.kryptonLabel53.Name = "kryptonLabel53";
-            this.kryptonLabel53.Size = new System.Drawing.Size(95, 23);
+            this.kryptonLabel53.Size = new System.Drawing.Size(97, 23);
             this.kryptonLabel53.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel53.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel53.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel53.TabIndex = 20;
             this.kryptonLabel53.Values.Text = "7.劳务费";
             // 
@@ -1056,9 +1056,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel54.Location = new System.Drawing.Point(3, 453);
             this.kryptonLabel54.Name = "kryptonLabel54";
-            this.kryptonLabel54.Size = new System.Drawing.Size(128, 23);
+            this.kryptonLabel54.Size = new System.Drawing.Size(133, 23);
             this.kryptonLabel54.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel54.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel54.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel54.TabIndex = 21;
             this.kryptonLabel54.Values.Text = "8.专家咨询费";
             // 
@@ -1066,9 +1066,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel55.Location = new System.Drawing.Point(3, 483);
             this.kryptonLabel55.Name = "kryptonLabel55";
-            this.kryptonLabel55.Size = new System.Drawing.Size(111, 23);
+            this.kryptonLabel55.Size = new System.Drawing.Size(115, 23);
             this.kryptonLabel55.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel55.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel55.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel55.TabIndex = 22;
             this.kryptonLabel55.Values.Text = "9.其他支出";
             // 
@@ -1076,8 +1076,8 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel56.Location = new System.Drawing.Point(3, 513);
             this.kryptonLabel56.Name = "kryptonLabel56";
-            this.kryptonLabel56.Size = new System.Drawing.Size(127, 23);
-            this.kryptonLabel56.StateCommon.ShortText.Font = new System.Drawing.Font("楷体_GB2312", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.kryptonLabel56.Size = new System.Drawing.Size(139, 23);
+            this.kryptonLabel56.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonLabel56.TabIndex = 23;
             this.kryptonLabel56.Values.Text = "（二）间接费用";
             // 
@@ -1085,9 +1085,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel57.Location = new System.Drawing.Point(3, 543);
             this.kryptonLabel57.Name = "kryptonLabel57";
-            this.kryptonLabel57.Size = new System.Drawing.Size(218, 23);
+            this.kryptonLabel57.Size = new System.Drawing.Size(233, 23);
             this.kryptonLabel57.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel57.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel57.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel57.TabIndex = 24;
             this.kryptonLabel57.Values.Text = "10.管理费、科研绩效支出";
             // 
@@ -1097,7 +1097,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_1.Location = new System.Drawing.Point(270, 93);
             this.ProjectRFA1_1.Name = "ProjectRFA1_1";
             this.ProjectRFA1_1.Size = new System.Drawing.Size(114, 24);
-            this.ProjectRFA1_1.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.ProjectRFA1_1.TabIndex = 26;
             this.ProjectRFA1_1.Values.Text = "0";
@@ -1118,7 +1118,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_1_1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_1_1.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_1.TabIndex = 27;
             this.ProjectRFA1_1_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_1_1.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1140,7 +1140,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_1_2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_1_2.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_2.TabIndex = 28;
             this.ProjectRFA1_1_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_1_2.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1162,7 +1162,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_1_3.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_1_3.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_3.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_3.TabIndex = 29;
             this.ProjectRFA1_1_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_1_3.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1184,7 +1184,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_2.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_2.TabIndex = 30;
             this.ProjectRFA1_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_2.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1197,7 +1197,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_3.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_3.Name = "ProjectRFA1_3";
             this.ProjectRFA1_3.Size = new System.Drawing.Size(116, 26);
-            this.ProjectRFA1_3.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Bold);
+            this.ProjectRFA1_3.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.ProjectRFA1_3.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.ProjectRFA1_3.StateCommon.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.ProjectRFA1_3.TabIndex = 31;
@@ -1219,7 +1219,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_4.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_4.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_4.TabIndex = 33;
             this.ProjectRFA1_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_4.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1243,7 +1243,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1Rm.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1Rm.TabIndex = 33;
             // 
             // ProjectRFA1_5
@@ -1262,7 +1262,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_5.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_5.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_5.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_5.TabIndex = 34;
             this.ProjectRFA1_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_5.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1284,7 +1284,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_6.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_6.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_6.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_6.TabIndex = 35;
             this.ProjectRFA1_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_6.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1306,7 +1306,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_7.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_7.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_7.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_7.TabIndex = 36;
             this.ProjectRFA1_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_7.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1328,7 +1328,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_8.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_8.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_8.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_8.TabIndex = 37;
             this.ProjectRFA1_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_8.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1350,7 +1350,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_9.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_9.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_9.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_9.TabIndex = 38;
             this.ProjectRFA1_9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_9.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1372,7 +1372,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA2_1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA2_1.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA2_1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA2_1.TabIndex = 39;
             this.ProjectRFA2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA2_1.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1384,7 +1384,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA2.Location = new System.Drawing.Point(270, 513);
             this.ProjectRFA2.Name = "ProjectRFA2";
             this.ProjectRFA2.Size = new System.Drawing.Size(114, 24);
-            this.ProjectRFA2.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ProjectRFA2.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ProjectRFA2.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Far;
             this.ProjectRFA2.TabIndex = 41;
             this.ProjectRFA2.Values.Text = "0";
@@ -1393,8 +1393,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_5zb.Location = new System.Drawing.Point(540, 363);
             this.ProjectRFA1_5zb.Name = "ProjectRFA1_5zb";
-            this.ProjectRFA1_5zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_5zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_5zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_5zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_5zb.TabIndex = 53;
             this.ProjectRFA1_5zb.Values.Text = "0";
             this.ProjectRFA1_5zb.Visible = false;
@@ -1403,8 +1403,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1zb.Location = new System.Drawing.Point(540, 63);
             this.ProjectRFA1zb.Name = "ProjectRFA1zb";
-            this.ProjectRFA1zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1zb.TabIndex = 58;
             this.ProjectRFA1zb.Values.Text = "0";
             this.ProjectRFA1zb.Visible = false;
@@ -1413,8 +1413,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1zb.Location = new System.Drawing.Point(540, 93);
             this.ProjectRFA1_1zb.Name = "ProjectRFA1_1zb";
-            this.ProjectRFA1_1zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_1zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_1zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1zb.TabIndex = 59;
             this.ProjectRFA1_1zb.Values.Text = "0";
             this.ProjectRFA1_1zb.Visible = false;
@@ -1423,8 +1423,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_1zb.Location = new System.Drawing.Point(540, 123);
             this.ProjectRFA1_1_1zb.Name = "ProjectRFA1_1_1zb";
-            this.ProjectRFA1_1_1zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_1_1zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_1zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_1_1zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_1zb.TabIndex = 60;
             this.ProjectRFA1_1_1zb.Values.Text = "0";
             this.ProjectRFA1_1_1zb.Visible = false;
@@ -1433,8 +1433,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_2zb.Location = new System.Drawing.Point(540, 153);
             this.ProjectRFA1_1_2zb.Name = "ProjectRFA1_1_2zb";
-            this.ProjectRFA1_1_2zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_1_2zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_2zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_1_2zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_2zb.TabIndex = 61;
             this.ProjectRFA1_1_2zb.Values.Text = "0";
             this.ProjectRFA1_1_2zb.Visible = false;
@@ -1443,8 +1443,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_3zb.Location = new System.Drawing.Point(540, 183);
             this.ProjectRFA1_1_3zb.Name = "ProjectRFA1_1_3zb";
-            this.ProjectRFA1_1_3zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_1_3zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_1_3zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_1_3zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_1_3zb.TabIndex = 62;
             this.ProjectRFA1_1_3zb.Values.Text = "0";
             this.ProjectRFA1_1_3zb.Visible = false;
@@ -1453,8 +1453,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_2zb.Location = new System.Drawing.Point(540, 213);
             this.ProjectRFA1_2zb.Name = "ProjectRFA1_2zb";
-            this.ProjectRFA1_2zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_2zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_2zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_2zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_2zb.TabIndex = 63;
             this.ProjectRFA1_2zb.Values.Text = "0";
             this.ProjectRFA1_2zb.Visible = false;
@@ -1463,8 +1463,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_3zb.Location = new System.Drawing.Point(540, 243);
             this.ProjectRFA1_3zb.Name = "ProjectRFA1_3zb";
-            this.ProjectRFA1_3zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_3zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_3zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_3zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_3zb.TabIndex = 64;
             this.ProjectRFA1_3zb.Values.Text = "0";
             this.ProjectRFA1_3zb.Visible = false;
@@ -1473,8 +1473,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_4zb.Location = new System.Drawing.Point(540, 333);
             this.ProjectRFA1_4zb.Name = "ProjectRFA1_4zb";
-            this.ProjectRFA1_4zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_4zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_4zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_4zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_4zb.TabIndex = 65;
             this.ProjectRFA1_4zb.Values.Text = "0";
             this.ProjectRFA1_4zb.Visible = false;
@@ -1483,8 +1483,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_6zb.Location = new System.Drawing.Point(540, 393);
             this.ProjectRFA1_6zb.Name = "ProjectRFA1_6zb";
-            this.ProjectRFA1_6zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_6zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_6zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_6zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_6zb.TabIndex = 66;
             this.ProjectRFA1_6zb.Values.Text = "0";
             this.ProjectRFA1_6zb.Visible = false;
@@ -1493,8 +1493,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_8zb.Location = new System.Drawing.Point(540, 453);
             this.ProjectRFA1_8zb.Name = "ProjectRFA1_8zb";
-            this.ProjectRFA1_8zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_8zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_8zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_8zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_8zb.TabIndex = 67;
             this.ProjectRFA1_8zb.Values.Text = "0";
             this.ProjectRFA1_8zb.Visible = false;
@@ -1503,8 +1503,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_7zb.Location = new System.Drawing.Point(540, 423);
             this.ProjectRFA1_7zb.Name = "ProjectRFA1_7zb";
-            this.ProjectRFA1_7zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_7zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_7zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_7zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_7zb.TabIndex = 68;
             this.ProjectRFA1_7zb.Values.Text = "0";
             this.ProjectRFA1_7zb.Visible = false;
@@ -1513,8 +1513,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_9zb.Location = new System.Drawing.Point(540, 483);
             this.ProjectRFA1_9zb.Name = "ProjectRFA1_9zb";
-            this.ProjectRFA1_9zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA1_9zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_9zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA1_9zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_9zb.TabIndex = 69;
             this.ProjectRFA1_9zb.Values.Text = "0";
             this.ProjectRFA1_9zb.Visible = false;
@@ -1523,8 +1523,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA2zb.Location = new System.Drawing.Point(540, 513);
             this.ProjectRFA2zb.Name = "ProjectRFA2zb";
-            this.ProjectRFA2zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA2zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA2zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA2zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA2zb.TabIndex = 70;
             this.ProjectRFA2zb.Values.Text = "0";
             this.ProjectRFA2zb.Visible = false;
@@ -1533,8 +1533,8 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA2_1zb.Location = new System.Drawing.Point(540, 543);
             this.ProjectRFA2_1zb.Name = "ProjectRFA2_1zb";
-            this.ProjectRFA2_1zb.Size = new System.Drawing.Size(1, 20);
-            this.ProjectRFA2_1zb.StateNormal.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA2_1zb.Size = new System.Drawing.Size(1, 23);
+            this.ProjectRFA2_1zb.StateNormal.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA2_1zb.TabIndex = 71;
             this.ProjectRFA2_1zb.Values.Text = "0";
             this.ProjectRFA2_1zb.Visible = false;
@@ -1544,11 +1544,11 @@ namespace ProjectReporter.Controls
             this.kryptonLabel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonLabel7.Location = new System.Drawing.Point(3, 303);
             this.kryptonLabel7.Name = "kryptonLabel7";
-            this.kryptonLabel7.Size = new System.Drawing.Size(113, 24);
+            this.kryptonLabel7.Size = new System.Drawing.Size(120, 24);
             this.kryptonLabel7.StateCommon.Padding = new System.Windows.Forms.Padding(30, -1, -1, -1);
-            this.kryptonLabel7.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel7.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel7.TabIndex = 11;
-            this.kryptonLabel7.Values.Text = "（1）其他";
+            this.kryptonLabel7.Values.Text = "（2）其他";
             // 
             // ProjectRFA1_3_2
             // 
@@ -1566,7 +1566,7 @@ namespace ProjectReporter.Controls
             this.ProjectRFA1_3_2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_2.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectRFA1_3_2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectRFA1_3_2.TabIndex = 32;
             this.ProjectRFA1_3_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectRFA1_3_2.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
@@ -1632,7 +1632,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel93.Location = new System.Drawing.Point(3, 32);
             this.kryptonLabel93.Name = "kryptonLabel93";
             this.kryptonLabel93.Size = new System.Drawing.Size(101, 23);
-            this.kryptonLabel93.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel93.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel93.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel93.StateCommon.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel93.TabIndex = 1;
@@ -1644,7 +1644,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel94.Location = new System.Drawing.Point(110, 32);
             this.kryptonLabel94.Name = "kryptonLabel94";
             this.kryptonLabel94.Size = new System.Drawing.Size(101, 23);
-            this.kryptonLabel94.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel94.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel94.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel94.TabIndex = 2;
             this.kryptonLabel94.Values.Text = "第二年";
@@ -1655,7 +1655,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel95.Location = new System.Drawing.Point(324, 32);
             this.kryptonLabel95.Name = "kryptonLabel95";
             this.kryptonLabel95.Size = new System.Drawing.Size(101, 23);
-            this.kryptonLabel95.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel95.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel95.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel95.TabIndex = 3;
             this.kryptonLabel95.Values.Text = "第四年";
@@ -1666,7 +1666,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel96.Location = new System.Drawing.Point(217, 32);
             this.kryptonLabel96.Name = "kryptonLabel96";
             this.kryptonLabel96.Size = new System.Drawing.Size(101, 23);
-            this.kryptonLabel96.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel96.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel96.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel96.TabIndex = 4;
             this.kryptonLabel96.Values.Text = "第三年";
@@ -1677,7 +1677,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel97.Location = new System.Drawing.Point(431, 32);
             this.kryptonLabel97.Name = "kryptonLabel97";
             this.kryptonLabel97.Size = new System.Drawing.Size(103, 23);
-            this.kryptonLabel97.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel97.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel97.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel97.TabIndex = 5;
             this.kryptonLabel97.Values.Text = "第五年";
@@ -1688,7 +1688,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectOutlay1.Location = new System.Drawing.Point(3, 61);
             this.ProjectOutlay1.Name = "ProjectOutlay1";
-            this.ProjectOutlay1.Size = new System.Drawing.Size(101, 24);
+            this.ProjectOutlay1.Size = new System.Drawing.Size(101, 25);
             this.ProjectOutlay1.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -1696,7 +1696,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectOutlay1.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectOutlay1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectOutlay1.TabIndex = 40;
             this.ProjectOutlay1.Text = "0";
             this.ProjectOutlay1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1708,7 +1708,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectOutlay2.Location = new System.Drawing.Point(110, 61);
             this.ProjectOutlay2.Name = "ProjectOutlay2";
-            this.ProjectOutlay2.Size = new System.Drawing.Size(101, 24);
+            this.ProjectOutlay2.Size = new System.Drawing.Size(101, 25);
             this.ProjectOutlay2.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -1716,7 +1716,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectOutlay2.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectOutlay2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectOutlay2.TabIndex = 41;
             this.ProjectOutlay2.Text = "0";
             this.ProjectOutlay2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1728,7 +1728,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectOutlay3.Location = new System.Drawing.Point(217, 61);
             this.ProjectOutlay3.Name = "ProjectOutlay3";
-            this.ProjectOutlay3.Size = new System.Drawing.Size(101, 24);
+            this.ProjectOutlay3.Size = new System.Drawing.Size(101, 25);
             this.ProjectOutlay3.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -1736,7 +1736,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay3.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectOutlay3.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectOutlay3.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectOutlay3.TabIndex = 42;
             this.ProjectOutlay3.Text = "0";
             this.ProjectOutlay3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1748,7 +1748,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectOutlay4.Location = new System.Drawing.Point(324, 61);
             this.ProjectOutlay4.Name = "ProjectOutlay4";
-            this.ProjectOutlay4.Size = new System.Drawing.Size(101, 24);
+            this.ProjectOutlay4.Size = new System.Drawing.Size(101, 25);
             this.ProjectOutlay4.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -1756,7 +1756,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectOutlay4.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectOutlay4.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectOutlay4.TabIndex = 43;
             this.ProjectOutlay4.Text = "0";
             this.ProjectOutlay4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1768,7 +1768,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectOutlay5.Location = new System.Drawing.Point(431, 61);
             this.ProjectOutlay5.Name = "ProjectOutlay5";
-            this.ProjectOutlay5.Size = new System.Drawing.Size(103, 24);
+            this.ProjectOutlay5.Size = new System.Drawing.Size(103, 25);
             this.ProjectOutlay5.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
@@ -1776,7 +1776,7 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay5.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectOutlay5.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.ProjectOutlay5.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ProjectOutlay5.TabIndex = 44;
             this.ProjectOutlay5.Text = "0";
             this.ProjectOutlay5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1882,7 +1882,7 @@ namespace ProjectReporter.Controls
             this.txtZiChouJingFei.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtZiChouJingFei.StateCommon.Content.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.txtZiChouJingFei.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtZiChouJingFei.TabIndex = 45;
             this.txtZiChouJingFei.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1890,9 +1890,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel4.Location = new System.Drawing.Point(416, 5);
             this.kryptonLabel4.Name = "kryptonLabel4";
-            this.kryptonLabel4.Size = new System.Drawing.Size(62, 23);
+            this.kryptonLabel4.Size = new System.Drawing.Size(65, 23);
             this.kryptonLabel4.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel4.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel4.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel4.TabIndex = 29;
             this.kryptonLabel4.Values.Text = "万元";
             // 
@@ -1900,9 +1900,9 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel3.Location = new System.Drawing.Point(4, 5);
             this.kryptonLabel3.Name = "kryptonLabel3";
-            this.kryptonLabel3.Size = new System.Drawing.Size(268, 23);
+            this.kryptonLabel3.Size = new System.Drawing.Size(292, 23);
             this.kryptonLabel3.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel3.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel3.TabIndex = 29;
             this.kryptonLabel3.Values.Text = "本项目申请经费0万元，自筹经费";
             // 
@@ -1920,7 +1920,7 @@ namespace ProjectReporter.Controls
             // lklDownloadFuJian
             // 
             this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lklDownloadFuJian.Location = new System.Drawing.Point(94, 23);
+            this.lklDownloadFuJian.Location = new System.Drawing.Point(102, 23);
             this.lklDownloadFuJian.Name = "lklDownloadFuJian";
             this.lklDownloadFuJian.Size = new System.Drawing.Size(125, 35);
             this.lklDownloadFuJian.TabIndex = 31;
@@ -1934,8 +1934,8 @@ namespace ProjectReporter.Controls
             this.kryptonLabel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonLabel5.Location = new System.Drawing.Point(0, 23);
             this.kryptonLabel5.Name = "kryptonLabel5";
-            this.kryptonLabel5.Size = new System.Drawing.Size(94, 35);
-            this.kryptonLabel5.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel5.Size = new System.Drawing.Size(102, 35);
+            this.kryptonLabel5.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel5.TabIndex = 32;
             this.kryptonLabel5.Values.Text = "填写说明：";
             // 
@@ -1946,7 +1946,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel2.Name = "kryptonLabel2";
             this.kryptonLabel2.Size = new System.Drawing.Size(537, 23);
             this.kryptonLabel2.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
-            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
+            this.kryptonLabel2.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel2.TabIndex = 30;
             this.kryptonLabel2.Values.Text = "注：经费预算按照《军队单位科研经费使用管理规定（试行）》（[2017]8号）有关要求编制。";
             // 
