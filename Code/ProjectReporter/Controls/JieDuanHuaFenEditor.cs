@@ -304,5 +304,27 @@ namespace ProjectReporter.Controls
 
             return dgvDetail.Rows.Count >= 1;
         }
+
+        private void dgvDetail_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                string content = dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
+                ProjectReporter.Forms.TextBoxForm textboxForm = new Forms.TextBoxForm(content);
+                if (textboxForm.ShowDialog() == DialogResult.OK)
+                {
+                    dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = textboxForm.SelectedText;
+                }
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                string content = dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
+                ProjectReporter.Forms.TextBoxForm textboxForm = new Forms.TextBoxForm(content);
+                if (textboxForm.ShowDialog() == DialogResult.OK)
+                {
+                    dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = textboxForm.SelectedText;
+                }
+            }
+        }
     }
 }

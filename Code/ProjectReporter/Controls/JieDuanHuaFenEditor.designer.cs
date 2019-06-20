@@ -197,6 +197,7 @@
             this.dgvDetail.StateCommon.HeaderColumn.Content.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.dgvDetail.TabIndex = 4;
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
+            this.dgvDetail.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentDoubleClick);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
             // panel1
@@ -331,6 +332,7 @@
             this.colDest.FillWeight = 59.21053F;
             this.colDest.HeaderText = "完成内容及阶段目标";
             this.colDest.Name = "colDest";
+            this.colDest.ReadOnly = true;
             // 
             // colContent
             // 
@@ -345,6 +347,7 @@
             this.colResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colResult.HeaderText = "阶段成果、考核指标及考核方式";
             this.colResult.Name = "colResult";
+            this.colResult.ReadOnly = true;
             // 
             // colTarget
             // 
