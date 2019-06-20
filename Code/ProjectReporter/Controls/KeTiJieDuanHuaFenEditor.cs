@@ -275,6 +275,11 @@ namespace ProjectReporter.Controls
 
         private void dgvDetail_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void dgvDetail_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
             if (e.ColumnIndex == 3)
             {
                 string content = dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null ? dgvDetail.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() : string.Empty;
