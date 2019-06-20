@@ -146,6 +146,7 @@ namespace ProjectReporter
             this.feUI31 = new ProjectReporter.Controls.ChengNuoShuEditor();
             this.topBanner = new System.Windows.Forms.PictureBox();
             this.kpcontact = new ProjectReporter.Controls.HSkinTableLayoutPanel();
+            this.btnSave2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpcontactinner)).BeginInit();
@@ -284,6 +285,7 @@ namespace ProjectReporter
             // kryptonPanel1
             // 
             this.kryptonPanel1.Controls.Add(this.btninit);
+            this.kryptonPanel1.Controls.Add(this.btnSave2);
             this.kryptonPanel1.Controls.Add(this.btnImport);
             this.kryptonPanel1.Controls.Add(this.btnUnitManager);
             this.kryptonPanel1.Controls.Add(this.btnPersonManager);
@@ -302,12 +304,12 @@ namespace ProjectReporter
             // btninit
             // 
             this.btninit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btninit.Location = new System.Drawing.Point(477, 0);
+            this.btninit.Location = new System.Drawing.Point(368, 0);
             this.btninit.Name = "btninit";
             this.btninit.Size = new System.Drawing.Size(109, 41);
-            this.btninit.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btninit.StateCommon.Back.Image")));
+            this.btninit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btninit.TabIndex = 25;
-            this.btninit.Values.Text = "";
+            this.btninit.Values.Text = "新  建";
             this.btninit.Click += new System.EventHandler(this.btninit_Click);
             // 
             // btnImport
@@ -316,9 +318,9 @@ namespace ProjectReporter
             this.btnImport.Location = new System.Drawing.Point(586, 0);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(109, 41);
-            this.btnImport.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.StateCommon.Back.Image")));
+            this.btnImport.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnImport.TabIndex = 24;
-            this.btnImport.Values.Text = "";
+            this.btnImport.Values.Text = "导  入";
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnUnitManager
@@ -352,9 +354,9 @@ namespace ProjectReporter
             this.btnwordview.Location = new System.Drawing.Point(913, 0);
             this.btnwordview.Name = "btnwordview";
             this.btnwordview.Size = new System.Drawing.Size(109, 41);
-            this.btnwordview.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnwordview.StateCommon.Back.Image")));
+            this.btnwordview.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnwordview.TabIndex = 23;
-            this.btnwordview.Values.Text = "";
+            this.btnwordview.Values.Text = "预  览";
             this.btnwordview.Click += new System.EventHandler(this.btnwordview_Click);
             // 
             // btnSave
@@ -375,9 +377,9 @@ namespace ProjectReporter
             this.btnExport.Location = new System.Drawing.Point(1131, 0);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(109, 41);
-            this.btnExport.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.StateCommon.Back.Image")));
+            this.btnExport.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnExport.TabIndex = 13;
-            this.btnExport.Values.Text = "";
+            this.btnExport.Values.Text = "导  出";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnhelp
@@ -386,10 +388,9 @@ namespace ProjectReporter
             this.btnhelp.Location = new System.Drawing.Point(1240, 0);
             this.btnhelp.Name = "btnhelp";
             this.btnhelp.Size = new System.Drawing.Size(109, 41);
-            this.btnhelp.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnhelp.StateCommon.Back.Image")));
-            this.btnhelp.StateCommon.Content.ShortText.Font = new System.Drawing.Font("黑体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnhelp.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnhelp.TabIndex = 10;
-            this.btnhelp.Values.Text = "";
+            this.btnhelp.Values.Text = "使用指南";
             this.btnhelp.Click += new System.EventHandler(this.btnhelp_Click);
             // 
             // btnquit
@@ -398,9 +399,9 @@ namespace ProjectReporter
             this.btnquit.Location = new System.Drawing.Point(1349, 0);
             this.btnquit.Name = "btnquit";
             this.btnquit.Size = new System.Drawing.Size(109, 41);
-            this.btnquit.StateCommon.Back.Image = ((System.Drawing.Image)(resources.GetObject("btnquit.StateCommon.Back.Image")));
+            this.btnquit.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnquit.TabIndex = 5;
-            this.btnquit.Values.Text = "";
+            this.btnquit.Values.Text = "退  出";
             this.btnquit.Click += new System.EventHandler(this.btnquit_Click);
             // 
             // lbcurtime
@@ -1849,6 +1850,17 @@ namespace ProjectReporter
             this.kpcontact.Size = new System.Drawing.Size(200, 100);
             this.kpcontact.TabIndex = 0;
             // 
+            // btnSave2
+            // 
+            this.btnSave2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSave2.Location = new System.Drawing.Point(477, 0);
+            this.btnSave2.Name = "btnSave2";
+            this.btnSave2.Size = new System.Drawing.Size(109, 41);
+            this.btnSave2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSave2.TabIndex = 28;
+            this.btnSave2.Values.Text = "保  存";
+            this.btnSave2.Click += new System.EventHandler(this.btnSave2_Click);
+            // 
             // MainForm
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -2134,6 +2146,7 @@ namespace ProjectReporter
         private KryptonPage kryptonPage3;
         private ChengNuoShuEditor feUI31;
         private BaoMiZiZhiFuYinJianEditor feUI25;
+        private KryptonButton btnSave2;
     }
 }
 

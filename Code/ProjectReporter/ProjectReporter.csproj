@@ -606,6 +606,7 @@
     <Content Include="Office.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Save.png" />
     <Content Include="w5.ico" />
     <None Include="Resources\tianbao.png" />
     <None Include="Resources\xiangmuxinxi.png" />

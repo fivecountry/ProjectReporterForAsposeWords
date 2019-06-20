@@ -831,5 +831,11 @@ namespace ProjectReporter
                 be.OnSaveEvent();
             }
         }
+
+        private void btnSave2_Click(object sender, EventArgs e)
+        {
+            SaveAll();
+            MessageBox.Show("保存完成！");
+        }
     }
 }
