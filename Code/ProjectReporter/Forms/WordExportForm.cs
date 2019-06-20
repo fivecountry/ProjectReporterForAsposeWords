@@ -354,7 +354,7 @@ namespace ProjectReporter.Forms
                                         ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
 
                                         //输出格式
-                                        string outputFormat = "完成内容及阶段目标:{0}\n阶段成果、考核指标及考核方式:{1}\n阶段经费:{3}万";
+                                        string outputFormat = "完成内容及阶段目标:{0}\n阶段成果、考核指标及考核方式:{1}\n阶段经费:{2}万";
 
                                         string resultStr = string.Empty;
                                         //阶段数据
@@ -425,7 +425,7 @@ namespace ProjectReporter.Forms
                                     ProjectAndStep curProjectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID = '" + curStep.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
 
                                     //输出格式
-                                    string outputFormat = "完成内容及阶段目标:{0}\n阶段成果、考核指标及考核方式:{1}\n阶段经费:{3}万";
+                                    string outputFormat = "完成内容及阶段目标:{0}\n阶段成果、考核指标及考核方式:{1}\n阶段经费:{2}万";
 
                                     string resultStr = string.Empty;
                                     //阶段数据
