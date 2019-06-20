@@ -100,7 +100,8 @@ namespace ProjectReporter.Controls
         {
             PARAFORMAT2 fmt = new PARAFORMAT2();
             fmt.cbSize = Marshal.SizeOf(fmt);
-            fmt.bLineSpacingRule = 3;// bLineSpacingRule;
+            //fmt.bLineSpacingRule = 3;// bLineSpacingRule;
+            fmt.bLineSpacingRule = 1;// bLineSpacingRule;
             fmt.dyLineSpacing = dyLineSpacing;
             fmt.dwMask = PFM_LINESPACING;
             try
