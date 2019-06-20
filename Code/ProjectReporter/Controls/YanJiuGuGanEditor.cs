@@ -75,20 +75,20 @@ namespace ProjectReporter.Controls
             JobDict.Clear();
 
             //项目的负责人和成员
-            string projectA = "项目-负责人";
-            string projectB = "项目-成员";
+            string projectA = "项目负责人";
+            //string projectB = "项目-成员";
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectA);
-            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectB);
+            //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectB);
             JobDict.Add(projectA, MainForm.Instance.ProjectObj);
-            JobDict.Add(projectB, MainForm.Instance.ProjectObj);
+            //JobDict.Add(projectB, MainForm.Instance.ProjectObj);
 
             List<Project> ketiList = ConnectionManager.Context.table("Project").where("ParentID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Project>(new Project());
             if (ketiList != null)
             {
                 foreach (Project proj in ketiList)
                 {
-                    projectA = proj.Name + "-负责人";
-                    projectB = proj.Name + "-成员";
+                    projectA = proj.Name + "负责人";
+                    string projectB = proj.Name + "成员";
                     ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectA);
                     ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectB);
                     JobDict.Add(projectA, proj);
