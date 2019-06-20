@@ -439,7 +439,7 @@ namespace ProjectReporter
             sf.Trimming = StringTrimming.Word;
             sf.FormatFlags = StringFormatFlags.LineLimit;
 
-            string[] chsNumbers = new string[] { "一、", "二、", "三、", "四、", "五、", "六、", "七、", "八、", "九、", "十、", "十一、", "十二、", "十三、", "十四、", "", "", "", "", "", };
+            string[] chsNumbers = new string[] { "一、", "二、", "三、", "四、", "五、", "六、", "七、", "八、", "九、", "十、", "十一、", "", "", "", "", "", "", "", "", };
 
             int iconIndex = 0;
             foreach (KryptonPage kp in edithost2.Pages)
@@ -454,6 +454,10 @@ namespace ProjectReporter
                     // 取图标
                     //Image img = GetBarButtonIcon(iconIndex);
                     Image img = null;
+                    if (iconIndex <= 1)
+                    {
+                        img = GetBarButtonIcon(iconIndex);
+                    }
 
                     if (img != null)
                     {
@@ -466,7 +470,7 @@ namespace ProjectReporter
                     else
                     {
                         //画字符串
-                        g.DrawString(chsNumbers[iconIndex] + kp.Text, new Font("微软雅黑", 11), new SolidBrush(Color.Black), new RectangleF(10, 0, bmp.Width - 10, bmp.Height), sf);
+                        g.DrawString(chsNumbers[iconIndex - 2] + kp.Text, new Font("微软雅黑", 11), new SolidBrush(Color.Black), new RectangleF(10, 0, bmp.Width - 10, bmp.Height), sf);
                     }
                 }
                 catch (Exception ex) { }
