@@ -165,7 +165,7 @@ namespace ProjectReporter.Forms
                 wu.InsertValue("项目负责人性别", projectPersonObj.Sex);
                 wu.InsertValue("项目负责人生日", (projectPersonObj.Birthday != null ? projectPersonObj.Birthday.Value.ToShortDateString() : "未知"));
                 wu.InsertValue("项目负责人职务", projectPersonObj.Job);
-                wu.InsertValue("项目负责人座机", projectPersonObj.Telephone);
+                wu.InsertValue("项目负责人座机", projectPersonObj.Specialty);
                 wu.InsertValue("项目负责人手机", projectPersonObj.MobilePhone);
 
                 Unit whiteUnit = ConnectionManager.Context.table("Unit").where("ID in (select UnitID from WhiteList where ProjectID = '" + MainForm.Instance.ProjectObj.ID + "')").select("*").getItem<Unit>(new Unit());
@@ -205,15 +205,17 @@ namespace ProjectReporter.Forms
 
                 List<KeyValuePair<string, Project>> ketiMap = new List<KeyValuePair<string, Project>>();
                 #region 插入课题详细RTF
+
+                string[] chsNumbers = new string[] { "", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
                 try
-                {                    
+                {
                     ketiMap.Add(new KeyValuePair<string, Project>("项目", MainForm.Instance.ProjectObj));
 
                     //替换课题详细内容
                     int ketiIndex = 1;
                     foreach (Project proj in ketiList)
                     {
-                        string ketiCode = "课题" + ketiIndex;
+                        string ketiCode = "课题" + chsNumbers[ketiIndex];
 
                         wu.SelectBookMark("课题详细_" + ketiIndex);
                         wu.ReplaceA("F2-" + ketiIndex, ketiCode + ":" + proj.Name);
@@ -300,7 +302,7 @@ namespace ProjectReporter.Forms
                         }
 
                         //ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
-                        ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
+                        ketiStringBuilder.Append("课题").Append(chsNumbers[indexx]).Append("(").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
                     }
                     wu.InsertValue("课题摘要", ketiStringBuilder.ToString());
                 }
@@ -697,8 +699,8 @@ namespace ProjectReporter.Forms
                                     int rowStart = dataIndex + (k * 3);
                                     int rowEnd = rowStart + 2;
 
-                                    #region 写入标签                                    
-                                    table.Cell(rowStart, 1).Range.Text = "课题" + (k + 1);
+                                    #region 写入标签
+                                    table.Cell(rowStart, 1).Range.Text = "课题" + chsNumbers[(k + 1)];
                                     table.Cell(rowStart, 1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     table.Cell(rowStart, 1).Select();
@@ -728,7 +730,7 @@ namespace ProjectReporter.Forms
                                     table.Cell(rowStart + 1, 2).Select();
                                     wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
-                                    table.Cell(rowStart + 1, 4).Range.Text = "座机";
+                                    table.Cell(rowStart + 1, 4).Range.Text = "技术方向";
                                     table.Cell(rowStart + 1, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     table.Cell(rowStart + 1, 4).Select();
@@ -778,7 +780,7 @@ namespace ProjectReporter.Forms
                                     table.Cell(rowStart + 1, 3).Select();
                                     wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
-                                    table.Cell(rowStart + 1, 5).Range.Text = personObj.Telephone;
+                                    table.Cell(rowStart + 1, 5).Range.Text = personObj.Specialty;
                                     table.Cell(rowStart + 1, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     table.Cell(rowStart + 1, 5).Select();
