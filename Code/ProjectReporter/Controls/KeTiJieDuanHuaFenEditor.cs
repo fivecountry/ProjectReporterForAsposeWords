@@ -145,61 +145,64 @@ namespace ProjectReporter.Controls
 
         private void UpdateStepList()
         {
-            KeTiList = ConnectionManager.Context.table("Project").where("Type='" + "课题" + "' and ParentID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Project>(new Project());
-            StepList = ConnectionManager.Context.table("Step").where("ProjectID in (select ID from Project where Type='" + "课题" + "' and ParentID='" + MainForm.Instance.ProjectObj.ID + "')").select("*").getList<Step>(new Step());
-            if (StepList != null && KeTiList != null && StepList.Count >= 1 && KeTiList.Count >= 1)
+            if (MainForm.Instance.ProjectObj != null)
             {
-                //数据行列表，先生成然后等待排序
-                List<DataGridViewRow> rowList = new List<DataGridViewRow>();
-
-                int indexx = 0;
-                foreach (Step step in StepList)
+                KeTiList = ConnectionManager.Context.table("Project").where("Type='" + "课题" + "' and ParentID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Project>(new Project());
+                StepList = ConnectionManager.Context.table("Step").where("ProjectID in (select ID from Project where Type='" + "课题" + "' and ParentID='" + MainForm.Instance.ProjectObj.ID + "')").select("*").getList<Step>(new Step());
+                if (StepList != null && KeTiList != null && StepList.Count >= 1 && KeTiList.Count >= 1)
                 {
-                    ProjectAndStep projectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
-                    Project ketiProject = null;
-                    foreach (Project pp in KeTiList)
+                    //数据行列表，先生成然后等待排序
+                    List<DataGridViewRow> rowList = new List<DataGridViewRow>();
+
+                    int indexx = 0;
+                    foreach (Step step in StepList)
                     {
-                        if (pp.ID != null && pp.ID.Equals(step.ProjectID))
+                        ProjectAndStep projectAndStep = ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").select("*").getItem<ProjectAndStep>(new ProjectAndStep());
+                        Project ketiProject = null;
+                        foreach (Project pp in KeTiList)
                         {
-                            ketiProject = pp;
-                            break;
+                            if (pp.ID != null && pp.ID.Equals(step.ProjectID))
+                            {
+                                ketiProject = pp;
+                                break;
+                            }
                         }
+
+                        if (ketiProject == null || projectAndStep == null)
+                        {
+                            continue;
+                        }
+
+                        indexx++;
+                        List<object> cells = new List<object>();
+                        cells.Add(indexx + "");
+                        cells.Add(ketiProject.Name);
+                        cells.Add(step.StepIndex);
+                        cells.Add(projectAndStep.StepDest);
+                        cells.Add(projectAndStep.StepContent);
+                        cells.Add(projectAndStep.StepResult);
+                        cells.Add(projectAndStep.StepTarget);
+                        cells.Add(projectAndStep.Money);
+
+                        DataGridViewRow dgvRow = new DataGridViewRow();
+                        dgvRow.CreateCells(dgvDetail, cells.ToArray());
+                        dgvRow.Tag = step;
+
+                        rowList.Add(dgvRow);
                     }
 
-                    if (ketiProject == null || projectAndStep == null)
+                    foreach (DataGridViewColumn col in dgvDetail.Columns)
                     {
-                        continue;
+                        col.SortMode = DataGridViewColumnSortMode.NotSortable;
                     }
-                    
-                    indexx++;
-                    List<object> cells = new List<object>();
-                    cells.Add(indexx + "");
-                    cells.Add(ketiProject.Name);
-                    cells.Add(step.StepIndex);
-                    cells.Add(projectAndStep.StepDest);
-                    cells.Add(projectAndStep.StepContent);
-                    cells.Add(projectAndStep.StepResult);
-                    cells.Add(projectAndStep.StepTarget);
-                    cells.Add(projectAndStep.Money);
-                    
-                    DataGridViewRow dgvRow = new DataGridViewRow();
-                    dgvRow.CreateCells(dgvDetail, cells.ToArray());
-                    dgvRow.Tag = step;
-                    
-                    rowList.Add(dgvRow);
-                }
 
-                foreach (DataGridViewColumn col in dgvDetail.Columns)
-                {
-                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
-                }
-
-                dgvDetail.Rows.Clear();
-                foreach (IGrouping<object, DataGridViewRow> group in rowList.GroupBy(x => x.Cells[1].Value))
-                {
-                    foreach (DataGridViewRow student in group.OrderBy(a => (int)a.Cells[2].Value))//不排序直接输出的话：Student student in group
+                    dgvDetail.Rows.Clear();
+                    foreach (IGrouping<object, DataGridViewRow> group in rowList.GroupBy(x => x.Cells[1].Value))
                     {
-                        dgvDetail.Rows.Add(student);
+                        foreach (DataGridViewRow student in group.OrderBy(a => (int)a.Cells[2].Value))//不排序直接输出的话：Student student in group
+                        {
+                            dgvDetail.Rows.Add(student);
+                        }
                     }
                 }
             }

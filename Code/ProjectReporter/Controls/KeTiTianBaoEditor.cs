@@ -68,69 +68,72 @@ namespace ProjectReporter.Controls
 
         private void UpdateKeTiList()
         {
-            KeTiList = ConnectionManager.Context.table("Project").where("Type='" + "课题" + "' and ParentID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Project>(new Project());
-
-            dgvDetail.Rows.Clear();
-            ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 1]).Image = ProjectReporter.Properties.Resources.DELETE_28;
-            int indexx = 0;
-            foreach (Project keti in KeTiList)
+            if (MainForm.Instance.ProjectObj != null)
             {
-                string personName = string.Empty;
-                string personIdCard = string.Empty;
-                string unitName = string.Empty;
-                //string content = string.Empty;
-                //string unitBankNo = string.Empty;
-                //string unitExtId = string.Empty;
-                Person personObj = null;
-                Unit unitObj = null;
-                //UnitExt unitExtObj = null;
+                KeTiList = ConnectionManager.Context.table("Project").where("Type='" + "课题" + "' and ParentID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<Project>(new Project());
 
-                Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + keti.ID + "'").select("*").getItem<Task>(new Task());
-                if (ketiTask != null)
+                dgvDetail.Rows.Clear();
+                ((DataGridViewImageColumn)dgvDetail.Columns[dgvDetail.Columns.Count - 1]).Image = ProjectReporter.Properties.Resources.DELETE_28;
+                int indexx = 0;
+                foreach (Project keti in KeTiList)
                 {
-                    //content = ketiTask.Content;
+                    string personName = string.Empty;
+                    string personIdCard = string.Empty;
+                    string unitName = string.Empty;
+                    //string content = string.Empty;
+                    //string unitBankNo = string.Empty;
+                    //string unitExtId = string.Empty;
+                    Person personObj = null;
+                    Unit unitObj = null;
+                    //UnitExt unitExtObj = null;
 
-                    personObj = ConnectionManager.Context.table("Person").where("ID='" + ketiTask.PersonID + "'").select("*").getItem<Person>(new Person());
-                    unitObj = ConnectionManager.Context.table("Unit").where("ID='" + keti.UnitID + "'").select("*").getItem<Unit>(new Unit());
-                    //unitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + keti.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
-
-                    if (personObj != null)
+                    Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + keti.ID + "'").select("*").getItem<Task>(new Task());
+                    if (ketiTask != null)
                     {
-                        personName = personObj.Name;
-                        personIdCard = personObj.IDCard;
+                        //content = ketiTask.Content;
+
+                        personObj = ConnectionManager.Context.table("Person").where("ID='" + ketiTask.PersonID + "'").select("*").getItem<Person>(new Person());
+                        unitObj = ConnectionManager.Context.table("Unit").where("ID='" + keti.UnitID + "'").select("*").getItem<Unit>(new Unit());
+                        //unitExtObj = ConnectionManager.Context.table("UnitExt").where("ID='" + keti.UnitID + "'").select("*").getItem<UnitExt>(new UnitExt());
+
+                        if (personObj != null)
+                        {
+                            personName = personObj.Name;
+                            personIdCard = personObj.IDCard;
+                        }
+
+                        if (unitObj != null)
+                        {
+                            unitName = unitObj.UnitName;
+                        }
+
+                        //if (unitExtObj != null)
+                        //{
+                        //    unitBankNo = unitExtObj.UnitBankNo;
+                        //    unitExtId = unitExtObj.ID;
+                        //}
                     }
 
-                    if (unitObj != null)
-                    {
-                        unitName = unitObj.UnitName;
-                    }
+                    indexx++;
+                    List<object> cells = new List<object>();
+                    cells.Add(indexx + "");
+                    cells.Add(keti.Name);
+                    cells.Add(keti.SecretLevel);
+                    cells.Add(personName);
+                    cells.Add(personIdCard);
+                    cells.Add(unitName);
+                    //cells.Add(unitBankNo);
+                    cells.Add("");
+                    cells.Add(ketiTask.TotalMoney);
+                    cells.Add(keti.Type2 == "总体课题");
+                    cells.Add("填报课题内容");
 
-                    //if (unitExtObj != null)
-                    //{
-                    //    unitBankNo = unitExtObj.UnitBankNo;
-                    //    unitExtId = unitExtObj.ID;
-                    //}
+                    int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
+                    dgvDetail.Rows[rowIndex].Tag = keti;
+
+                    dgvDetail.Rows[rowIndex].Cells[6].Tag = keti.UnitID;
+                    dgvDetail.Rows[rowIndex].Cells[5].Tag = unitObj;
                 }
-
-                indexx++;
-                List<object> cells = new List<object>();
-                cells.Add(indexx + "");
-                cells.Add(keti.Name);
-                cells.Add(keti.SecretLevel);
-                cells.Add(personName);
-                cells.Add(personIdCard);
-                cells.Add(unitName);
-                //cells.Add(unitBankNo);
-                cells.Add("");
-                cells.Add(ketiTask.TotalMoney);
-                cells.Add(keti.Type2 == "总体课题");
-                cells.Add("填报课题内容");
-
-                int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
-                dgvDetail.Rows[rowIndex].Tag = keti;
-
-                dgvDetail.Rows[rowIndex].Cells[6].Tag = keti.UnitID;
-                dgvDetail.Rows[rowIndex].Cells[5].Tag = unitObj;
             }
         }
 

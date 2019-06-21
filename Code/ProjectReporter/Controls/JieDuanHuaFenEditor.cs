@@ -56,11 +56,14 @@ namespace ProjectReporter.Controls
         {
             base.RefreshView();
 
-            txtTotalTime.Text = MainForm.Instance.ProjectObj.TotalTime != null ? MainForm.Instance.ProjectObj.TotalTime.Value + "" : "0";
-            txtTotalMoney.Text = MainForm.Instance.ProjectObj.TotalMoney != null ? MainForm.Instance.ProjectObj.TotalMoney.Value + "" : "0";
-            txtStepCount.Text = "0";
+            if (MainForm.Instance.ProjectObj != null)
+            {
+                txtTotalTime.Text = MainForm.Instance.ProjectObj.TotalTime != null ? MainForm.Instance.ProjectObj.TotalTime.Value + "" : "0";
+                txtTotalMoney.Text = MainForm.Instance.ProjectObj.TotalMoney != null ? MainForm.Instance.ProjectObj.TotalMoney.Value + "" : "0";
+                txtStepCount.Text = "0";
 
-            UpdateStepList();
+                UpdateStepList();
+            }
         }
 
         public void UpdateStepList()
@@ -117,128 +120,135 @@ namespace ProjectReporter.Controls
         {
             base.OnSaveEvent();
 
-            foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+            try
             {
-                int lastStepIndex = -1;
+                foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+                {
+                    int lastStepIndex = -1;
 
-                #region 添加Step到项目
-                Step step = null;
-                if (dgvRow.Tag == null)
-                {
-                    //新行
-                    step = new Step();
-                    step.ProjectID = MainForm.Instance.ProjectObj.ID;
-                }
-                else
-                {
-                    //已在数据
-                    step = (Step)dgvRow.Tag;
-
-                    //当前的StepIndex 
-                    lastStepIndex = step.StepIndex != null ? step.StepIndex.Value : -1;
-                }
-
-                if (dgvRow.Cells[1].Value == null)
-                {   
-                    break;
-                }
-
-                if (dgvRow.Cells[2].Value == null)
-                {
-                    MessageBox.Show("对不起,请输入阶段时长(月)");
-                    break;
-                }
-
-                if (dgvRow.Cells[3].Value == null || string.IsNullOrEmpty(dgvRow.Cells[3].Value.ToString()))
-                {
-                    MessageBox.Show("对不起,请输入完成内容及阶段目标");
-                    return;
-                }
-                dgvRow.Cells[4].Value = "暂时不用";
-                if (dgvRow.Cells[4].Value == null || string.IsNullOrEmpty(dgvRow.Cells[4].Value.ToString()))
-                {
-                    MessageBox.Show("对不起,请输入完成内容");
-                    return;
-                }
-                if (dgvRow.Cells[5].Value == null || string.IsNullOrEmpty(dgvRow.Cells[5].Value.ToString()))
-                {
-                    MessageBox.Show("对不起,请输入阶段成果、考核指标及考核方式");
-                    return;
-                }
-
-                dgvRow.Cells[6].Value = "暂时不用";
-                if (dgvRow.Cells[6].Value == null || string.IsNullOrEmpty(dgvRow.Cells[6].Value.ToString()))
-                {
-                    MessageBox.Show("对不起,请输入考核指标");
-                    return;
-                }
-                if (dgvRow.Cells[7].Value == null || string.IsNullOrEmpty(dgvRow.Cells[7].Value.ToString()))
-                {
-                    MessageBox.Show("对不起,请输入阶段经费(万)");
-                    return;
-                }
-
-                step.StepIndex = Int32.Parse(((KryptonDataGridViewNumericUpDownCell)dgvRow.Cells[1]).Value.ToString());
-                step.StepTime = Int32.Parse(((KryptonDataGridViewNumericUpDownCell)dgvRow.Cells[2]).Value.ToString());
-                step.StepDest = dgvRow.Cells[3].Value.ToString();
-                step.StepContent = dgvRow.Cells[4].Value.ToString();
-                step.StepResult = dgvRow.Cells[5].Value.ToString();
-                step.StepTarget = dgvRow.Cells[6].Value.ToString();
-                step.StepMoney = decimal.Parse(dgvRow.Cells[7].Value.ToString());
-
-                if (string.IsNullOrEmpty(step.ID))
-                {
-                    step.ID = Guid.NewGuid().ToString();
-                    step.copyTo(ConnectionManager.Context.table("Step")).insert();
-                }
-                else
-                {
-                    step.copyTo(ConnectionManager.Context.table("Step")).where("ID='" + step.ID + "'").update();
-                }
-                #endregion
-
-                #region 添加课题的Step
-                if (KeTiList != null)
-                {
-                    if (lastStepIndex == -1)
+                    #region 添加Step到项目
+                    Step step = null;
+                    if (dgvRow.Tag == null)
                     {
+                        //新行
+                        step = new Step();
+                        step.ProjectID = MainForm.Instance.ProjectObj.ID;
+                    }
+                    else
+                    {
+                        //已在数据
+                        step = (Step)dgvRow.Tag;
+
+                        //当前的StepIndex 
                         lastStepIndex = step.StepIndex != null ? step.StepIndex.Value : -1;
                     }
 
-                    foreach (Project keti in KeTiList)
+                    if (dgvRow.Cells[1].Value == null)
                     {
-                       Step ketiStep = ConnectionManager.Context.table("Step").where("ProjectID='" + keti.ID + "' and StepIndex = " + lastStepIndex).select("*").getItem<Step>(new Step());
-                       if (ketiStep != null && !string.IsNullOrEmpty(ketiStep.ID))
-                       {
-                           //已存在
-                           ketiStep.StepIndex = step.StepIndex;
-                           ketiStep.StepTime = step.StepTime;
-
-                           ketiStep.copyTo(ConnectionManager.Context.table("Step")).where("ID='" + ketiStep.ID + "'").update();
-                       }
-                       else
-                       {
-                           //要添加
-                           ketiStep = new Step();
-                           ketiStep.ID = Guid.NewGuid().ToString();
-                           ketiStep.ProjectID = keti.ID;
-                           ketiStep.StepIndex = step.StepIndex;
-                           ketiStep.StepTime = step.StepTime;
-
-                           ketiStep.copyTo(ConnectionManager.Context.table("Step")).insert();
-                           
-                           //添加ProjectAndStep数据
-                           ProjectAndStep projectAndStep = new ProjectAndStep();
-                           projectAndStep.ID = Guid.NewGuid().ToString();
-                           projectAndStep.StepID = ketiStep.ID;
-                           projectAndStep.copyTo(ConnectionManager.Context.table("ProjectAndStep")).insert();
-                       }
+                        break;
                     }
-                }
-                #endregion
-            }
 
-            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
+                    if (dgvRow.Cells[2].Value == null)
+                    {
+                        MessageBox.Show("对不起,请输入阶段时长(月)");
+                        break;
+                    }
+
+                    if (dgvRow.Cells[3].Value == null || string.IsNullOrEmpty(dgvRow.Cells[3].Value.ToString()))
+                    {
+                        MessageBox.Show("对不起,请输入完成内容及阶段目标");
+                        return;
+                    }
+                    dgvRow.Cells[4].Value = "暂时不用";
+                    if (dgvRow.Cells[4].Value == null || string.IsNullOrEmpty(dgvRow.Cells[4].Value.ToString()))
+                    {
+                        MessageBox.Show("对不起,请输入完成内容");
+                        return;
+                    }
+                    if (dgvRow.Cells[5].Value == null || string.IsNullOrEmpty(dgvRow.Cells[5].Value.ToString()))
+                    {
+                        MessageBox.Show("对不起,请输入阶段成果、考核指标及考核方式");
+                        return;
+                    }
+
+                    dgvRow.Cells[6].Value = "暂时不用";
+                    if (dgvRow.Cells[6].Value == null || string.IsNullOrEmpty(dgvRow.Cells[6].Value.ToString()))
+                    {
+                        MessageBox.Show("对不起,请输入考核指标");
+                        return;
+                    }
+                    if (dgvRow.Cells[7].Value == null || string.IsNullOrEmpty(dgvRow.Cells[7].Value.ToString()))
+                    {
+                        MessageBox.Show("对不起,请输入阶段经费(万)");
+                        return;
+                    }
+
+                    step.StepIndex = Int32.Parse(((KryptonDataGridViewNumericUpDownCell)dgvRow.Cells[1]).Value.ToString());
+                    step.StepTime = Int32.Parse(((KryptonDataGridViewNumericUpDownCell)dgvRow.Cells[2]).Value.ToString());
+                    step.StepDest = dgvRow.Cells[3].Value.ToString();
+                    step.StepContent = dgvRow.Cells[4].Value.ToString();
+                    step.StepResult = dgvRow.Cells[5].Value.ToString();
+                    step.StepTarget = dgvRow.Cells[6].Value.ToString();
+                    step.StepMoney = decimal.Parse(dgvRow.Cells[7].Value.ToString());
+
+                    if (string.IsNullOrEmpty(step.ID))
+                    {
+                        step.ID = Guid.NewGuid().ToString();
+                        step.copyTo(ConnectionManager.Context.table("Step")).insert();
+                    }
+                    else
+                    {
+                        step.copyTo(ConnectionManager.Context.table("Step")).where("ID='" + step.ID + "'").update();
+                    }
+                    #endregion
+
+                    #region 添加课题的Step
+                    if (KeTiList != null)
+                    {
+                        if (lastStepIndex == -1)
+                        {
+                            lastStepIndex = step.StepIndex != null ? step.StepIndex.Value : -1;
+                        }
+
+                        foreach (Project keti in KeTiList)
+                        {
+                            Step ketiStep = ConnectionManager.Context.table("Step").where("ProjectID='" + keti.ID + "' and StepIndex = " + lastStepIndex).select("*").getItem<Step>(new Step());
+                            if (ketiStep != null && !string.IsNullOrEmpty(ketiStep.ID))
+                            {
+                                //已存在
+                                ketiStep.StepIndex = step.StepIndex;
+                                ketiStep.StepTime = step.StepTime;
+
+                                ketiStep.copyTo(ConnectionManager.Context.table("Step")).where("ID='" + ketiStep.ID + "'").update();
+                            }
+                            else
+                            {
+                                //要添加
+                                ketiStep = new Step();
+                                ketiStep.ID = Guid.NewGuid().ToString();
+                                ketiStep.ProjectID = keti.ID;
+                                ketiStep.StepIndex = step.StepIndex;
+                                ketiStep.StepTime = step.StepTime;
+
+                                ketiStep.copyTo(ConnectionManager.Context.table("Step")).insert();
+
+                                //添加ProjectAndStep数据
+                                ProjectAndStep projectAndStep = new ProjectAndStep();
+                                projectAndStep.ID = Guid.NewGuid().ToString();
+                                projectAndStep.StepID = ketiStep.ID;
+                                projectAndStep.copyTo(ConnectionManager.Context.table("ProjectAndStep")).insert();
+                            }
+                        }
+                    }
+                    #endregion
+                }
+
+                MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.ToString());
+            }
         }
 
         public List<Step> StepList { get; set; }
