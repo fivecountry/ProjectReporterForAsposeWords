@@ -65,31 +65,34 @@ namespace ProjectReporter.Controls
                     //文本行数
                     int widthRowCount = 0;
 
-                    //判断是否一行能显示完
-                    if (Width > totalSize.Width)
+                    if (Width > 2)
                     {
-                        //可以显示在一行
-                        widthRowCount = 1;
-                    }
-                    else
-                    {
-                        //不能显示在一行
-                        widthRowCount = (int)totalSize.Width / Width;
-                        int widthElse = (int)totalSize.Width % Width;
-                        if (widthElse > wordWidth)
+                        //判断是否一行能显示完
+                        if (Width > totalSize.Width)
                         {
-                            widthRowCount++;
+                            //可以显示在一行
+                            widthRowCount = 1;
                         }
-                    }
+                        else
+                        {
+                            //不能显示在一行
+                            widthRowCount = (int)totalSize.Width / Width;
+                            int widthElse = (int)totalSize.Width % Width;
+                            if (widthElse > wordWidth)
+                            {
+                                widthRowCount++;
+                            }
+                        }
 
-                    //判断是否我多行文本
-                    if (widthRowCount > 1)
-                    {
-                        Height = (widthRowCount * wordHeight) + 20;
-                    }
-                    else
-                    {
-                        Height = wordHeight + 20;
+                        //判断是否我多行文本
+                        if (widthRowCount > 1)
+                        {
+                            Height = (widthRowCount * wordHeight) + 20;
+                        }
+                        else
+                        {
+                            Height = wordHeight + 20;
+                        }
                     }
                 }
                 catch (Exception ex)
