@@ -163,7 +163,7 @@ namespace ProjectReporter.Forms
 
                 wu.InsertValue("项目负责人B", projectPersonObj.Name);
                 wu.InsertValue("项目负责人性别", projectPersonObj.Sex);
-                wu.InsertValue("项目负责人生日", (projectPersonObj.Birthday != null ? projectPersonObj.Birthday.Value.ToShortDateString() : "未知"));
+                wu.InsertValue("项目负责人生日", (projectPersonObj.Birthday != null ? projectPersonObj.Birthday.Value.ToString("yyyy-MM-dd") : "未知"));
                 wu.InsertValue("项目负责人职务", projectPersonObj.Job);
                 wu.InsertValue("项目负责人座机", projectPersonObj.Specialty);
                 wu.InsertValue("项目负责人手机", projectPersonObj.MobilePhone);
@@ -768,7 +768,7 @@ namespace ProjectReporter.Forms
                                     table.Cell(rowStart, 5).Select();
                                     wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
-                                    table.Cell(rowStart, 7).Range.Text = personObj.Birthday != null ? personObj.Birthday.Value.ToShortDateString() : string.Empty;
+                                    table.Cell(rowStart, 7).Range.Text = personObj.Birthday != null ? personObj.Birthday.Value.ToString("yyyy-MM-dd") : string.Empty;
                                     table.Cell(rowStart, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     table.Cell(rowStart, 7).Select();
