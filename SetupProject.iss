@@ -37,7 +37,7 @@ Source: "C:\Users\wcss\Desktop\Reporters\vcredist_x86.exe"; DestDir: "{tmp}"; Co
 Source: "C:\Users\wcss\Desktop\Reporters\dotNetFx40_Full_x86_x64.exe"; DestDir: "{tmp}"; CopyMode:onlyifdoesntexist;Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\Fonts\*"; DestDir: "{app}\Fonts"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\Helper\*"; DestDir: "{app}\Helper"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\wcss\Desktop\Reporters\Data\*"; DestDir: "{app}\Helper"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wcss\Desktop\Reporters\Data\*"; DestDir: "{app}\Data"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\wcss\Desktop\Reporters\ComponentFactory.Krypton.Docking.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\ComponentFactory.Krypton.Navigator.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\ComponentFactory.Krypton.Ribbon.dll"; DestDir: "{app}"; Flags: ignoreversion
