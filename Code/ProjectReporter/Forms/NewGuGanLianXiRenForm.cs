@@ -254,7 +254,7 @@ namespace ProjectReporter.Forms
                 {
                     //课题
                     task.Type = "课题";
-                    task.Role = roleName.Split('-')[1];
+                    task.Role = roleName.Replace(task.Type, string.Empty);
                 }
 
                 task.ProjectID = JobDict[roleName].ID;
