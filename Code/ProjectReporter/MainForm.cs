@@ -220,7 +220,11 @@ namespace ProjectReporter
 
         private void btnquit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex) { }
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
