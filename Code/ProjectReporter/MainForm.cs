@@ -18,6 +18,16 @@ namespace ProjectReporter
     public partial class MainForm : Form
     {
         /// <summary>
+        /// Word是否已经安装
+        /// </summary>
+        public bool IsWordInstalled = false;
+
+        /// <summary>
+        /// word版本
+        /// </summary>
+        public string WordVersion = string.Empty;
+
+        /// <summary>
         /// 是否显示备份提示
         /// </summary>
         public bool EnabledShowBackupHint = true;
@@ -66,6 +76,11 @@ namespace ProjectReporter
             InitializeComponent();
 
             Instance = this;
+
+            //检查是否已经安装Word
+            IsWordInstalled = ProjectReporter.Utility.WordUtility.OfficeIsInstall(out WordVersion);
+            btnwordview.Enabled = IsWordInstalled;
+            btnExport.Enabled = IsWordInstalled;
         }
 
         /// <summary>
@@ -293,6 +308,11 @@ namespace ProjectReporter
 
             //载入工程
             LoadProjects();
+
+            if (IsWordInstalled == false)
+            {
+                MessageBox.Show("对不起，您没有安装Microsoft Office2007或Microsoft Office2010将不能使用预览和导出功能！");
+            }
         }
 
         public void LoadProjects()

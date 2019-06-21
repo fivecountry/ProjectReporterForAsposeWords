@@ -36,8 +36,15 @@ namespace ProjectReporter.Forms
                         ShowProgress(30, "正在准备生成Word...");
 
                         //生成Word文件
-                        WordExportForm wef = new WordExportForm(Path.Combine(fi.DirectoryName, "申报书.doc"));
-                        wef.ShowDialog();
+                        if (MainForm.Instance.IsWordInstalled)
+                        {
+                            WordExportForm wef = new WordExportForm(Path.Combine(fi.DirectoryName, "申报书.doc"));
+                            wef.ShowDialog();
+                        }
+                        else
+                        {
+                            File.WriteAllText(Path.Combine(fi.DirectoryName, "申报书.doc"), string.Empty);
+                        }
 
                         ShowProgress(60, "正在准备打包数据文件");
 
