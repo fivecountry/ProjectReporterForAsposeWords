@@ -224,7 +224,14 @@ namespace ProjectReporter
             {
                 Application.Exit();
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                try
+                {
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
+                }
+                catch (Exception exx) { }
+            }
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
