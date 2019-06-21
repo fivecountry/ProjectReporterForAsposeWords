@@ -233,14 +233,14 @@ namespace ProjectReporter
                 SaveAll();
 
                 //询问是否备份
-                if (ProjectObj != null)
-                {
-                    DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        this.btnSave_Click(this, e);
-                    }
-                }
+                //if (ProjectObj != null)
+                //{
+                //    DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+                //    if (dialogResult == DialogResult.Yes)
+                //    {
+                //        this.btnSave_Click(this, e);
+                //    }
+                //}
             }
             else
             {
