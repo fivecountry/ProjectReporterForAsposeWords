@@ -17,6 +17,11 @@ namespace ProjectReporter
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// 是否显示备份提示
+        /// </summary>
+        public bool EnabledShowBackupHint = true;
+
         private bool EnabledRefreshPage = false;
 
         public static MainForm Instance { get; set; }
@@ -212,17 +217,24 @@ namespace ProjectReporter
         {
             base.OnFormClosing(e);
 
-            //先保存
-            SaveAll();
-
-            //询问是否备份
-            if (ProjectObj != null)
+            if (EnabledShowBackupHint)
             {
-                DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
-                if (dialogResult == DialogResult.Yes)
+                //先保存
+                SaveAll();
+
+                //询问是否备份
+                if (ProjectObj != null)
                 {
-                    this.btnSave_Click(this, e);
+                    DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        this.btnSave_Click(this, e);
+                    }
                 }
+            }
+            else
+            {
+                ConnectionManager.Close();
             }
         }
 

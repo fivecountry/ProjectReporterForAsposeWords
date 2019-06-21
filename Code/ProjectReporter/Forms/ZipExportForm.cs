@@ -42,6 +42,7 @@ namespace ProjectReporter.Forms
                         ShowProgress(60, "正在准备打包数据文件");
 
                         //打包数据文件
+                        MainForm.Instance.EnabledShowBackupHint = false;
                         Process.Start(Application.ExecutablePath, "Export:" + ToZipFile);
                         MainForm.Instance.ProjectObj = null;
                         Application.Exit();
