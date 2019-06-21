@@ -145,15 +145,28 @@ namespace ProjectReporter.Controls
             SetFontWithAll(Color.Black, "∑¬ÀŒ_GB2312", 14);
             SetLineSpace(12);
 
+            try
+            {
+                System.IO.Directory.CreateDirectory(new System.IO.FileInfo(rtfFile).DirectoryName);
+            }
+            catch (Exception ex) { }
+
             SaveFile(rtfFile);
 
             Clear();
             LoadDoc(rtfFile);
         }
 
-        public void LoadDoc(string file)
+        /// <summary>
+        /// ‘ÿ»ÎŒƒµµ
+        /// </summary>
+        /// <param name="rtfFile"></param>
+        public void LoadDoc(string rtfFile)
         {
-            LoadFile(file);
+            if (System.IO.File.Exists(rtfFile))
+            {
+                LoadFile(rtfFile);
+            }
         }
     }
 }
