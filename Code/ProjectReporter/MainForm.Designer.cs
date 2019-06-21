@@ -37,6 +37,7 @@ namespace ProjectReporter
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.btninit = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSave2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnImport = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnUnitManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnPersonManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -146,7 +147,6 @@ namespace ProjectReporter
             this.feUI31 = new ProjectReporter.Controls.ChengNuoShuEditor();
             this.topBanner = new System.Windows.Forms.PictureBox();
             this.kpcontact = new ProjectReporter.Controls.HSkinTableLayoutPanel();
-            this.btnSave2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpcontactinner)).BeginInit();
@@ -311,6 +311,17 @@ namespace ProjectReporter
             this.btninit.TabIndex = 25;
             this.btninit.Values.Text = "新  建";
             this.btninit.Click += new System.EventHandler(this.btninit_Click);
+            // 
+            // btnSave2
+            // 
+            this.btnSave2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSave2.Location = new System.Drawing.Point(477, 0);
+            this.btnSave2.Name = "btnSave2";
+            this.btnSave2.Size = new System.Drawing.Size(109, 41);
+            this.btnSave2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSave2.TabIndex = 28;
+            this.btnSave2.Values.Text = "保  存";
+            this.btnSave2.Click += new System.EventHandler(this.btnSave2_Click);
             // 
             // btnImport
             // 
@@ -534,6 +545,7 @@ namespace ProjectReporter
             this.txtReportReadme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtReportReadme.Location = new System.Drawing.Point(0, 0);
             this.txtReportReadme.Name = "txtReportReadme";
+            this.txtReportReadme.ReadOnly = true;
             this.txtReportReadme.Size = new System.Drawing.Size(1254, 598);
             this.txtReportReadme.TabIndex = 0;
             this.txtReportReadme.Text = "";
@@ -1849,17 +1861,6 @@ namespace ProjectReporter
             this.kpcontact.Name = "kpcontact";
             this.kpcontact.Size = new System.Drawing.Size(200, 100);
             this.kpcontact.TabIndex = 0;
-            // 
-            // btnSave2
-            // 
-            this.btnSave2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSave2.Location = new System.Drawing.Point(477, 0);
-            this.btnSave2.Name = "btnSave2";
-            this.btnSave2.Size = new System.Drawing.Size(109, 41);
-            this.btnSave2.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnSave2.TabIndex = 28;
-            this.btnSave2.Values.Text = "保  存";
-            this.btnSave2.Click += new System.EventHandler(this.btnSave2_Click);
             // 
             // MainForm
             // 
