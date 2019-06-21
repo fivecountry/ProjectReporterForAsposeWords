@@ -778,6 +778,7 @@ namespace ProjectReporter
             this.kpfPage00.Text = "项目关键信息";
             this.kpfPage00.ToolTipTitle = "Page ToolTip";
             this.kpfPage00.UniqueName = "1C1D7240FD0F41265498C187414B5A6D";
+            this.kpfPage00.Visible = false;
             // 
             // feUI30
             // 
