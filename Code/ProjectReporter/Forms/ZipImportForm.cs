@@ -29,8 +29,8 @@ namespace ProjectReporter.Forms
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            MainForm.Instance.EnabledShowBackupHint = false;
             Process.Start(Application.ExecutablePath, ZipPackageFile);
-
             MainForm.Instance.ProjectObj = null;
             Application.Exit();
         }
