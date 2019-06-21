@@ -197,25 +197,20 @@ namespace ProjectReporter
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //if (!this.canSwitch)
-            //{
-            //    MessageBox.Show("当前页面还未保存，请保存后再试。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    return;
-            //}
-            //ApplyUserBaseInfoService applyUserBaseInfoService = new ApplyUserBaseInfoService();
-            //ApplyUserInfo userBaseInfo = applyUserBaseInfoService.GetUserBaseInfo();
-            //SaveFileDialog saveFileDialog = new SaveFileDialog();
-            //saveFileDialog.Filter = " zip files(*.zip)|*.zip";
-            //saveFileDialog.FileName = userBaseInfo.Unit + "_" + userBaseInfo.ApplyUserName + ".zip";
-            //saveFileDialog.FilterIndex = 2;
-            //saveFileDialog.RestoreDirectory = true;
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    new frmExportWord(EntityElement.ExportType.ToZipFile, false)
-            //    {
-            //        Savefilename = saveFileDialog.FileName
-            //    }.ShowDialog();
-            //}
+            string unitName = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = '" + ProjectObj.ID + "')").select("UnitName").getValue<string>(string.Empty);
+            string personName = ConnectionManager.Context.table("Person").where("ID=(select PersonID from Task where Role = '负责人' and  ProjectID = '" + ProjectObj.ID + "')").select("Name").getValue<string>(string.Empty);
+            string docName = unitName + "_" + personName;
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "zip files(*.zip)|*.zip";
+            saveFileDialog.FileName = docName + ".zip";
+            saveFileDialog.FilterIndex = 0;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                new ZipExportForm(saveFileDialog.FileName).ShowDialog();
+            }
         }
 
         private void maintimer_Tick(object sender, EventArgs e)
