@@ -2431,28 +2431,31 @@ namespace ProjectReporter.Controls
             #endregion
 
             //清空年度经费表
-            ConnectionManager.Context.table("MoneyAndYear").where("ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").delete();
-            if (pbinfo != null)
+            if (MainForm.Instance.ProjectObj != null)
             {
-                PropertyInfo[] props = pbinfo.GetType().GetProperties();
-                foreach (PropertyInfo pi in props)
+                ConnectionManager.Context.table("MoneyAndYear").where("ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").delete();
+                if (pbinfo != null)
                 {
-                    object val = null;
-                    try
+                    PropertyInfo[] props = pbinfo.GetType().GetProperties();
+                    foreach (PropertyInfo pi in props)
                     {
-                        val = pi.GetValue(pbinfo, null);
-                    }
-                    catch (Exception ex) { }
+                        object val = null;
+                        try
+                        {
+                            val = pi.GetValue(pbinfo, null);
+                        }
+                        catch (Exception ex) { }
 
-                    if (val != null)
-                    {
-                        MoneyAndYear may = new MoneyAndYear();
-                        may.ID = Guid.NewGuid().ToString();
-                        may.ProjectID = MainForm.Instance.ProjectObj.ID;
-                        may.Name = pi.Name;
-                        may.Value = val.ToString();
+                        if (val != null)
+                        {
+                            MoneyAndYear may = new MoneyAndYear();
+                            may.ID = Guid.NewGuid().ToString();
+                            may.ProjectID = MainForm.Instance.ProjectObj.ID;
+                            may.Name = pi.Name;
+                            may.Value = val.ToString();
 
-                        may.copyTo(ConnectionManager.Context.table("MoneyAndYear")).insert();
+                            may.copyTo(ConnectionManager.Context.table("MoneyAndYear")).insert();
+                        }
                     }
                 }
             }
