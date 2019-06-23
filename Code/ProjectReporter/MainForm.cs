@@ -919,21 +919,8 @@ namespace ProjectReporter
 
         private void btnUploadReport_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.FileName = string.Empty;
-            ofd.Filter = "*.doc|*.doc";
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    File.Copy(ofd.FileName, Path.Combine(MainForm.ProjectDir, "建议书.doc"));
-                    MessageBox.Show("上传完成！");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("上传失败！Ex:" + ex.ToString());
-                }
-            }
+            ProjectDocForm form = new ProjectDocForm();
+            form.ShowDialog();
         }
     }
 }
