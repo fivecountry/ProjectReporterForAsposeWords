@@ -66,6 +66,11 @@ Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraEditors.v15.2.dll"; Dest
 Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraGrid.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraLayout.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraPrinting.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\Office.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\NPOI.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\NPOI.OOXML.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\NPOI.OpenXml4Net.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wcss\Desktop\Reporters\NPOI.OpenXmlFormats.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\wcss\Desktop\Reporters\DevExpress.XtraTreeList.v15.2.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; 注意: 不要在任何共享系统文件上使用“Flags: ignoreversion”
 
