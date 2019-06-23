@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using ProjectReporter.DB;
 using ProjectReporter.DB.Entitys;
+using System.IO;
+using System.Diagnostics;
 
 namespace ProjectReporter.Controls
 {
@@ -310,7 +312,11 @@ namespace ProjectReporter.Controls
 
         private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "ketijieduanhuafen.xlsx"));
+            string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), lklDownloadFuJian.Text.Trim());
+            File.Copy(sourcePath, destPath, true);
+            MessageBox.Show("已下载到桌面！");
+            Process.Start(destPath);
         }
     }
 }
