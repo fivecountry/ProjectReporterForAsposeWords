@@ -889,10 +889,17 @@ namespace ProjectReporter
             Application.DoEvents();
 
             //循环所有控件，一个一个保存
-            foreach (BaseEditor be in EditorIndexLists)
+            try
             {
-                //保存
-                be.OnSaveEvent();
+                foreach (BaseEditor be in EditorIndexLists)
+                {
+                    //保存
+                    be.OnSaveEvent();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败！Ex:" + ex.ToString());
             }
 
             f.Close();
