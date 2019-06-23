@@ -537,33 +537,39 @@
     <None Include="Fonts\simkai_0.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Helper\chengnuoshu.doc">
+    <None Include="Helper\chengnuoshu.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helper\help.rtf">
+    </None>
+    <None Include="Helper\help.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helper\introduction.rtf">
+    </None>
+    <None Include="Helper\introduction.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helper\JingFeiFuJian.doc">
+    </None>
+    <None Include="Helper\JingFeiFuJian.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helper\lianxiren.xlsx">
+    </None>
+    <None Include="Helper\lianxiren.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helper\newtemplete.docx">
+    </None>
+    <None Include="Helper\newtemplete.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helper\TianBaoShuoMing.docx">
+    </None>
+    <None Include="Helper\TianBaoShuoMing.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helper\xiangmuzhaiyaomoban.rtf">
+    </None>
+    <None Include="Helper\xiangmuzhaiyaomoban.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helper\xitixiangxi.rtf">
+    </None>
+    <None Include="Helper\xitixiangxi.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
+    <None Include="Helper\jieduanhuafen.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Helper\ketijieduanhuafen.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -618,9 +624,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="f14.ico" />
-    <Content Include="Helper\readme.txt">
+    <None Include="Helper\readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="Office.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
