@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -47,6 +47,8 @@
             this.colTarget = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJieDuanJingFei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnExcelLoad = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lklDownloadFuJian = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -78,14 +80,18 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnLast, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnSave, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNext, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnLast, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSave, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNext, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnExcelLoad, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lklDownloadFuJian, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 566);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -174,9 +180,9 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDetail.RowTemplate.Height = 35;
             this.dgvDetail.Size = new System.Drawing.Size(815, 507);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -262,6 +268,29 @@
             this.delete.Visible = false;
             this.delete.Width = 60;
             // 
+            // btnExcelLoad
+            // 
+            this.btnExcelLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExcelLoad.Location = new System.Drawing.Point(518, 3);
+            this.btnExcelLoad.Name = "btnExcelLoad";
+            this.btnExcelLoad.Size = new System.Drawing.Size(94, 28);
+            this.btnExcelLoad.TabIndex = 4;
+            this.btnExcelLoad.Values.Text = "从Excel导入";
+            this.btnExcelLoad.Click += new System.EventHandler(this.btnExcelLoad_Click);
+            // 
+            // lklDownloadFuJian
+            // 
+            this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lklDownloadFuJian.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lklDownloadFuJian.Location = new System.Drawing.Point(388, 0);
+            this.lklDownloadFuJian.Name = "lklDownloadFuJian";
+            this.lklDownloadFuJian.Size = new System.Drawing.Size(124, 34);
+            this.lklDownloadFuJian.TabIndex = 5;
+            this.lklDownloadFuJian.TabStop = true;
+            this.lklDownloadFuJian.Text = "导入模板.xlsx";
+            this.lklDownloadFuJian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lklDownloadFuJian.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadFuJian_LinkClicked);
+            // 
             // KeTiJieDuanHuaFenEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -300,5 +329,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTarget;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colJieDuanJingFei;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
+        private System.Windows.Forms.LinkLabel lklDownloadFuJian;
     }
 }

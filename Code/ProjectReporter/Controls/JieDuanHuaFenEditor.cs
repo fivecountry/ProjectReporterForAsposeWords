@@ -341,5 +341,15 @@ namespace ProjectReporter.Controls
                 }
             }
         }
+
+        private void btnExcelLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
