@@ -344,7 +344,8 @@ namespace ProjectReporter.Controls
 
                     f.Close();
 
-                    RefreshView();
+                    btnSave.PerformClick();
+
                     MessageBox.Show("操作完成！");
                 }
             }
@@ -400,8 +401,6 @@ namespace ProjectReporter.Controls
                         dgvRow.Cells[7].Value = stepMoney;
                     }
                 }
-
-                btnSave.PerformClick();
             }
             catch (Exception ex)
             {
