@@ -312,6 +312,24 @@ namespace ProjectReporter.Controls
                 DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
                 if (ds != null && ds.Tables.Count >= 1)
                 {
+                    //显示提示窗体
+                    Form f = new Form();
+                    Label l = new Label();
+                    l.Text = "正在导入，请稍等...";
+                    l.AutoSize = false;
+                    f.Controls.Add(l);
+                    l.Dock = DockStyle.Fill;
+                    l.TextAlign = ContentAlignment.MiddleCenter;
+                    l.Font = new Font("仿宋", 16);
+                    f.Size = new System.Drawing.Size(220, 100);
+                    f.StartPosition = FormStartPosition.CenterScreen;
+                    f.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                    f.BackColor = Color.Gray;
+                    f.ForeColor = Color.White;
+                    f.TopMost = true;
+                    f.Show();
+                    Application.DoEvents();
+
                     foreach (DataTable dt in ds.Tables)
                     {
                         foreach (DataRow dr in dt.Rows)
@@ -323,6 +341,8 @@ namespace ProjectReporter.Controls
                             }
                         }
                     }
+
+                    f.Close();
 
                     RefreshView();
                     MessageBox.Show("操作完成！");
