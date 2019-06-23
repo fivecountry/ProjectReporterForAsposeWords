@@ -143,7 +143,7 @@ namespace ProjectReporter
             //保存所有
             SaveAll();
 
-            if (File.Exists(Path.Combine(Path.Combine(MainForm.ProjectDir, "Current"), "建议书.doc")) == false)
+            if (File.Exists(Path.Combine(MainForm.ProjectDir, "建议书.doc")) == false)
             {
                 MessageBox.Show("对不起，请上传项目建议书！");
                 return;
@@ -926,7 +926,7 @@ namespace ProjectReporter
             {
                 try
                 {
-                    File.Copy(ofd.FileName, Path.Combine(Path.Combine(MainForm.ProjectDir, "Current"), "建议书.doc"));
+                    File.Copy(ofd.FileName, Path.Combine(MainForm.ProjectDir, "建议书.doc"));
                     MessageBox.Show("上传完成！");
                 }
                 catch (Exception ex)
