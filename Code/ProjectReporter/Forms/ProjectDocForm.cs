@@ -50,6 +50,7 @@ namespace ProjectReporter.Forms
                 try
                 {
                     File.Copy(lbcomattpath.Tag.ToString(), Path.Combine(MainForm.ProjectDir, "建议书.doc"));
+                    UpdateLabel();
                     MessageBox.Show("上传完成！");
                 }
                 catch (Exception ex)

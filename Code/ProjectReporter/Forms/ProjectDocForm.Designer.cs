@@ -37,9 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.plContent = new System.Windows.Forms.Panel();
             this.tableLayoutPanel20 = new ProjectReporter.Controls.HSkinTableLayoutPanel();
+            this.btnComsel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel67 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbcomattpath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.btnComsel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -133,7 +133,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1021, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "科研诚信承诺书";
+            this.label1.Text = "项目建议书";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // plContent
@@ -161,30 +161,10 @@
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 1;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(1029, 38);
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(1029, 48);
             this.tableLayoutPanel20.TabIndex = 5;
-            // 
-            // kryptonLabel67
-            // 
-            this.kryptonLabel67.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonLabel67.Location = new System.Drawing.Point(3, 3);
-            this.kryptonLabel67.Name = "kryptonLabel67";
-            this.kryptonLabel67.Size = new System.Drawing.Size(54, 34);
-            this.kryptonLabel67.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.kryptonLabel67.TabIndex = 1;
-            this.kryptonLabel67.Values.Text = "附件";
-            // 
-            // lbcomattpath
-            // 
-            this.lbcomattpath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbcomattpath.Location = new System.Drawing.Point(63, 3);
-            this.lbcomattpath.Name = "lbcomattpath";
-            this.lbcomattpath.Size = new System.Drawing.Size(813, 34);
-            this.lbcomattpath.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbcomattpath.TabIndex = 8;
-            this.lbcomattpath.Values.Text = "0";
             // 
             // btnComsel
             // 
@@ -195,10 +175,31 @@
             this.btnComsel.Values.Text = "上传附件";
             this.btnComsel.Click += new System.EventHandler(this.btnComsel_Click);
             // 
+            // kryptonLabel67
+            // 
+            this.kryptonLabel67.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonLabel67.Location = new System.Drawing.Point(3, 3);
+            this.kryptonLabel67.Name = "kryptonLabel67";
+            this.kryptonLabel67.Size = new System.Drawing.Size(54, 42);
+            this.kryptonLabel67.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.kryptonLabel67.TabIndex = 1;
+            this.kryptonLabel67.Values.Text = "附件";
+            // 
+            // lbcomattpath
+            // 
+            this.lbcomattpath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbcomattpath.Location = new System.Drawing.Point(63, 3);
+            this.lbcomattpath.Name = "lbcomattpath";
+            this.lbcomattpath.Size = new System.Drawing.Size(813, 42);
+            this.lbcomattpath.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbcomattpath.TabIndex = 8;
+            this.lbcomattpath.Values.Text = "0";
+            // 
             // ProjectDocForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1135, 562);
             this.Controls.Add(this.tableLayoutPanel15);
             this.DoubleBuffered = true;
