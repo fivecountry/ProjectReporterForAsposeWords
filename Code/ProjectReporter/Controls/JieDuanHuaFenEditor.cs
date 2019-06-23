@@ -347,7 +347,96 @@ namespace ProjectReporter.Controls
 
         private void btnExcelLoad_Click(object sender, EventArgs e)
         {
+            if (ofdExcelDialog.ShowDialog() == DialogResult.OK)
+            {
+                DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
+                if (ds != null && ds.Tables.Count >= 1)
+                {
+                    foreach (DataTable dt in ds.Tables)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            if (dr.ItemArray != null)
+                            {
+                                //插入数据
+                                insertDataFromDataRow(dr);
+                            }
+                        }
+                    }
 
+                    RefreshView();
+                    MessageBox.Show("操作完成！");
+                }
+            }
+        }
+
+        private void insertDataFromDataRow(DataRow dr)
+        {
+            try
+            {
+                //加载字段
+                string stepIndex = dr["序号"] != null ? dr["序号"].ToString() : string.Empty;
+                string stepTime = dr["阶段时间(月)"] != null ? dr["阶段时间(月)"].ToString() : string.Empty;
+                string stepContent = dr["完成内容及阶段目标"] != null ? dr["完成内容及阶段目标"].ToString() : string.Empty;
+                string stepResult = dr["阶段成果、考核指标及考核方式"] != null ? dr["阶段成果、考核指标及考核方式"].ToString() : string.Empty;
+                string stepMoney = dr["阶段经费(万)"] != null ? dr["阶段经费(万)"].ToString() : string.Empty;
+
+                //进行必要字段的校验
+                int timeResult = 0;
+                if (int.TryParse(stepIndex, out timeResult) == false)
+                {
+                    throw new Exception("对不起，'序号'只能是数字！");
+                }
+                timeResult = 0;
+                if (int.TryParse(stepTime, out timeResult) == false)
+                {
+                    throw new Exception("对不起，'阶段时间(月)'只能是数字！");
+                }
+                timeResult = 0;
+                if (int.TryParse(stepMoney, out timeResult) == false)
+                {
+                    throw new Exception("对不起，'阶段经费(万)'只能是数字！");
+                }
+
+                //检查非空
+                foreach (DataColumn dc in dr.Table.Columns)
+                {
+                     if (dr[dc.ColumnName] == null || dr[dc.ColumnName].ToString() == string.Empty)
+                    {
+                        throw new Exception("对不起，'" + dc.ColumnName + "'不能为空！");
+                    }
+                }
+
+                bool needInsert = true;
+                foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+                {
+                    if (dgvRow.Cells[1].Value != null && dgvRow.Cells[1].Value.ToString().Equals(stepIndex))
+                    {
+                        needInsert = false;
+
+                        dgvRow.Cells[2].Value = stepTime;
+                        dgvRow.Cells[3].Value = stepContent;
+                        dgvRow.Cells[5].Value = stepResult;
+                        dgvRow.Cells[7].Value = stepMoney;
+                    }
+                }
+
+                if (needInsert)
+                {
+                    DataGridViewRow dgvRow = dgvDetail.Rows[dgvDetail.Rows.Count - 1];
+                    dgvRow.Cells[1].Value = stepIndex;
+                    dgvRow.Cells[2].Value = stepTime;
+                    dgvRow.Cells[3].Value = stepContent;
+                    dgvRow.Cells[5].Value = stepResult;
+                    dgvRow.Cells[7].Value = stepMoney;
+                }
+
+                btnSave.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("插入错误！Ex:" + ex.ToString(), "错误");
+            }
         }
 
         private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

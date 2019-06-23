@@ -307,7 +307,69 @@ namespace ProjectReporter.Controls
 
         private void btnExcelLoad_Click(object sender, EventArgs e)
         {
+            if (ofdExcelDialog.ShowDialog() == DialogResult.OK)
+            {
+                DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
+                if (ds != null && ds.Tables.Count >= 1)
+                {
+                    foreach (DataTable dt in ds.Tables)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            if (dr.ItemArray != null)
+                            {
+                                //插入数据
+                                insertDataFromDataRow(dr);
+                            }
+                        }
+                    }
 
+                    RefreshView();
+                    MessageBox.Show("操作完成！");
+                }
+            }
+        }
+
+        private void insertDataFromDataRow(DataRow dr)
+        {
+            try
+            {
+                //加载字段
+                string unitName = dr["单位名称"] != null ? dr["单位名称"].ToString() : string.Empty;
+                //string unitType = dr["隶属部门"] != null ? dr["隶属部门"].ToString() : string.Empty;
+                string unitType = "其它";
+                string unitAddress = dr["单位通信地址"] != null ? dr["单位通信地址"].ToString() : string.Empty;
+                string unitContact = dr["单位联系人"] != null ? dr["单位联系人"].ToString() : string.Empty;
+                string unitTelephone = dr["单位联系电话"] != null ? dr["单位联系电话"].ToString() : string.Empty;
+                string personName = dr["姓名"] != null ? dr["姓名"].ToString() : string.Empty;
+                string personIDCard = dr["身份证"] != null ? dr["身份证"].ToString() : string.Empty;
+                string personJob = dr["职务职称"] != null ? dr["职务职称"].ToString() : string.Empty;
+                string personSpecialty = dr["从事专业"] != null ? dr["从事专业"].ToString() : string.Empty;
+                string personSex = dr["性别"] != null ? dr["性别"].ToString() : string.Empty;
+                string personBirthday = dr["出生年月"] != null ? dr["出生年月"].ToString() : string.Empty;
+                string personTelephone = dr["座机"] != null ? dr["座机"].ToString() : string.Empty;
+                string personMobilePhone = dr["手机"] != null ? dr["手机"].ToString() : string.Empty;
+                string personAddress = dr["通信地址"] != null ? dr["通信地址"].ToString() : string.Empty;
+                string subjectName = dr["课题名称"] != null ? dr["课题名称"].ToString() : string.Empty;
+                string jobInProjectOrSubject = dr["项目或课题中职务"] != null ? dr["项目或课题中职务"].ToString() : string.Empty;
+                string taskInProject = dr["任务分工"] != null ? dr["任务分工"].ToString() : string.Empty;
+                string timeInProject = dr["每年为本项目工作时间(月)"] != null ? dr["每年为本项目工作时间(月)"].ToString() : string.Empty;
+
+                //进行必要字段的校验
+
+                //检查非空
+                foreach (DataColumn dc in dr.Table.Columns)
+                {
+                    if (dr[dc.ColumnName] == null || dr[dc.ColumnName].ToString() == string.Empty)
+                    {
+                        throw new Exception("对不起，'" + dc.ColumnName + "'不能为空！");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("插入错误！Ex:" + ex.ToString(), "错误");
+            }
         }
 
         private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

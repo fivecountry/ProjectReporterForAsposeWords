@@ -57,6 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotalTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -403,6 +404,10 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "本项目研究周期";
             // 
+            // ofdExcelDialog
+            // 
+            this.ofdExcelDialog.Filter = "*.xlsx|*.xlsx";
+            // 
             // JieDuanHuaFenEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -453,5 +458,6 @@
         private System.Windows.Forms.DataGridViewImageColumn delete;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
         private System.Windows.Forms.LinkLabel lklDownloadFuJian;
+        private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
     }
 }

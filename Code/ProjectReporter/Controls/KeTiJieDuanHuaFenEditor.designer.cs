@@ -49,6 +49,7 @@
             this.colTarget = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJieDuanJingFei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -291,6 +292,10 @@
             this.delete.Visible = false;
             this.delete.Width = 60;
             // 
+            // ofdExcelDialog
+            // 
+            this.ofdExcelDialog.Filter = "*.xlsx|*.xlsx";
+            // 
             // KeTiJieDuanHuaFenEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -331,5 +336,6 @@
         private System.Windows.Forms.DataGridViewImageColumn delete;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
         private System.Windows.Forms.LinkLabel lklDownloadFuJian;
+        private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
     }
 }
