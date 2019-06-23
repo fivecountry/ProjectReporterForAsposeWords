@@ -147,6 +147,7 @@ namespace ProjectReporter
             this.feUI31 = new ProjectReporter.Controls.ChengNuoShuEditor();
             this.topBanner = new System.Windows.Forms.PictureBox();
             this.kpcontact = new ProjectReporter.Controls.HSkinTableLayoutPanel();
+            this.btnUploadReport = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpcontactinner)).BeginInit();
@@ -284,6 +285,7 @@ namespace ProjectReporter
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.btnUploadReport);
             this.kryptonPanel1.Controls.Add(this.btninit);
             this.kryptonPanel1.Controls.Add(this.btnSave2);
             this.kryptonPanel1.Controls.Add(this.btnImport);
@@ -1863,6 +1865,17 @@ namespace ProjectReporter
             this.kpcontact.Size = new System.Drawing.Size(200, 100);
             this.kpcontact.TabIndex = 0;
             // 
+            // btnUploadReport
+            // 
+            this.btnUploadReport.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnUploadReport.Location = new System.Drawing.Point(113, 0);
+            this.btnUploadReport.Name = "btnUploadReport";
+            this.btnUploadReport.Size = new System.Drawing.Size(255, 41);
+            this.btnUploadReport.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnUploadReport.TabIndex = 29;
+            this.btnUploadReport.Values.Text = "上传项目建议书（word）";
+            this.btnUploadReport.Click += new System.EventHandler(this.btnUploadReport_Click);
+            // 
             // MainForm
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -2149,6 +2162,7 @@ namespace ProjectReporter
         private ChengNuoShuEditor feUI31;
         private BaoMiZiZhiFuYinJianEditor feUI25;
         private KryptonButton btnSave2;
+        private KryptonButton btnUploadReport;
     }
 }
 

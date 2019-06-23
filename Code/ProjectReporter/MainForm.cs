@@ -143,6 +143,12 @@ namespace ProjectReporter
             //保存所有
             SaveAll();
 
+            if (File.Exists(Path.Combine(Path.Combine(MainForm.ProjectDir, "Current"), "建议书.doc")) == false)
+            {
+                MessageBox.Show("对不起，请上传项目建议书！");
+                return;
+            }
+
             if (!this.IsInputCompleted())
             {
                 MessageBox.Show("请将所有内容填写完整再点击上报!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -909,6 +915,25 @@ namespace ProjectReporter
         {
             SaveAll();
             MessageBox.Show("保存完成！");
+        }
+
+        private void btnUploadReport_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.FileName = string.Empty;
+            ofd.Filter = "*.doc|*.doc";
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    File.Copy(ofd.FileName, Path.Combine(Path.Combine(MainForm.ProjectDir, "Current"), "建议书.doc"));
+                    MessageBox.Show("上传完成！");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("上传失败！Ex:" + ex.ToString());
+                }
+            }
         }
     }
 }
