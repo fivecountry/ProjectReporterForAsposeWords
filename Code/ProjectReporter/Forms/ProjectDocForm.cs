@@ -49,7 +49,7 @@ namespace ProjectReporter.Forms
             {
                 try
                 {
-                    File.Copy(lbcomattpath.Tag.ToString(), Path.Combine(MainForm.ProjectDir, "建议书.doc"));
+                    File.Copy(lbcomattpath.Tag.ToString(), Path.Combine(MainForm.ProjectDir, "建议书.doc"), true);
                     UpdateLabel();
                     MessageBox.Show("上传完成！");
                 }
