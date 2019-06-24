@@ -50,6 +50,7 @@ namespace ProjectReporter.Forms
 
                         //打包数据文件
                         MainForm.Instance.EnabledShowBackupHint = false;
+                        ConnectionManager.Close();
                         Process.Start(Application.ExecutablePath, "Export:" + ToZipFile);
                         MainForm.Instance.ProjectObj = null;
                         Application.Exit();
