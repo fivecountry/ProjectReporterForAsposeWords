@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using ComponentFactory.Krypton.Toolkit;
+using ProjectReporter.DB.Entitys;
+using ProjectReporter.DB;
 
 namespace ProjectReporter.Controls
 {
     public partial class BaoMiZiZhiFuYinJianEditor : BaseEditor
     {
-        public string FilePath { get; set; }
-
-        public string FileFirstName = "upload_2";
-
         public BaoMiZiZhiFuYinJianEditor()
         {
             InitializeComponent();
@@ -40,74 +39,163 @@ namespace ProjectReporter.Controls
         {
             base.ClearView();
 
-            lbcomattpath.Text = string.Empty;
-            FilePath = string.Empty;
+            dgvDetail.Rows.Clear();
         }
 
         public override void RefreshView()
         {
             base.RefreshView();
 
-            if (Directory.Exists(MainForm.ProjectFilesDir))
+            dgvDetail.Rows.Clear();
+            List<ExtFileList> list = ConnectionManager.Context.table("ExtFileList").where("ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<ExtFileList>(new ExtFileList());
+            int index = 0;
+            foreach (ExtFileList efl in list)
             {
-                string[] files = Directory.GetFiles(MainForm.ProjectFilesDir);
-                if (files != null)
-                {
-                    foreach (string f in files)
-                    {
-                        FileInfo fi = new FileInfo(f);
-                        if (fi.Name.StartsWith(FileFirstName))
-                        {
-                            FilePath = f;
-                            lbcomattpath.Text = fi.Name.Replace(FileFirstName + "_", string.Empty);
-                            break;
-                        }
-                    }
-                }
-            }
+                index++;
+                List<object> cells = new List<object>();
+                cells.Add(index.ToString());
+                cells.Add(efl.SourceFileName);
+                cells.Add(efl.IsIgnore == 1 ? true : false);
 
-            //判断文件是否不存在,如果存在就是非军队单位，如果不存在就是军队单位
-            if (File.Exists(FilePath))
-            {
-                cbMilitary.Checked = false;
-            }            
+                int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
+                dgvDetail.Rows[rowIndex].Tag = efl;
+            }
         }
 
         public override void OnSaveEvent()
         {
             base.OnSaveEvent();
 
-            try
+            foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
             {
-                if (File.Exists(ofdUpload.FileName))
+                if (dgvRow.Tag != null)
                 {
-                    if (File.Exists(FilePath))
-                    {
-                        File.Delete(FilePath);
-                    }
+                    //修改
+                    ExtFileList efl = (ExtFileList)dgvRow.Tag;
 
-                    File.Copy(ofdUpload.FileName, Path.Combine(MainForm.ProjectFilesDir, FileFirstName + "_" + new FileInfo(ofdUpload.FileName).Name));
-                    RefreshView();
+                    //检查是否修改过
+                    if (dgvRow.Cells[1].Tag != null)
+                    {
+                        string sourceFile = dgvRow.Cells[1].Tag.ToString();
+                        string realFileName = DateTime.Now.Ticks + "___" + Path.GetFileName(sourceFile);
+                        string destFile = Path.Combine(MainForm.ProjectFilesDir, realFileName);
+                        if (File.Exists(sourceFile))
+                        {
+                            //旧地址
+                            string oldFile = Path.Combine(MainForm.ProjectFilesDir, efl.RealFileName);
+                            try
+                            {
+                                File.Delete(oldFile);
+                            }
+                            catch (Exception ex) { }
+
+                            //复制新地址
+                            File.Copy(sourceFile, destFile, true);
+
+                            //源文件
+                            efl.SourceFileName = Path.GetFileName(sourceFile);
+
+                            //真实文件名称
+                            efl.RealFileName = realFileName;
+
+                            //是否为军队单位
+                            efl.IsIgnore = ((bool)dgvRow.Cells[2].Value) == true ? 1 : 0;
+
+                            //更新数据
+                            efl.copyTo(ConnectionManager.Context.table("ExtFileList")).where("ID='" + efl.ID + "'").update();
+                        }
+                    }
+                }
+                else
+                {
+                    //增加
+                    if (dgvRow.Cells[1].Tag != null)
+                    {
+                        string sourceFile = dgvRow.Cells[1].Tag.ToString();
+                        string realFileName = DateTime.Now.Ticks + "___" + Path.GetFileName(sourceFile);
+                        string destFile = Path.Combine(MainForm.ProjectFilesDir, realFileName);
+                        if (File.Exists(sourceFile))
+                        {
+                            //复制新地址
+                            File.Copy(sourceFile, destFile, true);
+
+                            ExtFileList efll = new ExtFileList();
+                            efll.ID = Guid.NewGuid().ToString();
+                            efll.ProjectID = MainForm.Instance.ProjectObj.ID;
+                            efll.SourceFileName = Path.GetFileName(sourceFile);
+                            efll.RealFileName = realFileName;
+                            efll.IsIgnore = ((bool)dgvRow.Cells[2].Value) == true ? 1 : 0;
+                            efll.copyTo(ConnectionManager.Context.table("ExtFileList")).insert();
+                        }
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("保存失败!Ex:" + ex.ToString());
-            }
-        }
 
-        private void btnComsel_Click(object sender, EventArgs e)
-        {
-            if (ofdUpload.ShowDialog() == DialogResult.OK)
-            {
-                lbcomattpath.Text = new FileInfo(ofdUpload.FileName).Name;
-                cbMilitary.Checked = false;
-            }
+            //刷新数据
+            RefreshView();
         }
 
         public override bool IsInputCompleted()
         {
-            return cbMilitary.Checked ? true : (File.Exists(FilePath));
+            if (dgvDetail.Rows.Count == 0)
+            {
+                MessageBox.Show("对不起,请上传保密资质!");
+            }
+            return dgvDetail.Rows.Count >= 1;
+        }
+
+        private void dgvDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetail.Rows.Count >= 1)
+            {
+                if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
+                {
+                    if (dgvDetail.Rows[e.RowIndex].Tag != null)
+                    {
+                        ExtFileList task = (ExtFileList)dgvDetail.Rows[e.RowIndex].Tag;
+                        if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            ConnectionManager.Context.table("ExtFileList").where("ID='" + task.ID + "'").delete();
+                            RefreshView();
+                        }
+                    }
+                    else
+                    {
+                        if (e.ColumnIndex == dgvDetail.Columns.Count - 1)
+                        {
+                            if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                try
+                                {
+                                    dgvDetail.Rows.RemoveAt(e.RowIndex);
+                                }
+                                catch (Exception ex)
+                                {
+                                    RefreshView();
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (e.ColumnIndex == 1)
+                {
+                    if (ofdUpload.ShowDialog() == DialogResult.OK)
+                    {
+                        dgvDetail.Rows[e.RowIndex].Cells[1].Tag = ofdUpload.FileName;
+                        dgvDetail.Rows[e.RowIndex].Cells[1].Value = Path.GetFileName(ofdUpload.FileName);
+                    }
+                }
+            }
+        }
+
+        private void dgvDetail_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            ((KryptonDataGridView)sender)[((KryptonDataGridView)sender).Columns.Count - 1, e.RowIndex == 0 ? e.RowIndex : e.RowIndex - 1].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            dgvDetail.Rows.Add(new object[] { dgvDetail.Rows.Count + 1, string.Empty, false });
         }
     }
 }

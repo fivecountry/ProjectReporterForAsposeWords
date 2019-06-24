@@ -1786,7 +1786,6 @@ namespace ProjectReporter
             // 
             this.feUI25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.feUI25.EnabledAutoNextPage = true;
-            this.feUI25.FilePath = null;
             this.feUI25.Location = new System.Drawing.Point(0, 0);
             this.feUI25.Margin = new System.Windows.Forms.Padding(4);
             this.feUI25.Name = "feUI25";

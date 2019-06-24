@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -36,20 +37,19 @@
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.plContent = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel20 = new ProjectReporter.Controls.HSkinTableLayoutPanel();
-            this.btnComsel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.kryptonLabel67 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbcomattpath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbMilitary = new System.Windows.Forms.CheckBox();
             this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
+            this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFileName = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colInore = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.plContent.SuspendLayout();
-            this.tableLayoutPanel20.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel15
@@ -75,14 +75,16 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnLast, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnSave, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNext, 3, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tableLayoutPanel1.Controls.Add(this.btnLast, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSave, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNext, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAdd, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 492);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -93,7 +95,7 @@
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(813, 3);
+            this.btnLast.Location = new System.Drawing.Point(913, 3);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(1, 25);
             this.btnLast.TabIndex = 1;
@@ -103,7 +105,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(713, 3);
+            this.btnSave.Location = new System.Drawing.Point(813, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 27);
             this.btnSave.TabIndex = 0;
@@ -112,9 +114,9 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(813, 3);
+            this.btnNext.Location = new System.Drawing.Point(913, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(90, 27);
+            this.btnNext.Size = new System.Drawing.Size(1, 27);
             this.btnNext.TabIndex = 2;
             this.btnNext.Values.Text = "下一步";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -145,94 +147,87 @@
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
-            this.plContent.Controls.Add(this.tableLayoutPanel20);
+            this.plContent.Controls.Add(this.dgvDetail);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(53, 53);
             this.plContent.Name = "plContent";
             this.plContent.Size = new System.Drawing.Size(910, 433);
             this.plContent.TabIndex = 7;
             // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.BorderColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel20.ColumnCount = 3;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel20.Controls.Add(this.btnComsel, 2, 1);
-            this.tableLayoutPanel20.Controls.Add(this.kryptonLabel67, 0, 1);
-            this.tableLayoutPanel20.Controls.Add(this.lbcomattpath, 1, 1);
-            this.tableLayoutPanel20.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 2;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(910, 84);
-            this.tableLayoutPanel20.TabIndex = 4;
-            // 
-            // btnComsel
-            // 
-            this.btnComsel.Location = new System.Drawing.Point(763, 43);
-            this.btnComsel.Name = "btnComsel";
-            this.btnComsel.Size = new System.Drawing.Size(82, 29);
-            this.btnComsel.TabIndex = 5;
-            this.btnComsel.Values.Text = "上传附件";
-            this.btnComsel.Click += new System.EventHandler(this.btnComsel_Click);
-            // 
-            // kryptonLabel67
-            // 
-            this.kryptonLabel67.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonLabel67.Location = new System.Drawing.Point(3, 43);
-            this.kryptonLabel67.Name = "kryptonLabel67";
-            this.kryptonLabel67.Size = new System.Drawing.Size(54, 38);
-            this.kryptonLabel67.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.kryptonLabel67.TabIndex = 1;
-            this.kryptonLabel67.Values.Text = "附件";
-            // 
-            // lbcomattpath
-            // 
-            this.lbcomattpath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbcomattpath.Location = new System.Drawing.Point(63, 43);
-            this.lbcomattpath.Name = "lbcomattpath";
-            this.lbcomattpath.Size = new System.Drawing.Size(694, 38);
-            this.lbcomattpath.StateCommon.ShortText.Font = new System.Drawing.Font("仿宋_GB2312", 12F);
-            this.lbcomattpath.TabIndex = 8;
-            this.lbcomattpath.Values.Text = "0";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel20.SetColumnSpan(this.panel1, 3);
-            this.panel1.Controls.Add(this.cbMilitary);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(910, 40);
-            this.panel1.TabIndex = 9;
-            // 
-            // cbMilitary
-            // 
-            this.cbMilitary.Checked = true;
-            this.cbMilitary.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbMilitary.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbMilitary.Font = new System.Drawing.Font("仿宋_GB2312", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cbMilitary.ForeColor = System.Drawing.Color.Red;
-            this.cbMilitary.Location = new System.Drawing.Point(10, 0);
-            this.cbMilitary.Name = "cbMilitary";
-            this.cbMilitary.Size = new System.Drawing.Size(793, 40);
-            this.cbMilitary.TabIndex = 4;
-            this.cbMilitary.Text = "是否为军队单位（勾选状态表示是军队单位，军队单位无需上传保密资质附件！）";
-            this.cbMilitary.UseVisualStyleBackColor = true;
-            // 
             // ofdUpload
             // 
             this.ofdUpload.Filter = "PNG文件|*.png|JPG文件|*.jpg|JPEG文件|*.jpeg|BMP文件|*.bmp";
+            // 
+            // dgvDetail
+            // 
+            this.dgvDetail.AllowUserToAddRows = false;
+            this.dgvDetail.AllowUserToResizeRows = false;
+            this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dgvDetail.ColumnHeadersHeight = 35;
+            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.selpersonid,
+            this.colFileName,
+            this.colInore,
+            this.delete});
+            this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetail.Location = new System.Drawing.Point(0, 0);
+            this.dgvDetail.MultiSelect = false;
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDetail.RowTemplate.Height = 35;
+            this.dgvDetail.Size = new System.Drawing.Size(910, 433);
+            this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
+            this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
+            this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgvDetail.StateCommon.HeaderColumn.Content.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
+            this.dgvDetail.TabIndex = 4;
+            this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
+            this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
+            // 
+            // selpersonid
+            // 
+            this.selpersonid.HeaderText = "序号";
+            this.selpersonid.Name = "selpersonid";
+            this.selpersonid.ReadOnly = true;
+            this.selpersonid.Width = 80;
+            // 
+            // colFileName
+            // 
+            this.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFileName.HeaderText = "保密资质复印件";
+            this.colFileName.Name = "colFileName";
+            this.colFileName.ReadOnly = true;
+            this.colFileName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colFileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colInore
+            // 
+            this.colInore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colInore.HeaderText = "是否为军队单位";
+            this.colInore.Name = "colInore";
+            this.colInore.ReadOnly = true;
+            this.colInore.Width = 130;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "删除";
+            this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.Width = 45;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(713, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 27);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Values.Text = "增加";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // BaoMiZiZhiFuYinJianEditor
             // 
@@ -247,9 +242,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
             this.plContent.ResumeLayout(false);
-            this.tableLayoutPanel20.ResumeLayout(false);
-            this.tableLayoutPanel20.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,12 +257,12 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
         private System.Windows.Forms.Panel plContent;
         private System.Windows.Forms.Label label1;
-        private HSkinTableLayoutPanel tableLayoutPanel20;
-        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel67;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnComsel;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel lbcomattpath;
         private System.Windows.Forms.OpenFileDialog ofdUpload;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox cbMilitary;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
+        private System.Windows.Forms.DataGridViewButtonColumn colFileName;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colInore;
+        private System.Windows.Forms.DataGridViewImageColumn delete;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
     }
 }
