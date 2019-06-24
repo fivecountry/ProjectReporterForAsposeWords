@@ -195,7 +195,13 @@ namespace ProjectReporter.Forms
                 wu.InsertFile("与有关计划关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_19.rtf"), false);
 
                 wu.InsertFile("附件1", uploadA, true);
-                wu.InsertFile("附件2", uploadB, true);
+
+                //插入保密资质
+                List<ExtFileList> list = ConnectionManager.Context.table("ExtFileList").where("ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<ExtFileList>(new ExtFileList());
+                foreach (ExtFileList efl in list)
+                {
+                    wu.InsertFile("附件2", Path.Combine(MainForm.ProjectFilesDir, efl.RealFileName), false);
+                }
 
                 //处理诚信承诺书
                 uploadC = Path.Combine(Application.StartupPath, Path.Combine("Helper", "chengnuoshu.doc"));
