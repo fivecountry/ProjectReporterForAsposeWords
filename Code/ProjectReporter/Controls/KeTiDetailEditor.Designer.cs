@@ -31,6 +31,8 @@
             this.knKetiDetailTabs = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kpInfo = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.txtInfo = new ProjectReporter.Controls.TextBoxExt();
+            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.autoHeightLabel1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.kpDest = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.txtDest = new ProjectReporter.Controls.RichTextBoxTableClass();
             this.kpContent = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -45,12 +47,12 @@
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.lblTitle = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
-            this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.autoHeightLabel1 = new ProjectReporter.Controls.AutoHeightLabel();
             ((System.ComponentModel.ISupportInitialize)(this.knKetiDetailTabs)).BeginInit();
             this.knKetiDetailTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).BeginInit();
             this.kpInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpDest)).BeginInit();
             this.kpDest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpContent)).BeginInit();
@@ -62,8 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.plContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
-            this.kryptonPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // knKetiDetailTabs
@@ -101,12 +101,37 @@
             // txtInfo
             // 
             this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfo.Font = new System.Drawing.Font("仿宋_GB2312", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtInfo.Location = new System.Drawing.Point(0, 28);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.Size = new System.Drawing.Size(750, 333);
             this.txtInfo.TabIndex = 0;
+            // 
+            // kryptonPanel1
+            // 
+            this.kryptonPanel1.AutoSize = true;
+            this.kryptonPanel1.Controls.Add(this.autoHeightLabel1);
+            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.kryptonPanel1.Name = "kryptonPanel1";
+            this.kryptonPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.kryptonPanel1.Size = new System.Drawing.Size(750, 28);
+            this.kryptonPanel1.TabIndex = 1;
+            // 
+            // autoHeightLabel1
+            // 
+            this.autoHeightLabel1.AutoHeight = false;
+            this.autoHeightLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.autoHeightLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.autoHeightLabel1.Font = new System.Drawing.Font("宋体", 14.25F);
+            this.autoHeightLabel1.Location = new System.Drawing.Point(6, 0);
+            this.autoHeightLabel1.Name = "autoHeightLabel1";
+            this.autoHeightLabel1.Size = new System.Drawing.Size(744, 28);
+            this.autoHeightLabel1.TabIndex = 0;
+            this.autoHeightLabel1.Text = "(200字以内)";
+            this.autoHeightLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // kpDest
             // 
@@ -160,8 +185,8 @@
             this.kpNeed.LastVisibleSet = true;
             this.kpNeed.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpNeed.Name = "kpNeed";
-            this.kpNeed.Size = new System.Drawing.Size(750, 369);
-            this.kpNeed.Text = "关键技术及研究思路";
+            this.kpNeed.Size = new System.Drawing.Size(750, 361);
+            this.kpNeed.Text = "研究思路";
             this.kpNeed.ToolTipTitle = "Page ToolTip";
             this.kpNeed.UniqueName = "C96959D95BED456940AB08FF33E3497B";
             // 
@@ -170,7 +195,7 @@
             this.txtNeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNeed.Location = new System.Drawing.Point(0, 0);
             this.txtNeed.Name = "txtNeed";
-            this.txtNeed.Size = new System.Drawing.Size(750, 369);
+            this.txtNeed.Size = new System.Drawing.Size(750, 361);
             this.txtNeed.TabIndex = 1;
             this.txtNeed.Text = "";
             // 
@@ -276,31 +301,6 @@
             this.plContent.Size = new System.Drawing.Size(752, 388);
             this.plContent.TabIndex = 7;
             // 
-            // kryptonPanel1
-            // 
-            this.kryptonPanel1.AutoSize = true;
-            this.kryptonPanel1.Controls.Add(this.autoHeightLabel1);
-            this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonPanel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.kryptonPanel1.Size = new System.Drawing.Size(750, 28);
-            this.kryptonPanel1.TabIndex = 1;
-            // 
-            // autoHeightLabel1
-            // 
-            this.autoHeightLabel1.AutoHeight = false;
-            this.autoHeightLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.autoHeightLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.autoHeightLabel1.Font = new System.Drawing.Font("宋体", 14.25F);
-            this.autoHeightLabel1.Location = new System.Drawing.Point(6, 0);
-            this.autoHeightLabel1.Name = "autoHeightLabel1";
-            this.autoHeightLabel1.Size = new System.Drawing.Size(744, 28);
-            this.autoHeightLabel1.TabIndex = 0;
-            this.autoHeightLabel1.Text = "(200字以内)";
-            this.autoHeightLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // KeTiDetailEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -314,6 +314,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).EndInit();
             this.kpInfo.ResumeLayout(false);
             this.kpInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpDest)).EndInit();
             this.kpDest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kpContent)).EndInit();
@@ -326,8 +328,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).EndInit();
             this.plTitle.ResumeLayout(false);
             this.plContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
-            this.kryptonPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

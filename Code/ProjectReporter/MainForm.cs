@@ -248,7 +248,7 @@ namespace ProjectReporter
 
             if (EnabledShowBackupHint)
             {
-                if (MessageBox.Show("真的要退出吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("真的要保存吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     //先保存
                     SaveAll();
@@ -262,10 +262,6 @@ namespace ProjectReporter
                     //        this.btnSave_Click(this, e);
                     //    }
                     //}
-                }
-                else
-                {
-                    e.Cancel = true;
                 }
             }
             else
