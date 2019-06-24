@@ -111,5 +111,17 @@ namespace ProjectReporter.Controls
             MessageBox.Show("已下载到桌面！");
             Process.Start(destPath);
         }
+
+        private void lbcomattpath_LinkClicked(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(FilePath))
+            {
+                return;
+            }
+            else
+            {
+                Process.Start(FilePath);
+            }
+        }
     }
 }

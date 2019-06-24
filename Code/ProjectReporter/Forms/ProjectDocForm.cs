@@ -57,6 +57,19 @@ namespace ProjectReporter.Forms
                 {
                     MessageBox.Show("上传失败！Ex:" + ex.ToString());
                 }
+                finally
+                {
+                    Close();
+                }
+            }
+        }
+
+        private void lbcomattpath_LinkClicked(object sender, EventArgs e)
+        {
+            string path = Path.Combine(MainForm.ProjectDir, "建议书.doc");
+            if (File.Exists(path))
+            {
+                System.Diagnostics.Process.Start(path);
             }
         }
     }

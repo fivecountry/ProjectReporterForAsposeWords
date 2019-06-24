@@ -194,6 +194,7 @@
             this.lbcomattpath.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbcomattpath.TabIndex = 8;
             this.lbcomattpath.Values.Text = "0";
+            this.lbcomattpath.LinkClicked += new System.EventHandler(this.lbcomattpath_LinkClicked);
             // 
             // ProjectDocForm
             // 
