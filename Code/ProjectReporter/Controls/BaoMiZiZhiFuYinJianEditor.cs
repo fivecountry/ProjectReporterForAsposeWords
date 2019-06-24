@@ -61,6 +61,7 @@ namespace ProjectReporter.Controls
 
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                 dgvDetail.Rows[rowIndex].Tag = efl;
+                dgvDetail.Rows[rowIndex].Cells[2].Tag = "uploaded";
             }
         }
 
@@ -73,7 +74,7 @@ namespace ProjectReporter.Controls
                 if (dgvRow.Cells[1].Value == null || string.IsNullOrEmpty(dgvRow.Cells[1].Value.ToString()))
                 {
                     MessageBox.Show("对不起,请输入单位名称!");
-                    continue;
+                    break; ;
                 }
 
                 if (dgvRow.Tag != null)
