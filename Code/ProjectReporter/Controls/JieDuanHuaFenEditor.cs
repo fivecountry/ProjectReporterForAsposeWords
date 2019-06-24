@@ -21,7 +21,7 @@ namespace ProjectReporter.Controls
         {
             InitializeComponent();
 
-            dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+            //dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -466,6 +466,12 @@ namespace ProjectReporter.Controls
             File.Copy(sourcePath, destPath, true);
             MessageBox.Show("已下载到桌面！");
             Process.Start(destPath);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dgvDetail.Rows.Add();
+            dgvDetail.Rows[rowIndex].Cells[1].Value = (dgvDetail.Rows.Count).ToString();
         }
     }
 }

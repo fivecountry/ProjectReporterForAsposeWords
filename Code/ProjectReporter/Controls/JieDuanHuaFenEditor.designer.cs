@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -58,6 +58,7 @@
             this.txtTotalTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -90,18 +91,20 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
+            this.tableLayoutPanel1.ColumnCount = 7;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnLast, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnSave, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNext, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnLast, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSave, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNext, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnExcelLoad, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lklDownloadFuJian, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAdd, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 480);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -141,7 +144,7 @@
             // btnExcelLoad
             // 
             this.btnExcelLoad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExcelLoad.Location = new System.Drawing.Point(493, 3);
+            this.btnExcelLoad.Location = new System.Drawing.Point(393, 3);
             this.btnExcelLoad.Name = "btnExcelLoad";
             this.btnExcelLoad.Size = new System.Drawing.Size(94, 28);
             this.btnExcelLoad.TabIndex = 4;
@@ -152,7 +155,7 @@
             // 
             this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lklDownloadFuJian.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lklDownloadFuJian.Location = new System.Drawing.Point(363, 0);
+            this.lklDownloadFuJian.Location = new System.Drawing.Point(263, 0);
             this.lklDownloadFuJian.Name = "lklDownloadFuJian";
             this.lklDownloadFuJian.Size = new System.Drawing.Size(124, 34);
             this.lklDownloadFuJian.TabIndex = 5;
@@ -200,6 +203,7 @@
             // 
             // dgvDetail
             // 
+            this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
             this.dgvDetail.ColumnHeadersHeight = 35;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -216,9 +220,9 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 26);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.RowTemplate.Height = 105;
             this.dgvDetail.Size = new System.Drawing.Size(790, 360);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -408,6 +412,15 @@
             // 
             this.ofdExcelDialog.Filter = "*.xlsx|*.xlsx";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(493, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 27);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Values.Text = "增加";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // JieDuanHuaFenEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -459,5 +472,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
         private System.Windows.Forms.LinkLabel lklDownloadFuJian;
         private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
     }
 }

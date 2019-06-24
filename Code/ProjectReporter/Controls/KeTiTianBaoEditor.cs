@@ -26,9 +26,9 @@ namespace ProjectReporter.Controls
             EnabledAutoNextPage = false;
 
             //显示图标
-            dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.exclamation_16;
-            dgvDetail[dgvDetail.Columns.Count - 2, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
-            dgvDetail[dgvDetail.Columns.Count - 3, 0].Value = "填报课题内容";
+            //dgvDetail[dgvDetail.Columns.Count - 1, 0].Value = global::ProjectReporter.Properties.Resources.exclamation_16;
+            //dgvDetail[dgvDetail.Columns.Count - 2, 0].Value = global::ProjectReporter.Properties.Resources.DELETE_28;
+            //dgvDetail[dgvDetail.Columns.Count - 3, 0].Value = "填报课题内容";
 
             //显示密级
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("公开");
@@ -666,6 +666,12 @@ namespace ProjectReporter.Controls
             {
                 MainForm.Instance.SwitchToNextPage(this);
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dgvDetail.Rows.Add();
+            dgvDetail.Rows[rowIndex].Cells[0].Value = (dgvDetail.Rows.Count).ToString();
         }
     }
 }
