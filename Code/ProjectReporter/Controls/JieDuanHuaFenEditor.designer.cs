@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -36,19 +36,11 @@
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnExcelLoad = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.lklDownloadFuJian = new System.Windows.Forms.LinkLabel();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
-            this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
-            this.colDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTarget = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtStepCount = new System.Windows.Forms.Label();
@@ -58,7 +50,15 @@
             this.txtTotalTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKeTiMingCheng = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colMiJi = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
+            this.colDest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTarget = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -164,6 +164,15 @@
             this.lklDownloadFuJian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lklDownloadFuJian.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadFuJian_LinkClicked);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(493, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 27);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Values.Text = "增加";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // plTitle
             // 
             this.plTitle.AutoSize = true;
@@ -205,6 +214,8 @@
             // 
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
+            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
+            this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvDetail.ColumnHeadersHeight = 35;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selpersonid,
@@ -220,9 +231,9 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 26);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 105;
             this.dgvDetail.Size = new System.Drawing.Size(790, 360);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -234,98 +245,6 @@
             this.dgvDetail.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentDoubleClick);
             this.dgvDetail.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDetail_CellMouseDoubleClick);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
-            // 
-            // selpersonid
-            // 
-            this.selpersonid.HeaderText = "序号";
-            this.selpersonid.Name = "selpersonid";
-            this.selpersonid.Visible = false;
-            this.selpersonid.Width = 80;
-            // 
-            // colKeTiMingCheng
-            // 
-            this.colKeTiMingCheng.FillWeight = 263.1579F;
-            this.colKeTiMingCheng.HeaderText = "序号";
-            this.colKeTiMingCheng.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.colKeTiMingCheng.Name = "colKeTiMingCheng";
-            this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colKeTiMingCheng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colKeTiMingCheng.Width = 60;
-            // 
-            // colMiJi
-            // 
-            this.colMiJi.FillWeight = 59.21053F;
-            this.colMiJi.HeaderText = "阶段时间(月)";
-            this.colMiJi.Increment = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
-            this.colMiJi.Maximum = new decimal(new int[] {
-            18,
-            0,
-            0,
-            0});
-            this.colMiJi.Minimum = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
-            this.colMiJi.Name = "colMiJi";
-            this.colMiJi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMiJi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMiJi.Width = 110;
-            // 
-            // colDest
-            // 
-            this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDest.FillWeight = 59.21053F;
-            this.colDest.HeaderText = "完成内容及阶段目标";
-            this.colDest.Name = "colDest";
-            this.colDest.ReadOnly = true;
-            // 
-            // colContent
-            // 
-            this.colContent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colContent.FillWeight = 59.21053F;
-            this.colContent.HeaderText = "完成内容";
-            this.colContent.Name = "colContent";
-            this.colContent.Visible = false;
-            // 
-            // colResult
-            // 
-            this.colResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colResult.HeaderText = "阶段成果、考核指标及考核方式";
-            this.colResult.Name = "colResult";
-            this.colResult.ReadOnly = true;
-            // 
-            // colTarget
-            // 
-            this.colTarget.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTarget.HeaderText = "考核指标";
-            this.colTarget.Name = "colTarget";
-            this.colTarget.Visible = false;
-            // 
-            // colMoney
-            // 
-            this.colMoney.FillWeight = 59.21053F;
-            this.colMoney.HeaderText = "阶段经费(万)";
-            this.colMoney.Name = "colMoney";
-            this.colMoney.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMoney.Width = 110;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "删除";
-            this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.Width = 60;
             // 
             // panel1
             // 
@@ -412,14 +331,102 @@
             // 
             this.ofdExcelDialog.Filter = "*.xlsx|*.xlsx";
             // 
-            // btnAdd
+            // selpersonid
             // 
-            this.btnAdd.Location = new System.Drawing.Point(493, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 27);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Values.Text = "增加";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.selpersonid.HeaderText = "序号";
+            this.selpersonid.MinimumWidth = 80;
+            this.selpersonid.Name = "selpersonid";
+            this.selpersonid.Visible = false;
+            this.selpersonid.Width = 80;
+            // 
+            // colKeTiMingCheng
+            // 
+            this.colKeTiMingCheng.FillWeight = 263.1579F;
+            this.colKeTiMingCheng.HeaderText = "序号";
+            this.colKeTiMingCheng.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.colKeTiMingCheng.MinimumWidth = 60;
+            this.colKeTiMingCheng.Name = "colKeTiMingCheng";
+            this.colKeTiMingCheng.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colKeTiMingCheng.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colKeTiMingCheng.Width = 60;
+            // 
+            // colMiJi
+            // 
+            this.colMiJi.FillWeight = 59.21053F;
+            this.colMiJi.HeaderText = "阶段时间(月)";
+            this.colMiJi.Increment = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.colMiJi.Maximum = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            this.colMiJi.Minimum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.colMiJi.MinimumWidth = 110;
+            this.colMiJi.Name = "colMiJi";
+            this.colMiJi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMiJi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMiJi.Width = 110;
+            // 
+            // colDest
+            // 
+            this.colDest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDest.FillWeight = 59.21053F;
+            this.colDest.HeaderText = "完成内容及阶段目标";
+            this.colDest.Name = "colDest";
+            this.colDest.ReadOnly = true;
+            // 
+            // colContent
+            // 
+            this.colContent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colContent.FillWeight = 59.21053F;
+            this.colContent.HeaderText = "完成内容";
+            this.colContent.Name = "colContent";
+            this.colContent.Visible = false;
+            // 
+            // colResult
+            // 
+            this.colResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colResult.HeaderText = "阶段成果、考核指标及考核方式";
+            this.colResult.Name = "colResult";
+            this.colResult.ReadOnly = true;
+            // 
+            // colTarget
+            // 
+            this.colTarget.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTarget.HeaderText = "考核指标";
+            this.colTarget.Name = "colTarget";
+            this.colTarget.Visible = false;
+            // 
+            // colMoney
+            // 
+            this.colMoney.FillWeight = 59.21053F;
+            this.colMoney.HeaderText = "阶段经费(万)";
+            this.colMoney.MinimumWidth = 110;
+            this.colMoney.Name = "colMoney";
+            this.colMoney.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMoney.Width = 110;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "删除";
+            this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.delete.MinimumWidth = 60;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.Width = 60;
             // 
             // JieDuanHuaFenEditor
             // 
@@ -460,6 +467,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtTotalMoney;
         private System.Windows.Forms.Label label3;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
+        private System.Windows.Forms.LinkLabel lklDownloadFuJian;
+        private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colKeTiMingCheng;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colMiJi;
@@ -469,9 +480,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTarget;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMoney;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
-        private System.Windows.Forms.LinkLabel lklDownloadFuJian;
-        private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
     }
 }

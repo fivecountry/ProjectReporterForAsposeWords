@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colKeTi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJieDuanHuaHuaFen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +50,6 @@
             this.colTarget = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJieDuanJingFei = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -189,6 +189,8 @@
             // 
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
+            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
+            this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvDetail.ColumnHeadersHeight = 35;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selpersonid,
@@ -219,9 +221,14 @@
             this.dgvDetail.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDetail_CellMouseDoubleClick);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
+            // ofdExcelDialog
+            // 
+            this.ofdExcelDialog.Filter = "*.xlsx|*.xlsx";
+            // 
             // selpersonid
             // 
             this.selpersonid.HeaderText = "序号";
+            this.selpersonid.MinimumWidth = 80;
             this.selpersonid.Name = "selpersonid";
             this.selpersonid.Visible = false;
             this.selpersonid.Width = 80;
@@ -230,6 +237,7 @@
             // 
             this.colKeTi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colKeTi.HeaderText = "课题";
+            this.colKeTi.MinimumWidth = 69;
             this.colKeTi.Name = "colKeTi";
             this.colKeTi.ReadOnly = true;
             this.colKeTi.Width = 69;
@@ -237,6 +245,7 @@
             // colJieDuanHuaHuaFen
             // 
             this.colJieDuanHuaHuaFen.HeaderText = "阶段";
+            this.colJieDuanHuaHuaFen.MinimumWidth = 60;
             this.colJieDuanHuaHuaFen.Name = "colJieDuanHuaHuaFen";
             this.colJieDuanHuaHuaFen.ReadOnly = true;
             this.colJieDuanHuaHuaFen.Width = 60;
@@ -278,6 +287,7 @@
             0,
             0,
             0});
+            this.colJieDuanJingFei.MinimumWidth = 110;
             this.colJieDuanJingFei.Name = "colJieDuanJingFei";
             this.colJieDuanJingFei.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colJieDuanJingFei.Width = 110;
@@ -286,15 +296,12 @@
             // 
             this.delete.HeaderText = "删除";
             this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.delete.MinimumWidth = 60;
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Visible = false;
             this.delete.Width = 60;
-            // 
-            // ofdExcelDialog
-            // 
-            this.ofdExcelDialog.Filter = "*.xlsx|*.xlsx";
             // 
             // KeTiJieDuanHuaFenEditor
             // 
@@ -325,6 +332,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel plContent;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
+        private System.Windows.Forms.LinkLabel lklDownloadFuJian;
+        private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKeTi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJieDuanHuaHuaFen;
@@ -334,8 +344,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTarget;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewNumericUpDownColumn colJieDuanJingFei;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnExcelLoad;
-        private System.Windows.Forms.LinkLabel lklDownloadFuJian;
-        private System.Windows.Forms.OpenFileDialog ofdExcelDialog;
     }
 }
