@@ -42,7 +42,7 @@
             this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFileName = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colFileName = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colInore = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colUpload = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -217,6 +217,7 @@
             this.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colFileName.HeaderText = "保密资质复印件";
             this.colFileName.Name = "colFileName";
+            this.colFileName.ReadOnly = true;
             this.colFileName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colFileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -277,7 +278,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUnitName;
-        private System.Windows.Forms.DataGridViewButtonColumn colFileName;
+        private System.Windows.Forms.DataGridViewLinkColumn colFileName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colInore;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colUpload;
         private System.Windows.Forms.DataGridViewImageColumn delete;
