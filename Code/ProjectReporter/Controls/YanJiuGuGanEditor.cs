@@ -635,17 +635,31 @@ namespace ProjectReporter.Controls
                 //    _unitInforService.UpdateUnitInfors(new List<UnitExt>(new UnitExt[] { unitExtObj }));
                 //}
 
-                string unitID = Guid.NewGuid().ToString();
+                string unitID = string.Empty;
                 unitID = ConnectionManager.Context.table("Unit").where("UnitName='" + unitName + "'").select("ID").getValue<string>(Guid.NewGuid().ToString());
 
                 //创建单位信息
                 NewProjectEditor.BuildUnitRecord(unitID, unitName, unitName, unitName, unitContact, unitTelephone, unitType, unitAddress);
 
                 //创建人员
-                ConnectionManager.Context.table("Person").where("IDCard = '" + personIDCard + "'").delete();
-                Person PersonObj = new Person();
-                PersonObj.UnitID = unitID;
-                PersonObj.ID = Guid.NewGuid().ToString();
+                Person PersonObj = ConnectionManager.Context.table("Person").where("IDCard = '" + personIDCard + "'").select("*").getItem<Person>(new Person());
+                string newPersonIds = Guid.NewGuid().ToString();
+
+                if (PersonObj != null && PersonObj.ID != null && PersonObj.ID.Length > 1)
+                {
+                    //删除旧的人员信息
+                    ConnectionManager.Context.table("Person").where("IDCard = '" + personIDCard + "'").delete();
+
+                    //更新人员ID
+                    ConnectionManager.Context.table("Task").where("IDCard = '" + personIDCard + "'").set("PersonID", newPersonIds).update();
+                }
+                else
+                {
+                    PersonObj = new Person();
+                }
+
+                PersonObj.ID = newPersonIds;
+                PersonObj.UnitID = unitID;                
                 PersonObj.Name = personName;
                 PersonObj.Sex = personSex;
                 PersonObj.Birthday = DateTime.Parse(personBirthday);
