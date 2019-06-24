@@ -207,8 +207,8 @@ namespace ProjectReporter.Forms
 
                         //检查图片是否存在，如果存在则插入
                         if (File.Exists(picFile))
-                        {   
-                            wu.InsertFile("附件2", picFile, false);
+                        {
+                            wu.InsertPicture("附件2", picFile);
                         }
                     }
                 }
