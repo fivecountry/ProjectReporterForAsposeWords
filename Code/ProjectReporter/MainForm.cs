@@ -928,8 +928,10 @@ namespace ProjectReporter
                 System.Console.WriteLine(ex.ToString());
                 return false;
             }
-
-            f.Close();
+            finally
+            {
+                f.Close();
+            }
 
             return true;
         }
