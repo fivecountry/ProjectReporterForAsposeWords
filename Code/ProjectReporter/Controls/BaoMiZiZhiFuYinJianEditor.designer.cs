@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.plContent = new System.Windows.Forms.Panel();
-            this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFileName = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colInore = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colUpload = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAdd = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
@@ -121,6 +123,15 @@
             this.btnNext.Values.Text = "下一步";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(713, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 27);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Values.Text = "增加";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // plTitle
             // 
             this.plTitle.Controls.Add(this.label1);
@@ -154,10 +165,6 @@
             this.plContent.Size = new System.Drawing.Size(910, 433);
             this.plContent.TabIndex = 7;
             // 
-            // ofdUpload
-            // 
-            this.ofdUpload.Filter = "PNG文件|*.png|JPG文件|*.jpg|JPEG文件|*.jpeg|BMP文件|*.bmp";
-            // 
             // dgvDetail
             // 
             this.dgvDetail.AllowUserToAddRows = false;
@@ -166,17 +173,18 @@
             this.dgvDetail.ColumnHeadersHeight = 35;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selpersonid,
+            this.colUnitName,
             this.colFileName,
             this.colInore,
+            this.colUpload,
             this.delete});
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.ReadOnly = true;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 35;
             this.dgvDetail.Size = new System.Drawing.Size(910, 433);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
@@ -187,6 +195,10 @@
             this.dgvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentClick);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
+            // ofdUpload
+            // 
+            this.ofdUpload.Filter = "PNG文件|*.png|JPG文件|*.jpg|JPEG文件|*.jpeg|BMP文件|*.bmp";
+            // 
             // selpersonid
             // 
             this.selpersonid.HeaderText = "序号";
@@ -194,12 +206,17 @@
             this.selpersonid.ReadOnly = true;
             this.selpersonid.Width = 80;
             // 
+            // colUnitName
+            // 
+            this.colUnitName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colUnitName.HeaderText = "单位名称";
+            this.colUnitName.Name = "colUnitName";
+            // 
             // colFileName
             // 
             this.colFileName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colFileName.HeaderText = "保密资质复印件";
             this.colFileName.Name = "colFileName";
-            this.colFileName.ReadOnly = true;
             this.colFileName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colFileName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -211,23 +228,21 @@
             this.colInore.ReadOnly = true;
             this.colInore.Width = 130;
             // 
+            // colUpload
+            // 
+            this.colUpload.HeaderText = "";
+            this.colUpload.Name = "colUpload";
+            this.colUpload.ReadOnly = true;
+            this.colUpload.Text = "上传";
+            this.colUpload.UseColumnTextForButtonValue = true;
+            // 
             // delete
             // 
             this.delete.HeaderText = "删除";
             this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
             this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Width = 45;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(713, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 27);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Values.Text = "增加";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // BaoMiZiZhiFuYinJianEditor
             // 
@@ -259,10 +274,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog ofdUpload;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnitName;
         private System.Windows.Forms.DataGridViewButtonColumn colFileName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colInore;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn colUpload;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
     }
 }

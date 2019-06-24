@@ -17,6 +17,7 @@ namespace ProjectReporter.DB.Entitys
             //设置值
             query.set("ID", ID);
             query.set("ProjectID", ProjectID);
+            query.set("ExtName", ExtName);
             query.set("ExtType", ExtType);
             query.set("SourceFileName", SourceFileName);
             query.set("RealFileName", RealFileName);
@@ -28,6 +29,7 @@ namespace ProjectReporter.DB.Entitys
 
         public string ID { get; set; }
         public string ProjectID { get; set; }
+        public string ExtName { get; set; }
         public string ExtType { get; set; }
         public string SourceFileName { get; set; }
         public string RealFileName { get; set; }
@@ -38,6 +40,7 @@ namespace ProjectReporter.DB.Entitys
         {
             ID = source("ID").value<string>(Guid.NewGuid().ToString());
             ProjectID = source("ProjectID").value<string>("");
+            ExtName = source("ExtName").value<string>("");
             ExtType = source("ExtType").value<string>("");
             SourceFileName = source("SourceFileName").value<string>("");
             RealFileName = source("RealFileName").value<string>("");
