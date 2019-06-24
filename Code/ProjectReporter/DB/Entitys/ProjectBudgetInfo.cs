@@ -192,6 +192,18 @@ namespace ProjectReporter.DB.Entitys
             set;
         }
 
+        public string ProjectRFA1_3_1rm
+        {
+            get;
+            set;
+        }
+
+        public string ProjectRFA1_3_2rm
+        {
+            get;
+            set;
+        }
+
         public string ProjectRFA1_4rm
         {
             get;

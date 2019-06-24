@@ -201,8 +201,8 @@ namespace ProjectReporter.Controls
         private KryptonLabel kryptonLabel5;
         private KryptonLabel kryptonLabel6;
         private KryptonLabel kryptonLabel7;
-        private KryptonTextBox kryptonTextBox5;
-        private KryptonTextBox kryptonTextBox4;
+        private KryptonTextBox ProjectRFA1_3_2Rm;
+        private KryptonTextBox ProjectRFA1_3_1Rm;
         private KryptonTextBox ProjectRFA1_3_1;
         private KryptonTextBox ProjectRFA1_3_2;
         private bool issaved;
@@ -220,8 +220,8 @@ namespace ProjectReporter.Controls
 		{
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new ProjectReporter.Controls.HSkinTableLayoutPanel();
-            this.kryptonTextBox5 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.kryptonTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.ProjectRFA1_3_2Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.ProjectRFA1_3_1Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.ProjectRFA1_3_1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.ProjectRFA2_1Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -367,10 +367,10 @@ namespace ProjectReporter.Controls
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tableLayoutPanel2.Controls.Add(this.kryptonTextBox5, 2, 10);
-            this.tableLayoutPanel2.Controls.Add(this.kryptonTextBox4, 2, 9);
+            this.tableLayoutPanel2.Controls.Add(this.ProjectRFA1_3_2Rm, 2, 10);
+            this.tableLayoutPanel2.Controls.Add(this.ProjectRFA1_3_1Rm, 2, 9);
             this.tableLayoutPanel2.Controls.Add(this.ProjectRFA1_3_1, 1, 9);
             this.tableLayoutPanel2.Controls.Add(this.kryptonLabel6, 0, 9);
             this.tableLayoutPanel2.Controls.Add(this.ProjectRFA2_1Rm, 2, 18);
@@ -466,57 +466,52 @@ namespace ProjectReporter.Controls
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(537, 570);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // kryptonTextBox5
+            // ProjectRFA1_3_2Rm
             // 
-            this.kryptonTextBox5.AlwaysActive = false;
-            this.kryptonTextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonTextBox5.Enabled = false;
-            this.kryptonTextBox5.Location = new System.Drawing.Point(389, 302);
-            this.kryptonTextBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.kryptonTextBox5.Name = "kryptonTextBox5";
-            this.kryptonTextBox5.Size = new System.Drawing.Size(146, 24);
-            this.kryptonTextBox5.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.kryptonTextBox5.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.ProjectRFA1_3_2Rm.AlwaysActive = false;
+            this.ProjectRFA1_3_2Rm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectRFA1_3_2Rm.Location = new System.Drawing.Point(339, 302);
+            this.ProjectRFA1_3_2Rm.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRFA1_3_2Rm.Name = "ProjectRFA1_3_2Rm";
+            this.ProjectRFA1_3_2Rm.Size = new System.Drawing.Size(196, 24);
+            this.ProjectRFA1_3_2Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ProjectRFA1_3_2Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox5.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox5.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.ProjectRFA1_3_2Rm.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.ProjectRFA1_3_2Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox5.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.kryptonTextBox5.TabIndex = 87;
-            this.kryptonTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ProjectRFA1_3_2Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ProjectRFA1_3_2Rm.TabIndex = 87;
             // 
-            // kryptonTextBox4
+            // ProjectRFA1_3_1Rm
             // 
-            this.kryptonTextBox4.AlwaysActive = false;
-            this.kryptonTextBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonTextBox4.Enabled = false;
-            this.kryptonTextBox4.Location = new System.Drawing.Point(389, 272);
-            this.kryptonTextBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.kryptonTextBox4.Name = "kryptonTextBox4";
-            this.kryptonTextBox4.Size = new System.Drawing.Size(146, 24);
-            this.kryptonTextBox4.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.kryptonTextBox4.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.ProjectRFA1_3_1Rm.AlwaysActive = false;
+            this.ProjectRFA1_3_1Rm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectRFA1_3_1Rm.Location = new System.Drawing.Point(339, 272);
+            this.ProjectRFA1_3_1Rm.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRFA1_3_1Rm.Name = "ProjectRFA1_3_1Rm";
+            this.ProjectRFA1_3_1Rm.Size = new System.Drawing.Size(196, 24);
+            this.ProjectRFA1_3_1Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ProjectRFA1_3_1Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox4.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.kryptonTextBox4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.ProjectRFA1_3_1Rm.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.ProjectRFA1_3_1Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox4.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.kryptonTextBox4.TabIndex = 87;
-            this.kryptonTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ProjectRFA1_3_1Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ProjectRFA1_3_1Rm.TabIndex = 87;
             // 
             // ProjectRFA1_3_1
             // 
             this.ProjectRFA1_3_1.AlwaysActive = false;
             this.ProjectRFA1_3_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_3_1.Location = new System.Drawing.Point(269, 272);
+            this.ProjectRFA1_3_1.Location = new System.Drawing.Point(219, 272);
             this.ProjectRFA1_3_1.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_3_1.Name = "ProjectRFA1_3_1";
             this.ProjectRFA1_3_1.Size = new System.Drawing.Size(116, 24);
@@ -539,7 +534,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonLabel6.Location = new System.Drawing.Point(3, 273);
             this.kryptonLabel6.Name = "kryptonLabel6";
-            this.kryptonLabel6.Size = new System.Drawing.Size(261, 24);
+            this.kryptonLabel6.Size = new System.Drawing.Size(211, 24);
             this.kryptonLabel6.StateCommon.Padding = new System.Windows.Forms.Padding(30, -1, -1, -1);
             this.kryptonLabel6.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel6.TabIndex = 11;
@@ -549,12 +544,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA2_1Rm.AlwaysActive = false;
             this.ProjectRFA2_1Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA2_1Rm.Enabled = false;
-            this.ProjectRFA2_1Rm.Location = new System.Drawing.Point(389, 542);
+            this.ProjectRFA2_1Rm.Location = new System.Drawing.Point(339, 542);
             this.ProjectRFA2_1Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA2_1Rm.Name = "ProjectRFA2_1Rm";
-            this.ProjectRFA2_1Rm.ReadOnly = true;
-            this.ProjectRFA2_1Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA2_1Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA2_1Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA2_1Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -570,12 +563,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA2Rm.AlwaysActive = false;
             this.ProjectRFA2Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA2Rm.Enabled = false;
-            this.ProjectRFA2Rm.Location = new System.Drawing.Point(389, 512);
+            this.ProjectRFA2Rm.Location = new System.Drawing.Point(339, 512);
             this.ProjectRFA2Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA2Rm.Name = "ProjectRFA2Rm";
-            this.ProjectRFA2Rm.ReadOnly = true;
-            this.ProjectRFA2Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA2Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA2Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA2Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -591,12 +582,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_9Rm.AlwaysActive = false;
             this.ProjectRFA1_9Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_9Rm.Enabled = false;
-            this.ProjectRFA1_9Rm.Location = new System.Drawing.Point(389, 482);
+            this.ProjectRFA1_9Rm.Location = new System.Drawing.Point(339, 482);
             this.ProjectRFA1_9Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_9Rm.Name = "ProjectRFA1_9Rm";
-            this.ProjectRFA1_9Rm.ReadOnly = true;
-            this.ProjectRFA1_9Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_9Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_9Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_9Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -612,12 +601,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_8Rm.AlwaysActive = false;
             this.ProjectRFA1_8Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_8Rm.Enabled = false;
-            this.ProjectRFA1_8Rm.Location = new System.Drawing.Point(389, 452);
+            this.ProjectRFA1_8Rm.Location = new System.Drawing.Point(339, 452);
             this.ProjectRFA1_8Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_8Rm.Name = "ProjectRFA1_8Rm";
-            this.ProjectRFA1_8Rm.ReadOnly = true;
-            this.ProjectRFA1_8Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_8Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_8Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_8Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -633,12 +620,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_7Rm.AlwaysActive = false;
             this.ProjectRFA1_7Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_7Rm.Enabled = false;
-            this.ProjectRFA1_7Rm.Location = new System.Drawing.Point(389, 422);
+            this.ProjectRFA1_7Rm.Location = new System.Drawing.Point(339, 422);
             this.ProjectRFA1_7Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_7Rm.Name = "ProjectRFA1_7Rm";
-            this.ProjectRFA1_7Rm.ReadOnly = true;
-            this.ProjectRFA1_7Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_7Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_7Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_7Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -654,12 +639,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_6Rm.AlwaysActive = false;
             this.ProjectRFA1_6Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_6Rm.Enabled = false;
-            this.ProjectRFA1_6Rm.Location = new System.Drawing.Point(389, 392);
+            this.ProjectRFA1_6Rm.Location = new System.Drawing.Point(339, 392);
             this.ProjectRFA1_6Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_6Rm.Name = "ProjectRFA1_6Rm";
-            this.ProjectRFA1_6Rm.ReadOnly = true;
-            this.ProjectRFA1_6Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_6Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_6Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_6Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -675,12 +658,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_5Rm.AlwaysActive = false;
             this.ProjectRFA1_5Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_5Rm.Enabled = false;
-            this.ProjectRFA1_5Rm.Location = new System.Drawing.Point(389, 362);
+            this.ProjectRFA1_5Rm.Location = new System.Drawing.Point(339, 362);
             this.ProjectRFA1_5Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_5Rm.Name = "ProjectRFA1_5Rm";
-            this.ProjectRFA1_5Rm.ReadOnly = true;
-            this.ProjectRFA1_5Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_5Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_5Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_5Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -696,12 +677,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_4Rm.AlwaysActive = false;
             this.ProjectRFA1_4Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_4Rm.Enabled = false;
-            this.ProjectRFA1_4Rm.Location = new System.Drawing.Point(389, 332);
+            this.ProjectRFA1_4Rm.Location = new System.Drawing.Point(339, 332);
             this.ProjectRFA1_4Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_4Rm.Name = "ProjectRFA1_4Rm";
-            this.ProjectRFA1_4Rm.ReadOnly = true;
-            this.ProjectRFA1_4Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_4Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_4Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_4Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -717,12 +696,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_3Rm.AlwaysActive = false;
             this.ProjectRFA1_3Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_3Rm.Enabled = false;
-            this.ProjectRFA1_3Rm.Location = new System.Drawing.Point(389, 242);
+            this.ProjectRFA1_3Rm.Location = new System.Drawing.Point(339, 242);
             this.ProjectRFA1_3Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_3Rm.Name = "ProjectRFA1_3Rm";
-            this.ProjectRFA1_3Rm.ReadOnly = true;
-            this.ProjectRFA1_3Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_3Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_3Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_3Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -738,12 +715,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_2Rm.AlwaysActive = false;
             this.ProjectRFA1_2Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_2Rm.Enabled = false;
-            this.ProjectRFA1_2Rm.Location = new System.Drawing.Point(389, 212);
+            this.ProjectRFA1_2Rm.Location = new System.Drawing.Point(339, 212);
             this.ProjectRFA1_2Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_2Rm.Name = "ProjectRFA1_2Rm";
-            this.ProjectRFA1_2Rm.ReadOnly = true;
-            this.ProjectRFA1_2Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_2Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_2Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_2Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -759,12 +734,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_3Rm.AlwaysActive = false;
             this.ProjectRFA1_1_3Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_1_3Rm.Enabled = false;
-            this.ProjectRFA1_1_3Rm.Location = new System.Drawing.Point(389, 182);
+            this.ProjectRFA1_1_3Rm.Location = new System.Drawing.Point(339, 182);
             this.ProjectRFA1_1_3Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_1_3Rm.Name = "ProjectRFA1_1_3Rm";
-            this.ProjectRFA1_1_3Rm.ReadOnly = true;
-            this.ProjectRFA1_1_3Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_1_3Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_1_3Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_1_3Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -780,12 +753,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_2Rm.AlwaysActive = false;
             this.ProjectRFA1_1_2Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_1_2Rm.Enabled = false;
-            this.ProjectRFA1_1_2Rm.Location = new System.Drawing.Point(389, 152);
+            this.ProjectRFA1_1_2Rm.Location = new System.Drawing.Point(339, 152);
             this.ProjectRFA1_1_2Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_1_2Rm.Name = "ProjectRFA1_1_2Rm";
-            this.ProjectRFA1_1_2Rm.ReadOnly = true;
-            this.ProjectRFA1_1_2Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_1_2Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_1_2Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_1_2Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -801,12 +772,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_1Rm.AlwaysActive = false;
             this.ProjectRFA1_1_1Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_1_1Rm.Enabled = false;
-            this.ProjectRFA1_1_1Rm.Location = new System.Drawing.Point(389, 122);
+            this.ProjectRFA1_1_1Rm.Location = new System.Drawing.Point(339, 122);
             this.ProjectRFA1_1_1Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_1_1Rm.Name = "ProjectRFA1_1_1Rm";
-            this.ProjectRFA1_1_1Rm.ReadOnly = true;
-            this.ProjectRFA1_1_1Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_1_1Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_1_1Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_1_1Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -822,12 +791,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1Rm.AlwaysActive = false;
             this.ProjectRFA1_1Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_1Rm.Enabled = false;
-            this.ProjectRFA1_1Rm.Location = new System.Drawing.Point(389, 92);
+            this.ProjectRFA1_1Rm.Location = new System.Drawing.Point(339, 92);
             this.ProjectRFA1_1Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_1Rm.Name = "ProjectRFA1_1Rm";
-            this.ProjectRFA1_1Rm.ReadOnly = true;
-            this.ProjectRFA1_1Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1_1Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1_1Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1_1Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -864,9 +831,9 @@ namespace ProjectReporter.Controls
             // kryptonLabel37
             // 
             this.kryptonLabel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonLabel37.Location = new System.Drawing.Point(390, 3);
+            this.kryptonLabel37.Location = new System.Drawing.Point(340, 3);
             this.kryptonLabel37.Name = "kryptonLabel37";
-            this.kryptonLabel37.Size = new System.Drawing.Size(144, 24);
+            this.kryptonLabel37.Size = new System.Drawing.Size(194, 24);
             this.kryptonLabel37.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel37.StateCommon.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel37.StateNormal.ShortText.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold);
@@ -876,7 +843,7 @@ namespace ProjectReporter.Controls
             // kryptonLabel36
             // 
             this.kryptonLabel36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonLabel36.Location = new System.Drawing.Point(270, 3);
+            this.kryptonLabel36.Location = new System.Drawing.Point(220, 3);
             this.kryptonLabel36.Name = "kryptonLabel36";
             this.kryptonLabel36.Size = new System.Drawing.Size(114, 24);
             this.kryptonLabel36.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
@@ -890,7 +857,7 @@ namespace ProjectReporter.Controls
             this.kryptonLabel30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonLabel30.Location = new System.Drawing.Point(3, 3);
             this.kryptonLabel30.Name = "kryptonLabel30";
-            this.kryptonLabel30.Size = new System.Drawing.Size(261, 24);
+            this.kryptonLabel30.Size = new System.Drawing.Size(211, 24);
             this.kryptonLabel30.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel30.StateCommon.ShortText.TextV = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center;
             this.kryptonLabel30.StateNormal.ShortText.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -900,7 +867,7 @@ namespace ProjectReporter.Controls
             // ProjectRFA
             // 
             this.ProjectRFA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA.Location = new System.Drawing.Point(270, 33);
+            this.ProjectRFA.Location = new System.Drawing.Point(220, 33);
             this.ProjectRFA.Name = "ProjectRFA";
             this.ProjectRFA.Size = new System.Drawing.Size(114, 24);
             this.ProjectRFA.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -915,12 +882,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFARm.AlwaysActive = false;
             this.ProjectRFARm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFARm.Enabled = false;
-            this.ProjectRFARm.Location = new System.Drawing.Point(389, 32);
+            this.ProjectRFARm.Location = new System.Drawing.Point(339, 32);
             this.ProjectRFARm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFARm.Name = "ProjectRFARm";
-            this.ProjectRFARm.ReadOnly = true;
-            this.ProjectRFARm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFARm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFARm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFARm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -1004,7 +969,7 @@ namespace ProjectReporter.Controls
             // ProjectRFA1
             // 
             this.ProjectRFA1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1.Location = new System.Drawing.Point(270, 63);
+            this.ProjectRFA1.Location = new System.Drawing.Point(220, 63);
             this.ProjectRFA1.Name = "ProjectRFA1";
             this.ProjectRFA1.Size = new System.Drawing.Size(114, 24);
             this.ProjectRFA1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1026,7 +991,7 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel51.Location = new System.Drawing.Point(3, 363);
             this.kryptonLabel51.Name = "kryptonLabel51";
-            this.kryptonLabel51.Size = new System.Drawing.Size(261, 23);
+            this.kryptonLabel51.Size = new System.Drawing.Size(211, 23);
             this.kryptonLabel51.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
             this.kryptonLabel51.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel51.TabIndex = 18;
@@ -1036,7 +1001,7 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel52.Location = new System.Drawing.Point(3, 393);
             this.kryptonLabel52.Name = "kryptonLabel52";
-            this.kryptonLabel52.Size = new System.Drawing.Size(261, 23);
+            this.kryptonLabel52.Size = new System.Drawing.Size(211, 23);
             this.kryptonLabel52.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
             this.kryptonLabel52.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel52.TabIndex = 19;
@@ -1085,7 +1050,7 @@ namespace ProjectReporter.Controls
             // 
             this.kryptonLabel57.Location = new System.Drawing.Point(3, 543);
             this.kryptonLabel57.Name = "kryptonLabel57";
-            this.kryptonLabel57.Size = new System.Drawing.Size(233, 23);
+            this.kryptonLabel57.Size = new System.Drawing.Size(211, 23);
             this.kryptonLabel57.StateCommon.Padding = new System.Windows.Forms.Padding(20, -1, -1, -1);
             this.kryptonLabel57.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.kryptonLabel57.TabIndex = 24;
@@ -1094,7 +1059,7 @@ namespace ProjectReporter.Controls
             // ProjectRFA1_1
             // 
             this.ProjectRFA1_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_1.Location = new System.Drawing.Point(270, 93);
+            this.ProjectRFA1_1.Location = new System.Drawing.Point(220, 93);
             this.ProjectRFA1_1.Name = "ProjectRFA1_1";
             this.ProjectRFA1_1.Size = new System.Drawing.Size(114, 24);
             this.ProjectRFA1_1.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -1106,7 +1071,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_1.AlwaysActive = false;
             this.ProjectRFA1_1_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_1_1.Location = new System.Drawing.Point(269, 122);
+            this.ProjectRFA1_1_1.Location = new System.Drawing.Point(219, 122);
             this.ProjectRFA1_1_1.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_1_1.Name = "ProjectRFA1_1_1";
             this.ProjectRFA1_1_1.Size = new System.Drawing.Size(116, 24);
@@ -1128,7 +1093,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_2.AlwaysActive = false;
             this.ProjectRFA1_1_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_1_2.Location = new System.Drawing.Point(269, 152);
+            this.ProjectRFA1_1_2.Location = new System.Drawing.Point(219, 152);
             this.ProjectRFA1_1_2.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_1_2.Name = "ProjectRFA1_1_2";
             this.ProjectRFA1_1_2.Size = new System.Drawing.Size(116, 24);
@@ -1150,7 +1115,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_1_3.AlwaysActive = false;
             this.ProjectRFA1_1_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_1_3.Location = new System.Drawing.Point(269, 182);
+            this.ProjectRFA1_1_3.Location = new System.Drawing.Point(219, 182);
             this.ProjectRFA1_1_3.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_1_3.Name = "ProjectRFA1_1_3";
             this.ProjectRFA1_1_3.Size = new System.Drawing.Size(116, 24);
@@ -1172,7 +1137,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_2.AlwaysActive = false;
             this.ProjectRFA1_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_2.Location = new System.Drawing.Point(269, 212);
+            this.ProjectRFA1_2.Location = new System.Drawing.Point(219, 212);
             this.ProjectRFA1_2.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_2.Name = "ProjectRFA1_2";
             this.ProjectRFA1_2.Size = new System.Drawing.Size(116, 24);
@@ -1193,7 +1158,7 @@ namespace ProjectReporter.Controls
             // ProjectRFA1_3
             // 
             this.ProjectRFA1_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_3.Location = new System.Drawing.Point(269, 242);
+            this.ProjectRFA1_3.Location = new System.Drawing.Point(219, 242);
             this.ProjectRFA1_3.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_3.Name = "ProjectRFA1_3";
             this.ProjectRFA1_3.Size = new System.Drawing.Size(116, 26);
@@ -1207,7 +1172,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_4.AlwaysActive = false;
             this.ProjectRFA1_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_4.Location = new System.Drawing.Point(269, 332);
+            this.ProjectRFA1_4.Location = new System.Drawing.Point(219, 332);
             this.ProjectRFA1_4.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_4.Name = "ProjectRFA1_4";
             this.ProjectRFA1_4.Size = new System.Drawing.Size(116, 24);
@@ -1229,12 +1194,10 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1Rm.AlwaysActive = false;
             this.ProjectRFA1Rm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1Rm.Enabled = false;
-            this.ProjectRFA1Rm.Location = new System.Drawing.Point(389, 62);
+            this.ProjectRFA1Rm.Location = new System.Drawing.Point(339, 62);
             this.ProjectRFA1Rm.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1Rm.Name = "ProjectRFA1Rm";
-            this.ProjectRFA1Rm.ReadOnly = true;
-            this.ProjectRFA1Rm.Size = new System.Drawing.Size(146, 24);
+            this.ProjectRFA1Rm.Size = new System.Drawing.Size(196, 24);
             this.ProjectRFA1Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ProjectRFA1Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
@@ -1250,7 +1213,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_5.AlwaysActive = false;
             this.ProjectRFA1_5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_5.Location = new System.Drawing.Point(269, 362);
+            this.ProjectRFA1_5.Location = new System.Drawing.Point(219, 362);
             this.ProjectRFA1_5.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_5.Name = "ProjectRFA1_5";
             this.ProjectRFA1_5.Size = new System.Drawing.Size(116, 24);
@@ -1272,7 +1235,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_6.AlwaysActive = false;
             this.ProjectRFA1_6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_6.Location = new System.Drawing.Point(269, 392);
+            this.ProjectRFA1_6.Location = new System.Drawing.Point(219, 392);
             this.ProjectRFA1_6.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_6.Name = "ProjectRFA1_6";
             this.ProjectRFA1_6.Size = new System.Drawing.Size(116, 24);
@@ -1294,7 +1257,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_7.AlwaysActive = false;
             this.ProjectRFA1_7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_7.Location = new System.Drawing.Point(269, 422);
+            this.ProjectRFA1_7.Location = new System.Drawing.Point(219, 422);
             this.ProjectRFA1_7.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_7.Name = "ProjectRFA1_7";
             this.ProjectRFA1_7.Size = new System.Drawing.Size(116, 24);
@@ -1316,7 +1279,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_8.AlwaysActive = false;
             this.ProjectRFA1_8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_8.Location = new System.Drawing.Point(269, 452);
+            this.ProjectRFA1_8.Location = new System.Drawing.Point(219, 452);
             this.ProjectRFA1_8.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_8.Name = "ProjectRFA1_8";
             this.ProjectRFA1_8.Size = new System.Drawing.Size(116, 24);
@@ -1338,7 +1301,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_9.AlwaysActive = false;
             this.ProjectRFA1_9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_9.Location = new System.Drawing.Point(269, 482);
+            this.ProjectRFA1_9.Location = new System.Drawing.Point(219, 482);
             this.ProjectRFA1_9.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_9.Name = "ProjectRFA1_9";
             this.ProjectRFA1_9.Size = new System.Drawing.Size(116, 24);
@@ -1360,7 +1323,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA2_1.AlwaysActive = false;
             this.ProjectRFA2_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA2_1.Location = new System.Drawing.Point(269, 542);
+            this.ProjectRFA2_1.Location = new System.Drawing.Point(219, 542);
             this.ProjectRFA2_1.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA2_1.Name = "ProjectRFA2_1";
             this.ProjectRFA2_1.Size = new System.Drawing.Size(116, 24);
@@ -1381,7 +1344,7 @@ namespace ProjectReporter.Controls
             // ProjectRFA2
             // 
             this.ProjectRFA2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA2.Location = new System.Drawing.Point(270, 513);
+            this.ProjectRFA2.Location = new System.Drawing.Point(220, 513);
             this.ProjectRFA2.Name = "ProjectRFA2";
             this.ProjectRFA2.Size = new System.Drawing.Size(114, 24);
             this.ProjectRFA2.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1554,7 +1517,7 @@ namespace ProjectReporter.Controls
             // 
             this.ProjectRFA1_3_2.AlwaysActive = false;
             this.ProjectRFA1_3_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectRFA1_3_2.Location = new System.Drawing.Point(269, 302);
+            this.ProjectRFA1_3_2.Location = new System.Drawing.Point(219, 302);
             this.ProjectRFA1_3_2.Margin = new System.Windows.Forms.Padding(2);
             this.ProjectRFA1_3_2.Name = "ProjectRFA1_3_2";
             this.ProjectRFA1_3_2.Size = new System.Drawing.Size(116, 24);
@@ -2191,6 +2154,8 @@ namespace ProjectReporter.Controls
                 this.pbinfo.ProjectRFA1_1_3rm = this.ProjectRFA1_1_3Rm.Text;
                 this.pbinfo.ProjectRFA1_2rm = this.ProjectRFA1_2Rm.Text;
                 this.pbinfo.ProjectRFA1_3rm = this.ProjectRFA1_3Rm.Text;
+                this.pbinfo.ProjectRFA1_3_1rm = this.ProjectRFA1_3_1Rm.Text;
+                this.pbinfo.ProjectRFA1_3_2rm = this.ProjectRFA1_3_2Rm.Text;
                 this.pbinfo.ProjectRFA1_4rm = this.ProjectRFA1_4Rm.Text;
                 this.pbinfo.ProjectRFA1_5rm = this.ProjectRFA1_5Rm.Text;
                 this.pbinfo.ProjectRFA1_6rm = this.ProjectRFA1_6Rm.Text;
