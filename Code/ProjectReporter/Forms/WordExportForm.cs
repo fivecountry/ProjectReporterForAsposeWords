@@ -200,7 +200,17 @@ namespace ProjectReporter.Forms
                 List<ExtFileList> list = ConnectionManager.Context.table("ExtFileList").where("ProjectID='" + MainForm.Instance.ProjectObj.ID + "'").select("*").getList<ExtFileList>(new ExtFileList());
                 foreach (ExtFileList efl in list)
                 {
-                    wu.InsertFile("附件2", Path.Combine(MainForm.ProjectFilesDir, efl.RealFileName), false);
+                    if (efl.IsIgnore == 0)
+                    {
+                        //图片文件
+                        string picFile = Path.Combine(MainForm.ProjectFilesDir, efl.RealFileName);
+
+                        //检查图片是否存在，如果存在则插入
+                        if (File.Exists(picFile))
+                        {   
+                            wu.InsertFile("附件2", picFile, false);
+                        }
+                    }
                 }
 
                 //处理诚信承诺书
