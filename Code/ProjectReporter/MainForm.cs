@@ -125,54 +125,56 @@ namespace ProjectReporter
         private void btnwordview_Click(object sender, EventArgs e)
         {
             //保存所有
-            SaveAll();
-
-            if (ProjectObj != null)
+            if (SaveAll())
             {
-                WordExportForm frmExportWord = new WordExportForm(string.Empty);
-                frmExportWord.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("对不起，请填写项目信息！");
+                if (ProjectObj != null)
+                {
+                    WordExportForm frmExportWord = new WordExportForm(string.Empty);
+                    frmExportWord.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("对不起，请填写项目信息！");
+                }
             }
         }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
             //保存所有
-            SaveAll();
-
-            if (File.Exists(Path.Combine(MainForm.ProjectDir, "建议书.doc")) == false)
+            if (SaveAll())
             {
-                MessageBox.Show("对不起，请上传项目建议书！");
-                return;
-            }
+                if (File.Exists(Path.Combine(MainForm.ProjectDir, "建议书.doc")) == false)
+                {
+                    MessageBox.Show("对不起，请上传项目建议书！");
+                    return;
+                }
 
-            if (!this.IsInputCompleted())
-            {
-                MessageBox.Show("请将所有内容填写完整再点击上报!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+                if (!this.IsInputCompleted())
+                {
+                    MessageBox.Show("请将所有内容填写完整再点击上报!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            if (!this.IsRightMoneyOrTime())
-            {
-                return;
-            }
+                if (!this.IsRightMoneyOrTime())
+                {
+                    return;
+                }
 
-            string unitName = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = '" + ProjectObj.ID + "')").select("UnitName").getValue<string>(string.Empty);
-            string personName = ConnectionManager.Context.table("Person").where("ID=(select PersonID from Task where Role = '负责人' and  ProjectID = '" + ProjectObj.ID + "')").select("Name").getValue<string>(string.Empty);
-            string docName = unitName + "_" + personName;
+                string unitName = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = '" + ProjectObj.ID + "')").select("UnitName").getValue<string>(string.Empty);
+                string personName = ConnectionManager.Context.table("Person").where("ID=(select PersonID from Task where Role = '负责人' and  ProjectID = '" + ProjectObj.ID + "')").select("Name").getValue<string>(string.Empty);
+                string docName = unitName + "_" + personName;
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "zip files(*.zip)|*.zip";
-            saveFileDialog.FileName = docName + ".zip";
-            saveFileDialog.FilterIndex = 0;
-            saveFileDialog.RestoreDirectory = true;
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "zip files(*.zip)|*.zip";
+                saveFileDialog.FileName = docName + ".zip";
+                saveFileDialog.FilterIndex = 0;
+                saveFileDialog.RestoreDirectory = true;
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                new ZipExportForm(saveFileDialog.FileName).ShowDialog();
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    new ZipExportForm(saveFileDialog.FileName).ShowDialog();
+                }
             }
         }
 
@@ -246,18 +248,25 @@ namespace ProjectReporter
 
             if (EnabledShowBackupHint)
             {
-                //先保存
-                SaveAll();
+                if (MessageBox.Show("真的要退出吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //先保存
+                    SaveAll();
 
-                //询问是否备份
-                //if (ProjectObj != null)
-                //{
-                //    DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
-                //    if (dialogResult == DialogResult.Yes)
-                //    {
-                //        this.btnSave_Click(this, e);
-                //    }
-                //}
+                    //询问是否备份
+                    //if (ProjectObj != null)
+                    //{
+                    //    DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+                    //    if (dialogResult == DialogResult.Yes)
+                    //    {
+                    //        this.btnSave_Click(this, e);
+                    //    }
+                    //}
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
             else
             {
@@ -874,7 +883,7 @@ namespace ProjectReporter
         /// <summary>
         /// 保存所有
         /// </summary>
-        public void SaveAll()
+        public bool SaveAll()
         {
             //显示提示窗体
             Form f = new Form();
@@ -900,15 +909,29 @@ namespace ProjectReporter
                 foreach (BaseEditor be in EditorIndexLists)
                 {
                     //保存
-                    be.OnSaveEvent();
+                    try
+                    {
+                        be.OnSaveEvent();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (GetPageControl(be) != null)
+                        {
+                            MessageBox.Show("对不起，页签(" + GetPageControl(be).Text + ")保存失败！Ex:" + ex.ToString());
+                            return false;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("保存失败！Ex:" + ex.ToString());
+                System.Console.WriteLine(ex.ToString());
+                return false;
             }
 
             f.Close();
+
+            return true;
         }
 
         private void btnSave2_Click(object sender, EventArgs e)
