@@ -1980,6 +1980,8 @@ namespace ProjectReporter.Controls
                 this.ProjectRFA1_1_3Rm.Text = this.pbinfo.ProjectRFA1_1_3rm;
                 this.ProjectRFA1_2Rm.Text = this.pbinfo.ProjectRFA1_2rm;
                 this.ProjectRFA1_3Rm.Text = this.pbinfo.ProjectRFA1_3rm;
+                this.ProjectRFA1_3_1Rm.Text = this.pbinfo.ProjectRFA1_3_1rm;
+                this.ProjectRFA1_3_2Rm.Text = this.pbinfo.ProjectRFA1_3_2rm;
                 this.ProjectRFA1_4Rm.Text = this.pbinfo.ProjectRFA1_4rm;
                 this.ProjectRFA1_5Rm.Text = this.pbinfo.ProjectRFA1_5rm;
                 this.ProjectRFA1_6Rm.Text = this.pbinfo.ProjectRFA1_6rm;
@@ -2099,6 +2101,8 @@ namespace ProjectReporter.Controls
             this.pbinfo.ProjectRFA1_1_3rm = this.ProjectRFA1_1_3Rm.Text;
             this.pbinfo.ProjectRFA1_2rm = this.ProjectRFA1_2Rm.Text;
             this.pbinfo.ProjectRFA1_3rm = this.ProjectRFA1_3Rm.Text;
+            this.pbinfo.ProjectRFA1_3_1rm = this.ProjectRFA1_3_1Rm.Text;
+            this.pbinfo.ProjectRFA1_3_2rm = this.ProjectRFA1_3_2Rm.Text;
             this.pbinfo.ProjectRFA1_4rm = this.ProjectRFA1_4Rm.Text;
             this.pbinfo.ProjectRFA1_5rm = this.ProjectRFA1_5Rm.Text;
             this.pbinfo.ProjectRFA1_6rm = this.ProjectRFA1_6Rm.Text;
