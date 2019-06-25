@@ -129,8 +129,20 @@ namespace ProjectReporter
             //{
                 if (ProjectObj != null)
                 {
-                    WordExportForm frmExportWord = new WordExportForm(string.Empty);
+                    WordExportForm frmExportWord = new WordExportForm(Path.Combine(MainForm.ProjectDir, "项目申报书.doc"));
                     frmExportWord.ShowDialog();
+
+                    if (File.Exists(Path.Combine(MainForm.ProjectDir, "项目申报书.doc")))
+                    {
+                        try
+                        {
+                            System.Diagnostics.Process.Start(Path.Combine(MainForm.ProjectDir, "项目申报书.doc"));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("对不起,打开项目申报书失败!Ex:" + ex.ToString());
+                        }
+                    }
                 }
                 else
                 {
@@ -144,6 +156,12 @@ namespace ProjectReporter
             //保存所有
             if (SaveAll())
             {
+                if (File.Exists(Path.Combine(MainForm.ProjectDir, "项目申报书.doc")) == false)
+                {
+                    MessageBox.Show("对不起，请先点击预览按钮生成项目申报书！");
+                    return;
+                }
+
                 if (File.Exists(Path.Combine(MainForm.ProjectDir, "建议书.doc")) == false)
                 {
                     MessageBox.Show("对不起，请上传项目建议书！");
