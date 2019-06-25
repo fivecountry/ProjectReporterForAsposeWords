@@ -395,7 +395,7 @@ namespace ProjectReporter.Controls
             try
             {
                 //加载字段
-                string stepIndex = dr["序号"] != null ? dr["序号"].ToString() : string.Empty;
+                string stepIndex = dr["阶段"] != null ? dr["阶段"].ToString() : string.Empty;
                 string stepTime = dr["阶段时间(月)"] != null ? dr["阶段时间(月)"].ToString() : string.Empty;
                 string stepContent = dr["完成内容及阶段目标"] != null ? dr["完成内容及阶段目标"].ToString() : string.Empty;
                 string stepResult = dr["阶段成果、考核指标及考核方式"] != null ? dr["阶段成果、考核指标及考核方式"].ToString() : string.Empty;
@@ -411,6 +411,10 @@ namespace ProjectReporter.Controls
                 if (int.TryParse(stepTime, out timeResult) == false)
                 {
                     throw new Exception("对不起，'阶段时间(月)'只能是数字！");
+                }
+                if (timeResult <= 5 || timeResult >= 19)
+                {
+                    throw new Exception("对不起，'阶段时间(月)'的范围应该在6~18之间！");
                 }
                 timeResult = 0;
                 if (int.TryParse(stepMoney, out timeResult) == false)
