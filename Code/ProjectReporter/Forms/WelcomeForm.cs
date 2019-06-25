@@ -76,17 +76,17 @@ namespace ProjectReporter.Forms
                             //导出
                             string toZipFile = StartupParams[0].Replace("Export:", string.Empty);
                             string toZipDir = new FileInfo(toZipFile).DirectoryName;
-                            string docFile = Path.Combine(toZipDir, "申报书.doc");
-                            if (File.Exists(docFile))
-                            {
-                                File.Copy(docFile, Path.Combine(MainForm.ProjectDir, "申报书.doc"), true);
-                            }
+                            //string docFile = Path.Combine(toZipDir, "申报书.doc");
+                            //if (File.Exists(docFile))
+                            //{
+                            //    File.Copy(docFile, Path.Combine(MainForm.ProjectDir, "申报书.doc"), true);
+                            //}
 
                             //打包文件
                             fzo.ZipFileDirectory(MainForm.ProjectDir, toZipFile);
 
                             //删除临时Doc文件
-                            File.Delete(Path.Combine(MainForm.ProjectDir, "申报书.doc"));
+                            //File.Delete(Path.Combine(MainForm.ProjectDir, "申报书.doc"));
                         }
                         else if (StartupParams[0].StartsWith("Clear:"))
                         {
