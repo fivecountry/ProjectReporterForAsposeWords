@@ -617,45 +617,17 @@ namespace ProjectReporter.Utility
         /// <returns></returns>
         public static bool OfficeIsInstall(out string OfficeVersion)
         {
-            OfficeVersion = "";
-            Microsoft.Win32.RegistryKey regKey = null;
-            Microsoft.Win32.RegistryKey regSubKey2 = null;
-            Microsoft.Win32.RegistryKey regSubKey3 = null;
+            OfficeVersion = "Microsoft Office 20XX";
 
-            regKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
-            regSubKey2 = regKey.OpenSubKey(@"SOFTWARE\Microsoft\Office\12.0\Common\InstallRoot", false);
-            regSubKey3 = regKey.OpenSubKey(@"SOFTWARE\Microsoft\Office\14.0\Common\InstallRoot", false);
-            if (regSubKey3 != null && regSubKey3.GetValue("Path") != null)
-            {
-                OfficeVersion = "2010";
-                return true;
-            }
-            else if (regSubKey2 != null && regSubKey2.GetValue("Path") != null)
-            {
-                OfficeVersion = "2007";
-                return true;
-            }
-            else
-            {
-
-                regKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
-                regSubKey2 = regKey.OpenSubKey(@"SOFTWARE\Microsoft\Office\12.0\Common\InstallRoot", false);
-                regSubKey3 = regKey.OpenSubKey(@"SOFTWARE\Microsoft\Office\14.0\Common\InstallRoot", false);
-                if (regSubKey3 != null && regSubKey3.GetValue("Path") != null)
-                {
-                    OfficeVersion = "2010";
-                    return true;
-                }
-                else if (regSubKey2 != null && regSubKey2.GetValue("Path") != null)
-                {
-                    OfficeVersion = "2007";
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
+            try
+            {
+                Type type = Type.GetTypeFromProgID("Word.Application");
+                return type.FullName.StartsWith("Microsoft.Office");
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
