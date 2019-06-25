@@ -678,9 +678,10 @@ namespace ProjectReporter.Controls
                     //新行
                     task = new Task();
                     task.ProjectID = ConnectionManager.Context.table("Project").where("Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "'").select("ID").getValue<string>(string.Empty);
-                    task.Type = string.IsNullOrEmpty(subjectName) || subjectName == MainForm.Instance.ProjectObj.Name ? "项目" : "课题";
-                    task.Role = jobInProjectOrSubject;
                 }
+
+                task.Type = string.IsNullOrEmpty(subjectName) || subjectName == MainForm.Instance.ProjectObj.Name ? "项目" : "课题";
+                task.Role = jobInProjectOrSubject;
 
                 task.PersonID = PersonObj.ID;
                 task.IDCard = PersonObj.IDCard;
