@@ -410,7 +410,7 @@ namespace ProjectReporter.Controls
 
         private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "ketijieduanhuafen.xlsx"));
+            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "ketijieduanhuafen.xls"));
             string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), lklDownloadFuJian.Text.Trim());
             File.Copy(sourcePath, destPath, true);
             MessageBox.Show("已下载到桌面！");

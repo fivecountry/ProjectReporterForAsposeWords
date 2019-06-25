@@ -101,7 +101,7 @@
             // txtInfo
             // 
             this.txtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtInfo.Location = new System.Drawing.Point(0, 28);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
@@ -130,7 +130,7 @@
             this.autoHeightLabel1.Name = "autoHeightLabel1";
             this.autoHeightLabel1.Size = new System.Drawing.Size(744, 28);
             this.autoHeightLabel1.TabIndex = 0;
-            this.autoHeightLabel1.Text = "(200字以内)";
+            this.autoHeightLabel1.Text = "(200字以内,此部分无需缩进,请顶格填写)";
             this.autoHeightLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // kpDest
@@ -141,7 +141,7 @@
             this.kpDest.LastVisibleSet = true;
             this.kpDest.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpDest.Name = "kpDest";
-            this.kpDest.Size = new System.Drawing.Size(750, 369);
+            this.kpDest.Size = new System.Drawing.Size(750, 361);
             this.kpDest.Text = "研究目标";
             this.kpDest.ToolTipTitle = "Page ToolTip";
             this.kpDest.UniqueName = "A7C07E934B1F414E99B2655E2A0D8ECC";
@@ -149,9 +149,10 @@
             // txtDest
             // 
             this.txtDest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtDest.Location = new System.Drawing.Point(0, 0);
             this.txtDest.Name = "txtDest";
-            this.txtDest.Size = new System.Drawing.Size(750, 369);
+            this.txtDest.Size = new System.Drawing.Size(750, 361);
             this.txtDest.TabIndex = 1;
             this.txtDest.Text = "";
             // 
@@ -163,7 +164,7 @@
             this.kpContent.LastVisibleSet = true;
             this.kpContent.MinimumSize = new System.Drawing.Size(50, 50);
             this.kpContent.Name = "kpContent";
-            this.kpContent.Size = new System.Drawing.Size(750, 369);
+            this.kpContent.Size = new System.Drawing.Size(750, 361);
             this.kpContent.Text = "研究内容";
             this.kpContent.ToolTipTitle = "Page ToolTip";
             this.kpContent.UniqueName = "D7C9060B093A424227B510727F20F652";
@@ -171,9 +172,10 @@
             // txtContent
             // 
             this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtContent.Location = new System.Drawing.Point(0, 0);
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(750, 369);
+            this.txtContent.Size = new System.Drawing.Size(750, 361);
             this.txtContent.TabIndex = 1;
             this.txtContent.Text = "";
             // 
@@ -193,6 +195,7 @@
             // txtNeed
             // 
             this.txtNeed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtNeed.Location = new System.Drawing.Point(0, 0);
             this.txtNeed.Name = "txtNeed";
             this.txtNeed.Size = new System.Drawing.Size(750, 361);

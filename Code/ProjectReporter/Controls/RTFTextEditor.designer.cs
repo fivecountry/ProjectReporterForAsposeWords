@@ -70,7 +70,7 @@
             this.lblTitle.Font = new System.Drawing.Font("宋体", 14.25F);
             this.lblTitle.Location = new System.Drawing.Point(53, 20);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1008, 45);
+            this.lblTitle.Size = new System.Drawing.Size(1008, 39);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = ".............";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -126,18 +126,19 @@
             this.plContent.BackColor = System.Drawing.Color.Transparent;
             this.plContent.Controls.Add(this.txtContent);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 68);
+            this.plContent.Location = new System.Drawing.Point(53, 62);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1008, 422);
+            this.plContent.Size = new System.Drawing.Size(1008, 428);
             this.plContent.TabIndex = 7;
             // 
             // txtContent
             // 
             this.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.txtContent.Location = new System.Drawing.Point(0, 0);
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(1008, 422);
+            this.txtContent.Size = new System.Drawing.Size(1008, 428);
             this.txtContent.TabIndex = 0;
             this.txtContent.Text = "";
             // 
