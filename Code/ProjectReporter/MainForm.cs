@@ -79,8 +79,8 @@ namespace ProjectReporter
 
             //检查是否已经安装Word
             IsWordInstalled = ProjectReporter.Utility.WordUtility.OfficeIsInstall(out WordVersion);
-            btnwordview.Enabled = IsWordInstalled;
-            btnExport.Enabled = IsWordInstalled;
+            //btnwordview.Enabled = IsWordInstalled;
+            //btnExport.Enabled = IsWordInstalled;
         }
 
         /// <summary>
@@ -346,7 +346,7 @@ namespace ProjectReporter
 
             if (IsWordInstalled == false)
             {
-                MessageBox.Show("对不起，您没有安装Microsoft Office2007或Microsoft Office2010将不能使用预览和导出功能！");
+                MessageBox.Show("对不起，您可能没有安装Microsoft Office2007或Microsoft Office2010或安装异常，可能无法正常使用预览和导出功能！");
             }
         }
 
