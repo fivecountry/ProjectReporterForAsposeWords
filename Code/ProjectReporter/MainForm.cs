@@ -125,8 +125,8 @@ namespace ProjectReporter
         private void btnwordview_Click(object sender, EventArgs e)
         {
             //保存所有
-            if (SaveAll())
-            {
+            //if (SaveAll())
+            //{
                 if (ProjectObj != null)
                 {
                     WordExportForm frmExportWord = new WordExportForm(string.Empty);
@@ -136,7 +136,7 @@ namespace ProjectReporter
                 {
                     MessageBox.Show("对不起，请填写项目信息！");
                 }
-            }
+            //}
         }
 
         private void btnExport_Click(object sender, EventArgs e)

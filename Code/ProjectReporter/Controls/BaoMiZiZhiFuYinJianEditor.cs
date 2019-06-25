@@ -116,6 +116,17 @@ namespace ProjectReporter.Controls
                             //更新数据
                             efl.copyTo(ConnectionManager.Context.table("ExtFileList")).where("ID='" + efl.ID + "'").update();
                         }
+                        else
+                        {
+                            //是否为军队单位
+                            efl.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
+
+                            //单位名称
+                            efl.ExtName = dgvRow.Cells[1].Value.ToString();
+
+                            //更新数据
+                            efl.copyTo(ConnectionManager.Context.table("ExtFileList")).where("ID='" + efl.ID + "'").update();
+                        }
                     }
                     else
                     {
