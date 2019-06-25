@@ -342,7 +342,7 @@
             // colKeTiMingCheng
             // 
             this.colKeTiMingCheng.FillWeight = 263.1579F;
-            this.colKeTiMingCheng.HeaderText = "序号";
+            this.colKeTiMingCheng.HeaderText = "阶段";
             this.colKeTiMingCheng.Maximum = new decimal(new int[] {
             99999999,
             0,

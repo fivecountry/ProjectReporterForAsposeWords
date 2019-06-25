@@ -108,7 +108,7 @@ namespace ProjectReporter.Controls
                             efl.RealFileName = realFileName;
 
                             //是否为军队单位
-                            efl.IsIgnore = 0;
+                            efl.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
 
                             //单位名称
                             efl.ExtName = dgvRow.Cells[1].Value.ToString();
@@ -120,7 +120,7 @@ namespace ProjectReporter.Controls
                     else
                     {
                         //是否为军队单位
-                        efl.IsIgnore = 1;
+                        efl.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
 
                         //单位名称
                         efl.ExtName = dgvRow.Cells[1].Value.ToString();
@@ -154,7 +154,7 @@ namespace ProjectReporter.Controls
                             efll.ExtName = dgvRow.Cells[1].Value.ToString();
                             efll.SourceFileName = Path.GetFileName(sourceFile);
                             efll.RealFileName = realFileName;
-                            efll.IsIgnore = 0;
+                            efll.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
                             efll.copyTo(ConnectionManager.Context.table("ExtFileList")).insert();
                         }
                     }
@@ -166,7 +166,7 @@ namespace ProjectReporter.Controls
                         efll.ExtName = dgvRow.Cells[1].Value.ToString();
                         efll.SourceFileName = string.Empty;
                         efll.RealFileName = string.Empty;
-                        efll.IsIgnore = 1;
+                        efll.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
                         efll.copyTo(ConnectionManager.Context.table("ExtFileList")).insert();
                     }
                 }

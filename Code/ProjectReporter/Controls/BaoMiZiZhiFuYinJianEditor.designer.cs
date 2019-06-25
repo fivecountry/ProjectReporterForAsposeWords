@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -40,6 +40,7 @@
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
+            this.label2 = new System.Windows.Forms.Label();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFileName = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -60,15 +61,17 @@
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel1, 1, 3);
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel1, 1, 4);
             this.tableLayoutPanel15.Controls.Add(this.plTitle, 1, 1);
-            this.tableLayoutPanel15.Controls.Add(this.plContent, 1, 2);
+            this.tableLayoutPanel15.Controls.Add(this.plContent, 1, 3);
+            this.tableLayoutPanel15.Controls.Add(this.label2, 1, 2);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 5;
+            this.tableLayoutPanel15.RowCount = 6;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -160,9 +163,9 @@
             this.plContent.BackColor = System.Drawing.Color.Transparent;
             this.plContent.Controls.Add(this.dgvDetail);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 53);
+            this.plContent.Location = new System.Drawing.Point(53, 93);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(910, 433);
+            this.plContent.Size = new System.Drawing.Size(910, 393);
             this.plContent.TabIndex = 7;
             // 
             // dgvDetail
@@ -182,11 +185,11 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.RowTemplate.Height = 35;
-            this.dgvDetail.Size = new System.Drawing.Size(910, 433);
+            this.dgvDetail.Size = new System.Drawing.Size(910, 393);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;
             this.dgvDetail.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList;
             this.dgvDetail.StateCommon.HeaderColumn.Content.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -198,6 +201,19 @@
             // ofdUpload
             // 
             this.ofdUpload.Filter = "PNG文件|*.png|JPG文件|*.jpg|JPEG文件|*.jpeg|BMP文件|*.bmp";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(53, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(910, 40);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "军队单位无需上传保密资质复印件";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // selpersonid
             // 
@@ -224,10 +240,9 @@
             // colInore
             // 
             this.colInore.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colInore.HeaderText = "是否为军队单位";
+            this.colInore.HeaderText = "是否为军队单位(勾选状态表示军队单位)";
             this.colInore.Name = "colInore";
-            this.colInore.ReadOnly = true;
-            this.colInore.Width = 130;
+            this.colInore.Width = 306;
             // 
             // colUpload
             // 
@@ -276,6 +291,7 @@
         private System.Windows.Forms.OpenFileDialog ofdUpload;
         private ComponentFactory.Krypton.Toolkit.KryptonDataGridView dgvDetail;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnAdd;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn selpersonid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUnitName;
         private System.Windows.Forms.DataGridViewLinkColumn colFileName;
