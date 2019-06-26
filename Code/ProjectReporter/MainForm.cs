@@ -266,20 +266,27 @@ namespace ProjectReporter
 
             if (EnabledShowBackupHint)
             {
-                if (MessageBox.Show("真的要保存吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("真的要退出吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    //先保存
-                    SaveAll();
+                    if (MessageBox.Show("真的要保存吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        //先保存
+                        SaveAll();
 
-                    //询问是否备份
-                    //if (ProjectObj != null)
-                    //{
-                    //    DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
-                    //    if (dialogResult == DialogResult.Yes)
-                    //    {
-                    //        this.btnSave_Click(this, e);
-                    //    }
-                    //}
+                        //询问是否备份
+                        //if (ProjectObj != null)
+                        //{
+                        //    DialogResult dialogResult = MessageBox.Show("退出前是否备份打包数据？", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
+                        //    if (dialogResult == DialogResult.Yes)
+                        //    {
+                        //        this.btnSave_Click(this, e);
+                        //    }
+                        //}
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
                 }
             }
             else
