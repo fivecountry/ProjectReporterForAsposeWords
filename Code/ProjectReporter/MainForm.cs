@@ -903,6 +903,7 @@ namespace ProjectReporter
             UIDoWorkProcessForm upf = new UIDoWorkProcessForm();
             upf.EnabledDisplayProgress = true;
             upf.ProgresBarMaximum = EditorIndexLists.Count;
+            upf.ShowProgress();
 
             //循环所有控件，一个一个保存
             try
