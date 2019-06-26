@@ -87,11 +87,11 @@ namespace ProjectReporter.Controls
                         //判断是否我多行文本
                         if (widthRowCount > 1)
                         {
-                            Height = (widthRowCount * wordHeight) + 20;
+                            Height = (widthRowCount * wordHeight) + 30;
                         }
                         else
                         {
-                            Height = wordHeight + 20;
+                            Height = wordHeight + 30;
                         }
                     }
                 }
@@ -115,7 +115,77 @@ namespace ProjectReporter.Controls
         /// </summary>
         public void countLabelHeight()
         {
+            //计算标签高度
             processLabelHeight(Text);
+
+                try
+                {
+                    //设置TableLayout布局,用于解决在某些状态下由于自动计算高度导致的遮蔽了下面的控件的BUG
+                    //查找TableLayoutPanel
+                    TableLayoutPanel panel = GetLayoutPanel();
+
+                    if (panel != null)
+                    {
+                        //本控件在TableLayoutPanel中是第几行
+                        int tableLayoutRow = -1;
+
+                        if (panel != this.Parent)
+                        {
+                            //Label上面还有一级
+                            tableLayoutRow = panel.GetRow(this.Parent);
+                        }
+                        else
+                        {
+                            //Label上面直接就是TableLayoutPanel
+                            tableLayoutRow = panel.GetRow(this);
+                        }
+
+                        if (tableLayoutRow >= 0)
+                        {
+                            if (AutoHeight)
+                            {
+                                panel.SuspendLayout();
+                                panel.RowStyles[tableLayoutRow].SizeType = SizeType.Absolute;
+                                if (Height > panel.RowStyles[tableLayoutRow].Height)
+                                {
+                                    panel.RowStyles[tableLayoutRow].Height = Height;
+                                }
+                                panel.ResumeLayout(false);
+                            }
+                            else
+                            {
+                                panel.RowStyles[tableLayoutRow].SizeType = SizeType.AutoSize;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex) { }
+            
+        }
+
+        private TableLayoutPanel GetLayoutPanel()
+        {
+            TableLayoutPanel result = null;
+
+            Control ctsl = this;
+            while (true)
+            {
+                if (ctsl.Parent == null)
+                {
+                    break;
+                }
+                else if (ctsl.Parent is TableLayoutPanel)
+                {
+                    result = (TableLayoutPanel)ctsl.Parent;
+                    break;
+                }
+                else
+                {
+                    ctsl = ctsl.Parent;
+                }
+            }
+
+            return result;
         }
     }
 }
