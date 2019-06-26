@@ -439,24 +439,8 @@ namespace ProjectReporter
         /// <param name="current"></param>
         public void SwitchToNextPage(BaseEditor current)
         {
-            ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
-            upf.EnabledDisplayProgress = false;
-            upf.LabalText = "正在保存,请等待...";
-            upf.ShowProgress();
-
-            try
-            {
-                //保存
-                current.OnSaveEvent();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("保存失败！Ex:" + ex.ToString());
-            }
-            finally
-            {
-                upf.Close();
-            }
+            //保存当前页
+            SaveEditor(current);
             
             //下一步
             int currentIndex = EditorIndexLists.IndexOf(current);
@@ -483,6 +467,28 @@ namespace ProjectReporter
 
                 //刷新视图
                 next.RefreshView();
+            }
+        }
+
+        public void SaveEditor(BaseEditor current)
+        {
+            ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = false;
+            upf.LabalText = "正在保存,请等待...";
+            upf.ShowProgress();
+
+            try
+            {
+                //保存
+                current.OnSaveEvent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败！Ex:" + ex.ToString());
+            }
+            finally
+            {
+                upf.Close();
             }
         }
 

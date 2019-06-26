@@ -632,8 +632,8 @@ namespace ProjectReporter.Controls
 
             kp.Controls.Add(rtfTextEditor);
 
-            //插入到课题关系之前
-            ParentNavigator.Pages.Insert(ParentNavigator.Pages.Count - 1, kp);
+            //插入到课题关系之后
+            ParentNavigator.Pages.Add(kp);
             return kp;
         }
 
@@ -641,6 +641,7 @@ namespace ProjectReporter.Controls
         {
             KeTiDetailEditor textEditor = (KeTiDetailEditor)sender;
 
+            #region 保存过程
             ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
             upf.EnabledDisplayProgress = false;
             upf.LabalText = "正在保存,请等待...";
@@ -659,13 +660,14 @@ namespace ProjectReporter.Controls
             {
                 upf.Close();
             }
+            #endregion
 
             if (textEditor.DetailTabs.Pages.Count - 1 == textEditor.DetailTabs.SelectedIndex)
             {
-                if (ParentNavigator.Pages.Count - 2 == ParentNavigator.SelectedIndex)
+                if (ParentNavigator.Pages.Count - 1 == ParentNavigator.SelectedIndex)
                 {
-                    //切换到下一页(课题关系)
-                    MainForm.Instance.SwitchToNextPage(this);
+                    //切换到下一页
+                    MainForm.Instance.SwitchToNextPage(MainForm.Instance.EditorMaps["feUI7"]);
                 }
                 else
                 {
@@ -691,14 +693,36 @@ namespace ProjectReporter.Controls
         {
             base.NextPage();
 
+            //修改课题关系的下一页代码
+            BaseEditor linkEditor = MainForm.Instance.EditorMaps["feUI7"];
+            linkEditor.EnabledAutoNextPage = false;
+            try
+            {
+                linkEditor.NextEvent -= linkEditor_NextEvent;
+            }
+            catch (Exception) { }
+
+            linkEditor.NextEvent += linkEditor_NextEvent;
+
+            //切换到课题关系而
+            MainForm.Instance.SwitchToNextPage(this);
+        }
+
+        void linkEditor_NextEvent(object sender, EventArgs args)
+        {
+            BaseEditor current = (BaseEditor)sender;
+
+            //保存当前页
+            MainForm.Instance.SaveEditor(current);
+
             //判断列表中是否有数据，如果有则执行课题页签下一页的过程，如果没有则调用系统的下一页
-            if (dgvDetail.Rows.Count >= 2)
+            if (dgvDetail.Rows.Count >= 1)
             {
                 BuildOneKeTiDetailPageWithKeTiRow(0);
             }
             else
             {
-                MainForm.Instance.SwitchToNextPage(this);
+                MainForm.Instance.SwitchToNextPage(current);
             }
         }
 
