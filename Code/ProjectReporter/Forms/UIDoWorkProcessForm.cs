@@ -41,6 +41,15 @@ namespace ProjectReporter.Forms
             }
         }
 
+        /// <summary>
+        /// 标签文本
+        /// </summary>
+        public string LabalText
+        {
+            get { return label1.Text; }
+            set { label1.Text = value; }
+        }
+
         public UIDoWorkProcessForm()
         {
             InitializeComponent();

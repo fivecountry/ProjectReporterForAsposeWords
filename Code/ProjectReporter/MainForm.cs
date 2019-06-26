@@ -900,22 +900,9 @@ namespace ProjectReporter
         public bool SaveAll()
         {
             //显示提示窗体
-            Form f = new Form();
-            Label l = new Label();
-            l.Text = "正在保存，请稍等...";
-            l.AutoSize = false;
-            f.Controls.Add(l);
-            l.Dock = DockStyle.Fill;
-            l.TextAlign = ContentAlignment.MiddleCenter;
-            l.Font = new Font("仿宋", 16);
-            f.Size = new System.Drawing.Size(220, 100);
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            f.BackColor = Color.Gray;
-            f.ForeColor = Color.White;
-            f.TopMost = true;
-            f.Show();
-            Application.DoEvents();
+            UIDoWorkProcessForm upf = new UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = true;
+            upf.ProgresBarMaximum = EditorIndexLists.Count;
 
             //循环所有控件，一个一个保存
             try
@@ -935,6 +922,9 @@ namespace ProjectReporter
                             return false;
                         }
                     }
+
+                    //进度条移动
+                    upf.Next();
                 }
             }
             catch (Exception ex)
@@ -944,7 +934,7 @@ namespace ProjectReporter
             }
             finally
             {
-                f.Close();
+                upf.Close();
             }
 
             return true;
