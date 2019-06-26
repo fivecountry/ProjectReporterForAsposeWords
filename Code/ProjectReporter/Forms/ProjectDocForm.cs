@@ -61,11 +61,9 @@ namespace ProjectReporter.Forms
                 {
                     MessageBox.Show("上传失败！Ex:" + ex.ToString());
                 }
-                finally
-                {
-                    upf.Close();
-                }
             }
+
+            upf.Close();
         }
 
         private void lbcomattpath_LinkClicked(object sender, EventArgs e)

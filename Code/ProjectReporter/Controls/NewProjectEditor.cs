@@ -126,14 +126,30 @@ namespace ProjectReporter.Controls
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (MainForm.Instance != null)
-            {
-                long result = SaveProject();
+            ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = false;
+            upf.LabalText = "正在保存,请等待...";
+            upf.ShowProgress();
 
-                if (result >= 0)
+            try
+            {
+                if (MainForm.Instance != null)
                 {
-                    MainForm.Instance.SwitchToContentEditor();
+                    long result = SaveProject();
+
+                    if (result >= 0)
+                    {
+                        MainForm.Instance.SwitchToContentEditor();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败！Ex:" + ex.ToString());
+            }
+            finally
+            {
+                upf.Close();
             }
         }
 
