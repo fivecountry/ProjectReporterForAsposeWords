@@ -320,6 +320,11 @@ namespace ProjectReporter.Forms
                         //ketiStringBuilder.Append("课题").Append(indexx).Append("(").Append(proj.Type2.Contains("非") ? string.Empty : proj.Type2).Append(proj.Type2.Contains("非") ? string.Empty : ",").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
                         ketiStringBuilder.Append("课题").Append(chsNumbers[indexx]).Append("(").Append(proj.SecretLevel).Append("):").Append(proj.Name).Append(",").Append(shortContent).Append("\n");
                     }
+                    if (ketiStringBuilder.Length > 0)
+                    {
+                        ketiStringBuilder.Remove(ketiStringBuilder.Length - 1, 1);
+                    }
+
                     wu.InsertValue("课题摘要", ketiStringBuilder.ToString());
                 }
                 catch (Exception ex)
