@@ -34,7 +34,7 @@ namespace ProjectReporter.Controls
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("公开");
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("秘密");
             ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("机密");
-            ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("绝密");
+            //((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[2]).Items.Add("绝密");
         }
 
         private void UpdateUnitList()

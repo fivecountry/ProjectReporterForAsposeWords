@@ -800,8 +800,7 @@ namespace ProjectReporter.Controls
             this.cbxSecret.Items.AddRange(new object[] {
             "公开",
             "秘密",
-            "机密",
-            "绝密"});
+            "机密"});
             this.cbxSecret.Location = new System.Drawing.Point(8, 12);
             this.cbxSecret.Name = "cbxSecret";
             this.cbxSecret.Size = new System.Drawing.Size(268, 33);
