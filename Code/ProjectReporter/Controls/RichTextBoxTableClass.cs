@@ -143,6 +143,9 @@ namespace ProjectReporter.Controls
             SelectAll();
 
             SetFontWithAll(Color.Black, "·ÂËÎ_GB2312", 14);
+
+            SetFontWithAll(Color.Black, "Times New Roman", 14);
+
             SetLineSpace(12);
 
             try
