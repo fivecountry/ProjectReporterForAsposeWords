@@ -494,36 +494,43 @@ namespace ProjectReporter.Controls
         {
             if (ofdExcelDialog.ShowDialog() == DialogResult.OK)
             {
-                DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
-                if (ds != null && ds.Tables.Count >= 1)
+                try
                 {
-                    //显示提示窗体
-                    ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
-                    upf.EnabledDisplayProgress = false;
-                    upf.LabalText = "正在导入，请稍等...";
-                    upf.ShowProgress();
-
-                    foreach (DataTable dt in ds.Tables)
+                    DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
+                    if (ds != null && ds.Tables.Count >= 1)
                     {
-                        foreach (DataRow dr in dt.Rows)
-                        {
-                            if (dr[0] != null && dr[0].ToString().Equals("单位开户帐号"))
-                            {
-                                continue;
-                            }
+                        //显示提示窗体
+                        ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+                        upf.EnabledDisplayProgress = false;
+                        upf.LabalText = "正在导入，请稍等...";
+                        upf.ShowProgress();
 
-                            if (dr.ItemArray != null)
+                        foreach (DataTable dt in ds.Tables)
+                        {
+                            foreach (DataRow dr in dt.Rows)
                             {
-                                //插入骨干人员
-                                insertPersonFromDataRow(dr);
+                                if (dr[0] != null && dr[0].ToString().Equals("单位开户帐号"))
+                                {
+                                    continue;
+                                }
+
+                                if (dr.ItemArray != null)
+                                {
+                                    //插入骨干人员
+                                    insertPersonFromDataRow(dr);
+                                }
                             }
                         }
+
+                        upf.Close();
+
+                        RefreshView();
+                        MessageBox.Show("操作完成！");
                     }
-
-                    upf.Close();
-
-                    RefreshView();
-                    MessageBox.Show("操作完成！");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("导入失败!Ex:" + ex.ToString());
                 }
             }
         }

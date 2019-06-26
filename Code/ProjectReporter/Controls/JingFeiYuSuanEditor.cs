@@ -2522,21 +2522,28 @@ namespace ProjectReporter.Controls
         {
             if (ofdExcelDialog.ShowDialog() == DialogResult.OK)
             {
-                DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
-                if (ds != null && ds.Tables.Count >= 1)
+                try
                 {
-                    //显示提示窗体
-                    ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
-                    upf.EnabledDisplayProgress = false;
-                    upf.LabalText = "正在导入，请稍等...";
-                    upf.ShowProgress();
+                    DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
+                    if (ds != null && ds.Tables.Count >= 1)
+                    {
+                        //显示提示窗体
+                        ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+                        upf.EnabledDisplayProgress = false;
+                        upf.LabalText = "正在导入，请稍等...";
+                        upf.ShowProgress();
 
-                    insertDataFromData(ds.Tables[0]);
+                        insertDataFromData(ds.Tables[0]);
 
-                    upf.Close();
+                        upf.Close();
 
-                    btnSave.PerformClick();
-                    MessageBox.Show("操作完成！");
+                        btnSave.PerformClick();
+                        MessageBox.Show("操作完成！");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("导入失败!Ex:" + ex.ToString());
                 }
             }
         }

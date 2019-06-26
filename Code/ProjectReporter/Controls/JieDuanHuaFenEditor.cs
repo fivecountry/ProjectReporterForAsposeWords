@@ -365,31 +365,38 @@ namespace ProjectReporter.Controls
         {
             if (ofdExcelDialog.ShowDialog() == DialogResult.OK)
             {
-                DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
-                if (ds != null && ds.Tables.Count >= 1)
+                try
                 {
-                    //显示提示窗体
-                    ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
-                    upf.EnabledDisplayProgress = false;
-                    upf.LabalText = "正在导入，请稍等...";
-                    upf.ShowProgress();
-
-                    foreach (DataTable dt in ds.Tables)
+                    DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
+                    if (ds != null && ds.Tables.Count >= 1)
                     {
-                        foreach (DataRow dr in dt.Rows)
+                        //显示提示窗体
+                        ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+                        upf.EnabledDisplayProgress = false;
+                        upf.LabalText = "正在导入，请稍等...";
+                        upf.ShowProgress();
+
+                        foreach (DataTable dt in ds.Tables)
                         {
-                            if (dr.ItemArray != null)
+                            foreach (DataRow dr in dt.Rows)
                             {
-                                //插入数据
-                                insertDataFromDataRow(dr);
+                                if (dr.ItemArray != null)
+                                {
+                                    //插入数据
+                                    insertDataFromDataRow(dr);
+                                }
                             }
                         }
+
+                        upf.Close();
+
+                        RefreshView();
+                        MessageBox.Show("操作完成！");
                     }
-
-                    upf.Close();
-
-                    RefreshView();
-                    MessageBox.Show("操作完成！");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("导入失败!Ex:" + ex.ToString());
                 }
             }
         }

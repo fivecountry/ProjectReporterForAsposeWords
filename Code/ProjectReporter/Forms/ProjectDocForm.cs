@@ -69,6 +69,8 @@ namespace ProjectReporter.Forms
             catch (Exception ex) { }
 
             upf.Close();
+
+            MessageBox.Show("操作完成");
             Close();
         }
 
