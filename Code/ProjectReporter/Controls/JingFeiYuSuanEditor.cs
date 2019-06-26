@@ -2503,19 +2503,45 @@ namespace ProjectReporter.Controls
         private void lklDownloadFuJian_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "TianBaoShuoMing.docx"));
-            string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "经费预算填报说明.doc");
-            File.Copy(sourcePath, destPath, true);
-            MessageBox.Show("已下载到桌面！");
-            Process.Start(destPath);
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "*.docx|*.docx";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.Copy(sourcePath, sfd.FileName, true);
+                    Process.Start(sfd.FileName);
+
+                    MessageBox.Show("下载完成！");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("下载失败！Ex:" + ex.ToString());
+                }
+            }
         }
 
         private void lklDownloadExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "jingfei.xls"));
-            string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), lklDownloadExcel.Text.Trim());
-            File.Copy(sourcePath, destPath, true);
-            MessageBox.Show("已下载到桌面！");
-            Process.Start(destPath);
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "*.xls|*.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.Copy(sourcePath, sfd.FileName, true);
+                    Process.Start(sfd.FileName);
+
+                    MessageBox.Show("下载完成！");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("下载失败！Ex:" + ex.ToString());
+                }
+            }
         }
 
         private void btnExcelLoad_Click(object sender, EventArgs e)
