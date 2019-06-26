@@ -640,7 +640,25 @@ namespace ProjectReporter.Controls
         private void RtfTextEditor_NextEvent(object sender, EventArgs args)
         {
             KeTiDetailEditor textEditor = (KeTiDetailEditor)sender;
-            textEditor.OnSaveEvent();
+
+            ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = false;
+            upf.LabalText = "正在保存,请等待...";
+            upf.ShowProgress();
+
+            try
+            {
+                //保存
+                textEditor.OnSaveEvent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败！Ex:" + ex.ToString());
+            }
+            finally
+            {
+                upf.Close();
+            }
 
             if (textEditor.DetailTabs.Pages.Count - 1 == textEditor.DetailTabs.SelectedIndex)
             {
