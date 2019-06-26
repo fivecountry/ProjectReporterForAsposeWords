@@ -62,8 +62,14 @@ namespace ProjectReporter.Forms
                     MessageBox.Show("上传失败！Ex:" + ex.ToString());
                 }
             }
+            try
+            {
+                System.Threading.Thread.Sleep(1000);
+            }
+            catch (Exception ex) { }
 
             upf.Close();
+            Close();
         }
 
         private void lbcomattpath_LinkClicked(object sender, EventArgs e)
