@@ -35,9 +35,9 @@
             // pbProgress
             // 
             this.pbProgress.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pbProgress.Location = new System.Drawing.Point(0, 103);
+            this.pbProgress.Location = new System.Drawing.Point(0, 111);
             this.pbProgress.Name = "pbProgress";
-            this.pbProgress.Size = new System.Drawing.Size(549, 18);
+            this.pbProgress.Size = new System.Drawing.Size(549, 10);
             this.pbProgress.TabIndex = 0;
             // 
             // label1
@@ -47,7 +47,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(549, 103);
+            this.label1.Size = new System.Drawing.Size(549, 111);
             this.label1.TabIndex = 1;
             this.label1.Text = "正在保存，请等待...";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
