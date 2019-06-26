@@ -313,6 +313,12 @@
     <Compile Include="Forms\TextBoxForm.Designer.cs">
       <DependentUpon>TextBoxForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UIDoWorkProcessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UIDoWorkProcessForm.Designer.cs">
+      <DependentUpon>UIDoWorkProcessForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UnitExtSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -464,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TextBoxForm.resx">
       <DependentUpon>TextBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UIDoWorkProcessForm.resx">
+      <DependentUpon>UIDoWorkProcessForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UnitExtSelectForm.resx">
       <DependentUpon>UnitExtSelectForm.cs</DependentUpon>
