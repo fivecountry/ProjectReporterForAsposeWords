@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,6 +40,8 @@
             this.lklDownloadFuJian = new System.Windows.Forms.LinkLabel();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colXingMing = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +56,6 @@
             this.colMoveDown = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colEditThis = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -195,7 +195,8 @@
             // 
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
-            this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
+            this.dgvDetail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvDetail.ColumnHeadersHeight = 35;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.selpersonid,
@@ -217,9 +218,10 @@
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDetail.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDetail.RowTemplate.Height = 35;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(849, 456);
@@ -234,126 +236,6 @@
             this.dgvDetail.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dgvDetail_CellParsing);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
             // 
-            // selpersonid
-            // 
-            this.selpersonid.HeaderText = "序号";
-            this.selpersonid.Name = "selpersonid";
-            this.selpersonid.ReadOnly = true;
-            this.selpersonid.Width = 50;
-            // 
-            // colXingMing
-            // 
-            this.colXingMing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colXingMing.DropDownWidth = 200;
-            this.colXingMing.HeaderText = "姓名";
-            this.colXingMing.Name = "colXingMing";
-            this.colXingMing.ReadOnly = true;
-            this.colXingMing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colXingMing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colXingMing.Width = 69;
-            // 
-            // colSex
-            // 
-            this.colSex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSex.HeaderText = "性别";
-            this.colSex.Name = "colSex";
-            this.colSex.ReadOnly = true;
-            this.colSex.Width = 69;
-            // 
-            // colZhiWu
-            // 
-            this.colZhiWu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colZhiWu.HeaderText = "职务/职称";
-            this.colZhiWu.Name = "colZhiWu";
-            this.colZhiWu.ReadOnly = true;
-            // 
-            // colCongShiZhuanYe
-            // 
-            this.colCongShiZhuanYe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCongShiZhuanYe.HeaderText = "技术方向";
-            this.colCongShiZhuanYe.Name = "colCongShiZhuanYe";
-            this.colCongShiZhuanYe.ReadOnly = true;
-            // 
-            // colGongZuoDanWei
-            // 
-            this.colGongZuoDanWei.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colGongZuoDanWei.HeaderText = "工作单位";
-            this.colGongZuoDanWei.Name = "colGongZuoDanWei";
-            this.colGongZuoDanWei.ReadOnly = true;
-            // 
-            // colMeiNianGongZuoShiJian
-            // 
-            this.colMeiNianGongZuoShiJian.HeaderText = "工作时间(月)";
-            this.colMeiNianGongZuoShiJian.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.colMeiNianGongZuoShiJian.Name = "colMeiNianGongZuoShiJian";
-            this.colMeiNianGongZuoShiJian.ReadOnly = true;
-            this.colMeiNianGongZuoShiJian.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMeiNianGongZuoShiJian.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMeiNianGongZuoShiJian.Width = 80;
-            // 
-            // colRenWuFenGong
-            // 
-            this.colRenWuFenGong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRenWuFenGong.HeaderText = "任务分工";
-            this.colRenWuFenGong.Name = "colRenWuFenGong";
-            this.colRenWuFenGong.ReadOnly = true;
-            // 
-            // colIDCard
-            // 
-            this.colIDCard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colIDCard.HeaderText = "身份证号码";
-            this.colIDCard.Name = "colIDCard";
-            this.colIDCard.ReadOnly = true;
-            // 
-            // colXiangMuZhongZhiWu
-            // 
-            this.colXiangMuZhongZhiWu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colXiangMuZhongZhiWu.DropDownWidth = 200;
-            this.colXiangMuZhongZhiWu.HeaderText = "项目中职务";
-            this.colXiangMuZhongZhiWu.Name = "colXiangMuZhongZhiWu";
-            this.colXiangMuZhongZhiWu.ReadOnly = true;
-            this.colXiangMuZhongZhiWu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colXiangMuZhongZhiWu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colXiangMuZhongZhiWu.Width = 117;
-            // 
-            // colMoveUp
-            // 
-            this.colMoveUp.HeaderText = "";
-            this.colMoveUp.Name = "colMoveUp";
-            this.colMoveUp.ReadOnly = true;
-            this.colMoveUp.Text = "向上";
-            this.colMoveUp.Width = 50;
-            // 
-            // colMoveDown
-            // 
-            this.colMoveDown.HeaderText = "";
-            this.colMoveDown.Name = "colMoveDown";
-            this.colMoveDown.ReadOnly = true;
-            this.colMoveDown.Text = "向下";
-            this.colMoveDown.Width = 50;
-            // 
-            // colEditThis
-            // 
-            this.colEditThis.HeaderText = "";
-            this.colEditThis.Name = "colEditThis";
-            this.colEditThis.ReadOnly = true;
-            this.colEditThis.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEditThis.Text = "编辑";
-            this.colEditThis.Width = 50;
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "删除";
-            this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.Width = 45;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "删除";
@@ -366,6 +248,138 @@
             // ofdExcelDialog
             // 
             this.ofdExcelDialog.Filter = "*.xls|*.xls";
+            // 
+            // selpersonid
+            // 
+            this.selpersonid.HeaderText = "序号";
+            this.selpersonid.MinimumWidth = 50;
+            this.selpersonid.Name = "selpersonid";
+            this.selpersonid.ReadOnly = true;
+            this.selpersonid.Width = 50;
+            // 
+            // colXingMing
+            // 
+            this.colXingMing.DropDownWidth = 200;
+            this.colXingMing.HeaderText = "姓名";
+            this.colXingMing.MinimumWidth = 50;
+            this.colXingMing.Name = "colXingMing";
+            this.colXingMing.ReadOnly = true;
+            this.colXingMing.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colXingMing.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colXingMing.Width = 50;
+            // 
+            // colSex
+            // 
+            this.colSex.HeaderText = "性别";
+            this.colSex.MinimumWidth = 50;
+            this.colSex.Name = "colSex";
+            this.colSex.ReadOnly = true;
+            this.colSex.Width = 50;
+            // 
+            // colZhiWu
+            // 
+            this.colZhiWu.HeaderText = "职务/职称";
+            this.colZhiWu.MinimumWidth = 90;
+            this.colZhiWu.Name = "colZhiWu";
+            this.colZhiWu.ReadOnly = true;
+            this.colZhiWu.Width = 90;
+            // 
+            // colCongShiZhuanYe
+            // 
+            this.colCongShiZhuanYe.HeaderText = "技术方向";
+            this.colCongShiZhuanYe.MinimumWidth = 90;
+            this.colCongShiZhuanYe.Name = "colCongShiZhuanYe";
+            this.colCongShiZhuanYe.ReadOnly = true;
+            this.colCongShiZhuanYe.Width = 90;
+            // 
+            // colGongZuoDanWei
+            // 
+            this.colGongZuoDanWei.HeaderText = "工作单位";
+            this.colGongZuoDanWei.MinimumWidth = 90;
+            this.colGongZuoDanWei.Name = "colGongZuoDanWei";
+            this.colGongZuoDanWei.ReadOnly = true;
+            this.colGongZuoDanWei.Width = 90;
+            // 
+            // colMeiNianGongZuoShiJian
+            // 
+            this.colMeiNianGongZuoShiJian.HeaderText = "工作时间(月)";
+            this.colMeiNianGongZuoShiJian.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.colMeiNianGongZuoShiJian.MinimumWidth = 60;
+            this.colMeiNianGongZuoShiJian.Name = "colMeiNianGongZuoShiJian";
+            this.colMeiNianGongZuoShiJian.ReadOnly = true;
+            this.colMeiNianGongZuoShiJian.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMeiNianGongZuoShiJian.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMeiNianGongZuoShiJian.Width = 60;
+            // 
+            // colRenWuFenGong
+            // 
+            this.colRenWuFenGong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colRenWuFenGong.HeaderText = "任务分工";
+            this.colRenWuFenGong.MinimumWidth = 50;
+            this.colRenWuFenGong.Name = "colRenWuFenGong";
+            this.colRenWuFenGong.ReadOnly = true;
+            this.colRenWuFenGong.Width = 101;
+            // 
+            // colIDCard
+            // 
+            this.colIDCard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colIDCard.HeaderText = "身份证号码";
+            this.colIDCard.MinimumWidth = 70;
+            this.colIDCard.Name = "colIDCard";
+            this.colIDCard.ReadOnly = true;
+            // 
+            // colXiangMuZhongZhiWu
+            // 
+            this.colXiangMuZhongZhiWu.DropDownWidth = 200;
+            this.colXiangMuZhongZhiWu.HeaderText = "项目中职务";
+            this.colXiangMuZhongZhiWu.MinimumWidth = 100;
+            this.colXiangMuZhongZhiWu.Name = "colXiangMuZhongZhiWu";
+            this.colXiangMuZhongZhiWu.ReadOnly = true;
+            this.colXiangMuZhongZhiWu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colXiangMuZhongZhiWu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colXiangMuZhongZhiWu.Width = 100;
+            // 
+            // colMoveUp
+            // 
+            this.colMoveUp.HeaderText = "";
+            this.colMoveUp.MinimumWidth = 50;
+            this.colMoveUp.Name = "colMoveUp";
+            this.colMoveUp.ReadOnly = true;
+            this.colMoveUp.Text = "向上";
+            this.colMoveUp.Width = 50;
+            // 
+            // colMoveDown
+            // 
+            this.colMoveDown.HeaderText = "";
+            this.colMoveDown.MinimumWidth = 50;
+            this.colMoveDown.Name = "colMoveDown";
+            this.colMoveDown.ReadOnly = true;
+            this.colMoveDown.Text = "向下";
+            this.colMoveDown.Width = 50;
+            // 
+            // colEditThis
+            // 
+            this.colEditThis.HeaderText = "";
+            this.colEditThis.MinimumWidth = 50;
+            this.colEditThis.Name = "colEditThis";
+            this.colEditThis.ReadOnly = true;
+            this.colEditThis.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEditThis.Text = "编辑";
+            this.colEditThis.Width = 50;
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "删除";
+            this.delete.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.delete.MinimumWidth = 45;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.Width = 45;
             // 
             // YanJiuGuGanEditor
             // 
