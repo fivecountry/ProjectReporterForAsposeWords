@@ -181,7 +181,7 @@ namespace ProjectReporter
 
                 string unitName = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = '" + ProjectObj.ID + "')").select("UnitName").getValue<string>(string.Empty);
                 string personName = ConnectionManager.Context.table("Person").where("ID=(select PersonID from Task where Role = '负责人' and  ProjectID = '" + ProjectObj.ID + "')").select("Name").getValue<string>(string.Empty);
-                string docName = unitName + "_" + personName;
+                string docName = ProjectObj.Domain + "-" + ProjectObj.Direction + "-" + ProjectObj.Name + "-" + unitName;
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "zip files(*.zip)|*.zip";
