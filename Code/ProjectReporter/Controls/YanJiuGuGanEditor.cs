@@ -497,6 +497,12 @@ namespace ProjectReporter.Controls
                 DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
                 if (ds != null && ds.Tables.Count >= 1)
                 {
+                    //显示提示窗体
+                    ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+                    upf.EnabledDisplayProgress = false;
+                    upf.LabalText = "正在导入，请稍等...";
+                    upf.ShowProgress();
+
                     foreach (DataTable dt in ds.Tables)
                     {
                         foreach (DataRow dr in dt.Rows)
@@ -513,6 +519,8 @@ namespace ProjectReporter.Controls
                             }
                         }
                     }
+
+                    upf.Close();
 
                     RefreshView();
                     MessageBox.Show("操作完成！");

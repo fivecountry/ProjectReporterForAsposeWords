@@ -106,7 +106,23 @@ namespace ProjectReporter.Controls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            OnSaveEvent();
+            ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = false;
+            upf.LabalText = "正在保存,请等待...";
+            upf.ShowProgress();
+
+            try
+            {
+                OnSaveEvent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败！Ex:" + ex.ToString());
+            }
+            finally
+            {
+                upf.Close();
+            }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
@@ -313,22 +329,10 @@ namespace ProjectReporter.Controls
                 if (ds != null && ds.Tables.Count >= 1)
                 {
                     //显示提示窗体
-                    Form f = new Form();
-                    Label l = new Label();
-                    l.Text = "正在导入，请稍等...";
-                    l.AutoSize = false;
-                    f.Controls.Add(l);
-                    l.Dock = DockStyle.Fill;
-                    l.TextAlign = ContentAlignment.MiddleCenter;
-                    l.Font = new Font("仿宋", 16);
-                    f.Size = new System.Drawing.Size(220, 100);
-                    f.StartPosition = FormStartPosition.CenterScreen;
-                    f.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                    f.BackColor = Color.Gray;
-                    f.ForeColor = Color.White;
-                    f.TopMost = true;
-                    f.Show();
-                    Application.DoEvents();
+                    ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+                    upf.EnabledDisplayProgress = false;
+                    upf.LabalText = "正在导入，请稍等...";
+                    upf.ShowProgress();
 
                     foreach (DataTable dt in ds.Tables)
                     {
@@ -342,7 +346,7 @@ namespace ProjectReporter.Controls
                         }
                     }
 
-                    f.Close();
+                    upf.Close();
 
                     btnSave.PerformClick();
 

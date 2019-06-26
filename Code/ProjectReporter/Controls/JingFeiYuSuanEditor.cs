@@ -2317,7 +2317,23 @@ namespace ProjectReporter.Controls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            OnSaveEvent();
+            ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = false;
+            upf.LabalText = "正在保存,请等待...";
+            upf.ShowProgress();
+
+            try
+            {
+                OnSaveEvent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败！Ex:" + ex.ToString());
+            }
+            finally
+            {
+                upf.Close();
+            }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
