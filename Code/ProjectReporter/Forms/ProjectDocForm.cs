@@ -45,13 +45,17 @@ namespace ProjectReporter.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = false;
+            upf.LabalText = "正在保存,请等待...";
+            upf.ShowProgress();
+
             if (lbcomattpath.Tag != null)
             {
                 try
                 {
                     File.Copy(lbcomattpath.Tag.ToString(), Path.Combine(MainForm.ProjectDir, "建议书.doc"), true);
                     UpdateLabel();
-                    MessageBox.Show("上传完成！");
                 }
                 catch (Exception ex)
                 {
@@ -59,7 +63,7 @@ namespace ProjectReporter.Forms
                 }
                 finally
                 {
-                    Close();
+                    upf.Close();
                 }
             }
         }

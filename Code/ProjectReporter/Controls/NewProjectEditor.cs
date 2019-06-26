@@ -139,12 +139,23 @@ namespace ProjectReporter.Controls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            long result = SaveProject();
-            MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
+            ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = false;
+            upf.LabalText = "正在保存,请等待...";
+            upf.ShowProgress();
 
-            if (result >= 0)
+            try
             {
-                MessageBox.Show("保存完成!");
+                SaveProject();
+                MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败！Ex:" + ex.ToString());
+            }
+            finally
+            {
+                upf.Close();
             }
         }
 
