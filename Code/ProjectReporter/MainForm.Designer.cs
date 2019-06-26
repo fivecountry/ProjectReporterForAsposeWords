@@ -1192,7 +1192,7 @@ namespace ProjectReporter
             this.kryptonPage21.Name = "kryptonPage21";
             this.kryptonPage21.Size = new System.Drawing.Size(1254, 598);
             this.kryptonPage21.StateCommon.Tab.Content.ShortText.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.kryptonPage21.Text = "阶段划分";
+            this.kryptonPage21.Text = "项目阶段划分和经费安排";
             this.kryptonPage21.ToolTipTitle = "Page ToolTip";
             this.kryptonPage21.UniqueName = "601ED654FB3447B6B3944404A612B730";
             // 

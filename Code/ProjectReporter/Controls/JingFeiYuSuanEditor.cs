@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.IO;
 using System.Diagnostics;
+using System.Data;
 
 namespace ProjectReporter.Controls
 {
@@ -205,6 +206,10 @@ namespace ProjectReporter.Controls
         private KryptonTextBox ProjectRFA1_3_1Rm;
         private KryptonTextBox ProjectRFA1_3_1;
         private KryptonTextBox ProjectRFA1_3_2;
+        private Panel panel4;
+        private LinkLabel lklDownloadExcel;
+        private KryptonButton btnExcelLoad;
+        private OpenFileDialog ofdExcelDialog;
         private bool issaved;
 
 		protected override void Dispose(bool disposing)
@@ -306,10 +311,6 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.ProjectOutlay4 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.ProjectOutlay5 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -321,16 +322,24 @@ namespace ProjectReporter.Controls
             this.lklDownloadFuJian = new System.Windows.Forms.LinkLabel();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lklDownloadExcel = new System.Windows.Forms.LinkLabel();
+            this.btnExcelLoad = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel18)).BeginInit();
             this.kryptonPanel18.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.plBottomInfoBox.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -342,7 +351,6 @@ namespace ProjectReporter.Controls
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 6);
@@ -358,7 +366,7 @@ namespace ProjectReporter.Controls
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(906, 737);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(906, 677);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -1745,52 +1753,6 @@ namespace ProjectReporter.Controls
             this.ProjectOutlay5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ProjectOutlay5.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.btnLast, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnSave, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnNext, 3, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(184, 835);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(537, 34);
-            this.tableLayoutPanel4.TabIndex = 7;
-            // 
-            // btnLast
-            // 
-            this.btnLast.Location = new System.Drawing.Point(440, 3);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(1, 23);
-            this.btnLast.TabIndex = 1;
-            this.btnLast.Values.Text = "返回";
-            this.btnLast.Visible = false;
-            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(340, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 28);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Values.Text = "保存";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(440, 3);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(94, 28);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Values.Text = "下一步";
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.kryptonLabel1);
@@ -1913,10 +1875,97 @@ namespace ProjectReporter.Controls
             this.kryptonLabel2.TabIndex = 30;
             this.kryptonLabel2.Values.Text = "注：经费预算按照《军队单位科研经费使用管理规定（试行）》（[2017]8号）有关要求编制。";
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 6;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnSave, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnNext, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lklDownloadExcel, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnExcelLoad, 2, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 677);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.Padding = new System.Windows.Forms.Padding(0, 0, 50, 0);
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(906, 40);
+            this.tableLayoutPanel4.TabIndex = 7;
+            // 
+            // btnLast
+            // 
+            this.btnLast.Location = new System.Drawing.Point(759, 3);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(1, 23);
+            this.btnLast.TabIndex = 1;
+            this.btnLast.Values.Text = "返回";
+            this.btnLast.Visible = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(659, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(94, 28);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Values.Text = "保存";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(759, 3);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(94, 28);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Values.Text = "下一步";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // lklDownloadExcel
+            // 
+            this.lklDownloadExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lklDownloadExcel.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lklDownloadExcel.Location = new System.Drawing.Point(409, 0);
+            this.lklDownloadExcel.Name = "lklDownloadExcel";
+            this.lklDownloadExcel.Size = new System.Drawing.Size(144, 40);
+            this.lklDownloadExcel.TabIndex = 6;
+            this.lklDownloadExcel.TabStop = true;
+            this.lklDownloadExcel.Text = "经费预算导入模板.xls";
+            this.lklDownloadExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lklDownloadExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadExcel_LinkClicked);
+            // 
+            // btnExcelLoad
+            // 
+            this.btnExcelLoad.Location = new System.Drawing.Point(559, 3);
+            this.btnExcelLoad.Name = "btnExcelLoad";
+            this.btnExcelLoad.Size = new System.Drawing.Size(94, 29);
+            this.btnExcelLoad.TabIndex = 7;
+            this.btnExcelLoad.Values.Text = "从Excel导入";
+            this.btnExcelLoad.Click += new System.EventHandler(this.btnExcelLoad_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 717);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(906, 20);
+            this.panel4.TabIndex = 2;
+            // 
+            // ofdExcelDialog
+            // 
+            this.ofdExcelDialog.Filter = "*.xls|*.xls";
+            // 
             // JingFeiYuSuanEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel4);
+            this.Controls.Add(this.panel4);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "JingFeiYuSuanEditor";
@@ -1930,7 +1979,6 @@ namespace ProjectReporter.Controls
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel18)).EndInit();
             this.kryptonPanel18.ResumeLayout(false);
             this.kryptonPanel18.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1938,6 +1986,7 @@ namespace ProjectReporter.Controls
             this.plBottomInfoBox.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -2458,6 +2507,98 @@ namespace ProjectReporter.Controls
             File.Copy(sourcePath, destPath, true);
             MessageBox.Show("已下载到桌面！");
             Process.Start(destPath);
+        }
+
+        private void lklDownloadExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string sourcePath = Path.Combine(Application.StartupPath, Path.Combine("Helper", "jingfei.xls"));
+            string destPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), lklDownloadExcel.Text.Trim());
+            File.Copy(sourcePath, destPath, true);
+            MessageBox.Show("已下载到桌面！");
+            Process.Start(destPath);
+        }
+
+        private void btnExcelLoad_Click(object sender, EventArgs e)
+        {
+            if (ofdExcelDialog.ShowDialog() == DialogResult.OK)
+            {
+                DataSet ds = ProjectReporter.Utility.ExcelHelper.ExcelToDataSet(ofdExcelDialog.FileName);
+                if (ds != null && ds.Tables.Count >= 1)
+                {
+                    //显示提示窗体
+                    ProjectReporter.Forms.UIDoWorkProcessForm upf = new Forms.UIDoWorkProcessForm();
+                    upf.EnabledDisplayProgress = false;
+                    upf.LabalText = "正在导入，请稍等...";
+                    upf.ShowProgress();
+
+                    insertDataFromData(ds.Tables[0]);
+
+                    upf.Close();
+
+                    btnSave.PerformClick();
+                    MessageBox.Show("操作完成！");
+                }
+            }
+        }
+
+        private void insertDataFromData(DataTable dataTable)
+        {
+            try
+            {
+                #region 设置数据
+                //金额
+                ProjectRFA1_1_1.Text = dataTable.Rows[3].ItemArray[1] != null ? dataTable.Rows[3].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_1_1, new EventArgs());
+                ProjectRFA1_1_2.Text = dataTable.Rows[4].ItemArray[1] != null ? dataTable.Rows[4].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_1_2, new EventArgs());
+                ProjectRFA1_1_3.Text = dataTable.Rows[5].ItemArray[1] != null ? dataTable.Rows[5].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_1_3, new EventArgs());
+                ProjectRFA1_2.Text = dataTable.Rows[6].ItemArray[1] != null ? dataTable.Rows[6].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_2, new EventArgs());
+                ProjectRFA1_3_1.Text = dataTable.Rows[8].ItemArray[1] != null ? dataTable.Rows[8].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_3_1, new EventArgs());
+                ProjectRFA1_3_2.Text = dataTable.Rows[9].ItemArray[1] != null ? dataTable.Rows[9].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_3_2, new EventArgs());
+                ProjectRFA1_4.Text = dataTable.Rows[10].ItemArray[1] != null ? dataTable.Rows[10].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_4, new EventArgs());
+                ProjectRFA1_5.Text = dataTable.Rows[11].ItemArray[1] != null ? dataTable.Rows[11].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_5, new EventArgs());
+                ProjectRFA1_6.Text = dataTable.Rows[12].ItemArray[1] != null ? dataTable.Rows[12].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_6, new EventArgs());
+                ProjectRFA1_7.Text = dataTable.Rows[13].ItemArray[1] != null ? dataTable.Rows[13].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_7, new EventArgs());
+                ProjectRFA1_8.Text = dataTable.Rows[14].ItemArray[1] != null ? dataTable.Rows[14].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_8, new EventArgs());
+                ProjectRFA1_9.Text = dataTable.Rows[15].ItemArray[1] != null ? dataTable.Rows[15].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA1_9, new EventArgs());
+                ProjectRFA2_1.Text = dataTable.Rows[17].ItemArray[1] != null ? dataTable.Rows[17].ItemArray[1].ToString() : "0";
+                ProjectRFA_Leave(ProjectRFA2_1, new EventArgs());
+
+                //备注
+                ProjectRFARm.Text = dataTable.Rows[0].ItemArray[2] != null ? dataTable.Rows[0].ItemArray[2].ToString() : "";
+                ProjectRFA1Rm.Text = dataTable.Rows[1].ItemArray[2] != null ? dataTable.Rows[1].ItemArray[2].ToString() : "";
+                ProjectRFA1_1Rm.Text = dataTable.Rows[2].ItemArray[2] != null ? dataTable.Rows[2].ItemArray[2].ToString() : "";
+                ProjectRFA1_1_1Rm.Text = dataTable.Rows[3].ItemArray[2] != null ? dataTable.Rows[3].ItemArray[2].ToString() : "";
+                ProjectRFA1_1_2Rm.Text = dataTable.Rows[4].ItemArray[2] != null ? dataTable.Rows[4].ItemArray[2].ToString() : "";
+                ProjectRFA1_1_3Rm.Text = dataTable.Rows[5].ItemArray[2] != null ? dataTable.Rows[5].ItemArray[2].ToString() : "";
+                ProjectRFA1_2Rm.Text = dataTable.Rows[6].ItemArray[2] != null ? dataTable.Rows[6].ItemArray[2].ToString() : "";
+                ProjectRFA1_3Rm.Text = dataTable.Rows[7].ItemArray[2] != null ? dataTable.Rows[7].ItemArray[2].ToString() : "";
+                ProjectRFA1_3_1Rm.Text = dataTable.Rows[8].ItemArray[2] != null ? dataTable.Rows[8].ItemArray[2].ToString() : "";
+                ProjectRFA1_3_2Rm.Text = dataTable.Rows[9].ItemArray[2] != null ? dataTable.Rows[9].ItemArray[2].ToString() : "";
+                ProjectRFA1_4Rm.Text = dataTable.Rows[10].ItemArray[2] != null ? dataTable.Rows[10].ItemArray[2].ToString() : "";
+                ProjectRFA1_5Rm.Text = dataTable.Rows[11].ItemArray[2] != null ? dataTable.Rows[11].ItemArray[2].ToString() : "";
+                ProjectRFA1_6Rm.Text = dataTable.Rows[12].ItemArray[2] != null ? dataTable.Rows[12].ItemArray[2].ToString() : "";
+                ProjectRFA1_7Rm.Text = dataTable.Rows[13].ItemArray[2] != null ? dataTable.Rows[13].ItemArray[2].ToString() : "";
+                ProjectRFA1_8Rm.Text = dataTable.Rows[14].ItemArray[2] != null ? dataTable.Rows[14].ItemArray[2].ToString() : "";
+                ProjectRFA1_9Rm.Text = dataTable.Rows[15].ItemArray[2] != null ? dataTable.Rows[15].ItemArray[2].ToString() : "";
+                ProjectRFA2Rm.Text = dataTable.Rows[16].ItemArray[2] != null ? dataTable.Rows[16].ItemArray[2].ToString() : "";
+                ProjectRFA2_1Rm.Text = dataTable.Rows[17].ItemArray[2] != null ? dataTable.Rows[17].ItemArray[2].ToString() : "";
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("导入错误！Ex:" + ex.ToString(), "错误");
+            }
         }
     }
 }
