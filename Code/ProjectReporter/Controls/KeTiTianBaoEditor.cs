@@ -518,6 +518,16 @@ namespace ProjectReporter.Controls
             //获得上一级的Tab控件
             ParentNavigator = MainForm.Instance.GetTabControl(this);
 
+            //修改课题关系的下一页代码
+            BaseEditor linkEditor = MainForm.Instance.EditorMaps["feUI7"];
+            linkEditor.EnabledAutoNextPage = false;
+            try
+            {
+                linkEditor.NextEvent -= linkEditor_NextEvent;
+            }
+            catch (Exception) { }
+            linkEditor.NextEvent += linkEditor_NextEvent;
+
             //显示负责人
             UpdatePersonList();
 
@@ -692,17 +702,6 @@ namespace ProjectReporter.Controls
         public override void NextPage()
         {
             base.NextPage();
-
-            //修改课题关系的下一页代码
-            BaseEditor linkEditor = MainForm.Instance.EditorMaps["feUI7"];
-            linkEditor.EnabledAutoNextPage = false;
-            try
-            {
-                linkEditor.NextEvent -= linkEditor_NextEvent;
-            }
-            catch (Exception) { }
-
-            linkEditor.NextEvent += linkEditor_NextEvent;
 
             //切换到课题关系而
             MainForm.Instance.SwitchToNextPage(this);
