@@ -203,6 +203,122 @@ namespace ProjectReporter.Controls
             RefreshView();
         }
 
+        private void SaveOnly()
+        {
+            foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+            {
+                if (dgvRow.Cells[1].Value == null)
+                {
+                    dgvRow.Cells[1].Value = string.Empty;
+                }
+
+                if (dgvRow.Tag != null)
+                {
+                    //修改
+                    ExtFileList efl = (ExtFileList)dgvRow.Tag;
+
+                    //检查是否修改过
+                    if (dgvRow.Cells[2].Tag != null)
+                    {
+                        string sourceFile = dgvRow.Cells[2].Tag.ToString();
+                        string realFileName = DateTime.Now.Ticks + "___" + Path.GetFileName(sourceFile);
+                        string destFile = Path.Combine(MainForm.ProjectFilesDir, realFileName);
+                        if (File.Exists(sourceFile))
+                        {
+                            //旧地址
+                            string oldFile = Path.Combine(MainForm.ProjectFilesDir, efl.RealFileName);
+                            try
+                            {
+                                File.Delete(oldFile);
+                            }
+                            catch (Exception ex) { }
+
+                            //复制新地址
+                            File.Copy(sourceFile, destFile, true);
+
+                            //源文件
+                            efl.SourceFileName = Path.GetFileName(sourceFile);
+
+                            //真实文件名称
+                            efl.RealFileName = realFileName;
+
+                            //是否为军队单位
+                            efl.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
+
+                            //单位名称
+                            efl.ExtName = dgvRow.Cells[1].Value.ToString();
+
+                            //更新数据
+                            efl.copyTo(ConnectionManager.Context.table("ExtFileList")).where("ID='" + efl.ID + "'").update();
+                        }
+                        else
+                        {
+                            //是否为军队单位
+                            efl.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
+
+                            //单位名称
+                            efl.ExtName = dgvRow.Cells[1].Value.ToString();
+
+                            //更新数据
+                            efl.copyTo(ConnectionManager.Context.table("ExtFileList")).where("ID='" + efl.ID + "'").update();
+                        }
+                    }
+                    else
+                    {
+                        //是否为军队单位
+                        efl.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
+
+                        //单位名称
+                        efl.ExtName = dgvRow.Cells[1].Value.ToString();
+
+                        //源文件名
+                        efl.SourceFileName = string.Empty;
+
+                        //真实文件名
+                        efl.RealFileName = string.Empty;
+
+                        //更新数据
+                        efl.copyTo(ConnectionManager.Context.table("ExtFileList")).where("ID='" + efl.ID + "'").update();
+                    }
+                }
+                else
+                {
+                    //增加
+                    if (dgvRow.Cells[2].Tag != null)
+                    {
+                        string sourceFile = dgvRow.Cells[2].Tag.ToString();
+                        string realFileName = DateTime.Now.Ticks + "___" + Path.GetFileName(sourceFile);
+                        string destFile = Path.Combine(MainForm.ProjectFilesDir, realFileName);
+                        if (File.Exists(sourceFile))
+                        {
+                            //复制新地址
+                            File.Copy(sourceFile, destFile, true);
+
+                            ExtFileList efll = new ExtFileList();
+                            efll.ID = Guid.NewGuid().ToString();
+                            efll.ProjectID = MainForm.Instance.ProjectObj.ID;
+                            efll.ExtName = dgvRow.Cells[1].Value.ToString();
+                            efll.SourceFileName = Path.GetFileName(sourceFile);
+                            efll.RealFileName = realFileName;
+                            efll.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
+                            efll.copyTo(ConnectionManager.Context.table("ExtFileList")).insert();
+                        }
+                    }
+                    else
+                    {
+                        ExtFileList efll = new ExtFileList();
+                        efll.ID = Guid.NewGuid().ToString();
+                        efll.ProjectID = MainForm.Instance.ProjectObj.ID;
+                        efll.ExtName = dgvRow.Cells[1].Value.ToString();
+                        efll.SourceFileName = string.Empty;
+                        efll.RealFileName = string.Empty;
+                        efll.IsIgnore = ((bool)dgvRow.Cells[3].Value) ? 1 : 0;
+                        efll.copyTo(ConnectionManager.Context.table("ExtFileList")).insert();
+                    }
+                }
+            }
+        }
+
         public override bool IsInputCompleted()
         {
             if (dgvDetail.Rows.Count == 0)
@@ -223,6 +339,9 @@ namespace ProjectReporter.Controls
                         ExtFileList task = (ExtFileList)dgvDetail.Rows[e.RowIndex].Tag;
                         if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
+                            //先保存当前的
+                            SaveOnly();
+
                             try
                             {
                                 File.Delete(Path.Combine(MainForm.ProjectFilesDir, task.RealFileName));
