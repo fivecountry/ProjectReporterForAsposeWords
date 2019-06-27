@@ -154,7 +154,7 @@ namespace ProjectReporter
         private void btnExport_Click(object sender, EventArgs e)
         {
             //保存所有
-            if (SaveAll())
+            if (IsSaveAllSucess())
             {
                 if (File.Exists(Path.Combine(MainForm.ProjectDir, "项目申报书.doc")) == false)
                 {
@@ -271,7 +271,7 @@ namespace ProjectReporter
                     if (MessageBox.Show("真的要保存吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
                         //先保存
-                        SaveAll();
+                        SaveAllWithNoResult();
 
                         //询问是否备份
                         //if (ProjectObj != null)
@@ -924,9 +924,52 @@ namespace ProjectReporter
         }
 
         /// <summary>
-        /// 保存所有
+        /// 保存所有(不返回，成功是否，出错继续保存)
         /// </summary>
-        public bool SaveAll()
+        public void SaveAllWithNoResult()
+        {
+            //显示提示窗体
+            UIDoWorkProcessForm upf = new UIDoWorkProcessForm();
+            upf.EnabledDisplayProgress = true;
+            upf.ProgresBarMaximum = EditorIndexLists.Count;
+            upf.ShowProgress();
+
+            //循环所有控件，一个一个保存
+            try
+            {
+                foreach (BaseEditor be in EditorIndexLists)
+                {
+                    //保存
+                    try
+                    {
+                        be.OnSaveEvent();
+                    }
+                    catch (Exception ex)
+                    {
+                        if (GetPageControl(be) != null)
+                        {
+                            MessageBox.Show("对不起，页签(" + GetPageControl(be).Text + ")保存失败！Ex:" + ex.ToString());
+                        }
+                    }
+
+                    //进度条移动
+                    upf.Next();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                upf.Close();
+            }
+        }
+
+        /// <summary>
+        /// 保存所有(返回是否成功)
+        /// </summary>
+        public bool IsSaveAllSucess()
         {
             //显示提示窗体
             UIDoWorkProcessForm upf = new UIDoWorkProcessForm();
@@ -972,7 +1015,7 @@ namespace ProjectReporter
 
         private void btnSave2_Click(object sender, EventArgs e)
         {
-            SaveAll();
+            SaveAllWithNoResult();
             MessageBox.Show("保存完成！");
         }
 
