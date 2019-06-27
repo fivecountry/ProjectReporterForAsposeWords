@@ -240,14 +240,15 @@ namespace ProjectReporter.Controls
             // 
             // txtDirectionCode
             // 
-            this.txtDirectionCode.Location = new System.Drawing.Point(1017, 17);
+            this.txtDirectionCode.Font = new System.Drawing.Font("微软雅黑", 15F);
+            this.txtDirectionCode.Location = new System.Drawing.Point(1017, 10);
             this.txtDirectionCode.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.txtDirectionCode.Name = "txtDirectionCode";
-            this.txtDirectionCode.Size = new System.Drawing.Size(57, 21);
+            this.txtDirectionCode.Size = new System.Drawing.Size(62, 34);
             this.txtDirectionCode.TabIndex = 202;
             // 
             // label9

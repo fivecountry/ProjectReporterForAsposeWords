@@ -181,11 +181,27 @@ namespace ProjectReporter
 
                 string unitName = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = '" + ProjectObj.ID + "')").select("UnitName").getValue<string>(string.Empty);
                 string personName = ConnectionManager.Context.table("Person").where("ID=(select PersonID from Task where Role = '负责人' and  ProjectID = '" + ProjectObj.ID + "')").select("Name").getValue<string>(string.Empty);
-                string docName = ProjectObj.Domain + "-" + ProjectObj.Direction + "-" + ProjectObj.Name + "-" + unitName;
+
+                string zipName = string.Empty;
+                if (ProjectObj.DirectionCode == 0)
+                {
+                    //方向代码为0,忽略此项,然后生成压缩包名
+                    zipName = ProjectObj.Domain + "-" + ProjectObj.Name + "-" + unitName + "-" + personName;
+                }
+                else
+                {
+                    //生成完整的压缩包名
+                    string directionCode = ProjectObj.DirectionCode.ToString();
+                    if (ProjectObj.DirectionCode < 10)
+                    {
+                        directionCode = "0" + directionCode;
+                    }
+                    zipName = ProjectObj.Domain + "-" + directionCode + "-" + ProjectObj.Name + "-" + unitName + "-" + personName;
+                }
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "zip files(*.zip)|*.zip";
-                saveFileDialog.FileName = docName + ".zip";
+                saveFileDialog.FileName = zipName + ".zip";
                 saveFileDialog.FilterIndex = 0;
                 saveFileDialog.RestoreDirectory = true;
 
