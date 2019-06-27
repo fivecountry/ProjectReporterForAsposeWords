@@ -533,6 +533,120 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="Data\Current\Files\keti_rtpinput_28326e38-ffa7-476b-b246-2594fb2d2bc8_cnt.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_28326e38-ffa7-476b-b246-2594fb2d2bc8_dest.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_28326e38-ffa7-476b-b246-2594fb2d2bc8_info.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_28326e38-ffa7-476b-b246-2594fb2d2bc8_need.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_797aea37-8676-4ea4-a73c-33560198c253_cnt.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_797aea37-8676-4ea4-a73c-33560198c253_dest.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_797aea37-8676-4ea4-a73c-33560198c253_info.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_797aea37-8676-4ea4-a73c-33560198c253_need.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_a1dca6df-16bd-47f2-8922-1f7402571dbe_cnt.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_a1dca6df-16bd-47f2-8922-1f7402571dbe_dest.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_a1dca6df-16bd-47f2-8922-1f7402571dbe_info.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_a1dca6df-16bd-47f2-8922-1f7402571dbe_need.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_c6d8030e-50d8-43ef-857f-7b49a2a44590_cnt.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_c6d8030e-50d8-43ef-857f-7b49a2a44590_dest.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_c6d8030e-50d8-43ef-857f-7b49a2a44590_info.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_c6d8030e-50d8-43ef-857f-7b49a2a44590_need.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_da74784a-5c3a-4c42-a32e-6fc881fd54e3_cnt.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_da74784a-5c3a-4c42-a32e-6fc881fd54e3_dest.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_da74784a-5c3a-4c42-a32e-6fc881fd54e3_info.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\keti_rtpinput_da74784a-5c3a-4c42-a32e-6fc881fd54e3_need.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_0.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_1.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_10.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_14.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_15.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_17.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_18.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_19.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_2.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_3.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_4.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_5.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_7.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_8.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\rtpinput_9.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\upload_1_项目经费概算说明.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\static.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\项目申报书.doc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Fonts\simfang_0.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -631,6 +745,12 @@
     <None Include="Resources\II-9.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Data\Current\Files\636970792358037109___1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Current\Files\636970792358193359___2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="f14.ico" />
     <None Include="Helper\readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
