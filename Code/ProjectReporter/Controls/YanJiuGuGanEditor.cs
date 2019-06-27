@@ -91,8 +91,8 @@ namespace ProjectReporter.Controls
                     string projectB = proj.Name + "成员";
                     ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectA);
                     ((KryptonDataGridViewComboBoxColumn)dgvDetail.Columns[9]).Items.Add(projectB);
-                    JobDict.Add(projectA, proj);
-                    JobDict.Add(projectB, proj);
+                    JobDict[projectA] = proj;
+                    JobDict[projectB] = proj;
                 }
             }
         }
