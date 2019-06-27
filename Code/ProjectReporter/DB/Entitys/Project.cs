@@ -27,6 +27,7 @@ namespace ProjectReporter.DB.Entitys
             query.set("Keywords", Keywords);
             query.set("Domain", Domain);
             query.set("Direction", Direction);
+            query.set("DirectionCode", DirectionCode);
 
             return query;
         }
@@ -43,6 +44,7 @@ namespace ProjectReporter.DB.Entitys
         public string Keywords { get; set; }
         public string Domain { get; set; }
         public string Direction { get; set; }
+        public int? DirectionCode { get; set; }
 
         public override void bind(Noear.Weed.GetHandlerEx source)
         {
@@ -58,6 +60,7 @@ namespace ProjectReporter.DB.Entitys
             Keywords = source("Keywords").value<string>("");
             Domain = source("Domain").value<string>("");
             Direction = source("Direction").value<string>("");
+            DirectionCode = source("DirectionCode").value<int>(0);
         }
 
         public override Noear.Weed.IBinder clone()
