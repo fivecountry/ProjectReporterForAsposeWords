@@ -154,6 +154,8 @@ namespace ProjectReporter.Controls
                         #region 删除数据
                         if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
+                            //保存当前内容
+                            SaveOnly();
 
                             ConnectionManager.Context.table("Project").where("ID='" + kett.ID + "'").delete();
                             ConnectionManager.Context.table("Task").where("ProjectID='" + kett.ID + "'").delete();
@@ -496,12 +498,181 @@ namespace ProjectReporter.Controls
                 SyncStepList();
 
                 //更新课题列表
-                UpdateKeTiList();
+                MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
             }
             else
             {
                 MessageBox.Show("对不起,必须并且只能有一个总体课题!");
             }
+        }
+
+        public void SaveOnly()
+        {   
+            if (GetZongZiKetiCount() == 1)
+            {
+                int saveCount = 0;
+                Project proj = null;
+                foreach (DataGridViewRow dgvRow in dgvDetail.Rows)
+                {
+                    Person personObj = null;
+
+                    if (dgvRow.Tag == null)
+                    {
+                        //新行
+                        proj = new Project();
+                    }
+                    else
+                    {
+                        //已存在数据
+                        proj = (Project)dgvRow.Tag;
+                    }
+
+                    if (dgvRow.Cells[2].Value == null)
+                    {
+                        dgvRow.Cells[2].Value = "秘密";
+                    }
+                    if (dgvRow.Cells[1].Value == null)
+                    {
+                        dgvRow.Cells[1].Value = string.Empty;
+                    }
+                    if (dgvRow.Cells[3].Value == null)
+                    {
+                        dgvRow.Cells[3].Value = string.Empty;
+                    }
+                    if (dgvRow.Cells[4].Value == null)
+                    {
+                        dgvRow.Cells[4].Value = string.Empty;
+                    }
+                    if (dgvRow.Cells[5].Value == null)
+                    {
+                        dgvRow.Cells[5].Value = string.Empty;
+                    }
+                    if (dgvRow.Cells[6].Tag == null)
+                    {
+                        //MessageBox.Show("对不起,请选择承担单位开户帐号!");
+                        //return;
+                        dgvRow.Cells[6].Tag = Guid.NewGuid().ToString();
+                    }
+
+                    decimal totalMoney = 0;
+                    if (dgvRow.Cells[7].Value != null && decimal.TryParse(dgvRow.Cells[7].Value.ToString(), out totalMoney) == false)
+                    {
+                        MessageBox.Show("对不起,请输入正确的研究经费!");
+                        return;
+                    }
+
+                    saveCount++;
+                    if (saveCount >= 11)
+                    {
+                        MessageBox.Show("对不起，最多只能添加10个课题！");
+                        break;
+                    }
+
+                    //新的人员ID
+                    string newPersonId = Guid.NewGuid().ToString();
+
+                    //查找人员信息
+                    personObj = ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").select("*").getItem<Person>(new Person());
+
+                    //删除这条记录
+                    ConnectionManager.Context.table("Person").where("IDCard = '" + dgvRow.Cells[4].Value + "'").delete();
+
+                    //更新人员ID
+                    ConnectionManager.Context.table("Task").where("IDCard = '" + dgvRow.Cells[4].Value + "'").set("PersonID", newPersonId).update();
+
+                    if (personObj == null)
+                    {
+                        personObj = new Person();
+                    }
+
+                    personObj.ID = newPersonId;
+                    personObj.Name = dgvRow.Cells[3].Value.ToString();
+                    personObj.UnitID = dgvRow.Cells[6].Tag.ToString();
+                    personObj.IDCard = dgvRow.Cells[4].Value.ToString();
+                    //ProjectPersonObj.IDCard = txtMPersonIDCard.Text;
+                    //ProjectPersonObj.Sex = cbxMPersonSex.Text;
+                    //ProjectPersonObj.Job = txtMPersonJob.Text;
+                    //ProjectPersonObj.Birthday = txtMPersonBirthday.DateTime;
+                    //ProjectPersonObj.Telephone = txtMPersonTelephone.Text;
+                    //ProjectPersonObj.MobilePhone = txtMPersonMobilephone.Text;
+                    personObj.copyTo(ConnectionManager.Context.table("Person")).insert();
+
+                    //课题部分
+                    proj.Name = dgvRow.Cells[1].Value.ToString();
+                    proj.SecretLevel = dgvRow.Cells[2].Value.ToString();
+                    proj.Type = "课题";
+                    proj.ParentID = MainForm.Instance.ProjectObj.ID;
+                    proj.UnitID = dgvRow.Cells[6].Tag.ToString();
+                    proj.Type2 = dgvRow.Cells[8].Value != null ? (((bool)dgvRow.Cells[8].Value) == true ? "总体课题" : "非总体课题") : "非总体课题";
+
+                    //创建课题单位
+                    if (dgvRow.Cells[5].Tag != null && ((Unit)dgvRow.Cells[5].Tag).ID != null)
+                    {
+                        Unit unitObj = (Unit)dgvRow.Cells[5].Tag;
+                        unitObj.UnitName = dgvRow.Cells[5].Value.ToString();
+                        NewProjectEditor.BuildUnitRecord(dgvRow.Cells[6].Tag.ToString(), unitObj.UnitName, unitObj.UnitName, unitObj.UnitName, unitObj.ContactName, unitObj.Telephone, unitObj.UnitType, unitObj.Address);
+                    }
+                    else
+                    {
+                        NewProjectEditor.BuildUnitRecord(dgvRow.Cells[6].Tag.ToString(), dgvRow.Cells[5].Value.ToString(), dgvRow.Cells[5].Value.ToString(), dgvRow.Cells[5].Value.ToString(), "未知", "未知", "课题单位", "未知");
+                    }
+
+                    //添加或更新课题数据
+                    if (string.IsNullOrEmpty(proj.ID))
+                    {
+                        //新行
+                        if (dgvRow.Cells[0].Tag != null)
+                        {
+                            //点击了生成标签页，存在已生成的ID
+                            proj.ID = dgvRow.Cells[0].Tag.ToString();
+                        }
+                        else
+                        {
+                            //没有点击生成标签页，需要生成ID
+                            proj.ID = Guid.NewGuid().ToString();
+                        }
+
+                        proj.copyTo(ConnectionManager.Context.table("Project")).insert();
+                    }
+                    else
+                    {
+                        //更新
+                        proj.copyTo(ConnectionManager.Context.table("Project")).where("ID='" + proj.ID + "'").update();
+                    }
+
+                    //任务分工部分
+                    Task task = ConnectionManager.Context.table("Task").where("ProjectID='" + proj.ID + "' and Role = '负责人'").select("*").getItem<Task>(new Task());
+                    if (task == null || string.IsNullOrEmpty(task.ID))
+                    {
+                        //新行
+                        task = new Task();
+                        task.ProjectID = proj.ID;
+                    }
+
+                    task.PersonID = personObj.ID;
+                    task.IDCard = personObj.IDCard;
+                    task.Role = "负责人";
+                    task.Type = "课题";
+                    task.TotalMoney = totalMoney;
+
+                    if (string.IsNullOrEmpty(task.ID))
+                    {
+                        task.ID = Guid.NewGuid().ToString();
+                        task.copyTo(ConnectionManager.Context.table("Task")).insert();
+                    }
+                    else
+                    {
+                        task.copyTo(ConnectionManager.Context.table("Task")).where("ID='" + task.ID + "'").update();
+                    }
+                }
+
+                //同步阶段数据
+                SyncStepList();
+            }
+            //else
+            //{
+            //    MessageBox.Show("对不起,必须并且只能有一个总体课题!");
+            //}
         }
 
         public override void ClearView()
@@ -575,7 +746,7 @@ namespace ProjectReporter.Controls
                     ((JieDuanHuaFenEditor)be).Build4StepItems();
 
                     //保存数据
-                    be.OnSaveEvent();
+                    ((JieDuanHuaFenEditor)be).SaveOnly();
                     break;
                 }
             }

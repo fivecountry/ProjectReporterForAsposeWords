@@ -270,7 +270,7 @@ namespace ProjectReporter.Controls
             }
         }
 
-        private void SaveOnly()
+        public void SaveOnly()
         {
             try
             {
