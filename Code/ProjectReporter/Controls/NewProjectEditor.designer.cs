@@ -30,17 +30,17 @@ namespace ProjectReporter.Controls
 		private void InitializeComponent()
 		{
             this.tlpContent = new ProjectReporter.Controls.HSkinTableLayoutPanel();
-            this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
             this.txtDirection = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.bsaHint2 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
             this.txtDirectionCode = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtUnitName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.bsaHint3 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -135,10 +135,10 @@ namespace ProjectReporter.Controls
             this.tlpContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.95633F));
             this.tlpContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.97379F));
             this.tlpContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.95633F));
-            this.tlpContent.Controls.Add(this.label27, 0, 1);
             this.tlpContent.Controls.Add(this.label26, 0, 0);
             this.tlpContent.Controls.Add(this.panel15, 1, 1);
             this.tlpContent.Controls.Add(this.panel14, 1, 4);
+            this.tlpContent.Controls.Add(this.label9, 0, 1);
             this.tlpContent.Controls.Add(this.label1, 0, 4);
             this.tlpContent.Controls.Add(this.panel4, 1, 6);
             this.tlpContent.Controls.Add(this.label3, 0, 6);
@@ -179,18 +179,6 @@ namespace ProjectReporter.Controls
             this.tlpContent.Size = new System.Drawing.Size(1316, 574);
             this.tlpContent.TabIndex = 1;
             // 
-            // label27
-            // 
-            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label27.Location = new System.Drawing.Point(3, 60);
-            this.label27.Margin = new System.Windows.Forms.Padding(3);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(178, 51);
-            this.label27.TabIndex = 200;
-            this.label27.Text = "申报方向：";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label26
             // 
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -208,8 +196,8 @@ namespace ProjectReporter.Controls
             this.panel15.BackColor = System.Drawing.Color.White;
             this.tlpContent.SetColumnSpan(this.panel15, 4);
             this.panel15.Controls.Add(this.txtDirection);
+            this.panel15.Controls.Add(this.label27);
             this.panel15.Controls.Add(this.txtDirectionCode);
-            this.panel15.Controls.Add(this.label9);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(185, 58);
             this.panel15.Margin = new System.Windows.Forms.Padding(1);
@@ -217,14 +205,25 @@ namespace ProjectReporter.Controls
             this.panel15.Size = new System.Drawing.Size(1130, 55);
             this.panel15.TabIndex = 33;
             // 
+            // label27
+            // 
+            this.label27.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label27.Location = new System.Drawing.Point(81, 2);
+            this.label27.Margin = new System.Windows.Forms.Padding(3);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(159, 51);
+            this.label27.TabIndex = 200;
+            this.label27.Text = "申报方向名称：";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtDirection
             // 
             this.txtDirection.AlwaysActive = false;
             this.txtDirection.ButtonSpecs.AddRange(new ComponentFactory.Krypton.Toolkit.ButtonSpecAny[] {
             this.bsaHint2});
-            this.txtDirection.Location = new System.Drawing.Point(11, 15);
+            this.txtDirection.Location = new System.Drawing.Point(233, 13);
             this.txtDirection.Name = "txtDirection";
-            this.txtDirection.Size = new System.Drawing.Size(883, 29);
+            this.txtDirection.Size = new System.Drawing.Size(847, 29);
             this.txtDirection.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtDirection.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDirection.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -241,7 +240,7 @@ namespace ProjectReporter.Controls
             // txtDirectionCode
             // 
             this.txtDirectionCode.Font = new System.Drawing.Font("微软雅黑", 15F);
-            this.txtDirectionCode.Location = new System.Drawing.Point(1017, 10);
+            this.txtDirectionCode.Location = new System.Drawing.Point(11, 12);
             this.txtDirectionCode.Maximum = new decimal(new int[] {
             99,
             0,
@@ -250,17 +249,6 @@ namespace ProjectReporter.Controls
             this.txtDirectionCode.Name = "txtDirectionCode";
             this.txtDirectionCode.Size = new System.Drawing.Size(62, 34);
             this.txtDirectionCode.TabIndex = 202;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(890, 2);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 51);
-            this.label9.TabIndex = 201;
-            this.label9.Text = "申报代码：";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel14
             // 
@@ -307,6 +295,18 @@ namespace ProjectReporter.Controls
             this.bsaHint3.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
             this.bsaHint3.Text = "单位名称与单位公章一致";
             this.bsaHint3.UniqueName = "14C52A622CD84C1B1A8DE4466C48A1FA";
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(3, 60);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(178, 51);
+            this.label9.TabIndex = 201;
+            this.label9.Text = "申报方向代码：";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
