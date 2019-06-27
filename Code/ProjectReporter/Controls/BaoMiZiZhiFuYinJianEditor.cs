@@ -340,7 +340,10 @@ namespace ProjectReporter.Controls
                         if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             //先保存当前的
-                            SaveOnly();
+                            if (dgvDetail.Rows.Count >= 2)
+                            {
+                                SaveOnly();
+                            }
 
                             try
                             {

@@ -408,8 +408,11 @@ namespace ProjectReporter.Controls
                 {
                     if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        //保存当前内容
-                        SaveOnly();
+                        //先保存当前的
+                        if (dgvDetail.Rows.Count >= 2)
+                        {
+                            SaveOnly();
+                        }
 
                         ConnectionManager.Context.table("Step").where("ID='" + step.ID + "'").delete();
                         ConnectionManager.Context.table("ProjectAndStep").where("StepID='" + step.ID + "'").delete();

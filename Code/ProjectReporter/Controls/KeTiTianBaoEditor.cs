@@ -154,8 +154,11 @@ namespace ProjectReporter.Controls
                         #region 删除数据
                         if (MessageBox.Show("真的要删除吗?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            //保存当前内容
-                            SaveOnly();
+                            //先保存当前的
+                            if (dgvDetail.Rows.Count >= 2)
+                            {
+                                SaveOnly();
+                            }
 
                             ConnectionManager.Context.table("Project").where("ID='" + kett.ID + "'").delete();
                             ConnectionManager.Context.table("Task").where("ProjectID='" + kett.ID + "'").delete();
