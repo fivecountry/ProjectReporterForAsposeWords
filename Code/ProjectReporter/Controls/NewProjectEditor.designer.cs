@@ -35,6 +35,8 @@ namespace ProjectReporter.Controls
             this.panel15 = new System.Windows.Forms.Panel();
             this.txtDirection = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.bsaHint2 = new ComponentFactory.Krypton.Toolkit.ButtonSpecAny();
+            this.txtDirectionCode = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtUnitName = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -102,6 +104,7 @@ namespace ProjectReporter.Controls
             this.plContent = new System.Windows.Forms.Panel();
             this.tlpContent.SuspendLayout();
             this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDirectionCode)).BeginInit();
             this.panel14.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -205,6 +208,8 @@ namespace ProjectReporter.Controls
             this.panel15.BackColor = System.Drawing.Color.White;
             this.tlpContent.SetColumnSpan(this.panel15, 4);
             this.panel15.Controls.Add(this.txtDirection);
+            this.panel15.Controls.Add(this.txtDirectionCode);
+            this.panel15.Controls.Add(this.label9);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(185, 58);
             this.panel15.Margin = new System.Windows.Forms.Padding(1);
@@ -219,7 +224,7 @@ namespace ProjectReporter.Controls
             this.bsaHint2});
             this.txtDirection.Location = new System.Drawing.Point(11, 15);
             this.txtDirection.Name = "txtDirection";
-            this.txtDirection.Size = new System.Drawing.Size(1001, 29);
+            this.txtDirection.Size = new System.Drawing.Size(883, 29);
             this.txtDirection.StateActive.Content.Padding = new System.Windows.Forms.Padding(0);
             this.txtDirection.StateCommon.Content.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDirection.StateCommon.Content.Padding = new System.Windows.Forms.Padding(0);
@@ -232,6 +237,29 @@ namespace ProjectReporter.Controls
             this.bsaHint2.Image = global::ProjectReporter.Properties.Resources.exclamation_16;
             this.bsaHint2.Text = "对应领域中的研究方向名称（军事智能基础、基础学科可不填；不在指南中的项目也可不填）";
             this.bsaHint2.UniqueName = "BF642C49234148C27C80CD3FECA99F44";
+            // 
+            // txtDirectionCode
+            // 
+            this.txtDirectionCode.Location = new System.Drawing.Point(1017, 17);
+            this.txtDirectionCode.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.txtDirectionCode.Name = "txtDirectionCode";
+            this.txtDirectionCode.Size = new System.Drawing.Size(57, 21);
+            this.txtDirectionCode.TabIndex = 202;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(890, 2);
+            this.label9.Margin = new System.Windows.Forms.Padding(3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(131, 51);
+            this.label9.TabIndex = 201;
+            this.label9.Text = "申报代码：";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel14
             // 
@@ -957,7 +985,7 @@ namespace ProjectReporter.Controls
             this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1422, 51);
+            this.lblTitle.Size = new System.Drawing.Size(1422, 61);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "本单位代表申报团队郑重承诺:本建议书填报信息真实有效,相关研究内容没有在其它计划渠道重复申报.";
             // 
@@ -995,6 +1023,7 @@ namespace ProjectReporter.Controls
             this.tlpContent.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDirectionCode)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -1103,5 +1132,7 @@ namespace ProjectReporter.Controls
         private ButtonSpecAny bsaHint2;
         private ButtonSpecAny bsaHint;
         private ButtonSpecAny bsaHint3;
+        private System.Windows.Forms.NumericUpDown txtDirectionCode;
+        private System.Windows.Forms.Label label9;
     }
 }

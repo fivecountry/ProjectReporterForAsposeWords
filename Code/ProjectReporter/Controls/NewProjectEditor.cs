@@ -54,6 +54,7 @@ namespace ProjectReporter.Controls
                 txtKeyWords.Text = MainForm.Instance.ProjectObj.Keywords;
                 txtDomain.Text = MainForm.Instance.ProjectObj.Domain;
                 txtDirection.Text = MainForm.Instance.ProjectObj.Direction;
+                txtDirectionCode.Value = MainForm.Instance.ProjectObj.DirectionCode != null ? MainForm.Instance.ProjectObj.DirectionCode.Value : 0;
 
                 Unit unitObj = ConnectionManager.Context.table("Unit").where("ID='" + MainForm.Instance.ProjectObj.UnitID + "'").select("*").getItem<Unit>(new Unit());
                 if (unitObj != null)
@@ -340,6 +341,7 @@ namespace ProjectReporter.Controls
             MainForm.Instance.ProjectObj.Keywords = txtKeyWords.Text;
             MainForm.Instance.ProjectObj.Domain = txtDomain.Text;
             MainForm.Instance.ProjectObj.Direction = txtDirection.Text;
+            MainForm.Instance.ProjectObj.DirectionCode = (int)txtDirectionCode.Value;
 
             //添加/修改工程
             if (string.IsNullOrEmpty(MainForm.Instance.ProjectObj.ID))
