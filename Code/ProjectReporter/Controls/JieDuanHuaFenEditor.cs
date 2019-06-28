@@ -591,7 +591,7 @@ namespace ProjectReporter.Controls
 
                 if (needInsert)
                 {
-                    DataGridViewRow dgvRow = dgvDetail.Rows[dgvDetail.Rows.Count - 1];
+                    DataGridViewRow dgvRow = dgvDetail.Rows[dgvDetail.Rows.Add()];
                     dgvRow.Cells[1].Value = stepIndex;
                     dgvRow.Cells[2].Value = stepTime;
                     dgvRow.Cells[3].Value = stepContent;
