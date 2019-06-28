@@ -502,7 +502,7 @@ namespace ProjectReporter.Controls
                 SyncStepList();
                 
                 //刷新当前页
-                RefreshView();
+                UpdateKeTiList();
 
                 //刷新课题阶段划分表
                 foreach (BaseEditor be in MainForm.Instance.EditorMaps.Values)
