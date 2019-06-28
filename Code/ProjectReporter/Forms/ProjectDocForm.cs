@@ -12,6 +12,8 @@ namespace ProjectReporter.Forms
 {
     public partial class ProjectDocForm : Form
     {
+        private string lastFilePath = string.Empty;
+
         public ProjectDocForm()
         {
             InitializeComponent();
@@ -24,10 +26,17 @@ namespace ProjectReporter.Forms
 
         private void UpdateLabel()
         {
-            if (File.Exists(Path.Combine(MainForm.ProjectDir, "建议书.doc")))
+            string[] files = Directory.GetFiles(MainForm.ProjectDir);
+            foreach (string s in files)
             {
-                lbcomattpath.Text = "建议书.doc";
-                lbcomattpath.Tag = null;
+                FileInfo fi = new FileInfo(s);
+                if (fi.Name.StartsWith("建议书"))
+                {
+                    lastFilePath = s;
+                    lbcomattpath.Text = fi.Name;
+                    lbcomattpath.Tag = null;
+                    break;
+                }
             }
         }
 
@@ -35,7 +44,7 @@ namespace ProjectReporter.Forms
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.FileName = string.Empty;
-            ofd.Filter = "*.doc|*.doc";
+            ofd.Filter = "DOC文件|*.doc|DOCX文件|*.docx";
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 lbcomattpath.Text = new FileInfo(ofd.FileName).Name;
@@ -54,7 +63,19 @@ namespace ProjectReporter.Forms
             {
                 try
                 {
-                    File.Copy(lbcomattpath.Tag.ToString(), Path.Combine(MainForm.ProjectDir, "建议书.doc"), true);
+                    if (lastFilePath != string.Empty)
+                    {
+                        File.Delete(lastFilePath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("删除失败！Ex:" + ex.ToString());
+                }
+
+                try
+                {
+                    File.Copy(lbcomattpath.Tag.ToString(), Path.Combine(MainForm.ProjectDir, "建议书" + Path.GetExtension(lbcomattpath.Tag.ToString())), true);
                     UpdateLabel();
                 }
                 catch (Exception ex)
@@ -76,10 +97,17 @@ namespace ProjectReporter.Forms
 
         private void lbcomattpath_LinkClicked(object sender, EventArgs e)
         {
-            string path = Path.Combine(MainForm.ProjectDir, "建议书.doc");
+            string path = Path.Combine(MainForm.ProjectDir, lbcomattpath.Text);
             if (File.Exists(path))
             {
-                System.Diagnostics.Process.Start(path);
+                try
+                {
+                    System.Diagnostics.Process.Start(path);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("对不起，打开打败！Ex:" + ex.ToString());
+                }
             }
         }
     }
