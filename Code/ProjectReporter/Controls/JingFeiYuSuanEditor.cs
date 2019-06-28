@@ -225,9 +225,6 @@ namespace ProjectReporter.Controls
 		{
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new ProjectReporter.Controls.HSkinTableLayoutPanel();
-            this.ProjectRFA1_3_2Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.ProjectRFA1_3_1Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.ProjectRFA1_3_1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel6 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.ProjectRFA2_1Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.ProjectRFA2Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -297,10 +294,13 @@ namespace ProjectReporter.Controls
             this.ProjectRFA2zb = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.ProjectRFA2_1zb = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel7 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.ProjectRFA1_3_2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tableLayoutPanel3 = new ProjectReporter.Controls.HSkinTableLayoutPanel();
             this.kryptonPanel18 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.ProjectRFA1_3_1Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.ProjectRFA1_3_2Rm = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel92 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
+            this.ProjectRFA1_3_1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.ProjectRFA1_3_2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel93 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel94 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel95 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -472,66 +472,6 @@ namespace ProjectReporter.Controls
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(537, 510);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // ProjectRFA1_3_2Rm
-            // 
-            this.ProjectRFA1_3_2Rm.AlwaysActive = false;
-            this.ProjectRFA1_3_2Rm.Location = new System.Drawing.Point(410, 3);
-            this.ProjectRFA1_3_2Rm.Margin = new System.Windows.Forms.Padding(2);
-            this.ProjectRFA1_3_2Rm.Name = "ProjectRFA1_3_2Rm";
-            this.ProjectRFA1_3_2Rm.Size = new System.Drawing.Size(46, 24);
-            this.ProjectRFA1_3_2Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ProjectRFA1_3_2Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_2Rm.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.ProjectRFA1_3_2Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_2Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ProjectRFA1_3_2Rm.TabIndex = 87;
-            this.ProjectRFA1_3_2Rm.Visible = false;
-            // 
-            // ProjectRFA1_3_1Rm
-            // 
-            this.ProjectRFA1_3_1Rm.AlwaysActive = false;
-            this.ProjectRFA1_3_1Rm.Location = new System.Drawing.Point(486, 3);
-            this.ProjectRFA1_3_1Rm.Margin = new System.Windows.Forms.Padding(2);
-            this.ProjectRFA1_3_1Rm.Name = "ProjectRFA1_3_1Rm";
-            this.ProjectRFA1_3_1Rm.Size = new System.Drawing.Size(33, 24);
-            this.ProjectRFA1_3_1Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ProjectRFA1_3_1Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_1Rm.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.ProjectRFA1_3_1Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_1Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ProjectRFA1_3_1Rm.TabIndex = 87;
-            this.ProjectRFA1_3_1Rm.Visible = false;
-            // 
-            // ProjectRFA1_3_1
-            // 
-            this.ProjectRFA1_3_1.AlwaysActive = false;
-            this.ProjectRFA1_3_1.Location = new System.Drawing.Point(180, -1);
-            this.ProjectRFA1_3_1.Margin = new System.Windows.Forms.Padding(2);
-            this.ProjectRFA1_3_1.Name = "ProjectRFA1_3_1";
-            this.ProjectRFA1_3_1.Size = new System.Drawing.Size(56, 24);
-            this.ProjectRFA1_3_1.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ProjectRFA1_3_1.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_1.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.ProjectRFA1_3_1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ProjectRFA1_3_1.TabIndex = 31;
-            this.ProjectRFA1_3_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ProjectRFA1_3_1.Visible = false;
-            this.ProjectRFA1_3_1.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
-            this.ProjectRFA1_3_1.Leave += new System.EventHandler(this.ProjectRFA_Leave);
             // 
             // kryptonLabel6
             // 
@@ -1526,28 +1466,6 @@ namespace ProjectReporter.Controls
             this.kryptonLabel7.TabIndex = 11;
             this.kryptonLabel7.Values.Text = "（2）其他";
             // 
-            // ProjectRFA1_3_2
-            // 
-            this.ProjectRFA1_3_2.AlwaysActive = false;
-            this.ProjectRFA1_3_2.Location = new System.Drawing.Point(323, 3);
-            this.ProjectRFA1_3_2.Margin = new System.Windows.Forms.Padding(2);
-            this.ProjectRFA1_3_2.Name = "ProjectRFA1_3_2";
-            this.ProjectRFA1_3_2.Size = new System.Drawing.Size(34, 24);
-            this.ProjectRFA1_3_2.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ProjectRFA1_3_2.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_2.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
-            this.ProjectRFA1_3_2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ProjectRFA1_3_2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ProjectRFA1_3_2.TabIndex = 32;
-            this.ProjectRFA1_3_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ProjectRFA1_3_2.Visible = false;
-            this.ProjectRFA1_3_2.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
-            this.ProjectRFA1_3_2.Leave += new System.EventHandler(this.ProjectRFA_Leave);
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BorderColor = System.Drawing.Color.Black;
@@ -1596,6 +1514,44 @@ namespace ProjectReporter.Controls
             this.kryptonPanel18.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonPanel18.TabIndex = 0;
             // 
+            // ProjectRFA1_3_1Rm
+            // 
+            this.ProjectRFA1_3_1Rm.AlwaysActive = false;
+            this.ProjectRFA1_3_1Rm.Location = new System.Drawing.Point(486, 3);
+            this.ProjectRFA1_3_1Rm.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRFA1_3_1Rm.Name = "ProjectRFA1_3_1Rm";
+            this.ProjectRFA1_3_1Rm.Size = new System.Drawing.Size(33, 24);
+            this.ProjectRFA1_3_1Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ProjectRFA1_3_1Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ProjectRFA1_3_1Rm.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.ProjectRFA1_3_1Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ProjectRFA1_3_1Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ProjectRFA1_3_1Rm.TabIndex = 87;
+            this.ProjectRFA1_3_1Rm.Visible = false;
+            // 
+            // ProjectRFA1_3_2Rm
+            // 
+            this.ProjectRFA1_3_2Rm.AlwaysActive = false;
+            this.ProjectRFA1_3_2Rm.Location = new System.Drawing.Point(410, 3);
+            this.ProjectRFA1_3_2Rm.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRFA1_3_2Rm.Name = "ProjectRFA1_3_2Rm";
+            this.ProjectRFA1_3_2Rm.Size = new System.Drawing.Size(46, 24);
+            this.ProjectRFA1_3_2Rm.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ProjectRFA1_3_2Rm.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ProjectRFA1_3_2Rm.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.ProjectRFA1_3_2Rm.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ProjectRFA1_3_2Rm.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ProjectRFA1_3_2Rm.TabIndex = 87;
+            this.ProjectRFA1_3_2Rm.Visible = false;
+            // 
             // kryptonLabel92
             // 
             this.kryptonLabel92.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1605,6 +1561,50 @@ namespace ProjectReporter.Controls
             this.kryptonLabel92.StateCommon.ShortText.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonLabel92.TabIndex = 0;
             this.kryptonLabel92.Values.Text = "年度申请经费预算";
+            // 
+            // ProjectRFA1_3_1
+            // 
+            this.ProjectRFA1_3_1.AlwaysActive = false;
+            this.ProjectRFA1_3_1.Location = new System.Drawing.Point(180, -1);
+            this.ProjectRFA1_3_1.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRFA1_3_1.Name = "ProjectRFA1_3_1";
+            this.ProjectRFA1_3_1.Size = new System.Drawing.Size(56, 24);
+            this.ProjectRFA1_3_1.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ProjectRFA1_3_1.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ProjectRFA1_3_1.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.ProjectRFA1_3_1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ProjectRFA1_3_1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ProjectRFA1_3_1.TabIndex = 31;
+            this.ProjectRFA1_3_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ProjectRFA1_3_1.Visible = false;
+            this.ProjectRFA1_3_1.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
+            this.ProjectRFA1_3_1.Leave += new System.EventHandler(this.ProjectRFA_Leave);
+            // 
+            // ProjectRFA1_3_2
+            // 
+            this.ProjectRFA1_3_2.AlwaysActive = false;
+            this.ProjectRFA1_3_2.Location = new System.Drawing.Point(323, 3);
+            this.ProjectRFA1_3_2.Margin = new System.Windows.Forms.Padding(2);
+            this.ProjectRFA1_3_2.Name = "ProjectRFA1_3_2";
+            this.ProjectRFA1_3_2.Size = new System.Drawing.Size(34, 24);
+            this.ProjectRFA1_3_2.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ProjectRFA1_3_2.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ProjectRFA1_3_2.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
+            this.ProjectRFA1_3_2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.ProjectRFA1_3_2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ProjectRFA1_3_2.TabIndex = 32;
+            this.ProjectRFA1_3_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ProjectRFA1_3_2.Visible = false;
+            this.ProjectRFA1_3_2.TextChanged += new System.EventHandler(this.ProjectRFA_TextChanged);
+            this.ProjectRFA1_3_2.Leave += new System.EventHandler(this.ProjectRFA_Leave);
             // 
             // kryptonLabel93
             // 
@@ -1896,8 +1896,8 @@ namespace ProjectReporter.Controls
             this.tableLayoutPanel4.Controls.Add(this.btnLast, 4, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnSave, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnNext, 5, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lklDownloadExcel, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnExcelLoad, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lklDownloadExcel, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 677);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -1937,11 +1937,11 @@ namespace ProjectReporter.Controls
             // 
             // lklDownloadExcel
             // 
-            this.lklDownloadExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lklDownloadExcel.Dock = System.Windows.Forms.DockStyle.Right;
             this.lklDownloadExcel.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lklDownloadExcel.Location = new System.Drawing.Point(409, 0);
+            this.lklDownloadExcel.Location = new System.Drawing.Point(249, 0);
             this.lklDownloadExcel.Name = "lklDownloadExcel";
-            this.lklDownloadExcel.Size = new System.Drawing.Size(144, 40);
+            this.lklDownloadExcel.Size = new System.Drawing.Size(154, 40);
             this.lklDownloadExcel.TabIndex = 6;
             this.lklDownloadExcel.TabStop = true;
             this.lklDownloadExcel.Text = "经费预算导入模板.xls";

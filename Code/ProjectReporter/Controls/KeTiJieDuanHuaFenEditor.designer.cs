@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnExcelLoad, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lklDownloadFuJian, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lklDownloadFuJian, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 566);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -141,11 +141,11 @@
             // 
             // lklDownloadFuJian
             // 
-            this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Right;
             this.lklDownloadFuJian.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lklDownloadFuJian.Location = new System.Drawing.Point(388, 0);
+            this.lklDownloadFuJian.Location = new System.Drawing.Point(202, 0);
             this.lklDownloadFuJian.Name = "lklDownloadFuJian";
-            this.lklDownloadFuJian.Size = new System.Drawing.Size(124, 34);
+            this.lklDownloadFuJian.Size = new System.Drawing.Size(180, 34);
             this.lklDownloadFuJian.TabIndex = 5;
             this.lklDownloadFuJian.TabStop = true;
             this.lklDownloadFuJian.Text = "课题阶段划分导入模板.xls";
@@ -206,9 +206,9 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.MultiSelect = false;
             this.dgvDetail.Name = "dgvDetail";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetail.RowTemplate.Height = 35;
             this.dgvDetail.Size = new System.Drawing.Size(815, 507);
             this.dgvDetail.StateCommon.Background.Color1 = System.Drawing.Color.White;

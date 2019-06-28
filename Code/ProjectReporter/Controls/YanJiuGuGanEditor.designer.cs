@@ -40,8 +40,6 @@
             this.lklDownloadFuJian = new System.Windows.Forms.LinkLabel();
             this.plContent = new System.Windows.Forms.Panel();
             this.dgvDetail = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.selpersonid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colXingMing = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewComboBoxColumn();
             this.colSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +54,8 @@
             this.colMoveDown = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.colEditThis = new ComponentFactory.Krypton.Toolkit.KryptonDataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.plTitle)).BeginInit();
             this.plTitle.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
@@ -121,7 +121,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNext, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnExcelLoad, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lklDownloadFuJian, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lklDownloadFuJian, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 515);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -170,11 +170,11 @@
             // 
             // lklDownloadFuJian
             // 
-            this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lklDownloadFuJian.Dock = System.Windows.Forms.DockStyle.Right;
             this.lklDownloadFuJian.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lklDownloadFuJian.Location = new System.Drawing.Point(552, 0);
+            this.lklDownloadFuJian.Location = new System.Drawing.Point(396, 0);
             this.lklDownloadFuJian.Name = "lklDownloadFuJian";
-            this.lklDownloadFuJian.Size = new System.Drawing.Size(94, 34);
+            this.lklDownloadFuJian.Size = new System.Drawing.Size(150, 34);
             this.lklDownloadFuJian.TabIndex = 4;
             this.lklDownloadFuJian.TabStop = true;
             this.lklDownloadFuJian.Text = "研究骨干导入模板.xls";
@@ -235,19 +235,6 @@
             this.dgvDetail.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetail_CellContentDoubleClick);
             this.dgvDetail.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dgvDetail_CellParsing);
             this.dgvDetail.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvDetail_RowsAdded);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "删除";
-            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 45;
-            // 
-            // ofdExcelDialog
-            // 
-            this.ofdExcelDialog.Filter = "*.xls|*.xls";
             // 
             // selpersonid
             // 
@@ -380,6 +367,19 @@
             this.delete.ReadOnly = true;
             this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.delete.Width = 45;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "删除";
+            this.dataGridViewImageColumn1.Image = global::ProjectReporter.Properties.Resources.DELETE_16;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 45;
+            // 
+            // ofdExcelDialog
+            // 
+            this.ofdExcelDialog.Filter = "*.xls|*.xls";
             // 
             // YanJiuGuGanEditor
             // 
