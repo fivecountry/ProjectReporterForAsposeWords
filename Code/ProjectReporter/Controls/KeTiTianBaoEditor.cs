@@ -500,9 +500,28 @@ namespace ProjectReporter.Controls
 
                 //同步阶段数据
                 SyncStepList();
+
+                //保存详细页所写的内容
+                foreach (KryptonPage kp in ParentNavigator.Pages)
+                {
+                    if (kp.Tag != null && kp.Tag.ToString() == "KeTiDynamic")
+                    {
+                        if (kp.Controls.Count >= 1)
+                        {
+                            try
+                            {
+                                ((BaseEditor)kp.Controls[0]).OnSaveEvent();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("对不起，课题[" + kp.Text + "]的详细保存失败！Ex:" + ex.ToString());
+                            }
+                        }
+                    }
+                }
                 
                 //刷新当前页
-                UpdateKeTiList();
+                RefreshView();
 
                 //刷新课题阶段划分表
                 foreach (BaseEditor be in MainForm.Instance.EditorMaps.Values)
