@@ -168,7 +168,7 @@ namespace ProjectReporter
                     return;
                 }
 
-                if (File.Exists(Path.Combine(MainForm.ProjectDir, "建议书.doc")) == false)
+                if (File.Exists(Path.Combine(MainForm.ProjectDir, "建议书.doc")) == false && File.Exists(Path.Combine(MainForm.ProjectDir, "建议书.docx")) == false)
                 {
                     MessageBox.Show("对不起，请上传项目建议书！");
                     return;
