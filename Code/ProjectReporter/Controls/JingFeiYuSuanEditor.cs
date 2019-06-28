@@ -326,8 +326,8 @@ namespace ProjectReporter.Controls
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.lklDownloadExcel = new System.Windows.Forms.LinkLabel();
             this.btnExcelLoad = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.lklDownloadExcel = new System.Windows.Forms.LinkLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.ofdExcelDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1557,10 +1557,10 @@ namespace ProjectReporter.Controls
             this.kryptonLabel92.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonLabel92.Location = new System.Drawing.Point(0, 0);
             this.kryptonLabel92.Name = "kryptonLabel92";
-            this.kryptonLabel92.Size = new System.Drawing.Size(144, 27);
+            this.kryptonLabel92.Size = new System.Drawing.Size(193, 27);
             this.kryptonLabel92.StateCommon.ShortText.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.kryptonLabel92.TabIndex = 0;
-            this.kryptonLabel92.Values.Text = "年度申请经费预算";
+            this.kryptonLabel92.Values.Text = "年度申请经费预算(万元)";
             // 
             // ProjectRFA1_3_1
             // 
@@ -1935,6 +1935,15 @@ namespace ProjectReporter.Controls
             this.btnNext.Values.Text = "下一步";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // btnExcelLoad
+            // 
+            this.btnExcelLoad.Location = new System.Drawing.Point(559, 3);
+            this.btnExcelLoad.Name = "btnExcelLoad";
+            this.btnExcelLoad.Size = new System.Drawing.Size(94, 29);
+            this.btnExcelLoad.TabIndex = 7;
+            this.btnExcelLoad.Values.Text = "从Excel导入";
+            this.btnExcelLoad.Click += new System.EventHandler(this.btnExcelLoad_Click);
+            // 
             // lklDownloadExcel
             // 
             this.lklDownloadExcel.Dock = System.Windows.Forms.DockStyle.Right;
@@ -1947,15 +1956,6 @@ namespace ProjectReporter.Controls
             this.lklDownloadExcel.Text = "经费预算导入模板.xls";
             this.lklDownloadExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lklDownloadExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklDownloadExcel_LinkClicked);
-            // 
-            // btnExcelLoad
-            // 
-            this.btnExcelLoad.Location = new System.Drawing.Point(559, 3);
-            this.btnExcelLoad.Name = "btnExcelLoad";
-            this.btnExcelLoad.Size = new System.Drawing.Size(94, 29);
-            this.btnExcelLoad.TabIndex = 7;
-            this.btnExcelLoad.Values.Text = "从Excel导入";
-            this.btnExcelLoad.Click += new System.EventHandler(this.btnExcelLoad_Click);
             // 
             // panel4
             // 
