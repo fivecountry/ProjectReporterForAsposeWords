@@ -8,6 +8,7 @@ using System.IO;
 using ICSharpCode.SharpZipLib.Checksums;
 using ICSharpCode.SharpZipLib.Zip;
 using ICSharpCode.SharpZipLib.GZip;
+using System.Windows.Forms;
 
 namespace ProjectReporter.Utility
 {
@@ -126,11 +127,30 @@ namespace ProjectReporter.Utility
         /// <param name="zipedFile">压缩后生成的压缩文件名</param>
         public void ZipFileDirectory(string strDirectory, string zipedFile)
         {
-            using (System.IO.FileStream ZipFile = System.IO.File.Create(zipedFile))
+            try
             {
-                using (ZipOutputStream s = new ZipOutputStream(ZipFile))
+                using (System.IO.FileStream ZipFile = System.IO.File.Create(zipedFile))
                 {
-                    ZipSetp(strDirectory, s, "");
+                    using (ZipOutputStream s = new ZipOutputStream(ZipFile))
+                    {
+                        ZipSetp(strDirectory, s, "");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("对不起，打包失败！Ex:" + ex.ToString());
+
+                if (File.Exists(zipedFile))
+                {
+                    try
+                    {
+                        File.Delete(zipedFile);
+                    }
+                    catch (Exception exx)
+                    {
+                        MessageBox.Show("删除文件失败！Ex:" + exx.ToString());
+                    }
                 }
             }
         }
