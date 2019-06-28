@@ -354,7 +354,8 @@ namespace ProjectReporter.Controls
 
                     if (dgvRow.Cells[2].Value == null)
                     {
-                        break;
+                        MessageBox.Show("对不起,请输入密级!");
+                        return;
                     }
 
                     if (dgvRow.Cells[1].Value == null)
