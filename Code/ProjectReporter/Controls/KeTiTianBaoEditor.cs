@@ -500,9 +500,20 @@ namespace ProjectReporter.Controls
 
                 //同步阶段数据
                 SyncStepList();
+                
+                //刷新当前页
+                RefreshView();
 
-                //更新课题列表
-                MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
+                //刷新课题阶段划分表
+                foreach (BaseEditor be in MainForm.Instance.EditorMaps.Values)
+                {
+                    if (be is KeTiJieDuanHuaFenEditor)
+                    {
+                        //刷新列表
+                        be.RefreshView();
+                        break;
+                    }
+                }
             }
             else
             {

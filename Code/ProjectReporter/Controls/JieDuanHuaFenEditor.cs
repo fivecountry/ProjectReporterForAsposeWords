@@ -262,7 +262,19 @@ namespace ProjectReporter.Controls
                     #endregion
                 }
 
-                MainForm.Instance.RefreshEditorWithoutRTFTextEditor();
+                //刷新当前页
+                RefreshView();
+
+                //刷新课题阶段划分表
+                foreach (BaseEditor be in MainForm.Instance.EditorMaps.Values)
+                {
+                    if (be is KeTiJieDuanHuaFenEditor)
+                    {
+                        //刷新列表
+                        be.RefreshView();
+                        break;
+                    }
+                }
             }
             catch (Exception ex)
             {
