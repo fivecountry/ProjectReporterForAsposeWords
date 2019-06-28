@@ -964,7 +964,12 @@ namespace ProjectReporter
                 //循环所有控件，一个一个保存
                 try
                 {
-                    foreach (BaseEditor be in EditorIndexLists)
+                    //创建一个倒叙列表用于解决因为保存顺序问题导致的某些列表项保存失败的BUG
+                    List<BaseEditor> tempLists = new List<BaseEditor>();
+                    tempLists.AddRange(EditorIndexLists);
+                    tempLists.Reverse();
+
+                    foreach (BaseEditor be in tempLists)
                     {
                         //保存
                         try
@@ -1010,7 +1015,12 @@ namespace ProjectReporter
                 //循环所有控件，一个一个保存
                 try
                 {
-                    foreach (BaseEditor be in EditorIndexLists)
+                    //创建一个倒叙列表用于解决因为保存顺序问题导致的某些列表项保存失败的BUG
+                    List<BaseEditor> tempLists = new List<BaseEditor>();
+                    tempLists.AddRange(EditorIndexLists);
+                    tempLists.Reverse();
+
+                    foreach (BaseEditor be in tempLists)
                     {
                         //保存
                         try
