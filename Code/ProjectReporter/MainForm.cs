@@ -263,7 +263,7 @@ namespace ProjectReporter
 
         private void maintimer_Tick(object sender, EventArgs e)
         {
-            this.lbcurtime.Text = "欢迎您！当前时间 " + DateTime.Now.ToString("yyyy年M月d日 H:mm:ss");
+            //this.lbcurtime.Text = "欢迎您！当前时间 " + DateTime.Now.ToString("yyyy年M月d日 H:mm:ss");
         }
 
         private void btnquit_Click(object sender, EventArgs e)
@@ -658,7 +658,7 @@ namespace ProjectReporter
         public void SwitchToContentEditor()
         {
             //显示项目名称
-            this.Text = this.Tag + " (项目:" + ProjectObj.Name + ")";
+            //this.Text = this.Tag + " (项目:" + ProjectObj.Name + ")";
 
             //刷新Editor控件组
             RefreshAllEditor();
