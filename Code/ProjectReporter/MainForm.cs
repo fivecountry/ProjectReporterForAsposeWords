@@ -146,7 +146,7 @@ namespace ProjectReporter
                 }
                 else
                 {
-                    MessageBox.Show("对不起，请先填写项目信息，然后点击保存按钮！");
+                    MessageBox.Show("对不起，请先填写项目信息，然后点击页面右下角的保存按钮！");
                 }
             //}
         }
@@ -155,7 +155,7 @@ namespace ProjectReporter
         {
             if (ProjectObj == null)
             {
-                MessageBox.Show("对不起，请先填写项目信息，然后点击保存按钮！");
+                MessageBox.Show("对不起，请先填写项目信息，然后点击页面右下角的保存按钮！");
                 return;
             }
 
@@ -1068,7 +1068,7 @@ namespace ProjectReporter
         {
             if (ProjectObj == null)
             {
-                MessageBox.Show("对不起，请先填写项目信息，然后点击保存按钮！");
+                MessageBox.Show("对不起，请先填写项目信息，然后点击页面右下角的保存按钮！");
                 return;
             }
 
