@@ -3,7 +3,7 @@
 
 #define MyAppName "基础加强计划重点基础研究项目申报系统"
 #define MyAppVersion "1.0"
-#define MyAppPublisher "五院信息中心"
+#define MyAppPublisher ""
 #define MyAppURL "http://www.baidu.com.com/"
 #define MyAppExeName "ProjectReporter.exe"
 
