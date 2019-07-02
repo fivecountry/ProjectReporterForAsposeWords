@@ -176,7 +176,7 @@ namespace ProjectReporter.Controls
             }
         }
 
-        private long SaveProject()
+        public long SaveProject()
         {
             if (string.IsNullOrEmpty(txtMPersonName.Text))
             {

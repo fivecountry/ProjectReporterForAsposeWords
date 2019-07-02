@@ -146,7 +146,7 @@ namespace ProjectReporter
                 }
                 else
                 {
-                    MessageBox.Show("对不起，请先填写项目信息！");
+                    MessageBox.Show("对不起，请先填写项目信息，然后点击保存按钮！");
                 }
             //}
         }
@@ -155,7 +155,7 @@ namespace ProjectReporter
         {
             if (ProjectObj == null)
             {
-                MessageBox.Show("对不起，请先填写项目信息！");
+                MessageBox.Show("对不起，请先填写项目信息，然后点击保存按钮！");
                 return;
             }
 
@@ -961,14 +961,17 @@ namespace ProjectReporter
                 upf.ProgresBarMaximum = EditorIndexLists.Count;
                 upf.ShowProgress();
 
-                //循环所有控件，一个一个保存
                 try
                 {
+                    //保存项目信息
+                    ProjectInfo.SaveProject();
+
                     //创建一个倒叙列表用于解决因为保存顺序问题导致的某些列表项保存失败的BUG
                     List<BaseEditor> tempLists = new List<BaseEditor>();
                     tempLists.AddRange(EditorIndexLists);
                     tempLists.Reverse();
 
+                    //循环所有控件，一个一个保存
                     foreach (BaseEditor be in tempLists)
                     {
                         //保存
@@ -1012,14 +1015,17 @@ namespace ProjectReporter
                 upf.ProgresBarMaximum = EditorIndexLists.Count;
                 upf.ShowProgress();
 
-                //循环所有控件，一个一个保存
                 try
                 {
+                    //保存项目信息
+                    ProjectInfo.SaveProject();
+
                     //创建一个倒叙列表用于解决因为保存顺序问题导致的某些列表项保存失败的BUG
                     List<BaseEditor> tempLists = new List<BaseEditor>();
                     tempLists.AddRange(EditorIndexLists);
                     tempLists.Reverse();
 
+                    //循环所有控件，一个一个保存
                     foreach (BaseEditor be in tempLists)
                     {
                         //保存
@@ -1062,7 +1068,7 @@ namespace ProjectReporter
         {
             if (ProjectObj == null)
             {
-                MessageBox.Show("对不起，请先填写项目信息！");
+                MessageBox.Show("对不起，请先填写项目信息，然后点击保存按钮！");
                 return;
             }
 
