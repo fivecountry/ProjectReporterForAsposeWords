@@ -999,6 +999,9 @@ namespace ProjectReporter
                 {
                     upf.Close();
                 }
+
+                //刷新列表数据
+                RefreshEditorWithoutRTFTextEditor();
             }
         }
 
@@ -1055,6 +1058,9 @@ namespace ProjectReporter
                 {
                     upf.Close();
                 }
+                
+                //刷新列表数据
+                RefreshEditorWithoutRTFTextEditor();
 
                 return true;
             }
