@@ -684,12 +684,13 @@ namespace ProjectReporter.Controls
                 PersonObj.copyTo(ConnectionManager.Context.table("Person")).insert();
 
                 //添加/修改Task
-                Task task = ConnectionManager.Context.table("Task").where("Role = '" + jobInProjectOrSubject +"' and IDCard='" + personIDCard + "' and ProjectID in (select ID from Project where Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "')").select("*").getItem<Task>(new Task());
+                Task task = ConnectionManager.Context.table("Task").where("IDCard='" + personIDCard + "' and ProjectID in (select ID from Project where Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "')").select("*").getItem<Task>(new Task());
                 if (task == null || string.IsNullOrEmpty(task.ID))
                 {
                     //新行
                     task = new Task();
                     task.ProjectID = ConnectionManager.Context.table("Project").where("Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "'").select("ID").getValue<string>(string.Empty);
+                    task.DisplayOrder = GetMaxDisplayOrder() + 1;
                 }
 
                 task.Type = string.IsNullOrEmpty(subjectName) || subjectName == MainForm.Instance.ProjectObj.Name ? "项目" : "课题";
@@ -700,9 +701,7 @@ namespace ProjectReporter.Controls
 
                 task.Content = taskInProject;
                 task.TotalTime = int.Parse(timeInProject);
-
-                task.DisplayOrder = GetMaxDisplayOrder() + 1;
-
+                
                 if (string.IsNullOrEmpty(task.ID))
                 {
                     //insert
