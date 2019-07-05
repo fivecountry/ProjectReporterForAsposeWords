@@ -752,7 +752,7 @@ namespace ProjectReporter.Controls
         {
             try
             {
-                return ConnectionManager.Context.table("Task").select("max(DisplayOrder)").getValue<int>(0);
+                return (int)ConnectionManager.Context.table("Task").select("max(DisplayOrder)").getValue<long>(0);
             }
             catch (Exception ex)
             {
