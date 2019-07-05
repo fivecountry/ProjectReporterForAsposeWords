@@ -530,13 +530,11 @@ namespace ProjectReporter.Controls
                     {
                         //刷新列表
                         be.RefreshView();
-                        break;
                     }
                     else if (be is YanJiuGuGanEditor)
                     {
                         //刷新列表
                         be.RefreshView();
-                        break;
                     }
                 }
             }

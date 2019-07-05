@@ -18,6 +18,8 @@ namespace ProjectReporter.Controls
 {
     public partial class YanJiuGuGanEditor : BaseEditor
     {
+        int displayOrderIndex = 0;
+
         public YanJiuGuGanEditor()
         {
             InitializeComponent();
@@ -161,6 +163,9 @@ namespace ProjectReporter.Controls
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                 dgvDetail.Rows[rowIndex].Tag = task;
             }
+
+            displayOrderIndex = dgvDetail.Rows.Count;
+            displayOrderIndex++;
         }
 
         private void UpatePersonList()
@@ -545,9 +550,6 @@ namespace ProjectReporter.Controls
 
             try
             {
-                //排序号
-                int displayOrderIndex = dgvDetail.Rows.Count;
-
                 //加载字段
                 string unitName = dr["单位名称"] != null ? dr["单位名称"].ToString() : string.Empty;
                 //string unitType = dr["隶属部门"] != null ? dr["隶属部门"].ToString() : string.Empty;
