@@ -479,6 +479,7 @@ namespace ProjectReporter.Controls
                         //新行
                         task = new Task();
                         task.ProjectID = proj.ID;
+                        task.DisplayOrder = YanJiuGuGanEditor.GetMaxDisplayOrder() + 1;
                     }
 
                     task.PersonID = personObj.ID;
@@ -685,6 +686,7 @@ namespace ProjectReporter.Controls
                         //新行
                         task = new Task();
                         task.ProjectID = proj.ID;
+                        task.DisplayOrder = YanJiuGuGanEditor.GetMaxDisplayOrder() + 1;
                     }
 
                     task.PersonID = personObj.ID;

@@ -18,8 +18,6 @@ namespace ProjectReporter.Controls
 {
     public partial class YanJiuGuGanEditor : BaseEditor
     {
-        int displayOrderIndex = 0;
-
         public YanJiuGuGanEditor()
         {
             InitializeComponent();
@@ -163,9 +161,6 @@ namespace ProjectReporter.Controls
                 int rowIndex = dgvDetail.Rows.Add(cells.ToArray());
                 dgvDetail.Rows[rowIndex].Tag = task;
             }
-
-            displayOrderIndex = dgvDetail.Rows.Count;
-            displayOrderIndex++;
         }
 
         private void UpatePersonList()
@@ -706,8 +701,7 @@ namespace ProjectReporter.Controls
                 task.Content = taskInProject;
                 task.TotalTime = int.Parse(timeInProject);
 
-                task.DisplayOrder = displayOrderIndex;
-                displayOrderIndex++;
+                task.DisplayOrder = GetMaxDisplayOrder() + 1;
 
                 if (string.IsNullOrEmpty(task.ID))
                 {
@@ -747,6 +741,22 @@ namespace ProjectReporter.Controls
                 {
                     MessageBox.Show("下载失败！Ex:" + ex.ToString());
                 }
+            }
+        }
+
+        /// <summary>
+        /// 获得最大的记录号
+        /// </summary>
+        /// <returns></returns>
+        public static int GetMaxDisplayOrder()
+        {
+            try
+            {
+                return ConnectionManager.Context.table("Task").select("max(DisplayOrder)").getValue<int>(0);
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
         }
     }
