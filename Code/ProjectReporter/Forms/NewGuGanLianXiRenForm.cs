@@ -254,7 +254,14 @@ namespace ProjectReporter.Forms
                 {
                     //课题
                     task.Type = "课题";
-                    task.Role = roleName.Replace(task.Type, string.Empty);
+                    if (roleName.EndsWith("成员"))
+                    {
+                        task.Role = "成员";
+                    }
+                    else
+                    {
+                        task.Role = "负责人";
+                    }
                 }
 
                 task.ProjectID = JobDict[roleName].ID;
