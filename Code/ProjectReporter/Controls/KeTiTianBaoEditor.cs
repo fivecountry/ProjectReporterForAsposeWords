@@ -87,7 +87,7 @@ namespace ProjectReporter.Controls
                     Unit unitObj = null;
                     //UnitExt unitExtObj = null;
 
-                    Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + keti.ID + "'").select("*").getItem<Task>(new Task());
+                    Task ketiTask = ConnectionManager.Context.table("Task").where("ProjectID='" + keti.ID + "' and Role = '负责人'").select("*").getItem<Task>(new Task());
                     if (ketiTask != null)
                     {
                         //content = ketiTask.Content;
@@ -527,6 +527,12 @@ namespace ProjectReporter.Controls
                 foreach (BaseEditor be in MainForm.Instance.EditorMaps.Values)
                 {
                     if (be is KeTiJieDuanHuaFenEditor)
+                    {
+                        //刷新列表
+                        be.RefreshView();
+                        break;
+                    }
+                    else if (be is YanJiuGuGanEditor)
                     {
                         //刷新列表
                         be.RefreshView();

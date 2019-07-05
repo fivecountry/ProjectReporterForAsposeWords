@@ -687,7 +687,7 @@ namespace ProjectReporter.Controls
                 PersonObj.copyTo(ConnectionManager.Context.table("Person")).insert();
 
                 //添加/修改Task
-                Task task = ConnectionManager.Context.table("Task").where("IDCard='" + personIDCard + "' and ProjectID in (select ID from Project where Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "')").select("*").getItem<Task>(new Task());
+                Task task = ConnectionManager.Context.table("Task").where("Role = '" + jobInProjectOrSubject +"' and IDCard='" + personIDCard + "' and ProjectID in (select ID from Project where Name = '" + (string.IsNullOrEmpty(subjectName) ? MainForm.Instance.ProjectObj.Name : subjectName) + "')").select("*").getItem<Task>(new Task());
                 if (task == null || string.IsNullOrEmpty(task.ID))
                 {
                     //新行
