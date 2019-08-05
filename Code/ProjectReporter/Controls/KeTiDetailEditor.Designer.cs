@@ -34,11 +34,11 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.autoHeightLabel1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.kpDest = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.txtDest = new ProjectReporter.Controls.RichTextBoxTableClass();
+            this.txtDest = new ProjectReporter.Controls.WordDocumentEditControl();
             this.kpContent = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.txtContent = new ProjectReporter.Controls.RichTextBoxTableClass();
+            this.txtContent = new ProjectReporter.Controls.WordDocumentEditControl();
             this.kpNeed = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.txtNeed = new ProjectReporter.Controls.RichTextBoxTableClass();
+            this.txtNeed = new ProjectReporter.Controls.WordDocumentEditControl();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -350,9 +350,9 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
         private AutoHeightLabel lblTitle;
         private System.Windows.Forms.Panel plContent;
-        private RichTextBoxTableClass txtDest;
-        private RichTextBoxTableClass txtContent;
-        private RichTextBoxTableClass txtNeed;
+        private WordDocumentEditControl txtDest;
+        private WordDocumentEditControl txtContent;
+        private WordDocumentEditControl txtNeed;
         private TextBoxExt txtInfo;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private AutoHeightLabel autoHeightLabel1;

@@ -35,7 +35,7 @@
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plContent = new System.Windows.Forms.Panel();
-            this.txtContent = new ProjectReporter.Controls.RichTextBoxTableClass();
+            this.txtContent = new ProjectReporter.Controls.WordDocumentEditControl();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.plContent.SuspendLayout();
@@ -165,7 +165,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnNext;
         private System.Windows.Forms.Panel plContent;
-        private RichTextBoxTableClass txtContent;
+        private WordDocumentEditControl txtContent;
         private AutoHeightLabel lblTitle;
 
 

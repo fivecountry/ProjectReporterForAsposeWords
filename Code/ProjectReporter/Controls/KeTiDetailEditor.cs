@@ -96,17 +96,17 @@ namespace ProjectReporter.Controls
 
         public string GetNeedFilePath()
         {
-            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_need" + ".rtf");
+            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_need" + ".doc");
         }
 
         public string GetContentFilePath()
         {
-            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_cnt" + ".rtf");
+            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_cnt" + ".doc");
         }
 
         public string GetDestFilePath()
         {
-            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_dest" + ".rtf");
+            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + "_dest" + ".doc");
         }
 
         public string GetInfoFilePath()

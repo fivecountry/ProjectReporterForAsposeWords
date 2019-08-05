@@ -268,6 +268,12 @@
     <Compile Include="Controls\WaterTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\WordDocumentEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WordDocumentEditControl.Designer.cs">
+      <DependentUpon>WordDocumentEditControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\ConnectionManager.cs" />
     <Compile Include="DB\Entitys\ExtFileList.cs" />
     <Compile Include="DB\Entitys\IEntity.cs" />
@@ -455,6 +461,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ProjectKeyControl.resx">
       <DependentUpon>ProjectKeyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WordDocumentEditControl.resx">
+      <DependentUpon>WordDocumentEditControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClearForm.resx">
       <DependentUpon>ClearForm.cs</DependentUpon>

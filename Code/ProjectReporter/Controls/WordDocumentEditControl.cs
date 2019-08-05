@@ -39,6 +39,13 @@ namespace ProjectReporter.Controls
             }
         }
 
+        public void Clear()
+        {
+            FilePath = null;
+            txtWordContent.Clear();
+            lbcomattpath.Text = string.Empty;
+        }
+
         /// <summary>
         /// 保存并格式化RTF文档
         /// </summary>

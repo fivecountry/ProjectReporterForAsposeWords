@@ -25,7 +25,7 @@ namespace ProjectReporter.Controls
             get { return lblTitle; }
         }
 
-        public RichTextBoxTableClass RichTextBoxControl
+        public WordDocumentEditControl RichTextBoxControl
         {
             get { return txtContent; }
         }
@@ -116,7 +116,7 @@ namespace ProjectReporter.Controls
 
         public string GetTextFilePath()
         {
-            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + ".rtf");
+            return Path.Combine(MainForm.ProjectFilesDir, RTFFileFirstName + Name.Replace(RTFEditorNameKey, string.Empty) + ".doc");
         }
 
         public override void RefreshView()
