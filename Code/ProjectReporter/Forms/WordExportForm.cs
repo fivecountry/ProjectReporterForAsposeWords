@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ProjectReporter.Utility;
@@ -12,6 +11,7 @@ using ProjectReporter.DB.Entitys;
 using ProjectReporter.DB;
 using System.Diagnostics;
 using ProjectReporter.Controls;
+using Aspose.Words;
 
 namespace ProjectReporter.Forms
 {
@@ -21,9 +21,9 @@ namespace ProjectReporter.Forms
 
         string uploadC = string.Empty;
 
-        string uploadBTemp = string.Empty;
+        //string uploadBTemp = string.Empty;
 
-        string uploadB = string.Empty;
+        //string uploadB = string.Empty;
 
         protected object defaultValue = System.Reflection.Missing.Value;
 
@@ -44,7 +44,7 @@ namespace ProjectReporter.Forms
                 }
                 else if (f.Contains("upload_2"))
                 {
-                    uploadBTemp = f;
+                    //uploadBTemp = f;
                 }
                 else if (f.Contains("upload_3"))
                 {
@@ -52,11 +52,12 @@ namespace ProjectReporter.Forms
                 }
             }
             //将Image转换为RTF文件并设置段落为最小值25
-            if (File.Exists(uploadBTemp))
-            {
-                uploadB = Path.Combine(MainForm.ProjectFilesDir, Guid.NewGuid().ToString() + ".rtf");
-                ConvertToRTF(uploadBTemp, uploadB, new RichTextBoxTableClass());
-            }
+            //if (File.Exists(uploadBTemp))
+            //{
+                //uploadB = uploadBTemp;
+                //uploadB = Path.Combine(MainForm.ProjectFilesDir, Guid.NewGuid().ToString() + ".rtf");
+                //ConvertToRTF(uploadBTemp, uploadB, new RichTextBoxTableClass());
+            //}
 
             BaseForm.AsyncDelegate del = delegate
             {
@@ -178,21 +179,21 @@ namespace ProjectReporter.Forms
                 this.setprogress(40, "写入文档文件...");
 
                 #region 插入固定RTF文件
-                wu.InsertFile("项目摘要", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"), true);
-                wu.InsertFile("基本概念及内涵", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_1.rtf"), true);
-                wu.InsertFile("军事需求分析", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_2.rtf"), true);
-                wu.InsertFile("研究现状", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_3.rtf"), true);
-                wu.InsertFile("研究目标", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_4.rtf"), false);
-                wu.InsertFile("基础性问题", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_5.rtf"), true);
-                wu.InsertFile("课题之间的关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_7.rtf"), true);
-                wu.InsertFile("研究成果及考核指标", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_8.rtf"), true);
-                wu.InsertFile("评估方案", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_9.rtf"), true);
-                wu.InsertFile("预期效益", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_10.rtf"), true);
-                wu.InsertFile("项目负责人C", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_14.rtf"), true);
-                wu.InsertFile("研究团队", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_15.rtf"), true);
-                wu.InsertFile("研究基础与保障条件", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_17.rtf"), true);
-                wu.InsertFile("组织实施与风险控制", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_18.rtf"), true);
-                wu.InsertFile("与有关计划关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_19.rtf"), false);
+                wu.InsertFile("项目摘要", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.doc"), true);
+                wu.InsertFile("基本概念及内涵", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_1.doc"), true);
+                wu.InsertFile("军事需求分析", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_2.doc"), true);
+                wu.InsertFile("研究现状", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_3.doc"), true);
+                wu.InsertFile("研究目标", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_4.doc"), false);
+                wu.InsertFile("基础性问题", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_5.doc"), true);
+                wu.InsertFile("课题之间的关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_7.doc"), true);
+                wu.InsertFile("研究成果及考核指标", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_8.doc"), true);
+                wu.InsertFile("评估方案", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_9.doc"), true);
+                wu.InsertFile("预期效益", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_10.doc"), true);
+                wu.InsertFile("项目负责人C", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_14.doc"), true);
+                wu.InsertFile("研究团队", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_15.doc"), true);
+                wu.InsertFile("研究基础与保障条件", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_17.doc"), true);
+                wu.InsertFile("组织实施与风险控制", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_18.doc"), true);
+                wu.InsertFile("与有关计划关系", Path.Combine(MainForm.ProjectFilesDir, "rtpinput_19.doc"), false);
 
                 wu.InsertFile("附件1", uploadA, true);
 
@@ -237,9 +238,9 @@ namespace ProjectReporter.Forms
                         wu.ReplaceA("F2-" + ketiIndex, ketiCode + ":" + proj.Name);
 
                         //研究目标，研究内容，技术要求等文档
-                        wu.InsertFile("课题详细_" + ketiIndex + "_1", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_dest" + ".rtf"), true);
-                        wu.InsertFile("课题详细_" + ketiIndex + "_2", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_cnt" + ".rtf"), true);
-                        wu.InsertFile("课题详细_" + ketiIndex + "_3", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_need" + ".rtf"), true);
+                        wu.InsertFile("课题详细_" + ketiIndex + "_1", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_dest" + ".doc"), true);
+                        wu.InsertFile("课题详细_" + ketiIndex + "_2", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_cnt" + ".doc"), true);
+                        wu.InsertFile("课题详细_" + ketiIndex + "_3", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_need" + ".doc"), true);
 
                         //负责人
                         string fuzeUnit = string.Empty;
@@ -312,7 +313,7 @@ namespace ProjectReporter.Forms
                         Task tt = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "'").select("*").getItem<Task>(new Task());
 
                         string shortContent = "无";
-                        if (File.Exists(Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_info" + ".rtf")))
+                        if (File.Exists(Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_info" + ".doc")))
                         {
                             shortContent = File.ReadAllText(Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_info" + ".rtf"));
                         }
@@ -339,17 +340,18 @@ namespace ProjectReporter.Forms
                 try
                 {
                     //项目
-                    foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                    NodeCollection ncc = wu.WordDoc.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
+                    foreach (Aspose.Words.Tables.Table table in ncc)
                     {
                         if (table.Range.Text.Contains("进度要求"))
                         {
                             //填充行和列
                             int rowCount = projectStepList.Count;
                             int colCount = 3;
-                            table.Select();
+                            //table.Select();
                             for (int k = 0; k < rowCount - 1; k++)
                             {
-                                table.Rows.Add(ref defaultValue);
+                                table.Rows.Add(new Aspose.Words.Tables.Row(table.Document));
                             }
                             //for (int k = 0; k < colCount - 1; k++)
                             //{
@@ -390,9 +392,9 @@ namespace ProjectReporter.Forms
                                             resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepResult, curProjectAndStep.Money);
                                         }
 
-                                        table.Cell(rowIndex, 1).Range.Text = curStep.StepIndex + "";
-                                        table.Cell(rowIndex, 2).Range.Text = curStep.StepTime + "";
-                                        table.Cell(rowIndex, 3).Range.Text = resultStr;
+                                        table.Rows[rowIndex].Cells[1].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, curStep.StepIndex + "")));
+                                        table.Rows[rowIndex].Cells[2].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, curStep.StepTime + "")));
+                                        table.Rows[rowIndex].Cells[3].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, resultStr)));
                                         
                                         rowIndex++;
                                     }
@@ -403,7 +405,7 @@ namespace ProjectReporter.Forms
                     }
 
                     //课题
-                    foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                    foreach (Aspose.Words.Tables.Table table in ncc)
                     {
                         if (table.Range.Text.Contains("第一阶段：X月"))
                         {
@@ -411,22 +413,24 @@ namespace ProjectReporter.Forms
                             //int rowCount = ketiList.Count + 1;
                             int rowCount = ketiList.Count;
                             int colCount = projectStepList.Count;
-                            table.Select();
-                            for (int k = 0; k < rowCount - 1; k++)
+                            //table.Select();
+                            for (int t = 0; t < rowCount - 1; t++)
                             {
-                                table.Rows.Add(ref defaultValue);
-                            }
-                            for (int k = 0; k < colCount - 1; k++)
-                            {
-                                table.Columns.Add(ref defaultValue);
+                                Aspose.Words.Tables.Row row = new Aspose.Words.Tables.Row(table.Document);
+                                table.Rows.Add(row);
+
+                                for (int f = 0; f < colCount - 1; f++)
+                                {
+                                    row.Cells.Add(new Aspose.Words.Tables.Cell(table.Document));
+                                }
                             }
 
                             //创建列标题
                             int colIndex = 2;
                             foreach (Step step in projectStepList)
                             {
-                                table.Cell(1, colIndex).Range.Text = "阶段" + step.StepIndex + "(" + step.StepTime + "个月)";
-                                table.Cell(1, colIndex).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                table.Rows[1].Cells[colIndex].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "阶段" + step.StepIndex + "(" + step.StepTime + "个月)")));
+                                //table.Cell(1, colIndex).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                                 colIndex++;
                             }
 
@@ -464,18 +468,18 @@ namespace ProjectReporter.Forms
                                         totalMoney += (int)curProjectAndStep.Money;
                                     }
 
-                                    table.Cell(rowIndex, dataColIndex).Range.Text = resultStr;
+                                    table.Rows[rowIndex].Cells[dataColIndex].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, resultStr)));
                                     dataColIndex++;
                                 }
 
                                 //行标题
                                 if (kvp.Key != "项目")
                                 {
-                                    table.Cell(rowIndex, 1).Range.Text = kvp.Key + "(" + totalMoney + "万)";
+                                    table.Rows[rowIndex].Cells[1].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, kvp.Key + "(" + totalMoney + "万)")));
                                 }
                                 else
                                 {
-                                    table.Cell(rowIndex, 1).Range.Text = kvp.Key;
+                                    table.Rows[rowIndex].Cells[1].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, kvp.Key)));
                                 }
 
                                 rowIndex++;
@@ -495,7 +499,8 @@ namespace ProjectReporter.Forms
                 #region 插入课题负责人及研究骨干情况表
                 try
                 {
-                    foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                    NodeCollection ncc = wu.WordDoc.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
+                    foreach (Aspose.Words.Tables.Table table in ncc)
                     {
                         if (table.Range.Text.Contains("年投入"))
                         {
@@ -504,10 +509,10 @@ namespace ProjectReporter.Forms
 
                             //生成行和列
                             int rowCount = taskList.Count;
-                            table.Select();
+                            //table.Select();
                             for (int k = 0; k < rowCount - 1; k++)
                             {
-                                table.Rows.Add(ref defaultValue);
+                                table.Rows.Add(new Aspose.Words.Tables.Row(table.Document));
                             }
 
                             //填冲数据
@@ -520,15 +525,15 @@ namespace ProjectReporter.Forms
                                 Unit unit = ConnectionManager.Context.table("Unit").where("ID='" + person.UnitID + "'").select("*").getItem<Unit>(new Unit());
                                 #endregion
 
-                                table.Cell(rowIndex, 1).Range.Text = (rowIndex - 1).ToString();
-                                table.Cell(rowIndex, 2).Range.Text = person.Name;
-                                table.Cell(rowIndex, 3).Range.Text = person.Sex;
-                                table.Cell(rowIndex, 4).Range.Text = person.Job;
-                                table.Cell(rowIndex, 5).Range.Text = person.Specialty;
-                                table.Cell(rowIndex, 6).Range.Text = unit.UnitName;
-                                table.Cell(rowIndex, 7).Range.Text = curTask.TotalTime.ToString();
-                                table.Cell(rowIndex, 8).Range.Text = curTask.Content;
-                                table.Cell(rowIndex, 9).Range.Text = person.IDCard;
+                                table.Rows[rowIndex].Cells[1].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, (rowIndex - 1).ToString())));
+                                table.Rows[rowIndex].Cells[2].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, person.Name)));
+                                table.Rows[rowIndex].Cells[3].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, person.Sex)));
+                                table.Rows[rowIndex].Cells[4].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, person.Job)));
+                                table.Rows[rowIndex].Cells[5].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, person.Specialty)));
+                                table.Rows[rowIndex].Cells[6].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, unit.UnitName)));
+                                table.Rows[rowIndex].Cells[7].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, curTask.TotalTime.ToString())));
+                                table.Rows[rowIndex].Cells[8].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, curTask.Content)));
+                                table.Rows[rowIndex].Cells[9].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, person.IDCard)));
 
                                 string KetiInProject = string.Empty;
                                 foreach (KeyValuePair<string, Project> kvp in ketiMap)
@@ -539,7 +544,7 @@ namespace ProjectReporter.Forms
                                         break;
                                     }
                                 }
-                                table.Cell(rowIndex, 10).Range.Text = KetiInProject;
+                                table.Rows[rowIndex].Cells[10].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, KetiInProject)));
 
                                 rowIndex++;
                             }
@@ -703,7 +708,8 @@ namespace ProjectReporter.Forms
                 #region 插入联系方式
                 try
                 {
-                    foreach (Microsoft.Office.Interop.Word.Table table in wu.Applicaton.ActiveDocument.Tables)
+                    NodeCollection ncc = wu.WordDoc.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
+                    foreach (Aspose.Words.Tables.Table table in ncc)
                     {
                         if (table.Range.Text.Contains("各课题联系方式"))
                         {
@@ -714,8 +720,8 @@ namespace ProjectReporter.Forms
                             int rowCountt = (ketiList.Count * 3) - 1;
                             for (int k = 0; k < rowCountt; k++)
                             {
-                                table.Select();
-                                table.Rows.Add(ref defaultValue);
+                                //table.Select();
+                                table.Rows.Add(new Aspose.Words.Tables.Row(table.Document));
                             }
                             //合并单元格
                             if (rowCountt >= 2)
@@ -727,53 +733,53 @@ namespace ProjectReporter.Forms
                                     int rowEnd = rowStart + 2;
 
                                     #region 写入标签
-                                    table.Cell(rowStart, 1).Range.Text = "课题" + chsNumbers[(k + 1)];
-                                    table.Cell(rowStart, 1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart].Cells[1].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "课题" + chsNumbers[(k + 1)])));
+                                    //table.Rows[rowStart].Cells[1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 1).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                                    //table.Rows[rowStart].Cells[1).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
-                                    table.Cell(rowStart, 2).Range.Text = "负责人";
-                                    table.Cell(rowStart, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart].Cells[2].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "负责人")));
+                                    //table.Rows[rowStart].Cells[2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 2).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                                    //table.Rows[rowStart].Cells[2).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
-                                    table.Cell(rowStart, 4).Range.Text = "性别";
-                                    table.Cell(rowStart, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart].Cells[4].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "性别")));
+                                    //table.Rows[rowStart].Cells[4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 4).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                                    //table.Rows[rowStart].Cells[4).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
-                                    table.Cell(rowStart, 6).Range.Text = "出生年月";
-                                    table.Cell(rowStart, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart].Cells[6].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "出生年月")));
+                                    //table.Rows[rowStart].Cells[6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 6).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                                    //table.Rows[rowStart].Cells[6).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
-                                    table.Cell(rowStart + 1, 2).Range.Text = "职务职称";
-                                    table.Cell(rowStart + 1, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart + 1].Cells[2].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "职务职称")));
+                                    //table.Rows[rowStart + 1].Cells[2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 1, 2).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                                    //table.Rows[rowStart + 1].Cells[2).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
-                                    table.Cell(rowStart + 1, 4).Range.Text = "技术方向";
-                                    table.Cell(rowStart + 1, 4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart + 1].Cells[4].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "技术方向")));
+                                    //table.Rows[rowStart + 1].Cells[4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 1, 4).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                                    //table.Rows[rowStart + 1].Cells[4).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
-                                    table.Cell(rowStart + 1, 6).Range.Text = "手机";
-                                    table.Cell(rowStart + 1, 6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart + 1].Cells[6].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "手机")));
+                                    //table.Rows[rowStart + 1].Cells[6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 1, 6).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                                    //table.Rows[rowStart + 1].Cells[6).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
-                                    table.Cell(rowStart + 2, 2).Range.Text = "承担单位及通信地址";
-                                    table.Cell(rowStart + 2, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart + 2].Cells[2].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, "承担单位及通信地址")));
+                                    //table.Cell(rowStart + 2, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 2, 2).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                                    //table.Cell(rowStart + 2, 2).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
                                     #endregion
 
@@ -783,59 +789,59 @@ namespace ProjectReporter.Forms
                                     Task taskObj = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "' and Type='课题' and Role='负责人'").select("*").getItem<Task>(new Task());
                                     Person personObj = ConnectionManager.Context.table("Person").where("ID ='" + taskObj.PersonID + "'").select("*").getItem<Person>(new Person());
 
-                                    table.Cell(rowStart, 3).Range.Text = personObj.Name;
-                                    table.Cell(rowStart, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart].Cells[3].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, personObj.Name)));
+                                    //table.Rows[rowStart].Cells[3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 3).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                                    //table.Rows[rowStart].Cells[3).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
-                                    table.Cell(rowStart, 5).Range.Text = personObj.Sex;
-                                    table.Cell(rowStart, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart].Cells[5].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, personObj.Sex)));
+                                    //table.Rows[rowStart].Cells[5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 5).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                                    //table.Rows[rowStart].Cells[5).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
-                                    table.Cell(rowStart, 7).Range.Text = personObj.Birthday != null ? personObj.Birthday.Value.ToString("yyyy-MM-dd") : string.Empty;
-                                    table.Cell(rowStart, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart].Cells[7].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, personObj.Birthday != null ? personObj.Birthday.Value.ToString("yyyy-MM-dd") : string.Empty)));
+                                    //table.Rows[rowStart].Cells[7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart, 7).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                                    //table.Rows[rowStart].Cells[7).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
-                                    table.Cell(rowStart + 1, 3).Range.Text = personObj.Job;
-                                    table.Cell(rowStart + 1, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart + 1].Cells[3].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, personObj.Job)));
+                                    //table.Rows[rowStart + 1].Cells[3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 1, 3).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                                    //table.Rows[rowStart + 1].Cells[3).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
-                                    table.Cell(rowStart + 1, 5).Range.Text = personObj.Specialty;
-                                    table.Cell(rowStart + 1, 5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart + 1].Cells[5].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, personObj.Specialty)));
+                                    //table.Rows[rowStart + 1].Cells[5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 1, 5).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                                    //table.Rows[rowStart + 1].Cells[5).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
-                                    table.Cell(rowStart + 1, 7).Range.Text = personObj.MobilePhone;
-                                    table.Cell(rowStart + 1, 7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart + 1].Cells[7].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, personObj.MobilePhone)));
+                                    //table.Rows[rowStart + 1].Cells[7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 1, 7).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                                    //table.Rows[rowStart + 1].Cells[7).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
-                                    table.Cell(rowStart + 2, 3).Range.Text = unitObj.UnitName + "," + unitObj.Address;
-                                    table.Cell(rowStart + 2, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                    table.Rows[rowStart + 2].Cells[3].AppendChild(new Paragraph(table.Document).AppendChild(new Run(table.Document, unitObj.UnitName + "," + unitObj.Address)));
+                                    //table.Cell(rowStart + 2, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                                    table.Cell(rowStart + 2, 3).Select();
-                                    wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
+                                    //table.Cell(rowStart + 2, 3).Select();
+                                    //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
                                     #endregion
 
                                     //合并单元格
-                                    wu.MergeCell(table, rowEnd, 3, rowEnd, 7);
-                                    wu.MergeCell(table, rowStart, 1, rowEnd, 1);
+                                    //wu.MergeCell(table, rowEnd, 3, rowEnd, 7);
+                                    //wu.MergeCell(table, rowStart, 1, rowEnd, 1);
                                 }
                             }
                             else
                             {
-                                table.Rows[titleIndex].Delete();
-                                table.Rows[dataIndex].Delete();
+                                table.Rows[titleIndex].Remove();
+                                table.Rows[dataIndex].Remove();
                             }
 
                             break;
@@ -850,47 +856,53 @@ namespace ProjectReporter.Forms
 
                 #region 更新目录
 
-                try
-                {   
-                    wu.WordDoc.Styles["目录 1"].Font.NameFarEast = "黑体";
-                    wu.WordDoc.Styles["目录 1"].Font.Size = 14;
-                    wu.WordDoc.Styles["目录 1"].Font.Bold = 0;
-                    wu.WordDoc.Styles["目录 1"].Font.Italic = 0;
+                //try
+                //{   
+                //    wu.WordDoc.Styles["目录 1"].Font.NameFarEast = "黑体";
+                //    wu.WordDoc.Styles["目录 1"].Font.Size = 14;
+                //    wu.WordDoc.Styles["目录 1"].Font.Bold = 0;
+                //    wu.WordDoc.Styles["目录 1"].Font.Italic = 0;
 
-                    wu.WordDoc.Styles["目录 2"].Font.NameFarEast = "楷体";
-                    wu.WordDoc.Styles["目录 2"].Font.NameAscii = wu.WordDoc.Styles["目录 1"].Font.NameAscii;
-                    wu.WordDoc.Styles["目录 2"].Font.NameBi = wu.WordDoc.Styles["目录 1"].Font.NameBi;
-                    wu.WordDoc.Styles["目录 2"].Font.NameOther = wu.WordDoc.Styles["目录 1"].Font.NameOther;
-                    wu.WordDoc.Styles["目录 2"].Font.Size = 12;
-                    wu.WordDoc.Styles["目录 2"].Font.Bold = 0;
-                    wu.WordDoc.Styles["目录 2"].Font.Italic = 0;
+                //    wu.WordDoc.Styles["目录 2"].Font.NameFarEast = "楷体";
+                //    wu.WordDoc.Styles["目录 2"].Font.NameAscii = wu.WordDoc.Styles["目录 1"].Font.NameAscii;
+                //    wu.WordDoc.Styles["目录 2"].Font.NameBi = wu.WordDoc.Styles["目录 1"].Font.NameBi;
+                //    wu.WordDoc.Styles["目录 2"].Font.NameOther = wu.WordDoc.Styles["目录 1"].Font.NameOther;
+                //    wu.WordDoc.Styles["目录 2"].Font.Size = 12;
+                //    wu.WordDoc.Styles["目录 2"].Font.Bold = 0;
+                //    wu.WordDoc.Styles["目录 2"].Font.Italic = 0;
 
-                    wu.WordDoc.Styles["目录 3"].Font.NameFarEast = "楷体";
-                    wu.WordDoc.Styles["目录 3"].Font.NameAscii = wu.WordDoc.Styles["目录 1"].Font.NameAscii;
-                    wu.WordDoc.Styles["目录 3"].Font.NameBi = wu.WordDoc.Styles["目录 1"].Font.NameBi;
-                    wu.WordDoc.Styles["目录 3"].Font.NameOther = wu.WordDoc.Styles["目录 1"].Font.NameOther;
-                    wu.WordDoc.Styles["目录 3"].Font.Size = 12;
-                    wu.WordDoc.Styles["目录 3"].Font.Bold = 0;
-                    wu.WordDoc.Styles["目录 3"].Font.Italic = 0;
+                //    wu.WordDoc.Styles["目录 3"].Font.NameFarEast = "楷体";
+                //    wu.WordDoc.Styles["目录 3"].Font.NameAscii = wu.WordDoc.Styles["目录 1"].Font.NameAscii;
+                //    wu.WordDoc.Styles["目录 3"].Font.NameBi = wu.WordDoc.Styles["目录 1"].Font.NameBi;
+                //    wu.WordDoc.Styles["目录 3"].Font.NameOther = wu.WordDoc.Styles["目录 1"].Font.NameOther;
+                //    wu.WordDoc.Styles["目录 3"].Font.Size = 12;
+                //    wu.WordDoc.Styles["目录 3"].Font.Bold = 0;
+                //    wu.WordDoc.Styles["目录 3"].Font.Italic = 0;
 
-                    object missing = System.Reflection.Missing.Value;
-                    Microsoft.Office.Interop.Word.Range myRange = wu.WordDoc.TablesOfContents[1].Range;
-                    wu.WordDoc.TablesOfContents[1].Delete();                    
-                    object useHeadingStyle = true; //使用Head样式
-                    object upperHeadingLevel = 1;  //最大一级
-                    object lowerHeadingLevel = 2;  //最小三级
-                    object useHypeLinks = true;
-                    //TablesOfContents的Add方法添加目录
-                    wu.WordDoc.TablesOfContents.Add(myRange, ref useHeadingStyle,
-                        ref upperHeadingLevel, ref lowerHeadingLevel,
-                        ref missing, ref missing, ref missing, ref missing,
-                        ref missing, ref useHypeLinks, ref missing, ref missing);
-                    wu.WordDoc.TablesOfContents[1].TabLeader = Microsoft.Office.Interop.Word.WdTabLeader.wdTabLeaderDots;
-                }
-                catch (Exception ex) { }
+                //    object missing = System.Reflection.Missing.Value;
+                //    Microsoft.Office.Interop.Word.Range myRange = wu.WordDoc.TablesOfContents[1].Range;
+                //    wu.WordDoc.TablesOfContents[1].Delete();                    
+                //    object useHeadingStyle = true; //使用Head样式
+                //    object upperHeadingLevel = 1;  //最大一级
+                //    object lowerHeadingLevel = 2;  //最小三级
+                //    object useHypeLinks = true;
+                //    //TablesOfContents的Add方法添加目录
+                //    wu.WordDoc.TablesOfContents.Add(myRange, ref useHeadingStyle,
+                //        ref upperHeadingLevel, ref lowerHeadingLevel,
+                //        ref missing, ref missing, ref missing, ref missing,
+                //        ref missing, ref useHypeLinks, ref missing, ref missing);
+                //    wu.WordDoc.TablesOfContents[1].TabLeader = Microsoft.Office.Interop.Word.WdTabLeader.wdTabLeaderDots;
+                //}
+                //catch (Exception ex) { }
 
-                wu.WordDoc.ResetFormFields();
-                wu.WordDoc.Fields.Update();
+                //wu.WordDoc.ResetFormFields();
+                //wu.WordDoc.Fields.Update();
+                wu.WordDoc.WordDoc.UpdateFields();
+                wu.WordDoc.WordDoc.UpdateListLabels();
+                wu.WordDoc.WordDoc.UpdatePageLayout();
+                wu.WordDoc.WordDoc.UpdateTableLayout();
+                wu.WordDoc.WordDoc.UpdateThumbnail();
+                wu.WordDoc.WordDoc.UpdateWordCount();
                 #endregion
 
                 #region 页脚内容
@@ -1000,25 +1012,25 @@ namespace ProjectReporter.Forms
 
         public void ConvertToRTF(string imageFile, string tempRTFFile,RichTextBoxTableClass richTextObj)
         {
-            try
-            {
-                Bitmap bmp = new Bitmap(imageFile);
-                Clipboard.SetDataObject(bmp);
-                DataFormats.Format dataFormat = DataFormats.GetFormat(DataFormats.Bitmap);
-                if (richTextObj.CanPaste(dataFormat))
-                {
-                    richTextObj.Paste(dataFormat);
-                }
+            //try
+            //{
+            //    Bitmap bmp = new Bitmap(imageFile);
+            //    Clipboard.SetDataObject(bmp);
+            //    DataFormats.Format dataFormat = DataFormats.GetFormat(DataFormats.Bitmap);
+            //    if (richTextObj.CanPaste(dataFormat))
+            //    {
+            //        richTextObj.Paste(dataFormat);
+            //    }
 
-                richTextObj.SelectAll();
-                richTextObj.SetLineSpace(25);
+            //    richTextObj.SelectAll();
+            //    richTextObj.SetLineSpace(25);
 
-                richTextObj.SaveFile(tempRTFFile);
-            }
-            catch (Exception exc)
-            {
-                System.Console.WriteLine(exc.ToString());
-            }
+            //    richTextObj.SaveFile(tempRTFFile);
+            //}
+            //catch (Exception exc)
+            //{
+            //    System.Console.WriteLine(exc.ToString());
+            //}
         }
     }
 }
