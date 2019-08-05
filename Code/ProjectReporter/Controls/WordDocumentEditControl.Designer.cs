@@ -33,8 +33,8 @@
             this.btnComsel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel67 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.lbcomattpath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
-            this.txtWordContent = new System.Windows.Forms.RichTextBox();
             this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
+            this.wbWordContent = new System.Windows.Forms.WebBrowser();
             this.plContent.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
-            this.plContent.Controls.Add(this.txtWordContent);
+            this.plContent.Controls.Add(this.wbWordContent);
             this.plContent.Controls.Add(this.tableLayoutPanel20);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(0, 0);
@@ -65,8 +65,8 @@
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 1;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel20.Size = new System.Drawing.Size(1018, 44);
             this.tableLayoutPanel20.TabIndex = 5;
             // 
@@ -100,18 +100,18 @@
             this.lbcomattpath.Values.Text = "0";
             this.lbcomattpath.LinkClicked += new System.EventHandler(this.lbcomattpath_LinkClicked);
             // 
-            // txtWordContent
-            // 
-            this.txtWordContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtWordContent.Location = new System.Drawing.Point(0, 44);
-            this.txtWordContent.Name = "txtWordContent";
-            this.txtWordContent.Size = new System.Drawing.Size(1018, 485);
-            this.txtWordContent.TabIndex = 6;
-            this.txtWordContent.Text = "";
-            // 
             // ofdUpload
             // 
             this.ofdUpload.Filter = "DOC文件|*.doc|DOCX文件|*.docx";
+            // 
+            // wbWordContent
+            // 
+            this.wbWordContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wbWordContent.Location = new System.Drawing.Point(0, 44);
+            this.wbWordContent.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbWordContent.Name = "wbWordContent";
+            this.wbWordContent.Size = new System.Drawing.Size(1018, 485);
+            this.wbWordContent.TabIndex = 6;
             // 
             // WordDocumentEditControl
             // 
@@ -134,7 +134,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnComsel;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel67;
         private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel lbcomattpath;
-        private System.Windows.Forms.RichTextBox txtWordContent;
         private System.Windows.Forms.OpenFileDialog ofdUpload;
+        private System.Windows.Forms.WebBrowser wbWordContent;
     }
 }

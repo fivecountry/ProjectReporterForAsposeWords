@@ -42,7 +42,7 @@ namespace ProjectReporter.Controls
         public void Clear()
         {
             FilePath = null;
-            txtWordContent.Clear();
+            wbWordContent.Url = null;
             lbcomattpath.Text = string.Empty;
         }
 
@@ -72,7 +72,8 @@ namespace ProjectReporter.Controls
 
             if (System.IO.File.Exists(FilePath))
             {
-                txtWordContent.LoadFile(FilePath);
+                //wbWordContent.Navigate("file://" + FilePath);
+                lbcomattpath.Text = new FileInfo(FilePath).Name;
             }
         }
     }
