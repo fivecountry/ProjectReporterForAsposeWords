@@ -113,6 +113,25 @@ namespace ProjectReporter.Forms
             {
                 this.setprogress(20, "准备数据...");
 
+                #region 查找需要生成的节点的样式
+                Aspose.Words.Lists.List numberList = null;
+                ParagraphFormat paragraphFormat = null;
+                NodeCollection nodes = wu.Document.WordDoc.GetChildNodes(NodeType.Paragraph, true);
+                foreach (Node node in nodes)
+                {
+                    if (node.Range.Text.Contains("F2-1"))
+                    {
+                        if (numberList == null)
+                        {
+                            numberList = ((Paragraph)node).ListFormat.List;
+                            paragraphFormat = ((Paragraph)node).ParagraphFormat;
+                        }
+
+                        node.Remove();
+                    }
+                }
+                #endregion
+
                 #region 查询项目负责人及单位信息
                 Person projectPersonObj = ConnectionManager.Context.table("Person").where("ID in (select PersonID from task where Role='负责人' and Type='项目' and ProjectID = '" + MainForm.Instance.ProjectObj.ID + "')").select("*").getItem<Person>(new Person());
                 if (projectPersonObj == null)
@@ -220,6 +239,44 @@ namespace ProjectReporter.Forms
                 wu.InsertValue("诚信负责人", MainForm.Instance.ProjectObj.Name);
                 #endregion
 
+                #region 插入课题详细标签
+                // "课题详细_" + ketiIndex + "_5"
+                wu.Document.WordDocBuilder.MoveToBookmark("课题详细标识");
+
+                wu.Document.WordDocBuilder.ListFormat.List = numberList;
+                double oldFirstLineIndent = wu.Document.WordDocBuilder.ParagraphFormat.FirstLineIndent;
+                wu.Document.WordDocBuilder.ParagraphFormat.FirstLineIndent = paragraphFormat.FirstLineIndent;
+
+                for (int kk = 0; kk < ketiList.Count; kk++)
+                {
+                    wu.Document.WordDocBuilder.ParagraphFormat.StyleIdentifier = StyleIdentifier.Heading2;
+                    wu.Document.WordDocBuilder.Writeln("F2-" + (kk + 1));
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk);
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk);
+
+                    wu.Document.WordDocBuilder.ParagraphFormat.StyleIdentifier = StyleIdentifier.Heading3;
+                    wu.Document.WordDocBuilder.Writeln("、研究目标");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_1");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_1");
+
+                    wu.Document.WordDocBuilder.Writeln("、研究内容");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_2");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_2");
+
+                    wu.Document.WordDocBuilder.Writeln("、研究思路");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_3");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_3");
+
+                    wu.Document.WordDocBuilder.Writeln("、负责单位及负责人");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_4");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_4");
+
+                    wu.Document.WordDocBuilder.Writeln("、研究经费");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_5");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_5");
+                }
+                #endregion
+
                 List<KeyValuePair<string, Project>> ketiMap = new List<KeyValuePair<string, Project>>();
                 #region 插入课题详细RTF
 
@@ -268,39 +325,6 @@ namespace ProjectReporter.Forms
                         else
                         {
                             ketiMap.Add(new KeyValuePair<string, Project>(ketiCode, proj));
-                        }
-                    }
-
-                    //删除多余的项目
-                    int delCount = 10 - ketiList.Count;
-                    if (delCount >= 1)
-                    {
-                        for (int kk = 0; kk < delCount; kk++)
-                        {
-                            wu.SelectBookMark("课题详细_" + ketiIndex);
-                            wu.DeleteCurrentAll();
-
-                            wu.SelectBookMark("课题详细_" + ketiIndex + "_1");
-                            wu.DeleteCurrentAndLast();
-                            wu.Delete();
-
-                            wu.SelectBookMark("课题详细_" + ketiIndex + "_2");
-                            wu.DeleteCurrentAndLast();
-                            wu.Delete();
-
-                            wu.SelectBookMark("课题详细_" + ketiIndex + "_3");
-                            wu.DeleteCurrentAndLast();
-                            wu.Delete();
-
-                            wu.SelectBookMark("课题详细_" + ketiIndex + "_4");
-                            wu.DeleteCurrentAndLast();
-                            wu.Delete();
-
-                            wu.SelectBookMark("课题详细_" + ketiIndex + "_5");
-                            wu.DeleteCurrentAndLast();
-                            wu.Delete();
-
-                            ketiIndex++;
                         }
                     }
 
