@@ -528,7 +528,7 @@ namespace ProjectReporter.Forms
                                 Unit unit = ConnectionManager.Context.table("Unit").where("ID='" + person.UnitID + "'").select("*").getItem<Unit>(new Unit());
                                 #endregion
 
-                                table.Rows[rowIndex].Cells[0].AppendChild(wu.GetCellContentObj(table, (rowIndex - 1).ToString()));
+                                table.Rows[rowIndex].Cells[0].AppendChild(wu.GetCellContentObj(table, rowIndex.ToString()));
                                 table.Rows[rowIndex].Cells[1].AppendChild(wu.GetCellContentObj(table, person.Name));
                                 table.Rows[rowIndex].Cells[2].AppendChild(wu.GetCellContentObj(table, person.Sex));
                                 table.Rows[rowIndex].Cells[3].AppendChild(wu.GetCellContentObj(table, person.Job));
@@ -837,8 +837,8 @@ namespace ProjectReporter.Forms
                                     #endregion
 
                                     //合并单元格
-                                    wu.WordDoc.mergeCells(table.Rows[rowEnd].Cells[3], table.Rows[rowEnd].Cells[7], table);
-                                    wu.WordDoc.mergeCells(table.Rows[rowStart].Cells[1], table.Rows[rowEnd].Cells[1], table);
+                                    wu.WordDoc.mergeCells(table.Rows[rowEnd].Cells[2], table.Rows[rowEnd].Cells[6], table);
+                                    wu.WordDoc.mergeCells(table.Rows[rowStart].Cells[0], table.Rows[rowEnd].Cells[0], table);
                                 }
                             }
                             else
