@@ -124,7 +124,7 @@ namespace ProjectReporter.Utility
         {
             if (Document.WordDocBuilder.CurrentParagraph != null)
             {
-                Document.WordDocBuilder.CurrentParagraph.Remove();
+                Document.WordDocBuilder.CurrentParagraph.RemoveAllChildren();
             }
         }
 
