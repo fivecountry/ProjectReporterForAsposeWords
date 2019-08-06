@@ -347,22 +347,13 @@ namespace ProjectReporter.Forms
                         {
                             //填充行和列
                             int rowCount = projectStepList.Count;
-                            int colCount = 3;
+                            //int colCount = 3;
                             //table.Select();
-                            for (int k = 0; k < rowCount; k++)
+                            for (int k = 0; k < rowCount - 1; k++)
                             {
-                                Aspose.Words.Tables.Row row = new Aspose.Words.Tables.Row(table.Document);
+                                Aspose.Words.Tables.Row row = (Aspose.Words.Tables.Row)table.Rows[table.Rows.Count - 1].Clone(true);
                                 table.Rows.Add(row);
-
-                                for (int f = 0; f < colCount; f++)
-                                {
-                                    row.Cells.Add(new Aspose.Words.Tables.Cell(table.Document));
-                                }
                             }
-                            //for (int k = 0; k < colCount - 1; k++)
-                            //{
-                            //    table.Columns.Add(ref defaultValue);
-                            //}
 
                             ////创建列标题
                             //int colIndex = 2;
@@ -374,7 +365,7 @@ namespace ProjectReporter.Forms
                             //}
 
                             //创建数据
-                            int rowIndex = 2;
+                            int rowIndex = 1;
                             foreach (KeyValuePair<string, Project> kvp in ketiMap)
                             {
                                 if (kvp.Key == "项目")
@@ -420,21 +411,27 @@ namespace ProjectReporter.Forms
                             int rowCount = ketiList.Count;
                             int colCount = projectStepList.Count;
                             //table.Select();
-                            for (int t = 0; t < rowCount; t++)
-                            {
-                                Aspose.Words.Tables.Row row = new Aspose.Words.Tables.Row(table.Document);
-                                table.Rows.Add(row);
 
-                                for (int f = 0; f < colCount; f++)
-                                {
-                                    row.Cells.Add(new Aspose.Words.Tables.Cell(table.Document));
-                                }
+                            Aspose.Words.Tables.Row topRowObj = table.Rows[0];
+                            Aspose.Words.Tables.Row rowObj = table.Rows[1];
+                            Aspose.Words.Tables.Cell topCellObj = topRowObj.Cells[topRowObj.Cells.Count - 1];
+                            Aspose.Words.Tables.Cell cellObj = rowObj.Cells[topRowObj.Cells.Count - 1];
+                            for (int f = 0; f < colCount - 1; f++)
+                            {
+                                topRowObj.Cells.Add((Aspose.Words.Tables.Cell)topCellObj.Clone(true));
+                                rowObj.Cells.Add((Aspose.Words.Tables.Cell)cellObj.Clone(true));
+                            }
+                            for (int t = 0; t < rowCount - 1; t++)
+                            {
+                                Aspose.Words.Tables.Row row = (Aspose.Words.Tables.Row)table.Rows[table.Rows.Count - 1].Clone(true);
+                                table.Rows.Add(row);
                             }
 
                             //创建列标题
                             int colIndex = 1;
                             foreach (Step step in projectStepList)
                             {
+                                table.Rows[0].Cells[colIndex].RemoveAllChildren();
                                 table.Rows[0].Cells[colIndex].AppendChild(wu.GetCellContentObj(table, "阶段" + step.StepIndex + "(" + step.StepTime + "个月)"));
                                 //table.Cell(1, colIndex).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                                 colIndex++;
@@ -516,13 +513,13 @@ namespace ProjectReporter.Forms
                             //生成行和列
                             int rowCount = taskList.Count;
                             //table.Select();
-                            for (int k = 0; k < rowCount; k++)
+                            for (int k = 0; k < rowCount - 1; k++)
                             {
-                                table.Rows.Add(new Aspose.Words.Tables.Row(table.Document));
+                                table.Rows.Add((Aspose.Words.Tables.Row)table.Rows[table.Rows.Count - 1].Clone(true));
                             }
 
                             //填冲数据
-                            int rowIndex = 2;
+                            int rowIndex = 1;
                             foreach (Task curTask in taskList)
                             {
                                 #region 提取人员信息
@@ -720,14 +717,14 @@ namespace ProjectReporter.Forms
                         if (table.Range.Text.Contains("各课题联系方式"))
                         {
                             int titleIndex = table.Rows.Count - 1;
-                            int dataIndex = table.Rows.Count;
+                            int dataIndex = table.Rows.Count - 1;
 
                             //构造联系方式行
                             int rowCountt = (ketiList.Count * 3) - 1;
                             for (int k = 0; k < rowCountt; k++)
                             {
                                 //table.Select();
-                                table.Rows.Add(new Aspose.Words.Tables.Row(table.Document));
+                                table.Rows.Add((Aspose.Words.Tables.Row)table.Rows[table.Rows.Count -1].Clone(true));
                             }
                             //合并单元格
                             if (rowCountt >= 2)
@@ -840,8 +837,8 @@ namespace ProjectReporter.Forms
                                     #endregion
 
                                     //合并单元格
-                                    //wu.MergeCell(table, rowEnd, 3, rowEnd, 7);
-                                    //wu.MergeCell(table, rowStart, 1, rowEnd, 1);
+                                    wu.WordDoc.mergeCells(table.Rows[rowEnd].Cells[3], table.Rows[rowEnd].Cells[7], table);
+                                    wu.WordDoc.mergeCells(table.Rows[rowStart].Cells[1], table.Rows[rowEnd].Cells[1], table);
                                 }
                             }
                             else
