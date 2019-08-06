@@ -249,32 +249,37 @@ namespace ProjectReporter.Forms
 
                 for (int kk = 0; kk < ketiList.Count; kk++)
                 {
+                    int ketiIndex = (kk + 1);
+
                     wu.Document.WordDocBuilder.ParagraphFormat.StyleIdentifier = StyleIdentifier.Heading2;
-                    wu.Document.WordDocBuilder.Writeln("F2-" + (kk + 1));
-                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk);
-                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk);
+                    wu.Document.WordDocBuilder.Writeln("F2-" + ketiIndex);
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + ketiIndex);
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + ketiIndex);
 
                     wu.Document.WordDocBuilder.ParagraphFormat.StyleIdentifier = StyleIdentifier.Heading3;
                     wu.Document.WordDocBuilder.Writeln("、研究目标");
-                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_1");
-                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_1");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + ketiIndex + "_1");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + ketiIndex + "_1");
 
                     wu.Document.WordDocBuilder.Writeln("、研究内容");
-                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_2");
-                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_2");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + ketiIndex + "_2");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + ketiIndex + "_2");
 
                     wu.Document.WordDocBuilder.Writeln("、研究思路");
-                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_3");
-                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_3");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + ketiIndex + "_3");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + ketiIndex + "_3");
 
                     wu.Document.WordDocBuilder.Writeln("、负责单位及负责人");
-                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_4");
-                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_4");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + ketiIndex + "_4");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + ketiIndex + "_4");
 
                     wu.Document.WordDocBuilder.Writeln("、研究经费");
-                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + kk + "_5");
-                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + kk + "_5");
+                    wu.Document.WordDocBuilder.StartBookmark("课题详细_" + ketiIndex + "_5");
+                    wu.Document.WordDocBuilder.EndBookmark("课题详细_" + ketiIndex + "_5");
                 }
+
+                wu.Document.WordDocBuilder.ListFormat.RemoveNumbers();
+                wu.Document.WordDocBuilder.ParagraphFormat.FirstLineIndent = oldFirstLineIndent;
                 #endregion
 
                 List<KeyValuePair<string, Project>> ketiMap = new List<KeyValuePair<string, Project>>();
@@ -295,9 +300,9 @@ namespace ProjectReporter.Forms
                         wu.ReplaceA("F2-" + ketiIndex, ketiCode + ":" + proj.Name);
 
                         //研究目标，研究内容，技术要求等文档
-                        wu.InsertFile("课题详细_" + ketiIndex + "_1", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_dest" + ".doc"), true);
-                        wu.InsertFile("课题详细_" + ketiIndex + "_2", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_cnt" + ".doc"), true);
-                        wu.InsertFile("课题详细_" + ketiIndex + "_3", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_need" + ".doc"), true);
+                        wu.InsertFile("课题详细_" + ketiIndex + "_1", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_dest" + ".doc"), false);
+                        wu.InsertFile("课题详细_" + ketiIndex + "_2", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_cnt" + ".doc"), false);
+                        wu.InsertFile("课题详细_" + ketiIndex + "_3", Path.Combine(MainForm.ProjectFilesDir, "keti_rtpinput_" + proj.ID + "_need" + ".doc"), false);
 
                         //负责人
                         string fuzeUnit = string.Empty;
@@ -305,7 +310,7 @@ namespace ProjectReporter.Forms
                         fuzeUnit = ConnectionManager.Context.table("Unit").where("ID = (select UnitID from Project where ID = (select ProjectID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "'))").select("UnitName").getValue<string>(string.Empty);
                         fuzePerson = ConnectionManager.Context.table("Person").where("ID = (select PersonID from Task where Role= '负责人' and ProjectID = '" + proj.ID + "')").select("Name").getValue<string>(string.Empty);
 
-                        wu.InsertValue("课题详细_" + ketiIndex + "_4", "  负责人：" + fuzePerson + "\n  负责单位：" + fuzeUnit);
+                        wu.InsertValue("课题详细_" + ketiIndex + "_4", "  负责人：" + fuzePerson + "\n  负责单位：" + fuzeUnit, true);
 
                         //金额
                         string moneyStr = "0";
@@ -314,7 +319,7 @@ namespace ProjectReporter.Forms
                         {
                             moneyStr = "  " + ketiTask.TotalMoney + "万";
                         }
-                        wu.InsertValue("课题详细_" + ketiIndex + "_5", moneyStr);
+                        wu.InsertValue("课题详细_" + ketiIndex + "_5", moneyStr, true);
 
                         ketiIndex++;
 
