@@ -340,7 +340,7 @@ namespace ProjectReporter.Forms
                 try
                 {
                     //项目
-                    NodeCollection ncc = wu.WordDoc.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
+                    NodeCollection ncc = wu.Document.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
                     foreach (Aspose.Words.Tables.Table table in ncc)
                     {
                         if (table.Range.Text.Contains("进度要求"))
@@ -502,7 +502,7 @@ namespace ProjectReporter.Forms
                 #region 插入课题负责人及研究骨干情况表
                 try
                 {
-                    NodeCollection ncc = wu.WordDoc.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
+                    NodeCollection ncc = wu.Document.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
                     foreach (Aspose.Words.Tables.Table table in ncc)
                     {
                         if (table.Range.Text.Contains("年投入"))
@@ -711,7 +711,7 @@ namespace ProjectReporter.Forms
                 #region 插入联系方式
                 try
                 {
-                    NodeCollection ncc = wu.WordDoc.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
+                    NodeCollection ncc = wu.Document.WordDoc.GetChildNodes(Aspose.Words.NodeType.Table, true);
                     foreach (Aspose.Words.Tables.Table table in ncc)
                     {
                         if (table.Range.Text.Contains("各课题联系方式"))
@@ -837,8 +837,8 @@ namespace ProjectReporter.Forms
                                     #endregion
 
                                     //合并单元格
-                                    wu.WordDoc.mergeCells(table.Rows[rowEnd].Cells[2], table.Rows[rowEnd].Cells[6], table);
-                                    wu.WordDoc.mergeCells(table.Rows[rowStart].Cells[0], table.Rows[rowEnd].Cells[0], table);
+                                    wu.Document.mergeCells(table.Rows[rowEnd].Cells[2], table.Rows[rowEnd].Cells[6], table);
+                                    wu.Document.mergeCells(table.Rows[rowStart].Cells[0], table.Rows[rowEnd].Cells[0], table);
                                 }
                             }
                             else
@@ -900,12 +900,12 @@ namespace ProjectReporter.Forms
 
                 //wu.WordDoc.ResetFormFields();
                 //wu.WordDoc.Fields.Update();
-                wu.WordDoc.WordDoc.UpdateFields();
-                wu.WordDoc.WordDoc.UpdateListLabels();
-                wu.WordDoc.WordDoc.UpdatePageLayout();
-                wu.WordDoc.WordDoc.UpdateTableLayout();
-                wu.WordDoc.WordDoc.UpdateThumbnail();
-                wu.WordDoc.WordDoc.UpdateWordCount();
+                wu.Document.WordDoc.UpdateFields();
+                wu.Document.WordDoc.UpdateListLabels();
+                wu.Document.WordDoc.UpdatePageLayout();
+                wu.Document.WordDoc.UpdateTableLayout();
+                wu.Document.WordDoc.UpdateThumbnail();
+                wu.Document.WordDoc.UpdateWordCount();
                 #endregion
 
                 #region 页脚内容

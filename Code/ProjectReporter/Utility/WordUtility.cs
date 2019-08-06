@@ -10,7 +10,7 @@ namespace ProjectReporter.Utility
 {
     public class WordUtility
     {
-        public WordDocument WordDoc { get; set; }
+        public WordDocument Document { get; set; }
 
         /// <summary>
         /// 通过模板创建新文件
@@ -18,7 +18,7 @@ namespace ProjectReporter.Utility
         /// <param name="filePath"></param>
         public void CreateNewDocument(string filePath)
         {
-            WordDoc = new WordDocument(filePath);
+            Document = new WordDocument(filePath);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace ProjectReporter.Utility
         /// <param name="filePath"></param>
         public void SaveDocument(string filePath)
         {
-            WordDoc.WordDoc.Save(filePath, SaveFormat.Doc);
+            Document.WordDoc.Save(filePath, SaveFormat.Doc);
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace ProjectReporter.Utility
         /// <returns></returns>
         public bool SelectBookMark(string bookmark)
         {
-            return WordDoc.WordDocBuilder.MoveToBookmark(bookmark);
+            return Document.WordDocBuilder.MoveToBookmark(bookmark);
         }
 
         /// <summary>
@@ -49,9 +49,9 @@ namespace ProjectReporter.Utility
         public bool InsertValue(string bookmark, string value)
         {
             object bkObj = bookmark;
-            if (WordDoc.WordDocBuilder.MoveToBookmark(bookmark))
+            if (Document.WordDocBuilder.MoveToBookmark(bookmark))
             {
-                WordDoc.WordDocBuilder.Write(value);
+                Document.WordDocBuilder.Write(value);
                 return true;
             }
             return true;
@@ -66,27 +66,27 @@ namespace ProjectReporter.Utility
         public bool InsertValue(string bookmark, string value, int fontSize, bool isBold, bool isItalic, bool isUnderline)
         {
             object bkObj = bookmark;
-            if (WordDoc.WordDocBuilder.MoveToBookmark(bookmark))
+            if (Document.WordDocBuilder.MoveToBookmark(bookmark))
             {
                 //保存先前的设置
-                double lastSize = WordDoc.WordDocBuilder.Font.Size;
-                bool lastBold = WordDoc.WordDocBuilder.Font.Bold;
-                bool lastItalic = WordDoc.WordDocBuilder.Font.Italic;
-                Underline lastUnderline = WordDoc.WordDocBuilder.Font.Underline;
+                double lastSize = Document.WordDocBuilder.Font.Size;
+                bool lastBold = Document.WordDocBuilder.Font.Bold;
+                bool lastItalic = Document.WordDocBuilder.Font.Italic;
+                Underline lastUnderline = Document.WordDocBuilder.Font.Underline;
 
                 //设置字号及是否加粗
-                WordDoc.WordDocBuilder.Font.Size = fontSize;
-                WordDoc.WordDocBuilder.Font.Bold = isBold;
-                WordDoc.WordDocBuilder.Font.Italic = isItalic;
-                WordDoc.WordDocBuilder.Font.Underline = isUnderline ? Underline.Single : Underline.None;
+                Document.WordDocBuilder.Font.Size = fontSize;
+                Document.WordDocBuilder.Font.Bold = isBold;
+                Document.WordDocBuilder.Font.Italic = isItalic;
+                Document.WordDocBuilder.Font.Underline = isUnderline ? Underline.Single : Underline.None;
 
-                WordDoc.WordDocBuilder.Write(value);
+                Document.WordDocBuilder.Write(value);
 
                 //恢复先前的设置
-                WordDoc.WordDocBuilder.Font.Size = lastSize;
-                WordDoc.WordDocBuilder.Font.Bold = lastBold;
-                WordDoc.WordDocBuilder.Font.Italic = lastItalic;
-                WordDoc.WordDocBuilder.Font.Underline = lastUnderline;
+                Document.WordDocBuilder.Font.Size = lastSize;
+                Document.WordDocBuilder.Font.Bold = lastBold;
+                Document.WordDocBuilder.Font.Italic = lastItalic;
+                Document.WordDocBuilder.Font.Underline = lastUnderline;
 
                 return true;
             }
@@ -106,9 +106,9 @@ namespace ProjectReporter.Utility
                 object bkObj = bookmark;
                 if (File.Exists(filePath))
                 {
-                    if (WordDoc.WordDocBuilder.MoveToBookmark(bookmark))
+                    if (Document.WordDocBuilder.MoveToBookmark(bookmark))
                     {
-                        WordDoc.insertDocumentAfterBookMark(new Document(filePath), bookmark, enabledDeleteEnterFlag);
+                        Document.insertDocumentAfterBookMark(new Document(filePath), bookmark, enabledDeleteEnterFlag);
                         return true;
                     }
                 }
@@ -156,7 +156,7 @@ namespace ProjectReporter.Utility
         /// <param name="strNew">新的</param> 
         public void ReplaceA(string strOld, string strNew)
         {
-            WordDoc.WordDoc.Range.Replace(strOld, strNew, false, false);
+            Document.WordDoc.Range.Replace(strOld, strNew, false, false);
         }
 
         /// <summary>
@@ -168,9 +168,9 @@ namespace ProjectReporter.Utility
         {
             if (File.Exists(picturePath))
             {
-                if (WordDoc.WordDocBuilder.MoveToBookmark(bookmark))
+                if (Document.WordDocBuilder.MoveToBookmark(bookmark))
                 {
-                    WordDoc.WordDocBuilder.InsertImage(picturePath);
+                    Document.WordDocBuilder.InsertImage(picturePath);
                 }
             }
         }
