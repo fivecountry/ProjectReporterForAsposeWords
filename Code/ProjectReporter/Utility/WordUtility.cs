@@ -122,19 +122,18 @@ namespace ProjectReporter.Utility
 
         public void Delete()
         {
-            //object objValue = System.Reflection.Missing.Value;
-            //wordApp.Selection.Delete(ref objValue, ref objValue);
+            if (Document.WordDocBuilder.CurrentParagraph != null)
+            {
+                Document.WordDocBuilder.CurrentParagraph.Remove();
+            }
         }
 
         public void DeleteCurrentAll()
         {
-            //object _unitObj = Microsoft.Office.Interop.Word.WdUnits.wdLine;
-            //object _extendObj = Microsoft.Office.Interop.Word.WdMovementType.wdExtend;
-
-            //wordApp.Selection.EndKey(ref _unitObj, ref _extendObj);
-
-            //object objValue = System.Reflection.Missing.Value;
-            //wordApp.Selection.Delete(ref objValue, ref objValue);
+            if (Document.WordDocBuilder.CurrentParagraph != null)
+            {
+                Document.WordDocBuilder.CurrentParagraph.RemoveAllChildren();
+            }
         }
 
         public void DeleteCurrentAndLast()
