@@ -40,18 +40,30 @@ namespace ProjectReporter.Utility
             return Document.WordDocBuilder.MoveToBookmark(bookmark);
         }
 
+        public bool InsertValue(string bookmark, string value)
+        {
+            return InsertValue(bookmark, value, false);
+        }
+
         /// <summary>
         /// 在书签处插入值
         /// </summary>
         /// <param name="bookmark">书签</param>
         /// <param name="value">要插入的值</param>
         /// <returns></returns>
-        public bool InsertValue(string bookmark, string value)
+        public bool InsertValue(string bookmark, string value, bool isNeedNewLine)
         {
             object bkObj = bookmark;
             if (Document.WordDocBuilder.MoveToBookmark(bookmark))
             {
-                Document.WordDocBuilder.Write(value);
+                if (isNeedNewLine)
+                {
+                    Document.WordDocBuilder.Writeln(value);
+                }
+                else
+                {
+                    Document.WordDocBuilder.Write(value);
+                }
                 return true;
             }
             return true;
