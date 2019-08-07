@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using Aspose.Words;
 
 namespace ProjectReporter.Controls
 {
@@ -19,7 +20,7 @@ namespace ProjectReporter.Controls
             InitializeComponent();
         }
 
-        private void lbcomattpath_LinkClicked(object sender, EventArgs e)
+        private void lblDocPath_LinkClicked(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(FilePath))
             {
@@ -31,19 +32,39 @@ namespace ProjectReporter.Controls
             }
         }
 
-        private void btnComsel_Click(object sender, EventArgs e)
+        private void btnUploadDoc_Click(object sender, EventArgs e)
         {
             if (ofdUpload.ShowDialog() == DialogResult.OK)
             {
-                lbcomattpath.Text = new FileInfo(ofdUpload.FileName).Name;
+                lblDocPath.Text = new FileInfo(ofdUpload.FileName).Name;
             }
+        }
+
+        private void btnNewDoc_Click(object sender, EventArgs e)
+        {
+            lblDocPath.Text = "临时文档_" + DateTime.Now.Ticks + ".doc";
+            FilePath = string.Empty;
+            ofdUpload.FileName = Path.Combine(MainForm.ProjectDir, Path.Combine("Temp", lblDocPath.Text));
+            try
+            {
+                Directory.CreateDirectory(new FileInfo(ofdUpload.FileName).DirectoryName);
+            }
+            catch (Exception ex) { }
+            WordDocument wd = new WordDocument();
+            wd.WordDoc.Save(ofdUpload.FileName);
+
+            try
+            {
+                Process.Start(ofdUpload.FileName);
+            }
+            catch (Exception ex) { }
         }
 
         public void Clear()
         {
-            FilePath = null;
-            wbWordContent.Url = null;
-            lbcomattpath.Text = string.Empty;
+            FilePath = string.Empty;
+            ofdUpload.FileName = string.Empty;
+            lblDocPath.Text = string.Empty;
         }
 
         /// <summary>
@@ -73,7 +94,7 @@ namespace ProjectReporter.Controls
             if (System.IO.File.Exists(FilePath))
             {
                 //wbWordContent.Navigate("file://" + FilePath);
-                lbcomattpath.Text = new FileInfo(FilePath).Name;
+                lblDocPath.Text = new FileInfo(FilePath).Name;
             }
         }
     }

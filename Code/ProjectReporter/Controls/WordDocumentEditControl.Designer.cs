@@ -30,11 +30,11 @@
         {
             this.plContent = new System.Windows.Forms.Panel();
             this.tableLayoutPanel20 = new ProjectReporter.Controls.HSkinTableLayoutPanel();
-            this.btnComsel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnUploadDoc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonLabel67 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbcomattpath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
+            this.lblDocPath = new ComponentFactory.Krypton.Toolkit.KryptonLinkLabel();
             this.ofdUpload = new System.Windows.Forms.OpenFileDialog();
-            this.wbWordContent = new System.Windows.Forms.WebBrowser();
+            this.btnNewDoc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plContent.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,6 @@
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
-            this.plContent.Controls.Add(this.wbWordContent);
             this.plContent.Controls.Add(this.tableLayoutPanel20);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plContent.Location = new System.Drawing.Point(0, 0);
@@ -53,31 +52,32 @@
             // tableLayoutPanel20
             // 
             this.tableLayoutPanel20.BorderColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel20.ColumnCount = 3;
+            this.tableLayoutPanel20.ColumnCount = 4;
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel20.Controls.Add(this.btnComsel, 2, 0);
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel20.Controls.Add(this.kryptonLabel67, 0, 0);
-            this.tableLayoutPanel20.Controls.Add(this.lbcomattpath, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.lblDocPath, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.btnUploadDoc, 3, 0);
+            this.tableLayoutPanel20.Controls.Add(this.btnNewDoc, 2, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 1;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel20.Size = new System.Drawing.Size(1018, 44);
             this.tableLayoutPanel20.TabIndex = 5;
             // 
-            // btnComsel
+            // btnUploadDoc
             // 
-            this.btnComsel.Location = new System.Drawing.Point(871, 3);
-            this.btnComsel.Name = "btnComsel";
-            this.btnComsel.Size = new System.Drawing.Size(82, 34);
-            this.btnComsel.TabIndex = 5;
-            this.btnComsel.Values.Text = "上传附件";
-            this.btnComsel.Click += new System.EventHandler(this.btnComsel_Click);
+            this.btnUploadDoc.Location = new System.Drawing.Point(931, 3);
+            this.btnUploadDoc.Name = "btnUploadDoc";
+            this.btnUploadDoc.Size = new System.Drawing.Size(82, 34);
+            this.btnUploadDoc.TabIndex = 5;
+            this.btnUploadDoc.Values.Text = "上传文档";
+            this.btnUploadDoc.Click += new System.EventHandler(this.btnUploadDoc_Click);
             // 
             // kryptonLabel67
             // 
@@ -89,29 +89,29 @@
             this.kryptonLabel67.TabIndex = 1;
             this.kryptonLabel67.Values.Text = "附件";
             // 
-            // lbcomattpath
+            // lblDocPath
             // 
-            this.lbcomattpath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbcomattpath.Location = new System.Drawing.Point(63, 3);
-            this.lbcomattpath.Name = "lbcomattpath";
-            this.lbcomattpath.Size = new System.Drawing.Size(802, 38);
-            this.lbcomattpath.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbcomattpath.TabIndex = 8;
-            this.lbcomattpath.Values.Text = "0";
-            this.lbcomattpath.LinkClicked += new System.EventHandler(this.lbcomattpath_LinkClicked);
+            this.lblDocPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDocPath.Location = new System.Drawing.Point(63, 3);
+            this.lblDocPath.Name = "lblDocPath";
+            this.lblDocPath.Size = new System.Drawing.Size(772, 38);
+            this.lblDocPath.StateCommon.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblDocPath.TabIndex = 8;
+            this.lblDocPath.Values.Text = "0";
+            this.lblDocPath.LinkClicked += new System.EventHandler(this.lblDocPath_LinkClicked);
             // 
             // ofdUpload
             // 
             this.ofdUpload.Filter = "DOC文件|*.doc|DOCX文件|*.docx";
             // 
-            // wbWordContent
+            // btnNewDoc
             // 
-            this.wbWordContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wbWordContent.Location = new System.Drawing.Point(0, 44);
-            this.wbWordContent.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbWordContent.Name = "wbWordContent";
-            this.wbWordContent.Size = new System.Drawing.Size(1018, 485);
-            this.wbWordContent.TabIndex = 6;
+            this.btnNewDoc.Location = new System.Drawing.Point(841, 3);
+            this.btnNewDoc.Name = "btnNewDoc";
+            this.btnNewDoc.Size = new System.Drawing.Size(82, 34);
+            this.btnNewDoc.TabIndex = 5;
+            this.btnNewDoc.Values.Text = "新建文档";
+            this.btnNewDoc.Click += new System.EventHandler(this.btnNewDoc_Click);
             // 
             // WordDocumentEditControl
             // 
@@ -131,10 +131,10 @@
 
         private System.Windows.Forms.Panel plContent;
         private HSkinTableLayoutPanel tableLayoutPanel20;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnComsel;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnUploadDoc;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel67;
-        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel lbcomattpath;
+        private ComponentFactory.Krypton.Toolkit.KryptonLinkLabel lblDocPath;
         private System.Windows.Forms.OpenFileDialog ofdUpload;
-        private System.Windows.Forms.WebBrowser wbWordContent;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnNewDoc;
     }
 }
