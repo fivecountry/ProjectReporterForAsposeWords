@@ -425,6 +425,9 @@ namespace ProjectReporter.Forms
                                             resultStr = string.Format(outputFormat, curProjectAndStep.StepDest, curProjectAndStep.StepResult, curProjectAndStep.Money);
                                         }
 
+                                        table.Rows[rowIndex].Cells[0].RemoveAllChildren();
+                                        table.Rows[rowIndex].Cells[1].RemoveAllChildren();
+                                        table.Rows[rowIndex].Cells[2].RemoveAllChildren();
                                         table.Rows[rowIndex].Cells[0].AppendChild(wu.GetCellContentObj(table, curStep.StepIndex + ""));
                                         table.Rows[rowIndex].Cells[1].AppendChild(wu.GetCellContentObj(table, curStep.StepTime + ""));
                                         table.Rows[rowIndex].Cells[2].AppendChild(wu.GetCellContentObj(table, resultStr));
@@ -507,6 +510,7 @@ namespace ProjectReporter.Forms
                                         totalMoney += (int)curProjectAndStep.Money;
                                     }
 
+                                    table.Rows[rowIndex].Cells[dataColIndex].RemoveAllChildren();
                                     table.Rows[rowIndex].Cells[dataColIndex].AppendChild(wu.GetCellContentObj(table, resultStr));
                                     dataColIndex++;
                                 }
@@ -514,10 +518,12 @@ namespace ProjectReporter.Forms
                                 //行标题
                                 if (kvp.Key != "项目")
                                 {
+                                    table.Rows[rowIndex].Cells[0].RemoveAllChildren();
                                     table.Rows[rowIndex].Cells[0].AppendChild(wu.GetCellContentObj(table, kvp.Key + "(" + totalMoney + "万)"));
                                 }
                                 else
                                 {
+                                    table.Rows[rowIndex].Cells[0].RemoveAllChildren();
                                     table.Rows[rowIndex].Cells[0].AppendChild(wu.GetCellContentObj(table, kvp.Key));
                                 }
 
@@ -563,6 +569,17 @@ namespace ProjectReporter.Forms
                                 Person person = ConnectionManager.Context.table("Person").where("ID='" + curTask.PersonID + "'").select("*").getItem<Person>(new Person());
                                 Unit unit = ConnectionManager.Context.table("Unit").where("ID='" + person.UnitID + "'").select("*").getItem<Unit>(new Unit());
                                 #endregion
+
+                                table.Rows[rowIndex].Cells[0].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[1].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[2].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[3].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[4].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[5].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[6].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[7].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[8].RemoveAllChildren();
+                                table.Rows[rowIndex].Cells[9].RemoveAllChildren();
 
                                 table.Rows[rowIndex].Cells[0].AppendChild(wu.GetCellContentObj(table, rowIndex.ToString()));
                                 table.Rows[rowIndex].Cells[1].AppendChild(wu.GetCellContentObj(table, person.Name));
@@ -772,48 +789,56 @@ namespace ProjectReporter.Forms
                                     int rowEnd = rowStart + 2;
 
                                     #region 写入标签
+                                    table.Rows[rowStart].Cells[0].RemoveAllChildren();
                                     table.Rows[rowStart].Cells[0].AppendChild(wu.GetCellContentObj(table, "课题" + chsNumbers[(k + 1)]));
                                     //table.Rows[rowStart].Cells[1).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart].Cells[1).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
+                                    table.Rows[rowStart].Cells[1].RemoveAllChildren();
                                     table.Rows[rowStart].Cells[1].AppendChild(wu.GetCellContentObj(table, "负责人"));
                                     //table.Rows[rowStart].Cells[2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart].Cells[2).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
+                                    table.Rows[rowStart].Cells[3].RemoveAllChildren();
                                     table.Rows[rowStart].Cells[3].AppendChild(wu.GetCellContentObj(table, "性别"));
                                     //table.Rows[rowStart].Cells[4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart].Cells[4).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
+                                    table.Rows[rowStart].Cells[5].RemoveAllChildren();
                                     table.Rows[rowStart].Cells[5].AppendChild(wu.GetCellContentObj(table, "出生年月"));
                                     //table.Rows[rowStart].Cells[6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart].Cells[6).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
+                                    table.Rows[rowStart + 1].Cells[1].RemoveAllChildren();
                                     table.Rows[rowStart + 1].Cells[1].AppendChild(wu.GetCellContentObj(table, "职务职称"));
                                     //table.Rows[rowStart + 1].Cells[2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart + 1].Cells[2).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
+                                    table.Rows[rowStart + 1].Cells[3].RemoveAllChildren();
                                     table.Rows[rowStart + 1].Cells[3].AppendChild(wu.GetCellContentObj(table, "技术方向"));
                                     //table.Rows[rowStart + 1].Cells[4).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart + 1].Cells[4).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
+                                    table.Rows[rowStart + 1].Cells[5].RemoveAllChildren();
                                     table.Rows[rowStart + 1].Cells[5].AppendChild(wu.GetCellContentObj(table, "手机"));
                                     //table.Rows[rowStart + 1].Cells[6).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart + 1].Cells[6).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
 
+                                    table.Rows[rowStart + 2].Cells[1].RemoveAllChildren();
                                     table.Rows[rowStart + 2].Cells[1].AppendChild(wu.GetCellContentObj(table, "承担单位及通信地址"));
                                     //table.Cell(rowStart + 2, 2).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
@@ -828,42 +853,49 @@ namespace ProjectReporter.Forms
                                     Task taskObj = ConnectionManager.Context.table("Task").where("ProjectID = '" + proj.ID + "' and Type='课题' and Role='负责人'").select("*").getItem<Task>(new Task());
                                     Person personObj = ConnectionManager.Context.table("Person").where("ID ='" + taskObj.PersonID + "'").select("*").getItem<Person>(new Person());
 
+                                    table.Rows[rowStart].Cells[2].RemoveAllChildren();
                                     table.Rows[rowStart].Cells[2].AppendChild(wu.GetCellContentObj(table, personObj.Name));
                                     //table.Rows[rowStart].Cells[3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart].Cells[3).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
+                                    table.Rows[rowStart].Cells[4].RemoveAllChildren();
                                     table.Rows[rowStart].Cells[4].AppendChild(wu.GetCellContentObj(table, personObj.Sex));
                                     //table.Rows[rowStart].Cells[5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart].Cells[5).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
+                                    table.Rows[rowStart].Cells[6].RemoveAllChildren();
                                     table.Rows[rowStart].Cells[6].AppendChild(wu.GetCellContentObj(table, personObj.Birthday != null ? personObj.Birthday.Value.ToString("yyyy-MM-dd") : string.Empty));
                                     //table.Rows[rowStart].Cells[7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart].Cells[7).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
+                                    table.Rows[rowStart + 1].Cells[2].RemoveAllChildren();
                                     table.Rows[rowStart + 1].Cells[2].AppendChild(wu.GetCellContentObj(table, personObj.Job));
                                     //table.Rows[rowStart + 1].Cells[3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart + 1].Cells[3).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
+                                    table.Rows[rowStart + 1].Cells[4].RemoveAllChildren();
                                     table.Rows[rowStart + 1].Cells[4].AppendChild(wu.GetCellContentObj(table, personObj.Specialty));
                                     //table.Rows[rowStart + 1].Cells[5).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart + 1].Cells[5).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
+                                    table.Rows[rowStart + 1].Cells[6].RemoveAllChildren();
                                     table.Rows[rowStart + 1].Cells[6].AppendChild(wu.GetCellContentObj(table, personObj.MobilePhone));
                                     //table.Rows[rowStart + 1].Cells[7).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
                                     //table.Rows[rowStart + 1].Cells[7).Select();
                                     //wu.Applicaton.Selection.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphLeft;
 
+                                    table.Rows[rowStart + 2].Cells[2].RemoveAllChildren();
                                     table.Rows[rowStart + 2].Cells[2].AppendChild(wu.GetCellContentObj(table, unitObj.UnitName + "," + unitObj.Address));
                                     //table.Cell(rowStart + 2, 3).VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
