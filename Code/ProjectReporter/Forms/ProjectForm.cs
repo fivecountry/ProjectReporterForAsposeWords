@@ -28,11 +28,18 @@ namespace ProjectReporter.Forms
                 Project proj = getProjectObject(s);
                 if (proj != null && proj.Name != null && proj.Name.Length >= 1)
                 {
-                    TreeNode tn = new TreeNode();
-                    tn.Text = di.Name + "(" + proj.Name + ")";
-                    tn.Name = proj.ID;
-                    tn.Tag = proj;
-                    tvProject.Nodes.Add(tn);
+                    if (di.Name == "Current")
+                    {
+                        Text = "项目管理(当前:" + proj.Name + ")";
+                    }
+                    else
+                    {
+                        TreeNode tn = new TreeNode();
+                        tn.Text = di.Name + "(" + proj.Name + ")";
+                        tn.Name = di.Name;
+                        tn.Tag = proj;
+                        tvProject.Nodes.Add(tn);
+                    }
                 }
             }
         }
@@ -84,7 +91,30 @@ namespace ProjectReporter.Forms
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            
+            if (tvProject.SelectedNode != null && System.IO.Directory.Exists(System.IO.Path.Combine(MainForm.BaseDir, tvProject.SelectedNode.Name)))
+            {
+                if (MessageBox.Show("真的要切换吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    //关闭连接
+                    ProjectReporter.DB.ConnectionManager.Close();
+
+                    //当前项目目录
+                    string currentPath = System.IO.Path.Combine(MainForm.BaseDir, "Current");
+
+                    //移动当前目录
+                    if (System.IO.Directory.Exists(currentPath))
+                    {
+                        System.IO.Directory.Move(currentPath, System.IO.Path.Combine(MainForm.BaseDir, Guid.NewGuid().ToString()));
+                    }
+
+                    //将这个目录切换为当前目录
+                    System.IO.Directory.Move(System.IO.Path.Combine(MainForm.BaseDir, tvProject.SelectedNode.Name), currentPath);
+
+                    System.Diagnostics.Process.Start(Application.StartupPath);
+                    MainForm.Instance.EnabledShowBackupHint = true;
+                    Application.Exit();
+                }
+            }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -154,6 +184,26 @@ namespace ProjectReporter.Forms
                             updateProjects();
                         }));                    
                 }));
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (tvProject.SelectedNode != null)
+            {
+                if (MessageBox.Show("真的要删除吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    try
+                    {
+                        System.IO.Directory.Delete(System.IO.Path.Combine(MainForm.BaseDir, tvProject.SelectedNode.Name), true);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("删除错误！Ex:" + ex.ToString());
+                    }
+
+                    updateProjects();
+                }
             }
         }
     }

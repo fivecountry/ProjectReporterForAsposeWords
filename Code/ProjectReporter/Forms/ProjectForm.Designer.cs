@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.plContent = new DevExpress.XtraEditors.PanelControl();
-            this.plButtons = new DevExpress.XtraEditors.PanelControl();
             this.tvProject = new System.Windows.Forms.TreeView();
-            this.btnOpen = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.plButtons = new DevExpress.XtraEditors.PanelControl();
             this.btnLoad = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnOpen = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.ofdSelect = new System.Windows.Forms.OpenFileDialog();
+            this.btnDel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).BeginInit();
             this.plContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plButtons)).BeginInit();
@@ -50,16 +51,6 @@
             this.plContent.Size = new System.Drawing.Size(685, 576);
             this.plContent.TabIndex = 9;
             // 
-            // plButtons
-            // 
-            this.plButtons.Controls.Add(this.btnLoad);
-            this.plButtons.Controls.Add(this.btnOpen);
-            this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plButtons.Location = new System.Drawing.Point(2, 538);
-            this.plButtons.Name = "plButtons";
-            this.plButtons.Size = new System.Drawing.Size(681, 36);
-            this.plButtons.TabIndex = 7;
-            // 
             // tvProject
             // 
             this.tvProject.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -71,17 +62,16 @@
             this.tvProject.Size = new System.Drawing.Size(681, 536);
             this.tvProject.TabIndex = 8;
             // 
-            // btnOpen
+            // plButtons
             // 
-            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnOpen.Location = new System.Drawing.Point(604, 2);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 32);
-            this.btnOpen.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpen.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnOpen.TabIndex = 29;
-            this.btnOpen.Values.Text = "打开";
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            this.plButtons.Controls.Add(this.btnDel);
+            this.plButtons.Controls.Add(this.btnLoad);
+            this.plButtons.Controls.Add(this.btnOpen);
+            this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.plButtons.Location = new System.Drawing.Point(2, 538);
+            this.plButtons.Name = "plButtons";
+            this.plButtons.Size = new System.Drawing.Size(681, 36);
+            this.plButtons.TabIndex = 7;
             // 
             // btnLoad
             // 
@@ -95,9 +85,33 @@
             this.btnLoad.Values.Text = "导入";
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // btnOpen
+            // 
+            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnOpen.Location = new System.Drawing.Point(604, 2);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 32);
+            this.btnOpen.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpen.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnOpen.TabIndex = 29;
+            this.btnOpen.Values.Text = "切换";
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
             // ofdSelect
             // 
             this.ofdSelect.Filter = "Zip压缩文件(*.zip)|*.zip";
+            // 
+            // btnDel
+            // 
+            this.btnDel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDel.Location = new System.Drawing.Point(454, 2);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 32);
+            this.btnDel.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDel.TabIndex = 31;
+            this.btnDel.Values.Text = "删除";
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // ProjectForm
             // 
@@ -127,5 +141,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnOpen;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnLoad;
         private System.Windows.Forms.OpenFileDialog ofdSelect;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnDel;
     }
 }
