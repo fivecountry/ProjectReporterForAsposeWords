@@ -149,8 +149,11 @@ namespace ProjectReporter.Forms
                     catch (Exception ex) { }
 
                     //更新列表
-                    updateProjects();
-                }));                
+                    Invoke(new MethodInvoker(delegate()
+                        {
+                            updateProjects();
+                        }));                    
+                }));
             }
         }
     }
