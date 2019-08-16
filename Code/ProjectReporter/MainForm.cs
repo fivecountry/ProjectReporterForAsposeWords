@@ -1087,5 +1087,11 @@ namespace ProjectReporter
             ProjectDocForm form = new ProjectDocForm();
             form.ShowDialog();
         }
+
+        private void btnManager_Click(object sender, EventArgs e)
+        {
+            ProjectForm pf = new ProjectForm();
+            pf.ShowDialog();
+        }
     }
 }

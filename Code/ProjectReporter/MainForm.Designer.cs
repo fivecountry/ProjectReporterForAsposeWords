@@ -148,6 +148,7 @@ namespace ProjectReporter
             this.feUI31 = new ProjectReporter.Controls.ChengNuoShuEditor();
             this.topBanner = new System.Windows.Forms.PictureBox();
             this.kpcontact = new ProjectReporter.Controls.HSkinTableLayoutPanel();
+            this.btnManager = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpcontactinner)).BeginInit();
@@ -286,6 +287,7 @@ namespace ProjectReporter
             // kryptonPanel1
             // 
             this.kryptonPanel1.Controls.Add(this.btnUploadReport);
+            this.kryptonPanel1.Controls.Add(this.btnManager);
             this.kryptonPanel1.Controls.Add(this.btninit);
             this.kryptonPanel1.Controls.Add(this.btnSave2);
             this.kryptonPanel1.Controls.Add(this.btnImport);
@@ -306,7 +308,7 @@ namespace ProjectReporter
             // btnUploadReport
             // 
             this.btnUploadReport.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnUploadReport.Location = new System.Drawing.Point(113, 0);
+            this.btnUploadReport.Location = new System.Drawing.Point(4, 0);
             this.btnUploadReport.Name = "btnUploadReport";
             this.btnUploadReport.Size = new System.Drawing.Size(255, 41);
             this.btnUploadReport.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1875,6 +1877,17 @@ namespace ProjectReporter
             this.kpcontact.Size = new System.Drawing.Size(200, 100);
             this.kpcontact.TabIndex = 0;
             // 
+            // btnManager
+            // 
+            this.btnManager.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnManager.Location = new System.Drawing.Point(259, 0);
+            this.btnManager.Name = "btnManager";
+            this.btnManager.Size = new System.Drawing.Size(109, 41);
+            this.btnManager.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnManager.TabIndex = 30;
+            this.btnManager.Values.Text = "项目管理";
+            this.btnManager.Click += new System.EventHandler(this.btnManager_Click);
+            // 
             // MainForm
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -2162,6 +2175,7 @@ namespace ProjectReporter
         private BaoMiZiZhiFuYinJianEditor feUI25;
         private KryptonButton btnSave2;
         private KryptonButton btnUploadReport;
+        private KryptonButton btnManager;
     }
 }
 
