@@ -89,6 +89,7 @@ namespace ProjectReporter.Controls
         /// <param name="rtfFile"></param>
         public void LoadDoc(string rtfFiles)
         {
+            btnNewDoc.Enabled = false;
             FilePath = rtfFiles;
 
             if (System.IO.File.Exists(FilePath))
