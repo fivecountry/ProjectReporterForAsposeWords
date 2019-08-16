@@ -35,7 +35,7 @@
             this.btnSave = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnNext = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.plContent = new System.Windows.Forms.Panel();
-            this.txtContent = new ProjectReporter.Controls.WordDocumentEditControl();
+            this.btnEditDoc = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.plContent.SuspendLayout();
@@ -70,7 +70,7 @@
             this.lblTitle.Font = new System.Drawing.Font("宋体", 14.25F);
             this.lblTitle.Location = new System.Drawing.Point(53, 20);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1008, 39);
+            this.lblTitle.Size = new System.Drawing.Size(1008, 49);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = ".............";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,6 +92,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 34);
             this.tableLayoutPanel1.TabIndex = 6;
+            this.tableLayoutPanel1.Visible = false;
             // 
             // btnLast
             // 
@@ -124,23 +125,21 @@
             // plContent
             // 
             this.plContent.BackColor = System.Drawing.Color.Transparent;
-            this.plContent.Controls.Add(this.txtContent);
+            this.plContent.Controls.Add(this.btnEditDoc);
             this.plContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plContent.Location = new System.Drawing.Point(53, 62);
+            this.plContent.Location = new System.Drawing.Point(53, 72);
             this.plContent.Name = "plContent";
-            this.plContent.Size = new System.Drawing.Size(1008, 428);
+            this.plContent.Size = new System.Drawing.Size(1008, 418);
             this.plContent.TabIndex = 7;
             // 
-            // txtContent
+            // btnEditDoc
             // 
-            this.txtContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtContent.Location = new System.Drawing.Point(0, 0);
-            this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(1008, 428);
-            this.txtContent.TabIndex = 0;
-            this.txtContent.Text = "";
+            this.btnEditDoc.Location = new System.Drawing.Point(4, 6);
+            this.btnEditDoc.Name = "btnEditDoc";
+            this.btnEditDoc.Size = new System.Drawing.Size(133, 40);
+            this.btnEditDoc.TabIndex = 1;
+            this.btnEditDoc.Values.Text = "编辑文档";
+            this.btnEditDoc.Click += new System.EventHandler(this.btnEditDoc_Click);
             // 
             // RTFTextEditor
             // 
@@ -165,8 +164,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnSave;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnNext;
         private System.Windows.Forms.Panel plContent;
-        private WordDocumentEditControl txtContent;
         private AutoHeightLabel lblTitle;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnEditDoc;
 
 
     }

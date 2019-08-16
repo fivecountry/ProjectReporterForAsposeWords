@@ -25,11 +25,6 @@ namespace ProjectReporter.Controls
             get { return lblTitle; }
         }
 
-        public WordDocumentEditControl RichTextBoxControl
-        {
-            get { return txtContent; }
-        }
-
         public bool EnabledLabelAutoHeight
         {
             get
@@ -104,14 +99,14 @@ namespace ProjectReporter.Controls
         {
             base.ClearView();
 
-            RichTextBoxControl.Clear();
+            //RichTextBoxControl.Clear();
         }
 
         public override void OnSaveEvent()
         {
             base.OnSaveEvent();
 
-            RichTextBoxControl.SaveDoc(GetTextFilePath());
+            //RichTextBoxControl.SaveDoc(GetTextFilePath());
         }
 
         public string GetTextFilePath()
@@ -123,15 +118,29 @@ namespace ProjectReporter.Controls
         {
             base.RefreshView();
 
-            if (File.Exists(GetTextFilePath()))
-            {
-                RichTextBoxControl.LoadDoc(GetTextFilePath());
-            }
+            //if (File.Exists(GetTextFilePath()))
+            //{
+            //    RichTextBoxControl.LoadDoc(GetTextFilePath());
+            //}
         }
 
         public override bool IsInputCompleted()
         {
             return File.Exists(GetTextFilePath());
+        }
+
+        private void btnEditDoc_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(GetTextFilePath()))
+            {
+                System.Diagnostics.Process.Start(GetTextFilePath());
+            }
+            else
+            {
+                Aspose.Words.WordDocument wd = new Aspose.Words.WordDocument();
+                wd.WordDoc.Save(GetTextFilePath());
+                System.Diagnostics.Process.Start(GetTextFilePath());
+            }
         }
     }
 }
