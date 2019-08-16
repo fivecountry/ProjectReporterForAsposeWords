@@ -111,7 +111,7 @@ namespace ProjectReporter.Forms
                     System.IO.Directory.Move(System.IO.Path.Combine(MainForm.BaseDir, tvProject.SelectedNode.Name), currentPath);
 
                     System.Diagnostics.Process.Start(Application.StartupPath);
-                    MainForm.Instance.EnabledShowBackupHint = true;
+                    MainForm.Instance.EnabledShowBackupHint = false;
                     Application.Exit();
                 }
             }
