@@ -110,8 +110,10 @@ namespace ProjectReporter.Forms
                     //将这个目录切换为当前目录
                     System.IO.Directory.Move(System.IO.Path.Combine(MainForm.BaseDir, tvProject.SelectedNode.Name), currentPath);
 
-                    System.Diagnostics.Process.Start(Application.StartupPath);
                     MainForm.Instance.EnabledShowBackupHint = false;
+                    ProjectReporter.DB.ConnectionManager.Close();
+                    System.Diagnostics.Process.Start(Application.ExecutablePath);
+                    MainForm.Instance.ProjectObj = null;
                     Application.Exit();
                 }
             }
