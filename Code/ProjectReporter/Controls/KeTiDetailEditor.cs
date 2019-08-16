@@ -79,9 +79,9 @@ namespace ProjectReporter.Controls
             base.ClearView();
 
             txtInfo.Clear();
-            txtDest.Clear();
-            txtContent.Clear();
-            txtNeed.Clear();
+            //txtDest.Clear();
+            //txtContent.Clear();
+            //txtNeed.Clear();
         }
 
         public override void OnSaveEvent()
@@ -89,9 +89,9 @@ namespace ProjectReporter.Controls
             base.OnSaveEvent();
 
             txtInfo.SaveFile(GetInfoFilePath());
-            txtDest.SaveDoc(GetDestFilePath());
-            txtContent.SaveDoc(GetContentFilePath());
-            txtNeed.SaveDoc(GetNeedFilePath());
+            //txtDest.SaveDoc(GetDestFilePath());
+            //txtContent.SaveDoc(GetContentFilePath());
+            //txtNeed.SaveDoc(GetNeedFilePath());
         }
 
         public string GetNeedFilePath()
@@ -125,23 +125,65 @@ namespace ProjectReporter.Controls
 
             if (File.Exists(GetDestFilePath()))
             {
-                txtDest.LoadDoc(GetDestFilePath());
+                //txtDest.LoadDoc(GetDestFilePath());
             }
 
             if (File.Exists(GetContentFilePath()))
             {
-                txtContent.LoadDoc(GetContentFilePath());
+                //txtContent.LoadDoc(GetContentFilePath());
             }
 
             if (File.Exists(GetNeedFilePath()))
             {
-                txtNeed.LoadDoc(GetNeedFilePath());
+                //txtNeed.LoadDoc(GetNeedFilePath());
             }
         }
 
         public override bool IsInputCompleted()
         {
             return File.Exists(GetInfoFilePath()) && File.Exists(GetDestFilePath()) && File.Exists(GetContentFilePath()) && File.Exists(GetNeedFilePath());
+        }
+
+        private void btnEditDest_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(GetDestFilePath()))
+            {
+                System.Diagnostics.Process.Start(GetDestFilePath());
+            }
+            else
+            {
+                Aspose.Words.WordDocument wd = new Aspose.Words.WordDocument();
+                wd.WordDoc.Save(GetDestFilePath());
+                System.Diagnostics.Process.Start(GetDestFilePath());
+            }
+        }
+
+        private void btnEditContent_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(GetContentFilePath()))
+            {
+                System.Diagnostics.Process.Start(GetContentFilePath());
+            }
+            else
+            {
+                Aspose.Words.WordDocument wd = new Aspose.Words.WordDocument();
+                wd.WordDoc.Save(GetContentFilePath());
+                System.Diagnostics.Process.Start(GetContentFilePath());
+            }
+        }
+
+        private void btnEditNeed_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(GetNeedFilePath()))
+            {
+                System.Diagnostics.Process.Start(GetNeedFilePath());
+            }
+            else
+            {
+                Aspose.Words.WordDocument wd = new Aspose.Words.WordDocument();
+                wd.WordDoc.Save(GetNeedFilePath());
+                System.Diagnostics.Process.Start(GetNeedFilePath());
+            }
         }
     }
 }

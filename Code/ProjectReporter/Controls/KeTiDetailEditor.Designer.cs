@@ -34,11 +34,8 @@
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.autoHeightLabel1 = new ProjectReporter.Controls.AutoHeightLabel();
             this.kpDest = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.txtDest = new ProjectReporter.Controls.WordDocumentEditControl();
             this.kpContent = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.txtContent = new ProjectReporter.Controls.WordDocumentEditControl();
             this.kpNeed = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.txtNeed = new ProjectReporter.Controls.WordDocumentEditControl();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLast = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -47,6 +44,9 @@
             this.plTitle = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.lblTitle = new ProjectReporter.Controls.AutoHeightLabel();
             this.plContent = new System.Windows.Forms.Panel();
+            this.btnEditDest = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnEditContent = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.btnEditNeed = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.knKetiDetailTabs)).BeginInit();
             this.knKetiDetailTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kpInfo)).BeginInit();
@@ -136,7 +136,7 @@
             // kpDest
             // 
             this.kpDest.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kpDest.Controls.Add(this.txtDest);
+            this.kpDest.Controls.Add(this.btnEditDest);
             this.kpDest.Flags = 65534;
             this.kpDest.LastVisibleSet = true;
             this.kpDest.MinimumSize = new System.Drawing.Size(50, 50);
@@ -146,20 +146,10 @@
             this.kpDest.ToolTipTitle = "Page ToolTip";
             this.kpDest.UniqueName = "A7C07E934B1F414E99B2655E2A0D8ECC";
             // 
-            // txtDest
-            // 
-            this.txtDest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtDest.Location = new System.Drawing.Point(0, 0);
-            this.txtDest.Name = "txtDest";
-            this.txtDest.Size = new System.Drawing.Size(750, 361);
-            this.txtDest.TabIndex = 1;
-            this.txtDest.Text = "";
-            // 
             // kpContent
             // 
             this.kpContent.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kpContent.Controls.Add(this.txtContent);
+            this.kpContent.Controls.Add(this.btnEditContent);
             this.kpContent.Flags = 65534;
             this.kpContent.LastVisibleSet = true;
             this.kpContent.MinimumSize = new System.Drawing.Size(50, 50);
@@ -169,20 +159,10 @@
             this.kpContent.ToolTipTitle = "Page ToolTip";
             this.kpContent.UniqueName = "D7C9060B093A424227B510727F20F652";
             // 
-            // txtContent
-            // 
-            this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtContent.Location = new System.Drawing.Point(0, 0);
-            this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(750, 361);
-            this.txtContent.TabIndex = 1;
-            this.txtContent.Text = "";
-            // 
             // kpNeed
             // 
             this.kpNeed.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kpNeed.Controls.Add(this.txtNeed);
+            this.kpNeed.Controls.Add(this.btnEditNeed);
             this.kpNeed.Flags = 65534;
             this.kpNeed.LastVisibleSet = true;
             this.kpNeed.MinimumSize = new System.Drawing.Size(50, 50);
@@ -191,16 +171,6 @@
             this.kpNeed.Text = "研究思路";
             this.kpNeed.ToolTipTitle = "Page ToolTip";
             this.kpNeed.UniqueName = "C96959D95BED456940AB08FF33E3497B";
-            // 
-            // txtNeed
-            // 
-            this.txtNeed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtNeed.Location = new System.Drawing.Point(0, 0);
-            this.txtNeed.Name = "txtNeed";
-            this.txtNeed.Size = new System.Drawing.Size(750, 361);
-            this.txtNeed.TabIndex = 1;
-            this.txtNeed.Text = "";
             // 
             // tableLayoutPanel15
             // 
@@ -304,6 +274,33 @@
             this.plContent.Size = new System.Drawing.Size(752, 388);
             this.plContent.TabIndex = 7;
             // 
+            // btnEditDest
+            // 
+            this.btnEditDest.Location = new System.Drawing.Point(8, 9);
+            this.btnEditDest.Name = "btnEditDest";
+            this.btnEditDest.Size = new System.Drawing.Size(133, 40);
+            this.btnEditDest.TabIndex = 2;
+            this.btnEditDest.Values.Text = "编辑文档";
+            this.btnEditDest.Click += new System.EventHandler(this.btnEditDest_Click);
+            // 
+            // btnEditContent
+            // 
+            this.btnEditContent.Location = new System.Drawing.Point(8, 9);
+            this.btnEditContent.Name = "btnEditContent";
+            this.btnEditContent.Size = new System.Drawing.Size(133, 40);
+            this.btnEditContent.TabIndex = 2;
+            this.btnEditContent.Values.Text = "编辑文档";
+            this.btnEditContent.Click += new System.EventHandler(this.btnEditContent_Click);
+            // 
+            // btnEditNeed
+            // 
+            this.btnEditNeed.Location = new System.Drawing.Point(7, 7);
+            this.btnEditNeed.Name = "btnEditNeed";
+            this.btnEditNeed.Size = new System.Drawing.Size(133, 40);
+            this.btnEditNeed.TabIndex = 2;
+            this.btnEditNeed.Values.Text = "编辑文档";
+            this.btnEditNeed.Click += new System.EventHandler(this.btnEditNeed_Click);
+            // 
             // KeTiDetailEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -350,11 +347,11 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel plTitle;
         private AutoHeightLabel lblTitle;
         private System.Windows.Forms.Panel plContent;
-        private WordDocumentEditControl txtDest;
-        private WordDocumentEditControl txtContent;
-        private WordDocumentEditControl txtNeed;
         private TextBoxExt txtInfo;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private AutoHeightLabel autoHeightLabel1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnEditDest;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnEditContent;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnEditNeed;
     }
 }
