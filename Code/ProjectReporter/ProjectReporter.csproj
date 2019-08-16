@@ -167,6 +167,9 @@
     <Reference Include="NPOI.OpenXmlFormats">
       <HintPath>..\..\Lib\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
+    <Reference Include="SuperCodeFactoryUILib">
+      <HintPath>..\..\Lib\SuperCodeFactoryUILib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
