@@ -31,10 +31,10 @@
             this.plContent = new DevExpress.XtraEditors.PanelControl();
             this.tvProject = new System.Windows.Forms.TreeView();
             this.plButtons = new DevExpress.XtraEditors.PanelControl();
+            this.btnDel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnLoad = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnOpen = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.ofdSelect = new System.Windows.Forms.OpenFileDialog();
-            this.btnDel = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.plContent)).BeginInit();
             this.plContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plButtons)).BeginInit();
@@ -73,6 +73,18 @@
             this.plButtons.Size = new System.Drawing.Size(681, 36);
             this.plButtons.TabIndex = 7;
             // 
+            // btnDel
+            // 
+            this.btnDel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDel.Location = new System.Drawing.Point(454, 2);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 32);
+            this.btnDel.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDel.TabIndex = 31;
+            this.btnDel.Values.Text = "删除";
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // btnLoad
             // 
             this.btnLoad.Dock = System.Windows.Forms.DockStyle.Right;
@@ -83,6 +95,7 @@
             this.btnLoad.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLoad.TabIndex = 30;
             this.btnLoad.Values.Text = "导入";
+            this.btnLoad.Visible = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnOpen
@@ -100,18 +113,6 @@
             // ofdSelect
             // 
             this.ofdSelect.Filter = "Zip压缩文件(*.zip)|*.zip";
-            // 
-            // btnDel
-            // 
-            this.btnDel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnDel.Location = new System.Drawing.Point(454, 2);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 32);
-            this.btnDel.StateCommon.Content.LongText.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDel.TabIndex = 31;
-            this.btnDel.Values.Text = "删除";
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // ProjectForm
             // 
