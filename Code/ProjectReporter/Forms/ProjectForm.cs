@@ -103,10 +103,18 @@ namespace ProjectReporter.Forms
                     //当前项目目录
                     string currentPath = System.IO.Path.Combine(MainForm.BaseDir, "Current");
 
+                    //目标目录
+                    string destPath = System.IO.Path.Combine(MainForm.BaseDir, uuid);
+
                     //移动当前目录
                     if (System.IO.Directory.Exists(currentPath))
                     {
-                        System.IO.Directory.Move(currentPath, System.IO.Path.Combine(MainForm.BaseDir, uuid));
+                        if (System.IO.Directory.Exists(destPath))
+                        {
+                            System.IO.Directory.Delete(destPath, true);
+                        }
+
+                        System.IO.Directory.Move(currentPath, destPath);
                     }
 
                     //将这个目录切换为当前目录
