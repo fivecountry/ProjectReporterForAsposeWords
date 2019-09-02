@@ -118,7 +118,7 @@ namespace ProjectReporter.Forms
                                 //删除当前目录
                                 if (Directory.Exists(MainForm.ProjectDir))
                                 {
-                                    Directory.Delete(MainForm.ProjectDir);
+                                    Directory.Delete(MainForm.ProjectDir, true);
                                 }
                             }
 
