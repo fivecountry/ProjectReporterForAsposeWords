@@ -104,7 +104,7 @@ namespace ProjectReporter.Forms
                             printHint("正在导入数据，请稍等......");
 
                             //检查是否需要备份
-                            if (StartupParams[1] != null && StartupParams[1].Length >= 2)
+                            if (StartupParams != null && StartupParams.Length >= 2 && StartupParams[1] != null && StartupParams[1].Length >= 2)
                             {
                                 //备份当前的数据库
                                 if (Directory.Exists(Path.Combine(MainForm.BaseDir, StartupParams[1])))
