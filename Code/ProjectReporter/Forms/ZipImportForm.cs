@@ -29,9 +29,10 @@ namespace ProjectReporter.Forms
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            string uuid = MainForm.Instance.ProjectObj.ID;
             MainForm.Instance.EnabledShowBackupHint = false;
             ConnectionManager.Close();
-            Process.Start(Application.ExecutablePath, ZipPackageFile);
+            Process.Start(Application.ExecutablePath, ZipPackageFile + " " + uuid);
             MainForm.Instance.ProjectObj = null;
             Application.Exit();
         }

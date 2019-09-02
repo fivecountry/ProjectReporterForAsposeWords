@@ -96,20 +96,19 @@ namespace ProjectReporter.Forms
                             Program.TryInitProjectDir("Current");
 
                             //复制摘要模板
-                            File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Helper", "xiangmuzhaiyaomoban.rtf")), Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"), true);
+                            //File.Copy(Path.Combine(Application.StartupPath, Path.Combine("Helper", "xiangmuzhaiyaomoban.rtf")), Path.Combine(MainForm.ProjectFilesDir, "rtpinput_0.rtf"), true);
                         }
                         else
                         {
                             //导入
-
                             printHint("正在导入数据，请稍等......");
 
                             //备份当前的数据库
-                            if (Directory.Exists(Path.Combine(MainForm.BaseDir, "import-backup")))
+                            if (Directory.Exists(Path.Combine(MainForm.BaseDir, StartupParams[1])))
                             {
-                                Directory.Delete(Path.Combine(MainForm.BaseDir, "import-backup"), true);
+                                Directory.Delete(Path.Combine(MainForm.BaseDir, StartupParams[1]), true);
                             }
-                            Directory.Move(MainForm.ProjectDir, Path.Combine(MainForm.BaseDir, "import-backup"));
+                            Directory.Move(MainForm.ProjectDir, Path.Combine(MainForm.BaseDir, StartupParams[1]));
                             Directory.CreateDirectory(MainForm.ProjectDir);
 
                             //解压需要导入的包                        
