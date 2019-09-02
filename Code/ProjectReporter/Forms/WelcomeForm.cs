@@ -103,12 +103,23 @@ namespace ProjectReporter.Forms
                             //导入
                             printHint("正在导入数据，请稍等......");
 
-                            //备份当前的数据库
-                            if (Directory.Exists(Path.Combine(MainForm.BaseDir, StartupParams[1])))
+                            //检查是否需要备份
+                            if (StartupParams[1] != null && StartupParams[1].Length >= 2)
                             {
-                                Directory.Delete(Path.Combine(MainForm.BaseDir, StartupParams[1]), true);
+                                //备份当前的数据库
+                                if (Directory.Exists(Path.Combine(MainForm.BaseDir, StartupParams[1])))
+                                {
+                                    Directory.Delete(Path.Combine(MainForm.BaseDir, StartupParams[1]), true);
+                                }
+                                Directory.Move(MainForm.ProjectDir, Path.Combine(MainForm.BaseDir, StartupParams[1]));
                             }
-                            Directory.Move(MainForm.ProjectDir, Path.Combine(MainForm.BaseDir, StartupParams[1]));
+                            else
+                            {
+                                //删除当前目录
+                                Directory.Delete(MainForm.ProjectDir);
+                            }
+
+                            //创建新目录
                             Directory.CreateDirectory(MainForm.ProjectDir);
 
                             //解压需要导入的包                        
