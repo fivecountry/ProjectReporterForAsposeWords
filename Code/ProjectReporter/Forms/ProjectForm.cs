@@ -95,6 +95,8 @@ namespace ProjectReporter.Forms
             {
                 if (MessageBox.Show("真的要切换吗？", "提示", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
+                    string uuid = MainForm.Instance.ProjectObj != null ? MainForm.Instance.ProjectObj.ID : Guid.NewGuid().ToString();
+
                     //关闭连接
                     ProjectReporter.DB.ConnectionManager.Close();
 
@@ -104,7 +106,7 @@ namespace ProjectReporter.Forms
                     //移动当前目录
                     if (System.IO.Directory.Exists(currentPath))
                     {
-                        System.IO.Directory.Move(currentPath, System.IO.Path.Combine(MainForm.BaseDir, Guid.NewGuid().ToString()));
+                        System.IO.Directory.Move(currentPath, System.IO.Path.Combine(MainForm.BaseDir, uuid));
                     }
 
                     //将这个目录切换为当前目录
