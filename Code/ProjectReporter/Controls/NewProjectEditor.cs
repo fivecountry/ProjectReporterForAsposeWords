@@ -66,6 +66,12 @@ namespace ProjectReporter.Controls
                     txtAddress.Text = unitObj.Address;
                     txtTelephone.Text = unitObj.Telephone;
                 }
+
+                string errorPath = System.IO.Path.Combine(MainForm.BaseDir, MainForm.Instance.ProjectObj.ID);
+                if (System.IO.Directory.Exists(errorPath))
+                {
+                    System.IO.Directory.Delete(errorPath, true);
+                }
             }
 
             UpdateUnitList();
